@@ -280,10 +280,11 @@ export function HomeScreen() {
           <FlameIcon size={40} lit={(progress.data?.coupleStreak?.current ?? 0) > 0} />
           <div className="flex-1">
             <p className="font-display font-semibold">Couple streak · {progress.data?.coupleStreak?.current ?? 0} days</p>
-            <Vi className="text-xs">Cả hai cùng học trong một ngày để giữ chuỗi</Vi>
+            <p className="text-xs text-plum-500">Both finish a lesson, a mini-game, or 5 reviews on the same day.</p>
+            <Vi className="text-xs">Cả hai cùng xong 1 bài học, 1 mini-game hoặc 5 câu ôn tập trong ngày</Vi>
           </div>
           <Button asChild size="sm" variant="secondary">
-            <Link href="/story">Love Q</Link>
+            <Link href="/learn">Study</Link>
           </Button>
         </Panel>
         <CoupleQuestPanel />

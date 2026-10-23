@@ -226,7 +226,7 @@ function StreakCard({ title, vi, streak, timezone, tone }: { title: string; vi: 
     ? effectiveStreak({ current: streak.current, longest: streak.longest, lastActiveDate: streak.last_active_date, freezes: streak.freezes }, todayIn(timezone))
     : { days: 0, status: "none" as const };
   const statusText = {
-    none: "Start today — any lesson, game, or 5 reviews counts.",
+    none: "Start today — finish a lesson, a mini-game, or 5 reviews. (Love Questions add Love Energy, not streak days.)",
     done_today: "Done for today. Lovely!",
     pending_today: "Learn something today to keep it going.",
     protected: "A freeze is protecting your streak. Welcome back anytime.",
