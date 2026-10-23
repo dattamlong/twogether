@@ -242,6 +242,33 @@ export type Database = {
           },
         ];
       };
+      couple_public_profiles: {
+        Row: {
+          couple_id: string;
+          is_public: boolean;
+          updated_at: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          couple_id: string;
+          is_public?: boolean;
+          updated_at?: string;
+        };
+        Update: {
+          couple_id?: string;
+          is_public?: boolean;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "couple_public_profiles_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: true;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       couple_quest_progress: {
         Row: {
           completed_at: string | null;
@@ -321,6 +348,39 @@ export type Database = {
           title_vi?: string;
         };
         Relationships: [];
+      };
+      couple_rank_tiers: {
+        Row: {
+          best_weekly_rank: number | null;
+          couple_id: string;
+          legend_points: number;
+          tier: number;
+          updated_at: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          best_weekly_rank?: number | null;
+          couple_id: string;
+          legend_points?: number;
+          tier?: number;
+          updated_at?: string;
+        };
+        Update: {
+          best_weekly_rank?: number | null;
+          couple_id?: string;
+          legend_points?: number;
+          tier?: number;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "couple_rank_tiers_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: true;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       couple_rewards: {
         Row: {
@@ -672,6 +732,162 @@ export type Database = {
           },
         ];
       };
+      leaderboard_point_events: {
+        Row: {
+          couple_id: string;
+          created_at: string;
+          day: string;
+          id: string;
+          points: number;
+          ref: string;
+          source: string;
+          user_id: string | null;
+          week_start: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          couple_id: string;
+          created_at?: string;
+          day: string;
+          id?: string;
+          points: number;
+          ref: string;
+          source: string;
+          user_id?: string | null;
+          week_start: string;
+        };
+        Update: {
+          couple_id?: string;
+          created_at?: string;
+          day?: string;
+          id?: string;
+          points?: number;
+          ref?: string;
+          source?: string;
+          user_id?: string | null;
+          week_start?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "leaderboard_point_events_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: false;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      leaderboard_scores: {
+        Row: {
+          couple_id: string;
+          last_scored_at: string;
+          member_points: NonNullable<Json>;
+          score: number;
+          week_start: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          couple_id: string;
+          last_scored_at?: string;
+          member_points?: NonNullable<Json>;
+          score?: number;
+          week_start: string;
+        };
+        Update: {
+          couple_id?: string;
+          last_scored_at?: string;
+          member_points?: NonNullable<Json>;
+          score?: number;
+          week_start?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "leaderboard_scores_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: false;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      leaderboard_seasons: {
+        Row: {
+          ends_on: string;
+          id: number;
+          name: string;
+          starts_on: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          ends_on: string;
+          id: number;
+          name: string;
+          starts_on: string;
+        };
+        Update: {
+          ends_on?: string;
+          id?: number;
+          name?: string;
+          starts_on?: string;
+        };
+        Relationships: [];
+      };
+      leaderboard_snapshots: {
+        Row: {
+          couple_id: string;
+          rank: number;
+          score: number;
+          week_start: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          couple_id: string;
+          rank: number;
+          score: number;
+          week_start: string;
+        };
+        Update: {
+          couple_id?: string;
+          rank?: number;
+          score?: number;
+          week_start?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "leaderboard_snapshots_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: false;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "leaderboard_snapshots_week_start_fkey";
+            columns: ["week_start"];
+            isOneToOne: false;
+            referencedRelation: "leaderboard_weeks";
+            referencedColumns: ["week_start"];
+          },
+        ];
+      };
+      leaderboard_weeks: {
+        Row: {
+          finalized_at: string;
+          participants: number;
+          week_start: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          finalized_at?: string;
+          participants: number;
+          week_start: string;
+        };
+        Update: {
+          finalized_at?: string;
+          participants?: number;
+          week_start?: string;
+        };
+        Relationships: [];
+      };
       learning_categories: {
         Row: {
           description: string;
@@ -694,6 +910,28 @@ export type Database = {
           name?: string;
           name_vi?: string;
           sort_order?: number;
+        };
+        Relationships: [];
+      };
+      legend_celebrations: {
+        Row: {
+          milestone: string;
+          seen_at: string;
+          user_id: string;
+          week_start: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          milestone: string;
+          seen_at?: string;
+          user_id: string;
+          week_start: string;
+        };
+        Update: {
+          milestone?: string;
+          seen_at?: string;
+          user_id?: string;
+          week_start?: string;
         };
         Relationships: [];
       };
@@ -1071,6 +1309,83 @@ export type Database = {
           },
         ];
       };
+      ranking_reward_claims: {
+        Row: {
+          claimed_at: string;
+          coins_per_member: number;
+          couple_id: string;
+          effect: string | null;
+          effect_expires_at: string | null;
+          rank: number;
+          week_start: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          claimed_at?: string;
+          coins_per_member: number;
+          couple_id: string;
+          effect?: string | null;
+          effect_expires_at?: string | null;
+          rank: number;
+          week_start: string;
+        };
+        Update: {
+          claimed_at?: string;
+          coins_per_member?: number;
+          couple_id?: string;
+          effect?: string | null;
+          effect_expires_at?: string | null;
+          rank?: number;
+          week_start?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "ranking_reward_claims_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: false;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "ranking_reward_claims_week_start_fkey";
+            columns: ["week_start"];
+            isOneToOne: false;
+            referencedRelation: "leaderboard_weeks";
+            referencedColumns: ["week_start"];
+          },
+        ];
+      };
+      ranking_rewards: {
+        Row: {
+          badge_achievement: string;
+          coins: number;
+          effect: string | null;
+          effect_days: number;
+          rank_from: number;
+          rank_to: number;
+          trophy_item: string | null;
+        };
+        ComputedFields: never;
+        Insert: {
+          badge_achievement: string;
+          coins: number;
+          effect?: string | null;
+          effect_days?: number;
+          rank_from: number;
+          rank_to: number;
+          trophy_item?: string | null;
+        };
+        Update: {
+          badge_achievement?: string;
+          coins?: number;
+          effect?: string | null;
+          effect_days?: number;
+          rank_from?: number;
+          rank_to?: number;
+          trophy_item?: string | null;
+        };
+        Relationships: [];
+      };
       review_progress: {
         Row: {
           box: number;
@@ -1426,6 +1741,10 @@ export type Database = {
     };
     Functions: {
       accept_invitation: { Args: { invite_code: string }; Returns: string };
+      ack_legend_celebration: {
+        Args: { milestone: string };
+        Returns: undefined;
+      };
       add_couple_progress: {
         Args: {
           add_energy: number;
@@ -1434,6 +1753,16 @@ export type Database = {
           source: string;
         };
         Returns: undefined;
+      };
+      add_ranking_points: {
+        Args: {
+          add_points: number;
+          cid: string;
+          point_ref: string;
+          point_source: string;
+          uid: string;
+        };
+        Returns: number;
       };
       add_special_memory: {
         Args: {
@@ -1464,6 +1793,7 @@ export type Database = {
       };
       complete_lesson: { Args: { lesson_attempt: string }; Returns: Json };
       couple_local_date: { Args: { target_couple: string }; Returns: string };
+      couple_members_public: { Args: { cid: string }; Returns: Json };
       create_invitation: {
         Args: Record<PropertyKey, never>;
         Returns: {
@@ -1494,12 +1824,18 @@ export type Database = {
         };
         Returns: undefined;
       };
+      finalize_due_legend_weeks: {
+        Args: Record<PropertyKey, never>;
+        Returns: number;
+      };
+      finalize_legend_week: { Args: { week: string }; Returns: number };
       finish_game: { Args: { game_session: string }; Returns: Json };
       fulfill_redemption: { Args: { redemption: string }; Returns: undefined };
       generate_invite_code: {
         Args: Record<PropertyKey, never>;
         Returns: string;
       };
+      get_couple_legend_profile: { Args: { target: string }; Returns: Json };
       get_couple_quests: {
         Args: Record<PropertyKey, never>;
         Returns: {
@@ -1533,6 +1869,20 @@ export type Database = {
           xp_reward: number;
         }[];
       };
+      get_leaderboard: {
+        Args: { board?: string; max_rows?: number };
+        Returns: {
+          couple_id: string;
+          couple_name: string;
+          effect: string;
+          is_me: boolean;
+          members: Json;
+          movement: number;
+          rank: number;
+          score: number;
+          tier: number;
+        }[];
+      };
       get_love_answer_history: {
         Args: { max_days?: number };
         Returns: {
@@ -1543,6 +1893,7 @@ export type Database = {
           question_id: string;
         }[];
       };
+      get_my_legend_status: { Args: Record<PropertyKey, never>; Returns: Json };
       get_review_queue: {
         Args: { max_items?: number };
         Returns: {
@@ -1609,6 +1960,8 @@ export type Database = {
         }[];
       };
       leave_couple: { Args: Record<PropertyKey, never>; Returns: undefined };
+      legend_tier_for_points: { Args: { points: number }; Returns: number };
+      legend_week_start: { Args: { at_time?: string }; Returns: string };
       level_for_xp: {
         Args: { multiplier?: number; total_xp: number };
         Returns: number;
@@ -1729,6 +2082,10 @@ export type Database = {
       send_love_message: {
         Args: { message_body?: string; message_kind: string };
         Returns: string;
+      };
+      set_legend_visibility: {
+        Args: { make_public: boolean };
+        Returns: undefined;
       };
       srs_interval: { Args: { box: number }; Returns: string };
       start_game: {

@@ -4,6 +4,8 @@ export const en = {
   "nav.games": "Games",
   "nav.shop": "Love Shop",
   "nav.story": "Our Story",
+  "nav.legends": "Love Legends",
+  "nav.legendsShort": "Legends",
   "hud.level": "Level",
   "hud.coins": "Love Coins",
   "hud.streak": "Streak",

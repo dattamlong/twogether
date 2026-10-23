@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, type ReactNode } from "react";
+import { LegendCelebration } from "@/components/legends/legend-celebration";
 import { CelebrationOverlay } from "@/components/rewards/celebration-overlay";
 import { ErrorBlock } from "@/components/ui/states";
 import { HeartIcon } from "@/components/ui/icons";
@@ -62,6 +63,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         {children}
       </main>
       <CelebrationOverlay />
+      <LegendCelebration />
     </>
   );
 }

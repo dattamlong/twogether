@@ -19,6 +19,8 @@ import { getSupabase } from "@/lib/supabase/client";
 import { setSoundEnabled, soundEnabled, sfx } from "@/lib/sfx";
 import { cn } from "@/lib/utils";
 import { toast } from "@/stores/toast-store";
+import { TierBadge } from "@/components/legends/legend-art";
+import { useLegendStatus, useSetLegendVisibility } from "@/features/legends/queries";
 import { AvatarFace } from "./avatar-face";
 
 const HAIR_STYLES: Avatar["hair"][] = ["bob", "long", "twintails", "bun", "short", "spiky"];
@@ -83,6 +85,8 @@ export function ProfileSettings() {
   const [coupleName, setCoupleName] = useState(session.couple?.name ?? "Our Little Home");
   const [confirm, setConfirm] = useState<"unpair" | "delete" | null>(null);
   const [sound, setSound] = useState(soundEnabled);
+  const legend = useLegendStatus();
+  const setLegendVisibility = useSetLegendVisibility();
   const zones = useMemo(() => {
     const supported = typeof Intl.supportedValuesOf === "function" ? Intl.supportedValuesOf("timeZone") : [];
     return [...new Set([session.profile.timezone, ...supported])].sort();
@@ -222,6 +226,27 @@ export function ProfileSettings() {
             Save changes
           </Button>
         </Panel>
+
+        {legend.data ? (
+          <Panel className="flex flex-col gap-3">
+            <PanelTitle title="Love Legends" subtitle="Bảng xếp hạng cặp đôi" />
+            <TierBadge tier={legend.data.tier} size={44} showLabel />
+            <p className="text-xs text-cocoa-400">
+              {legend.data.legendPoints.toLocaleString()} legend points{legend.data.bestRank ? ` · best weekly rank #${legend.data.bestRank}` : ""}
+            </p>
+            <label className="flex items-center justify-between gap-2 text-sm font-bold">
+              Show our couple on the public leaderboard
+              <input
+                type="checkbox"
+                checked={legend.data.isPublic}
+                disabled={setLegendVisibility.isPending}
+                onChange={(e) => setLegendVisibility.mutate(e.target.checked)}
+                className="size-5 accent-sakura-400"
+              />
+            </label>
+            <p className="text-[11px] text-cocoa-400">Only names, characters, tier, scores and badges become public. Messages, answers and memories stay private.</p>
+          </Panel>
+        ) : null}
 
         <Panel className="flex flex-col gap-2">
           <PanelTitle title="Account" subtitle="Tài khoản" />

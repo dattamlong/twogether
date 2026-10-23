@@ -96,6 +96,7 @@ export function useInvalidateProgress() {
       client.invalidateQueries({ queryKey: qk.achievements }),
       client.invalidateQueries({ queryKey: qk.memories }),
       client.invalidateQueries({ queryKey: qk.inventory }),
+      client.invalidateQueries({ queryKey: ["legends"] }),
     ]);
 }
 

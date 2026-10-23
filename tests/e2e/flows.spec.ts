@@ -151,3 +151,31 @@ test("partners decorate the shared room and the layout persists for both", async
   await pageB.getByRole("button", { name: "Decorate" }).click();
   await expect(pageB.getByRole("button", { name: /^Paper Floor Lamp/ })).toContainText("Placed");
 });
+
+test("a couple joins Love Legends, climbs to #1 and sees the celebration", async ({ browser }, testInfo) => {
+  const a = await createAccount("Mai");
+  const b = await createAccount("Minh");
+  const coupleId = await pairAccounts(a, b);
+  const { admin } = await import("./helpers");
+  await admin().from("couple_public_profiles").update({ is_public: false }).neq("couple_id", coupleId);
+  const page = await newSignedInPage(browser, a.email, testInfo.project.use);
+  await expect(page).toHaveURL(/\/home/);
+
+  await page.goto("/legends");
+  await expect(page.getByRole("heading", { name: "Love Legends" })).toBeVisible();
+  await expect(page.getByRole("tab", { name: /Weekly Legends/ })).toHaveAttribute("aria-selected", "true");
+  await page.getByRole("button", { name: /^Join/ }).first().click();
+  await expect(page.getByText("You joined Love Legends!")).toBeVisible();
+
+  await admin().rpc("grant_reward", { uid: a.id, add_xp: 5000, add_coins: 0, reason: "lesson", ref: `e2e-${a.id}` });
+  await admin().rpc("grant_reward", { uid: b.id, add_xp: 5000, add_coins: 0, reason: "lesson", ref: `e2e-${b.id}` });
+  await page.reload();
+
+  const celebration = page.getByRole("dialog", { name: "You are the number one couple" });
+  await expect(celebration).toBeVisible();
+  await celebration.getByRole("button", { name: "Keep shining" }).click();
+  await expect(page.getByRole("button", { name: /^Rank 1: Mai and Minh, 800 points/ })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole("dialog", { name: "You are the number one couple" })).toHaveCount(0);
+  await expectNoHorizontalOverflow(page);
+});

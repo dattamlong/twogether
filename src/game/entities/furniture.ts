@@ -353,6 +353,25 @@ export function drawFurniture(kind: string, w: number, h: number, flipped = fals
       isoBox(g, 0.32, 0.32, 0.36, 0.36, 15, 6, { color: 0xfbe3b1 });
       break;
     }
+    case "legend_trophy":
+    case "tier_trophy_gold":
+    case "tier_trophy_diamond":
+    case "tier_trophy_sakura":
+    case "tier_trophy_eternal": {
+      const cup = { legend_trophy: 0xf5cb78, tier_trophy_gold: 0xf5cb78, tier_trophy_diamond: 0xb8ddf5, tier_trophy_sakura: 0xf39bbb, tier_trophy_eternal: 0xc7b8ea }[kind]!;
+      const c = tileToScreen(0.5, 0.5);
+      isoBox(g, 0.25, 0.25, 0.5, 0.5, 0, 10, { color: 0x8a73c8 });
+      g.rect(c.x - 2.5, c.y - 30, 5, 14).fill(shade(cup, -40));
+      g.moveTo(c.x - 13, c.y - 52).lineTo(c.x + 13, c.y - 52).quadraticCurveTo(c.x + 12, c.y - 30, c.x, c.y - 29).quadraticCurveTo(c.x - 12, c.y - 30, c.x - 13, c.y - 52).fill(cup).stroke({ color: shade(cup, -50), width: 1.2 });
+      g.circle(c.x - 15, c.y - 45, 4).stroke({ color: shade(cup, -30), width: 2 });
+      g.circle(c.x + 15, c.y - 45, 4).stroke({ color: shade(cup, -30), width: 2 });
+      g.moveTo(c.x, c.y - 47).bezierCurveTo(c.x - 5, c.y - 50, c.x - 3, c.y - 44, c.x, c.y - 41).bezierCurveTo(c.x + 3, c.y - 44, c.x + 5, c.y - 50, c.x, c.y - 47).fill(0xffffff);
+      const glow = new Graphics();
+      glow.circle(c.x, c.y - 40, 26).fill({ color: cup, alpha: 0.3 });
+      container.addChildAt(glow, 0);
+      art.glow = glow;
+      break;
+    }
     default:
       isoBox(g, 0.15, 0.15, Math.max(0.7, w - 0.3), Math.max(0.7, h - 0.3), 0, 18, { color: 0xc7b8ea });
   }

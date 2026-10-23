@@ -6,6 +6,8 @@ export const vi: Record<keyof typeof en, string> = {
   "nav.games": "Trò chơi",
   "nav.shop": "Cửa hàng",
   "nav.story": "Chuyện chúng mình",
+  "nav.legends": "Huyền thoại tình yêu",
+  "nav.legendsShort": "Xếp hạng",
   "hud.level": "Cấp độ",
   "hud.coins": "Xu tình yêu",
   "hud.streak": "Chuỗi ngày",

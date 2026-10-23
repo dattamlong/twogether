@@ -195,7 +195,27 @@ function Shirt({ color, accent }: { color: string; accent: string }) {
   );
 }
 
+const TROPHY_COLORS: Record<string, string> = {
+  legend_trophy: "#f5cb78",
+  tier_trophy_gold: "#f5cb78",
+  tier_trophy_diamond: "#b8ddf5",
+  tier_trophy_sakura: "#f39bbb",
+  tier_trophy_eternal: "#c7b8ea",
+};
+
 export function ItemArt({ itemId, size = 64, className }: { itemId: string; size?: number; className?: string }) {
+  if (TROPHY_COLORS[itemId]) {
+    return (
+      <svg viewBox="0 0 64 64" width={size} height={size} className={className} aria-hidden>
+        <circle cx="32" cy="26" r="24" fill={TROPHY_COLORS[itemId]} opacity=".25" />
+        <path d="M18 10h28c0 14-6 22-14 22S18 24 18 10z" fill={TROPHY_COLORS[itemId]} stroke="#45365b" strokeOpacity=".3" strokeWidth="1.5" />
+        <path d="M18 14h-6c0 7 4 10 8 11M46 14h6c0 7-4 10-8 11" fill="none" stroke={TROPHY_COLORS[itemId]} strokeWidth="3" />
+        <rect x="29" y="32" width="6" height="10" fill={TROPHY_COLORS[itemId]} />
+        <rect x="20" y="42" width="24" height="10" rx="3" fill="#8a73c8" />
+        <path d="M32 24c-4-2.5-5.5-4.5-5.5-6.4 0-1.6 1.3-2.8 2.7-2.8 1.1 0 2.1.6 2.8 1.6.7-1 1.7-1.6 2.8-1.6 1.4 0 2.7 1.2 2.7 2.8 0 1.9-1.5 3.9-5.5 6.4z" fill="#fff" />
+      </svg>
+    );
+  }
   if (itemId.startsWith("gift_")) {
     const glyph = itemId === "gift_rose" ? <HeartIcon size={size} /> : <GiftIcon size={size} />;
     return <span className={className}>{glyph}</span>;

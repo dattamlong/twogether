@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
-import { AlbumIcon, BookIcon, GamepadIcon, GiftIcon, HouseIcon } from "@/components/ui/icons";
+import { AlbumIcon, BookIcon, GamepadIcon, GiftIcon, HouseIcon, TrophyIcon } from "@/components/ui/icons";
 import { t } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
-  { href: "/home", key: "nav.home", icon: HouseIcon },
-  { href: "/learn", key: "nav.learn", icon: BookIcon },
-  { href: "/games", key: "nav.games", icon: GamepadIcon },
-  { href: "/shop", key: "nav.shop", icon: GiftIcon },
-  { href: "/story", key: "nav.story", icon: AlbumIcon },
+  { href: "/home", key: "nav.home", short: "nav.home", icon: HouseIcon },
+  { href: "/learn", key: "nav.learn", short: "nav.learn", icon: BookIcon },
+  { href: "/games", key: "nav.games", short: "nav.games", icon: GamepadIcon },
+  { href: "/legends", key: "nav.legends", short: "nav.legendsShort", icon: TrophyIcon },
+  { href: "/shop", key: "nav.shop", short: "nav.shop", icon: GiftIcon },
+  { href: "/story", key: "nav.story", short: "nav.story", icon: AlbumIcon },
 ] as const;
 
 export function Nav({ unread = 0 }: { unread?: number }) {
@@ -42,18 +43,18 @@ export function Nav({ unread = 0 }: { unread?: number }) {
       </nav>
       <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-white bg-white/90 px-2 pt-1.5 pb-safe backdrop-blur md:hidden">
         <ul className="mx-auto flex max-w-lg justify-between">
-          {ITEMS.map(({ href, key, icon: Icon }) => {
+          {ITEMS.map(({ href, short, icon: Icon }) => {
             const active = pathname.startsWith(href);
             return (
-              <li key={href} className="flex-1">
+              <li key={href} className="min-w-0 flex-1">
                 <Link
                   href={href}
                   aria-current={active ? "page" : undefined}
                   className={cn("relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded-2xl text-[11px] font-bold", active ? "text-plum-700" : "text-cocoa-400")}
                 >
                   {active ? <motion.span layoutId="nav-active-mobile" className="absolute inset-x-2 inset-y-0 rounded-2xl bg-sakura-100" transition={{ type: "spring", bounce: 0.3, duration: 0.45 }} /> : null}
-                  <Icon size={28} className="relative" />
-                  <span className="relative">{t(key)}</span>
+                  <Icon size={26} className="relative" />
+                  <span className="relative max-w-full truncate px-0.5">{t(short)}</span>
                   {href === "/story" && unread > 0 ? <span className="absolute right-[22%] top-1 size-2.5 rounded-full bg-sakura-400 ring-2 ring-white" /> : null}
                 </Link>
               </li>
