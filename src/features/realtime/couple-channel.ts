@@ -92,7 +92,7 @@ class CoupleChannel {
     this.presence = initial;
     this.retryAttempt = 0;
     this.hasConnectedBefore = false;
-    void this.open();
+    void this.open().catch(() => this.scheduleReconnect());
     if (typeof window !== "undefined") {
       window.addEventListener("online", this.handleOnline);
       window.addEventListener("offline", this.handleOffline);
@@ -132,7 +132,9 @@ class CoupleChannel {
     useCoupleRealtime.getState().setStatus(this.hasConnectedBefore ? "reconnecting" : "connecting");
 
     await supabase.realtime.setAuth();
-    if (this.coupleId !== coupleId) return;
+    const stale = supabase.getChannels().filter((c) => c.topic === `realtime:couple:${coupleId}`);
+    await Promise.all(stale.map((c) => supabase.removeChannel(c)));
+    if (this.coupleId !== coupleId || this.userId !== userId) return;
 
     const channel = supabase.channel(`couple:${coupleId}`, {
       config: { private: true, presence: { key: userId, enabled: true }, broadcast: { self: false, ack: false } },
@@ -176,7 +178,7 @@ class CoupleChannel {
       const stale = this.channel;
       this.channel = null;
       if (stale) void getSupabase().removeChannel(stale);
-      void this.open();
+      void this.open().catch(() => this.scheduleReconnect());
     }, delay);
   }
 

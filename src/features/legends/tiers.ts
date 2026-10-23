@@ -26,10 +26,8 @@ export function tierById(id: number | null | undefined): Tier {
 }
 
 export const BOARDS = [
-  { id: "weekly", label: "Weekly Legends", vi: "Huyền thoại tuần", unit: "pts", hint: "Learning XP, quests and co-op bonuses this week" },
-  { id: "all_time", label: "All-Time Legends", vi: "Huyền thoại mọi thời", unit: "legend pts", hint: "Every point you have ever earned together" },
-  { id: "partners", label: "Perfect Partners", vi: "Cặp đôi ăn ý", unit: "balance", hint: "Twice the smaller partner's points — both must shine" },
-  { id: "battle", label: "Battle Champions", vi: "Nhà vô địch", unit: "wins", hint: "Word Battle victories this week" },
+  { id: "weekly", label: "Weekly", vi: "Tuần này", unit: "pts", hint: "Learning points this week · resets Monday 00:00 UTC" },
+  { id: "all_time", label: "All-Time", vi: "Mọi thời", unit: "legend pts", hint: "Every learning point you have earned together · never resets" },
 ] as const;
 
 export type BoardId = (typeof BOARDS)[number]["id"];

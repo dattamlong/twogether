@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AvatarFace } from "@/components/couple/avatar-face";
 import { Button } from "@/components/ui/button";
@@ -18,9 +19,11 @@ export function LegendCelebration() {
   const [milestone, setMilestone] = useState<"top3" | "first" | null>(null);
   const root = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
+  const pathname = usePathname();
+  const onCelebrationPage = pathname.startsWith("/home") || pathname.startsWith("/legends");
 
   const due: "top3" | "first" | null =
-    status?.rank && status.score > 0
+    onCelebrationPage && status?.rank && status.score > 0
       ? status.rank === 1 && !status.celebrations.includes("first")
         ? "first"
         : status.rank <= 3 && !status.celebrations.includes("top3") && !status.celebrations.includes("first")

@@ -154,3 +154,25 @@ describe("Love Legends weekly finalization", () => {
     expect(status.bestRank).toBe(1);
   });
 });
+
+describe("Perfect Partners badge", () => {
+  it("is awarded at week end only when both partners contribute meaningfully", async () => {
+    const currentWeek = expectOk(await db().rpc("legend_week_start")) as string;
+    const week = new Date(Date.parse(`${currentWeek}T00:00:00Z`) - 14 * 86_400_000).toISOString().slice(0, 10);
+    await db().from("leaderboard_weeks").delete().eq("week_start", week);
+    await db().from("leaderboard_scores").delete().eq("week_start", week);
+
+    const balanced = await createCouple();
+    const lopsided = await createCouple();
+    await db().from("leaderboard_scores").insert([
+      { couple_id: balanced.coupleId, week_start: week, score: 430, member_points: { [balanced.a.id]: 220, [balanced.b.id]: 180 } },
+      { couple_id: lopsided.coupleId, week_start: week, score: 430, member_points: { [lopsided.a.id]: 380, [lopsided.b.id]: 20 } },
+    ]);
+    expectOk(await db().rpc("finalize_legend_week", { week }));
+
+    const badges = async (userId: string) =>
+      expectOk(await db().from("user_achievements").select("achievement_id").eq("user_id", userId)).map((r) => r.achievement_id);
+    expect(await badges(balanced.b.id)).toContain("legend_perfect_partners");
+    expect(await badges(lopsided.a.id)).not.toContain("legend_perfect_partners");
+  });
+});

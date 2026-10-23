@@ -10,89 +10,97 @@ import { AnimatedNumber } from "./animated-number";
 import { TierBadge } from "./legend-art";
 import { Movement } from "./leaderboard-list";
 
+function tierProgress(status: LegendStatus) {
+  if (!status.nextTierAt) return { value: 1, max: 1, label: "Highest tier reached" };
+  const next = tierById(status.tier + 1);
+  return {
+    value: status.legendPoints - status.tierFloor,
+    max: status.nextTierAt - status.tierFloor,
+    label: `${(status.nextTierAt - status.legendPoints).toLocaleString()} pts to ${next.name}`,
+  };
+}
+
 export function MyRankCard({ status, session, compact = false }: { status: LegendStatus; session: SessionData; compact?: boolean }) {
   const tier = tierById(status.tier);
-  const nextTier = tierById(status.tier + 1);
   const me = session.profile.display_name;
   const partner = session.partner?.display_name ?? "Partner";
   const myPoints = status.memberPoints?.[session.userId] ?? 0;
   const partnerPoints = session.partner ? (status.memberPoints?.[session.partner.id] ?? 0) : 0;
-  const rankLabel = status.rank ? `#${status.rank}` : "—";
+  const rankLabel = status.rank ? `#${status.rank}` : "Unranked";
+  const progress = tierProgress(status);
 
   if (compact) {
     return (
-      <div className="flex items-center gap-3 rounded-[1.5rem] bg-gradient-to-r from-sakura-100 via-white to-lavender-100 px-3 py-2 shadow-[var(--shadow-soft)] ring-2 ring-white">
-        <span className="font-display text-xl font-bold text-plum-700">{rankLabel}</span>
-        <span className="min-w-0 flex-1">
-          <span className="block truncate text-xs font-bold text-plum-700">
-            {me} & {partner}
+      <div className="rounded-[1.25rem] bg-white/95 px-3 py-2 shadow-[var(--shadow-soft)] ring-2 ring-white backdrop-blur">
+        <div className="flex items-center gap-2.5">
+          <TierBadge tier={status.tier} size={28} />
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-xs font-bold text-plum-700">
+              {me} & {partner}
+            </span>
+            <span className="block truncate text-[11px] text-cocoa-400">
+              {tier.name} · {progress.label}
+            </span>
           </span>
-          <span className="block text-[11px] text-cocoa-400">
-            {status.score.toLocaleString()} pts{status.pointsToNext ? ` · ${status.pointsToNext} to next` : ""}
+          <span className="text-right">
+            <span className={cn("block font-display font-bold leading-tight text-plum-700", status.rank ? "text-lg" : "text-xs")}>{rankLabel}</span>
+            <span className="block text-[11px] font-semibold tabular-nums text-cocoa-400">{status.score.toLocaleString()} pts</span>
           </span>
-        </span>
-        <TierBadge tier={status.tier} size={26} />
+        </div>
+        <ProgressBar value={progress.value} max={progress.max} tone="gold" label="Tier progress" className="mt-1.5 h-1.5" />
       </div>
     );
   }
 
   return (
-    <div className="panel flex flex-col gap-3 p-5">
+    <section aria-label="Your couple" className="panel flex flex-col gap-3 p-4">
       <div className="flex items-center gap-2">
-        <HeartIcon size={22} />
-        <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-sakura-500">Your couple</p>
+        <HeartIcon size={20} className="shrink-0" />
+        <p className="min-w-0 truncate font-display text-lg font-semibold text-plum-700">
+          {me} & {partner}
+        </p>
       </div>
-      <div className="flex items-end justify-between gap-2">
-        <div>
-          <p className="font-display text-4xl font-bold text-plum-700">{rankLabel}</p>
-          <p className="font-display font-semibold">
-            {me} & {partner}
-          </p>
+
+      <TierBadge tier={status.tier} size={38} showLabel />
+
+      <dl className="grid grid-cols-2 gap-2">
+        <div className="rounded-2xl bg-lavender-100/70 px-3 py-2">
+          <dt className="text-[11px] font-bold text-cocoa-400">Weekly rank</dt>
+          <dd className="flex items-center gap-1.5">
+            <span className={cn("font-display font-bold text-plum-700", status.rank ? "text-2xl" : "text-base leading-8")}>{rankLabel}</span>
+            {status.rank && status.movement !== null ? <Movement value={status.movement} /> : null}
+          </dd>
         </div>
-        {status.movement !== null && status.rank ? (
-          <span className="rounded-full bg-white/80 px-2 py-1">
-            <Movement value={status.movement} />
-          </span>
-        ) : null}
-      </div>
-      <div className="rounded-2xl bg-white/70 p-3">
-        <p className="text-xs font-bold text-cocoa-400">Weekly score</p>
-        <AnimatedNumber value={status.score} className="font-display text-2xl font-bold text-plum-700 tabular-nums" />
-        {status.pointsToNext ? (
-          <p className="text-xs text-plum-500">
-            {status.pointsToNext.toLocaleString()} points until rank #{(status.rank ?? 2) - 1}
-          </p>
-        ) : status.rank === 1 ? (
-          <p className="text-xs font-bold text-gold-500">You are the #1 couple this week!</p>
-        ) : status.score === 0 ? (
-          <p className="text-xs text-plum-500">Finish a lesson together to enter this week&apos;s ranking.</p>
-        ) : null}
-        <div className="mt-2 grid grid-cols-2 gap-2 text-[11px] font-semibold">
-          <span className={cn("rounded-xl px-2 py-1", myPoints ? "bg-sakura-100" : "bg-cream-200")}>
-            {me}: {myPoints}
-          </span>
-          <span className={cn("rounded-xl px-2 py-1", partnerPoints ? "bg-lavender-100" : "bg-cream-200")}>
-            {partner}: {partnerPoints}
-          </span>
+        <div className="rounded-2xl bg-sakura-100/70 px-3 py-2">
+          <dt className="text-[11px] font-bold text-cocoa-400">Weekly score</dt>
+          <dd>
+            <AnimatedNumber value={status.score} className="font-display text-2xl font-bold tabular-nums text-plum-700" />
+          </dd>
         </div>
-        <p className="mt-1 text-[10px] text-cocoa-400">Each partner can add up to {status.dailyCap} learning points a day. Learning on the same day adds a co-op bonus.</p>
-      </div>
-      <div className="flex items-center gap-3">
-        <TierBadge tier={status.tier} size={44} showLabel />
-      </div>
-      {status.nextTierAt ? (
-        <div>
-          <ProgressBar value={status.legendPoints - status.tierFloor} max={status.nextTierAt - status.tierFloor} tone="gold" label="Tier progress" />
-          <p className="mt-1 text-xs text-cocoa-400">
-            {(status.nextTierAt - status.legendPoints).toLocaleString()} legend points to {nextTier.name} · {nextTier.reward}
-          </p>
-        </div>
-      ) : (
-        <p className="text-xs font-bold text-plum-500">Highest tier reached: {tier.name}</p>
-      )}
-      <p className="border-t border-lavender-100 pt-3 text-[11px] text-cocoa-400">
-        Every couple is ranked automatically. Only names, characters, tier, scores and badges are shown — messages, answers and memories stay private.
+      </dl>
+
+      <p className="-mt-1 text-xs text-plum-500">
+        {status.rank === 1
+          ? "You are the #1 couple this week!"
+          : status.pointsToNext
+            ? `${status.pointsToNext.toLocaleString()} pts to reach #${(status.rank ?? 2) - 1}`
+            : "Finish a lesson together to enter this week's ranking."}
       </p>
-    </div>
+
+      <div>
+        <ProgressBar value={progress.value} max={progress.max} tone="gold" label="Tier progress" />
+        <p className="mt-1 flex justify-between gap-2 text-[11px] text-cocoa-400">
+          <span>{progress.label}</span>
+          <span className="tabular-nums">{status.legendPoints.toLocaleString()} total</span>
+        </p>
+      </div>
+
+      <p className="flex flex-wrap gap-x-3 gap-y-0.5 border-t border-lavender-100 pt-2 text-[11px] text-cocoa-400">
+        <span>
+          This week: <b className="text-plum-500">{me}</b> {myPoints} · <b className="text-plum-500">{partner}</b> {partnerPoints}
+        </span>
+        <span>Max {status.dailyCap} learning pts/person/day</span>
+      </p>
+    </section>
   );
 }
