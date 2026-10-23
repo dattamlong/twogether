@@ -1,0 +1,812 @@
+{
+  "lessons": [
+    {
+      "slug": "brain-l1-patterns",
+      "subject": "brain",
+      "category": "logic",
+      "level": "L1",
+      "topic": "number & letter patterns",
+      "title": "Spot the Pattern Together",
+      "title_vi": "Cùng nhau tìm quy luật",
+      "objectives": [
+        "Find the rule in a sequence by looking at the differences",
+        "Recognise doubling, square numbers and alternating sequences",
+        "Turn letters into numbers to solve letter patterns"
+      ],
+      "intro": [
+        {
+          "title": "Strategy 1: Look at the gaps",
+          "body": "When you see a list of numbers, don't stare at the numbers themselves. Write down the gap (difference) between each pair of neighbours. If the gap is always the same, keep adding it. If adding doesn't work, check whether each number is multiplied by the same amount.",
+          "body_vi": "Khi gặp một dãy số, đừng nhìn chằm chằm vào từng số. Hãy viết ra khoảng cách (hiệu) giữa hai số đứng cạnh nhau. Nếu khoảng cách luôn bằng nhau thì cứ cộng tiếp khoảng đó. Nếu phép cộng không khớp, hãy thử xem mỗi số có được nhân với cùng một số hay không.",
+          "examples": [
+            {
+              "text": "3, 7, 11, 15, ? → gaps: +4, +4, +4 → next is 19",
+              "translation_vi": "3, 7, 11, 15, ? → khoảng cách: +4, +4, +4 → số tiếp theo là 19",
+              "note": "Same gap every time = add the gap."
+            },
+            {
+              "text": "2, 6, 18, 54, ? → each number × 3 → next is 162",
+              "translation_vi": "2, 6, 18, 54, ? → mỗi số nhân 3 → số tiếp theo là 162",
+              "note": "Gaps grow fast? Try multiplying."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 2: When the gaps change",
+          "body": "Sometimes the gaps themselves form a pattern (+1, +2, +3…). Sometimes the numbers are famous, like square numbers (1×1, 2×2, 3×3…). And sometimes two sequences are hidden inside one: look at every second number separately.",
+          "body_vi": "Đôi khi chính các khoảng cách cũng tạo thành quy luật (+1, +2, +3…). Đôi khi các số là những số quen thuộc, ví dụ số chính phương (1×1, 2×2, 3×3…). Và đôi khi có hai dãy số trộn vào nhau: hãy tách riêng các số ở vị trí lẻ và vị trí chẵn.",
+          "examples": [
+            {
+              "text": "1, 2, 4, 7, 11, ? → gaps +1, +2, +3, +4 → next gap +5 → 16",
+              "translation_vi": "1, 2, 4, 7, 11, ? → khoảng cách +1, +2, +3, +4 → tiếp theo +5 → 16"
+            },
+            {
+              "text": "1, 10, 2, 20, 3, 30, ? → two sequences: 1, 2, 3… and 10, 20, 30… → next is 4",
+              "translation_vi": "1, 10, 2, 20, 3, 30, ? → hai dãy: 1, 2, 3… và 10, 20, 30… → số tiếp theo là 4",
+              "note": "Alternating pattern: split it into two lists."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 3: Letters are numbers in disguise",
+          "body": "Give each letter its position in the alphabet: A = 1, B = 2, C = 3 … Z = 26. Now a letter pattern becomes a number pattern, and you can use the gap strategy again.",
+          "body_vi": "Đổi mỗi chữ cái thành vị trí của nó trong bảng chữ cái tiếng Anh: A = 1, B = 2, C = 3 … Z = 26. Khi đó dãy chữ cái trở thành dãy số, và bạn lại dùng cách tìm khoảng cách như trên.",
+          "examples": [
+            {
+              "text": "A, C, E, G, ? → 1, 3, 5, 7 → +2 each time → 9 = I",
+              "translation_vi": "A, C, E, G, ? → 1, 3, 5, 7 → mỗi lần +2 → 9 = I",
+              "note": "Tip: write the alphabet out on paper with numbers under it."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "brain-l1-pattern-01",
+          "kind": "multiple_choice",
+          "objective": "Continue an adding sequence",
+          "prompt": "What number comes next? 5, 9, 13, 17, ?",
+          "prompt_vi": "Số nào tiếp theo? 5, 9, 13, 17, ?",
+          "options": ["19", "21", "22", "25"],
+          "answer": "21",
+          "explanation": "The gaps are 9 − 5 = 4, 13 − 9 = 4, 17 − 13 = 4. The rule is 'add 4', so 17 + 4 = 21.",
+          "explanation_vi": "Bước 1: tìm khoảng cách giữa các số: 9 − 5 = 4, 13 − 9 = 4, 17 − 13 = 4. Bước 2: khoảng cách luôn là 4, nên quy luật là 'cộng 4'. Bước 3: 17 + 4 = 21."
+        },
+        {
+          "id": "brain-l1-pattern-02",
+          "kind": "multiple_choice",
+          "objective": "Recognise a doubling sequence",
+          "prompt": "What number comes next? 3, 6, 12, 24, ?",
+          "prompt_vi": "Số nào tiếp theo? 3, 6, 12, 24, ?",
+          "options": ["36", "42", "48", "30"],
+          "answer": "48",
+          "explanation": "The gaps are 3, 6, 12 — they keep growing, so try multiplying. Each number is double the one before: 3 × 2 = 6, 6 × 2 = 12, 12 × 2 = 24, so 24 × 2 = 48.",
+          "explanation_vi": "Bước 1: khoảng cách là 3, 6, 12 — tăng dần, nên thử phép nhân. Bước 2: mỗi số gấp đôi số trước: 3 × 2 = 6, 6 × 2 = 12, 12 × 2 = 24. Bước 3: 24 × 2 = 48. (36 là đáp án sai nếu chỉ cộng 12.)"
+        },
+        {
+          "id": "brain-l1-pattern-03",
+          "kind": "multiple_choice",
+          "objective": "Continue a subtracting sequence",
+          "prompt": "What number comes next? 50, 44, 38, 32, ?",
+          "prompt_vi": "Số nào tiếp theo? 50, 44, 38, 32, ?",
+          "options": ["28", "26", "24", "30"],
+          "answer": "26",
+          "explanation": "Each number is 6 less than the one before: 50 − 6 = 44, 44 − 6 = 38, 38 − 6 = 32. So 32 − 6 = 26.",
+          "explanation_vi": "Bước 1: tính khoảng cách: 44 − 50 = −6, 38 − 44 = −6, 32 − 38 = −6. Bước 2: quy luật là 'trừ 6'. Bước 3: 32 − 6 = 26."
+        },
+        {
+          "id": "brain-l1-pattern-04",
+          "kind": "multiple_choice",
+          "objective": "Solve a letter-skip pattern",
+          "prompt": "Which letter comes next? A, D, G, J, ?",
+          "prompt_vi": "Chữ cái nào tiếp theo? A, D, G, J, ?",
+          "options": ["K", "L", "M", "N"],
+          "answer": "M",
+          "explanation": "Turn the letters into numbers: A = 1, D = 4, G = 7, J = 10. The gap is +3 each time, so the next is 13, which is M.",
+          "explanation_vi": "Bước 1: đổi chữ thành số: A = 1, D = 4, G = 7, J = 10. Bước 2: mỗi lần cộng 3 (tức là bỏ qua 2 chữ cái ở giữa). Bước 3: 10 + 3 = 13, chữ cái thứ 13 là M (J, K, L, M)."
+        },
+        {
+          "id": "brain-l1-pattern-05",
+          "kind": "multiple_choice",
+          "objective": "Recognise square numbers",
+          "prompt": "What number comes next? 1, 4, 9, 16, 25, ?",
+          "prompt_vi": "Số nào tiếp theo? 1, 4, 9, 16, 25, ?",
+          "options": ["30", "34", "36", "49"],
+          "answer": "36",
+          "explanation": "These are square numbers: 1×1, 2×2, 3×3, 4×4, 5×5. Next is 6×6 = 36. You can also see it from the gaps: +3, +5, +7, +9, so the next gap is +11 and 25 + 11 = 36.",
+          "explanation_vi": "Cách 1: đây là các số chính phương: 1×1, 2×2, 3×3, 4×4, 5×5, nên tiếp theo là 6×6 = 36. Cách 2: nhìn khoảng cách: +3, +5, +7, +9 (các số lẻ tăng dần), nên khoảng tiếp theo là +11, và 25 + 11 = 36. Hai cách cho cùng kết quả."
+        },
+        {
+          "id": "brain-l1-pattern-06",
+          "kind": "multiple_choice",
+          "objective": "Split an alternating sequence into two",
+          "prompt": "What number comes next? 2, 20, 4, 18, 6, 16, ?",
+          "prompt_vi": "Số nào tiếp theo? 2, 20, 4, 18, 6, 16, ?",
+          "options": ["8", "14", "10", "12"],
+          "answer": "8",
+          "explanation": "Two sequences are mixed together. Positions 1, 3, 5: 2, 4, 6 (add 2). Positions 2, 4, 6: 20, 18, 16 (subtract 2). The missing number is position 7, which belongs to the first sequence, so it is 6 + 2 = 8. (14 would be the next number of the second sequence, which comes after it.)",
+          "explanation_vi": "Bước 1: tách dãy thành hai dãy nhỏ. Vị trí 1, 3, 5: 2, 4, 6 (cộng 2). Vị trí 2, 4, 6: 20, 18, 16 (trừ 2). Bước 2: số cần tìm ở vị trí thứ 7 — vị trí lẻ — nên thuộc dãy thứ nhất. Bước 3: 6 + 2 = 8. Số 14 là bẫy: đó là số tiếp theo của dãy thứ hai, đứng ở vị trí 8."
+        },
+        {
+          "id": "brain-l1-pattern-07",
+          "kind": "multiple_choice",
+          "objective": "Find a pattern in the gaps themselves",
+          "prompt": "What number comes next? 2, 3, 5, 8, 12, ?",
+          "prompt_vi": "Số nào tiếp theo? 2, 3, 5, 8, 12, ?",
+          "options": ["15", "16", "17", "18"],
+          "answer": "17",
+          "explanation": "The gaps are +1, +2, +3, +4. The gaps grow by 1 each time, so the next gap is +5: 12 + 5 = 17.",
+          "explanation_vi": "Bước 1: viết khoảng cách: 3 − 2 = 1, 5 − 3 = 2, 8 − 5 = 3, 12 − 8 = 4. Bước 2: các khoảng cách tự tạo thành dãy 1, 2, 3, 4, nên khoảng tiếp theo là 5. Bước 3: 12 + 5 = 17."
+        },
+        {
+          "id": "brain-l1-pattern-08",
+          "kind": "multiple_choice",
+          "objective": "Combine letter numbers with growing gaps",
+          "prompt": "Which letter comes next? Z, X, U, Q, ?",
+          "prompt_vi": "Chữ cái nào tiếp theo? Z, X, U, Q, ?",
+          "options": ["M", "L", "K", "N"],
+          "answer": "L",
+          "explanation": "As numbers: Z = 26, X = 24, U = 21, Q = 17. The gaps are −2, −3, −4, so the next gap is −5: 17 − 5 = 12, which is L.",
+          "explanation_vi": "Bước 1: đổi chữ thành số: Z = 26, X = 24, U = 21, Q = 17. Bước 2: khoảng cách là −2, −3, −4 — mỗi lần lùi thêm 1. Bước 3: khoảng tiếp theo là −5, nên 17 − 5 = 12. Chữ cái thứ 12 là L (A=1 … J=10, K=11, L=12)."
+        }
+      ]
+    },
+    {
+      "slug": "brain-l1-logic",
+      "subject": "brain",
+      "category": "logic",
+      "level": "L1",
+      "topic": "deductive reasoning",
+      "title": "Detective Date Night: What Must Be True?",
+      "title_vi": "Hẹn hò thám tử: Điều gì chắc chắn đúng?",
+      "objectives": [
+        "Reason correctly with all / some / none statements",
+        "Use if-then rules without falling into the reverse trap",
+        "Solve ordering and seating puzzles by drawing a line"
+      ],
+      "intro": [
+        {
+          "title": "Strategy 1: Draw circles for all / some / none",
+          "body": "Imagine each group as a circle. 'All A are B' means circle A sits completely inside circle B. 'No A are B' means the circles don't touch. 'Some A are B' means the circles overlap at least a little. Only say something 'must be true' if the picture forces it.",
+          "body_vi": "Hãy tưởng tượng mỗi nhóm là một vòng tròn. 'Tất cả A là B' nghĩa là vòng A nằm trọn trong vòng B. 'Không A nào là B' nghĩa là hai vòng không chạm nhau. 'Một số A là B' nghĩa là hai vòng giao nhau ít nhất một phần. Chỉ kết luận 'chắc chắn đúng' khi hình vẽ bắt buộc như vậy.",
+          "examples": [
+            {
+              "text": "All cats are animals. Mimi is a cat. → Mimi is an animal. ✔",
+              "translation_vi": "Mọi con mèo đều là động vật. Mimi là mèo. → Mimi là động vật. ✔"
+            },
+            {
+              "text": "All cats are animals. Lu is an animal. → Lu is a cat? ✘ Not necessarily!",
+              "translation_vi": "Mọi con mèo đều là động vật. Lu là động vật. → Lu là mèo? ✘ Chưa chắc!",
+              "note": "The animal circle is bigger: Lu could be a dog."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 2: If-then only works in one direction",
+          "body": "'If P, then Q' lets you go forwards (P happened → Q happens) and backwards with a 'not' (Q did not happen → P did not happen). It does NOT let you go from Q back to P, because Q may have other causes.",
+          "body_vi": "'Nếu P thì Q' cho phép suy theo chiều xuôi (P xảy ra → Q xảy ra) và suy ngược kèm phủ định (Q không xảy ra → P không xảy ra). Nhưng KHÔNG được suy từ Q ra P, vì Q có thể do nguyên nhân khác.",
+          "examples": [
+            {
+              "text": "If it rains, the street gets wet. The street is dry. → It did not rain. ✔",
+              "translation_vi": "Nếu trời mưa thì đường ướt. Đường khô. → Trời không mưa. ✔"
+            },
+            {
+              "text": "If it rains, the street gets wet. The street is wet. → It rained? ✘ Maybe someone washed it.",
+              "translation_vi": "Nếu trời mưa thì đường ướt. Đường ướt. → Trời đã mưa? ✘ Có thể ai đó vừa rửa đường.",
+              "note": "This mistake is called 'affirming the consequent'."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 3: Put people on a line",
+          "body": "For ordering and seating puzzles, draw a line or a row of seats on paper. Place the most certain clue first, then add the others one by one. Each clue removes some possibilities until only one arrangement is left.",
+          "body_vi": "Với câu đố sắp xếp thứ tự hay chỗ ngồi, hãy vẽ một đường thẳng hoặc hàng ghế ra giấy. Đặt manh mối chắc chắn nhất trước, rồi thêm từng manh mối còn lại. Mỗi manh mối loại bớt khả năng cho đến khi chỉ còn một cách sắp xếp.",
+          "examples": [
+            {
+              "text": "Tú is older than Vy. Vy is older than Khoa. → Tú > Vy > Khoa, so Khoa is the youngest.",
+              "translation_vi": "Tú lớn tuổi hơn Vy. Vy lớn tuổi hơn Khoa. → Tú > Vy > Khoa, vậy Khoa nhỏ tuổi nhất."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "brain-l1-logic-01",
+          "kind": "multiple_choice",
+          "objective": "Apply an 'all' statement to one member",
+          "prompt": "All of Lan's dresses are blue. The dress on the bed is one of Lan's dresses. What must be true?",
+          "prompt_vi": "Tất cả váy của Lan đều màu xanh. Chiếc váy trên giường là váy của Lan. Điều gì chắc chắn đúng?",
+          "options": [
+            "The dress on the bed is blue",
+            "Every blue dress belongs to Lan",
+            "The dress on the bed is new",
+            "Lan only wears blue clothes"
+          ],
+          "answer": "The dress on the bed is blue",
+          "explanation": "The dress is inside the 'Lan's dresses' circle, and that whole circle sits inside 'blue things'. So the dress must be blue. The other options go beyond what we were told: other people can own blue dresses, and we know nothing about age or Lan's other clothes.",
+          "explanation_vi": "Bước 1: vẽ vòng 'váy của Lan' nằm trọn trong vòng 'đồ màu xanh'. Bước 2: chiếc váy trên giường nằm trong vòng 'váy của Lan', nên cũng nằm trong vòng 'màu xanh'. Các đáp án khác vượt quá thông tin: người khác cũng có thể có váy xanh, và ta không biết gì về độ mới của váy hay quần áo khác của Lan."
+        },
+        {
+          "id": "brain-l1-logic-02",
+          "kind": "multiple_choice",
+          "objective": "Apply a 'none' statement",
+          "prompt": "No cat at the Sunny Paws shelter is black. Mun is a black cat. What can you conclude?",
+          "prompt_vi": "Không có con mèo nào ở trại Sunny Paws có màu đen. Mun là một con mèo đen. Bạn có thể kết luận gì?",
+          "options": [
+            "Mun is not at the Sunny Paws shelter",
+            "Mun is at the Sunny Paws shelter",
+            "Mun is not really a cat",
+            "Nothing can be concluded about Mun"
+          ],
+          "answer": "Mun is not at the Sunny Paws shelter",
+          "explanation": "The circle 'cats at the shelter' and the circle 'black cats' do not touch at all. Mun is in the 'black cats' circle, so Mun cannot be in the shelter circle.",
+          "explanation_vi": "Bước 1: vòng 'mèo ở trại' và vòng 'mèo đen' hoàn toàn tách rời nhau. Bước 2: Mun nằm trong vòng 'mèo đen'. Bước 3: vì hai vòng không chạm nhau, Mun không thể ở trong vòng 'mèo ở trại'. Vậy Mun không ở trại Sunny Paws."
+        },
+        {
+          "id": "brain-l1-logic-03",
+          "kind": "multiple_choice",
+          "objective": "Reason backwards from a failed if-then result",
+          "prompt": "Rule: if Huy finishes work before 6 p.m., he cooks dinner. Tonight Huy did not cook dinner. What can you conclude for sure?",
+          "prompt_vi": "Quy tắc: nếu Huy xong việc trước 6 giờ tối thì anh ấy nấu bữa tối. Tối nay Huy không nấu bữa tối. Bạn chắc chắn kết luận được gì?",
+          "options": [
+            "Huy finished work before 6 p.m.",
+            "Huy did not finish work before 6 p.m.",
+            "Huy ate at a restaurant",
+            "Huy's partner cooked dinner"
+          ],
+          "answer": "Huy did not finish work before 6 p.m.",
+          "explanation": "If he had finished before 6 p.m., the rule says he would have cooked. He didn't cook, so he cannot have finished before 6 p.m. Where he ate or who cooked is never mentioned.",
+          "explanation_vi": "Bước 1: giả sử Huy xong việc trước 6 giờ — theo quy tắc anh ấy phải nấu cơm. Bước 2: nhưng thực tế anh ấy không nấu, mâu thuẫn. Bước 3: vậy Huy không xong việc trước 6 giờ. Đây là suy ngược kèm phủ định (Q sai → P sai). Việc ăn ở đâu hay ai nấu thì đề bài không cho biết."
+        },
+        {
+          "id": "brain-l1-logic-04",
+          "kind": "multiple_choice",
+          "objective": "Avoid affirming the consequent",
+          "prompt": "Rule: if it rains, Linh takes the bus to work. Today Linh took the bus. What can we say for sure?",
+          "prompt_vi": "Quy tắc: nếu trời mưa, Linh đi xe buýt đi làm. Hôm nay Linh đi xe buýt. Ta chắc chắn nói được gì?",
+          "options": [
+            "It rained today",
+            "It did not rain today",
+            "We cannot be sure whether it rained",
+            "Linh never takes the bus on sunny days"
+          ],
+          "answer": "We cannot be sure whether it rained",
+          "explanation": "The rule only tells us what happens when it rains. It does not say rain is the only reason Linh takes the bus — maybe her motorbike is being repaired. Going from 'bus' back to 'rain' is the one-way trap.",
+          "explanation_vi": "Bước 1: quy tắc chỉ nói khi trời mưa thì Linh đi xe buýt. Bước 2: quy tắc không nói mưa là lý do duy nhất — có thể xe máy của Linh đang sửa. Bước 3: suy từ 'đi xe buýt' ngược ra 'trời mưa' là lỗi suy luận một chiều. Vậy ta không chắc trời có mưa hay không."
+        },
+        {
+          "id": "brain-l1-logic-05",
+          "kind": "multiple_choice",
+          "objective": "Order three people from two clues",
+          "prompt": "Lan is taller than Mai. Mai is taller than Hoa. Who is the shortest?",
+          "prompt_vi": "Lan cao hơn Mai. Mai cao hơn Hoa. Ai thấp nhất?",
+          "options": ["Lan", "Mai", "Hoa", "It cannot be determined"],
+          "answer": "Hoa",
+          "explanation": "Put them on a line from tallest to shortest: Lan > Mai, and Mai > Hoa, so Lan > Mai > Hoa. Hoa is at the short end.",
+          "explanation_vi": "Bước 1: vẽ đường từ cao xuống thấp. Bước 2: Lan đứng trên Mai; Mai đứng trên Hoa. Bước 3: ghép lại: Lan > Mai > Hoa. Hoa ở cuối, nên Hoa thấp nhất."
+        },
+        {
+          "id": "brain-l1-logic-06",
+          "kind": "multiple_choice",
+          "objective": "Combine an 'all' and a 'some' statement",
+          "prompt": "All teachers at Hoa Sen school speak English. Some teachers at Hoa Sen school speak Chinese. Which statement must be true?",
+          "prompt_vi": "Tất cả giáo viên trường Hoa Sen đều nói tiếng Anh. Một số giáo viên trường Hoa Sen nói tiếng Trung. Câu nào chắc chắn đúng?",
+          "options": [
+            "Every English speaker at the school is a teacher",
+            "Some teachers at the school speak both English and Chinese",
+            "No teacher at the school speaks Chinese",
+            "All teachers at the school speak Chinese"
+          ],
+          "answer": "Some teachers at the school speak both English and Chinese",
+          "explanation": "Take any teacher who speaks Chinese (there is at least one). Because ALL teachers speak English, that teacher speaks English too — so they speak both. The other options either reverse the 'all' statement or contradict the 'some' statement.",
+          "explanation_vi": "Bước 1: chọn một giáo viên nói tiếng Trung (đề bài nói có ít nhất một người). Bước 2: vì TẤT CẢ giáo viên đều nói tiếng Anh, người đó cũng nói tiếng Anh. Bước 3: vậy có giáo viên nói cả hai thứ tiếng. Đáp án 'mọi người nói tiếng Anh đều là giáo viên' là đảo ngược câu 'tất cả' — sai. Hai đáp án còn lại mâu thuẫn hoặc vượt quá câu 'một số'."
+        },
+        {
+          "id": "brain-l1-logic-07",
+          "kind": "multiple_choice",
+          "objective": "Build a four-person order from a chain of clues",
+          "prompt": "Four friends wait in line at a bánh mì stall. Nam is ahead of Tú. Vy is behind Tú. Bảo is ahead of Nam. Who is second in line?",
+          "prompt_vi": "Bốn người bạn xếp hàng ở xe bánh mì. Nam đứng trước Tú. Vy đứng sau Tú. Bảo đứng trước Nam. Ai đứng thứ hai trong hàng?",
+          "options": ["Bảo", "Nam", "Tú", "Vy"],
+          "answer": "Nam",
+          "explanation": "Link the clues into one chain: Bảo is ahead of Nam, Nam is ahead of Tú, Tú is ahead of Vy. So the line is Bảo, Nam, Tú, Vy, and Nam is second.",
+          "explanation_vi": "Bước 1: bắt đầu với Nam trước Tú: Nam – Tú. Bước 2: Vy sau Tú: Nam – Tú – Vy. Bước 3: Bảo trước Nam: Bảo – Nam – Tú – Vy. Thứ tự hoàn toàn xác định, người đứng thứ hai là Nam."
+        },
+        {
+          "id": "brain-l1-logic-08",
+          "kind": "multiple_choice",
+          "objective": "Solve a three-seat arrangement",
+          "prompt": "An, Bình and Chi sit in a row of three seats: left, middle and right. An does not sit at either end. Chi sits somewhere to the right of Bình. Who sits in the left seat?",
+          "prompt_vi": "An, Bình và Chi ngồi trên một hàng ba ghế: trái, giữa và phải. An không ngồi ở hai đầu. Chi ngồi ở phía bên phải của Bình. Ai ngồi ghế bên trái?",
+          "options": ["An", "Bình", "Chi", "It cannot be determined"],
+          "answer": "Bình",
+          "explanation": "An is not at either end, so An is in the middle. That leaves left and right for Bình and Chi. Chi is to the right of Bình, so Chi takes the right seat and Bình takes the left seat.",
+          "explanation_vi": "Bước 1: An không ngồi hai đầu → An ngồi giữa. Bước 2: còn ghế trái và ghế phải cho Bình và Chi. Bước 3: Chi ngồi bên phải Bình → Chi ngồi ghế phải, Bình ngồi ghế trái. Thứ tự: Bình – An – Chi."
+        }
+      ]
+    },
+    {
+      "slug": "brain-l1-math-puzzles",
+      "subject": "brain",
+      "category": "logic",
+      "level": "L1",
+      "topic": "mental math & word problems",
+      "title": "Market Math for Two",
+      "title_vi": "Tính nhẩm đi chợ cho hai người",
+      "objectives": [
+        "Find percentages quickly by starting from 10%",
+        "Multiply prices in your head by rounding and fixing",
+        "Solve simple age, time and speed problems"
+      ],
+      "intro": [
+        {
+          "title": "Strategy 1: Start from 10%",
+          "body": "Percent means 'out of 100'. The easiest percentage is 10%: just divide by 10 (remove one zero). From 10% you can build almost anything: 20% is double, 5% is half, 25% is a quarter.",
+          "body_vi": "Phần trăm nghĩa là 'trên 100'. Phần trăm dễ nhất là 10%: chỉ cần chia cho 10 (bỏ một số 0). Từ 10% bạn ghép ra được gần như mọi thứ: 20% là gấp đôi, 5% là một nửa của 10%, còn 25% là một phần tư.",
+          "examples": [
+            {
+              "text": "10% of 250,000đ = 25,000đ → 20% = 50,000đ → 5% = 12,500đ",
+              "translation_vi": "10% của 250.000đ = 25.000đ → 20% = 50.000đ → 5% = 12.500đ"
+            },
+            {
+              "text": "A 30% discount on 200,000đ: 10% = 20,000đ, so 30% = 60,000đ → you pay 140,000đ",
+              "translation_vi": "Giảm 30% cho món 200.000đ: 10% = 20.000đ, nên 30% = 60.000đ → bạn trả 140.000đ",
+              "note": "Discount questions: find the amount off, then subtract."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 2: Round, then fix",
+          "body": "Awkward prices like 49,000đ or 99,000đ are close to round numbers. Round up, multiply, then take away the extra you added.",
+          "body_vi": "Những giá lẻ như 49.000đ hay 99.000đ rất gần số tròn. Hãy làm tròn lên, nhân, rồi trừ đi phần dư bạn đã thêm vào.",
+          "examples": [
+            {
+              "text": "3 × 99,000đ → 3 × 100,000đ = 300,000đ, minus 3 × 1,000đ = 297,000đ",
+              "translation_vi": "3 × 99.000đ → 3 × 100.000đ = 300.000đ, trừ 3 × 1.000đ = 297.000đ"
+            }
+          ]
+        },
+        {
+          "title": "Strategy 3: Write the story as a simple sum",
+          "body": "For time and speed: distance = speed × time, so time = distance ÷ speed. For ages: the age gap between two people never changes, and everyone gets older by the same number of years. Write what you know before calculating.",
+          "body_vi": "Với thời gian và vận tốc: quãng đường = vận tốc × thời gian, nên thời gian = quãng đường ÷ vận tốc. Với tuổi: khoảng cách tuổi giữa hai người không bao giờ đổi, và mọi người đều thêm cùng số tuổi. Hãy viết ra những gì đã biết trước khi tính.",
+          "examples": [
+            {
+              "text": "40 km/h for 1.5 hours → 40 × 1.5 = 60 km",
+              "translation_vi": "Đi 40 km/h trong 1,5 giờ → 40 × 1,5 = 60 km"
+            },
+            {
+              "text": "Mom is 28 years older than her son. In 10 years she will still be 28 years older.",
+              "translation_vi": "Mẹ hơn con trai 28 tuổi. 10 năm nữa mẹ vẫn hơn con 28 tuổi."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "brain-l1-math-01",
+          "kind": "multiple_choice",
+          "objective": "Apply a 10% discount",
+          "prompt": "A milk tea costs 40,000đ. Today there is a 10% discount. How much do you pay for one cup?",
+          "prompt_vi": "Một ly trà sữa giá 40.000đ. Hôm nay được giảm 10%. Bạn trả bao nhiêu cho một ly?",
+          "options": ["36,000đ", "30,000đ", "39,000đ", "34,000đ"],
+          "answer": "36,000đ",
+          "explanation": "10% of 40,000đ is 4,000đ (remove one zero). The price after the discount is 40,000 − 4,000 = 36,000đ.",
+          "explanation_vi": "Bước 1: 10% của 40.000đ = 4.000đ (bỏ một số 0). Bước 2: trừ phần giảm: 40.000 − 4.000 = 36.000đ."
+        },
+        {
+          "id": "brain-l1-math-02",
+          "kind": "multiple_choice",
+          "objective": "Multiply a price by rounding and fixing",
+          "prompt": "A bowl of phở costs 49,000đ. How much do 3 bowls cost?",
+          "prompt_vi": "Một tô phở giá 49.000đ. Ba tô giá bao nhiêu?",
+          "options": ["147,000đ", "137,000đ", "150,000đ", "157,000đ"],
+          "answer": "147,000đ",
+          "explanation": "Round 49,000đ up to 50,000đ: 3 × 50,000 = 150,000đ. You added 1,000đ to each of 3 bowls, so take away 3,000đ: 150,000 − 3,000 = 147,000đ.",
+          "explanation_vi": "Bước 1: làm tròn 49.000đ thành 50.000đ: 3 × 50.000 = 150.000đ. Bước 2: mỗi tô bạn đã cộng dư 1.000đ, ba tô dư 3.000đ. Bước 3: 150.000 − 3.000 = 147.000đ."
+        },
+        {
+          "id": "brain-l1-math-03",
+          "kind": "multiple_choice",
+          "objective": "Split a bill equally",
+          "prompt": "A couple and two friends share a hotpot dinner. The bill is 520,000đ and they split it equally between the 4 people. How much does each person pay?",
+          "prompt_vi": "Một cặp đôi và hai người bạn đi ăn lẩu. Hóa đơn là 520.000đ và chia đều cho 4 người. Mỗi người trả bao nhiêu?",
+          "options": ["120,000đ", "130,000đ", "140,000đ", "104,000đ"],
+          "answer": "130,000đ",
+          "explanation": "Split the bill into easy parts: 520,000 = 400,000 + 120,000. 400,000 ÷ 4 = 100,000 and 120,000 ÷ 4 = 30,000. Together: 130,000đ. Check: 4 × 130,000 = 520,000.",
+          "explanation_vi": "Bước 1: tách số cho dễ chia: 520.000 = 400.000 + 120.000. Bước 2: 400.000 ÷ 4 = 100.000 và 120.000 ÷ 4 = 30.000. Bước 3: cộng lại được 130.000đ. Kiểm tra: 4 × 130.000 = 520.000 ✔. (104.000đ là kết quả nếu chia nhầm cho 5 người.)"
+        },
+        {
+          "id": "brain-l1-math-04",
+          "kind": "multiple_choice",
+          "objective": "Calculate a 25% discount",
+          "prompt": "A shirt normally costs 300,000đ. It is 25% off. What is the sale price?",
+          "prompt_vi": "Một chiếc áo giá gốc 300.000đ, đang giảm 25%. Giá sau khi giảm là bao nhiêu?",
+          "options": ["225,000đ", "275,000đ", "250,000đ", "200,000đ"],
+          "answer": "225,000đ",
+          "explanation": "25% is one quarter. 300,000 ÷ 4 = 75,000đ off. The sale price is 300,000 − 75,000 = 225,000đ.",
+          "explanation_vi": "Bước 1: 25% chính là một phần tư. Bước 2: 300.000 ÷ 4 = 75.000đ được giảm. (Hoặc: 10% = 30.000, 20% = 60.000, 5% = 15.000, cộng lại 75.000.) Bước 3: 300.000 − 75.000 = 225.000đ."
+        },
+        {
+          "id": "brain-l1-math-05",
+          "kind": "multiple_choice",
+          "objective": "Solve a time-and-speed problem",
+          "prompt": "Linh rides her motorbike at a steady 30 km/h. How long does it take her to travel 45 km?",
+          "prompt_vi": "Linh chạy xe máy đều 30 km/h. Cô ấy mất bao lâu để đi 45 km?",
+          "options": ["1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"],
+          "answer": "1 hour 30 minutes",
+          "explanation": "Time = distance ÷ speed = 45 ÷ 30 = 1.5 hours. Half an hour is 30 minutes, so the answer is 1 hour 30 minutes. Check: in 1 hour she rides 30 km, in the next half hour 15 km — total 45 km.",
+          "explanation_vi": "Bước 1: thời gian = quãng đường ÷ vận tốc = 45 ÷ 30 = 1,5 giờ. Bước 2: 0,5 giờ = 30 phút, vậy là 1 giờ 30 phút. Kiểm tra: giờ đầu đi được 30 km, nửa giờ sau đi thêm 15 km, tổng 45 km ✔. Cẩn thận: 1,5 giờ không phải 1 giờ 50 phút!"
+        },
+        {
+          "id": "brain-l1-math-06",
+          "kind": "multiple_choice",
+          "objective": "Add durations across the hour",
+          "prompt": "A movie starts at 7:45 p.m. and lasts 2 hours 25 minutes. What time does it end?",
+          "prompt_vi": "Một bộ phim bắt đầu lúc 7:45 tối và dài 2 giờ 25 phút. Phim kết thúc lúc mấy giờ?",
+          "options": ["10:10 p.m.", "9:10 p.m.", "10:20 p.m.", "10:00 p.m."],
+          "answer": "10:10 p.m.",
+          "explanation": "Add the hours first: 7:45 + 2 hours = 9:45. Then add 25 minutes: 15 minutes takes you to 10:00, and 10 more minutes gives 10:10 p.m.",
+          "explanation_vi": "Bước 1: cộng giờ trước: 7:45 + 2 giờ = 9:45. Bước 2: cộng 25 phút, chia làm hai phần: 15 phút để tới 10:00, rồi thêm 10 phút nữa. Bước 3: kết quả là 10:10 tối."
+        },
+        {
+          "id": "brain-l1-math-07",
+          "kind": "multiple_choice",
+          "objective": "Use the constant age gap",
+          "prompt": "Hùng is 30 years old and his daughter is 6. In how many years will Hùng be exactly 3 times as old as his daughter?",
+          "prompt_vi": "Hùng 30 tuổi, con gái anh ấy 6 tuổi. Sau bao nhiêu năm nữa thì tuổi Hùng gấp đúng 3 lần tuổi con?",
+          "options": ["4 years", "6 years", "8 years", "12 years"],
+          "answer": "6 years",
+          "explanation": "The age gap is always 30 − 6 = 24 years. If Hùng is 3 times his daughter's age, the gap equals 2 times her age, so she must be 24 ÷ 2 = 12. She is 6 now, so that happens in 6 years. Check: then Hùng is 36 and she is 12, and 36 = 3 × 12.",
+          "explanation_vi": "Bước 1: khoảng cách tuổi luôn là 30 − 6 = 24 năm. Bước 2: khi tuổi bố gấp 3 lần tuổi con, thì bố hơn con đúng 2 lần tuổi con (3 phần − 1 phần = 2 phần). Vậy 2 phần = 24, một phần = 12 → lúc đó con 12 tuổi. Bước 3: con hiện 6 tuổi, nên cần 12 − 6 = 6 năm. Kiểm tra: bố 36, con 12, 36 = 3 × 12 ✔."
+        },
+        {
+          "id": "brain-l1-math-08",
+          "kind": "multiple_choice",
+          "objective": "See that percentage changes don't simply cancel",
+          "prompt": "A rice cooker costs 200,000đ. The shop raises the price by 10%, then a week later lowers the new price by 10%. What is the final price?",
+          "prompt_vi": "Một nồi cơm điện giá 200.000đ. Cửa hàng tăng giá 10%, một tuần sau lại giảm 10% so với giá mới. Giá cuối cùng là bao nhiêu?",
+          "options": ["200,000đ", "198,000đ", "202,000đ", "180,000đ"],
+          "answer": "198,000đ",
+          "explanation": "Step by step: 10% of 200,000 = 20,000, so the price becomes 220,000đ. Now the 10% is taken from 220,000: that is 22,000. 220,000 − 22,000 = 198,000đ. The decrease is bigger because it is 10% of a bigger number.",
+          "explanation_vi": "Bước 1: tăng 10%: 10% của 200.000 = 20.000 → giá mới 220.000đ. Bước 2: giảm 10% của giá MỚI: 10% của 220.000 = 22.000. Bước 3: 220.000 − 22.000 = 198.000đ. Tăng rồi giảm cùng 10% không quay về giá cũ, vì lần giảm tính trên số lớn hơn."
+        }
+      ]
+    },
+    {
+      "slug": "brain-l1-critical-thinking",
+      "subject": "brain",
+      "category": "logic",
+      "level": "L1",
+      "topic": "critical thinking",
+      "title": "Wait, Is That Really True?",
+      "title_vi": "Khoan đã, điều đó có thật sự đúng?",
+      "objectives": [
+        "Find the hidden assumption behind a claim",
+        "Tell correlation apart from causation",
+        "Spot hasty generalizations and false choices"
+      ],
+      "intro": [
+        {
+          "title": "Strategy 1: Ask 'what must also be true?'",
+          "body": "Every argument has a gap between the reason and the conclusion. The hidden assumption is the unspoken idea that fills the gap. Ask: 'For this conclusion to follow, what else must be true?' If that hidden idea is shaky, the argument is shaky.",
+          "body_vi": "Mỗi lập luận đều có một khoảng trống giữa lý do và kết luận. Giả định ngầm là ý không được nói ra nhưng lấp vào khoảng trống đó. Hãy hỏi: 'Để kết luận này đúng, điều gì khác cũng phải đúng?' Nếu ý ngầm đó không vững, lập luận cũng không vững.",
+          "examples": [
+            {
+              "text": "'That restaurant is always crowded, so the food must be great.'",
+              "translation_vi": "'Quán đó lúc nào cũng đông, chắc chắn đồ ăn rất ngon.'",
+              "note": "Hidden assumption: people go there for the food — maybe it's just cheap or near offices."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 2: Together does not mean because",
+          "body": "When two things rise or fall together (correlation), it doesn't prove one causes the other (causation). Check three other possibilities: a third factor causes both, the cause runs the other way, or it is just coincidence. To strengthen a cause claim, look for evidence that rules these out; to weaken it, find another cause.",
+          "body_vi": "Khi hai điều cùng tăng hoặc cùng giảm (tương quan), điều đó không chứng minh cái này gây ra cái kia (nhân quả). Hãy xét ba khả năng khác: một yếu tố thứ ba gây ra cả hai, quan hệ nhân quả ngược chiều, hoặc chỉ là trùng hợp. Muốn củng cố một khẳng định nhân quả, hãy tìm bằng chứng loại trừ những khả năng này; muốn làm yếu nó, hãy chỉ ra một nguyên nhân khác.",
+          "examples": [
+            {
+              "text": "Ice cream sales and drowning accidents both rise in summer.",
+              "translation_vi": "Doanh số kem và số vụ đuối nước đều tăng vào mùa hè.",
+              "note": "Ice cream doesn't cause drowning — hot weather causes both."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 3: Watch for two everyday shortcuts",
+          "body": "Hasty generalization: judging a whole group from one or two examples. False choice: pretending there are only two options when there are more. When you hear 'always', 'everyone' or 'either… or…', slow down and check.",
+          "body_vi": "Khái quát vội vàng: đánh giá cả một nhóm chỉ dựa trên một hai ví dụ. Lựa chọn sai (ngụy biện trắng đen): giả vờ chỉ có hai lựa chọn trong khi thực tế có nhiều hơn. Khi nghe 'luôn luôn', 'ai cũng', 'hoặc… hoặc…', hãy chậm lại và kiểm tra.",
+          "examples": [
+            {
+              "text": "'I met two rude taxi drivers, so taxi drivers in this city are rude.'",
+              "translation_vi": "'Tôi gặp hai tài xế taxi thô lỗ, vậy tài xế taxi ở thành phố này đều thô lỗ.'",
+              "note": "Hasty generalization"
+            },
+            {
+              "text": "'Either we buy this apartment today, or we will never own a home.'",
+              "translation_vi": "'Hoặc mình mua căn hộ này hôm nay, hoặc mình sẽ không bao giờ có nhà.'",
+              "note": "False choice"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "brain-l1-critical-01",
+          "kind": "multiple_choice",
+          "objective": "Identify a simple hidden assumption",
+          "prompt": "Mai says: 'This phone is the most expensive one in the shop, so it must be the best.' What is Mai assuming?",
+          "prompt_vi": "Mai nói: 'Điện thoại này đắt nhất cửa hàng, nên chắc chắn là tốt nhất.' Mai đang giả định điều gì?",
+          "options": [
+            "A higher price always means better quality",
+            "The shop sells only phones",
+            "Mai has enough money to buy it",
+            "Cheap phones are never sold in this shop"
+          ],
+          "answer": "A higher price always means better quality",
+          "explanation": "The reason is 'most expensive' and the conclusion is 'the best'. To get from one to the other, Mai must believe that price always matches quality — which is not always true (brand name, design or marketing can raise prices too).",
+          "explanation_vi": "Bước 1: lý do là 'đắt nhất', kết luận là 'tốt nhất'. Bước 2: hỏi 'điều gì phải đúng để nối hai ý này?' → giá cao luôn đồng nghĩa với chất lượng tốt. Bước 3: giả định này không vững, vì giá còn phụ thuộc thương hiệu, thiết kế, quảng cáo. Các đáp án khác không liên quan đến khoảng trống giữa lý do và kết luận."
+        },
+        {
+          "id": "brain-l1-critical-02",
+          "kind": "multiple_choice",
+          "objective": "Name a hasty generalization",
+          "prompt": "Tuấn bought bread from a new bakery once, and it was dry. He tells everyone: 'That bakery's bread is always bad.' Which thinking mistake is this?",
+          "prompt_vi": "Tuấn mua bánh mì ở một tiệm mới đúng một lần và bánh bị khô. Anh ấy nói với mọi người: 'Bánh tiệm đó lúc nào cũng dở.' Đây là lỗi tư duy nào?",
+          "options": [
+            "Hasty generalization: judging from too few examples",
+            "False choice: pretending there are only two options",
+            "Confusing correlation with causation",
+            "Attacking the person instead of the argument"
+          ],
+          "answer": "Hasty generalization: judging from too few examples",
+          "explanation": "One visit is a tiny sample. Tuấn jumps from a single dry loaf to 'always bad'. That is a hasty generalization — he would need many visits to say 'always'.",
+          "explanation_vi": "Bước 1: đếm bằng chứng: chỉ có một lần mua. Bước 2: kết luận lại dùng từ 'lúc nào cũng' — rất rộng. Bước 3: đi từ một ví dụ đến 'luôn luôn' là khái quát vội vàng. Muốn nói 'luôn luôn', Tuấn cần thử nhiều lần hơn."
+        },
+        {
+          "id": "brain-l1-critical-03",
+          "kind": "multiple_choice",
+          "objective": "Recognise a false choice",
+          "prompt": "Someone says: 'Either we spend all our savings on a huge wedding, or our families will think we don't care.' Why is this reasoning weak?",
+          "prompt_vi": "Có người nói: 'Hoặc mình tiêu hết tiền tiết kiệm cho một đám cưới thật lớn, hoặc gia đình sẽ nghĩ mình không quan tâm.' Vì sao lập luận này yếu?",
+          "options": [
+            "It ignores other options, such as a smaller wedding planned with care",
+            "It is based on only one example",
+            "It uses too many numbers",
+            "It confuses cause and effect"
+          ],
+          "answer": "It ignores other options, such as a smaller wedding planned with care",
+          "explanation": "The sentence offers only two paths: spend everything or look uncaring. In reality there are many choices in between. Squeezing a situation into two extreme options is a false choice.",
+          "explanation_vi": "Bước 1: nhận ra cấu trúc 'hoặc… hoặc…'. Bước 2: hỏi 'còn lựa chọn nào khác không?' → có: đám cưới nhỏ, ấm cúng, chuẩn bị chu đáo vẫn thể hiện sự quan tâm. Bước 3: ép mọi thứ về hai cực là ngụy biện lựa chọn sai (trắng đen)."
+        },
+        {
+          "id": "brain-l1-critical-04",
+          "kind": "multiple_choice",
+          "objective": "Spot a third factor behind a correlation",
+          "prompt": "Cities with more coffee shops also have more people with university degrees. Someone concludes: 'Drinking coffee makes people go to university.' What is the best criticism?",
+          "prompt_vi": "Những thành phố có nhiều quán cà phê cũng có nhiều người có bằng đại học. Có người kết luận: 'Uống cà phê khiến người ta học đại học.' Lời phê bình nào hợp lý nhất?",
+          "options": [
+            "A third factor, such as city size and wealth, could explain both",
+            "Coffee is bad for your health",
+            "The numbers are too big to be true",
+            "University students never drink coffee"
+          ],
+          "answer": "A third factor, such as city size and wealth, could explain both",
+          "explanation": "Big, wealthy cities tend to have both more coffee shops and more universities and graduates. The two things rise together because of a shared cause, not because one causes the other.",
+          "explanation_vi": "Bước 1: đây là tương quan: hai thứ cùng tăng. Bước 2: hỏi 'có yếu tố thứ ba nào gây ra cả hai không?' → thành phố lớn, giàu có thường vừa nhiều quán cà phê vừa nhiều trường đại học. Bước 3: vì vậy không thể kết luận cà phê gây ra việc học đại học. Các đáp án khác không chỉ ra lỗi suy luận."
+        },
+        {
+          "id": "brain-l1-critical-05",
+          "kind": "multiple_choice",
+          "objective": "Choose evidence that strengthens a cause claim",
+          "prompt": "Claim: 'Our evening walk together helps us sleep better.' Which evidence would most STRENGTHEN this claim?",
+          "prompt_vi": "Khẳng định: 'Đi dạo buổi tối cùng nhau giúp tụi mình ngủ ngon hơn.' Bằng chứng nào CỦNG CỐ khẳng định này mạnh nhất?",
+          "options": [
+            "On nights we skipped the walk, with everything else the same, we slept worse",
+            "We bought new pillows in the same week we started walking",
+            "Many people enjoy walking in the evening",
+            "We walk faster than our neighbours do"
+          ],
+          "answer": "On nights we skipped the walk, with everything else the same, we slept worse",
+          "explanation": "The strongest support compares nights with and without the walk while keeping everything else equal. If sleep is worse only when the walk is missing, the walk is likely the cause. New pillows would actually weaken the claim by offering another cause.",
+          "explanation_vi": "Bước 1: muốn chứng minh nhân quả, cần so sánh có đi dạo và không đi dạo, các điều kiện khác giữ nguyên. Bước 2: nếu bỏ đi dạo thì ngủ kém hơn → đi dạo nhiều khả năng là nguyên nhân. Bước 3: chuyện mua gối mới thực ra làm YẾU khẳng định (có thể gối mới mới là lý do). Hai đáp án còn lại không liên quan đến giấc ngủ."
+        },
+        {
+          "id": "brain-l1-critical-06",
+          "kind": "multiple_choice",
+          "objective": "Choose evidence that weakens a cause claim",
+          "prompt": "Claim: 'The new traffic light at the junction cut accidents in half.' Which fact would most WEAKEN this claim?",
+          "prompt_vi": "Khẳng định: 'Đèn giao thông mới ở ngã tư đã giảm một nửa số vụ tai nạn.' Sự thật nào làm YẾU khẳng định này nhất?",
+          "options": [
+            "In the same month, trucks were banned from that road for repairs",
+            "The traffic light was expensive to install",
+            "Drivers say the new light is easy to see",
+            "The traffic light was installed in March"
+          ],
+          "answer": "In the same month, trucks were banned from that road for repairs",
+          "explanation": "To weaken a cause claim, offer another cause. If trucks stopped using the road at the same time, that alone could explain fewer accidents. Cost and the date tell us nothing about the cause, and an easy-to-see light would, if anything, support the claim.",
+          "explanation_vi": "Bước 1: muốn làm yếu một khẳng định nhân quả, hãy tìm nguyên nhân khác. Bước 2: cấm xe tải cùng thời điểm cũng có thể làm giảm tai nạn → ta không biết công là của đèn hay của lệnh cấm. Bước 3: giá tiền và ngày lắp không liên quan; còn 'đèn dễ nhìn' nếu có thì lại ủng hộ khẳng định."
+        },
+        {
+          "id": "brain-l1-critical-07",
+          "kind": "multiple_choice",
+          "objective": "Consider reverse causation",
+          "prompt": "A survey finds that couples who travel together often are happier. A blogger writes: 'Travelling makes couples happy.' Which is another reasonable explanation of the survey?",
+          "prompt_vi": "Một khảo sát cho thấy các cặp đôi hay đi du lịch cùng nhau thì hạnh phúc hơn. Một blogger viết: 'Du lịch làm các cặp đôi hạnh phúc.' Đâu là một cách giải thích hợp lý khác cho kết quả khảo sát?",
+          "options": [
+            "Couples who are already happy may choose to travel together more",
+            "Travelling is expensive",
+            "Surveys are always wrong",
+            "Single people never travel"
+          ],
+          "answer": "Couples who are already happy may choose to travel together more",
+          "explanation": "The cause might run the other way: happiness could lead to travel rather than travel leading to happiness. 'Surveys are always wrong' is itself an overgeneralization, and the other options don't explain the link.",
+          "explanation_vi": "Bước 1: kết quả chỉ cho thấy 'đi du lịch' và 'hạnh phúc' đi cùng nhau. Bước 2: thử đảo chiều: có thể vì đã hạnh phúc nên các cặp đôi mới thích đi chơi cùng nhau. Bước 3: đây là khả năng nhân quả ngược. 'Khảo sát luôn sai' bản thân nó là một khái quát vội vàng, còn hai đáp án kia không giải thích mối liên hệ."
+        },
+        {
+          "id": "brain-l1-critical-08",
+          "kind": "multiple_choice",
+          "objective": "Find the assumption an argument depends on",
+          "prompt": "Argument: 'Our electricity bill went up this month. This month we replaced our fan with an air conditioner. So the air conditioner uses more power than the fan did.' Which assumption does this argument depend on?",
+          "prompt_vi": "Lập luận: 'Tháng này hóa đơn tiền điện tăng. Tháng này tụi mình thay quạt bằng máy lạnh. Vậy máy lạnh tốn điện hơn cái quạt cũ.' Lập luận này dựa trên giả định nào?",
+          "options": [
+            "Nothing else, such as a higher electricity price or more hours at home, caused the higher bill",
+            "Air conditioners cost more to buy than fans",
+            "The couple will buy a second air conditioner next month",
+            "Fans are noisier than air conditioners"
+          ],
+          "answer": "Nothing else, such as a higher electricity price or more hours at home, caused the higher bill",
+          "explanation": "The argument blames the air conditioner only because the two changes happened at the same time. That works only if no other cause explains the higher bill. The buying price, future plans and noise don't affect the link between the change and the bill.",
+          "explanation_vi": "Bước 1: lý do: hóa đơn tăng và có máy lạnh mới cùng tháng. Kết luận: máy lạnh tốn điện hơn. Bước 2: hỏi 'điều gì phải đúng để kết luận đứng vững?' → không có nguyên nhân nào khác (giá điện tăng, ở nhà nhiều hơn, trời nóng hơn…). Bước 3: nếu có nguyên nhân khác, lập luận sụp đổ. Giá mua, kế hoạch tương lai và tiếng ồn không liên quan đến hóa đơn tháng này."
+        }
+      ]
+    },
+    {
+      "slug": "brain-l1-problem-solving",
+      "subject": "brain",
+      "category": "logic",
+      "level": "L1",
+      "topic": "classic puzzles",
+      "title": "Puzzle Picnic: Classic Brain Teasers",
+      "title_vi": "Dã ngoại giải đố: Những câu đố kinh điển",
+      "objectives": [
+        "Draw small cases to count handshakes and plan crossings",
+        "Split items into three groups for balance puzzles",
+        "Use the worst case and the 7-day cycle to reason with certainty"
+      ],
+      "intro": [
+        {
+          "title": "Strategy 1: Draw it out",
+          "body": "Many puzzles become easy on paper. For handshakes, draw each person as a dot and each handshake as a line: with n people, each shakes n − 1 hands, but every handshake involves two people, so the total is n × (n − 1) ÷ 2. For river crossings, write down who is on each bank after every trip and check that no one is left in danger.",
+          "body_vi": "Rất nhiều câu đố trở nên dễ khi vẽ ra giấy. Với bắt tay: vẽ mỗi người là một chấm, mỗi cái bắt tay là một đường nối. Với n người, mỗi người bắt n − 1 tay, nhưng mỗi cái bắt tay có hai người tham gia, nên tổng là n × (n − 1) ÷ 2. Với câu đố qua sông: sau mỗi chuyến, ghi lại ai đang ở bờ nào và kiểm tra không ai bị bỏ lại trong tình huống nguy hiểm.",
+          "examples": [
+            {
+              "text": "4 people: 4 × 3 ÷ 2 = 6 handshakes",
+              "translation_vi": "4 người: 4 × 3 ÷ 2 = 6 cái bắt tay",
+              "note": "Draw a square with both diagonals: 4 sides + 2 diagonals = 6 lines."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 2: Split into three groups",
+          "body": "A balance scale has three outcomes: left heavier, right heavier, or equal. So divide items into three groups. Put two groups on the scale; the result tells you which of the three groups hides the odd item. Each weighing cuts the search to one third.",
+          "body_vi": "Cân đĩa có ba kết quả: bên trái nặng hơn, bên phải nặng hơn, hoặc cân bằng. Vì vậy hãy chia đồ vật thành ba nhóm. Đặt hai nhóm lên cân; kết quả cho biết vật khác biệt nằm ở nhóm nào trong ba nhóm. Mỗi lần cân thu hẹp phạm vi tìm kiếm còn một phần ba.",
+          "examples": [
+            {
+              "text": "3 balls, 1 heavier: weigh ball 1 vs ball 2. Heavier side wins; if equal, it's ball 3. → 1 weighing.",
+              "translation_vi": "3 quả bóng, 1 quả nặng hơn: cân quả 1 với quả 2. Bên nào nặng là quả đó; nếu cân bằng thì là quả 3. → 1 lần cân."
+            },
+            {
+              "text": "27 balls → 9 → 3 → 1: 3 weighings are enough.",
+              "translation_vi": "27 quả → 9 → 3 → 1: chỉ cần 3 lần cân."
+            }
+          ]
+        },
+        {
+          "title": "Strategy 3: Think about the worst case and the cycle",
+          "body": "'To be sure' means planning for the unluckiest possible draw: imagine you keep getting the wrong item, then take one more. For days of the week, remember that every 7 days the week repeats, so only the remainder after dividing by 7 matters.",
+          "body_vi": "'Chắc chắn' nghĩa là phải tính cho trường hợp xui xẻo nhất: tưởng tượng bạn cứ bốc trúng thứ không mong muốn, rồi bốc thêm một cái nữa. Với thứ trong tuần, hãy nhớ cứ 7 ngày thì tuần lặp lại, nên chỉ cần quan tâm số dư khi chia cho 7.",
+          "examples": [
+            {
+              "text": "Socks in 2 colours: the worst case is 1 of each, so the 3rd sock must make a pair.",
+              "translation_vi": "Tất có 2 màu: xui nhất là lấy mỗi màu một chiếc, nên chiếc thứ 3 chắc chắn tạo thành một đôi."
+            },
+            {
+              "text": "Today is Monday. 10 days later: 10 = 7 + 3 → Monday + 3 days = Thursday.",
+              "translation_vi": "Hôm nay thứ Hai. 10 ngày sau: 10 = 7 + 3 → thứ Hai + 3 ngày = thứ Năm."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "brain-l1-problem-01",
+          "kind": "multiple_choice",
+          "objective": "Count handshakes in a small group",
+          "prompt": "At a small engagement party, 5 guests each shake hands with every other guest exactly once. How many handshakes happen in total?",
+          "prompt_vi": "Ở một buổi tiệc đính hôn nhỏ, 5 vị khách mỗi người bắt tay với từng người còn lại đúng một lần. Tổng cộng có bao nhiêu cái bắt tay?",
+          "options": ["10", "20", "25", "15"],
+          "answer": "10",
+          "explanation": "Each of the 5 guests shakes 4 hands: 5 × 4 = 20. But each handshake was counted twice (once for each person), so divide by 2: 20 ÷ 2 = 10. You can also add up: 4 + 3 + 2 + 1 = 10.",
+          "explanation_vi": "Bước 1: mỗi người bắt tay 4 người còn lại: 5 × 4 = 20. Bước 2: mỗi cái bắt tay bị đếm hai lần (một lần cho mỗi người), nên chia 2: 20 ÷ 2 = 10. Cách khác: người thứ nhất bắt 4 tay mới, người thứ hai 3 tay mới, rồi 2, rồi 1: 4 + 3 + 2 + 1 = 10."
+        },
+        {
+          "id": "brain-l1-problem-02",
+          "kind": "multiple_choice",
+          "objective": "Use the 7-day cycle",
+          "prompt": "Today is Wednesday. What day of the week will it be 10 days from today?",
+          "prompt_vi": "Hôm nay là thứ Tư. 10 ngày nữa là thứ mấy?",
+          "options": ["Friday", "Saturday", "Sunday", "Thursday"],
+          "answer": "Saturday",
+          "explanation": "10 days = 7 days + 3 days. After 7 days it is Wednesday again; 3 more days gives Thursday, Friday, Saturday.",
+          "explanation_vi": "Bước 1: 10 = 7 + 3. Bước 2: sau 7 ngày lại là thứ Tư. Bước 3: đếm thêm 3 ngày: thứ Năm, thứ Sáu, thứ Bảy. Vậy là thứ Bảy."
+        },
+        {
+          "id": "brain-l1-problem-03",
+          "kind": "multiple_choice",
+          "objective": "Apply the worst case to three colours",
+          "prompt": "A drawer holds 5 red, 5 blue and 5 green socks, all mixed up. In the dark, how many socks must you take out to be sure you have two of the same colour?",
+          "prompt_vi": "Một ngăn kéo có 5 chiếc tất đỏ, 5 chiếc xanh dương và 5 chiếc xanh lá, trộn lẫn. Trong bóng tối, bạn phải lấy ra ít nhất bao nhiêu chiếc để chắc chắn có hai chiếc cùng màu?",
+          "options": ["3", "4", "6", "11"],
+          "answer": "4",
+          "explanation": "Worst case: your first 3 socks are all different colours — one red, one blue, one green. The 4th sock must match one of them. With only 3 socks you could be unlucky, so 3 is not enough.",
+          "explanation_vi": "Bước 1: tưởng tượng trường hợp xui nhất: 3 chiếc đầu tiên mỗi chiếc một màu (đỏ, xanh dương, xanh lá). Bước 2: chiếc thứ 4 chỉ có thể là một trong ba màu đó, nên chắc chắn trùng màu. Bước 3: với 3 chiếc vẫn có thể xui, nên đáp án là 4."
+        },
+        {
+          "id": "brain-l1-problem-04",
+          "kind": "multiple_choice",
+          "objective": "Find the heavy ball with a balance in few weighings",
+          "prompt": "You have 9 balls that look identical, but one is slightly heavier. Using a balance scale, what is the smallest number of weighings that always lets you find the heavy ball?",
+          "prompt_vi": "Bạn có 9 quả bóng trông giống hệt nhau, nhưng có một quả nặng hơn một chút. Dùng cân đĩa, số lần cân ít nhất để luôn tìm được quả nặng là bao nhiêu?",
+          "options": ["1", "2", "3", "4"],
+          "answer": "2",
+          "explanation": "Split into three groups of 3. Weigh group A against group B: the heavier side has the heavy ball; if they balance, it is in group C. Now you have 3 balls: weigh one against another — the heavier one wins, or if equal, it's the third. That's 2 weighings. One weighing isn't enough, because it only has 3 outcomes and can't pick 1 ball out of 9.",
+          "explanation_vi": "Bước 1: chia 9 quả thành ba nhóm, mỗi nhóm 3 quả. Lần cân 1: nhóm A với nhóm B. Bên nào nặng thì quả nặng ở nhóm đó; nếu cân bằng thì nó ở nhóm C. Bước 2: còn 3 quả. Lần cân 2: cân 1 quả với 1 quả; bên nặng là quả cần tìm, cân bằng thì là quả thứ ba. Bước 3: 1 lần cân chỉ có 3 kết quả nên không thể phân biệt 9 quả. Vậy cần 2 lần."
+        },
+        {
+          "id": "brain-l1-problem-05",
+          "kind": "multiple_choice",
+          "objective": "Plan the first move of a river crossing",
+          "prompt": "A farmer must row a dog, a chicken and a bag of rice across a river. The boat fits the farmer and only one item. Left alone, the dog will eat the chicken, and the chicken will eat the rice. What must the farmer take on his first trip?",
+          "prompt_vi": "Một bác nông dân phải chở một con chó, một con gà và một bao gạo qua sông. Thuyền chỉ chở được bác và một thứ. Nếu không có bác, chó sẽ ăn gà, và gà sẽ ăn gạo. Chuyến đầu tiên bác phải mang theo thứ gì?",
+          "options": ["The chicken", "The dog", "The bag of rice", "Nothing — he crosses alone first"],
+          "answer": "The chicken",
+          "explanation": "Check each choice by drawing the bank he leaves behind. Take the dog → chicken and rice are left together (rice eaten). Take the rice → dog and chicken left together (chicken eaten). Go alone → both problems. Take the chicken → dog and rice are left, and they are safe together.",
+          "explanation_vi": "Bước 1: thử từng lựa chọn và vẽ bờ bên này sau khi bác rời đi. Bước 2: mang chó → gà ở lại với gạo, gà ăn gạo ✘. Mang gạo → chó ở lại với gà, chó ăn gà ✘. Đi một mình → cả hai rắc rối ✘. Bước 3: mang gà → chó ở lại với gạo, an toàn ✔. Vậy chuyến đầu phải mang con gà."
+        },
+        {
+          "id": "brain-l1-problem-06",
+          "kind": "multiple_choice",
+          "objective": "Reason about the same date one year later",
+          "prompt": "This year, Minh and Thảo's anniversary falls on a Friday. There are exactly 365 days until next year's anniversary. What day of the week will next year's anniversary be?",
+          "prompt_vi": "Năm nay ngày kỷ niệm của Minh và Thảo rơi vào thứ Sáu. Từ nay đến ngày kỷ niệm năm sau có đúng 365 ngày. Ngày kỷ niệm năm sau rơi vào thứ mấy?",
+          "options": ["Friday", "Saturday", "Sunday", "Thursday"],
+          "answer": "Saturday",
+          "explanation": "365 ÷ 7 = 52 weeks with 1 day left over (52 × 7 = 364). The 52 full weeks bring you back to Friday, and the extra day moves it to Saturday.",
+          "explanation_vi": "Bước 1: chia 365 cho 7: 52 × 7 = 364, dư 1. Bước 2: sau 52 tuần tròn lại là thứ Sáu. Bước 3: thêm 1 ngày dư → thứ Bảy. (Nếu khoảng đó có ngày 29/2 thì là 366 ngày, dư 2, khi đó sẽ là Chủ nhật.)"
+        },
+        {
+          "id": "brain-l1-problem-07",
+          "kind": "multiple_choice",
+          "objective": "Count the trips in a full river-crossing plan",
+          "prompt": "In the puzzle of the farmer with the dog, the chicken and the bag of rice (boat: farmer plus one item; dog eats chicken, chicken eats rice), what is the smallest number of one-way boat trips needed to get everything across safely?",
+          "prompt_vi": "Trong câu đố bác nông dân với con chó, con gà và bao gạo (thuyền: bác và một thứ; chó ăn gà, gà ăn gạo), cần ít nhất bao nhiêu chuyến thuyền một chiều để đưa mọi thứ qua sông an toàn?",
+          "options": ["3", "5", "7", "9"],
+          "answer": "7",
+          "explanation": "1) Take the chicken over. 2) Return alone. 3) Take the dog over. 4) Bring the chicken back. 5) Take the rice over. 6) Return alone. 7) Take the chicken over. Five trips can't work: after the second item goes across, the farmer can't leave it alone with the chicken, so he must carry something back once, adding two extra trips.",
+          "explanation_vi": "Vẽ từng chuyến: 1) chở gà sang. 2) quay về một mình. 3) chở chó sang. 4) chở gà về lại (không để chó với gà). 5) chở gạo sang (chó với gạo an toàn). 6) quay về một mình. 7) chở gà sang. Tổng 7 chuyến. Vì sao không thể 5 chuyến? Sau khi đưa thứ thứ hai sang bờ bên kia, bác không thể để nó ở một mình với con gà, nên buộc phải chở một thứ quay về — thêm 2 chuyến."
+        },
+        {
+          "id": "brain-l1-problem-08",
+          "kind": "multiple_choice",
+          "objective": "Use the worst case for a specific colour",
+          "prompt": "The drawer still holds 5 red, 5 blue and 5 green socks, mixed up. In the dark, how many socks must you take out to be sure you have two RED socks?",
+          "prompt_vi": "Ngăn kéo vẫn có 5 chiếc tất đỏ, 5 chiếc xanh dương và 5 chiếc xanh lá, trộn lẫn. Trong bóng tối, bạn phải lấy ra ít nhất bao nhiêu chiếc để chắc chắn có hai chiếc màu ĐỎ?",
+          "options": ["4", "7", "11", "12"],
+          "answer": "12",
+          "explanation": "Worst case: you first pull out all 5 blue and all 5 green socks (10 socks), then 1 red, then 1 more red. That's 10 + 2 = 12. With 11 you might have only one red sock.",
+          "explanation_vi": "Bước 1: trường hợp xui nhất: bạn lấy hết 5 chiếc xanh dương và 5 chiếc xanh lá trước (10 chiếc, chưa có chiếc đỏ nào). Bước 2: lúc này chỉ còn tất đỏ, cần thêm 2 chiếc đỏ. Bước 3: 10 + 2 = 12. Nếu chỉ lấy 11 chiếc, bạn có thể chỉ có 1 chiếc đỏ — chưa chắc chắn."
+        }
+      ]
+    }
+  ]
+}

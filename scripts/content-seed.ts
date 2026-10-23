@@ -1,6 +1,6 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { ACHIEVEMENTS, COUPLE_QUESTS, DAILY_QUESTS, SHOP_ITEMS } from "../src/content/catalog";
+import { ACHIEVEMENTS, COUPLE_ADVENTURES, COUPLE_QUESTS, DAILY_QUESTS, SHOP_ITEMS } from "../src/content/catalog";
 import { CATEGORIES, LESSON_LEVELS, type Question } from "../src/content/schema";
 import { ROOM_DEPTH, ROOM_WIDTH, reservedTiles } from "../src/game/world/room";
 import { loadContent } from "./content-check";
@@ -23,6 +23,9 @@ const insert = (table: string, columns: string[], rows: unknown[][], conflictKey
 
 const CATEGORY_INFO: Record<(typeof CATEGORIES)[number], [string, string, string]> = {
   vocabulary: ["Vocabulary", "Từ vựng", "Learn words you can use every day."],
+  reading: ["Reading", "Đọc", "Read characters and texts with confidence."],
+  logic: ["Logic", "Logic", "Patterns, puzzles and clear thinking."],
+  knowledge: ["Knowledge", "Kiến thức", "Facts and stories about our world."],
   grammar: ["Grammar", "Ngữ pháp", "Build sentences that sound natural."],
   listening: ["Listening", "Nghe", "Train your ear with short clips."],
   writing: ["Writing", "Viết", "Put words in order and write clearly."],
@@ -54,13 +57,13 @@ const questionRow = (q: Question, lessonId: string, position: number, level: str
 };
 
 export function buildSeed() {
-  const { lessons, loveQuestions, errors } = loadContent();
+  const { lessons, loveQuestions, curricula, errors } = loadContent();
   if (errors.length) throw new Error(`Content invalid:\n${errors.join("\n")}`);
 
   const levelOrder: string[] = [...LESSON_LEVELS];
   const sortedLessons = [...lessons].sort(
     (a, b) =>
-      a.language.localeCompare(b.language) ||
+      a.subject.localeCompare(b.subject) ||
       CATEGORIES.indexOf(a.category) - CATEGORIES.indexOf(b.category) ||
       levelOrder.indexOf(a.level) - levelOrder.indexOf(b.level) ||
       a.slug.localeCompare(b.slug),
@@ -75,8 +78,8 @@ export function buildSeed() {
     ),
     insert(
       "lessons",
-      ["id", "language", "category_id", "level", "topic", "title", "title_vi", "objectives", "sort_order"],
-      sortedLessons.map((l, i) => [lit(l.slug), lit(l.language), lit(l.category), lit(l.level), lit(l.topic), lit(l.title), lit(l.title_vi), textArray(l.objectives), i]),
+      ["id", "subject_id", "language", "category_id", "level", "topic", "title", "title_vi", "objectives", "intro", "sort_order"],
+      sortedLessons.map((l, i) => [lit(l.slug), lit(l.subject), lit(l.language), lit(l.category), lit(l.level), lit(l.topic), lit(l.title), lit(l.title_vi), textArray(l.objectives), json(l.intro ?? null), i]),
     ),
     insert(
       "lesson_questions",
@@ -108,6 +111,33 @@ export function buildSeed() {
       "achievements",
       ["id", "scope", "title", "title_vi", "description", "icon", "coin_reward", "reward_item_id"],
       ACHIEVEMENTS.map((a) => [lit(a.id), lit(a.scope), lit(a.title), lit(a.title_vi), lit(a.description), lit(a.icon), a.coin_reward, lit(a.reward_item_id)]),
+    ),
+    insert(
+      "subject_levels",
+      ["subject_id", "level", "title", "title_vi", "lesson_target", "sort_order"],
+      curricula.flatMap((c) => c.levels.map((l, i) => [lit(c.subject), lit(l.level), lit(l.title), lit(l.title_vi), l.lesson_target, i])),
+      ["subject_id", "level"],
+    ),
+    insert(
+      "learning_units",
+      ["id", "subject_id", "level", "number", "title", "title_vi", "description", "location", "status", "boss_name", "boss_questions", "reward_item_id"],
+      curricula.flatMap((c) =>
+        c.levels.flatMap((l) =>
+          l.units.map((u, i) => [lit(u.id), lit(c.subject), lit(l.level), i + 1, lit(u.title), lit(u.title_vi), lit(u.description), lit(u.location), lit(u.status), lit(u.boss?.name ?? null), u.boss?.questions ?? "null", lit(u.reward_item ?? null)]),
+        ),
+      ),
+    ),
+    `delete from public.unit_lessons;\n`,
+    insert(
+      "unit_lessons",
+      ["unit_id", "lesson_id", "position"],
+      curricula.flatMap((c) => c.levels.flatMap((l) => l.units.flatMap((u) => u.lessons.map((slug, i) => [lit(u.id), lit(slug), i + 1])))),
+      ["unit_id", "lesson_id"],
+    ),
+    insert(
+      "couple_adventures",
+      ["id", "title", "title_vi", "story", "story_vi", "letter", "letter_vi", "parts", "couple_xp", "love_energy", "reward_item_id", "sort_order"],
+      COUPLE_ADVENTURES.map((a, i) => [lit(a.id), lit(a.title), lit(a.title_vi), lit(a.story), lit(a.story_vi), lit(a.letter), lit(a.letter_vi), json(a.parts), a.couple_xp, a.love_energy, lit(a.reward_item_id), i]),
     ),
     insert("room_dimensions", ["id", "width", "depth"], [[true, ROOM_WIDTH, ROOM_DEPTH]]),
     insert("room_reserved_tiles", ["x", "y"], reservedTiles().map((t) => [t.x, t.y]), ["x", "y"]),

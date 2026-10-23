@@ -1,0 +1,684 @@
+{
+  "lessons": [
+    {
+      "slug": "explorer-l1-continents-oceans",
+      "subject": "explorer",
+      "category": "knowledge",
+      "level": "L1",
+      "topic": "continents & oceans",
+      "title": "Our Big Blue Planet: Continents & Oceans",
+      "title_vi": "Hành tinh xanh của chúng mình: các châu lục và đại dương",
+      "objectives": [
+        "Name the 7 continents and the 5 oceans",
+        "Know the largest and smallest continent and ocean",
+        "Place well-known countries on the right continent"
+      ],
+      "intro": [
+        {
+          "title": "Seven continents",
+          "body": "In the model most English-speaking schools use, the world has 7 continents: Asia, Africa, North America, South America, Antarctica, Europe and Australia (often grouped with the Pacific islands as Oceania). Asia is the biggest, both in land and in people. Australia/Oceania is the smallest. Antarctica is the coldest and has no permanent residents — only visiting scientists.",
+          "body_vi": "Theo mô hình phổ biến ở các nước nói tiếng Anh, thế giới có 7 châu lục: châu Á, châu Phi, Bắc Mỹ, Nam Mỹ, châu Nam Cực, châu Âu và châu Úc (thường gộp với các đảo Thái Bình Dương thành châu Đại Dương). Sách giáo khoa Việt Nam thường gộp Bắc Mỹ và Nam Mỹ thành một châu Mỹ, nên quen nói \"6 châu lục\". Châu Á lớn nhất cả về diện tích lẫn dân số; châu Úc/Đại Dương nhỏ nhất; Nam Cực lạnh nhất và không có cư dân thường trú.",
+          "examples": [
+            { "text": "Largest continent: Asia", "translation_vi": "Châu lục lớn nhất: châu Á", "note": "About 30% of Earth's land and about 60% of its people" },
+            { "text": "Smallest continent: Australia / Oceania", "translation_vi": "Châu lục nhỏ nhất: châu Úc / châu Đại Dương" },
+            { "text": "Antarctica: no countries, no permanent residents", "translation_vi": "Châu Nam Cực: không có quốc gia, không có cư dân thường trú" }
+          ]
+        },
+        {
+          "title": "Five oceans",
+          "body": "There are 5 oceans: Pacific, Atlantic, Indian, Southern and Arctic — listed from biggest to smallest. The Pacific is so huge it is larger than all the land on Earth put together. The Atlantic lies between the Americas and Europe/Africa. The Indian Ocean lies between Africa and Australia. The Southern Ocean circles Antarctica, and the small, icy Arctic Ocean sits around the North Pole.",
+          "body_vi": "Có 5 đại dương, xếp từ lớn đến nhỏ: Thái Bình Dương, Đại Tây Dương, Ấn Độ Dương, Nam Đại Dương và Bắc Băng Dương. Thái Bình Dương rộng đến mức lớn hơn toàn bộ đất liền trên Trái Đất cộng lại. Đại Tây Dương nằm giữa châu Mỹ và châu Âu/châu Phi; Ấn Độ Dương nằm giữa châu Phi và châu Úc; Nam Đại Dương bao quanh Nam Cực; Bắc Băng Dương nhỏ nhất, nằm quanh Bắc Cực.",
+          "examples": [
+            { "text": "Pacific > Atlantic > Indian > Southern > Arctic", "translation_vi": "Thái Bình Dương > Đại Tây Dương > Ấn Độ Dương > Nam Đại Dương > Bắc Băng Dương" },
+            { "text": "Pacific Ocean", "translation_vi": "Thái Bình Dương", "note": "Largest and deepest ocean" },
+            { "text": "Arctic Ocean", "translation_vi": "Bắc Băng Dương", "note": "Smallest and shallowest ocean" }
+          ]
+        },
+        {
+          "title": "Memory trick: \"Please Always Invite Sweet Angels\"",
+          "body": "Remember the oceans from largest to smallest with the first letters P-A-I-S-A: \"Please Always Invite Sweet Angels\" = Pacific, Atlantic, Indian, Southern, Arctic. For continents, picture a map: the two Americas on the left, Europe and Africa in the middle, Asia big on the right, Australia small at the bottom right and Antarctica across the bottom.",
+          "body_vi": "Mẹo nhớ thứ tự đại dương từ lớn đến nhỏ bằng chữ cái đầu P-A-I-S-A: \"Please Always Invite Sweet Angels\" = Pacific, Atlantic, Indian, Southern, Arctic. Với châu lục, hãy hình dung bản đồ: hai châu Mỹ bên trái, châu Âu và châu Phi ở giữa, châu Á to lớn bên phải, châu Úc nhỏ ở góc dưới bên phải và Nam Cực trải dài phía dưới cùng.",
+          "examples": [
+            { "text": "Brazil → South America", "translation_vi": "Brazil → Nam Mỹ" },
+            { "text": "Kenya → Africa", "translation_vi": "Kenya → châu Phi" },
+            { "text": "Vietnam → Asia", "translation_vi": "Việt Nam → châu Á" }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "explorer-l1-ocean-01",
+          "kind": "multiple_choice",
+          "objective": "Identify the largest continent",
+          "prompt": "Which is the largest continent on Earth, by both land area and population?",
+          "prompt_vi": "Châu lục nào lớn nhất Trái Đất, cả về diện tích lẫn dân số?",
+          "options": ["Asia", "Africa", "North America", "Europe"],
+          "answer": "Asia",
+          "explanation": "Asia covers about 30% of Earth's land and is home to about 60% of the world's people. Africa is second in size.",
+          "explanation_vi": "Châu Á chiếm khoảng 30% diện tích đất liền và khoảng 60% dân số thế giới. Châu Phi đứng thứ hai về diện tích. Việt Nam, Trung Quốc, Ấn Độ đều thuộc châu Á."
+        },
+        {
+          "id": "explorer-l1-ocean-02",
+          "kind": "multiple_choice",
+          "objective": "Identify the smallest continent",
+          "prompt": "Which continent is the smallest by land area?",
+          "prompt_vi": "Châu lục nào nhỏ nhất về diện tích?",
+          "options": ["Australia / Oceania", "Europe", "Antarctica", "South America"],
+          "answer": "Australia / Oceania",
+          "explanation": "Australia (with the Pacific islands, called Oceania) is the smallest continent. Europe is the second smallest.",
+          "explanation_vi": "Châu Úc (cùng các đảo Thái Bình Dương, gọi là châu Đại Dương) là châu lục nhỏ nhất. Thú vị là Úc vừa là một quốc gia vừa gần như là cả một châu lục — nên người ta gọi Úc là \"đảo lục địa\"."
+        },
+        {
+          "id": "explorer-l1-ocean-03",
+          "kind": "multiple_choice",
+          "objective": "Know the 7-continent model",
+          "prompt": "In the model taught in most English-speaking schools, how many continents are there?",
+          "prompt_vi": "Theo mô hình được dạy ở phần lớn trường học nói tiếng Anh, thế giới có bao nhiêu châu lục?",
+          "options": ["7", "5", "6", "8"],
+          "answer": "7",
+          "explanation": "The 7 continents are Asia, Africa, North America, South America, Antarctica, Europe and Australia/Oceania.",
+          "explanation_vi": "7 châu lục gồm: châu Á, châu Phi, Bắc Mỹ, Nam Mỹ, Nam Cực, châu Âu và châu Úc/Đại Dương. Sách giáo khoa Việt Nam hay gộp Bắc Mỹ và Nam Mỹ thành châu Mỹ nên mới có con số \"6 châu lục\" quen thuộc."
+        },
+        {
+          "id": "explorer-l1-ocean-04",
+          "kind": "multiple_choice",
+          "objective": "Identify the largest ocean",
+          "prompt": "Which ocean is so big that it is larger than all of Earth's land put together?",
+          "prompt_vi": "Đại dương nào rộng đến mức lớn hơn toàn bộ đất liền của Trái Đất cộng lại?",
+          "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Southern Ocean"],
+          "answer": "Pacific Ocean",
+          "explanation": "The Pacific is the largest and deepest ocean, covering about a third of Earth's surface — more than all the continents combined.",
+          "explanation_vi": "Thái Bình Dương lớn nhất và sâu nhất, chiếm khoảng 1/3 bề mặt Trái Đất. Cái tên \"Pacific\" nghĩa là \"bình yên\" — do nhà thám hiểm Magellan đặt khi thấy biển lặng sóng, và tiếng Việt dịch thành \"Thái Bình\"."
+        },
+        {
+          "id": "explorer-l1-ocean-05",
+          "kind": "multiple_choice",
+          "objective": "Identify the smallest ocean",
+          "prompt": "Which is the smallest and shallowest of the five oceans?",
+          "prompt_vi": "Đại dương nào nhỏ nhất và nông nhất trong năm đại dương?",
+          "options": ["Arctic Ocean", "Indian Ocean", "Southern Ocean", "Atlantic Ocean"],
+          "answer": "Arctic Ocean",
+          "explanation": "The Arctic Ocean, around the North Pole, is the smallest and shallowest ocean. Much of it is covered by sea ice for most of the year.",
+          "explanation_vi": "Bắc Băng Dương nằm quanh Bắc Cực, nhỏ nhất và nông nhất. Đúng như tên gọi \"băng\", phần lớn mặt biển bị băng phủ gần như quanh năm — đây là nhà của gấu Bắc Cực."
+        },
+        {
+          "id": "explorer-l1-ocean-06",
+          "kind": "multiple_choice",
+          "objective": "Locate the Indian Ocean",
+          "prompt": "Which ocean lies between Africa and Australia?",
+          "prompt_vi": "Đại dương nào nằm giữa châu Phi và châu Úc?",
+          "options": ["Indian Ocean", "Atlantic Ocean", "Arctic Ocean", "Southern Ocean"],
+          "answer": "Indian Ocean",
+          "explanation": "The Indian Ocean is bordered by Africa to the west, Asia to the north and Australia to the east. It is the third-largest ocean.",
+          "explanation_vi": "Ấn Độ Dương giáp châu Phi ở phía tây, châu Á ở phía bắc và châu Úc ở phía đông. Đây là đại dương duy nhất được đặt theo tên một quốc gia — Ấn Độ."
+        },
+        {
+          "id": "explorer-l1-ocean-07",
+          "kind": "multiple_choice",
+          "objective": "Know facts about Antarctica",
+          "prompt": "Which continent has no countries and no permanent residents, only visiting scientists?",
+          "prompt_vi": "Châu lục nào không có quốc gia và không có cư dân thường trú, chỉ có các nhà khoa học đến làm việc?",
+          "options": ["Antarctica", "Australia / Oceania", "Europe", "South America"],
+          "answer": "Antarctica",
+          "explanation": "Antarctica is the coldest continent. No country governs it as a normal nation, and the only people there are researchers who stay for a season or a year.",
+          "explanation_vi": "Nam Cực là châu lục lạnh nhất, gần như phủ kín băng. Không có ai sống cố định ở đây, chỉ có các nhà khoa học ở theo mùa. Dù phủ đầy băng, Nam Cực lại được xếp là \"sa mạc\" lớn nhất thế giới vì rất ít mưa tuyết."
+        },
+        {
+          "id": "explorer-l1-ocean-08",
+          "kind": "multiple_choice",
+          "objective": "Place a country on its continent",
+          "prompt": "Brazil, home of the Amazon rainforest, is on which continent?",
+          "prompt_vi": "Brazil, quê hương của rừng mưa Amazon, nằm ở châu lục nào?",
+          "options": ["South America", "North America", "Africa", "Europe"],
+          "answer": "South America",
+          "explanation": "Brazil is the largest country in South America and covers almost half of the continent.",
+          "explanation_vi": "Brazil là quốc gia lớn nhất Nam Mỹ, chiếm gần một nửa diện tích châu lục. Phần lớn rừng Amazon — \"lá phổi xanh\" của Trái Đất — nằm trên lãnh thổ Brazil."
+        }
+      ]
+    },
+    {
+      "slug": "explorer-l1-southeast-asia",
+      "subject": "explorer",
+      "category": "knowledge",
+      "level": "L1",
+      "topic": "Southeast Asia",
+      "title": "Our Neighbourhood: Southeast Asia & ASEAN",
+      "title_vi": "Xóm giềng của mình: Đông Nam Á và ASEAN",
+      "objectives": [
+        "Match Southeast Asian countries with their capitals",
+        "Name Vietnam's land neighbours",
+        "Know which countries the Mekong flows through"
+      ],
+      "intro": [
+        {
+          "title": "ASEAN capitals",
+          "body": "ASEAN (the Association of Southeast Asian Nations) was founded in Bangkok in 1967; Vietnam joined in 1995. Some capitals are easy — Hà Nội, Bangkok, Manila, Singapore. Others trip people up: Laos → Vientiane, Cambodia → Phnom Penh, Brunei → Bandar Seri Begawan, and Myanmar → Naypyidaw (not Yangon, which was the capital until 2005).",
+          "body_vi": "ASEAN (Hiệp hội các quốc gia Đông Nam Á) thành lập năm 1967 tại Bangkok; Việt Nam gia nhập năm 1995. Có thủ đô dễ nhớ như Hà Nội, Bangkok, Manila, Singapore; có thủ đô dễ nhầm: Lào → Viêng Chăn (Vientiane), Campuchia → Phnôm Pênh, Brunei → Bandar Seri Begawan, Myanmar → Naypyidaw (không phải Yangon — Yangon chỉ là thủ đô đến năm 2005).",
+          "examples": [
+            { "text": "Laos → Vientiane", "translation_vi": "Lào → Viêng Chăn" },
+            { "text": "Cambodia → Phnom Penh", "translation_vi": "Campuchia → Phnôm Pênh" },
+            { "text": "Myanmar → Naypyidaw", "translation_vi": "Myanmar → Naypyidaw", "note": "Yangon is the biggest city, not the capital" },
+            { "text": "Brunei → Bandar Seri Begawan", "translation_vi": "Brunei → Bandar Seri Begawan" }
+          ]
+        },
+        {
+          "title": "Vietnam's neighbours",
+          "body": "Vietnam shares land borders with exactly three countries: China to the north, Laos to the west and Cambodia to the southwest. The longest border is with Laos — more than 2,000 km, winding along the Trường Sơn mountains. Thailand is close, but it does not touch Vietnam: Laos and Cambodia sit in between.",
+          "body_vi": "Việt Nam có đường biên giới trên đất liền với đúng ba nước: Trung Quốc ở phía bắc, Lào ở phía tây và Campuchia ở phía tây nam. Biên giới dài nhất là với Lào — hơn 2.000 km, chạy dọc dãy Trường Sơn. Thái Lan ở gần nhưng không giáp Việt Nam vì Lào và Campuchia nằm ở giữa.",
+          "examples": [
+            { "text": "North: China", "translation_vi": "Phía bắc: Trung Quốc" },
+            { "text": "West: Laos (longest border)", "translation_vi": "Phía tây: Lào (biên giới dài nhất)" },
+            { "text": "Southwest: Cambodia", "translation_vi": "Phía tây nam: Campuchia" }
+          ]
+        },
+        {
+          "title": "The Mekong: one river, six countries",
+          "body": "The Mekong starts on the Tibetan Plateau and flows through six countries: China, Myanmar, Laos, Thailand, Cambodia and Vietnam, before reaching the sea. In Vietnam it splits into many branches, which is why Vietnamese call it Cửu Long — \"Nine Dragons\". Memory trick: follow the river downhill — \"China, Myanmar, Laos, Thailand, Cambodia, Vietnam\" — from the roof of the world to our delta.",
+          "body_vi": "Sông Mê Kông bắt nguồn từ cao nguyên Tây Tạng và chảy qua sáu nước: Trung Quốc, Myanmar, Lào, Thái Lan, Campuchia và Việt Nam rồi đổ ra biển. Khi vào Việt Nam, sông tách thành nhiều nhánh nên được gọi là sông Cửu Long — \"chín con rồng\". Mẹo nhớ: đi theo dòng nước từ \"nóc nhà thế giới\" xuống đồng bằng của mình.",
+          "examples": [
+            { "text": "Mekong countries: China, Myanmar, Laos, Thailand, Cambodia, Vietnam", "translation_vi": "Các nước có sông Mê Kông: Trung Quốc, Myanmar, Lào, Thái Lan, Campuchia, Việt Nam" },
+            { "text": "Cửu Long = Nine Dragons", "translation_vi": "Cửu Long = Chín con rồng" }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "explorer-l1-sea-01",
+          "kind": "multiple_choice",
+          "objective": "Know the capital of Laos",
+          "prompt": "What is the capital of Laos?",
+          "prompt_vi": "Thủ đô của Lào là gì?",
+          "options": ["Vientiane", "Luang Prabang", "Phnom Penh", "Pakse"],
+          "answer": "Vientiane",
+          "explanation": "Vientiane sits on the Mekong River, right across from Thailand. Luang Prabang is a famous old royal city, but it is not the capital.",
+          "explanation_vi": "Viêng Chăn (Vientiane) nằm ngay bên bờ sông Mê Kông, nhìn sang bờ bên kia là Thái Lan. Luang Prabang là cố đô nổi tiếng, được UNESCO công nhận Di sản Thế giới, nhưng không phải thủ đô hiện nay."
+        },
+        {
+          "id": "explorer-l1-sea-02",
+          "kind": "multiple_choice",
+          "objective": "Know the capital of Cambodia",
+          "prompt": "Which city is the capital of Cambodia?",
+          "prompt_vi": "Thành phố nào là thủ đô của Campuchia?",
+          "options": ["Phnom Penh", "Siem Reap", "Battambang", "Vientiane"],
+          "answer": "Phnom Penh",
+          "explanation": "Phnom Penh is Cambodia's capital and largest city. Siem Reap is the gateway to Angkor Wat, but it is not the capital.",
+          "explanation_vi": "Phnôm Pênh là thủ đô và thành phố lớn nhất Campuchia, nằm nơi sông Mê Kông gặp sông Tonlé Sap. Siem Reap nổi tiếng vì gần đền Angkor Wat, nhưng không phải thủ đô."
+        },
+        {
+          "id": "explorer-l1-sea-03",
+          "kind": "multiple_choice",
+          "objective": "Avoid the Yangon trap for Myanmar's capital",
+          "prompt": "Myanmar moved its capital away from Yangon in 2005. What is Myanmar's capital now?",
+          "prompt_vi": "Myanmar đã dời thủ đô khỏi Yangon vào năm 2005. Thủ đô hiện nay của Myanmar là gì?",
+          "options": ["Naypyidaw", "Mandalay", "Yangon", "Vientiane"],
+          "answer": "Naypyidaw",
+          "explanation": "Naypyidaw is a purpose-built capital in the middle of the country. Yangon is still Myanmar's biggest city, and Mandalay was an old royal capital.",
+          "explanation_vi": "Naypyidaw là thủ đô được xây mới hoàn toàn ở miền trung Myanmar, nổi tiếng với những đại lộ rất rộng nhưng vắng xe. Yangon vẫn là thành phố lớn nhất, còn Mandalay là kinh đô của triều đại cuối cùng."
+        },
+        {
+          "id": "explorer-l1-sea-04",
+          "kind": "multiple_choice",
+          "objective": "Know the capital of Brunei",
+          "prompt": "What is the capital of Brunei?",
+          "prompt_vi": "Thủ đô của Brunei là gì?",
+          "options": ["Bandar Seri Begawan", "Kuala Lumpur", "Manila", "Dili"],
+          "answer": "Bandar Seri Begawan",
+          "explanation": "Brunei, a small, wealthy country on the island of Borneo, has Bandar Seri Begawan as its capital. Kuala Lumpur is in Malaysia, Manila in the Philippines and Dili in Timor-Leste.",
+          "explanation_vi": "Brunei là quốc gia nhỏ nhưng giàu dầu mỏ trên đảo Borneo, thủ đô là Bandar Seri Begawan. Thành phố này có làng nổi Kampong Ayer — cả một khu dân cư xây trên cọc giữa sông."
+        },
+        {
+          "id": "explorer-l1-sea-05",
+          "kind": "multiple_choice",
+          "objective": "Name Vietnam's land neighbours",
+          "prompt": "Which of these countries does NOT share a land border with Vietnam?",
+          "prompt_vi": "Nước nào dưới đây KHÔNG có biên giới đất liền với Việt Nam?",
+          "options": ["Thailand", "Laos", "Cambodia", "China"],
+          "answer": "Thailand",
+          "explanation": "Vietnam borders only China, Laos and Cambodia on land. Thailand is nearby, but Laos and Cambodia lie between them.",
+          "explanation_vi": "Việt Nam chỉ giáp ba nước trên đất liền: Trung Quốc, Lào và Campuchia. Thái Lan ở gần nhưng bị Lào và Campuchia ngăn cách — muốn đi đường bộ sang Thái Lan phải đi qua một trong hai nước đó."
+        },
+        {
+          "id": "explorer-l1-sea-06",
+          "kind": "multiple_choice",
+          "objective": "Know Vietnam's longest land border",
+          "prompt": "Vietnam's longest land border, over 2,000 km along the Trường Sơn mountains, is with which country?",
+          "prompt_vi": "Đường biên giới đất liền dài nhất của Việt Nam, hơn 2.000 km dọc dãy Trường Sơn, là với nước nào?",
+          "options": ["Laos", "China", "Cambodia", "Thailand"],
+          "answer": "Laos",
+          "explanation": "The Vietnam–Laos border is the longest, running along the Trường Sơn (Annamite) range. The borders with China and Cambodia are shorter.",
+          "explanation_vi": "Biên giới Việt – Lào dài nhất, men theo dãy Trường Sơn. Đây cũng là nơi có đường mòn Hồ Chí Minh huyền thoại — tuyến đường nối liền hai nước trong thời chiến."
+        },
+        {
+          "id": "explorer-l1-sea-07",
+          "kind": "multiple_choice",
+          "objective": "Know which countries the Mekong flows through",
+          "prompt": "The Mekong River flows through six countries. Which of these is NOT one of them?",
+          "prompt_vi": "Sông Mê Kông chảy qua sáu quốc gia. Nước nào dưới đây KHÔNG nằm trong số đó?",
+          "options": ["Malaysia", "Laos", "Cambodia", "Thailand"],
+          "answer": "Malaysia",
+          "explanation": "The Mekong flows through China, Myanmar, Laos, Thailand, Cambodia and Vietnam. Malaysia is further south and has no part of the Mekong.",
+          "explanation_vi": "Mê Kông chảy qua Trung Quốc, Myanmar, Lào, Thái Lan, Campuchia và Việt Nam. Malaysia ở xa hơn về phía nam, không có sông Mê Kông. Khi vào Việt Nam, sông chia thành nhiều nhánh nên có tên Cửu Long — \"chín con rồng\"."
+        },
+        {
+          "id": "explorer-l1-sea-08",
+          "kind": "multiple_choice",
+          "objective": "Know when Vietnam joined ASEAN",
+          "prompt": "In which year did Vietnam join ASEAN?",
+          "prompt_vi": "Việt Nam gia nhập ASEAN vào năm nào?",
+          "options": ["1995", "1967", "1986", "2000"],
+          "answer": "1995",
+          "explanation": "Vietnam became ASEAN's seventh member in July 1995. ASEAN itself was founded in Bangkok in 1967, and 1986 is the year of Vietnam's Đổi Mới reforms.",
+          "explanation_vi": "Việt Nam trở thành thành viên thứ bảy của ASEAN vào tháng 7/1995. ASEAN được thành lập năm 1967 tại Bangkok với 5 nước sáng lập; còn 1986 là năm Việt Nam bắt đầu công cuộc Đổi Mới."
+        }
+      ]
+    },
+    {
+      "slug": "explorer-l1-world-capitals",
+      "subject": "explorer",
+      "category": "knowledge",
+      "level": "L1",
+      "topic": "world capitals",
+      "title": "Not the Biggest City! Tricky World Capitals",
+      "title_vi": "Không phải thành phố lớn nhất! Những thủ đô dễ nhầm",
+      "objectives": [
+        "Know well-known world capitals",
+        "Avoid the \"biggest city = capital\" trap",
+        "Remember why some capitals were chosen"
+      ],
+      "intro": [
+        {
+          "title": "The big-city trap",
+          "body": "Many people guess a country's most famous city is its capital — and often they are wrong. Australia's capital is Canberra, not Sydney. Canada's is Ottawa, not Toronto. The USA's is Washington, D.C., not New York. Türkiye's (Turkey's) is Ankara, not Istanbul. Morocco's is Rabat, not Casablanca. New Zealand's is Wellington, not Auckland.",
+          "body_vi": "Nhiều người đoán thành phố nổi tiếng nhất là thủ đô — và thường sai! Thủ đô Úc là Canberra chứ không phải Sydney; Canada là Ottawa chứ không phải Toronto; Mỹ là Washington, D.C. chứ không phải New York; Thổ Nhĩ Kỳ là Ankara chứ không phải Istanbul; Ma-rốc là Rabat chứ không phải Casablanca; New Zealand là Wellington chứ không phải Auckland.",
+          "examples": [
+            { "text": "Australia → Canberra (not Sydney)", "translation_vi": "Úc → Canberra (không phải Sydney)" },
+            { "text": "Canada → Ottawa (not Toronto)", "translation_vi": "Canada → Ottawa (không phải Toronto)" },
+            { "text": "Türkiye → Ankara (not Istanbul)", "translation_vi": "Thổ Nhĩ Kỳ → Ankara (không phải Istanbul)" },
+            { "text": "New Zealand → Wellington (not Auckland)", "translation_vi": "New Zealand → Wellington (không phải Auckland)" }
+          ]
+        },
+        {
+          "title": "Capitals built on purpose",
+          "body": "Some capitals were chosen or even built from scratch to keep the peace between rival cities. Canberra was built as a compromise because Sydney and Melbourne both wanted to be the capital. Brasília was built in the middle of Brazil and became the capital in 1960, replacing Rio de Janeiro. India's capital is New Delhi, not Mumbai, the country's financial centre.",
+          "body_vi": "Có những thủ đô được chọn hoặc xây mới để tránh tranh cãi giữa các thành phố lớn. Canberra được xây như một giải pháp dung hòa vì Sydney và Melbourne đều muốn làm thủ đô. Brasília được xây giữa lòng Brazil và trở thành thủ đô năm 1960, thay cho Rio de Janeiro. Thủ đô Ấn Độ là New Delhi, không phải trung tâm tài chính Mumbai.",
+          "examples": [
+            { "text": "Brazil → Brasília (since 1960)", "translation_vi": "Brazil → Brasília (từ năm 1960)" },
+            { "text": "India → New Delhi (not Mumbai)", "translation_vi": "Ấn Độ → New Delhi (không phải Mumbai)" },
+            { "text": "USA → Washington, D.C. (not New York)", "translation_vi": "Mỹ → Washington, D.C. (không phải New York)" }
+          ]
+        },
+        {
+          "title": "Memory trick: \"the quiet sibling\"",
+          "body": "Think of the famous big city as the loud, popular sibling and the capital as the quieter one who does the paperwork: Sydney parties, Canberra governs; Toronto shines, Ottawa decides; Istanbul attracts tourists, Ankara runs the country.",
+          "body_vi": "Mẹo nhớ: hãy coi thành phố nổi tiếng là \"người anh ồn ào, nổi bật\", còn thủ đô là \"người em trầm tính lo giấy tờ\": Sydney vui chơi – Canberra điều hành; Toronto tỏa sáng – Ottawa quyết định; Istanbul đón khách du lịch – Ankara lo việc nước.",
+          "examples": [
+            { "text": "Morocco → Rabat (not Casablanca)", "translation_vi": "Ma-rốc → Rabat (không phải Casablanca)" }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "explorer-l1-capital-01",
+          "kind": "multiple_choice",
+          "objective": "Know Australia's capital",
+          "prompt": "What is the capital of Australia?",
+          "prompt_vi": "Thủ đô của Úc là gì?",
+          "options": ["Canberra", "Sydney", "Melbourne", "Perth"],
+          "answer": "Canberra",
+          "explanation": "Canberra was built as a planned capital because Sydney and Melbourne could not agree on which of them should be the capital.",
+          "explanation_vi": "Canberra là thủ đô được quy hoạch xây mới như một giải pháp dung hòa, vì Sydney và Melbourne tranh nhau làm thủ đô. Thiết kế của Canberra từng thắng một cuộc thi quốc tế, do hai vợ chồng kiến trúc sư người Mỹ là Walter và Marion Griffin cùng thực hiện."
+        },
+        {
+          "id": "explorer-l1-capital-02",
+          "kind": "multiple_choice",
+          "objective": "Know Canada's capital",
+          "prompt": "Which city is the capital of Canada?",
+          "prompt_vi": "Thành phố nào là thủ đô của Canada?",
+          "options": ["Ottawa", "Toronto", "Vancouver", "Montreal"],
+          "answer": "Ottawa",
+          "explanation": "Ottawa is Canada's capital. Toronto is the largest city, but Ottawa was chosen as the capital in 1857.",
+          "explanation_vi": "Ottawa là thủ đô Canada, được Nữ hoàng Victoria chọn năm 1857, một phần vì nằm giữa vùng nói tiếng Anh và vùng nói tiếng Pháp. Toronto mới là thành phố lớn nhất."
+        },
+        {
+          "id": "explorer-l1-capital-03",
+          "kind": "multiple_choice",
+          "objective": "Know Brazil's capital",
+          "prompt": "Since 1960, which city has been the capital of Brazil?",
+          "prompt_vi": "Từ năm 1960, thành phố nào là thủ đô của Brazil?",
+          "options": ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"],
+          "answer": "Brasília",
+          "explanation": "Brasília was built in just a few years in the centre of Brazil and replaced Rio de Janeiro as the capital in 1960. São Paulo is the largest city.",
+          "explanation_vi": "Brasília được xây trong vài năm ở trung tâm Brazil và thay Rio de Janeiro làm thủ đô năm 1960. Nhìn từ trên cao, quy hoạch thành phố trông như một chiếc máy bay hay một con chim đang sải cánh."
+        },
+        {
+          "id": "explorer-l1-capital-04",
+          "kind": "multiple_choice",
+          "objective": "Know Türkiye's capital",
+          "prompt": "What is the capital of Türkiye (Turkey)?",
+          "prompt_vi": "Thủ đô của Thổ Nhĩ Kỳ là gì?",
+          "options": ["Ankara", "Istanbul", "Izmir", "Antalya"],
+          "answer": "Ankara",
+          "explanation": "Ankara became the capital in 1923 when the Republic of Turkey was founded. Istanbul is the largest and most famous city.",
+          "explanation_vi": "Ankara trở thành thủ đô năm 1923 khi nước Cộng hòa Thổ Nhĩ Kỳ ra đời. Istanbul tuy không phải thủ đô nhưng là thành phố đặc biệt: nằm trên cả hai châu lục Á và Âu, hai bờ eo biển Bosphorus."
+        },
+        {
+          "id": "explorer-l1-capital-05",
+          "kind": "multiple_choice",
+          "objective": "Know New Zealand's capital",
+          "prompt": "Which city is the capital of New Zealand?",
+          "prompt_vi": "Thành phố nào là thủ đô của New Zealand?",
+          "options": ["Wellington", "Auckland", "Christchurch", "Queenstown"],
+          "answer": "Wellington",
+          "explanation": "Wellington has been New Zealand's capital since 1865. Auckland is the biggest city.",
+          "explanation_vi": "Wellington là thủ đô New Zealand từ năm 1865 và là thủ đô quốc gia nằm xa nhất về phía nam trên thế giới. Thành phố nổi tiếng nhiều gió nên còn có biệt danh \"Windy Wellington\"."
+        },
+        {
+          "id": "explorer-l1-capital-06",
+          "kind": "multiple_choice",
+          "objective": "Know the capital of the USA",
+          "prompt": "What is the capital of the United States?",
+          "prompt_vi": "Thủ đô của Hoa Kỳ là gì?",
+          "options": ["Washington, D.C.", "New York City", "Los Angeles", "Chicago"],
+          "answer": "Washington, D.C.",
+          "explanation": "Washington, D.C. is the US capital, home of the White House and Congress. New York is the largest city, but it is not the capital.",
+          "explanation_vi": "Washington, D.C. là thủ đô Mỹ, nơi có Nhà Trắng và Quốc hội. \"D.C.\" là viết tắt của District of Columbia — một đặc khu không thuộc bang nào, để không bang nào \"sở hữu\" thủ đô."
+        },
+        {
+          "id": "explorer-l1-capital-07",
+          "kind": "multiple_choice",
+          "objective": "Know Morocco's capital",
+          "prompt": "Which city is the capital of Morocco?",
+          "prompt_vi": "Thành phố nào là thủ đô của Ma-rốc?",
+          "options": ["Rabat", "Casablanca", "Marrakesh", "Fez"],
+          "answer": "Rabat",
+          "explanation": "Rabat is Morocco's capital. Casablanca is the biggest city, and Marrakesh and Fez are famous historic cities.",
+          "explanation_vi": "Rabat là thủ đô Ma-rốc. Casablanca lớn nhất và nổi tiếng nhờ bộ phim kinh điển cùng tên; tên của nó trong tiếng Tây Ban Nha nghĩa là \"Ngôi nhà trắng\"."
+        },
+        {
+          "id": "explorer-l1-capital-08",
+          "kind": "multiple_choice",
+          "objective": "Know India's capital",
+          "prompt": "What is the capital of India?",
+          "prompt_vi": "Thủ đô của Ấn Độ là gì?",
+          "options": ["New Delhi", "Mumbai", "Kolkata", "Bengaluru"],
+          "answer": "New Delhi",
+          "explanation": "New Delhi is India's capital. Mumbai is the financial centre and home of Bollywood, and Kolkata was the capital of British India until 1911.",
+          "explanation_vi": "New Delhi là thủ đô Ấn Độ. Mumbai là trung tâm tài chính và quê hương của Bollywood; còn Kolkata (Calcutta) từng là thủ đô của Ấn Độ thuộc Anh đến năm 1911."
+        }
+      ]
+    },
+    {
+      "slug": "explorer-l1-flags",
+      "subject": "explorer",
+      "category": "knowledge",
+      "level": "L1",
+      "topic": "flags",
+      "title": "Colours of the World: Reading Flags",
+      "title_vi": "Sắc màu thế giới: nhận diện quốc kỳ",
+      "objectives": [
+        "Recognise famous flags from a description",
+        "Tell apart flags with similar colours",
+        "Remember what flag symbols mean"
+      ],
+      "intro": [
+        {
+          "title": "Stars and circles of Asia",
+          "body": "Vietnam: red with one yellow five-pointed star in the centre. China: red with one large yellow star and four smaller yellow stars in the top-left corner. Japan: white with a red circle (the sun) in the centre. South Korea: white with a red-and-blue circle (taegeuk) in the centre and four black bar patterns (trigrams) near the corners. Thailand: five horizontal stripes — red, white, blue, white, red — with the blue stripe twice as wide.",
+          "body_vi": "Việt Nam: nền đỏ, một ngôi sao vàng năm cánh ở giữa. Trung Quốc: nền đỏ, một ngôi sao vàng lớn và bốn ngôi sao nhỏ ở góc trên bên trái. Nhật Bản: nền trắng, hình tròn đỏ (mặt trời) ở giữa. Hàn Quốc: nền trắng, vòng tròn âm dương đỏ – xanh ở giữa và bốn quẻ màu đen ở bốn góc. Thái Lan: năm sọc ngang đỏ – trắng – xanh – trắng – đỏ, sọc xanh ở giữa rộng gấp đôi.",
+          "examples": [
+            { "text": "Red + one yellow star in the centre → Vietnam", "translation_vi": "Nền đỏ + một sao vàng ở giữa → Việt Nam" },
+            { "text": "Red + five yellow stars in the corner → China", "translation_vi": "Nền đỏ + năm sao vàng ở góc → Trung Quốc" },
+            { "text": "White + red sun → Japan", "translation_vi": "Nền trắng + mặt trời đỏ → Nhật Bản" },
+            { "text": "Red-white-blue-white-red stripes → Thailand", "translation_vi": "Sọc đỏ-trắng-xanh-trắng-đỏ → Thái Lan" }
+          ]
+        },
+        {
+          "title": "Europe and the Americas",
+          "body": "France: three vertical stripes, blue-white-red. Italy: three vertical stripes, green-white-red. The UK (Union Jack): red and white crosses, straight and diagonal, on dark blue. The USA: 13 red and white horizontal stripes and 50 white stars on a blue rectangle. Canada: red-white-red vertical bands with a red maple leaf in the middle. Brazil: green with a yellow diamond and a blue globe full of stars.",
+          "body_vi": "Pháp: ba sọc dọc xanh – trắng – đỏ. Ý: ba sọc dọc xanh lá – trắng – đỏ. Anh (Union Jack): các chữ thập đỏ – trắng, thẳng và chéo, trên nền xanh đậm. Mỹ: 13 sọc ngang đỏ – trắng và 50 ngôi sao trắng trên ô chữ nhật xanh. Canada: dải đỏ – trắng – đỏ dọc với chiếc lá phong đỏ ở giữa. Brazil: nền xanh lá, hình thoi vàng và quả cầu xanh đầy sao.",
+          "examples": [
+            { "text": "Blue-white-red vertical → France", "translation_vi": "Xanh – trắng – đỏ dọc → Pháp" },
+            { "text": "Green-white-red vertical → Italy", "translation_vi": "Xanh lá – trắng – đỏ dọc → Ý" },
+            { "text": "Red maple leaf → Canada", "translation_vi": "Lá phong đỏ → Canada" },
+            { "text": "50 stars, 13 stripes → USA", "translation_vi": "50 sao, 13 sọc → Mỹ" }
+          ]
+        },
+        {
+          "title": "Memory trick: food on the flag",
+          "body": "Italy's green-white-red looks like a pizza margherita: basil, mozzarella, tomato. France is the same shape but blue instead of green. Canada's leaf reminds you of maple syrup. Brazil's green and yellow are the colours of its famous football shirts.",
+          "body_vi": "Mẹo nhớ bằng đồ ăn: cờ Ý xanh lá – trắng – đỏ giống pizza Margherita: lá húng quế, phô mai mozzarella, cà chua. Cờ Pháp cùng kiểu sọc dọc nhưng xanh dương thay cho xanh lá. Lá phong của Canada gợi nhớ siro lá phong. Màu xanh lá – vàng của Brazil chính là màu áo đội tuyển bóng đá nổi tiếng của họ."
+        }
+      ],
+      "questions": [
+        {
+          "id": "explorer-l1-flag-01",
+          "kind": "multiple_choice",
+          "objective": "Recognise the flag of Japan",
+          "prompt": "Which country's flag is plain white with a single red circle in the centre?",
+          "prompt_vi": "Quốc kỳ nước nào có nền trắng trơn với một hình tròn đỏ ở giữa?",
+          "options": ["Japan", "South Korea", "China", "Bangladesh"],
+          "answer": "Japan",
+          "explanation": "Japan's flag shows a red sun on white. Bangladesh also has a red circle, but on a green background.",
+          "explanation_vi": "Quốc kỳ Nhật Bản có tên Hinomaru, nghĩa là \"vòng tròn mặt trời\", vì Nhật Bản được gọi là \"xứ sở mặt trời mọc\". Cờ Bangladesh cũng có hình tròn đỏ nhưng trên nền xanh lá."
+        },
+        {
+          "id": "explorer-l1-flag-02",
+          "kind": "multiple_choice",
+          "objective": "Recognise the flag of South Korea",
+          "prompt": "Which flag is white with a red-and-blue circle in the centre and four black bar patterns near the corners?",
+          "prompt_vi": "Lá cờ nào có nền trắng, vòng tròn đỏ – xanh ở giữa và bốn hình vạch đen gần bốn góc?",
+          "options": ["South Korea", "Japan", "China", "Vietnam"],
+          "answer": "South Korea",
+          "explanation": "This is the Taegeukgi of South Korea. The red-and-blue circle shows balance (yin and yang), and the four black trigrams stand for heaven, earth, water and fire.",
+          "explanation_vi": "Đây là cờ Taegeukgi của Hàn Quốc. Vòng tròn đỏ – xanh tượng trưng cho âm dương cân bằng, còn bốn quẻ đen tượng trưng cho trời, đất, nước và lửa — ý tưởng gần với quẻ Bát Quái mà người Việt cũng quen thuộc."
+        },
+        {
+          "id": "explorer-l1-flag-03",
+          "kind": "multiple_choice",
+          "objective": "Recognise the flag of Canada",
+          "prompt": "Which country's flag has red-white-red vertical bands with a red maple leaf in the middle?",
+          "prompt_vi": "Quốc kỳ nước nào có các dải dọc đỏ – trắng – đỏ với một chiếc lá phong đỏ ở giữa?",
+          "options": ["Canada", "Switzerland", "United States", "Japan"],
+          "answer": "Canada",
+          "explanation": "Canada's maple leaf flag was adopted in 1965. The maple tree is a national symbol of Canada.",
+          "explanation_vi": "Cờ lá phong của Canada được dùng từ năm 1965. Chiếc lá có 11 mũi nhọn. Canada sản xuất phần lớn siro lá phong của thế giới — một mẹo nhớ ngọt ngào!"
+        },
+        {
+          "id": "explorer-l1-flag-04",
+          "kind": "multiple_choice",
+          "objective": "Recognise the flag of Brazil",
+          "prompt": "Which flag is green with a large yellow diamond and a blue globe full of white stars?",
+          "prompt_vi": "Lá cờ nào có nền xanh lá, hình thoi vàng lớn và quả cầu xanh dương đầy sao trắng?",
+          "options": ["Brazil", "Portugal", "Argentina", "Mexico"],
+          "answer": "Brazil",
+          "explanation": "Brazil's flag has a blue globe with stars across a white band reading \"Ordem e Progresso\" (Order and Progress).",
+          "explanation_vi": "Quả cầu trên cờ Brazil vẽ bầu trời đêm Rio de Janeiro ngày 15/11/1889 — ngày Brazil thành nước cộng hòa. Các ngôi sao tượng trưng cho các bang và Quận Liên bang; trên dải trắng có dòng chữ \"Ordem e Progresso\" (Trật tự và Tiến bộ)."
+        },
+        {
+          "id": "explorer-l1-flag-05",
+          "kind": "multiple_choice",
+          "objective": "Tell Italy's flag apart from France's",
+          "prompt": "Which country's flag has three vertical stripes: green, white and red?",
+          "prompt_vi": "Quốc kỳ nước nào có ba sọc dọc: xanh lá, trắng và đỏ?",
+          "options": ["Italy", "France", "Ireland", "Germany"],
+          "answer": "Italy",
+          "explanation": "Italy is green-white-red. France has the same layout but blue-white-red, and Ireland is green-white-orange.",
+          "explanation_vi": "Cờ Ý xanh lá – trắng – đỏ, giống màu pizza Margherita: lá húng quế, phô mai và cà chua. Cờ Pháp cùng kiểu nhưng xanh dương – trắng – đỏ; cờ Ireland là xanh lá – trắng – cam."
+        },
+        {
+          "id": "explorer-l1-flag-06",
+          "kind": "multiple_choice",
+          "objective": "Recognise the flag of the United Kingdom",
+          "prompt": "Which flag combines a red cross edged in white with red and white diagonal crosses, all on a dark blue background?",
+          "prompt_vi": "Lá cờ nào kết hợp một chữ thập đỏ viền trắng với các chữ thập chéo đỏ và trắng, tất cả trên nền xanh đậm?",
+          "options": ["United Kingdom", "United States", "France", "Thailand"],
+          "answer": "United Kingdom",
+          "explanation": "This is the Union Jack. It joins the crosses of St George (England), St Andrew (Scotland) and St Patrick (Ireland).",
+          "explanation_vi": "Đây là cờ Union Jack của Vương quốc Anh, ghép từ ba chữ thập: thánh George (Anh), thánh Andrew (Scotland) và thánh Patrick (Ireland). Thú vị là xứ Wales không có biểu tượng nào trên lá cờ này."
+        },
+        {
+          "id": "explorer-l1-flag-07",
+          "kind": "multiple_choice",
+          "objective": "Tell China's flag apart from Vietnam's",
+          "prompt": "Which flag is red with one large yellow star and four smaller yellow stars in the top-left corner?",
+          "prompt_vi": "Lá cờ nào có nền đỏ, một ngôi sao vàng lớn và bốn ngôi sao vàng nhỏ ở góc trên bên trái?",
+          "options": ["China", "Vietnam", "Thailand", "South Korea"],
+          "answer": "China",
+          "explanation": "China's flag has five yellow stars in the corner. Vietnam's flag has just one yellow star, right in the centre.",
+          "explanation_vi": "Cờ Trung Quốc có năm ngôi sao vàng ở góc. Cờ Việt Nam chỉ có một ngôi sao vàng năm cánh nằm chính giữa; năm cánh sao thường được giải thích là tượng trưng cho sĩ, nông, công, thương, binh."
+        },
+        {
+          "id": "explorer-l1-flag-08",
+          "kind": "multiple_choice",
+          "objective": "Recognise the flag of Thailand",
+          "prompt": "Which flag has five horizontal stripes — red, white, blue, white, red — with the blue stripe twice as wide?",
+          "prompt_vi": "Lá cờ nào có năm sọc ngang đỏ – trắng – xanh – trắng – đỏ, trong đó sọc xanh rộng gấp đôi?",
+          "options": ["Thailand", "France", "Russia", "Netherlands"],
+          "answer": "Thailand",
+          "explanation": "Thailand's flag is called the Trairanga (\"tricolour\"). Red stands for the nation, white for religion and blue for the monarchy.",
+          "explanation_vi": "Cờ Thái Lan gọi là Trairanga (\"cờ ba màu\"): đỏ tượng trưng cho dân tộc, trắng cho tôn giáo, xanh cho nhà vua. Trước năm 1917, cờ Thái Lan từng có hình một chú voi trắng!"
+        }
+      ]
+    },
+    {
+      "slug": "explorer-l1-landmarks-cultures",
+      "subject": "explorer",
+      "category": "knowledge",
+      "level": "L1",
+      "topic": "landmarks & festivals",
+      "title": "Wonders & Celebrations Around the World",
+      "title_vi": "Kỳ quan và lễ hội khắp thế giới",
+      "objectives": [
+        "Match famous landmarks to their country or city",
+        "Know what major festivals celebrate",
+        "Connect Vietnamese festivals to the wider world"
+      ],
+      "intro": [
+        {
+          "title": "Famous landmarks",
+          "body": "Angkor Wat — a giant temple complex in Cambodia, shown on Cambodia's flag. Petra — a city carved into rose-red rock in Jordan. Machu Picchu — an Inca city high in the Andes of Peru. Taj Mahal — a white marble tomb in Agra, India, built by Emperor Shah Jahan for his beloved wife. The Great Wall — China. The Colosseum — Rome, Italy. Hạ Long Bay — Quảng Ninh, Vietnam, with nearly 2,000 limestone islands.",
+          "body_vi": "Angkor Wat — quần thể đền khổng lồ ở Campuchia, có hình trên quốc kỳ Campuchia. Petra — thành phố tạc vào đá đỏ hồng ở Jordan. Machu Picchu — thành phố của người Inca trên dãy Andes, Peru. Taj Mahal — lăng mộ cẩm thạch trắng ở Agra, Ấn Độ, do hoàng đế Shah Jahan xây cho người vợ yêu. Vạn Lý Trường Thành — Trung Quốc. Đấu trường Colosseum — Rome, Ý. Vịnh Hạ Long — Quảng Ninh, Việt Nam, với gần 2.000 hòn đảo đá vôi.",
+          "examples": [
+            { "text": "Angkor Wat → Cambodia", "translation_vi": "Angkor Wat → Campuchia" },
+            { "text": "Petra → Jordan", "translation_vi": "Petra → Jordan" },
+            { "text": "Machu Picchu → Peru", "translation_vi": "Machu Picchu → Peru" },
+            { "text": "Taj Mahal → Agra, India", "translation_vi": "Taj Mahal → Agra, Ấn Độ" },
+            { "text": "Colosseum → Rome, Italy", "translation_vi": "Đấu trường Colosseum → Rome, Ý" },
+            { "text": "Hạ Long Bay → Quảng Ninh, Vietnam", "translation_vi": "Vịnh Hạ Long → Quảng Ninh, Việt Nam" }
+          ]
+        },
+        {
+          "title": "Festivals that light up the year",
+          "body": "Tết — the Lunar New Year, Vietnam's biggest holiday. Mid-Autumn Festival — on the 15th day of the 8th lunar month, with mooncakes and lanterns under the full moon. Diwali — India's Hindu festival of lights, with oil lamps and fireworks. Songkran — Thailand's traditional New Year in mid-April, famous for joyful water fights. Carnival in Rio de Janeiro, Brazil — samba parades before Lent.",
+          "body_vi": "Tết — Tết Nguyên Đán, ngày lễ lớn nhất của người Việt. Tết Trung Thu — ngày 15 tháng 8 âm lịch, có bánh trung thu và đèn lồng dưới trăng tròn. Diwali — lễ hội ánh sáng của người theo đạo Hindu ở Ấn Độ, thắp đèn dầu và bắn pháo hoa. Songkran — Tết cổ truyền Thái Lan giữa tháng 4, nổi tiếng với màn té nước vui nhộn. Carnival ở Rio de Janeiro, Brazil — những đoàn diễu hành samba trước Mùa Chay.",
+          "examples": [
+            { "text": "Diwali → festival of lights (India)", "translation_vi": "Diwali → lễ hội ánh sáng (Ấn Độ)" },
+            { "text": "Songkran → water festival (Thailand)", "translation_vi": "Songkran → lễ hội té nước (Thái Lan)" },
+            { "text": "Mid-Autumn → 15th day of the 8th lunar month", "translation_vi": "Trung Thu → rằm tháng Tám âm lịch" },
+            { "text": "Carnival → Rio de Janeiro, Brazil", "translation_vi": "Carnival → Rio de Janeiro, Brazil" }
+          ]
+        },
+        {
+          "title": "Memory trick: a love-story world tour",
+          "body": "Plan an imaginary honeymoon: watch sunrise at Angkor Wat (Cambodia), walk through the rock canyon to Petra (Jordan), climb to Machu Picchu (Peru), and end at the Taj Mahal (India) — the world's most famous monument to love. Then come home for Mid-Autumn under the full moon.",
+          "body_vi": "Mẹo nhớ: lên kế hoạch một chuyến trăng mật tưởng tượng — ngắm bình minh ở Angkor Wat (Campuchia), đi qua hẻm núi đá vào Petra (Jordan), leo lên Machu Picchu (Peru), rồi kết thúc ở Taj Mahal (Ấn Độ) — công trình biểu tượng tình yêu nổi tiếng nhất thế giới. Sau đó về nhà đón Trung Thu dưới trăng rằm."
+        }
+      ],
+      "questions": [
+        {
+          "id": "explorer-l1-landmark-01",
+          "kind": "multiple_choice",
+          "objective": "Locate Angkor Wat",
+          "prompt": "Angkor Wat, the giant temple shown on a national flag, is in which country?",
+          "prompt_vi": "Angkor Wat, ngôi đền khổng lồ xuất hiện trên một lá quốc kỳ, nằm ở nước nào?",
+          "options": ["Cambodia", "Thailand", "Laos", "Myanmar"],
+          "answer": "Cambodia",
+          "explanation": "Angkor Wat, near Siem Reap in Cambodia, is one of the largest religious monuments in the world and appears on Cambodia's flag.",
+          "explanation_vi": "Angkor Wat gần Siem Reap, Campuchia, là một trong những công trình tôn giáo lớn nhất thế giới, ban đầu xây để thờ thần Vishnu của đạo Hindu rồi sau trở thành đền Phật giáo. Hình đền có mặt trên quốc kỳ Campuchia."
+        },
+        {
+          "id": "explorer-l1-landmark-02",
+          "kind": "multiple_choice",
+          "objective": "Locate Petra",
+          "prompt": "Petra, an ancient city carved into rose-red rock cliffs, is in which country?",
+          "prompt_vi": "Petra, thành phố cổ được tạc vào vách đá màu đỏ hồng, nằm ở nước nào?",
+          "options": ["Jordan", "Egypt", "Türkiye", "Morocco"],
+          "answer": "Jordan",
+          "explanation": "Petra in southern Jordan was carved by the Nabataean people more than 2,000 years ago. Visitors enter through a narrow canyon called the Siq.",
+          "explanation_vi": "Petra ở miền nam Jordan được người Nabataean tạc vào đá hơn 2.000 năm trước. Du khách đi vào qua hẻm núi hẹp tên Siq. Petra còn được gọi là \"thành phố hoa hồng\" vì màu đá đỏ hồng."
+        },
+        {
+          "id": "explorer-l1-landmark-03",
+          "kind": "multiple_choice",
+          "objective": "Locate Machu Picchu",
+          "prompt": "Machu Picchu, the Inca city high in the Andes mountains, is in which country?",
+          "prompt_vi": "Machu Picchu, thành phố của người Inca trên dãy núi Andes, nằm ở nước nào?",
+          "options": ["Peru", "Mexico", "Chile", "Bolivia"],
+          "answer": "Peru",
+          "explanation": "Machu Picchu was built by the Inca in the 15th century in the Andes of Peru, and became widely known to the world in 1911.",
+          "explanation_vi": "Machu Picchu được người Inca xây vào thế kỷ 15 trên dãy Andes ở Peru. Nhiều bức tường đá ở đây được ghép khít với nhau mà không cần dùng vữa — một kỹ thuật nổi tiếng của người Inca."
+        },
+        {
+          "id": "explorer-l1-landmark-04",
+          "kind": "multiple_choice",
+          "objective": "Locate the Taj Mahal",
+          "prompt": "The Taj Mahal, a white marble tomb built by an emperor for his beloved wife, is in which country?",
+          "prompt_vi": "Taj Mahal, lăng mộ cẩm thạch trắng do một vị hoàng đế xây cho người vợ yêu dấu, nằm ở nước nào?",
+          "options": ["India", "Pakistan", "Iran", "Bangladesh"],
+          "answer": "India",
+          "explanation": "The Taj Mahal stands in Agra, India. Mughal emperor Shah Jahan built it in memory of his wife Mumtaz Mahal.",
+          "explanation_vi": "Taj Mahal ở Agra, Ấn Độ, được hoàng đế Shah Jahan xây để tưởng nhớ người vợ Mumtaz Mahal. Công trình mất khoảng 20 năm với hàng chục nghìn thợ — một món quà tình yêu vượt thời gian."
+        },
+        {
+          "id": "explorer-l1-landmark-05",
+          "kind": "multiple_choice",
+          "objective": "Locate the Colosseum",
+          "prompt": "In which city can you visit the Colosseum, the ancient amphitheatre where gladiators once fought?",
+          "prompt_vi": "Bạn có thể tham quan Đấu trường Colosseum, nơi các đấu sĩ La Mã từng giao chiến, ở thành phố nào?",
+          "options": ["Rome", "Athens", "Paris", "Istanbul"],
+          "answer": "Rome",
+          "explanation": "The Colosseum in Rome, Italy, was completed around 80 AD and could hold tens of thousands of spectators.",
+          "explanation_vi": "Đấu trường Colosseum ở Rome, Ý, hoàn thành khoảng năm 80 sau Công nguyên và chứa được hàng chục nghìn khán giả. Thời đó còn có mái che bằng vải căng phía trên để che nắng cho khán giả."
+        },
+        {
+          "id": "explorer-l1-landmark-06",
+          "kind": "multiple_choice",
+          "objective": "Know what Diwali celebrates",
+          "prompt": "Diwali, one of India's biggest festivals, is known as the festival of what?",
+          "prompt_vi": "Diwali, một trong những lễ hội lớn nhất Ấn Độ, được gọi là lễ hội của điều gì?",
+          "options": ["Lights", "Water", "Kites", "Flowers"],
+          "answer": "Lights",
+          "explanation": "During Diwali, families light small oil lamps called diyas, set off fireworks and share sweets to celebrate light winning over darkness.",
+          "explanation_vi": "Trong lễ Diwali, các gia đình thắp những ngọn đèn dầu nhỏ gọi là diya, bắn pháo hoa và tặng nhau bánh kẹo để mừng ánh sáng chiến thắng bóng tối — không khí rộn ràng giống Tết của người Việt."
+        },
+        {
+          "id": "explorer-l1-landmark-07",
+          "kind": "multiple_choice",
+          "objective": "Know where Songkran is celebrated",
+          "prompt": "Splashing water on everyone in the streets is the highlight of Songkran, the traditional New Year of which country?",
+          "prompt_vi": "Té nước vào mọi người trên phố là điểm nhấn của Songkran — Tết cổ truyền của nước nào?",
+          "options": ["Thailand", "Japan", "India", "Brazil"],
+          "answer": "Thailand",
+          "explanation": "Songkran is Thailand's traditional New Year, held in mid-April. Water symbolises washing away bad luck and is a great way to cool off in the hottest month.",
+          "explanation_vi": "Songkran là Tết cổ truyền Thái Lan vào giữa tháng 4. Té nước tượng trưng cho việc gột rửa xui xẻo — và cũng giúp giải nhiệt vì tháng 4 là tháng nóng nhất ở Thái Lan."
+        },
+        {
+          "id": "explorer-l1-landmark-08",
+          "kind": "multiple_choice",
+          "objective": "Know the date of the Mid-Autumn Festival",
+          "prompt": "On which lunar date is the Mid-Autumn Festival celebrated?",
+          "prompt_vi": "Tết Trung Thu được tổ chức vào ngày nào theo âm lịch?",
+          "options": [
+            "15th day of the 8th lunar month",
+            "1st day of the 1st lunar month",
+            "5th day of the 5th lunar month",
+            "7th day of the 7th lunar month"
+          ],
+          "answer": "15th day of the 8th lunar month",
+          "explanation": "Mid-Autumn falls on the 15th day of the 8th lunar month, when the moon is full. The 1st of the 1st month is Tết, the 5th of the 5th is the Dragon Boat (Đoan Ngọ) festival, and the 7th of the 7th is Qixi (Thất Tịch).",
+          "explanation_vi": "Trung Thu là rằm tháng Tám, khi trăng tròn nhất. Mùng 1 tháng Giêng là Tết Nguyên Đán, mùng 5 tháng 5 là Tết Đoan Ngọ, còn mùng 7 tháng 7 là Thất Tịch — ngày Ngưu Lang Chức Nữ gặp nhau, rất hợp cho các cặp đôi!"
+        }
+      ]
+    }
+  ]
+}

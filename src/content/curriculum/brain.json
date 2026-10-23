@@ -1,0 +1,68 @@
+{
+  "subject": "brain",
+  "levels": [
+    {
+      "level": "L1",
+      "title": "Apprentice",
+      "title_vi": "Tập sự",
+      "lesson_target": 30,
+      "units": [
+        {
+          "id": "brain-l1-u1",
+          "title": "First Puzzles",
+          "title_vi": "Những câu đố đầu tiên",
+          "description": "Patterns, logic, mental math, critical thinking and problem-solving.",
+          "location": "library",
+          "status": "available",
+          "lessons": [
+            "brain-l1-patterns",
+            "brain-l1-logic",
+            "brain-l1-math-puzzles",
+            "brain-l1-critical-thinking",
+            "brain-l1-problem-solving"
+          ],
+          "boss": {
+            "name": "The Riddle Owl",
+            "questions": 8
+          },
+          "reward_item": "puzzle_cube"
+        },
+        {
+          "id": "brain-l1-u2",
+          "title": "Memory Palace",
+          "title_vi": "Cung điện ký ức",
+          "description": "Memory techniques and visual reasoning.",
+          "location": "observatory",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "brain-l1-u3",
+          "title": "Strategy Games",
+          "title_vi": "Trò chơi chiến lược",
+          "description": "Thinking ahead like a chess player.",
+          "location": "castle",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    },
+    {
+      "level": "L2",
+      "title": "Scholar",
+      "title_vi": "Học giả",
+      "lesson_target": 30,
+      "units": [
+        {
+          "id": "brain-l2-u1",
+          "title": "Advanced Logic",
+          "title_vi": "Logic nâng cao",
+          "description": "Multi-step deductions.",
+          "location": "observatory",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    }
+  ]
+}

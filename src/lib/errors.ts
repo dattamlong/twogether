@@ -33,6 +33,17 @@ const KNOWN: Record<string, Friendly> = {
   weak_password: { en: "Please choose a stronger password (at least 8 characters).", vi: "Hãy chọn mật khẩu mạnh hơn (ít nhất 8 ký tự)." },
   over_email_send_rate_limit: { en: "Too many sign-ups right now. Please wait a few minutes and try again.", vi: "Đang có quá nhiều lượt đăng ký. Đợi vài phút rồi thử lại nhé." },
   over_request_rate_limit: { en: "Too many attempts. Please wait a minute and try again.", vi: "Thử quá nhiều lần. Đợi một chút rồi thử lại nhé." },
+  boss_locked: { en: "Finish the unit review to face the boss.", vi: "Hoàn thành phần ôn tập để gặp boss." },
+  finish_unit_lessons_first: { en: "Finish every lesson in this unit first.", vi: "Hãy học hết các bài trong unit trước." },
+  unit_not_available: { en: "This unit isn't unlocked yet.", vi: "Unit này chưa được mở khóa." },
+  challenge_incomplete: { en: "Answer every question first.", vi: "Hãy trả lời hết các câu hỏi." },
+  placement_not_available: { en: "Placement isn't available for this world.", vi: "Thế giới này chưa có bài kiểm tra xếp lớp." },
+  adventure_completed: { en: "You've already finished this adventure together.", vi: "Hai bạn đã hoàn thành cuộc phiêu lưu này." },
+  already_completed: { en: "You've already finished your part.", vi: "Bạn đã hoàn thành phần của mình." },
+  adventure_not_found: { en: "Adventure not found.", vi: "Không tìm thấy cuộc phiêu lưu." },
+  no_content: { en: "There aren't enough questions here yet.", vi: "Chưa có đủ câu hỏi." },
+  subject_not_found: { en: "That world doesn't exist.", vi: "Thế giới này không tồn tại." },
+  no_playable_levels: { en: "No playable levels yet.", vi: "Chưa có cấp độ nào để chơi." },
   signup_disabled: { en: "Sign-ups are closed right now.", vi: "Hiện chưa mở đăng ký." },
 };
 

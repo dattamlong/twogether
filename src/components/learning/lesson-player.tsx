@@ -4,7 +4,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CoinIcon, StarIcon } from "@/components/ui/icons";
@@ -13,6 +13,7 @@ import { ProgressBar } from "@/components/ui/progress-bar";
 import { ErrorBlock, LoadingBlock } from "@/components/ui/states";
 import { submitAnswer, useLessonCards } from "@/features/learning/queries";
 import { LEVEL_LABELS } from "@/features/learning/types";
+import { universeKeys } from "@/features/universe/queries";
 import { useInvalidateProgress } from "@/features/progression/queries";
 import { qk } from "@/features/query-keys";
 import { getSupabase } from "@/lib/supabase/client";
@@ -21,18 +22,23 @@ import { celebrate } from "@/stores/celebration-store";
 import { useRoomEvents } from "@/stores/room-events";
 import { QuestionView } from "./question-view";
 
+type IntroCard = { title: string; body: string; body_vi: string; examples: { text: string; translation_vi: string; note?: string }[] };
+
 type Summary = { xp: number; coins: number; correct: number; total: number; firstCompletion: boolean; leveledUp: boolean; level: number };
 
 export function LessonPlayer() {
   const params = useParams<{ lessonId: string }>();
   const lessonId = params.lessonId;
   const router = useRouter();
+  const mapParam = useSearchParams().get("map");
+  const backHref = mapParam && /^[a-z]+\/[A-Z0-9]+$/.test(mapParam) ? `/learn/world/${mapParam.split("/")[0]}?level=${mapParam.split("/")[1]}` : "/learn/free";
   const client = useQueryClient();
   const invalidate = useInvalidateProgress();
   const { data, isLoading, error, refetch } = useLessonCards(lessonId);
   const [attempt, setAttempt] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
-  const [phase, setPhase] = useState<"intro" | "playing" | "finishing" | "summary">("intro");
+  const [phase, setPhase] = useState<"intro" | "discover" | "playing" | "finishing" | "summary">("intro");
+  const [discoverIndex, setDiscoverIndex] = useState(0);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [actionError, setActionError] = useState<unknown>(null);
   const [starting, setStarting] = useState(false);
@@ -42,6 +48,7 @@ export function LessonPlayer() {
   if (!data?.lesson) return <ErrorBlock error="lesson_not_found" />;
   const { lesson, cards } = data;
   const card = cards[index];
+  const intro = (Array.isArray(lesson.intro) ? lesson.intro : []) as unknown as IntroCard[];
 
   async function start() {
     setStarting(true);
@@ -72,6 +79,7 @@ export function LessonPlayer() {
     useRoomEvents.getState().emit({ type: "celebrate" });
     client.invalidateQueries({ queryKey: qk.lessonHistory });
     client.invalidateQueries({ queryKey: qk.reviewQueue });
+    client.invalidateQueries({ queryKey: universeKeys.all });
     void invalidate();
   }
 
@@ -80,9 +88,9 @@ export function LessonPlayer() {
       <Panel className="mx-auto flex max-w-xl flex-col gap-4">
         <div className="flex items-center justify-between">
           <span className="rounded-full bg-lavender-100 px-3 py-1 text-xs font-bold">
-            {lesson.level} · {LEVEL_LABELS[lesson.level].name}
+            {lesson.level} · {LEVEL_LABELS[lesson.level]?.name ?? lesson.level}
           </span>
-          <Link href="/learn" className="text-sm font-semibold text-cocoa-400 hover:text-plum-700">
+          <Link href={backHref} className="text-sm font-semibold text-cocoa-400 hover:text-plum-700">
             Back
           </Link>
         </div>
@@ -108,9 +116,67 @@ export function LessonPlayer() {
           </span>
         </div>
         {actionError ? <ErrorBlock error={actionError} /> : null}
-        <Button size="lg" onClick={start} loading={starting}>
-          Start lesson
-        </Button>
+        {intro.length ? (
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <Button size="lg" className="flex-1" onClick={() => { setDiscoverIndex(0); setPhase("discover"); }}>
+              Discover first
+            </Button>
+            <Button size="lg" variant="soft" className="flex-1" onClick={start} loading={starting}>
+              Skip to questions
+            </Button>
+          </div>
+        ) : (
+          <Button size="lg" onClick={start} loading={starting}>
+            Start lesson
+          </Button>
+        )}
+      </Panel>
+    );
+  }
+
+  if (phase === "discover" && intro.length) {
+    const step = intro[Math.min(discoverIndex, intro.length - 1)];
+    const last = discoverIndex >= intro.length - 1;
+    return (
+      <Panel className="mx-auto flex max-w-xl flex-col gap-4">
+        <div className="flex items-center gap-3">
+          <span className="rounded-full bg-sakura-100 px-3 py-1 text-xs font-bold">Discover</span>
+          <ProgressBar value={discoverIndex + 1} max={intro.length} label="Discover progress" className="h-2" />
+          <span className="text-xs font-bold text-cocoa-400">
+            {discoverIndex + 1}/{intro.length}
+          </span>
+        </div>
+        <AnimatePresence mode="wait">
+          <motion.div key={discoverIndex} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} className="flex flex-col gap-3">
+            <h2 className="text-2xl font-bold">{step.title}</h2>
+            <p className="text-plum-600">{step.body}</p>
+            <Vi>{step.body_vi}</Vi>
+            <ul className="flex flex-col gap-2">
+              {step.examples.map((ex) => (
+                <li key={ex.text} className="rounded-2xl bg-white/80 px-4 py-3 ring-2 ring-white">
+                  <p lang={lesson.language ?? "en"} className="font-display text-lg font-semibold text-plum-700">{ex.text}</p>
+                  <p lang="vi" className="text-sm text-cocoa-400">{ex.translation_vi}</p>
+                  {ex.note ? <p className="mt-1 text-xs text-lavender-400">{ex.note}</p> : null}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </AnimatePresence>
+        {actionError ? <ErrorBlock error={actionError} /> : null}
+        <div className="flex gap-2">
+          <Button variant="soft" className="flex-1" onClick={() => (discoverIndex === 0 ? setPhase("intro") : setDiscoverIndex((i) => i - 1))}>
+            Back
+          </Button>
+          {last ? (
+            <Button className="flex-1" onClick={start} loading={starting}>
+              Practice now
+            </Button>
+          ) : (
+            <Button className="flex-1" onClick={() => setDiscoverIndex((i) => i + 1)}>
+              Next
+            </Button>
+          )}
+        </div>
       </Panel>
     );
   }
@@ -145,7 +211,7 @@ export function LessonPlayer() {
             Practice again
           </Button>
           <Button variant="secondary" className="flex-1" asChild>
-            <Link href="/learn">More lessons</Link>
+            <Link href={backHref}>{mapParam ? "Back to map" : "More lessons"}</Link>
           </Button>
           <Button className="flex-1" asChild>
             <Link href="/home">Go home</Link>
@@ -163,7 +229,7 @@ export function LessonPlayer() {
           size="icon"
           aria-label="Leave lesson"
           onClick={() => {
-            if (window.confirm("Leave this lesson? Your answers so far still count toward reviews.")) router.push("/learn");
+            if (window.confirm("Leave this lesson? Your answers so far still count toward reviews.")) router.push(backHref);
           }}
         >
           <X />

@@ -1,0 +1,40 @@
+{
+  "subject": "tech",
+  "levels": [
+    {
+      "level": "L1",
+      "title": "Coder",
+      "title_vi": "Lập trình viên",
+      "lesson_target": 30,
+      "units": [
+        {
+          "id": "tech-l1-u1",
+          "title": "How Computers Work",
+          "title_vi": "Máy tính hoạt động thế nào",
+          "description": "Hardware, software and the internet.",
+          "location": "city",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "tech-l1-u2",
+          "title": "First Code",
+          "title_vi": "Dòng code đầu tiên",
+          "description": "Variables, loops and conditions.",
+          "location": "lab",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "tech-l1-u3",
+          "title": "Stay Safe Online",
+          "title_vi": "An toàn trên mạng",
+          "description": "Passwords, phishing and privacy.",
+          "location": "city",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    }
+  ]
+}

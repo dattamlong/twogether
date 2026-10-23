@@ -1,0 +1,40 @@
+{
+  "subject": "science",
+  "levels": [
+    {
+      "level": "L1",
+      "title": "Lab Assistant",
+      "title_vi": "Trợ lý phòng thí nghiệm",
+      "lesson_target": 30,
+      "units": [
+        {
+          "id": "science-l1-u1",
+          "title": "Matter & Energy",
+          "title_vi": "Vật chất & năng lượng",
+          "description": "States of matter and energy basics.",
+          "location": "lab",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "science-l1-u2",
+          "title": "Living Things",
+          "title_vi": "Sinh vật sống",
+          "description": "Cells, plants and animals.",
+          "location": "forest",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "science-l1-u3",
+          "title": "Our Universe",
+          "title_vi": "Vũ trụ",
+          "description": "Planets, stars and gravity.",
+          "location": "observatory",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1108 @@
+{
+  "lessons": [
+    {
+      "slug": "en-a1-greetings",
+      "subject": "english",
+      "category": "vocabulary",
+      "level": "A1",
+      "topic": "greetings",
+      "title": "Hello, You! Greetings & Polite Words",
+      "title_vi": "Chào em, chào anh! Lời chào và từ lịch sự",
+      "objectives": [
+        "Say hello and goodbye at different times of day",
+        "Choose formal or informal greetings",
+        "Use thank you, sorry and excuse me correctly"
+      ],
+      "intro": [
+        {
+          "title": "Hello and goodbye",
+          "body": "When you meet someone, say \"Hello\" or \"Hi\". You can also use the time of day: \"Good morning\" (before 12 p.m.), \"Good afternoon\" (12–6 p.m.), \"Good evening\" (after 6 p.m.). When you leave, say \"Goodbye\", \"Bye\" or \"See you\". \"Good night\" is NOT a greeting — we only say it when we leave at night or go to bed.",
+          "body_vi": "Khi gặp ai đó, nói \"Hello\" hoặc \"Hi\". Có thể chào theo buổi: \"Good morning\" (buổi sáng), \"Good afternoon\" (buổi chiều), \"Good evening\" (buổi tối). Khi chia tay, nói \"Goodbye\", \"Bye\" hoặc \"See you\" (hẹn gặp lại). Lưu ý: \"Good night\" KHÔNG dùng để chào khi gặp — chỉ nói khi chia tay vào buổi tối hoặc trước khi đi ngủ. Người Việt hay nhầm \"Good night\" là \"chào buổi tối\" khi vừa gặp nhau.",
+          "examples": [
+            { "text": "Good morning, sunshine!", "translation_vi": "Chào buổi sáng, nắng mai của anh!" },
+            { "text": "Bye! See you tomorrow.", "translation_vi": "Tạm biệt! Mai gặp nhé." },
+            { "text": "Good night. Sleep well!", "translation_vi": "Chúc ngủ ngon. Ngủ thật ngon nhé!", "note": "Only when leaving at night or going to bed" }
+          ]
+        },
+        {
+          "title": "Formal or informal?",
+          "body": "With friends, family and your partner, use informal words: \"Hi\", \"Hey\", \"Bye\", \"See you\". With teachers, bosses, customers or strangers, use formal words: \"Hello\", \"Good morning\", \"Goodbye\". English has no special polite pronouns, so the greeting word itself shows how polite you are.",
+          "body_vi": "Với bạn bè, gia đình và người yêu, dùng từ thân mật: \"Hi\", \"Hey\", \"Bye\", \"See you\". Với thầy cô, sếp, khách hàng hay người lạ, dùng từ trang trọng: \"Hello\", \"Good morning\", \"Goodbye\". Tiếng Anh không có \"dạ, thưa, ạ\" như tiếng Việt, nên chính lời chào thể hiện mức độ lịch sự.",
+          "examples": [
+            { "text": "Hi, babe!", "translation_vi": "Chào cưng!", "note": "informal" },
+            { "text": "Good afternoon, Mr. Brown.", "translation_vi": "Chào thầy Brown ạ (buổi chiều).", "note": "formal" },
+            { "text": "Hey! See you later.", "translation_vi": "Ê! Lát gặp nha.", "note": "informal" }
+          ]
+        },
+        {
+          "title": "Thank you, sorry, excuse me",
+          "body": "Say \"Thank you\" (or \"Thanks\") when someone helps you or gives you something. Say \"Sorry\" AFTER you make a small mistake. Say \"Excuse me\" BEFORE you ask a stranger something or need to pass by — it means \"may I have your attention?\"",
+          "body_vi": "Nói \"Thank you\" (hoặc \"Thanks\") khi được giúp hay được tặng gì đó. Nói \"Sorry\" SAU khi mình lỡ làm sai. Nói \"Excuse me\" TRƯỚC khi hỏi người lạ hoặc xin đi qua — giống \"xin lỗi cho tôi hỏi\" hay \"xin phép\" trong tiếng Việt. Người Việt hay dùng \"Sorry\" cho cả hai trường hợp, nhưng để gây chú ý thì \"Excuse me\" tự nhiên hơn.",
+          "examples": [
+            { "text": "Thank you very much!", "translation_vi": "Cảm ơn rất nhiều!" },
+            { "text": "Oops, sorry!", "translation_vi": "Ối, xin lỗi nha!" },
+            { "text": "Excuse me, where is the station?", "translation_vi": "Xin lỗi, cho hỏi nhà ga ở đâu ạ?" }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "en-a1-greet-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'hello'",
+          "prompt": "'Hello' nghĩa là gì?",
+          "options": ["xin chào", "tạm biệt", "cảm ơn", "xin lỗi"],
+          "answer": "xin chào",
+          "explanation": "\"Hello\" is what we say when we meet someone. \"Goodbye\" is for leaving.",
+          "explanation_vi": "\"Hello\" là xin chào — nói khi gặp ai đó. Tạm biệt là \"goodbye\", cảm ơn là \"thank you\", xin lỗi là \"sorry\".",
+          "word": {
+            "term": "hello",
+            "ipa": "/həˈloʊ/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "xin chào",
+            "example": "Hello! Nice to meet you.",
+            "example_vi": "Xin chào! Rất vui được gặp bạn."
+          }
+        },
+        {
+          "id": "en-a1-greet-02",
+          "kind": "multiple_choice",
+          "objective": "Choose a greeting for the time of day",
+          "prompt": "It's 8 a.m. You meet your teacher at school. What do you say?",
+          "prompt_vi": "Bây giờ là 8 giờ sáng. Bạn gặp thầy cô ở trường. Bạn nói gì?",
+          "options": ["Good morning.", "Good night.", "Good evening.", "See you."],
+          "answer": "Good morning.",
+          "explanation": "Before 12 p.m. we say \"Good morning\". \"Good night\" is only for leaving at night or going to bed.",
+          "explanation_vi": "Trước 12 giờ trưa thì chào \"Good morning\". \"Good night\" chỉ dùng khi chia tay buổi tối hoặc đi ngủ, còn \"See you\" là lời tạm biệt, không phải lời chào khi gặp.",
+          "word": {
+            "term": "good morning",
+            "ipa": "/ˌɡʊd ˈmɔrnɪŋ/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "chào buổi sáng",
+            "example": "Good morning, my love! Did you sleep well?",
+            "example_vi": "Chào buổi sáng em yêu! Em ngủ ngon không?"
+          }
+        },
+        {
+          "id": "en-a1-greet-03",
+          "kind": "multiple_choice",
+          "objective": "Pick an informal greeting for a partner",
+          "prompt": "Your partner calls you after work. Which greeting is the most casual?",
+          "prompt_vi": "Người yêu gọi cho bạn sau giờ làm. Lời chào nào thân mật nhất?",
+          "options": ["Hi!", "Good afternoon, sir.", "Good evening, madam.", "How do you do?"],
+          "answer": "Hi!",
+          "explanation": "\"Hi\" is short and friendly — perfect for your partner and friends. The other greetings are very formal.",
+          "explanation_vi": "\"Hi\" ngắn gọn, thân mật — rất hợp với người yêu, bạn bè. \"Sir\", \"madam\" và \"How do you do?\" rất trang trọng, nói với người yêu sẽ nghe xa cách và buồn cười.",
+          "word": {
+            "term": "hi",
+            "ipa": "/haɪ/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "chào (thân mật)",
+            "example": "Hi, honey! How was your day?",
+            "example_vi": "Chào anh yêu! Hôm nay của anh thế nào?"
+          }
+        },
+        {
+          "id": "en-a1-greet-04",
+          "kind": "multiple_choice",
+          "objective": "Say goodbye politely when leaving",
+          "prompt": "You leave the office at 5 p.m. What do you say to your boss?",
+          "prompt_vi": "Bạn rời văn phòng lúc 5 giờ chiều. Bạn nói gì với sếp?",
+          "options": ["Goodbye!", "Hello!", "Good morning!", "Excuse me!"],
+          "answer": "Goodbye!",
+          "explanation": "When you leave, say \"Goodbye\". It's polite enough for a boss. \"Hello\" and \"Good morning\" are for meeting.",
+          "explanation_vi": "Khi ra về thì nói \"Goodbye\" (tạm biệt) — đủ lịch sự để nói với sếp. \"Hello\", \"Good morning\" là lời chào khi gặp, còn \"Excuse me\" dùng để xin phép hay gây chú ý.",
+          "word": {
+            "term": "goodbye",
+            "ipa": "/ɡʊdˈbaɪ/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "tạm biệt",
+            "example": "Goodbye, everyone. See you on Monday!",
+            "example_vi": "Tạm biệt mọi người. Hẹn gặp lại thứ Hai nhé!"
+          }
+        },
+        {
+          "id": "en-a1-greet-05",
+          "kind": "multiple_choice",
+          "objective": "Use 'excuse me' to get a stranger's attention",
+          "prompt": "You want to ask a stranger for directions: \"___, where is the bus stop?\"",
+          "prompt_vi": "Bạn muốn hỏi đường một người lạ: \"___, trạm xe buýt ở đâu ạ?\"",
+          "options": ["Excuse me", "Thank you", "Goodbye", "See you"],
+          "answer": "Excuse me",
+          "explanation": "\"Excuse me\" comes BEFORE a question to a stranger. It politely asks for their attention.",
+          "explanation_vi": "\"Excuse me\" đứng TRƯỚC câu hỏi khi nói với người lạ, giống \"Xin lỗi, cho hỏi…\". \"Thank you\" thì nói sau khi người ta đã giúp mình.",
+          "word": {
+            "term": "excuse me",
+            "ipa": "/ɪkˈskjuz mi/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "xin lỗi (cho tôi hỏi / cho tôi đi qua)",
+            "example": "Excuse me, is this seat free?",
+            "example_vi": "Xin lỗi, ghế này còn trống không ạ?"
+          }
+        },
+        {
+          "id": "en-a1-greet-06",
+          "kind": "multiple_choice",
+          "objective": "Apologize after a small mistake",
+          "prompt": "Oops! You step on your partner's foot. What do you say?",
+          "prompt_vi": "Ối! Bạn lỡ giẫm lên chân người yêu. Bạn nói gì?",
+          "options": ["Sorry!", "Thank you!", "Good morning!", "See you!"],
+          "answer": "Sorry!",
+          "explanation": "After a small mistake, say \"Sorry!\" (or \"I'm sorry!\"). It shows you feel bad about it.",
+          "explanation_vi": "Sau khi lỡ làm sai điều gì, nói \"Sorry!\" hoặc \"I'm sorry!\" (xin lỗi). Nhớ: \"Sorry\" là SAU khi có lỗi, còn \"Excuse me\" là TRƯỚC khi làm phiền ai đó.",
+          "word": {
+            "term": "sorry",
+            "ipa": "/ˈsɑri/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "xin lỗi; cảm thấy có lỗi",
+            "example": "I'm sorry I'm late, love.",
+            "example_vi": "Anh xin lỗi vì đến trễ nha em."
+          }
+        },
+        {
+          "id": "en-a1-greet-07",
+          "kind": "listening",
+          "objective": "Understand 'see you' plus a time",
+          "audio_text": "Bye, honey! See you tonight.",
+          "prompt": "When will they meet again?",
+          "prompt_vi": "Khi nào họ gặp lại nhau?",
+          "options": ["tonight", "tomorrow morning", "next week", "this afternoon"],
+          "answer": "tonight",
+          "explanation": "\"See you\" + a time tells us when we meet again. The speaker says \"See you tonight\".",
+          "explanation_vi": "\"See you\" + thời gian cho biết khi nào gặp lại: \"See you tonight\" = tối nay gặp nhé. Tương tự: \"See you tomorrow\" (mai gặp), \"See you later\" (lát gặp)."
+        },
+        {
+          "id": "en-a1-greet-08",
+          "kind": "sentence_order",
+          "objective": "Build a strong thank-you phrase",
+          "prompt": "Make the sentence: Cảm ơn em rất nhiều.",
+          "tokens": ["much.", "Thank", "very", "you"],
+          "answers": ["Thank you very much."],
+          "hint": "Start with \"Thank you\", then add \"very much\" at the end.",
+          "hint_vi": "Bắt đầu bằng \"Thank you\", rồi thêm \"very much\" ở cuối.",
+          "explanation": "\"Thank you very much\" makes your thanks stronger. \"Very much\" always goes after \"Thank you\".",
+          "explanation_vi": "\"Thank you very much\" là cảm ơn rất nhiều. Cụm \"very much\" luôn đứng sau \"Thank you\" — không nói \"Very much thank you\" như dịch từng chữ."
+        }
+      ]
+    },
+    {
+      "slug": "en-a1-name-age",
+      "subject": "english",
+      "category": "grammar",
+      "level": "A1",
+      "topic": "name, age & to be",
+      "title": "Nice to Meet You: Name, Age & \"to be\"",
+      "title_vi": "Rất vui được gặp bạn: tên, tuổi và động từ \"to be\"",
+      "objectives": [
+        "Use I am / you are / he is / she is",
+        "Say your name and age",
+        "Ask \"What's your name?\" and \"How old are you?\""
+      ],
+      "intro": [
+        {
+          "title": "I am, you are, he is",
+          "body": "The verb \"to be\" changes with the person: I am (I'm), you are (you're), he is (he's), she is (she's), it is (it's), we are (we're), they are (they're). English has only one word for \"I\" and one word for \"you\" — no matter who you talk to.",
+          "body_vi": "Động từ \"to be\" (là, thì, ở) thay đổi theo chủ ngữ: I am, you are, he/she/it is, we/they are. Tiếng Việt có rất nhiều cách xưng hô (anh, em, chị, cô, tôi, mình…), nhưng tiếng Anh chỉ có \"I\" cho mình và \"you\" cho người nghe. Dạng rút gọn (I'm, you're, he's) rất hay dùng khi nói.",
+          "examples": [
+            { "text": "I'm happy.", "translation_vi": "Anh/Em/Tôi vui." },
+            { "text": "You are my best friend.", "translation_vi": "Em là bạn thân nhất của anh." },
+            { "text": "He is a nurse. She is a teacher.", "translation_vi": "Anh ấy là y tá. Cô ấy là giáo viên." }
+          ]
+        },
+        {
+          "title": "Saying your name and age",
+          "body": "Name: \"My name is Lan.\" or simply \"I'm Lan.\" Age: \"I'm 25 years old.\" or just \"I'm 25.\" Never forget \"am\", and never use \"have\" for age. \"Years\" has an -s because it is more than one year.",
+          "body_vi": "Giới thiệu tên: \"My name is Lan.\" hoặc \"I'm Lan.\" Nói tuổi: \"I'm 25 years old.\" hoặc ngắn gọn \"I'm 25.\" Lỗi rất hay gặp của người Việt: dịch \"Tôi 25 tuổi\" thành \"I 25 years old\" (thiếu \"am\") hoặc \"I have 25 years\" (sai — tiếng Anh dùng \"to be\" cho tuổi, không dùng \"have\").",
+          "examples": [
+            { "text": "My name is Minh.", "translation_vi": "Tên anh là Minh." },
+            { "text": "I'm 26 years old.", "translation_vi": "Em 26 tuổi." },
+            { "text": "I 26 years old.", "translation_vi": "(Sai — thiếu \"am\")", "note": "wrong" }
+          ]
+        },
+        {
+          "title": "Asking: name and age",
+          "body": "Ask a name: \"What's your name?\" (What's = What is). Ask an age: \"How old are you?\" For another person, change the words: \"What's his name?\" — \"His name is Nam.\" \"How old is she?\" — \"She's 24.\" Use \"his\" for a man and \"her\" for a woman.",
+          "body_vi": "Hỏi tên: \"What's your name?\" (What's = What is). Hỏi tuổi: \"How old are you?\" (nghĩa đen: bạn già bao nhiêu?). Hỏi về người khác: \"What's his name?\" — \"His name is Nam.\" / \"How old is she?\" — \"She's 24.\" Dùng \"his\" (của anh ấy) cho nam, \"her\" (của cô ấy) cho nữ — tiếng Việt chỉ nói \"tên anh ấy/cô ấy\" nên dễ lẫn.",
+          "examples": [
+            { "text": "What's your name?", "translation_vi": "Bạn tên gì?" },
+            { "text": "How old are you?", "translation_vi": "Bạn bao nhiêu tuổi?" },
+            { "text": "Her name is Thảo. She's 23.", "translation_vi": "Cô ấy tên Thảo. Cô ấy 23 tuổi." }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "en-a1-name-01",
+          "kind": "multiple_choice",
+          "objective": "Use 'am' with I",
+          "prompt": "I ___ Linh. Nice to meet you!",
+          "prompt_vi": "Mình ___ Linh. Rất vui được gặp bạn!",
+          "options": ["am", "is", "are", "be"],
+          "answer": "am",
+          "explanation": "With \"I\", the verb to be is always \"am\": I am Linh (or I'm Linh).",
+          "explanation_vi": "Với \"I\" thì \"to be\" luôn là \"am\": I am Linh = I'm Linh. \"Is\" dùng cho he/she/it, \"are\" dùng cho you/we/they."
+        },
+        {
+          "id": "en-a1-name-02",
+          "kind": "multiple_choice",
+          "objective": "Use 'is' with he/she",
+          "prompt": "My boyfriend ___ 27 years old.",
+          "prompt_vi": "Bạn trai mình 27 tuổi.",
+          "options": ["is", "am", "are", "has"],
+          "answer": "is",
+          "explanation": "\"My boyfriend\" = he, so we use \"is\". We use to be for age, not \"has\".",
+          "explanation_vi": "\"My boyfriend\" = he (anh ấy), nên dùng \"is\". Tuổi đi với \"to be\", không dùng \"has\" — đừng dịch \"có 27 tuổi\" thành \"has 27 years\"."
+        },
+        {
+          "id": "en-a1-name-03",
+          "kind": "multiple_choice",
+          "objective": "Say your age correctly",
+          "prompt": "Which sentence about age is correct?",
+          "prompt_vi": "Câu nào nói tuổi đúng?",
+          "options": ["I'm 24 years old.", "I 24 years old.", "I have 24 years old.", "I'm 24 year old."],
+          "answer": "I'm 24 years old.",
+          "explanation": "We need \"am\" (I'm), and \"years\" needs -s because 24 is more than one.",
+          "explanation_vi": "Phải có \"am\" (I'm) — tiếng Việt nói \"Tôi 24 tuổi\" không cần động từ, nhưng tiếng Anh thì bắt buộc. \"Years\" phải có -s vì 24 là số nhiều. Không dùng \"have\" cho tuổi."
+        },
+        {
+          "id": "en-a1-name-04",
+          "kind": "multiple_choice",
+          "objective": "Ask someone's name",
+          "prompt": "___ your name? — My name is Hà.",
+          "prompt_vi": "Bạn tên gì? — Mình tên là Hà.",
+          "options": ["What's", "How's", "Who's", "Where's"],
+          "answer": "What's",
+          "explanation": "We ask for a name with \"What's your name?\" (What is your name?).",
+          "explanation_vi": "Hỏi tên dùng \"What's your name?\" (What is your name?). Người Việt hay dịch \"tên gì\" đúng là \"What\", nhưng đôi khi lại nói \"How is your name?\" — sai nhé."
+        },
+        {
+          "id": "en-a1-name-05",
+          "kind": "multiple_choice",
+          "objective": "Ask someone's age with correct word order",
+          "prompt": "You want to know your new friend's age. What do you ask?",
+          "prompt_vi": "Bạn muốn biết tuổi của người bạn mới. Bạn hỏi thế nào?",
+          "options": ["How old are you?", "How old you are?", "How many years you have?", "What old are you?"],
+          "answer": "How old are you?",
+          "explanation": "In questions, \"are\" comes before \"you\": How old are you?",
+          "explanation_vi": "Trong câu hỏi, \"are\" đứng TRƯỚC \"you\": How old are you? \"How old you are?\" là trật tự câu kể, không phải câu hỏi. Và tiếng Anh không hỏi tuổi bằng \"How many years…\"."
+        },
+        {
+          "id": "en-a1-name-06",
+          "kind": "multiple_choice",
+          "objective": "Choose his or her",
+          "prompt": "This is my wife. ___ name is Hoa.",
+          "prompt_vi": "Đây là vợ tôi. Tên cô ấy là Hoa.",
+          "options": ["Her", "His", "She", "My"],
+          "answer": "Her",
+          "explanation": "For a woman, use \"her\" (her name). \"She\" is a subject, not a possessive.",
+          "explanation_vi": "Vợ là nữ nên dùng \"her\" (của cô ấy): her name. \"His\" dùng cho nam. \"She\" là chủ ngữ (cô ấy), không đứng trước danh từ để chỉ sở hữu được."
+        },
+        {
+          "id": "en-a1-name-07",
+          "kind": "sentence_order",
+          "objective": "Ask about another person's age",
+          "prompt": "Make the question: Bạn trai của bạn bao nhiêu tuổi?",
+          "tokens": ["your", "old", "boyfriend?", "How", "is"],
+          "answers": ["How old is your boyfriend?"],
+          "hint": "Start with \"How old\", then the verb, then the person.",
+          "hint_vi": "Bắt đầu bằng \"How old\", rồi đến động từ \"is\", rồi đến người được hỏi.",
+          "explanation": "Question pattern: How old + is/are + person? \"Your boyfriend\" is one person (he), so we use \"is\".",
+          "explanation_vi": "Mẫu câu: How old + is/are + người? \"Your boyfriend\" là một người (he) nên dùng \"is\". Tiếng Việt để \"bao nhiêu tuổi\" ở cuối, còn tiếng Anh đưa \"How old\" lên đầu."
+        },
+        {
+          "id": "en-a1-name-08",
+          "kind": "sentence_order",
+          "objective": "Introduce your name and age in one sentence",
+          "prompt": "Make the sentence: Tên anh là Minh và anh ba mươi tuổi.",
+          "tokens": ["I'm", "name", "Minh", "My", "and", "is", "thirty."],
+          "answers": ["My name is Minh and I'm thirty."],
+          "hint": "First the name part (My name is…), then \"and\", then the age (I'm…).",
+          "hint_vi": "Phần tên trước (My name is…), rồi \"and\", rồi đến tuổi (I'm…).",
+          "explanation": "\"My name is…\" gives your name and \"I'm + number\" gives your age. \"And\" joins the two parts.",
+          "explanation_vi": "\"My name is…\" để nói tên, \"I'm + số\" để nói tuổi. \"And\" (và) nối hai vế. Nhớ \"I'm\" = I am — đừng bỏ \"am\"."
+        }
+      ]
+    },
+    {
+      "slug": "en-a1-numbers-dates",
+      "subject": "english",
+      "category": "vocabulary",
+      "level": "A1",
+      "topic": "numbers & dates",
+      "title": "Our Special Days: Numbers & Dates",
+      "title_vi": "Những ngày đặc biệt của hai đứa: số đếm và ngày tháng",
+      "objectives": [
+        "Count from 1 to 100 and hear 13 vs 30",
+        "Name the days of the week and the months",
+        "Say dates with ordinal numbers"
+      ],
+      "intro": [
+        {
+          "title": "Numbers 1–100",
+          "body": "1–12 are special words (one, two… eleven, twelve). 13–19 end in -teen, with stress on TEEN: thir-TEEN, four-TEEN. 20, 30… 90 end in -ty, with stress at the start: THIR-ty, FOR-ty. For 21–99, join with a hyphen: twenty-one, forty-five. 100 = one hundred.",
+          "body_vi": "1–12 là từ riêng (one… twelve). 13–19 có đuôi -teen, nhấn âm ở cuối và kéo dài: thir-TEEN. Các số tròn chục 20–90 có đuôi -ty, nhấn ở đầu và đuôi ngắn: THIR-ty. Người Việt rất hay nghe nhầm 13 với 30, 14 với 40… — hãy để ý chỗ nhấn và âm \"n\" ở cuối -teen. 21–99 nối bằng gạch ngang: twenty-one.",
+          "examples": [
+            { "text": "thirteen (13) — thirty (30)", "translation_vi": "mười ba — ba mươi", "note": "thir-TEEN vs THIR-ty" },
+            { "text": "fifteen (15) — fifty (50)", "translation_vi": "mười lăm — năm mươi" },
+            { "text": "seventy-two (72)", "translation_vi": "bảy mươi hai" }
+          ]
+        },
+        {
+          "title": "Days and months",
+          "body": "Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. Months: January, February, March, April, May, June, July, August, September, October, November, December. Always start them with a capital letter. Use \"on\" with days (on Friday) and \"in\" with months (in May).",
+          "body_vi": "Thứ: Monday (thứ Hai) … Sunday (Chủ nhật). Tháng: January (tháng Một) … December (tháng Mười Hai). Tiếng Anh gọi tháng bằng tên riêng chứ không đánh số như tiếng Việt, và luôn viết hoa chữ cái đầu. Dùng \"on\" với thứ (on Friday) và \"in\" với tháng (in May). Chú ý: Wednesday đọc là /ˈwɛnzdeɪ/ — chữ \"d\" đầu tiên câm.",
+          "examples": [
+            { "text": "Our date night is on Friday.", "translation_vi": "Tối hẹn hò của tụi mình là thứ Sáu." },
+            { "text": "My birthday is in October.", "translation_vi": "Sinh nhật em vào tháng Mười." }
+          ]
+        },
+        {
+          "title": "Ordinal numbers and dates",
+          "body": "For dates we use ordinal numbers: first (1st), second (2nd), third (3rd), fourth (4th), fifth (5th)… twelfth (12th), twentieth (20th), twenty-first (21st), thirtieth (30th). Write \"May 5th\" or \"5 May\". Say \"May fifth\" or \"the fifth of May\" — never \"May five\".",
+          "body_vi": "Nói ngày phải dùng số thứ tự: first (thứ nhất), second, third, rồi phần lớn thêm -th: fourth, fifth, twelfth. Viết \"May 5th\" hoặc \"5 May\". Đọc là \"May fifth\" hoặc \"the fifth of May\" — không đọc \"May five\". Cách \"the fifth of May\" giống tiếng Việt: ngày trước, tháng sau.",
+          "examples": [
+            { "text": "February 14th — February fourteenth", "translation_vi": "ngày 14 tháng 2" },
+            { "text": "the first of January", "translation_vi": "ngày mùng 1 tháng 1" },
+            { "text": "Our anniversary is on June 3rd.", "translation_vi": "Kỷ niệm của tụi mình là ngày 3 tháng 6.", "note": "say: June third" }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "en-a1-num-01",
+          "kind": "multiple_choice",
+          "objective": "Recall the order of the days of the week",
+          "prompt": "Which day comes after Tuesday?",
+          "prompt_vi": "Ngày nào đến sau thứ Ba?",
+          "options": ["Wednesday", "Thursday", "Monday", "Sunday"],
+          "answer": "Wednesday",
+          "explanation": "Monday, Tuesday, Wednesday — Wednesday comes after Tuesday. Remember: the first \"d\" is silent.",
+          "explanation_vi": "Monday (thứ Hai), Tuesday (thứ Ba), Wednesday (thứ Tư). Chú ý cách đọc: /ˈwɛnzdeɪ/ — chữ \"d\" đầu câm, không đọc \"wed-nes-day\".",
+          "word": {
+            "term": "Wednesday",
+            "ipa": "/ˈwɛnzdeɪ/",
+            "part_of_speech": "noun",
+            "meaning_vi": "thứ Tư",
+            "example": "Let's cook together on Wednesday.",
+            "example_vi": "Thứ Tư mình nấu ăn cùng nhau nhé."
+          }
+        },
+        {
+          "id": "en-a1-num-02",
+          "kind": "multiple_choice",
+          "objective": "Recall the order of the months",
+          "prompt": "Which month is between January and March?",
+          "prompt_vi": "Tháng nào nằm giữa tháng Một và tháng Ba?",
+          "options": ["February", "April", "December", "November"],
+          "answer": "February",
+          "explanation": "January (1), February (2), March (3). February is the second month and the shortest.",
+          "explanation_vi": "January (tháng 1), February (tháng 2), March (tháng 3). February là tháng Hai — tháng ngắn nhất, và có Valentine nữa!",
+          "word": {
+            "term": "February",
+            "ipa": "/ˈfɛbjuˌɛri/",
+            "part_of_speech": "noun",
+            "meaning_vi": "tháng Hai",
+            "example": "Valentine's Day is in February.",
+            "example_vi": "Lễ Tình nhân vào tháng Hai."
+          }
+        },
+        {
+          "id": "en-a1-num-03",
+          "kind": "multiple_choice",
+          "objective": "Spell the number 13",
+          "prompt": "How do you write 13 in words?",
+          "prompt_vi": "Số 13 viết bằng chữ thế nào?",
+          "options": ["thirteen", "thirty", "threeteen", "thirdteen"],
+          "answer": "thirteen",
+          "explanation": "13 is \"thirteen\" (thir + teen). \"Thirty\" is 30. \"Threeteen\" is not a word.",
+          "explanation_vi": "13 là \"thirteen\" (thir + teen), không phải \"threeteen\". \"Thirty\" là 30 — hai số này rất dễ nhầm, hãy nhớ đuôi -teen = 13–19.",
+          "word": {
+            "term": "thirteen",
+            "ipa": "/ˌθɝˈtin/",
+            "part_of_speech": "number",
+            "meaning_vi": "mười ba",
+            "example": "There are thirteen photos of us on the wall.",
+            "example_vi": "Trên tường có mười ba tấm ảnh của tụi mình."
+          }
+        },
+        {
+          "id": "en-a1-num-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the number 30",
+          "prompt": "What number is 'thirty'?",
+          "prompt_vi": "'thirty' là số mấy?",
+          "options": ["30", "13", "3", "33"],
+          "answer": "30",
+          "explanation": "\"Thirty\" ends in -ty, so it's a tens number: 30. Stress the first part: THIR-ty.",
+          "explanation_vi": "\"Thirty\" có đuôi -ty nên là số tròn chục: 30. Nhấn âm đầu: THIR-ty. Còn thir-TEEN (nhấn cuối) mới là 13.",
+          "word": {
+            "term": "thirty",
+            "ipa": "/ˈθɝti/",
+            "part_of_speech": "number",
+            "meaning_vi": "ba mươi",
+            "example": "I'll be there in thirty minutes.",
+            "example_vi": "Ba mươi phút nữa anh tới."
+          }
+        },
+        {
+          "id": "en-a1-num-05",
+          "kind": "multiple_choice",
+          "objective": "Form the ordinal number for 3",
+          "prompt": "What is the ordinal number for 3 (as in 3rd)?",
+          "prompt_vi": "Số thứ tự của 3 (như 3rd) là gì?",
+          "options": ["third", "three", "threeth", "thirdth"],
+          "answer": "third",
+          "explanation": "1st, 2nd and 3rd are special: first, second, third. Most others just add -th: fourth, fifth.",
+          "explanation_vi": "Ba số đầu đặc biệt: first (1st), second (2nd), third (3rd). Từ 4 trở đi phần lớn thêm -th: fourth, sixth… Nên không có \"threeth\".",
+          "word": {
+            "term": "third",
+            "ipa": "/θɝd/",
+            "part_of_speech": "number",
+            "meaning_vi": "thứ ba (số thứ tự)",
+            "example": "This is our third trip together!",
+            "example_vi": "Đây là chuyến đi thứ ba của tụi mình!"
+          }
+        },
+        {
+          "id": "en-a1-num-06",
+          "kind": "multiple_choice",
+          "objective": "Say a date with an ordinal number",
+          "prompt": "Valentine's Day is on February 14th. How do you say the date?",
+          "prompt_vi": "Lễ Tình nhân là ngày 14/2. Đọc ngày này thế nào?",
+          "options": ["February fourteenth", "February fourteen", "February fortieth", "fourteen of February"],
+          "answer": "February fourteenth",
+          "explanation": "Dates use ordinals: February fourteenth (or the fourteenth of February). \"Fortieth\" is 40th.",
+          "explanation_vi": "Nói ngày phải dùng số thứ tự: \"February fourteenth\" hoặc \"the fourteenth of February\". \"February fourteen\" thiếu -th, còn \"fortieth\" là thứ 40 — đừng nhầm -teen với -ty nhé.",
+          "word": {
+            "term": "fourteenth",
+            "ipa": "/ˌfɔrˈtinθ/",
+            "part_of_speech": "number",
+            "meaning_vi": "thứ mười bốn; ngày 14",
+            "example": "We met on the fourteenth of March.",
+            "example_vi": "Tụi mình gặp nhau ngày 14 tháng 3."
+          }
+        },
+        {
+          "id": "en-a1-num-07",
+          "kind": "listening",
+          "objective": "Hear the difference between thirtieth and thirteenth in a date",
+          "audio_text": "My birthday is on the thirtieth of June.",
+          "prompt": "When is the birthday?",
+          "prompt_vi": "Sinh nhật là ngày nào?",
+          "options": ["June 30th", "June 13th", "June 3rd", "July 30th"],
+          "answer": "June 30th",
+          "explanation": "\"Thirtieth\" is 30th — stress on THIR. \"Thirteenth\" (13th) has a long \"teen\" sound.",
+          "explanation_vi": "\"Thirtieth\" /ˈθɝtiəθ/ là ngày 30 — nhấn ở đầu. \"Thirteenth\" (ngày 13) có âm \"teen\" kéo dài ở giữa. Tháng là June (tháng 6), còn July là tháng 7."
+        },
+        {
+          "id": "en-a1-num-08",
+          "kind": "sentence_order",
+          "objective": "Say a birthday with 'the … of …'",
+          "prompt": "Make the sentence: Sinh nhật em là ngày 5 tháng 5.",
+          "tokens": ["the", "birthday", "May.", "is", "on", "fifth", "My", "of"],
+          "answers": ["My birthday is on the fifth of May."],
+          "hint": "My birthday is on + the + ordinal + of + month.",
+          "hint_vi": "My birthday is on + the + số thứ tự + of + tháng.",
+          "explanation": "We use \"on\" before a date, and the pattern \"the fifth of May\" puts the day before the month.",
+          "explanation_vi": "Trước ngày cụ thể dùng \"on\". Mẫu \"the fifth of May\" đặt ngày trước, tháng sau — giống tiếng Việt. Nhớ dùng số thứ tự \"fifth\", không dùng \"five\"."
+        }
+      ]
+    },
+    {
+      "slug": "en-a1-countries",
+      "subject": "english",
+      "category": "vocabulary",
+      "level": "A1",
+      "topic": "countries & nationalities",
+      "title": "Where Are You From? Countries & Nationalities",
+      "title_vi": "Bạn đến từ đâu? Quốc gia và quốc tịch",
+      "objectives": [
+        "Tell a country from a nationality",
+        "Use common nationality endings",
+        "Ask and answer \"Where are you from?\""
+      ],
+      "intro": [
+        {
+          "title": "Country or nationality?",
+          "body": "A country is a place: Vietnam, Japan, France. A nationality describes a person or thing from that place: Vietnamese, Japanese, French. Say \"I'm from Vietnam\" or \"I'm Vietnamese\" — but not \"I'm Vietnam\". Both always start with a capital letter.",
+          "body_vi": "Country (quốc gia) là nơi chốn: Vietnam, Japan. Nationality (quốc tịch) là tính từ chỉ người/vật thuộc nơi đó: Vietnamese, Japanese. Nói \"I'm from Vietnam\" (tôi đến từ Việt Nam) hoặc \"I'm Vietnamese\" (tôi là người Việt). Lỗi hay gặp: \"I'm Vietnam\" — sai, vì mình là người, không phải đất nước! Cả hai loại từ đều viết hoa.",
+          "examples": [
+            { "text": "I'm from Vietnam. I'm Vietnamese.", "translation_vi": "Em đến từ Việt Nam. Em là người Việt." },
+            { "text": "Phở is Vietnamese food.", "translation_vi": "Phở là món ăn Việt Nam." },
+            { "text": "I'm Vietnam.", "translation_vi": "(Sai)", "note": "wrong — use I'm from Vietnam / I'm Vietnamese" }
+          ]
+        },
+        {
+          "title": "Common endings",
+          "body": "Many nationalities end in -ese: Vietnam → Vietnamese, China → Chinese, Japan → Japanese. Some end in -an: Korea → Korean, America → American. Some are special: the UK → British, France → French, Thailand → Thai. Note: we say \"the UK\" and \"the USA\" with \"the\".",
+          "body_vi": "Nhiều quốc tịch có đuôi -ese: Vietnamese, Chinese, Japanese (nhấn âm cuối: Viet-na-MESE). Một số có đuôi -an: Korean, American. Một số đặc biệt phải học thuộc: British (Anh), French (Pháp), Thai (Thái). Chú ý: \"the UK\", \"the USA\" luôn có \"the\" phía trước. Tên ngôn ngữ thường giống quốc tịch: I speak Vietnamese.",
+          "examples": [
+            { "text": "China → Chinese", "translation_vi": "Trung Quốc → người/thuộc Trung Quốc" },
+            { "text": "Korea → Korean", "translation_vi": "Hàn Quốc → người/thuộc Hàn Quốc" },
+            { "text": "the UK → British", "translation_vi": "Vương quốc Anh → người Anh" },
+            { "text": "France → French", "translation_vi": "Pháp → người/thuộc Pháp" }
+          ]
+        },
+        {
+          "title": "Where are you from?",
+          "body": "Ask: \"Where are you from?\" Answer: \"I'm from + country/city.\" For other people: \"Where is he from?\" — \"He's from Japan.\" Notice that \"from\" goes at the end of the question.",
+          "body_vi": "Hỏi: \"Where are you from?\" (Bạn đến từ đâu?). Trả lời: \"I'm from + nước/thành phố\". Hỏi về người khác: \"Where is he from?\" — \"He's from Japan.\" Chú ý: \"from\" nằm ở CUỐI câu hỏi — khác tiếng Việt, nên người Việt hay quên mất chữ \"from\".",
+          "examples": [
+            { "text": "Where are you from? — I'm from Huế.", "translation_vi": "Bạn đến từ đâu? — Mình đến từ Huế." },
+            { "text": "Where is she from? — She's from Korea.", "translation_vi": "Cô ấy đến từ đâu? — Cô ấy đến từ Hàn Quốc." }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "en-a1-country-01",
+          "kind": "multiple_choice",
+          "objective": "Turn Vietnam into its nationality",
+          "prompt": "I'm from Vietnam. I'm ___.",
+          "prompt_vi": "Tôi đến từ Việt Nam. Tôi là người ___.",
+          "options": ["Vietnamese", "Vietnam", "Vietnamian", "Vietnams"],
+          "answer": "Vietnamese",
+          "explanation": "The nationality of Vietnam is \"Vietnamese\". \"I'm Vietnam\" is wrong — you are a person, not a country.",
+          "explanation_vi": "Quốc tịch của Việt Nam là \"Vietnamese\" (đuôi -ese). Sau \"I'm\" phải dùng quốc tịch; \"I'm Vietnam\" là lỗi rất hay gặp.",
+          "word": {
+            "term": "Vietnamese",
+            "ipa": "/ˌviɛtnəˈmiz/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "người Việt; thuộc Việt Nam; tiếng Việt",
+            "example": "I can teach you some Vietnamese songs.",
+            "example_vi": "Em có thể dạy anh vài bài hát tiếng Việt."
+          }
+        },
+        {
+          "id": "en-a1-country-02",
+          "kind": "multiple_choice",
+          "objective": "Use the -ese nationality for Japan",
+          "prompt": "Sushi comes from Japan. It's ___ food.",
+          "prompt_vi": "Sushi đến từ Nhật Bản. Đó là món ăn ___.",
+          "options": ["Japanese", "Japan", "Japanian", "Japanish"],
+          "answer": "Japanese",
+          "explanation": "Japan → Japanese, like Vietnam → Vietnamese. Before a noun (food), use the nationality word.",
+          "explanation_vi": "Japan → Japanese (giống Vietnam → Vietnamese). Trước danh từ (food) phải dùng tính từ quốc tịch: Japanese food, không nói \"Japan food\".",
+          "word": {
+            "term": "Japanese",
+            "ipa": "/ˌdʒæpəˈniz/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "người Nhật; thuộc Nhật Bản; tiếng Nhật",
+            "example": "Let's try that new Japanese restaurant tonight.",
+            "example_vi": "Tối nay mình thử nhà hàng Nhật mới mở nhé."
+          }
+        },
+        {
+          "id": "en-a1-country-03",
+          "kind": "multiple_choice",
+          "objective": "Use the -an nationality for Korea",
+          "prompt": "Kimchi is ___ food.",
+          "prompt_vi": "Kim chi là món ăn ___.",
+          "options": ["Korean", "Korea", "Koreese", "Koreish"],
+          "answer": "Korean",
+          "explanation": "Korea → Korean, with the -an ending.",
+          "explanation_vi": "Korea → Korean (đuôi -an), không phải -ese. Kim chi là món Hàn Quốc: Korean food.",
+          "word": {
+            "term": "Korean",
+            "ipa": "/kəˈriən/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "người Hàn; thuộc Hàn Quốc; tiếng Hàn",
+            "example": "We watch a Korean drama every Sunday night.",
+            "example_vi": "Tối Chủ nhật nào tụi mình cũng xem phim Hàn."
+          }
+        },
+        {
+          "id": "en-a1-country-04",
+          "kind": "multiple_choice",
+          "objective": "Learn the special nationality for the UK",
+          "prompt": "Tom is from the UK. He's ___.",
+          "prompt_vi": "Tom đến từ Vương quốc Anh. Anh ấy là người ___.",
+          "options": ["British", "Britain", "UKish", "Britishese"],
+          "answer": "British",
+          "explanation": "The UK (or Britain) → British. \"Britain\" is the place, \"British\" is the nationality.",
+          "explanation_vi": "The UK (Britain) → British. \"Britain\" là tên nơi chốn, \"British\" mới là quốc tịch. Đây là từ đặc biệt, không theo đuôi -ese hay -an.",
+          "word": {
+            "term": "British",
+            "ipa": "/ˈbrɪtɪʃ/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "người Anh; thuộc Vương quốc Anh",
+            "example": "My English teacher is British.",
+            "example_vi": "Giáo viên tiếng Anh của em là người Anh."
+          }
+        },
+        {
+          "id": "en-a1-country-05",
+          "kind": "multiple_choice",
+          "objective": "Match the USA with its nationality",
+          "prompt": "Which country and nationality match?",
+          "prompt_vi": "Cặp quốc gia – quốc tịch nào đúng?",
+          "options": ["the USA — American", "the USA — Americese", "America — Americanese", "the USA — USAn"],
+          "answer": "the USA — American",
+          "explanation": "The USA (America) → American, with the -an ending.",
+          "explanation_vi": "The USA (nước Mỹ) → American (người Mỹ), đuôi -an giống Korean. Nhớ nói \"the USA\" có \"the\".",
+          "word": {
+            "term": "American",
+            "ipa": "/əˈmɛrɪkən/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "người Mỹ; thuộc nước Mỹ",
+            "example": "She loves American movies.",
+            "example_vi": "Cô ấy rất thích phim Mỹ."
+          }
+        },
+        {
+          "id": "en-a1-country-06",
+          "kind": "multiple_choice",
+          "objective": "Learn the special nationality for France",
+          "prompt": "Paris is in France. People there speak ___.",
+          "prompt_vi": "Paris ở nước Pháp. Người dân ở đó nói tiếng ___.",
+          "options": ["French", "France", "Frenchese", "Francish"],
+          "answer": "French",
+          "explanation": "France → French. The language and the nationality are the same word.",
+          "explanation_vi": "France → French — dùng cho cả quốc tịch và ngôn ngữ (tiếng Pháp). \"France\" là tên nước, không dùng để chỉ ngôn ngữ.",
+          "word": {
+            "term": "French",
+            "ipa": "/frɛntʃ/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "người Pháp; thuộc Pháp; tiếng Pháp",
+            "example": "I'd love some French bread for breakfast.",
+            "example_vi": "Anh muốn ăn bánh mì Pháp cho bữa sáng."
+          }
+        },
+        {
+          "id": "en-a1-country-07",
+          "kind": "listening",
+          "objective": "Catch 'I'm from…' in a short introduction",
+          "audio_text": "Hi, I'm Mei. I'm from China, but I live in Vietnam now.",
+          "prompt": "Where is Mei from?",
+          "prompt_vi": "Mei đến từ đâu?",
+          "options": ["China", "Vietnam", "Japan", "Korea"],
+          "answer": "China",
+          "explanation": "\"I'm from China\" tells us where she is from. \"I live in Vietnam\" is where she lives now.",
+          "explanation_vi": "\"I'm from China\" cho biết quê cô ấy (Trung Quốc → người Chinese). \"I live in Vietnam now\" chỉ là nơi cô ấy đang sống — đừng nhầm \"from\" (đến từ) với \"live in\" (sống ở)."
+        },
+        {
+          "id": "en-a1-country-08",
+          "kind": "sentence_order",
+          "objective": "Ask where someone's family is from",
+          "prompt": "Make the question: Gia đình anh đến từ đâu?",
+          "tokens": ["family", "is", "Where", "from?", "your"],
+          "answers": ["Where is your family from?"],
+          "hint": "Where + is + your family + from?",
+          "hint_vi": "Where + is + your family + from? — \"from\" ở cuối câu.",
+          "explanation": "Pattern: Where + is/are + person + from? \"Family\" is one group, so we use \"is\".",
+          "explanation_vi": "Mẫu câu: Where + is/are + người + from? \"Your family\" là một nhóm nên dùng \"is\". Đừng quên \"from\" ở cuối — thiếu nó câu sẽ thành \"gia đình anh ở đâu?\"."
+        }
+      ]
+    },
+    {
+      "slug": "en-a1-basic-questions",
+      "subject": "english",
+      "category": "grammar",
+      "level": "A1",
+      "topic": "wh-questions with to be",
+      "title": "Tell Me Everything: What, Where, Who, When, How",
+      "title_vi": "Kể em nghe đi: What, Where, Who, When, How",
+      "objectives": [
+        "Choose the right question word",
+        "Put the question word and to be in the right order",
+        "Give correct short answers"
+      ],
+      "intro": [
+        {
+          "title": "Five question words",
+          "body": "What = which thing. Where = which place. Who = which person. When = what time or day. How = in what way / in what condition. In English, the question word goes at the START of the question.",
+          "body_vi": "What = cái gì. Where = ở đâu. Who = ai. When = khi nào. How = thế nào, ra sao. Tiếng Việt thường để từ để hỏi ở cuối (\"Em đi đâu?\", \"Đó là ai?\"), còn tiếng Anh luôn đưa từ để hỏi lên ĐẦU câu.",
+          "examples": [
+            { "text": "What is this?", "translation_vi": "Đây là cái gì?" },
+            { "text": "Who is he?", "translation_vi": "Anh ấy là ai?" },
+            { "text": "When is the party?", "translation_vi": "Bữa tiệc khi nào?" },
+            { "text": "How are you?", "translation_vi": "Em khỏe không? / Em thế nào?" }
+          ]
+        },
+        {
+          "title": "Word order with to be",
+          "body": "Pattern: Question word + am/is/are + subject? \"Where is the cat?\" — not \"Where the cat is?\". For yes/no questions, put am/is/are first: \"You are tired.\" → \"Are you tired?\"",
+          "body_vi": "Mẫu câu: Từ để hỏi + am/is/are + chủ ngữ? Ví dụ \"Where is the cat?\" — không nói \"Where the cat is?\". Câu hỏi có/không thì đảo am/is/are lên đầu: \"You are tired.\" → \"Are you tired?\". Tiếng Việt chỉ thêm \"không?\" ở cuối, nên người Việt hay quên đảo động từ.",
+          "examples": [
+            { "text": "Where is my phone?", "translation_vi": "Điện thoại anh đâu rồi?" },
+            { "text": "Are you hungry?", "translation_vi": "Em đói không?" },
+            { "text": "Where my phone is?", "translation_vi": "(Sai trật tự)", "note": "wrong" }
+          ]
+        },
+        {
+          "title": "Short answers",
+          "body": "Answer yes/no questions with a short answer: \"Are you hungry?\" — \"Yes, I am.\" / \"No, I'm not.\" Don't use a short form at the end: say \"Yes, I am\", not \"Yes, I'm\". Answers to wh-questions can be short too: \"Where is he?\" — \"At home.\"",
+          "body_vi": "Trả lời câu hỏi có/không bằng câu ngắn: \"Are you hungry?\" — \"Yes, I am.\" / \"No, I'm not.\" Khi \"am/is/are\" đứng cuối câu thì không rút gọn: nói \"Yes, I am\", không nói \"Yes, I'm\". Với \"he/she/it\": \"Yes, she is.\" / \"No, she isn't.\" Câu hỏi Wh có thể trả lời rất ngắn: \"Where is he?\" — \"At home.\"",
+          "examples": [
+            { "text": "Is she your sister? — Yes, she is.", "translation_vi": "Cô ấy là chị em à? — Ừ, đúng rồi." },
+            { "text": "Are you sleepy? — No, I'm not.", "translation_vi": "Em buồn ngủ chưa? — Chưa." },
+            { "text": "Who is that? — My cousin.", "translation_vi": "Đó là ai vậy? — Em họ anh." }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "en-a1-wh-01",
+          "kind": "multiple_choice",
+          "objective": "Use 'where' to ask about a place",
+          "prompt": "___ is your phone? — It's on the table.",
+          "prompt_vi": "Điện thoại em đâu? — Nó ở trên bàn.",
+          "options": ["Where", "What", "Who", "When"],
+          "answer": "Where",
+          "explanation": "The answer is a place (on the table), so the question word is \"Where\".",
+          "explanation_vi": "Câu trả lời là nơi chốn (on the table), nên dùng \"Where\" (ở đâu). Mẹo: nhìn câu trả lời để đoán từ để hỏi."
+        },
+        {
+          "id": "en-a1-wh-02",
+          "kind": "multiple_choice",
+          "objective": "Use 'who' to ask about a person",
+          "prompt": "___ is that girl? — She's my sister.",
+          "prompt_vi": "Cô gái đó là ai? — Đó là em gái anh.",
+          "options": ["Who", "What", "Where", "How"],
+          "answer": "Who",
+          "explanation": "The answer is a person (my sister), so we ask with \"Who\".",
+          "explanation_vi": "Câu trả lời là một người (my sister), nên dùng \"Who\" (ai). \"What\" dùng cho đồ vật, sự việc."
+        },
+        {
+          "id": "en-a1-wh-03",
+          "kind": "multiple_choice",
+          "objective": "Use 'when' to ask about time",
+          "prompt": "___ is your birthday? — It's in October.",
+          "prompt_vi": "Sinh nhật em khi nào? — Vào tháng Mười.",
+          "options": ["When", "Where", "Who", "How"],
+          "answer": "When",
+          "explanation": "The answer is a time (in October), so the question word is \"When\".",
+          "explanation_vi": "Câu trả lời là thời gian (in October), nên dùng \"When\" (khi nào). Tiếng Việt nói \"khi nào\" ở cuối câu, nhưng tiếng Anh đưa \"When\" lên đầu."
+        },
+        {
+          "id": "en-a1-wh-04",
+          "kind": "multiple_choice",
+          "objective": "Use 'how' to ask about feelings",
+          "prompt": "___ are you today? — I'm great, thanks!",
+          "prompt_vi": "Hôm nay em thấy thế nào? — Em rất ổn, cảm ơn anh!",
+          "options": ["How", "Who", "Where", "When"],
+          "answer": "How",
+          "explanation": "\"How are you?\" asks about someone's condition or feelings. The answer \"I'm great\" fits.",
+          "explanation_vi": "\"How are you?\" hỏi tình trạng, cảm xúc của ai đó (khỏe không, thế nào). Câu trả lời \"I'm great\" (rất ổn) khớp với \"How\"."
+        },
+        {
+          "id": "en-a1-wh-05",
+          "kind": "multiple_choice",
+          "objective": "Choose correct wh-question word order",
+          "prompt": "Which question about the bathroom has the correct word order?",
+          "prompt_vi": "Câu hỏi nào về phòng tắm có trật tự từ đúng?",
+          "options": ["Where is the bathroom?", "Where the bathroom is?", "The bathroom is where?", "Where bathroom is?"],
+          "answer": "Where is the bathroom?",
+          "explanation": "Question word + is + subject: Where is the bathroom?",
+          "explanation_vi": "Mẫu đúng: Từ để hỏi + is + chủ ngữ → \"Where is the bathroom?\". \"The bathroom is where?\" là dịch từng chữ từ tiếng Việt (\"Phòng tắm ở đâu?\") — sai trong tiếng Anh."
+        },
+        {
+          "id": "en-a1-wh-06",
+          "kind": "multiple_choice",
+          "objective": "Give a positive short answer with I",
+          "prompt": "Are you tired, love? — Yes, ___.",
+          "prompt_vi": "Em mệt hả? — Vâng, ___.",
+          "options": ["I am", "I'm", "I are", "am I"],
+          "answer": "I am",
+          "explanation": "Short answers end with the full verb: \"Yes, I am.\" We can't end a sentence with \"I'm\".",
+          "explanation_vi": "Câu trả lời ngắn kết thúc bằng động từ đầy đủ: \"Yes, I am.\" Không được rút gọn thành \"Yes, I'm\" khi \"am\" đứng cuối câu."
+        },
+        {
+          "id": "en-a1-wh-07",
+          "kind": "multiple_choice",
+          "objective": "Give a negative short answer with she",
+          "prompt": "Is she your girlfriend? — No, ___. She's my best friend.",
+          "prompt_vi": "Cô ấy là bạn gái anh à? — Không phải. Cô ấy là bạn thân của anh.",
+          "options": ["she isn't", "she not", "she doesn't", "isn't she"],
+          "answer": "she isn't",
+          "explanation": "Negative short answer: No, + subject + isn't. \"Doesn't\" is for normal verbs, not for to be.",
+          "explanation_vi": "Câu trả lời phủ định ngắn: No, + chủ ngữ + isn't. Câu hỏi dùng \"Is\" thì trả lời cũng dùng \"is\" — không dùng \"doesn't\" (dành cho động từ thường). \"She not\" thiếu động từ."
+        },
+        {
+          "id": "en-a1-wh-08",
+          "kind": "sentence_order",
+          "objective": "Build a 'what' question with to be",
+          "prompt": "Make the question: Món ăn yêu thích của em là gì?",
+          "tokens": ["favorite", "is", "food?", "What", "your"],
+          "answers": ["What is your favorite food?"],
+          "hint": "What + is + your favorite food?",
+          "hint_vi": "What + is + your favorite food? — từ để hỏi đứng đầu.",
+          "explanation": "Question word first, then \"is\", then the subject: What is your favorite food?",
+          "explanation_vi": "Từ để hỏi đứng đầu, rồi \"is\", rồi chủ ngữ: What is your favorite food? Tiếng Việt để \"là gì\" ở cuối, nhưng tiếng Anh đưa \"What\" lên đầu."
+        }
+      ]
+    },
+    {
+      "slug": "en-a1-there-is-are",
+      "subject": "english",
+      "category": "grammar",
+      "level": "A1",
+      "topic": "there is / there are",
+      "title": "What's in Our Home? There Is & There Are",
+      "title_vi": "Nhà mình có gì? There is và There are",
+      "objectives": [
+        "Use there is with one thing and there are with many",
+        "Ask and answer with is there / are there",
+        "Use a, some and any with rooms and objects"
+      ],
+      "intro": [
+        {
+          "title": "There is / There are",
+          "body": "Use \"there is\" (there's) + one thing to say something exists in a place: \"There is a sofa in the living room.\" Use \"there are\" + more than one thing: \"There are two chairs in the kitchen.\"",
+          "body_vi": "\"There is\" + một vật = có một… (ở đâu đó): \"There is a sofa in the living room.\" (Phòng khách có một cái ghế sofa.) \"There are\" + nhiều vật: \"There are two chairs.\" Người Việt hay dịch \"có\" thành \"have\" hoặc \"It has\": \"Have a sofa in the room\" — sai. Khi nói nơi nào đó \"có\" gì, hãy dùng \"there is / there are\".",
+          "examples": [
+            { "text": "There is a lamp next to the bed.", "translation_vi": "Có một cái đèn cạnh giường." },
+            { "text": "There are three plants on the balcony.", "translation_vi": "Có ba chậu cây ngoài ban công." },
+            { "text": "Have a lamp next to the bed.", "translation_vi": "(Sai)", "note": "wrong — use There is" }
+          ]
+        },
+        {
+          "title": "Questions and negatives",
+          "body": "Question: put is/are first — \"Is there a TV?\" / \"Are there any cups?\" Short answers: \"Yes, there is.\" / \"No, there isn't.\" / \"Yes, there are.\" / \"No, there aren't.\" Negative: \"There isn't a TV.\" / \"There aren't any cups.\"",
+          "body_vi": "Câu hỏi: đảo is/are lên trước \"there\": \"Is there a TV?\" (Có TV không?) / \"Are there any cups?\" Trả lời ngắn: \"Yes, there is.\" / \"No, there isn't.\" / \"Yes, there are.\" / \"No, there aren't.\" Phủ định: \"There isn't a TV.\" / \"There aren't any cups.\"",
+          "examples": [
+            { "text": "Is there a microwave? — Yes, there is.", "translation_vi": "Có lò vi sóng không? — Có." },
+            { "text": "Are there any towels? — No, there aren't.", "translation_vi": "Có khăn tắm không? — Không có." }
+          ]
+        },
+        {
+          "title": "a, some, any",
+          "body": "Use \"a/an\" with one thing (a bed, an oven). Use \"some\" with plural nouns in positive sentences (some books). Use \"any\" with plural nouns in questions and negatives (any books?, not any books).",
+          "body_vi": "\"A/an\" đi với một vật số ít (a bed, an oven — \"an\" trước nguyên âm). \"Some\" (một vài) đi với danh từ số nhiều trong câu khẳng định: There are some books. \"Any\" dùng trong câu hỏi và câu phủ định: Are there any books? / There aren't any books.",
+          "examples": [
+            { "text": "There are some cookies in the jar.", "translation_vi": "Trong hũ có vài cái bánh quy." },
+            { "text": "There aren't any eggs.", "translation_vi": "Không còn quả trứng nào." },
+            { "text": "Is there an oven?", "translation_vi": "Có lò nướng không?" }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "en-a1-there-01",
+          "kind": "multiple_choice",
+          "objective": "Use 'there is' with one thing",
+          "prompt": "___ a cat on our sofa!",
+          "prompt_vi": "Có một con mèo trên ghế sofa nhà mình!",
+          "options": ["There is", "There are", "It has", "Have"],
+          "answer": "There is",
+          "explanation": "One cat → \"There is\". We use there is/are to say something is in a place.",
+          "explanation_vi": "Một con mèo (a cat) → \"There is\". Muốn nói \"ở đâu đó có…\" thì dùng there is/are, không dùng \"have\" hay \"It has\"."
+        },
+        {
+          "id": "en-a1-there-02",
+          "kind": "multiple_choice",
+          "objective": "Use 'there are' with plural nouns",
+          "prompt": "There ___ two pillows on our bed.",
+          "prompt_vi": "Trên giường tụi mình có hai cái gối.",
+          "options": ["are", "is", "has", "have"],
+          "answer": "are",
+          "explanation": "Two pillows is plural, so we say \"There are\".",
+          "explanation_vi": "Hai cái gối (two pillows) là số nhiều nên dùng \"There are\". Một cái thì \"There is a pillow\"."
+        },
+        {
+          "id": "en-a1-there-03",
+          "kind": "multiple_choice",
+          "objective": "Avoid 'have/it has' for existence",
+          "prompt": "Which sentence about the lamp is correct?",
+          "prompt_vi": "Câu nào về cái đèn là đúng?",
+          "options": ["There is a lamp in the bedroom.", "Have a lamp in the bedroom.", "It has a lamp in the bedroom.", "There are a lamp in the bedroom."],
+          "answer": "There is a lamp in the bedroom.",
+          "explanation": "One lamp → \"There is a lamp\". \"Have\" and \"It has\" don't work for this meaning.",
+          "explanation_vi": "Một cái đèn → \"There is a lamp\". \"Have a lamp…\" và \"It has a lamp…\" là dịch thẳng chữ \"có\" từ tiếng Việt — sai. \"There are a lamp\" sai vì \"a lamp\" là số ít."
+        },
+        {
+          "id": "en-a1-there-04",
+          "kind": "multiple_choice",
+          "objective": "Use 'some' in positive plural sentences",
+          "prompt": "There are ___ books on the shelf.",
+          "prompt_vi": "Có vài cuốn sách trên kệ.",
+          "options": ["some", "a", "an", "any"],
+          "answer": "some",
+          "explanation": "In a positive sentence with a plural noun, use \"some\". \"A/an\" is only for one thing.",
+          "explanation_vi": "Câu khẳng định + danh từ số nhiều → dùng \"some\". \"A/an\" chỉ đi với một vật. \"Any\" dành cho câu hỏi và câu phủ định."
+        },
+        {
+          "id": "en-a1-there-05",
+          "kind": "multiple_choice",
+          "objective": "Give a negative short answer with 'there isn't'",
+          "prompt": "Is there a TV in the kitchen? — No, ___.",
+          "prompt_vi": "Trong bếp có TV không? — Không có.",
+          "options": ["there isn't", "there aren't", "isn't there", "there not"],
+          "answer": "there isn't",
+          "explanation": "The question uses \"Is there\", so the short answer is \"No, there isn't.\"",
+          "explanation_vi": "Câu hỏi dùng \"Is there\" (số ít) thì trả lời \"No, there isn't.\" \"There aren't\" dành cho số nhiều. \"Isn't there\" là trật tự câu hỏi, không phải câu trả lời."
+        },
+        {
+          "id": "en-a1-there-06",
+          "kind": "multiple_choice",
+          "objective": "Ask a plural question with 'are there'",
+          "prompt": "___ any plates in the cupboard?",
+          "prompt_vi": "Trong tủ có cái đĩa nào không?",
+          "options": ["Are there", "Is there", "There are", "Have there"],
+          "answer": "Are there",
+          "explanation": "Plates are plural, so the question is \"Are there any plates?\" — the verb comes first.",
+          "explanation_vi": "\"Plates\" số nhiều nên hỏi \"Are there any plates?\". Trong câu hỏi, \"are\" đứng trước \"there\". \"There are…?\" chỉ lên giọng thôi thì chưa đúng ngữ pháp câu hỏi."
+        },
+        {
+          "id": "en-a1-there-07",
+          "kind": "multiple_choice",
+          "objective": "Use 'any' in negative sentences",
+          "prompt": "There aren't ___ chairs in the living room. Let's buy two!",
+          "prompt_vi": "Phòng khách không có cái ghế nào. Mình mua hai cái đi!",
+          "options": ["any", "some", "a", "an"],
+          "answer": "any",
+          "explanation": "In negative sentences with plural nouns, use \"any\": There aren't any chairs.",
+          "explanation_vi": "Câu phủ định + danh từ số nhiều → dùng \"any\": There aren't any chairs (không có cái ghế nào). \"Some\" dùng cho câu khẳng định."
+        },
+        {
+          "id": "en-a1-there-08",
+          "kind": "sentence_order",
+          "objective": "Build an 'Is there…?' question",
+          "prompt": "Make the question: Trong phòng tắm có gương không?",
+          "tokens": ["the", "a", "there", "bathroom?", "Is", "mirror", "in"],
+          "answers": ["Is there a mirror in the bathroom?"],
+          "hint": "Is there + a + thing + in the + room?",
+          "hint_vi": "Is there + a + đồ vật + in the + phòng?",
+          "explanation": "For questions, \"Is\" comes before \"there\": Is there a mirror in the bathroom?",
+          "explanation_vi": "Câu hỏi đảo \"Is\" lên trước \"there\": Is there a mirror in the bathroom? Thứ tự: hỏi có vật gì → rồi mới đến nơi chốn (in the bathroom) ở cuối."
+        }
+      ]
+    },
+    {
+      "slug": "en-a1-this-that",
+      "subject": "english",
+      "category": "grammar",
+      "level": "A1",
+      "topic": "this, that, these, those",
+      "title": "This One or That One? This, That, These, Those",
+      "title_vi": "Cái này hay cái kia? This, That, These, Those",
+      "objectives": [
+        "Choose this/that for near and far things",
+        "Use these/those for plural things",
+        "Match this/that with is and these/those with are"
+      ],
+      "intro": [
+        {
+          "title": "Near or far?",
+          "body": "This = one thing near you. That = one thing far from you. These = many things near you. Those = many things far from you. Think of your hand: if you can touch it, it's \"this/these\".",
+          "body_vi": "This = cái này (một vật, ở gần). That = cái kia/cái đó (một vật, ở xa). These = những cái này (nhiều vật, ở gần). Those = những cái kia (nhiều vật, ở xa). Mẹo: với tay chạm được thì dùng this/these, chỉ tay ra xa thì dùng that/those.",
+          "examples": [
+            { "text": "This ring is beautiful.", "translation_vi": "Chiếc nhẫn này đẹp quá.", "note": "near, one" },
+            { "text": "That house is old.", "translation_vi": "Căn nhà kia cũ rồi.", "note": "far, one" },
+            { "text": "These flowers are for you.", "translation_vi": "Những bông hoa này tặng em.", "note": "near, many" },
+            { "text": "Those clouds look like a heart.", "translation_vi": "Mấy đám mây kia trông như trái tim.", "note": "far, many" }
+          ]
+        },
+        {
+          "title": "Singular and plural",
+          "body": "This/that + singular noun + is: \"This cup is hot.\" These/those + plural noun (usually -s) + are: \"These cups are hot.\" Don't mix them: not \"these cup\" or \"this cups are\".",
+          "body_vi": "This/that + danh từ số ít + is: \"This cup is hot.\" These/those + danh từ số nhiều (thường thêm -s) + are: \"These cups are hot.\" Tiếng Việt không đổi danh từ khi số nhiều (\"những cái cốc này\"), nên người Việt hay quên -s và quên đổi is → are. Đừng nói \"these cup\" hay \"this cups are\".",
+          "examples": [
+            { "text": "This cup is hot. → These cups are hot.", "translation_vi": "Cái cốc này nóng. → Những cái cốc này nóng." },
+            { "text": "That's my bag. (That's = That is)", "translation_vi": "Kia là túi của em." }
+          ]
+        },
+        {
+          "title": "Asking and answering",
+          "body": "Ask: \"What's this?\" \"Is that your bag?\" \"Are these your keys?\" In the answer, use \"it\" for one thing and \"they\" for many: \"Yes, it is.\" / \"It's a gift.\" / \"No, they aren't.\" / \"They're my keys.\"",
+          "body_vi": "Hỏi: \"What's this?\" (Đây là gì?), \"Is that your bag?\", \"Are these your keys?\" Khi trả lời, đổi this/that thành \"it\" (một vật) và these/those thành \"they\" (nhiều vật): \"Yes, it is.\" / \"It's a gift.\" / \"No, they aren't.\" Người Việt hay trả lời lặp lại \"Yes, this is\" — nghe không tự nhiên.",
+          "examples": [
+            { "text": "What's this? — It's a gift for you!", "translation_vi": "Cái gì đây? — Quà cho em đó!" },
+            { "text": "Are those your shoes? — Yes, they are.", "translation_vi": "Kia là giày của anh à? — Ừ, đúng rồi." }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "en-a1-this-01",
+          "kind": "multiple_choice",
+          "objective": "Use 'this' for one near thing",
+          "prompt": "(The cup is in my hand.) ___ is my favorite cup.",
+          "prompt_vi": "(Cái cốc đang ở trong tay tôi.) Đây là cái cốc yêu thích của tôi.",
+          "options": ["This", "That", "These", "Those"],
+          "answer": "This",
+          "explanation": "One thing, very near (in my hand) → \"This\".",
+          "explanation_vi": "Một vật, ở rất gần (trong tay) → \"This\" (cái này). \"That\" dùng cho vật ở xa, còn these/those cho số nhiều."
+        },
+        {
+          "id": "en-a1-this-02",
+          "kind": "multiple_choice",
+          "objective": "Use 'that' for one far thing",
+          "prompt": "(Pointing at a house across the street) ___ is my grandma's house.",
+          "prompt_vi": "(Chỉ vào căn nhà bên kia đường) Kia là nhà bà tôi.",
+          "options": ["That", "This", "These", "Those"],
+          "answer": "That",
+          "explanation": "One house, far away (across the street) → \"That\".",
+          "explanation_vi": "Một căn nhà ở xa (bên kia đường) → \"That\" (cái kia). Nếu đang đứng ngay trong nhà thì mới nói \"This is my grandma's house\"."
+        },
+        {
+          "id": "en-a1-this-03",
+          "kind": "multiple_choice",
+          "objective": "Use 'those' for many far things",
+          "prompt": "(Look at the stars high in the sky!) ___ stars are so beautiful.",
+          "prompt_vi": "(Nhìn những ngôi sao trên trời kìa!) Những ngôi sao kia đẹp quá.",
+          "options": ["Those", "These", "This", "That"],
+          "answer": "Those",
+          "explanation": "Many stars, far away → \"Those\". \"These\" is for many things that are near.",
+          "explanation_vi": "Nhiều ngôi sao (stars) và ở rất xa → \"Those\" (những cái kia). \"These\" dùng cho nhiều vật ở gần; \"This/That\" chỉ dùng cho một vật."
+        },
+        {
+          "id": "en-a1-this-04",
+          "kind": "multiple_choice",
+          "objective": "Use 'are' after 'these'",
+          "prompt": "These ___ my new shoes. Do you like them?",
+          "prompt_vi": "Đây là đôi giày mới của em. Anh thấy đẹp không?",
+          "options": ["are", "is", "am", "be"],
+          "answer": "are",
+          "explanation": "\"These\" is plural, so it goes with \"are\".",
+          "explanation_vi": "\"These\" là số nhiều nên đi với \"are\". Nhớ cặp: this/that + is, these/those + are."
+        },
+        {
+          "id": "en-a1-this-05",
+          "kind": "multiple_choice",
+          "objective": "Match these + plural noun + are",
+          "prompt": "Which sentence about the flowers is correct?",
+          "prompt_vi": "Câu nào về những bông hoa là đúng?",
+          "options": ["These flowers are for you.", "These flower is for you.", "This flowers are for you.", "These flowers is for you."],
+          "answer": "These flowers are for you.",
+          "explanation": "Everything must be plural: these + flowers (-s) + are.",
+          "explanation_vi": "Cả cụm phải thống nhất số nhiều: these + flowers (có -s) + are. Người Việt hay quên đuôi -s vì tiếng Việt chỉ cần thêm \"những\"."
+        },
+        {
+          "id": "en-a1-this-06",
+          "kind": "multiple_choice",
+          "objective": "Answer 'Is this…?' with 'it'",
+          "prompt": "Is this your phone? — Yes, ___.",
+          "prompt_vi": "Đây là điện thoại của em à? — Vâng, đúng rồi.",
+          "options": ["it is", "this is", "it's", "is it"],
+          "answer": "it is",
+          "explanation": "In answers, \"this\" becomes \"it\", and we don't shorten at the end: \"Yes, it is.\"",
+          "explanation_vi": "Khi trả lời, \"this\" đổi thành \"it\": \"Yes, it is.\" Không rút gọn \"it's\" ở cuối câu (giống \"Yes, I am\" ở bài trước). \"Is it\" là trật tự câu hỏi."
+        },
+        {
+          "id": "en-a1-this-07",
+          "kind": "multiple_choice",
+          "objective": "Answer 'Are those…?' with 'they'",
+          "prompt": "Are those your keys? — No, ___ aren't. Mine are in my bag.",
+          "prompt_vi": "Kia là chìa khóa của anh à? — Không phải. Chìa của anh ở trong túi.",
+          "options": ["they", "it", "this", "that"],
+          "answer": "they",
+          "explanation": "For many things (those keys), the answer uses \"they\": No, they aren't.",
+          "explanation_vi": "Nhiều vật (those keys) thì khi trả lời đổi thành \"they\": No, they aren't. \"It\", \"this\", \"that\" chỉ dùng cho một vật và không đi với \"aren't\"."
+        },
+        {
+          "id": "en-a1-this-08",
+          "kind": "sentence_order",
+          "objective": "Build an 'Are these…?' question",
+          "prompt": "Make the question: Mấy cái bánh quy này là cho em hả?",
+          "tokens": ["for", "cookies", "Are", "me?", "these"],
+          "answers": ["Are these cookies for me?"],
+          "hint": "Are + these + plural noun + for me?",
+          "hint_vi": "Are + these + danh từ số nhiều + for me?",
+          "explanation": "Yes/no question: \"Are\" first, then \"these cookies\", then the rest.",
+          "explanation_vi": "Câu hỏi có/không: đưa \"Are\" lên đầu, rồi \"these cookies\" (số nhiều nên dùng \"are\"), cuối cùng là \"for me?\"."
+        }
+      ]
+    }
+  ]
+}

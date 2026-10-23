@@ -89,6 +89,97 @@ export type Database = {
           },
         ];
       };
+      couple_adventure_progress: {
+        Row: {
+          adventure_id: string;
+          completed_at: string | null;
+          couple_id: string;
+          parts: NonNullable<Json>;
+        };
+        ComputedFields: never;
+        Insert: {
+          adventure_id: string;
+          completed_at?: string | null;
+          couple_id: string;
+          parts?: NonNullable<Json>;
+        };
+        Update: {
+          adventure_id?: string;
+          completed_at?: string | null;
+          couple_id?: string;
+          parts?: NonNullable<Json>;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "couple_adventure_progress_adventure_id_fkey";
+            columns: ["adventure_id"];
+            isOneToOne: false;
+            referencedRelation: "couple_adventures";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "couple_adventure_progress_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: false;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      couple_adventures: {
+        Row: {
+          couple_xp: number;
+          id: string;
+          letter: string;
+          letter_vi: string;
+          love_energy: number;
+          parts: NonNullable<Json>;
+          reward_item_id: string | null;
+          sort_order: number;
+          story: string;
+          story_vi: string;
+          title: string;
+          title_vi: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          couple_xp: number;
+          id: string;
+          letter: string;
+          letter_vi: string;
+          love_energy: number;
+          parts: NonNullable<Json>;
+          reward_item_id?: string | null;
+          sort_order: number;
+          story: string;
+          story_vi: string;
+          title: string;
+          title_vi: string;
+        };
+        Update: {
+          couple_xp?: number;
+          id?: string;
+          letter?: string;
+          letter_vi?: string;
+          love_energy?: number;
+          parts?: NonNullable<Json>;
+          reward_item_id?: string | null;
+          sort_order?: number;
+          story?: string;
+          story_vi?: string;
+          title?: string;
+          title_vi?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "couple_adventures_reward_item_id_fkey";
+            columns: ["reward_item_id"];
+            isOneToOne: false;
+            referencedRelation: "shop_items";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       couple_interactions: {
         Row: {
           couple_id: string;
@@ -651,6 +742,7 @@ export type Database = {
       };
       game_sessions: {
         Row: {
+          adventure_id: string | null;
           coins_awarded: number;
           completed_at: string | null;
           correct_count: number | null;
@@ -658,12 +750,15 @@ export type Database = {
           kind: Database["public"]["Enums"]["game_kind"];
           question_ids: string[];
           started_at: string;
+          subject_id: string | null;
+          unit_id: string | null;
           user_id: string;
           won: boolean | null;
           xp_awarded: number;
         };
         ComputedFields: never;
         Insert: {
+          adventure_id?: string | null;
           coins_awarded?: number;
           completed_at?: string | null;
           correct_count?: number | null;
@@ -671,11 +766,14 @@ export type Database = {
           kind: Database["public"]["Enums"]["game_kind"];
           question_ids: string[];
           started_at?: string;
+          subject_id?: string | null;
+          unit_id?: string | null;
           user_id: string;
           won?: boolean | null;
           xp_awarded?: number;
         };
         Update: {
+          adventure_id?: string | null;
           coins_awarded?: number;
           completed_at?: string | null;
           correct_count?: number | null;
@@ -683,11 +781,35 @@ export type Database = {
           kind?: Database["public"]["Enums"]["game_kind"];
           question_ids?: string[];
           started_at?: string;
+          subject_id?: string | null;
+          unit_id?: string | null;
           user_id?: string;
           won?: boolean | null;
           xp_awarded?: number;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: "game_sessions_adventure_id_fkey";
+            columns: ["adventure_id"];
+            isOneToOne: false;
+            referencedRelation: "couple_adventures";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "game_sessions_subject_id_fkey";
+            columns: ["subject_id"];
+            isOneToOne: false;
+            referencedRelation: "subjects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "game_sessions_unit_id_fkey";
+            columns: ["unit_id"];
+            isOneToOne: false;
+            referencedRelation: "learning_units";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       inventories: {
         Row: {
@@ -913,6 +1035,74 @@ export type Database = {
         };
         Relationships: [];
       };
+      learning_units: {
+        Row: {
+          boss_name: string | null;
+          boss_questions: number | null;
+          description: string;
+          id: string;
+          level: string;
+          location: string;
+          number: number;
+          reward_item_id: string | null;
+          status: string;
+          subject_id: string;
+          title: string;
+          title_vi: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          boss_name?: string | null;
+          boss_questions?: number | null;
+          description: string;
+          id: string;
+          level: string;
+          location: string;
+          number: number;
+          reward_item_id?: string | null;
+          status: string;
+          subject_id: string;
+          title: string;
+          title_vi: string;
+        };
+        Update: {
+          boss_name?: string | null;
+          boss_questions?: number | null;
+          description?: string;
+          id?: string;
+          level?: string;
+          location?: string;
+          number?: number;
+          reward_item_id?: string | null;
+          status?: string;
+          subject_id?: string;
+          title?: string;
+          title_vi?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "learning_units_reward_item_id_fkey";
+            columns: ["reward_item_id"];
+            isOneToOne: false;
+            referencedRelation: "shop_items";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "learning_units_subject_id_fkey";
+            columns: ["subject_id"];
+            isOneToOne: false;
+            referencedRelation: "subjects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "learning_units_subject_id_level_fkey";
+            columns: ["subject_id", "level"];
+            isOneToOne: false;
+            referencedRelation: "subject_levels";
+            referencedColumns: ["subject_id", "level"];
+          },
+        ];
+      };
       legend_celebrations: {
         Row: {
           milestone: string;
@@ -1056,10 +1246,12 @@ export type Database = {
         Row: {
           category_id: string;
           id: string;
-          language: string;
+          intro: Json | null;
+          language: string | null;
           level: string;
           objectives: string[];
           sort_order: number;
+          subject_id: string;
           title: string;
           title_vi: string;
           topic: string;
@@ -1068,10 +1260,12 @@ export type Database = {
         Insert: {
           category_id: string;
           id: string;
-          language?: string;
+          intro?: Json | null;
+          language?: string | null;
           level: string;
           objectives: string[];
           sort_order: number;
+          subject_id: string;
           title: string;
           title_vi: string;
           topic: string;
@@ -1079,10 +1273,12 @@ export type Database = {
         Update: {
           category_id?: string;
           id?: string;
-          language?: string;
+          intro?: Json | null;
+          language?: string | null;
           level?: string;
           objectives?: string[];
           sort_order?: number;
+          subject_id?: string;
           title?: string;
           title_vi?: string;
           topic?: string;
@@ -1093,6 +1289,13 @@ export type Database = {
             columns: ["category_id"];
             isOneToOne: false;
             referencedRelation: "learning_categories";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "lessons_subject_id_fkey";
+            columns: ["subject_id"];
+            isOneToOne: false;
+            referencedRelation: "subjects";
             referencedColumns: ["id"];
           },
         ];
@@ -1196,6 +1399,58 @@ export type Database = {
             columns: ["couple_id"];
             isOneToOne: false;
             referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      placement_results: {
+        Row: {
+          correct: number;
+          created_at: string;
+          id: string;
+          recommended_level: string;
+          score_by_level: NonNullable<Json>;
+          session_id: string | null;
+          subject_id: string;
+          total: number;
+          user_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          correct: number;
+          created_at?: string;
+          id?: string;
+          recommended_level: string;
+          score_by_level: NonNullable<Json>;
+          session_id?: string | null;
+          subject_id: string;
+          total: number;
+          user_id: string;
+        };
+        Update: {
+          correct?: number;
+          created_at?: string;
+          id?: string;
+          recommended_level?: string;
+          score_by_level?: NonNullable<Json>;
+          session_id?: string | null;
+          subject_id?: string;
+          total?: number;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "placement_results_session_id_fkey";
+            columns: ["session_id"];
+            isOneToOne: false;
+            referencedRelation: "game_sessions";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "placement_results_subject_id_fkey";
+            columns: ["subject_id"];
+            isOneToOne: false;
+            referencedRelation: "subjects";
             referencedColumns: ["id"];
           },
         ];
@@ -1593,6 +1848,152 @@ export type Database = {
         };
         Relationships: [];
       };
+      subject_levels: {
+        Row: {
+          lesson_target: number;
+          level: string;
+          sort_order: number;
+          subject_id: string;
+          title: string;
+          title_vi: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          lesson_target?: number;
+          level: string;
+          sort_order: number;
+          subject_id: string;
+          title: string;
+          title_vi: string;
+        };
+        Update: {
+          lesson_target?: number;
+          level?: string;
+          sort_order?: number;
+          subject_id?: string;
+          title?: string;
+          title_vi?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "subject_levels_subject_id_fkey";
+            columns: ["subject_id"];
+            isOneToOne: false;
+            referencedRelation: "subjects";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      subjects: {
+        Row: {
+          description: string;
+          description_vi: string;
+          id: string;
+          language: string | null;
+          name: string;
+          name_vi: string;
+          sort_order: number;
+          status: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          description: string;
+          description_vi: string;
+          id: string;
+          language?: string | null;
+          name: string;
+          name_vi: string;
+          sort_order: number;
+          status: string;
+        };
+        Update: {
+          description?: string;
+          description_vi?: string;
+          id?: string;
+          language?: string | null;
+          name?: string;
+          name_vi?: string;
+          sort_order?: number;
+          status?: string;
+        };
+        Relationships: [];
+      };
+      unit_lessons: {
+        Row: {
+          lesson_id: string;
+          position: number;
+          unit_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          lesson_id: string;
+          position: number;
+          unit_id: string;
+        };
+        Update: {
+          lesson_id?: string;
+          position?: number;
+          unit_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "unit_lessons_lesson_id_fkey";
+            columns: ["lesson_id"];
+            isOneToOne: true;
+            referencedRelation: "lessons";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "unit_lessons_unit_id_fkey";
+            columns: ["unit_id"];
+            isOneToOne: false;
+            referencedRelation: "learning_units";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      unit_progress: {
+        Row: {
+          boss_attempts: number;
+          boss_best_pct: number;
+          boss_cleared_at: string | null;
+          review_completed_at: string | null;
+          stars: number;
+          unit_id: string;
+          updated_at: string;
+          user_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          boss_attempts?: number;
+          boss_best_pct?: number;
+          boss_cleared_at?: string | null;
+          review_completed_at?: string | null;
+          stars?: number;
+          unit_id: string;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          boss_attempts?: number;
+          boss_best_pct?: number;
+          boss_cleared_at?: string | null;
+          review_completed_at?: string | null;
+          stars?: number;
+          unit_id?: string;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "unit_progress_unit_id_fkey";
+            columns: ["unit_id"];
+            isOneToOne: false;
+            referencedRelation: "learning_units";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       user_achievements: {
         Row: {
           achievement_id: string;
@@ -1710,7 +2111,7 @@ export type Database = {
           hint_vi: string | null;
           id: string;
           kind: Database["public"]["Enums"]["question_kind"];
-          language: string;
+          language: string | null;
           lesson_id: string;
           level: string;
           objective: string;
@@ -1718,6 +2119,7 @@ export type Database = {
           position: number;
           prompt: string;
           prompt_vi: string | null;
+          subject_id: string;
           tokens: Json | null;
         };
         ComputedFields: never;
@@ -1734,6 +2136,13 @@ export type Database = {
             columns: ["category_id"];
             isOneToOne: false;
             referencedRelation: "learning_categories";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "lessons_subject_id_fkey";
+            columns: ["subject_id"];
+            isOneToOne: false;
+            referencedRelation: "subjects";
             referencedColumns: ["id"];
           },
         ];
@@ -1792,6 +2201,12 @@ export type Database = {
         Returns: undefined;
       };
       complete_lesson: { Args: { lesson_attempt: string }; Returns: Json };
+      completed_lessons: {
+        Args: { uid: string };
+        Returns: {
+          lesson_id: string;
+        }[];
+      };
       couple_local_date: { Args: { target_couple: string }; Returns: string };
       couple_members_public: { Args: { cid: string }; Returns: Json };
       create_invitation: {
@@ -1829,11 +2244,22 @@ export type Database = {
         Returns: number;
       };
       finalize_legend_week: { Args: { week: string }; Returns: number };
+      finish_adventure_part: { Args: { game_session: string }; Returns: Json };
       finish_game: { Args: { game_session: string }; Returns: Json };
+      finish_placement: { Args: { game_session: string }; Returns: Json };
+      finish_unit_challenge: { Args: { game_session: string }; Returns: Json };
       fulfill_redemption: { Args: { redemption: string }; Returns: undefined };
       generate_invite_code: {
         Args: Record<PropertyKey, never>;
         Returns: string;
+      };
+      get_adventure_map: {
+        Args: { map_level: string; subject: string };
+        Returns: Json;
+      };
+      get_couple_adventures: {
+        Args: Record<PropertyKey, never>;
+        Returns: Json;
       };
       get_couple_legend_profile: { Args: { target: string }; Returns: Json };
       get_couple_quests: {
@@ -1883,6 +2309,10 @@ export type Database = {
           tier: number;
         }[];
       };
+      get_learning_universe: {
+        Args: Record<PropertyKey, never>;
+        Returns: Json;
+      };
       get_love_answer_history: {
         Args: { max_days?: number };
         Returns: {
@@ -1903,7 +2333,7 @@ export type Database = {
           hint_vi: string | null;
           id: string;
           kind: Database["public"]["Enums"]["question_kind"];
-          language: string;
+          language: string | null;
           lesson_id: string;
           level: string;
           objective: string;
@@ -1911,6 +2341,7 @@ export type Database = {
           position: number;
           prompt: string;
           prompt_vi: string | null;
+          subject_id: string;
           tokens: Json | null;
         }[];
         SetofOptions: {
@@ -2092,11 +2523,21 @@ export type Database = {
         Returns: undefined;
       };
       srs_interval: { Args: { box: number }; Returns: string };
+      start_adventure_part: { Args: { adventure: string }; Returns: Json };
       start_game: {
         Args: { game: Database["public"]["Enums"]["game_kind"] };
         Returns: Json;
       };
       start_lesson: { Args: { target_lesson: string }; Returns: string };
+      start_placement: { Args: { subject: string }; Returns: Json };
+      start_unit_challenge: {
+        Args: { mode: string; target_unit: string };
+        Returns: Json;
+      };
+      subject_level_for: {
+        Args: { subject: string; uid: string };
+        Returns: string;
+      };
       submit_answer: {
         Args: {
           answer: string;
@@ -2111,6 +2552,7 @@ export type Database = {
         Args: { multiplier?: number; target_level: number };
         Returns: number;
       };
+      unit_state: { Args: { target_unit: string; uid: string }; Returns: Json };
       unlock_couple_achievement: {
         Args: { achievement: string; cid: string };
         Returns: undefined;
@@ -2128,9 +2570,23 @@ export type Database = {
       word_count: { Args: { raw: string }; Returns: number };
     };
     Enums: {
-      answer_source: "lesson" | "review" | "word_battle" | "sentence_puzzle";
+      answer_source:
+        | "lesson"
+        | "review"
+        | "word_battle"
+        | "sentence_puzzle"
+        | "boss"
+        | "unit_review"
+        | "placement"
+        | "adventure";
       cefr_level: "A1" | "A2" | "B1" | "B2" | "C1";
-      game_kind: "word_battle" | "sentence_puzzle";
+      game_kind:
+        | "word_battle"
+        | "sentence_puzzle"
+        | "boss"
+        | "unit_review"
+        | "placement"
+        | "adventure";
       question_kind: "multiple_choice" | "sentence_order" | "listening";
     };
     CompositeTypes: {
@@ -2259,9 +2715,25 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      answer_source: ["lesson", "review", "word_battle", "sentence_puzzle"],
+      answer_source: [
+        "lesson",
+        "review",
+        "word_battle",
+        "sentence_puzzle",
+        "boss",
+        "unit_review",
+        "placement",
+        "adventure",
+      ],
       cefr_level: ["A1", "A2", "B1", "B2", "C1"],
-      game_kind: ["word_battle", "sentence_puzzle"],
+      game_kind: [
+        "word_battle",
+        "sentence_puzzle",
+        "boss",
+        "unit_review",
+        "placement",
+        "adventure",
+      ],
       question_kind: ["multiple_choice", "sentence_order", "listening"],
     },
   },

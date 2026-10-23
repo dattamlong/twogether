@@ -1,0 +1,220 @@
+{
+  "subject": "chinese",
+  "levels": [
+    {
+      "level": "HSK1",
+      "title": "HSK 1 (HSK 3.0)",
+      "title_vi": "HSK 1 (chuẩn 3.0)",
+      "lesson_target": 40,
+      "units": [
+        {
+          "id": "zh-hsk1-u1",
+          "title": "Sounds & Strokes",
+          "title_vi": "Âm và nét chữ",
+          "description": "Tones, pinyin, radicals and your first greetings.",
+          "location": "bamboo",
+          "status": "available",
+          "lessons": [
+            "zh-hsk1-pinyin-tones",
+            "zh-hsk1-hanzi-basics",
+            "zh-vocab-hsk1-greetings"
+          ],
+          "boss": {
+            "name": "The Bamboo Guardian",
+            "questions": 8
+          },
+          "reward_item": "paper_lantern"
+        },
+        {
+          "id": "zh-hsk1-u2",
+          "title": "First Sentences",
+          "title_vi": "Những câu đầu tiên",
+          "description": "是 and 吗 questions, numbers, time and building sentences.",
+          "location": "lantern_street",
+          "status": "available",
+          "lessons": [
+            "zh-grammar-hsk1-basics",
+            "zh-vocab-hsk1-numbers-time",
+            "zh-writing-hsk1-sentence-puzzle",
+            "zh-listen-hsk1-daily-life"
+          ],
+          "boss": {
+            "name": "The Lantern Keeper",
+            "questions": 8
+          },
+          "reward_item": "bamboo_pot"
+        },
+        {
+          "id": "zh-hsk1-u3",
+          "title": "My Family",
+          "title_vi": "Gia đình tôi",
+          "description": "Family members and possessive 的.",
+          "location": "garden",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "zh-hsk1-u4",
+          "title": "Places",
+          "title_vi": "Địa điểm",
+          "description": "在 + places, directions.",
+          "location": "temple",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    },
+    {
+      "level": "HSK2",
+      "title": "HSK 2 (HSK 3.0)",
+      "title_vi": "HSK 2 (chuẩn 3.0)",
+      "lesson_target": 40,
+      "units": [
+        {
+          "id": "zh-hsk2-u1",
+          "title": "Life Together",
+          "title_vi": "Cuộc sống bên nhau",
+          "description": "Food, shopping, feelings, 了/过 and comparisons.",
+          "location": "garden",
+          "status": "available",
+          "lessons": [
+            "zh-vocab-hsk2-food-shopping",
+            "zh-vocab-hsk2-feelings",
+            "zh-grammar-hsk2-aspect-compare",
+            "zh-listen-hsk2-plans-together",
+            "zh-writing-hsk2-sentence-puzzle"
+          ],
+          "boss": {
+            "name": "The Tea House Master",
+            "questions": 8
+          },
+          "reward_item": "scroll_stand"
+        },
+        {
+          "id": "zh-hsk2-u2",
+          "title": "Weekend Plans",
+          "title_vi": "Kế hoạch cuối tuần",
+          "description": "Making plans and suggestions with 吧.",
+          "location": "lantern_street",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    },
+    {
+      "level": "HSK3",
+      "title": "HSK 3 (HSK 3.0)",
+      "title_vi": "HSK 3 (chuẩn 3.0)",
+      "lesson_target": 40,
+      "units": [
+        {
+          "id": "zh-hsk3-u1",
+          "title": "Journeys",
+          "title_vi": "Hành trình",
+          "description": "Travel, study and 把 sentences.",
+          "location": "mountain",
+          "status": "available",
+          "lessons": [
+            "zh-vocab-hsk3-travel",
+            "zh-vocab-hsk3-study-work",
+            "zh-grammar-hsk3-ba-complements"
+          ],
+          "boss": {
+            "name": "The Mountain Sage",
+            "questions": 8
+          }
+        },
+        {
+          "id": "zh-hsk3-u2",
+          "title": "City Life",
+          "title_vi": "Cuộc sống thành phố",
+          "description": "Directions, transport and complements.",
+          "location": "temple",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    },
+    {
+      "level": "HSK4",
+      "title": "HSK 4 (HSK 3.0)",
+      "title_vi": "HSK 4 (chuẩn 3.0)",
+      "lesson_target": 40,
+      "units": [
+        {
+          "id": "zh-hsk4-u1",
+          "title": "Heart & Home",
+          "title_vi": "Tâm hồn & tổ ấm",
+          "description": "Emotions, health, 不但…而且 and 被.",
+          "location": "garden",
+          "status": "available",
+          "lessons": [
+            "zh-vocab-hsk4-emotions",
+            "zh-vocab-hsk4-health-home",
+            "zh-grammar-hsk4",
+            "zh-puzzle-hsk4",
+            "zh-listen-hsk4"
+          ],
+          "boss": {
+            "name": "The Jade Guardian",
+            "questions": 8
+          }
+        }
+      ]
+    },
+    {
+      "level": "HSK5",
+      "title": "HSK 5 (HSK 3.0)",
+      "title_vi": "HSK 5 (chuẩn 3.0)",
+      "lesson_target": 40,
+      "units": [
+        {
+          "id": "zh-hsk5-u1",
+          "title": "Work & World",
+          "title_vi": "Công việc & xã hội",
+          "description": "Career, money, society and 无论/既然.",
+          "location": "city",
+          "status": "available",
+          "lessons": [
+            "zh-vocab-hsk5-work",
+            "zh-vocab-hsk5-society",
+            "zh-grammar-hsk5",
+            "zh-puzzle-hsk5",
+            "zh-listen-hsk5"
+          ],
+          "boss": {
+            "name": "The Silk Road Merchant",
+            "questions": 8
+          }
+        }
+      ]
+    },
+    {
+      "level": "HSK6",
+      "title": "HSK 6 (HSK 3.0)",
+      "title_vi": "HSK 6 (chuẩn 3.0)",
+      "lesson_target": 40,
+      "units": [
+        {
+          "id": "zh-hsk6-u1",
+          "title": "Culture & Ideas",
+          "title_vi": "Văn hóa & tư tưởng",
+          "description": "Arts, opinions and formal patterns.",
+          "location": "temple",
+          "status": "available",
+          "lessons": [
+            "zh-vocab-hsk6-culture",
+            "zh-vocab-hsk6-opinions",
+            "zh-grammar-hsk6",
+            "zh-puzzle-hsk6",
+            "zh-listen-hsk6"
+          ],
+          "boss": {
+            "name": "The Dragon Scholar",
+            "questions": 8
+          }
+        }
+      ]
+    }
+  ]
+}

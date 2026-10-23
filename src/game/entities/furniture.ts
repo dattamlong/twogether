@@ -353,6 +353,115 @@ export function drawFurniture(kind: string, w: number, h: number, flipped = fals
       isoBox(g, 0.32, 0.32, 0.36, 0.36, 15, 6, { color: 0xfbe3b1 });
       break;
     }
+    case "magic_bookshelf": {
+      isoBox(g, 0.1, 0.25, 0.8, 0.5, 0, 58, { color: 0x8a73c8 });
+      const colors = [0xf39bbb, 0xf5cb78, 0x6fb5e3, 0x6cc3a2];
+      for (let shelf = 0; shelf < 2; shelf++) {
+        const z = 10 + shelf * 22;
+        for (let i = 0; i < 4; i++) {
+          const [x0, y0] = P(0.18 + i * 0.17, 0.75, z);
+          const [x1, y1] = P(0.3 + i * 0.17, 0.75, z);
+          g.poly([x0, y0, x1, y1, x1, y1 - 15, x0, y0 - 15]).fill(colors[(i + shelf) % 4]).stroke({ color: OUTLINE, width: 0.8, alpha: 0.3 });
+        }
+      }
+      const glow = new Graphics();
+      const c = tileToScreen(0.5, 0.5);
+      glow.circle(c.x, c.y - 40, 30).fill({ color: 0xc7b8ea, alpha: 0.35 });
+      glow.circle(c.x + 10, c.y - 66, 3).fill(0xf5cb78);
+      glow.circle(c.x - 12, c.y - 58, 2).fill(0xffffff);
+      container.addChildAt(glow, 0);
+      art.glow = glow;
+      break;
+    }
+    case "vintage_lamp":
+    case "paper_lantern": {
+      const c = tileToScreen(0.5, 0.5);
+      const glow = new Graphics();
+      glow.circle(c.x, c.y - 34, 26).fill({ color: 0xfbe3b1, alpha: 0.4 });
+      container.addChildAt(glow, 0);
+      art.glow = glow;
+      if (kind === "vintage_lamp") {
+        isoBox(g, 0.35, 0.35, 0.3, 0.3, 0, 4, { color: 0xb3866f });
+        g.moveTo(c.x, c.y - 4).lineTo(c.x + 6, c.y - 26).stroke({ color: 0xd9a440, width: 2.5 });
+        g.poly([c.x - 4, c.y - 22, c.x + 18, c.y - 30, c.x + 14, c.y - 42, c.x - 2, c.y - 36]).fill(0x6cc3a2).stroke({ color: 0x3a9474, width: 1 });
+      } else {
+        g.moveTo(c.x, c.y).lineTo(c.x, c.y - 20).stroke({ color: 0x9a6b4f, width: 2 });
+        g.ellipse(c.x, c.y - 34, 13, 15).fill(0xe7553f).stroke({ color: 0xb2405c, width: 1.2 });
+        g.rect(c.x - 7, c.y - 51, 14, 4).fill(0xd9a440);
+        g.rect(c.x - 7, c.y - 21, 14, 4).fill(0xd9a440);
+        g.moveTo(c.x, c.y - 17).lineTo(c.x, c.y - 10).stroke({ color: 0xd9a440, width: 2 });
+      }
+      break;
+    }
+    case "fantasy_globe": {
+      const c = tileToScreen(0.5, 0.5);
+      isoBox(g, 0.3, 0.3, 0.4, 0.4, 0, 6, { color: 0xb3866f });
+      g.rect(c.x - 1.5, c.y - 18, 3, 12).fill(0xd9a440);
+      g.circle(c.x, c.y - 32, 15).fill(0x6fb5e3).stroke({ color: 0xd9a440, width: 2 });
+      g.ellipse(c.x - 4, c.y - 36, 6, 4).fill(0x6cc3a2);
+      g.ellipse(c.x + 6, c.y - 26, 4, 3).fill(0x6cc3a2);
+      g.circle(c.x + 9, c.y - 42, 2).fill(0xffffff);
+      break;
+    }
+    case "vintage_typewriter": {
+      const c = tileToScreen(0.5, 0.5);
+      isoBox(g, 0.2, 0.25, 0.6, 0.5, 0, 10, { color: 0x45365b, top: 0x6a5583 });
+      for (let i = 0; i < 4; i++) g.circle(c.x - 9 + i * 6, c.y - 10, 1.8).fill(0xfff7ed);
+      g.poly([c.x - 10, c.y - 14, c.x + 10, c.y - 14, c.x + 8, c.y - 32, c.x - 8, c.y - 32]).fill(0xfff7ed).stroke({ color: OUTLINE, width: 0.8, alpha: 0.4 });
+      g.moveTo(c.x - 5, c.y - 26).lineTo(c.x + 5, c.y - 26).moveTo(c.x - 5, c.y - 22).lineTo(c.x + 3, c.y - 22).stroke({ color: 0xa995dc, width: 1 });
+      break;
+    }
+    case "bamboo_pot": {
+      const c = tileToScreen(0.5, 0.5);
+      isoBox(g, 0.3, 0.3, 0.4, 0.4, 0, 10, { color: 0xfff7ed, right: 0xe8dcd0 });
+      const sway = new Graphics();
+      for (const [dx, hgt] of [[-5, 44], [1, 54], [7, 40]]) {
+        sway.rect(c.x + dx, c.y - 8 - hgt, 3, hgt).fill(0x6cc3a2);
+        for (let k = 1; k < 4; k++) sway.rect(c.x + dx - 0.5, c.y - 8 - (hgt * k) / 4, 4, 1.2).fill(0x3a9474);
+        sway.ellipse(c.x + dx + 6, c.y - 8 - hgt + 6, 6, 2).fill(0x3a9474);
+      }
+      container.addChild(sway);
+      art.sway = sway;
+      break;
+    }
+    case "scroll_stand": {
+      const c = tileToScreen(0.5, 0.5);
+      isoBox(g, 0.2, 0.4, 0.6, 0.2, 0, 4, { color: 0x9a6b4f });
+      g.moveTo(c.x - 14, c.y - 2).lineTo(c.x - 14, c.y - 56).moveTo(c.x + 14, c.y + 2).lineTo(c.x + 14, c.y - 52).stroke({ color: 0x9a6b4f, width: 2.5 });
+      g.poly([c.x - 11, c.y - 50, c.x + 11, c.y - 46, c.x + 11, c.y - 12, c.x - 11, c.y - 16]).fill(0xfff7ed).stroke({ color: 0xd9a440, width: 1 });
+      g.circle(c.x, c.y - 31, 5).stroke({ color: 0xe7553f, width: 1.6 });
+      break;
+    }
+    case "puzzle_cube": {
+      isoBox(g, 0.25, 0.25, 0.5, 0.5, 0, 26, { color: 0xc7b8ea, top: 0xf5cb78, right: 0x6fb5e3 });
+      const [x0, y0] = P(0.25, 0.5, 13);
+      const [x1, y1] = P(0.75, 0.75, 13);
+      g.moveTo(x0, y0).lineTo(x1, y1).stroke({ color: OUTLINE, width: 1, alpha: 0.35 });
+      const [x2, y2] = P(0.5, 0.75, 0);
+      g.moveTo(x2, y2).lineTo(x2, y2 - 26).stroke({ color: OUTLINE, width: 1, alpha: 0.35 });
+      break;
+    }
+    case "treasure_map_table": {
+      for (const [u, v] of [[0.15, 0.15], [0.75, 0.15], [0.15, 0.75], [0.75, 0.75]]) isoBox(g, u, v, 0.1, 0.1, 0, 22, { color: 0x9a6b4f });
+      isoBox(g, 0.1, 0.1, 0.8, 0.8, 22, 4, { color: 0xc49a83 });
+      isoQuad(g, 0.2, 0.2, 0.6, 0.6, 26.5, 0xfbe3b1);
+      const c = tileToScreen(0.5, 0.5);
+      g.moveTo(c.x - 10, c.y - 26).quadraticCurveTo(c.x, c.y - 34, c.x + 8, c.y - 27).stroke({ color: 0xe7553f, width: 1.4 });
+      g.moveTo(c.x + 6, c.y - 30).lineTo(c.x + 10, c.y - 26).moveTo(c.x + 10, c.y - 30).lineTo(c.x + 6, c.y - 26).stroke({ color: 0xe7553f, width: 1.6 });
+      break;
+    }
+    case "love_letter_box": {
+      const c = tileToScreen(0.5, 0.5);
+      isoBox(g, 0.25, 0.3, 0.5, 0.4, 0, 16, { color: 0xf8bbd0, top: 0xfde4ee });
+      const heart = leftFacePoint(0.5, 0.7, 9);
+      g.moveTo(heart.x, heart.y + 4).bezierCurveTo(heart.x - 7, heart.y - 2, heart.x - 3, heart.y - 7, heart.x, heart.y - 3).bezierCurveTo(heart.x + 3, heart.y - 7, heart.x + 7, heart.y - 2, heart.x, heart.y + 4).fill(0xe7779f);
+      g.poly([c.x - 8, c.y - 22, c.x + 8, c.y - 26, c.x + 8, c.y - 34, c.x - 8, c.y - 30]).fill(0xfff7ed).stroke({ color: 0xe7779f, width: 1 });
+      const glow = new Graphics();
+      glow.circle(c.x, c.y - 20, 22).fill({ color: 0xf8bbd0, alpha: 0.3 });
+      container.addChildAt(glow, 0);
+      art.glow = glow;
+      break;
+    }
     case "legend_trophy":
     case "tier_trophy_gold":
     case "tier_trophy_diamond":

@@ -67,6 +67,16 @@ export const SHOP_ITEMS: ShopItem[] = [
   placeable("cushion_pile", "decorations", "Cushion Pile", "Đống gối êm", "For lazy movie nights.", 50),
   placeable("golden_lamp", "decorations", "Golden Streak Lamp", "Đèn chuỗi ngày vàng", "Earned by keeping a 7-day learning streak.", 0, { shopVisible: false }),
   placeable("heart_lantern", "decorations", "Heart Lantern", "Đèn lồng trái tim", "Earned by a 7-day couple streak.", 0, { shopVisible: false }),
+  placeable("magic_bookshelf", "furniture", "Magical Bookshelf", "Kệ sách phép thuật", "Glowing books from the English Kingdom. Earned in A1 · First Steps.", 0, { shopVisible: false }),
+  placeable("vintage_lamp", "decorations", "Vintage Study Lamp", "Đèn học cổ điển", "Earned in English A1 · Daily Life.", 0, { shopVisible: false }),
+  placeable("fantasy_globe", "decorations", "Fantasy Globe", "Quả địa cầu kỳ ảo", "Earned in English A1 · Home & Things.", 0, { shopVisible: false }),
+  placeable("vintage_typewriter", "decorations", "Vintage Typewriter", "Máy đánh chữ cổ", "Earned in English A2 · Feelings & Plans.", 0, { shopVisible: false }),
+  placeable("paper_lantern", "decorations", "Paper Lantern", "Đèn lồng giấy", "Earned in Chinese HSK 1 · Sounds & Strokes.", 0, { shopVisible: false }),
+  placeable("bamboo_pot", "plants", "Lucky Bamboo", "Cây trúc may mắn", "Earned in Chinese HSK 1 · First Sentences.", 0, { shopVisible: false }),
+  placeable("scroll_stand", "decorations", "Calligraphy Scroll", "Tranh thư pháp", "Earned in Chinese HSK 2 · Life Together.", 0, { shopVisible: false }),
+  placeable("puzzle_cube", "decorations", "Puzzle Sculpture", "Tượng khối câu đố", "Earned in Brain Academy · First Puzzles.", 0, { shopVisible: false }),
+  placeable("treasure_map_table", "furniture", "Explorer's Map Table", "Bàn bản đồ thám hiểm", "Earned in World Explorer · Around the World.", 0, { shopVisible: false }),
+  placeable("love_letter_box", "decorations", "Love Letter Box", "Hộp thư tình", "Earned together in the couple adventure The Lost Love Letter.", 0, { shopVisible: false }),
   wearable("hoodie_lavender", "clothing", "Lavender Hoodie", "Áo hoodie oải hương", "Cozy hoodie for late-night study.", 150),
   wearable("sweater_mint", "clothing", "Mint Sweater", "Áo len bạc hà", "Hand-knit look, extra soft.", 150),
   wearable("yukata_sakura", "clothing", "Sakura Yukata", "Yukata hoa anh đào", "For festival nights together.", 300),
@@ -92,11 +102,14 @@ export type QuestEvent =
   | "love_answered"
   | "message_sent"
   | "vocab_correct"
-  | "love_letter";
+  | "love_letter"
+  | "world_lesson"
+  | "boss_attempted"
+  | "unit_review_done";
 
 export type DailyQuestTemplate = {
   id: string;
-  slot: "learn" | "lesson" | "review" | "play";
+  slot: "learn" | "lesson" | "review" | "play" | "explore";
   title: string;
   title_vi: string;
   event: QuestEvent;
@@ -116,6 +129,9 @@ export const DAILY_QUESTS: DailyQuestTemplate[] = [
   { id: "review_10", slot: "review", title: "Answer 10 review questions", title_vi: "Trả lời 10 câu ôn tập", event: "review_answered", category: null, target: 10, xp_reward: 30, coin_reward: 15 },
   { id: "minigame_1", slot: "play", title: "Play a mini-game", title_vi: "Chơi một trò chơi nhỏ", event: "game_completed", category: null, target: 1, xp_reward: 20, coin_reward: 10 },
   { id: "battle_win_1", slot: "play", title: "Win a Word Battle", title_vi: "Thắng một trận Word Battle", event: "battle_won", category: null, target: 1, xp_reward: 30, coin_reward: 15 },
+  { id: "world_lesson_1", slot: "explore", title: "Finish a lesson in Brain Academy or World Explorer", title_vi: "Hoàn thành 1 bài ở Học viện Trí tuệ hoặc Nhà thám hiểm", event: "world_lesson", category: null, target: 1, xp_reward: 25, coin_reward: 12 },
+  { id: "boss_attempt_1", slot: "explore", title: "Challenge a unit boss", title_vi: "Thách đấu một Boss", event: "boss_attempted", category: null, target: 1, xp_reward: 25, coin_reward: 12 },
+  { id: "unit_review_1", slot: "explore", title: "Complete a unit review", title_vi: "Hoàn thành một bài ôn tập unit", event: "unit_review_done", category: null, target: 1, xp_reward: 20, coin_reward: 10 },
   { id: "puzzle_3", slot: "play", title: "Solve 3 sentence puzzles", title_vi: "Giải 3 câu đố sắp xếp câu", event: "puzzle_solved", category: null, target: 3, xp_reward: 25, coin_reward: 12 },
 ];
 
@@ -187,6 +203,8 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   achievement("first_hug", "couple", "First Hug", "Cái ôm đầu tiên", "Share your first hug in the room.", "hug", 10),
   achievement("first_couple_quest", "couple", "Team Players", "Đồng đội", "Complete your first couple quest.", "handshake", 20),
   achievement("home_level_3", "couple", "Cozier Home", "Ngôi nhà ấm hơn", "Reach home level 3.", "house", 40),
+  achievement("first_boss_clear", "user", "Guardian Slayer", "Hạ gục Hộ vệ", "Defeat your first unit boss.", "sword", 30),
+  achievement("adventure_lost_love_letter", "couple", "The Lost Love Letter", "Lá thư tình thất lạc", "Complete the couple adventure The Lost Love Letter.", "hearts", 50),
   achievement("home_level_5", "couple", "Dream Home", "Ngôi nhà mơ ước", "Reach home level 5.", "castle", 100),
 ];
 
@@ -199,3 +217,36 @@ export const HOME_LEVELS = [
   { level: 4, loveEnergy: 240, title: "Special lighting", title_vi: "Ánh sáng đặc biệt" },
   { level: 5, loveEnergy: 400, title: "Expanded decorations", title_vi: "Mở rộng trang trí" },
 ] as const;
+
+export type CoupleAdventureDef = {
+  id: string;
+  title: string;
+  title_vi: string;
+  story: string;
+  story_vi: string;
+  letter: string;
+  letter_vi: string;
+  parts: { slot: 0 | 1; category: "vocabulary" | "grammar"; title: string; title_vi: string }[];
+  couple_xp: number;
+  love_energy: number;
+  reward_item_id: string | null;
+};
+
+export const COUPLE_ADVENTURES: CoupleAdventureDef[] = [
+  {
+    id: "lost_love_letter",
+    title: "The Lost Love Letter",
+    title_vi: "Lá thư tình thất lạc",
+    story: "A gust of wind scattered an old love letter across the kingdom. One of you gathers the lost words, the other restores the broken grammar seal. Only together can you read it.",
+    story_vi: "Một cơn gió thổi tung lá thư tình cũ khắp vương quốc. Một người nhặt lại những từ bị thất lạc, người kia sửa phong ấn ngữ pháp. Chỉ khi cùng nhau, hai bạn mới đọc được lá thư.",
+    letter: "To the one who learns beside me: every word I learn is a small step closer to you. Distance is only a number between two hearts that keep growing together. Wait for me — I'm coming, one lesson at a time.",
+    letter_vi: "Gửi người cùng học bên mình: mỗi từ mình học là một bước nhỏ đến gần bạn hơn. Khoảng cách chỉ là con số giữa hai trái tim vẫn cùng nhau lớn lên. Đợi mình nhé — mình đang đến, từng bài học một.",
+    parts: [
+      { slot: 0, category: "vocabulary", title: "Gather the lost words", title_vi: "Nhặt lại những từ thất lạc" },
+      { slot: 1, category: "grammar", title: "Restore the grammar seal", title_vi: "Sửa phong ấn ngữ pháp" },
+    ],
+    couple_xp: 120,
+    love_energy: 30,
+    reward_item_id: "love_letter_box",
+  },
+];

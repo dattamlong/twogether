@@ -24,7 +24,7 @@ describe("daily quests", () => {
   it("tracks progress, validates and pays out exactly once", async () => {
     const user = await createUser();
     const quests = expectOk(await user.client.rpc("get_daily_quests"));
-    expect(quests.map((q) => q.slot)).toEqual(["learn", "lesson", "review", "play"]);
+    expect(quests.map((q) => q.slot)).toEqual(["learn", "lesson", "review", "play", "explore"]);
 
     const quest = quests.find((q) => q.slot === "review")!;
     const def = expectOk(await admin().from("daily_quests").select("event, category, target").eq("id", quest.id).single());

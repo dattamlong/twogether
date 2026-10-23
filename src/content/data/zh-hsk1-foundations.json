@@ -1,0 +1,304 @@
+{
+  "lessons": [
+    {
+      "slug": "zh-hsk1-pinyin-tones",
+      "subject": "chinese",
+      "category": "listening",
+      "level": "HSK1",
+      "topic": "pinyin, the four tones and tricky initials",
+      "title": "Sing the Four Tones Together",
+      "title_vi": "Cùng nhau hát bốn thanh điệu",
+      "objectives": [
+        "Recognize the four tones and the neutral tone in pinyin",
+        "Know where the tone mark goes and how 你好 changes to ní hǎo",
+        "Tell zh/ch/sh from z/c/s and read j/q/x and ü correctly"
+      ],
+      "intro": [
+        {
+          "title": "Four tones + one light tone",
+          "body": "Every Chinese syllable has a tone, and the tone changes the meaning. Tone 1 (ā) is high and flat, tone 2 (á) rises, tone 3 (ǎ) dips low, tone 4 (à) falls sharply. A syllable with no mark is the light, short neutral tone.",
+          "body_vi": "Mỗi âm tiết tiếng Trung đều có thanh điệu, đổi thanh là đổi nghĩa — giống tiếng Việt 'ma, má, mả, mạ'. Thanh 1 (ā): cao và bằng, giống thanh ngang nhưng giọng cao hơn và kéo đều. Thanh 2 (á): đi lên, khá giống dấu sắc. Thanh 3 (ǎ): hạ thấp xuống rồi mới lên, gần giống dấu hỏi nhưng trầm hơn. Thanh 4 (à): rơi mạnh từ cao xuống thấp, dứt khoát như khi quát 'Đi!'. Không có dấu là thanh nhẹ: đọc ngắn, nhẹ, không nhấn, ví dụ 吗 ma ở cuối câu hỏi.",
+          "examples": [
+            { "text": "妈 mā", "translation_vi": "mẹ", "note": "Thanh 1 — cao, bằng" },
+            { "text": "麻 má", "translation_vi": "cây gai; tê (Hán-Việt: ma)", "note": "Thanh 2 — đi lên" },
+            { "text": "马 mǎ", "translation_vi": "con ngựa (Hán-Việt: mã)", "note": "Thanh 3 — xuống thấp rồi lên" },
+            { "text": "骂 mà", "translation_vi": "mắng, chửi (Hán-Việt: mạ)", "note": "Thanh 4 — rơi mạnh" },
+            { "text": "吗 ma", "translation_vi": "trợ từ hỏi '…không?'", "note": "Thanh nhẹ — không dấu" }
+          ]
+        },
+        {
+          "title": "Where the mark goes & the 你好 rule",
+          "body": "Put the tone mark on a or e if present; in 'ou' it goes on o; otherwise on the last vowel (liù, duì). When two tone-3 syllables meet, the first becomes tone 2: 你好 is written nǐ hǎo but said ní hǎo.",
+          "body_vi": "Quy tắc đặt dấu thanh: có a hoặc e thì đặt lên a/e (hǎo, xiè); gặp 'ou' thì đặt lên o (gǒu); còn lại đặt lên nguyên âm đứng sau (liù, duì). Biến điệu quan trọng nhất: hai thanh 3 đi liền nhau thì thanh 3 đầu đọc thành thanh 2. Vì vậy 你好 viết là nǐ hǎo nhưng nói thành ní hǎo; 很好 hěn hǎo nói thành hén hǎo. Phiên âm trong sách vẫn giữ nguyên dấu gốc, chỉ khi nói mới đổi.",
+          "examples": [
+            { "text": "好 hǎo", "translation_vi": "tốt, khỏe (Hán-Việt: hảo)", "note": "Có a → dấu trên a" },
+            { "text": "六 liù", "translation_vi": "số sáu (Hán-Việt: lục)", "note": "iu → dấu trên u (chữ sau)" },
+            { "text": "对 duì", "translation_vi": "đúng", "note": "ui → dấu trên i (chữ sau)" },
+            { "text": "你好 nǐ hǎo → ní hǎo", "translation_vi": "xin chào", "note": "3 + 3 → 2 + 3 khi nói" },
+            { "text": "很好 hěn hǎo → hén hǎo", "translation_vi": "rất tốt", "note": "Cùng quy tắc 3 + 3" }
+          ]
+        },
+        {
+          "title": "Initials that trick Vietnamese ears",
+          "body": "zh/ch/sh are said with the tongue curled back; z/c/s with the tongue flat behind the teeth. j/q/x are not like Vietnamese 'gi/qu/x' spelling: q sounds like an aspirated 'ch'. ü is 'i' said with rounded lips, and after j/q/x/y it is written as plain u.",
+          "body_vi": "Nhóm uốn lưỡi zh / ch / sh: cong đầu lưỡi lên — zh gần 'tr', ch gần 'tr' bật hơi mạnh, sh gần 's' (uốn lưỡi). Nhóm đầu lưỡi phẳng z / c / s: lưỡi để thẳng sau răng — z gần 'ch' nhẹ (âm 'ts'), c là 'ts' bật hơi, s gần 'x'. Nhóm mặt lưỡi j / q / x: j gần 'ch', q là 'ch' bật hơi (KHÔNG đọc 'qu' như chữ 'quả'), x gần 'x'. Nguyên âm ü: giữ lưỡi như đọc 'i' rồi chu tròn môi (hơi giống 'uy' nhưng không trượt). Sau j, q, x, y thì ü bỏ hai chấm, viết thành u: 去 qù, 鱼 yú — nhưng sau n, l vẫn giữ chấm: 女 nǚ.",
+          "examples": [
+            { "text": "中国 Zhōngguó", "translation_vi": "Trung Quốc", "note": "zh ≈ tr uốn lưỡi" },
+            { "text": "吃 chī", "translation_vi": "ăn", "note": "ch ≈ tr bật hơi" },
+            { "text": "十 shí / 四 sì", "translation_vi": "mười / bốn", "note": "sh uốn lưỡi vs s phẳng" },
+            { "text": "去 qù", "translation_vi": "đi", "note": "q ≈ ch bật hơi; u ở đây là ü" },
+            { "text": "女 nǚ", "translation_vi": "nữ, con gái", "note": "Sau n giữ nguyên hai chấm" }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk1-tone-01",
+          "kind": "multiple_choice",
+          "objective": "Identify tone 3 from its tone mark",
+          "prompt": "Âm tiết nào mang thanh 3 (hạ thấp rồi lên)?",
+          "options": ["hǎo", "háo", "hào", "hāo"],
+          "answer": "hǎo",
+          "explanation": "The ˇ mark is tone 3, and it sits on a because a always takes the mark first. hǎo (好) means 'good'. ˊ is tone 2, ˋ is tone 4, ˉ is tone 1.",
+          "explanation_vi": "Dấu ˇ (hình chữ V) là thanh 3, và dấu nằm trên chữ a vì có a thì luôn đặt dấu lên a. hǎo (好, Hán-Việt 'hảo') nghĩa là tốt. Dấu ˊ là thanh 2, ˋ là thanh 4, ˉ là thanh 1. Mẹo nhớ: hình dạng dấu vẽ đúng đường đi của giọng."
+        },
+        {
+          "id": "zh-hsk1-tone-02",
+          "kind": "multiple_choice",
+          "objective": "Read 妈 with the correct first tone",
+          "prompt": "「妈」đọc là gì?",
+          "options": ["mā", "má", "mǎ", "mà"],
+          "answer": "mā",
+          "explanation": "妈 (mother) is mā, tone 1: high and flat. má is 麻, mǎ is 马 'horse', mà is 骂 'to scold' — so tones really matter!",
+          "explanation_vi": "妈 (mẹ) đọc là mā, thanh 1: cao và bằng. Nếu đọc sai thanh sẽ thành chữ khác: má là 麻 (cây gai), mǎ là 马 (con ngựa — Hán-Việt 'mã'), mà là 骂 (mắng). Gọi mẹ mà thành 'mắng' thì nguy to! Mẹo: bộ 女 bên trái gợi ý chữ này liên quan đến phụ nữ."
+        },
+        {
+          "id": "zh-hsk1-tone-03",
+          "kind": "multiple_choice",
+          "objective": "Apply the 3+3 tone sandhi rule to 你好",
+          "prompt": "Khi nói thực tế, 「你好」được phát âm thế nào?",
+          "options": ["ní hǎo", "nǐ hǎo", "nì hǎo", "ní háo"],
+          "answer": "ní hǎo",
+          "explanation": "你 and 好 are both tone 3. When two tone-3 syllables meet, the first changes to tone 2, so you say ní hǎo. Pinyin is still written nǐ hǎo.",
+          "explanation_vi": "你 và 好 đều là thanh 3. Hai thanh 3 đứng liền nhau thì thanh 3 đầu đọc thành thanh 2, nên khi nói là ní hǎo. Sách vẫn viết nǐ hǎo — đó là cách VIẾT, còn ní hǎo là cách NÓI. Chữ 好 phía sau vẫn giữ thanh 3, không đổi."
+        },
+        {
+          "id": "zh-hsk1-tone-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the neutral tone in the question particle 吗",
+          "prompt": "Trong câu 你好吗？, chữ 吗 mang thanh gì?",
+          "options": ["thanh nhẹ", "thanh 1", "thanh 3", "thanh 4"],
+          "answer": "thanh nhẹ",
+          "explanation": "吗 is written ma with no tone mark: it is the neutral tone, said short and light at the end of a yes/no question.",
+          "explanation_vi": "吗 viết là ma, không có dấu — đó là thanh nhẹ: đọc ngắn, nhẹ, không nhấn giọng. 吗 đứng cuối câu để hỏi có/không, giống '…không?' của tiếng Việt: 你好吗？ = Em khỏe không? Đừng đọc thành mā (妈, mẹ)."
+        },
+        {
+          "id": "zh-hsk1-tone-05",
+          "kind": "multiple_choice",
+          "objective": "Pronounce the retroflex initial zh in 中国",
+          "prompt": "Phụ âm zh trong 中国 (Zhōngguó) đọc gần giống âm nào của tiếng Việt?",
+          "options": ["tr (cong lưỡi)", "d", "z như tiếng Anh", "gi"],
+          "answer": "tr (cong lưỡi)",
+          "explanation": "zh is a retroflex sound: curl the tongue tip back and say something close to a Vietnamese 'tr' without a puff of air. It is not an English 'z'.",
+          "explanation_vi": "zh là âm uốn lưỡi: cong đầu lưỡi lên phía sau và đọc gần như 'tr' (giọng miền Nam/miền Trung phân biệt tr rõ). Không bật hơi. Đừng đọc như 'z' tiếng Anh hay 'd/gi' tiếng Việt. Còn z (không có h) thì để lưỡi thẳng, đọc như 'ts' nhẹ. 中国 Zhōngguó = Trung Quốc (Hán-Việt 'Trung Quốc' — chữ 中 'trung' cũng mở đầu bằng 'tr', dễ nhớ!).",
+          "word": {
+            "term": "中国",
+            "pinyin": "Zhōngguó",
+            "part_of_speech": "noun",
+            "meaning_vi": "Trung Quốc",
+            "example": "我们明年一起去中国吧。",
+            "example_pinyin": "Wǒmen míngnián yìqǐ qù Zhōngguó ba.",
+            "example_vi": "Sang năm mình cùng đi Trung Quốc nhé."
+          }
+        },
+        {
+          "id": "zh-hsk1-tone-06",
+          "kind": "multiple_choice",
+          "objective": "Know that u after q is really ü and q is an aspirated 'ch'",
+          "prompt": "Trong 去 (qù — đi), chữ u đứng sau q thật ra đọc là âm gì?",
+          "options": ["ü (môi tròn, lưỡi như đọc i)", "u như tiếng Việt", "ư", "o"],
+          "answer": "ü (môi tròn, lưỡi như đọc i)",
+          "explanation": "After j, q, x and y, the letter u is always ü with the dots dropped. So 去 qù is q + ü: an aspirated 'ch' followed by a rounded 'i'.",
+          "explanation_vi": "Sau j, q, x, y thì chữ u luôn là ü, chỉ bỏ hai chấm cho gọn. Vì vậy 去 qù = q + ü: q đọc như 'ch' bật hơi mạnh (không phải 'qu' trong 'quả'), rồi giữ lưỡi như đọc 'i' và chu tròn môi. Sau n, l thì phải giữ hai chấm để phân biệt: 女 nǚ (nữ) khác 怒 nù.",
+          "word": {
+            "term": "去",
+            "pinyin": "qù",
+            "part_of_speech": "verb",
+            "meaning_vi": "đi (đến đâu đó)",
+            "example": "周末你想去哪儿？",
+            "example_pinyin": "Zhōumò nǐ xiǎng qù nǎr?",
+            "example_vi": "Cuối tuần anh muốn đi đâu?"
+          }
+        },
+        {
+          "id": "zh-hsk1-tone-07",
+          "kind": "listening",
+          "objective": "Hear the difference between 买 mǎi (tone 3) and 卖 mài (tone 4)",
+          "audio_text": "买",
+          "prompt": "Nghe và chọn đúng phiên âm của âm tiết bạn nghe được.",
+          "options": ["mǎi", "mài", "mái", "māi"],
+          "answer": "mǎi",
+          "explanation": "You heard 买 mǎi 'to buy': the voice dips low before rising. 卖 mài 'to sell' falls sharply. Same letters, opposite meanings!",
+          "explanation_vi": "Bạn nghe 买 mǎi (mua): giọng hạ xuống thấp rồi mới hơi lên — thanh 3. Nếu giọng rơi mạnh, dứt khoát thì là 卖 mài (bán) — thanh 4. Cùng chữ cái mà nghĩa ngược nhau: mua và bán! Mẹo: 卖 có thêm chữ 十 ở trên — 'có thêm hàng thì mới bán'."
+        },
+        {
+          "id": "zh-hsk1-tone-08",
+          "kind": "listening",
+          "objective": "Distinguish retroflex sh in 十 shí from flat s in 四 sì",
+          "audio_text": "十",
+          "prompt": "Nghe con số và chọn phiên âm đúng.",
+          "options": ["shí", "sí", "sì", "shì"],
+          "answer": "shí",
+          "explanation": "You heard 十 shí 'ten': curled-tongue sh and a rising tone 2. 四 sì 'four' has a flat-tongue s and a falling tone 4.",
+          "explanation_vi": "Bạn nghe 十 shí (mười, Hán-Việt 'thập'): sh uốn lưỡi và thanh 2 đi lên. Còn 四 sì (bốn, Hán-Việt 'tứ') là s lưỡi phẳng và thanh 4 rơi xuống. Người học hay nhầm hai số này khi đi chợ, nên luyện thật kỹ: shí — sì, shí — sì."
+        }
+      ]
+    },
+    {
+      "slug": "zh-hsk1-hanzi-basics",
+      "subject": "chinese",
+      "category": "reading",
+      "level": "HSK1",
+      "topic": "stroke order and common radicals",
+      "title": "Reading the Pictures Inside Characters",
+      "title_vi": "Đọc bức tranh ẩn trong chữ Hán",
+      "objectives": [
+        "Apply the basic stroke-order rules",
+        "Recognize common radicals: 亻, 口, 女, 氵, 木, 日, 忄/心, 讠",
+        "Guess the meaning of simple HSK1 characters from their parts"
+      ],
+      "intro": [
+        {
+          "title": "Stroke order at a glance",
+          "body": "Characters are written in a fixed order: horizontal before vertical, left-falling before right-falling, top to bottom, left to right, outside before inside, close the frame last, and middle before the two sides.",
+          "body_vi": "Chữ Hán viết theo thứ tự cố định, nhớ vài quy tắc là viết được hầu hết chữ HSK1: (1) Ngang trước, sổ sau: 十. (2) Phẩy (nét xiên trái) trước, mác (nét xiên phải) sau: 人, 八. (3) Trên trước, dưới sau: 三. (4) Trái trước, phải sau: 你, 好. (5) Ngoài trước, trong sau: 月. (6) Vào nhà rồi mới đóng cửa — viết khung, viết phần trong, cuối cùng mới đóng nét đáy: 日, 国. (7) Giữa trước, hai bên sau: 小, 水. Viết đúng thứ tự giúp chữ đẹp, cân đối và nhớ lâu hơn.",
+          "examples": [
+            { "text": "十", "translation_vi": "mười (thập)", "note": "Ngang 一 trước, sổ 丨 sau" },
+            { "text": "人", "translation_vi": "người (nhân)", "note": "Phẩy 丿 trước, mác 乀 sau" },
+            { "text": "三", "translation_vi": "ba (tam)", "note": "Từ trên xuống dưới" },
+            { "text": "国", "translation_vi": "nước (quốc)", "note": "Khung → phần trong → đóng đáy" },
+            { "text": "小", "translation_vi": "nhỏ (tiểu)", "note": "Nét giữa trước, hai bên sau" }
+          ]
+        },
+        {
+          "title": "Radicals about people and speech",
+          "body": "A radical is a component that hints at meaning. 亻 (person) appears in 你, 他, 休. 口 (mouth) appears in 吃, 喝, 叫. 女 (woman) appears in 妈, 姐, 好. 讠 (speech, from 言) appears in 说, 话, 语.",
+          "body_vi": "Bộ thủ là bộ phận gợi ý nghĩa của chữ — biết bộ thủ là đoán được nửa nghĩa! Bộ 亻 (dạng đứng bên trái của 人, Hán-Việt 'nhân') → liên quan đến con người: 你 (bạn), 他 (anh ấy), 休 (nghỉ). Bộ 口 ('khẩu', cái miệng) → ăn, uống, nói: 吃 (ăn), 喝 (uống), 叫 (gọi). Bộ 女 ('nữ') → phụ nữ, gia đình: 妈 (mẹ), 姐 (chị), 好 (tốt — người phụ nữ bên đứa con 子). Bộ 讠 (dạng giản thể của 言 'ngôn', lời nói) → nói năng, ngôn ngữ: 说 (nói), 话 (lời), 语 (ngữ).",
+          "examples": [
+            { "text": "亻 / 人 — nhân", "translation_vi": "người: 你, 他, 休", "note": "亻 là dạng đứng bên trái" },
+            { "text": "口 — khẩu", "translation_vi": "miệng: 吃, 喝, 叫" },
+            { "text": "女 — nữ", "translation_vi": "phụ nữ: 妈, 姐, 好" },
+            { "text": "讠 / 言 — ngôn", "translation_vi": "lời nói: 说, 话, 语", "note": "讠 là dạng giản thể của 言" }
+          ]
+        },
+        {
+          "title": "Radicals about nature and feelings",
+          "body": "氵 (water) appears in 汉, 没, 洗. 木 (tree, wood) appears in 林, 休, 桌. 日 (sun, day) appears in 明, 早, 时. 心/忄 (heart) appears in 想, 您, 忙, 快 and points to thoughts and feelings.",
+          "body_vi": "Bộ 氵 (ba chấm thủy, dạng bên trái của 水 'thủy') → nước, chất lỏng: 汉 (sông Hán → 汉语 tiếng Hán), 洗 (rửa), 没. Bộ 木 ('mộc', cây, gỗ) → cây cối, đồ gỗ: 林 (hai cây = rừng, 'lâm'), 桌 (cái bàn). Bộ 日 ('nhật', mặt trời) → ánh sáng, thời gian: 明 (日 + 月 = sáng, 'minh'), 早 (sớm), 时 (giờ). Bộ 心 ('tâm', trái tim, thường nằm dưới) và 忄 (dạng đứng bên trái) → suy nghĩ, tình cảm: 想 (nhớ, muốn), 您 (ngài — kính trọng bằng cả trái tim), 忙 (bận), 快 (nhanh, vui).",
+          "examples": [
+            { "text": "氵 / 水 — thủy", "translation_vi": "nước: 汉, 洗, 没" },
+            { "text": "木 — mộc", "translation_vi": "cây, gỗ: 林, 桌, 休" },
+            { "text": "日 — nhật", "translation_vi": "mặt trời, ngày: 明, 早, 时" },
+            { "text": "心 / 忄 — tâm", "translation_vi": "trái tim, tình cảm: 想, 您, 忙, 快", "note": "心 thường ở dưới, 忄 đứng bên trái" }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk1-hanzi-01",
+          "kind": "multiple_choice",
+          "objective": "Know that the 氵 radical relates to water",
+          "prompt": "Bộ 氵 thường liên quan đến…?",
+          "options": ["nước, chất lỏng", "cây cối, đồ gỗ", "lời nói", "con người"],
+          "answer": "nước, chất lỏng",
+          "explanation": "氵 is the 'three drops of water' form of 水 (water). It appears in 汉 (Han river → 汉语 Chinese), 洗 (to wash) and many words about water.",
+          "explanation_vi": "氵 được gọi là 'ba chấm thủy' — dạng đứng bên trái của 水 (thủy, nước). Chữ có bộ này thường liên quan đến nước: 洗 (rửa), 汉 (vốn là tên sông Hán, nay dùng trong 汉语 — tiếng Hán). Cây cối là bộ 木, lời nói là bộ 讠, con người là bộ 亻."
+        },
+        {
+          "id": "zh-hsk1-hanzi-02",
+          "kind": "multiple_choice",
+          "objective": "Spot the 女 radical in a character",
+          "prompt": "Chữ nào có bộ 女?",
+          "options": ["妈", "他", "吃", "林"],
+          "answer": "妈",
+          "explanation": "妈 (mā, mother) = 女 'woman' (meaning) + 马 mǎ (sound). 他 has 亻, 吃 has 口, 林 has two 木.",
+          "explanation_vi": "妈 (mā, mẹ) = 女 (nữ — gợi nghĩa 'phụ nữ') + 马 (mǎ — gợi cách đọc 'ma'). Đây là kiểu chữ hình thanh rất phổ biến: một phần chỉ nghĩa, một phần chỉ âm. Các chữ còn lại: 他 có bộ 亻, 吃 có bộ 口, 林 gồm hai chữ 木."
+        },
+        {
+          "id": "zh-hsk1-hanzi-03",
+          "kind": "multiple_choice",
+          "objective": "Guess the meaning of 休 from 亻 + 木",
+          "prompt": "「休」gồm 亻và 木 — nghĩa là gì?",
+          "options": ["nghỉ ngơi", "cái cây", "đi bộ", "ăn cơm"],
+          "answer": "nghỉ ngơi",
+          "explanation": "休 shows a person (亻) leaning against a tree (木): to rest. It appears in 休息 xiūxi 'to rest'.",
+          "explanation_vi": "休 vẽ một người (亻) dựa lưng vào gốc cây (木) — tức là nghỉ ngơi. Hán-Việt là 'hưu', như trong 'về hưu', 'hưu trí'. Từ HSK1 hay gặp: 休息 xiūxi (nghỉ ngơi). Hình ảnh dễ thương: làm việc mệt thì cùng nhau ra gốc cây nghỉ!",
+          "word": {
+            "term": "休息",
+            "pinyin": "xiūxi",
+            "part_of_speech": "verb",
+            "meaning_vi": "nghỉ ngơi",
+            "example": "你累了，先休息一下吧。",
+            "example_pinyin": "Nǐ lèi le, xiān xiūxi yíxià ba.",
+            "example_vi": "Anh mệt rồi, nghỉ một chút đi."
+          }
+        },
+        {
+          "id": "zh-hsk1-hanzi-04",
+          "kind": "multiple_choice",
+          "objective": "Read 明 as 日 (sun) + 月 (moon) = bright",
+          "prompt": "Chữ 明 ghép từ 日 (mặt trời) và 月 (mặt trăng). Nghĩa gốc của nó là gì?",
+          "options": ["sáng", "tối", "mưa", "ngủ"],
+          "answer": "sáng",
+          "explanation": "Sun + moon = bright. 明 (míng) means 'bright, clear' and appears in 明天 'tomorrow' and 明白 'to understand'.",
+          "explanation_vi": "Mặt trời + mặt trăng = rất sáng. 明 (míng, Hán-Việt 'minh' như 'thông minh', 'bình minh') nghĩa gốc là sáng. Trong HSK1 bạn gặp nó trong 明天 (ngày mai — ngày khi trời sáng lại). Bộ 日 (nhật) thường gợi ý ánh sáng hoặc thời gian."
+        },
+        {
+          "id": "zh-hsk1-hanzi-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize 讠 as the speech radical",
+          "prompt": "Bộ nào thường gợi ý ý nghĩa 'lời nói, ngôn ngữ'?",
+          "options": ["讠", "氵", "亻", "口"],
+          "answer": "讠",
+          "explanation": "讠 is the simplified form of 言 'speech'. It appears in 说 (to speak), 话 (words) and 语 (language, as in 汉语).",
+          "explanation_vi": "讠 là dạng giản thể của 言 (ngôn — lời nói). Chữ có bộ này liên quan đến nói năng: 说 (nói), 话 (lời nói), 语 (ngữ, như 汉语 — tiếng Hán). 口 cũng liên quan đến miệng nhưng rộng hơn (ăn, uống, gọi); còn 'ngôn ngữ, lời nói' thì đặc trưng là 讠."
+        },
+        {
+          "id": "zh-hsk1-hanzi-06",
+          "kind": "multiple_choice",
+          "objective": "Link the heart radical 心 to thoughts and feelings",
+          "prompt": "Chữ 想 (nhớ, muốn) có bộ 心 ở dưới. Bộ 心 gợi ý điều gì?",
+          "options": ["suy nghĩ, tình cảm", "nước", "cây cối", "mặt trời"],
+          "answer": "suy nghĩ, tình cảm",
+          "explanation": "心 (heart) and its side form 忄 point to thinking and feeling: 想 (to miss, to want), 您 (polite 'you'), 忙 (busy), 快 (fast; happy).",
+          "explanation_vi": "心 (tâm — trái tim) và dạng đứng bên trái 忄 gợi ý suy nghĩ, cảm xúc. 想 (Hán-Việt 'tưởng') vừa là 'nhớ' vừa là 'muốn': 我想你 = Anh nhớ em. Các chữ khác: 您 (ngài, kính trọng), 忙 (bận), 快 (nhanh, vui). Nước là 氵, cây là 木, mặt trời là 日."
+        },
+        {
+          "id": "zh-hsk1-hanzi-07",
+          "kind": "multiple_choice",
+          "objective": "Apply 'horizontal before vertical' to 十",
+          "prompt": "Khi viết chữ 十, nét nào viết trước?",
+          "options": ["nét ngang 一", "nét sổ 丨", "hai nét viết cùng lúc", "nét nào trước cũng được"],
+          "answer": "nét ngang 一",
+          "explanation": "Rule: horizontal before vertical. Write 一 first, then 丨. The same rule applies inside 王, 干 and many other characters.",
+          "explanation_vi": "Quy tắc 'ngang trước, sổ sau': viết 一 trước rồi mới viết 丨. Chữ Hán có thứ tự nét cố định, không viết tùy ý — viết đúng thì chữ cân đối và tra từ điển viết tay cũng dễ nhận hơn. 十 (shí) là số mười, Hán-Việt 'thập'."
+        },
+        {
+          "id": "zh-hsk1-hanzi-08",
+          "kind": "multiple_choice",
+          "objective": "Apply 'enter the room, then close the door' to 国",
+          "prompt": "Chữ 国 (quốc) được viết theo thứ tự nào?",
+          "options": [
+            "Khung ngoài (chừa nét đáy) → phần bên trong → đóng nét đáy",
+            "Phần bên trong → khung ngoài",
+            "Khung ngoài đóng kín → phần bên trong",
+            "Từ phải sang trái"
+          ],
+          "answer": "Khung ngoài (chừa nét đáy) → phần bên trong → đóng nét đáy",
+          "explanation": "For enclosed characters: write the left side and top-right of the frame, then the inside (玉), and close the bottom stroke last. 日 and 回 follow the same rule.",
+          "explanation_vi": "Với chữ có khung bao quanh, quy tắc là 'vào nhà trước, đóng cửa sau': viết nét trái và nét trên-phải của khung, viết phần bên trong (玉), cuối cùng mới đóng nét ngang ở đáy. 日 và 回 cũng viết như vậy. 国 (guó) có trong 中国 — Trung Quốc."
+        }
+      ]
+    }
+  ]
+}

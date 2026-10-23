@@ -34,6 +34,94 @@ const ART: Record<string, ReactNode> = {
       <path d="M18 24h28l-6-16H24z" fill="#f5cb78" stroke="#d9a440" />
     </>
   ),
+  magic_bookshelf: (
+    <>
+      <circle cx="32" cy="30" r="26" fill="#c7b8ea" opacity=".3" />
+      <rect x="14" y="8" width="36" height="50" rx="3" fill="#8a73c8" />
+      <rect x="18" y="12" width="28" height="19" fill="#6a5583" />
+      <rect x="18" y="35" width="28" height="19" fill="#6a5583" />
+      {["#f39bbb", "#f5cb78", "#6fb5e3", "#6cc3a2"].map((c, i) => (
+        <rect key={c} x={20 + i * 6.5} y={15 + (i % 2) * 2} width="5" height={16 - (i % 2) * 2} fill={c} />
+      ))}
+      {["#6cc3a2", "#f39bbb", "#f5cb78"].map((c, i) => (
+        <rect key={c} x={21 + i * 8} y={38 + (i % 2) * 2} width="6" height={16 - (i % 2) * 2} fill={c} />
+      ))}
+      <path d="M50 6l1.5 3.5L55 11l-3.5 1.5L50 16l-1.5-3.5L45 11l3.5-1.5z" fill="#f5cb78" />
+    </>
+  ),
+  vintage_lamp: (
+    <>
+      <circle cx="36" cy="22" r="20" fill="#fbe3b1" opacity=".5" />
+      <ellipse cx="28" cy="56" rx="12" ry="3.5" fill="#b3866f" />
+      <path d="M28 54L36 28" stroke="#d9a440" strokeWidth="3" />
+      <path d="M26 30l24-6-6-14-16 6z" fill="#6cc3a2" stroke="#3a9474" />
+    </>
+  ),
+  fantasy_globe: (
+    <>
+      <ellipse cx="32" cy="57" rx="12" ry="3.5" fill="#b3866f" />
+      <rect x="30" y="44" width="4" height="12" fill="#d9a440" />
+      <circle cx="32" cy="26" r="18" fill="#6fb5e3" stroke="#d9a440" strokeWidth="2.5" />
+      <path d="M22 20c4-4 10-2 10 3s-6 4-8 8M38 30c3-2 6 0 5 4" fill="#6cc3a2" />
+      <circle cx="42" cy="16" r="2.5" fill="#fff" />
+    </>
+  ),
+  vintage_typewriter: (
+    <>
+      <path d="M20 14h24l2 20H18z" fill="#fff7ed" stroke="#45365b" strokeOpacity=".3" />
+      <path d="M24 20h16M24 25h12" stroke="#a995dc" strokeWidth="1.5" />
+      <rect x="10" y="32" width="44" height="20" rx="5" fill="#45365b" />
+      {[16, 23, 30, 37, 44].map((x) => (
+        <circle key={x} cx={x + 2} cy="42" r="2.5" fill="#fff7ed" />
+      ))}
+    </>
+  ),
+  paper_lantern: (
+    <>
+      <circle cx="32" cy="32" r="22" fill="#fbe3b1" opacity=".5" />
+      <path d="M32 4v8" stroke="#9a6b4f" strokeWidth="2" />
+      <rect x="24" y="10" width="16" height="5" rx="1" fill="#d9a440" />
+      <ellipse cx="32" cy="32" rx="16" ry="18" fill="#e7553f" />
+      <path d="M32 14v36M24 16c-4 10-4 22 0 32M40 16c4 10 4 22 0 32" stroke="#b2405c" strokeWidth="1" fill="none" />
+      <rect x="24" y="48" width="16" height="5" rx="1" fill="#d9a440" />
+      <path d="M32 53v8" stroke="#d9a440" strokeWidth="2" />
+    </>
+  ),
+  bamboo_pot: (
+    <>
+      <path d="M26 42V10M32 42V4M38 42V14" stroke="#6cc3a2" strokeWidth="4" />
+      <path d="M24 20h4M30 16h4M36 26h4M24 32h4M30 28h4" stroke="#3a9474" strokeWidth="1.5" />
+      <path d="M38 14c6-2 9 0 12 3M32 6c-6-2-10 0-12 4" stroke="#3a9474" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <Pot color="#fff7ed" />
+    </>
+  ),
+  scroll_stand: (
+    <>
+      <path d="M14 58V6M50 58V6" stroke="#9a6b4f" strokeWidth="3" />
+      <rect x="10" y="54" width="44" height="5" rx="2" fill="#9a6b4f" />
+      <rect x="17" y="10" width="30" height="40" fill="#fff7ed" stroke="#d9a440" />
+      <circle cx="32" cy="30" r="8" fill="none" stroke="#e7553f" strokeWidth="2.5" />
+      <path d="M26 30h12" stroke="#45365b" strokeWidth="2" />
+    </>
+  ),
+  puzzle_cube: <Block top="#f5cb78" left="#c7b8ea" right="#6fb5e3" y={22} h={26} />,
+  treasure_map_table: (
+    <>
+      <path d="M16 36v20M48 36v20" stroke="#9a6b4f" strokeWidth="4" />
+      <Block top="#c49a83" left="#b3866f" right="#9a6b4f" y={30} h={4} />
+      <path d="M20 30l12-6 12 6-12 6z" fill="#fbe3b1" />
+      <path d="M25 30q6-4 12 0" stroke="#e7553f" strokeWidth="1.4" fill="none" />
+      <path d="M35 27l3 3M38 27l-3 3" stroke="#e7553f" strokeWidth="1.6" />
+    </>
+  ),
+  love_letter_box: (
+    <>
+      <circle cx="32" cy="34" r="24" fill="#f8bbd0" opacity=".3" />
+      <rect x="18" y="12" width="28" height="20" rx="2" fill="#fff7ed" stroke="#e7779f" transform="rotate(-6 32 22)" />
+      <rect x="12" y="28" width="40" height="26" rx="5" fill="#f8bbd0" stroke="#e7779f" />
+      <path d="M32 48c-6-4-8-7-8-10 0-2.5 2-4.5 4-4.5 1.6 0 3 .8 4 2.3 1-1.5 2.4-2.3 4-2.3 2 0 4 2 4 4.5 0 3-2 6-8 10z" fill="#e7779f" />
+    </>
+  ),
   armchair: (
     <>
       <Block top="#e3f5ee" left="#bce5d5" right="#9fd8c2" y={34} h={14} />

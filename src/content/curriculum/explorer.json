@@ -1,0 +1,51 @@
+{
+  "subject": "explorer",
+  "levels": [
+    {
+      "level": "L1",
+      "title": "Voyager",
+      "title_vi": "Lữ khách",
+      "lesson_target": 30,
+      "units": [
+        {
+          "id": "explorer-l1-u1",
+          "title": "Around the World",
+          "title_vi": "Vòng quanh thế giới",
+          "description": "Continents, Southeast Asia, capitals, flags, landmarks and festivals.",
+          "location": "island",
+          "status": "available",
+          "lessons": [
+            "explorer-l1-continents-oceans",
+            "explorer-l1-southeast-asia",
+            "explorer-l1-world-capitals",
+            "explorer-l1-flags",
+            "explorer-l1-landmarks-cultures"
+          ],
+          "boss": {
+            "name": "The Map Keeper",
+            "questions": 8
+          },
+          "reward_item": "treasure_map_table"
+        },
+        {
+          "id": "explorer-l1-u2",
+          "title": "Ancient Civilizations",
+          "title_vi": "Nền văn minh cổ",
+          "description": "Egypt, Greece, Rome, China and Đại Việt.",
+          "location": "temple",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "explorer-l1-u3",
+          "title": "Oceans & Explorers",
+          "title_vi": "Đại dương & nhà thám hiểm",
+          "description": "Famous voyages and ocean life.",
+          "location": "harbor",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    }
+  ]
+}

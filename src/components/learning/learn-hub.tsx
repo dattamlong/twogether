@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Clock } from "lucide-react";
+import { Check, Clock, Search } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,17 @@ const CATEGORY_STYLE: Record<string, string> = {
   listening: "bg-sky-100",
   writing: "bg-mint-100",
   speaking: "bg-peach-100",
+  reading: "bg-gold-200/60",
+  logic: "bg-lavender-100",
+  knowledge: "bg-sky-100",
 };
+
+const WORLDS = [
+  { id: "english", name: "English", language: "en" as StudyLanguage },
+  { id: "chinese", name: "中文 Chinese", language: "zh" as StudyLanguage },
+  { id: "brain", name: "Brain Academy", language: null },
+  { id: "explorer", name: "World Explorer", language: null },
+];
 
 export function LearnHub() {
   const session = useRequiredSession();
@@ -28,16 +38,26 @@ export function LearnHub() {
   const stats = useReviewStats();
   const setLearning = useSetLearning();
   const [category, setCategory] = useState("vocabulary");
+  const [academy, setAcademy] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
   const language = session.profile.learning_language as StudyLanguage;
+  const world = academy ?? (language === "zh" ? "chinese" : "english");
   const info = LANGUAGE_INFO[language];
   const level = currentLevel(session.profile);
 
   if (lessons.isLoading) return <LoadingBlock />;
   if (lessons.error) return <ErrorBlock error={lessons.error} onRetry={() => lessons.refetch()} />;
   const data = lessons.data!;
-  const inCategory = data.lessons.filter((l) => l.category_id === category && l.language === language);
+  const inWorld = data.lessons.filter((l) => l.subject_id === world);
+  const worldCategories = data.categories.filter((c) => (c.id === "speaking" && !academy) || inWorld.some((l) => l.category_id === c.id));
+  const activeCategory = worldCategories.some((c) => c.id === category) ? category : (worldCategories[0]?.id ?? category);
+  const needle = query.trim().toLowerCase();
+  const searchHits = needle
+    ? inWorld.filter((l) => [l.title, l.title_vi, ...l.objectives].some((t) => t.toLowerCase().includes(needle)))
+    : [];
+  const inCategory = inWorld.filter((l) => l.category_id === activeCategory);
   const levelIndex = info.levels.indexOf(level);
-  const recommended = inCategory.filter((l) => info.levels.indexOf(l.level) <= Math.max(levelIndex, 0) + 1);
+  const recommended = academy ? inCategory : inCategory.filter((l) => info.levels.indexOf(l.level) <= Math.max(levelIndex, 0) + 1);
   const later = inCategory.filter((l) => !recommended.includes(l));
   const highestAvailable = Math.max(-1, ...data.lessons.filter((l) => l.language === language).map((l) => info.levels.indexOf(l.level)));
 
@@ -45,24 +65,31 @@ export function LearnHub() {
     <div className="flex flex-col gap-4">
       <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Learn {info.name}</h1>
-          <Vi>{info.learnVi}</Vi>
-          <div className="mt-3 flex gap-1 rounded-2xl bg-white/70 p-1" role="radiogroup" aria-label="Language to learn">
-            {(Object.keys(LANGUAGE_INFO) as StudyLanguage[]).map((code) => (
+          <Link href="/learn" className="text-sm font-semibold text-cocoa-400 hover:text-plum-700">
+            ← Learning Universe
+          </Link>
+          <h1 className="text-3xl font-bold">Free Learning</h1>
+          <Vi>Học tự do bất kỳ bài nào. Học lại chỉ được một nửa XP, nên không thể “cày” điểm.</Vi>
+          <div className="mt-3 flex flex-wrap gap-1 rounded-2xl bg-white/70 p-1" role="radiogroup" aria-label="World">
+            {WORLDS.map((w) => (
               <button
-                key={code}
+                key={w.id}
                 role="radio"
-                aria-checked={code === language}
-                onClick={() => setLearning.mutate({ language: code })}
-                className={cn("rounded-xl px-4 py-1.5 text-left", code === language ? "bg-sakura-400 text-white" : "text-plum-500 hover:bg-white")}
+                aria-checked={w.id === world}
+                onClick={() => {
+                  if (w.language) {
+                    setAcademy(null);
+                    if (w.language !== language) setLearning.mutate({ language: w.language });
+                  } else setAcademy(w.id);
+                }}
+                className={cn("rounded-xl px-3 py-1.5 font-display text-sm font-semibold", w.id === world ? "bg-sakura-400 text-white" : "text-plum-500 hover:bg-white")}
               >
-                <span className="block font-display text-sm font-semibold">{LANGUAGE_INFO[code].native}</span>
-                <span className={cn("block text-[11px]", code === language ? "text-white/85" : "text-cocoa-400")}>{LANGUAGE_INFO[code].standard}</span>
+                {w.name}
               </button>
             ))}
           </div>
         </div>
-        <div>
+        {academy ? null : <div>
           <p className="mb-1 text-xs font-bold text-cocoa-400">
             Your level ({info.standard}) · Trình độ của bạn
           </p>
@@ -83,8 +110,20 @@ export function LearnHub() {
           <p className="mt-1 text-xs text-cocoa-400">
             {LEVEL_LABELS[level]?.name} · {LEVEL_LABELS[level]?.vi}
           </p>
-        </div>
+        </div>}
       </header>
+
+      <label className="flex items-center gap-2 rounded-2xl bg-white/80 px-4 py-2 ring-2 ring-white focus-within:ring-sakura-200">
+        <Search size={18} className="text-cocoa-400" />
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search lessons · Tìm bài học"
+          aria-label="Search lessons"
+          className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-cocoa-400"
+        />
+      </label>
 
       <div className="grid gap-3 sm:grid-cols-2">
         <Panel className="flex items-center gap-4 bg-gradient-to-br from-sakura-50 to-lavender-100">
@@ -118,15 +157,15 @@ export function LearnHub() {
       </div>
 
       <div className="flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Categories">
-        {data.categories.map((c) => (
+        {worldCategories.map((c) => (
           <button
             key={c.id}
             role="tab"
-            aria-selected={category === c.id}
+            aria-selected={activeCategory === c.id}
             onClick={() => setCategory(c.id)}
             className={cn(
               "shrink-0 rounded-2xl px-4 py-2 text-left ring-2 transition",
-              category === c.id ? `${CATEGORY_STYLE[c.id]} ring-sakura-300` : "bg-white/70 ring-white hover:ring-lavender-200",
+              activeCategory === c.id ? `${CATEGORY_STYLE[c.id]} ring-sakura-300` : "bg-white/70 ring-white hover:ring-lavender-200",
             )}
           >
             <span className="block font-display font-semibold">{c.name}</span>
@@ -135,7 +174,13 @@ export function LearnHub() {
         ))}
       </div>
 
-      {category === "speaking" ? (
+      {needle ? (
+        <Panel>
+          <PanelTitle icon={<Search size={28} />} title={`${searchHits.length} result${searchHits.length === 1 ? "" : "s"}`} subtitle={`Tìm “${query.trim()}”`} />
+          <LessonGrid lessons={searchHits} history={history.data} />
+          {searchHits.length === 0 ? <p className="text-sm text-cocoa-400">No lessons match — try another word.</p> : null}
+        </Panel>
+      ) : activeCategory === "speaking" && !academy ? (
         <SpeakingPractice key={language} language={language} />
       ) : (
         <>
@@ -143,7 +188,7 @@ export function LearnHub() {
             <PanelTitle icon={<BookIcon size={32} />} title="Recommended for you" subtitle="Gợi ý theo trình độ của bạn" />
             <LessonGrid lessons={recommended} history={history.data} />
             {recommended.length === 0 ? <p className="text-sm text-cocoa-400">No lessons at your level in this category yet — try the ones below.</p> : null}
-            {levelIndex > highestAvailable + 1 ? (
+            {!academy && levelIndex > highestAvailable + 1 ? (
               <p className="mt-3 rounded-2xl bg-sky-100 px-4 py-2 text-sm text-plum-500">
                 {info.standard} lessons above {info.levels[highestAvailable]} are coming soon. Lessons up to that level are open to you now.
                 <span lang="vi" className="block text-xs text-cocoa-400">Bài cấp cao hơn đang được soạn — bạn có thể học các bài hiện có.</span>

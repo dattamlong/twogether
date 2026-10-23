@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { LearnHub } from "@/components/learning/learn-hub";
+import { UniversePage } from "@/components/universe/universe-page";
 
-export const metadata: Metadata = { title: "Learn" };
+export const metadata: Metadata = { title: "Learning Universe" };
 export const instant = false;
 
 export default function Page() {
-  return <LearnHub />;
+  return <UniversePage />;
 }

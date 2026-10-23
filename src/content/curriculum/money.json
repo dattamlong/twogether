@@ -1,0 +1,40 @@
+{
+  "subject": "money",
+  "levels": [
+    {
+      "level": "L1",
+      "title": "Saver",
+      "title_vi": "Người tiết kiệm",
+      "lesson_target": 30,
+      "units": [
+        {
+          "id": "money-l1-u1",
+          "title": "Budgeting Basics",
+          "title_vi": "Lập ngân sách",
+          "description": "Needs vs wants and the 50/30/20 idea.",
+          "location": "market",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "money-l1-u2",
+          "title": "Saving Together",
+          "title_vi": "Cùng nhau tiết kiệm",
+          "description": "Emergency funds and saving goals.",
+          "location": "village",
+          "status": "planned",
+          "lessons": []
+        },
+        {
+          "id": "money-l1-u3",
+          "title": "Smart Choices",
+          "title_vi": "Lựa chọn thông minh",
+          "description": "Interest, inflation and avoiding scams.",
+          "location": "city",
+          "status": "planned",
+          "lessons": []
+        }
+      ]
+    }
+  ]
+}
