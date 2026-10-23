@@ -4,7 +4,8 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getSupabase } from "@/lib/supabase/client";
 import { qk } from "../query-keys";
 import { useSession } from "../session/use-session";
-import type { AnswerFeedback, QuestionCard } from "./types";
+import type { Database } from "@/lib/supabase/database.types";
+import type { AnswerFeedback, QuestionCard, StudyLanguage } from "./types";
 
 export function useLessons() {
   return useQuery({
@@ -73,15 +74,18 @@ export function useLessonCards(lessonId: string) {
 export function useReviewStats() {
   const { data: session } = useSession();
   return useQuery({
-    queryKey: [...qk.reviewQueue, "stats"],
+    queryKey: [...qk.reviewQueue, "stats", session?.profile.learning_language],
     enabled: Boolean(session),
     queryFn: async () => {
       const supabase = getSupabase();
       const now = new Date().toISOString();
+      const language = session!.profile.learning_language;
+      const inLanguage = () =>
+        supabase.from("review_progress").select("question_id, lesson_questions!inner(lessons!inner(language))", { count: "exact", head: true }).eq("lesson_questions.lessons.language", language);
       const [due, learned, mastered] = await Promise.all([
-        supabase.from("review_progress").select("question_id", { count: "exact", head: true }).lte("next_review_at", now),
-        supabase.from("review_progress").select("question_id", { count: "exact", head: true }).not("first_learned_at", "is", null),
-        supabase.from("review_progress").select("question_id", { count: "exact", head: true }).gte("box", 4),
+        inLanguage().lte("next_review_at", now),
+        inLanguage().not("first_learned_at", "is", null),
+        inLanguage().gte("box", 4),
       ]);
       for (const r of [due, learned, mastered]) if (r.error) throw r.error;
       return { due: due.count ?? 0, learned: learned.count ?? 0, mastered: mastered.count ?? 0 };
@@ -125,14 +129,28 @@ export async function submitAnswer(args: { question: string; answer: string; les
   return data as unknown as AnswerFeedback;
 }
 
-export function useSetLevel() {
+export type LearningSettings = { language?: StudyLanguage; level?: string };
+
+export function useSetLearning() {
   const client = useQueryClient();
   const { data: session } = useSession();
   return useMutation({
-    mutationFn: async (level: "A1" | "A2" | "B1" | "B2" | "C1") => {
-      const { error } = await getSupabase().from("profiles").update({ english_level: level }).eq("id", session!.userId);
+    mutationFn: async ({ language, level }: LearningSettings) => {
+      const patch: Database["public"]["Tables"]["profiles"]["Update"] = {};
+      if (language) patch.learning_language = language;
+      if (level?.startsWith("HSK")) patch.chinese_level = Number(level.slice(3));
+      else if (level) patch.english_level = level as Database["public"]["Enums"]["cefr_level"];
+      const { error } = await getSupabase().from("profiles").update(patch).eq("id", session!.userId);
       if (error) throw error;
     },
-    onSettled: () => client.invalidateQueries({ queryKey: qk.session }),
+    onSettled: () => {
+      client.invalidateQueries({ queryKey: qk.session });
+      client.invalidateQueries({ queryKey: qk.reviewQueue });
+      client.invalidateQueries({ queryKey: qk.wordBank });
+    },
   });
+}
+
+export function currentLevel(profile: { learning_language: string; english_level: string; chinese_level: number }) {
+  return profile.learning_language === "zh" ? `HSK${profile.chinese_level}` : profile.english_level;
 }

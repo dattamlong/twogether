@@ -7,31 +7,6 @@ export type Json =
   | Json[];
 
 export type Database = {
-  graphql_public: {
-    Tables: {
-      [_ in never]: never;
-    };
-    Views: {
-      [_ in never]: never;
-    };
-    Functions: {
-      graphql: {
-        Args: {
-          extensions?: Json;
-          operationName?: string;
-          query?: string;
-          variables?: Json;
-        };
-        Returns: Json;
-      };
-    };
-    Enums: {
-      [_ in never]: never;
-    };
-    CompositeTypes: {
-      [_ in never]: never;
-    };
-  };
   public: {
     Tables: {
       achievements: {
@@ -778,7 +753,7 @@ export type Database = {
           id: string;
           kind: Database["public"]["Enums"]["question_kind"];
           lesson_id: string;
-          level: Database["public"]["Enums"]["cefr_level"];
+          level: string;
           objective: string;
           options: Json | null;
           position: number;
@@ -799,7 +774,7 @@ export type Database = {
           id: string;
           kind: Database["public"]["Enums"]["question_kind"];
           lesson_id: string;
-          level: Database["public"]["Enums"]["cefr_level"];
+          level: string;
           objective: string;
           options?: Json | null;
           position: number;
@@ -819,7 +794,7 @@ export type Database = {
           id?: string;
           kind?: Database["public"]["Enums"]["question_kind"];
           lesson_id?: string;
-          level?: Database["public"]["Enums"]["cefr_level"];
+          level?: string;
           objective?: string;
           options?: Json | null;
           position?: number;
@@ -843,7 +818,8 @@ export type Database = {
         Row: {
           category_id: string;
           id: string;
-          level: Database["public"]["Enums"]["cefr_level"];
+          language: string;
+          level: string;
           objectives: string[];
           sort_order: number;
           title: string;
@@ -854,7 +830,8 @@ export type Database = {
         Insert: {
           category_id: string;
           id: string;
-          level: Database["public"]["Enums"]["cefr_level"];
+          language?: string;
+          level: string;
           objectives: string[];
           sort_order: number;
           title: string;
@@ -864,7 +841,8 @@ export type Database = {
         Update: {
           category_id?: string;
           id?: string;
-          level?: Database["public"]["Enums"]["cefr_level"];
+          language?: string;
+          level?: string;
           objectives?: string[];
           sort_order?: number;
           title?: string;
@@ -987,32 +965,38 @@ export type Database = {
       profiles: {
         Row: {
           avatar: NonNullable<Json>;
+          chinese_level: number;
           created_at: string;
           display_name: string;
           english_level: Database["public"]["Enums"]["cefr_level"];
           equipped_emotes: string[];
           id: string;
+          learning_language: string;
           timezone: string;
           updated_at: string;
         };
         ComputedFields: never;
         Insert: {
           avatar?: NonNullable<Json>;
+          chinese_level?: number;
           created_at?: string;
           display_name: string;
           english_level?: Database["public"]["Enums"]["cefr_level"];
           equipped_emotes?: string[];
           id: string;
+          learning_language?: string;
           timezone?: string;
           updated_at?: string;
         };
         Update: {
           avatar?: NonNullable<Json>;
+          chinese_level?: number;
           created_at?: string;
           display_name?: string;
           english_level?: Database["public"]["Enums"]["cefr_level"];
           equipped_emotes?: string[];
           id?: string;
+          learning_language?: string;
           timezone?: string;
           updated_at?: string;
         };
@@ -1411,8 +1395,9 @@ export type Database = {
           hint_vi: string | null;
           id: string;
           kind: Database["public"]["Enums"]["question_kind"];
+          language: string;
           lesson_id: string;
-          level: Database["public"]["Enums"]["cefr_level"];
+          level: string;
           objective: string;
           options: Json | null;
           position: number;
@@ -1567,8 +1552,9 @@ export type Database = {
           hint_vi: string | null;
           id: string;
           kind: Database["public"]["Enums"]["question_kind"];
+          language: string;
           lesson_id: string;
-          level: Database["public"]["Enums"]["cefr_level"];
+          level: string;
           objective: string;
           options: Json | null;
           position: number;
@@ -1593,6 +1579,7 @@ export type Database = {
           box: number;
           correct_count: number;
           incorrect_count: number;
+          language: string;
           next_review_at: string;
           question_id: string;
           word: Json;
@@ -1608,13 +1595,25 @@ export type Database = {
         };
         Returns: Json;
       };
+      has_answered_love_question: {
+        Args: { target_couple: string; target_day: string };
+        Returns: boolean;
+      };
       home_level_for_energy: { Args: { energy: number }; Returns: number };
       is_couple_member: { Args: { target_couple: string }; Returns: boolean };
+      learner_level: {
+        Args: { uid: string };
+        Returns: {
+          language: string;
+          rank: number;
+        }[];
+      };
       leave_couple: { Args: Record<PropertyKey, never>; Returns: undefined };
       level_for_xp: {
         Args: { multiplier?: number; total_xp: number };
         Returns: number;
       };
+      level_rank: { Args: { level: string }; Returns: number };
       love_question_for_day: {
         Args: { target_day: string };
         Returns: {
@@ -1897,9 +1896,6 @@ export type CompositeTypes<
     : never;
 
 export const Constants = {
-  graphql_public: {
-    Enums: {},
-  },
   public: {
     Enums: {
       answer_source: ["lesson", "review", "word_battle", "sentence_puzzle"],

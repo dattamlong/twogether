@@ -13,7 +13,19 @@ function useCapability(check: () => boolean) {
 
 const recordingSupported = () => Boolean(navigator.mediaDevices?.getUserMedia) && typeof MediaRecorder !== "undefined";
 
-export function SpeakButton({ text, label = "Listen", slow = false, size = "sm" }: { text: string; label?: string; slow?: boolean; size?: "sm" | "md" | "lg" }) {
+export function SpeakButton({
+  text,
+  label = "Listen",
+  slow = false,
+  size = "sm",
+  lang = "en-US",
+}: {
+  text: string;
+  label?: string;
+  slow?: boolean;
+  size?: "sm" | "md" | "lg";
+  lang?: string;
+}) {
   const [playing, setPlaying] = useState(false);
   const supported = useCapability(speechSupported);
   useEffect(() => () => stopSpeaking(), []);
@@ -26,7 +38,7 @@ export function SpeakButton({ text, label = "Listen", slow = false, size = "sm" 
       aria-label={`${label}: computer voice`}
       onClick={() => {
         setPlaying(true);
-        speak(text, { rate: slow ? 0.6 : 0.92, onEnd: () => setPlaying(false) });
+        speak(text, { lang, rate: slow ? 0.6 : undefined, onEnd: () => setPlaying(false) });
       }}
       className={playing ? "ring-2 ring-sakura-300" : undefined}
     >
@@ -35,7 +47,7 @@ export function SpeakButton({ text, label = "Listen", slow = false, size = "sm" 
   );
 }
 
-export function ListeningPlayer({ text }: { text: string }) {
+export function ListeningPlayer({ text, lang = "en-US" }: { text: string; lang?: string }) {
   const supported = useCapability(speechSupported);
   if (!supported) {
     return (
@@ -48,8 +60,8 @@ export function ListeningPlayer({ text }: { text: string }) {
   return (
     <div className="flex flex-col items-center gap-2 rounded-3xl bg-sky-100/70 p-4">
       <div className="flex gap-2">
-        <SpeakButton text={text} label="Play" size="lg" />
-        <SpeakButton text={text} label="Slow" slow size="lg" />
+        <SpeakButton text={text} label="Play" size="lg" lang={lang} />
+        <SpeakButton text={text} label="Slow" slow size="lg" lang={lang} />
       </div>
       <p className="text-center text-xs text-cocoa-400">Computer voice (text-to-speech), not a native speaker recording.</p>
     </div>

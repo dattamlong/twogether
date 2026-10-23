@@ -1,0 +1,276 @@
+{
+  "lessons": [
+    {
+      "slug": "zh-writing-hsk1-sentence-puzzle",
+      "language": "zh",
+      "category": "writing",
+      "level": "HSK1",
+      "topic": "basic word order",
+      "title": "Sentence Puzzle: First Chinese Sentences",
+      "title_vi": "Ghép câu: những câu tiếng Trung đầu tiên",
+      "objectives": [
+        "Build Subject + Verb + Object sentences",
+        "Put time and place words before the verb",
+        "Make questions with 吗 and question words"
+      ],
+      "questions": [
+        {
+          "id": "zh-puzzle-hsk1-01",
+          "kind": "sentence_order",
+          "objective": "Build a Subject + 很 + Verb + Object sentence",
+          "prompt": "Ghép câu: Anh rất yêu em.",
+          "tokens": ["你。", "爱", "我", "很"],
+          "answers": ["我 很 爱 你。"],
+          "hint": "Subject first; the adverb 很 comes before the verb.",
+          "hint_vi": "Chủ ngữ đứng đầu; phó từ 很 đứng trước động từ.",
+          "explanation": "Subject + Adverb + Verb + Object: 我 + 很 + 爱 + 你 (wǒ hěn ài nǐ).",
+          "explanation_vi": "Trật tự: Chủ ngữ + Phó từ + Động từ + Tân ngữ. 很 (rất) luôn đứng TRƯỚC động từ, giống tiếng Việt \"rất yêu\" — không đặt cuối câu như \"yêu em rất nhiều\"."
+        },
+        {
+          "id": "zh-puzzle-hsk1-02",
+          "kind": "sentence_order",
+          "objective": "Put a time word before the verb",
+          "prompt": "Ghép câu: Mỗi ngày anh đều học tiếng Trung.",
+          "tokens": ["学习", "中文。", "我", "每天"],
+          "answers": ["我 每天 学习 中文。", "每天 我 学习 中文。"],
+          "hint": "Time word comes before the verb.",
+          "hint_vi": "Từ chỉ thời gian đứng trước động từ.",
+          "explanation": "每天 (měitiān, every day) goes before the verb — either right after the subject or at the very start.",
+          "explanation_vi": "Từ chỉ thời gian 每天 đứng TRƯỚC động từ: sau chủ ngữ (我每天…) hoặc đầu câu (每天我…). Không đặt cuối câu như tiếng Việt \"học tiếng Trung mỗi ngày\"."
+        },
+        {
+          "id": "zh-puzzle-hsk1-03",
+          "kind": "sentence_order",
+          "objective": "Ask 'which country' with 哪国",
+          "prompt": "Ghép câu: Bạn là người nước nào?",
+          "tokens": ["人？", "哪", "你", "是", "国"],
+          "answers": ["你 是 哪 国 人？"],
+          "hint": "The question word stays where the answer would be: 你是 + 哪国人?",
+          "hint_vi": "Từ để hỏi đứng đúng chỗ của câu trả lời: 你是 + 哪国人?",
+          "explanation": "Answer: 我是越南人. Question: replace 越南 with 哪国 — no word order change, no 吗.",
+          "explanation_vi": "Câu trả lời là 我是越南人, nên câu hỏi chỉ cần thay 越南 bằng 哪国 (nước nào). Không đảo trật tự, không thêm 吗 vì đã có từ để hỏi."
+        },
+        {
+          "id": "zh-puzzle-hsk1-04",
+          "kind": "sentence_order",
+          "objective": "Order subject, time, 一起 and verb",
+          "prompt": "Ghép câu: Ngày mai tụi mình cùng đi xem phim.",
+          "tokens": ["一起", "电影。", "明天", "看", "我们", "去"],
+          "answers": ["我们 明天 一起 去 看 电影。", "明天 我们 一起 去 看 电影。"],
+          "hint": "Time (明天) before 一起, and 一起 before the verbs 去看.",
+          "hint_vi": "Thời gian (明天) đứng trước 一起, 一起 đứng trước động từ 去看.",
+          "explanation": "Subject + Time + 一起 + 去 + Verb + Object. 一起 (together) comes before the verb, not after it.",
+          "explanation_vi": "Chủ ngữ + Thời gian + 一起 + 去 + Động từ + Tân ngữ. 一起 (cùng nhau) đứng TRƯỚC động từ. 去看电影 = đi xem phim — động từ 去 đứng trước động từ chỉ mục đích, giống tiếng Việt."
+        },
+        {
+          "id": "zh-puzzle-hsk1-05",
+          "kind": "sentence_order",
+          "objective": "Put the place phrase 在 + place before the verb",
+          "prompt": "Ghép câu: Em đợi anh ở nhà.",
+          "tokens": ["等", "家", "你。", "我", "在"],
+          "answers": ["我 在 家 等 你。"],
+          "hint": "Place phrase (在家) comes before the verb.",
+          "hint_vi": "Cụm nơi chốn (在家) đứng trước động từ.",
+          "explanation": "Subject + 在 + place + Verb + Object: 我在家等你 (wǒ zài jiā děng nǐ).",
+          "explanation_vi": "Tiếng Việt nói \"đợi anh ở nhà\", nhưng tiếng Trung đưa nơi chốn lên TRƯỚC động từ: 我在家等你. Đây là lỗi trật tự phổ biến nhất của người Việt."
+        },
+        {
+          "id": "zh-puzzle-hsk1-06",
+          "kind": "sentence_order",
+          "objective": "Make a yes/no question with 吗",
+          "prompt": "Ghép câu: Anh có thích uống trà không?",
+          "tokens": ["喝", "吗？", "你", "茶", "喜欢"],
+          "answers": ["你 喜欢 喝 茶 吗？"],
+          "hint": "Make a normal statement, then add 吗 at the end.",
+          "hint_vi": "Xếp thành câu bình thường rồi thêm 吗 ở cuối.",
+          "explanation": "Statement 你喜欢喝茶 + 吗 = yes/no question. 喜欢 + verb + object: 喜欢喝茶.",
+          "explanation_vi": "Câu trần thuật 你喜欢喝茶 + 吗 ở cuối = câu hỏi có/không. 喜欢 đứng trước cụm động từ 喝茶 (thích uống trà), giống tiếng Việt."
+        },
+        {
+          "id": "zh-puzzle-hsk1-07",
+          "kind": "sentence_order",
+          "objective": "Put 不 before the verb",
+          "prompt": "Ghép câu: Em không uống cà phê.",
+          "tokens": ["咖啡。", "不", "我", "喝"],
+          "answers": ["我 不 喝 咖啡。"],
+          "hint": "不 goes directly before the verb.",
+          "hint_vi": "不 đứng ngay trước động từ.",
+          "explanation": "不 (bù) negates habits and goes right before the verb: 不喝.",
+          "explanation_vi": "不 phủ định thói quen, sở thích và đứng ngay TRƯỚC động từ: 我不喝咖啡 = em không uống cà phê (thói quen)."
+        },
+        {
+          "id": "zh-puzzle-hsk1-08",
+          "kind": "sentence_order",
+          "objective": "Use 的 to show possession",
+          "prompt": "Ghép câu: Đây là bạn trai của em.",
+          "tokens": ["的", "是", "男朋友。", "这", "我"],
+          "answers": ["这 是 我 的 男朋友。"],
+          "hint": "Owner + 的 + thing: 我的男朋友.",
+          "hint_vi": "Người sở hữu + 的 + vật/người: 我的男朋友.",
+          "explanation": "Possession: owner + 的 + noun. The owner comes first, the opposite of Vietnamese 'bạn trai của em'.",
+          "explanation_vi": "Sở hữu: Người sở hữu + 的 + danh từ: 我的男朋友 (của em + bạn trai). Ngược với tiếng Việt \"bạn trai của em\" — người Việt hay đặt nhầm thành \"男朋友的我\"."
+        },
+        {
+          "id": "zh-puzzle-hsk1-09",
+          "kind": "sentence_order",
+          "objective": "Ask 'where' with 在哪儿",
+          "prompt": "Ghép câu: Bây giờ anh đang ở đâu?",
+          "tokens": ["在", "哪儿？", "现在", "你"],
+          "answers": ["你 现在 在 哪儿？", "现在 你 在 哪儿？"],
+          "hint": "Time word before 在; 哪儿 goes where the place would be.",
+          "hint_vi": "Từ thời gian đứng trước 在; 哪儿 đứng ở vị trí của nơi chốn.",
+          "explanation": "你现在在哪儿? (nǐ xiànzài zài nǎr). 现在 can go before or after the subject, but always before 在.",
+          "explanation_vi": "现在 (bây giờ) có thể đứng trước hoặc sau chủ ngữ nhưng luôn TRƯỚC động từ 在. 哪儿 (đâu) đứng ở cuối, đúng chỗ của địa điểm trong câu trả lời (我在家)."
+        },
+        {
+          "id": "zh-puzzle-hsk1-10",
+          "kind": "sentence_order",
+          "objective": "Combine a time word with 很 + verb",
+          "prompt": "Ghép câu: Hôm nay em rất nhớ anh.",
+          "tokens": ["想", "今天", "你。", "很", "我"],
+          "answers": ["我 今天 很 想 你。", "今天 我 很 想 你。"],
+          "hint": "Time word first or after the subject, then 很 + verb.",
+          "hint_vi": "Từ thời gian ở đầu câu hoặc sau chủ ngữ, rồi đến 很 + động từ.",
+          "explanation": "想 (xiǎng) here means 'to miss'. 今天 goes before 很想, never at the end.",
+          "explanation_vi": "想 ở đây nghĩa là \"nhớ\". 今天 đứng trước 很想 — không nói \"我很想你今天\". Phó từ 很 luôn đứng sát trước động từ."
+        }
+      ]
+    },
+    {
+      "slug": "zh-writing-hsk2-sentence-puzzle",
+      "language": "zh",
+      "category": "writing",
+      "level": "HSK2",
+      "topic": "了, 过, 在, 比 & complements",
+      "title": "Sentence Puzzle: Telling Our Story",
+      "title_vi": "Ghép câu: kể chuyện của tụi mình",
+      "objectives": [
+        "Place 了, 过 and 在 correctly around the verb",
+        "Build comparisons with 比",
+        "Use 给, 都 and degree complements with 得"
+      ],
+      "questions": [
+        {
+          "id": "zh-puzzle-hsk2-01",
+          "kind": "sentence_order",
+          "objective": "Use 已经…了 for a completed action",
+          "prompt": "Ghép câu: Anh ăn cơm rồi.",
+          "tokens": ["了。", "吃饭", "已经", "我"],
+          "answers": ["我 已经 吃饭 了。"],
+          "hint": "已经 before the verb, 了 at the end.",
+          "hint_vi": "已经 đứng trước động từ, 了 ở cuối câu.",
+          "explanation": "已经 (yǐjīng, already) + verb + 了: 我已经吃饭了.",
+          "explanation_vi": "已经 (đã) đứng TRƯỚC động từ, 了 (rồi) đứng cuối câu: 我已经吃饭了 = anh ăn cơm rồi. Giống \"đã… rồi\" của tiếng Việt."
+        },
+        {
+          "id": "zh-puzzle-hsk2-02",
+          "kind": "sentence_order",
+          "objective": "Ask about experience with 过…吗",
+          "prompt": "Ghép câu: Em đã từng đến Trung Quốc chưa?",
+          "tokens": ["中国", "过", "你", "吗？", "去"],
+          "answers": ["你 去 过 中国 吗？"],
+          "hint": "过 comes right after the verb, before the place.",
+          "hint_vi": "过 đứng ngay sau động từ, trước địa điểm.",
+          "explanation": "Verb + 过 + object: 去过中国. Add 吗 to ask.",
+          "explanation_vi": "过 (đã từng) đứng ngay SAU động từ, trước tân ngữ: 去过中国. Người Việt hay đặt 过 trước động từ như chữ \"từng\" — sai."
+        },
+        {
+          "id": "zh-puzzle-hsk2-03",
+          "kind": "sentence_order",
+          "objective": "Use 在 + verb + 呢 for an action in progress",
+          "prompt": "Ghép câu: Mẹ đang nấu cơm.",
+          "tokens": ["做饭", "呢。", "妈妈", "在"],
+          "answers": ["妈妈 在 做饭 呢。"],
+          "hint": "在 goes before the verb; 呢 ends the sentence.",
+          "hint_vi": "在 đứng trước động từ; 呢 ở cuối câu.",
+          "explanation": "在 + verb (+ 呢) = action in progress: 妈妈在做饭呢.",
+          "explanation_vi": "在 (đang) đứng TRƯỚC động từ, 呢 ở cuối câu làm câu tự nhiên: 妈妈在做饭呢 = mẹ đang nấu cơm."
+        },
+        {
+          "id": "zh-puzzle-hsk2-04",
+          "kind": "sentence_order",
+          "objective": "Build A 比 B + adjective + amount",
+          "prompt": "Ghép câu: Anh lớn hơn em ba tuổi.",
+          "tokens": ["大", "岁。", "我", "三", "你", "比"],
+          "answers": ["我 比 你 大 三 岁。"],
+          "hint": "A 比 B + adjective + the difference.",
+          "hint_vi": "A 比 B + tính từ + mức chênh lệch.",
+          "explanation": "A + 比 + B + adjective + difference: 我比你大三岁 (I'm three years older than you).",
+          "explanation_vi": "Cấu trúc: A + 比 + B + tính từ + mức chênh lệch: 我比你大三岁. Tiếng Việt nói \"lớn hơn em ba tuổi\" (tính từ trước), còn tiếng Trung đưa 比你 lên TRƯỚC tính từ; số lượng chênh lệch đứng cuối."
+        },
+        {
+          "id": "zh-puzzle-hsk2-05",
+          "kind": "sentence_order",
+          "objective": "Use verb + 了 + number + measure word",
+          "prompt": "Ghép câu: Hôm qua em mua một bộ quần áo.",
+          "tokens": ["一件", "我", "衣服。", "买了", "昨天"],
+          "answers": ["我 昨天 买了 一件 衣服。", "昨天 我 买了 一件 衣服。"],
+          "hint": "Time before the verb; 了 right after the verb, then number + measure word + noun.",
+          "hint_vi": "Thời gian trước động từ; 了 ngay sau động từ, rồi số + lượng từ + danh từ.",
+          "explanation": "Verb + 了 + quantified object: 买了一件衣服. 件 is the measure word for clothes.",
+          "explanation_vi": "Khi tân ngữ có số lượng, 了 đứng ngay sau động từ: 买了一件衣服. 件 là lượng từ cho quần áo. 昨天 đứng trước động từ (đầu câu hoặc sau chủ ngữ)."
+        },
+        {
+          "id": "zh-puzzle-hsk2-06",
+          "kind": "sentence_order",
+          "objective": "Use 是…的 to stress when something happened",
+          "prompt": "Ghép câu: Tụi mình quen nhau vào năm ngoái.",
+          "tokens": ["认识", "去年", "的。", "是", "我们"],
+          "answers": ["我们 是 去年 认识 的。"],
+          "hint": "是 + the detail you stress (time) + verb + 的.",
+          "hint_vi": "是 + thông tin muốn nhấn mạnh (thời gian) + động từ + 的.",
+          "explanation": "是…的 highlights the time, place or way of a past event: 我们是去年认识的.",
+          "explanation_vi": "Cấu trúc 是…的 nhấn mạnh thời gian / địa điểm / cách thức của việc ĐÃ xảy ra: 我们是去年认识的 = tụi mình quen nhau (là) vào năm ngoái. 是 đứng trước thông tin được nhấn mạnh, 的 ở cuối."
+        },
+        {
+          "id": "zh-puzzle-hsk2-07",
+          "kind": "sentence_order",
+          "objective": "Ask 'why' with 为什么",
+          "prompt": "Ghép câu: Sao em không vui?",
+          "tokens": ["不", "高兴？", "为什么", "你"],
+          "answers": ["你 为什么 不 高兴？", "为什么 你 不 高兴？"],
+          "hint": "为什么 goes before the verb/adjective, after or before the subject.",
+          "hint_vi": "为什么 đứng trước động từ/tính từ, sau hoặc trước chủ ngữ.",
+          "explanation": "为什么 (wèishénme) sits before the predicate: 你为什么不高兴? It can also start the sentence.",
+          "explanation_vi": "为什么 (tại sao) đứng TRƯỚC vị ngữ: 你为什么不高兴？ hoặc đầu câu 为什么你不高兴？. Không thêm 吗 vì đã có từ để hỏi. Nhớ: 不高兴, không phải \"不是高兴\"."
+        },
+        {
+          "id": "zh-puzzle-hsk2-08",
+          "kind": "sentence_order",
+          "objective": "Order 每天, 都 and 给 + person before the verb",
+          "prompt": "Ghép câu: Ngày nào anh cũng gọi điện cho em.",
+          "tokens": ["给", "都", "打电话。", "每天", "我", "你"],
+          "answers": ["我 每天 都 给 你 打电话。", "每天 我 都 给 你 打电话。"],
+          "hint": "Time + 都 + 给 + person + verb.",
+          "hint_vi": "Thời gian + 都 + 给 + người nhận + động từ.",
+          "explanation": "给 + person comes before the verb: 给你打电话 (call you). 都 follows 每天 and precedes 给.",
+          "explanation_vi": "Tiếng Việt nói \"gọi điện cho em\", nhưng tiếng Trung đưa 给你 (cho em) lên TRƯỚC động từ: 给你打电话. 都 đi sau 每天 và đứng trước cụm 给你 (每天都… = ngày nào cũng…)."
+        },
+        {
+          "id": "zh-puzzle-hsk2-09",
+          "kind": "sentence_order",
+          "objective": "Use a degree complement with 得",
+          "prompt": "Ghép câu: Anh ấy chạy rất nhanh.",
+          "tokens": ["很", "跑", "快。", "他", "得"],
+          "answers": ["他 跑 得 很 快。"],
+          "hint": "Verb + 得 + 很 + adjective.",
+          "hint_vi": "Động từ + 得 + 很 + tính từ.",
+          "explanation": "Degree complement: verb + 得 + (很) + adjective describes how well/fast an action is done.",
+          "explanation_vi": "Bổ ngữ trình độ: Động từ + 得 + 很 + tính từ, dùng để đánh giá hành động: 他跑得很快 = anh ấy chạy rất nhanh. Thứ tự giống tiếng Việt \"chạy… nhanh\", chỉ cần nhớ chèn 得 vào giữa."
+        },
+        {
+          "id": "zh-puzzle-hsk2-10",
+          "kind": "sentence_order",
+          "objective": "Make a suggestion with 吧",
+          "prompt": "Ghép câu: Tụi mình cùng đi du lịch đi!",
+          "tokens": ["旅游", "吧！", "一起", "我们", "去"],
+          "answers": ["我们 一起 去 旅游 吧！"],
+          "hint": "一起 before the verb; 吧 at the end for a suggestion.",
+          "hint_vi": "一起 trước động từ; 吧 ở cuối câu để rủ rê, đề nghị.",
+          "explanation": "吧 (ba) at the end turns a statement into a suggestion: 我们一起去旅游吧!",
+          "explanation_vi": "吧 ở cuối câu biến câu thành lời rủ rê, đề nghị (\"…đi!\", \"…nhé!\"). 一起 (cùng nhau) đứng trước động từ 去旅游."
+        }
+      ]
+    }
+  ]
+}

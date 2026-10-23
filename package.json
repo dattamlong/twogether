@@ -16,7 +16,7 @@
     "content:seed": "tsx scripts/content-seed.ts",
     "db:start": "supabase start",
     "db:reset": "pnpm content:seed && supabase db reset",
-    "db:types": "supabase gen types typescript --local 2>/dev/null > src/lib/supabase/database.types.ts && prettier --write src/lib/supabase/database.types.ts >/dev/null || true",
+    "db:types": "supabase gen types typescript --db-url postgresql://postgres:postgres@127.0.0.1:54322/postgres --schema public 2>/dev/null > src/lib/supabase/database.types.ts && prettier --write src/lib/supabase/database.types.ts >/dev/null || true",
     "db:demo": "tsx scripts/seed-demo.ts"
   },
   "dependencies": {

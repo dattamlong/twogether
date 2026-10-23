@@ -168,7 +168,7 @@ export function SentencePuzzle() {
         <Panel className="flex flex-col gap-4">
           <div>
             <p className="text-xs font-bold uppercase tracking-wide text-lavender-400">
-              {card.level} · {card.objective}
+              {card.level} · Build the sentence
             </p>
             <h2 className="mt-1 text-2xl font-semibold">{card.prompt}</h2>
             {card.prompt_vi ? <Vi>{card.prompt_vi}</Vi> : null}

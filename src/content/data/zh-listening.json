@@ -1,0 +1,146 @@
+{
+  "lessons": [
+    {
+      "slug": "zh-listen-hsk1-daily-life",
+      "language": "zh",
+      "category": "listening",
+      "level": "HSK1",
+      "topic": "numbers, shopping & plans",
+      "title": "Nǐ hǎo! First Chinese Listening",
+      "title_vi": "Nǐ hǎo! Bài nghe tiếng Trung đầu tiên",
+      "objectives": [
+        "Hear the difference between 四 (sì) and 十 (shí)",
+        "Tell 买 (mǎi) from 卖 (mài) by tone",
+        "Catch places, times and likes in one sentence"
+      ],
+      "questions": [
+        {
+          "id": "zh-listen-hsk1-01",
+          "kind": "listening",
+          "objective": "Hear the difference between 四 and 十",
+          "audio_text": "我有四个苹果。",
+          "prompt": "Bạn nghe thấy câu nào về số táo?",
+          "options": ["我有四个苹果。", "我有十个苹果。", "我有七个苹果。", "我有一个苹果。"],
+          "answer": "我有四个苹果。",
+          "explanation": "四 (sì, four) is a falling 4th tone with an 's' sound; 十 (shí, ten) is a rising 2nd tone with a curled 'sh'.",
+          "explanation_vi": "四 (sì = bốn) đọc thanh 4 (đi xuống, dứt khoát), âm \"s\" đầu lưỡi thẳng. 十 (shí = mười) đọc thanh 2 (đi lên), âm \"sh\" uốn lưỡi. Người Việt dễ nghe nhầm vì tiếng Việt không có âm uốn lưỡi — hãy chú ý hướng của thanh điệu."
+        },
+        {
+          "id": "zh-listen-hsk1-02",
+          "kind": "listening",
+          "objective": "Tell 买 (buy) from 卖 (sell) by tone",
+          "audio_text": "我想买一个杯子。",
+          "prompt": "Bạn nghe thấy câu nào về cái cốc?",
+          "options": ["我想买一个杯子。", "我想卖一个杯子。", "我想买一个桌子。", "我想卖一个桌子。"],
+          "answer": "我想买一个杯子。",
+          "explanation": "买 (mǎi, buy) is a low dipping 3rd tone; 卖 (mài, sell) is a sharp falling 4th tone. 杯子 (bēizi) is a cup, 桌子 (zhuōzi) a table.",
+          "explanation_vi": "买 (mǎi = mua) thanh 3: giọng hạ thấp rồi hơi lên, nghe trầm. 卖 (mài = bán) thanh 4: rơi mạnh từ cao xuống, nghe dứt khoát như thanh nặng/sắc gắt. Câu nghe được dùng thanh 3 → mua. 杯子 = cái cốc, 桌子 = cái bàn."
+        },
+        {
+          "id": "zh-listen-hsk1-03",
+          "kind": "listening",
+          "objective": "Catch the destination in a plan",
+          "audio_text": "明天我去医院看朋友。",
+          "prompt": "Ngày mai người nói sẽ đi đâu?",
+          "options": ["Bệnh viện", "Trường học", "Nhà hàng", "Cửa hàng"],
+          "answer": "Bệnh viện",
+          "explanation": "医院 (yīyuàn) = hospital. The speaker goes to the hospital to visit a friend (看朋友).",
+          "explanation_vi": "医院 (yīyuàn) = bệnh viện. 看朋友 ở đây nghĩa là \"thăm bạn\". Đừng nhầm với 学校 (xuéxiào = trường học) hay 饭馆 (fànguǎn = nhà hàng). Chú ý địa điểm luôn đứng ngay sau 去."
+        },
+        {
+          "id": "zh-listen-hsk1-04",
+          "kind": "listening",
+          "objective": "Catch a time of day",
+          "audio_text": "现在是下午三点。",
+          "prompt": "Bây giờ là mấy giờ theo người nói?",
+          "options": ["3 giờ chiều", "3 giờ sáng", "2 giờ chiều", "4 giờ chiều"],
+          "answer": "3 giờ chiều",
+          "explanation": "下午 (xiàwǔ) = afternoon, 三点 (sān diǎn) = three o'clock. 上午 (shàngwǔ) would be morning.",
+          "explanation_vi": "下午 (xiàwǔ) = buổi chiều, 三点 (sān diǎn) = 3 giờ. Tiếng Trung nói buổi trước rồi mới đến giờ (下午三点 = chiều 3 giờ), ngược với tiếng Việt \"3 giờ chiều\". 上午 mới là buổi sáng."
+        },
+        {
+          "id": "zh-listen-hsk1-05",
+          "kind": "listening",
+          "objective": "Understand likes and dislikes with 喜欢 / 不喜欢",
+          "audio_text": "我喜欢喝茶，不喜欢喝咖啡。",
+          "prompt": "Người nói thích uống gì?",
+          "options": ["Trà", "Cà phê", "Nước", "Sữa"],
+          "answer": "Trà",
+          "explanation": "喜欢喝茶 = likes drinking tea; 不喜欢喝咖啡 = does not like coffee.",
+          "explanation_vi": "喜欢喝茶 = thích uống trà; 不喜欢喝咖啡 = không thích uống cà phê. Hãy nghe kỹ chữ 不 (bù) — nó đổi nghĩa cả vế câu. 茶 (chá) thanh 2, 咖啡 (kāfēi) phát âm gần giống \"cà phê\"."
+        }
+      ]
+    },
+    {
+      "slug": "zh-listen-hsk2-plans-together",
+      "language": "zh",
+      "category": "listening",
+      "level": "HSK2",
+      "topic": "shopping, travel & plans",
+      "title": "Making Plans: Listening in Two Sentences",
+      "title_vi": "Lên kế hoạch: nghe hiểu câu dài hơn",
+      "objectives": [
+        "Hear tone pairs like 买/卖 inside longer sentences",
+        "Catch dates, transport and locations",
+        "Understand the reason behind a change of plan"
+      ],
+      "questions": [
+        {
+          "id": "zh-listen-hsk2-01",
+          "kind": "listening",
+          "objective": "Hear 买 vs 卖 and the adjective in a longer sentence",
+          "audio_text": "我昨天买了两件衣服，都很便宜。",
+          "prompt": "Bạn nghe thấy câu nào về quần áo?",
+          "options": ["我昨天买了两件衣服，都很便宜。", "我昨天卖了两件衣服，都很便宜。", "我昨天买了两件衣服，都很贵。", "我昨天卖了两件衣服，都很贵。"],
+          "answer": "我昨天买了两件衣服，都很便宜。",
+          "explanation": "买 (mǎi, 3rd tone) = buy; 卖 (mài, 4th tone) = sell. 便宜 (piányi) = cheap, 贵 (guì) = expensive.",
+          "explanation_vi": "Hai chỗ cần nghe: 买 (mǎi, thanh 3, trầm) = mua và 卖 (mài, thanh 4, rơi mạnh) = bán; 便宜 (piányi) = rẻ, còn 贵 (guì) = đắt. 两件衣服 = hai bộ quần áo — với số đếm dùng 两, không dùng 二."
+        },
+        {
+          "id": "zh-listen-hsk2-02",
+          "kind": "listening",
+          "objective": "Catch the means of transport",
+          "audio_text": "我们坐飞机去北京吧，火车太慢了。",
+          "prompt": "Họ sẽ đi Bắc Kinh bằng phương tiện gì?",
+          "options": ["Máy bay", "Tàu hỏa", "Xe buýt", "Taxi"],
+          "answer": "Máy bay",
+          "explanation": "坐飞机 (zuò fēijī) = take a plane. 火车太慢了 = the train is too slow, so they will not take it.",
+          "explanation_vi": "坐飞机 = đi máy bay. Câu sau 火车太慢了 (tàu hỏa chậm quá) là lý do KHÔNG đi tàu — đừng chọn \"tàu hỏa\" chỉ vì nghe thấy 火车. Phương tiện đứng TRƯỚC động từ 去: 坐飞机去北京."
+        },
+        {
+          "id": "zh-listen-hsk2-03",
+          "kind": "listening",
+          "objective": "Hear the difference between 十四, 四 and 十",
+          "audio_text": "我十四号去上海。",
+          "prompt": "Bạn nghe thấy ngày nào người nói đi Thượng Hải?",
+          "options": ["我十四号去上海。", "我四号去上海。", "我十号去上海。", "我十一号去上海。"],
+          "answer": "我十四号去上海。",
+          "explanation": "十四 (shísì) = fourteen: ten first (rising shí), then four (falling sì). 号 (hào) marks the date.",
+          "explanation_vi": "十四 (shísì) = 14: nghe \"shí\" (thanh 2, uốn lưỡi) trước rồi đến \"sì\" (thanh 4). Số trong tiếng Trung ghép giống tiếng Việt: mười + bốn. 号 (hào) = ngày. Mẹo: nghe đủ hai âm tiết, đừng dừng ở âm đầu."
+        },
+        {
+          "id": "zh-listen-hsk2-04",
+          "kind": "listening",
+          "objective": "Understand location words 上 and 下面",
+          "audio_text": "你的手机在桌子上，我的在椅子下面。",
+          "prompt": "Điện thoại của người nghe đang ở đâu?",
+          "options": ["Trên bàn", "Dưới ghế", "Trên ghế", "Dưới bàn"],
+          "answer": "Trên bàn",
+          "explanation": "你的手机在桌子上 = your phone is on the table. 我的在椅子下面 = mine is under the chair.",
+          "explanation_vi": "你的手机 (điện thoại của bạn) 在桌子上 = ở trên bàn. Điện thoại của người nói (我的) mới ở 椅子下面 (dưới ghế). Chú ý: tiếng Trung đặt từ chỉ phương hướng SAU danh từ: 桌子上 = trên bàn (bàn + trên)."
+        },
+        {
+          "id": "zh-listen-hsk2-05",
+          "kind": "listening",
+          "objective": "Understand the reason for cancelling a plan",
+          "audio_text": "今天晚上我不能和你吃饭了，我要工作到十点。",
+          "prompt": "Vì sao tối nay người nói không ăn tối cùng được?",
+          "options": ["Phải làm việc đến 10 giờ", "Bị ốm", "Phải đi học", "Đã ăn rồi"],
+          "answer": "Phải làm việc đến 10 giờ",
+          "explanation": "我要工作到十点 = I have to work until ten o'clock. 不能…了 = can no longer (a change of plan).",
+          "explanation_vi": "我要工作到十点 = em phải làm việc đến 10 giờ. 不能…了 nghĩa là \"không thể… được nữa\" — kế hoạch đã thay đổi. 到 + thời gian = \"đến (mấy giờ)\"."
+        }
+      ]
+    }
+  ]
+}

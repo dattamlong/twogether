@@ -34,8 +34,8 @@
   --color-sky-400: #6fb5e3;
   --color-rose-err: #e0607e;
 
-  --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
-  --font-display: var(--font-fredoka), var(--font-nunito), ui-rounded, sans-serif;
+  --font-sans: var(--font-nunito), ui-rounded, system-ui, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-display: var(--font-fredoka), var(--font-nunito), ui-rounded, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
 
   --radius-panel: 1.5rem;
   --shadow-soft: 0 10px 30px -12px rgb(69 54 91 / 0.25);

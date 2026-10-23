@@ -50,7 +50,10 @@ export function loadContent() {
         if (!q.options.includes(q.answer)) errors.push(`${q.id}: answer "${q.answer}" is not one of the options`);
         if (new Set(q.options).size !== q.options.length) errors.push(`${q.id}: duplicate options`);
       }
-      if (q.kind === "multiple_choice" && q.word) claim(seenWords, q.word.term.toLowerCase(), "vocabulary word");
+      if (q.kind === "multiple_choice" && q.word) claim(seenWords, `${lesson.language}:${q.word.term.toLowerCase()}`, "vocabulary word");
+      if (q.kind === "multiple_choice" && q.word && (lesson.language === "zh") !== Boolean(q.word.pinyin)) {
+        errors.push(`${q.id}: ${lesson.language === "zh" ? "Chinese word cards need pinyin" : "English word cards need ipa"}`);
+      }
       if (lesson.category === "vocabulary" && q.kind === "multiple_choice" && !q.word) {
         errors.push(`${q.id}: vocabulary questions need a word card`);
       }

@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button";
 import { BookIcon, SparkleIcon, StarIcon, TrophyIcon } from "@/components/ui/icons";
 import { Panel, PanelTitle, Vi } from "@/components/ui/panel";
 import { ErrorBlock, LoadingBlock } from "@/components/ui/states";
-import { CEFR_LEVELS } from "@/content/schema";
-import { useLessonHistory, useLessons, useReviewStats, useSetLevel } from "@/features/learning/queries";
-import { LEVEL_LABELS } from "@/features/learning/types";
+import { currentLevel, useLessonHistory, useLessons, useReviewStats, useSetLearning } from "@/features/learning/queries";
+import { LANGUAGE_INFO, LEVEL_LABELS, type StudyLanguage } from "@/features/learning/types";
 import { useRequiredSession } from "@/features/session/use-session";
 import { cn } from "@/lib/utils";
 import { SpeakingPractice } from "./speaking-practice";
@@ -27,43 +26,62 @@ export function LearnHub() {
   const lessons = useLessons();
   const history = useLessonHistory();
   const stats = useReviewStats();
-  const setLevel = useSetLevel();
+  const setLearning = useSetLearning();
   const [category, setCategory] = useState("vocabulary");
-  const level = session.profile.english_level;
+  const language = session.profile.learning_language as StudyLanguage;
+  const info = LANGUAGE_INFO[language];
+  const level = currentLevel(session.profile);
 
   if (lessons.isLoading) return <LoadingBlock />;
   if (lessons.error) return <ErrorBlock error={lessons.error} onRetry={() => lessons.refetch()} />;
   const data = lessons.data!;
-  const inCategory = data.lessons.filter((l) => l.category_id === category);
-  const levelIndex = CEFR_LEVELS.indexOf(level);
-  const recommended = inCategory.filter((l) => CEFR_LEVELS.indexOf(l.level) <= Math.max(levelIndex, 0) + 1);
+  const inCategory = data.lessons.filter((l) => l.category_id === category && l.language === language);
+  const levelIndex = info.levels.indexOf(level);
+  const recommended = inCategory.filter((l) => info.levels.indexOf(l.level) <= Math.max(levelIndex, 0) + 1);
   const later = inCategory.filter((l) => !recommended.includes(l));
+  const highestAvailable = Math.max(-1, ...data.lessons.filter((l) => l.language === language).map((l) => info.levels.indexOf(l.level)));
 
   return (
     <div className="flex flex-col gap-4">
       <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Learn</h1>
-          <Vi>Học tiếng Anh từng chút mỗi ngày</Vi>
+          <h1 className="text-3xl font-bold">Learn {info.name}</h1>
+          <Vi>{info.learnVi}</Vi>
+          <div className="mt-3 flex gap-1 rounded-2xl bg-white/70 p-1" role="radiogroup" aria-label="Language to learn">
+            {(Object.keys(LANGUAGE_INFO) as StudyLanguage[]).map((code) => (
+              <button
+                key={code}
+                role="radio"
+                aria-checked={code === language}
+                onClick={() => setLearning.mutate({ language: code })}
+                className={cn("rounded-xl px-4 py-1.5 text-left", code === language ? "bg-sakura-400 text-white" : "text-plum-500 hover:bg-white")}
+              >
+                <span className="block font-display text-sm font-semibold">{LANGUAGE_INFO[code].native}</span>
+                <span className={cn("block text-[11px]", code === language ? "text-white/85" : "text-cocoa-400")}>{LANGUAGE_INFO[code].standard}</span>
+              </button>
+            ))}
+          </div>
         </div>
         <div>
-          <p className="mb-1 text-xs font-bold text-cocoa-400">Your level · Trình độ của bạn</p>
-          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="English level">
-            {CEFR_LEVELS.map((l) => (
+          <p className="mb-1 text-xs font-bold text-cocoa-400">
+            Your level ({info.standard}) · Trình độ của bạn
+          </p>
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label={`${info.name} level`}>
+            {info.levels.map((l) => (
               <button
                 key={l}
                 role="radio"
                 aria-checked={l === level}
-                onClick={() => setLevel.mutate(l)}
+                onClick={() => setLearning.mutate({ level: l })}
                 className={cn("rounded-xl px-3 py-1.5 text-sm font-bold ring-2 transition", l === level ? "bg-plum-700 text-white ring-plum-700" : "bg-white/80 ring-white hover:ring-lavender-200")}
                 title={`${LEVEL_LABELS[l].name} · ${LEVEL_LABELS[l].vi}`}
               >
-                {l}
+                {l.replace("HSK", "")}
               </button>
             ))}
           </div>
           <p className="mt-1 text-xs text-cocoa-400">
-            {LEVEL_LABELS[level].name} · {LEVEL_LABELS[level].vi}
+            {LEVEL_LABELS[level]?.name} · {LEVEL_LABELS[level]?.vi}
           </p>
         </div>
       </header>
@@ -118,13 +136,19 @@ export function LearnHub() {
       </div>
 
       {category === "speaking" ? (
-        <SpeakingPractice />
+        <SpeakingPractice key={language} language={language} />
       ) : (
         <>
           <Panel>
             <PanelTitle icon={<BookIcon size={32} />} title="Recommended for you" subtitle="Gợi ý theo trình độ của bạn" />
             <LessonGrid lessons={recommended} history={history.data} />
             {recommended.length === 0 ? <p className="text-sm text-cocoa-400">No lessons at your level in this category yet — try the ones below.</p> : null}
+            {levelIndex > highestAvailable + 1 ? (
+              <p className="mt-3 rounded-2xl bg-sky-100 px-4 py-2 text-sm text-plum-500">
+                {info.standard} lessons above {info.levels[highestAvailable]} are coming soon. Lessons up to that level are open to you now.
+                <span lang="vi" className="block text-xs text-cocoa-400">Bài cấp cao hơn đang được soạn — bạn có thể học các bài hiện có.</span>
+              </p>
+            ) : null}
           </Panel>
           {later.length ? (
             <Panel>

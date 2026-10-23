@@ -7,9 +7,9 @@ import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
 import { Panel, PanelTitle } from "@/components/ui/panel";
-import { CEFR_LEVELS } from "@/content/schema";
 import { useSignOut } from "@/features/couples/queries";
-import { LEVEL_LABELS } from "@/features/learning/types";
+import { currentLevel } from "@/features/learning/queries";
+import { LANGUAGE_INFO, LEVEL_LABELS, type StudyLanguage } from "@/features/learning/types";
 import { qk } from "@/features/query-keys";
 import { readAvatar, type Avatar } from "@/features/session/types";
 import { useRequiredSession } from "@/features/session/use-session";
@@ -79,6 +79,7 @@ export function ProfileSettings() {
   const [avatar, setAvatar] = useState<Avatar>(() => readAvatar(session.profile.avatar));
   const [name, setName] = useState(session.profile.display_name);
   const [timezone, setTimezone] = useState(session.profile.timezone);
+  const [learningLanguage, setLearningLanguage] = useState<StudyLanguage>(session.profile.learning_language as StudyLanguage);
   const [coupleName, setCoupleName] = useState(session.couple?.name ?? "Our Little Home");
   const [confirm, setConfirm] = useState<"unpair" | "delete" | null>(null);
   const [sound, setSound] = useState(soundEnabled);
@@ -99,7 +100,7 @@ export function ProfileSettings() {
   const save = useMutation({
     mutationFn: async () => {
       const supabase = getSupabase();
-      const profile = await supabase.from("profiles").update({ display_name: name.trim(), timezone, avatar }).eq("id", session.userId);
+      const profile = await supabase.from("profiles").update({ display_name: name.trim(), timezone, avatar, learning_language: learningLanguage }).eq("id", session.userId);
       if (profile.error) throw profile.error;
       if (session.couple && coupleName.trim() && coupleName !== session.couple.name) {
         const couple = await supabase.from("couples").update({ name: coupleName.trim() }).eq("id", session.couple.id);
@@ -195,8 +196,27 @@ export function ProfileSettings() {
               className="size-5 accent-sakura-400"
             />
           </label>
+          <fieldset>
+            <legend className="mb-1.5 text-sm font-bold">Language I&apos;m learning · Ngôn ngữ đang học</legend>
+            <div className="grid grid-cols-2 gap-2">
+              {(Object.keys(LANGUAGE_INFO) as StudyLanguage[]).map((code) => (
+                <button
+                  key={code}
+                  type="button"
+                  aria-pressed={learningLanguage === code}
+                  onClick={() => setLearningLanguage(code)}
+                  className={cn("rounded-2xl px-3 py-2 text-left ring-2", learningLanguage === code ? "bg-sakura-100 ring-sakura-300" : "bg-white/80 ring-white")}
+                >
+                  <span className="block font-display font-semibold">{LANGUAGE_INFO[code].native}</span>
+                  <span className="block text-xs text-cocoa-400">
+                    {LANGUAGE_INFO[code].vi} · {LANGUAGE_INFO[code].standard}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </fieldset>
           <p className="text-xs text-cocoa-400">
-            English level: {session.profile.english_level} · {LEVEL_LABELS[session.profile.english_level].name} — change it on the Learn page. ({CEFR_LEVELS.join(" · ")})
+            Current level: {currentLevel(session.profile)} · {LEVEL_LABELS[currentLevel(session.profile)]?.name} — change it on the Learn page. Your partner can learn a different language; streaks and quests count both.
           </p>
           <Button onClick={() => save.mutate()} loading={save.isPending} disabled={!name.trim()}>
             Save changes

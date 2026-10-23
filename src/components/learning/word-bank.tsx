@@ -8,7 +8,7 @@ import { Modal } from "@/components/ui/modal";
 import { Vi } from "@/components/ui/panel";
 import { EmptyState, ErrorBlock, LoadingBlock } from "@/components/ui/states";
 import { useWordBank } from "@/features/learning/queries";
-import type { WordCard as Word } from "@/features/learning/types";
+import { speechLang, type WordCard as Word } from "@/features/learning/types";
 import { cn } from "@/lib/utils";
 import { SpeakButton } from "./audio-controls";
 import { WordCard } from "./word-card";
@@ -60,9 +60,9 @@ export function WordBank() {
               <div className="flex items-start justify-between gap-2">
                 <button className="text-left" onClick={() => setOpen(word)}>
                   <p className="font-display text-xl font-semibold">{word.term}</p>
-                  <p className="font-mono text-xs text-plum-500">{word.ipa}</p>
+                  <p className={word.pinyin ? "text-sm font-semibold text-sakura-500" : "font-mono text-xs text-plum-500"}>{word.pinyin ?? word.ipa}</p>
                 </button>
-                <SpeakButton text={word.term} label="" />
+                <SpeakButton text={word.term} label="" lang={speechLang(word.pinyin ? "zh" : "en")} />
               </div>
               <p lang="vi" className="text-sm text-cocoa-400">{word.meaning_vi}</p>
               <div className="mt-auto flex items-center justify-between text-xs font-semibold">

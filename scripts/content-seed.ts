@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { ACHIEVEMENTS, COUPLE_QUESTS, DAILY_QUESTS, SHOP_ITEMS } from "../src/content/catalog";
-import { CATEGORIES, type Question } from "../src/content/schema";
+import { CATEGORIES, LESSON_LEVELS, type Question } from "../src/content/schema";
 import { ROOM_DEPTH, ROOM_WIDTH, reservedTiles } from "../src/game/world/room";
 import { loadContent } from "./content-check";
 
@@ -12,10 +12,14 @@ const lit = (value: unknown): string => {
 };
 const json = (value: unknown) => (value === undefined || value === null ? "null" : `${lit(JSON.stringify(value))}::jsonb`);
 const textArray = (values: string[]) => `array[${values.map(lit).join(", ")}]::text[]`;
-const insert = (table: string, columns: string[], rows: unknown[][]) =>
-  rows.length === 0
-    ? ""
-    : `insert into public.${table} (${columns.join(", ")}) values\n${rows.map((r) => `  (${r.join(", ")})`).join(",\n")};\n`;
+const insert = (table: string, columns: string[], rows: unknown[][], conflictKeys: string[] = [columns[0]]) => {
+  if (rows.length === 0) return "";
+  const updates = columns.filter((c) => !conflictKeys.includes(c));
+  const onConflict = updates.length
+    ? `on conflict (${conflictKeys.join(", ")}) do update set ${updates.map((c) => `${c} = excluded.${c}`).join(", ")}`
+    : `on conflict (${conflictKeys.join(", ")}) do nothing`;
+  return `insert into public.${table} (${columns.join(", ")}) values\n${rows.map((r) => `  (${r.join(", ")})`).join(",\n")}\n${onConflict};\n`;
+};
 
 const CATEGORY_INFO: Record<(typeof CATEGORIES)[number], [string, string, string]> = {
   vocabulary: ["Vocabulary", "Từ vựng", "Learn words you can use every day."],
@@ -53,9 +57,10 @@ export function buildSeed() {
   const { lessons, loveQuestions, errors } = loadContent();
   if (errors.length) throw new Error(`Content invalid:\n${errors.join("\n")}`);
 
-  const levelOrder = ["A1", "A2", "B1", "B2", "C1"];
+  const levelOrder: string[] = [...LESSON_LEVELS];
   const sortedLessons = [...lessons].sort(
     (a, b) =>
+      a.language.localeCompare(b.language) ||
       CATEGORIES.indexOf(a.category) - CATEGORIES.indexOf(b.category) ||
       levelOrder.indexOf(a.level) - levelOrder.indexOf(b.level) ||
       a.slug.localeCompare(b.slug),
@@ -70,8 +75,8 @@ export function buildSeed() {
     ),
     insert(
       "lessons",
-      ["id", "category_id", "level", "topic", "title", "title_vi", "objectives", "sort_order"],
-      sortedLessons.map((l, i) => [lit(l.slug), lit(l.category), lit(l.level), lit(l.topic), lit(l.title), lit(l.title_vi), textArray(l.objectives), i]),
+      ["id", "language", "category_id", "level", "topic", "title", "title_vi", "objectives", "sort_order"],
+      sortedLessons.map((l, i) => [lit(l.slug), lit(l.language), lit(l.category), lit(l.level), lit(l.topic), lit(l.title), lit(l.title_vi), textArray(l.objectives), i]),
     ),
     insert(
       "lesson_questions",
@@ -82,6 +87,7 @@ export function buildSeed() {
       "daily_love_questions",
       ["id", "prompt", "prompt_vi", "helper_phrase", "sort_order"],
       loveQuestions.map((q, i) => [lit(q.id), lit(q.prompt), lit(q.prompt_vi), lit(q.helper_phrase ?? null), i]),
+      ["id"],
     ),
     insert(
       "shop_items",
@@ -103,8 +109,8 @@ export function buildSeed() {
       ["id", "scope", "title", "title_vi", "description", "icon", "coin_reward", "reward_item_id"],
       ACHIEVEMENTS.map((a) => [lit(a.id), lit(a.scope), lit(a.title), lit(a.title_vi), lit(a.description), lit(a.icon), a.coin_reward, lit(a.reward_item_id)]),
     ),
-    insert("room_dimensions", ["width", "depth"], [[ROOM_WIDTH, ROOM_DEPTH]]),
-    insert("room_reserved_tiles", ["x", "y"], reservedTiles().map((t) => [t.x, t.y])),
+    insert("room_dimensions", ["id", "width", "depth"], [[true, ROOM_WIDTH, ROOM_DEPTH]]),
+    insert("room_reserved_tiles", ["x", "y"], reservedTiles().map((t) => [t.x, t.y]), ["x", "y"]),
   ];
   return parts.join("\n");
 }

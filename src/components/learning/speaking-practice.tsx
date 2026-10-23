@@ -3,11 +3,20 @@
 import { useState } from "react";
 import { Panel, PanelTitle, Vi } from "@/components/ui/panel";
 import { useWordBank } from "@/features/learning/queries";
-import type { WordCard } from "@/features/learning/types";
+import { speechLang, type StudyLanguage, type WordCard } from "@/features/learning/types";
 import { cn } from "@/lib/utils";
 import { RecordYourself, SpeakButton } from "./audio-controls";
 
-const STARTER_PHRASES = [
+const CHINESE_STARTERS = [
+  { en: "我想你。", pinyin: "Wǒ xiǎng nǐ.", vi: "Anh/Em nhớ em/anh." },
+  { en: "你今天好吗？", pinyin: "Nǐ jīntiān hǎo ma?", vi: "Hôm nay bạn khỏe không?" },
+  { en: "我很高兴认识你。", pinyin: "Wǒ hěn gāoxìng rènshi nǐ.", vi: "Mình rất vui được quen bạn." },
+  { en: "我们晚上打电话吧。", pinyin: "Wǒmen wǎnshang dǎ diànhuà ba.", vi: "Tối nay mình gọi điện nhé." },
+  { en: "谢谢你一直陪着我。", pinyin: "Xièxie nǐ yìzhí péizhe wǒ.", vi: "Cảm ơn vì luôn ở bên mình." },
+  { en: "晚安，做个好梦。", pinyin: "Wǎn'ān, zuò ge hǎo mèng.", vi: "Chúc ngủ ngon, mơ đẹp nhé." },
+];
+
+const STARTER_PHRASES: { en: string; pinyin?: string; vi: string }[] = [
   { en: "I miss you so much.", vi: "Anh/Em nhớ em/anh nhiều lắm." },
   { en: "How was your day?", vi: "Hôm nay của bạn thế nào?" },
   { en: "I can't wait to see you again.", vi: "Mình mong được gặp lại bạn quá." },
@@ -18,10 +27,12 @@ const STARTER_PHRASES = [
   { en: "What time is it there?", vi: "Ở đó bây giờ là mấy giờ?" },
 ];
 
-export function SpeakingPractice() {
+export function SpeakingPractice({ language }: { language: StudyLanguage }) {
   const words = useWordBank();
+  const lang = speechLang(language);
   const learned = (words.data ?? []).map((w) => w.word as unknown as WordCard).filter(Boolean).slice(0, 12);
-  const items = [...STARTER_PHRASES, ...learned.map((w) => ({ en: w.example, vi: w.example_vi }))];
+  const starters = language === "zh" ? CHINESE_STARTERS : STARTER_PHRASES;
+  const items = [...starters, ...learned.map((w) => ({ en: w.example, pinyin: w.example_pinyin, vi: w.example_vi }))];
   const [index, setIndex] = useState(0);
   const current = items[index] ?? STARTER_PHRASES[0];
 
@@ -33,10 +44,11 @@ export function SpeakingPractice() {
       </p>
       <div className="flex flex-col gap-3 rounded-3xl bg-white/70 p-5 ring-2 ring-white">
         <p className="font-display text-2xl font-semibold">“{current.en}”</p>
+        {current.pinyin ? <p className="text-sakura-500">{current.pinyin}</p> : null}
         <Vi>{current.vi}</Vi>
         <div className="flex flex-wrap gap-2">
-          <SpeakButton text={current.en} label="Listen" />
-          <SpeakButton text={current.en} label="Slow" slow />
+          <SpeakButton text={current.en} label="Listen" lang={lang} />
+          <SpeakButton text={current.en} label="Slow" slow lang={lang} />
         </div>
         <RecordYourself key={current.en} prompt={current.en} />
       </div>

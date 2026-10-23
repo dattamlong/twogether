@@ -1,0 +1,385 @@
+{
+  "lessons": [
+    {
+      "slug": "zh-grammar-hsk1-basics",
+      "language": "zh",
+      "category": "grammar",
+      "level": "HSK1",
+      "topic": "是, 吗, 不/没, basic word order",
+      "title": "First Sentences Together: 是, 吗, 不 & 没",
+      "title_vi": "Những câu đầu tiên bên nhau: 是, 吗, 不 và 没",
+      "objectives": [
+        "Use 是 with nouns, but not with adjectives",
+        "Make yes/no questions with 吗",
+        "Choose 不 or 没 to make negatives",
+        "Put time and place words before the verb"
+      ],
+      "questions": [
+        {
+          "id": "zh-grammar-hsk1-01",
+          "kind": "multiple_choice",
+          "objective": "Use 是 to link two nouns",
+          "prompt": "我___越南人。",
+          "prompt_vi": "Em là người Việt Nam.",
+          "options": ["是", "很", "在", "有"],
+          "answer": "是",
+          "explanation": "是 (shì) links a subject to a noun: 我是越南人 = I am Vietnamese. 很 goes with adjectives, 在 means 'be at', 有 means 'have'.",
+          "explanation_vi": "是 (shì) nối chủ ngữ với một danh từ, giống \"là\" trong tiếng Việt: 我是越南人 = Em là người Việt Nam. 很 dùng trước tính từ, 在 là \"ở\", 有 là \"có\" — không dùng được ở đây."
+        },
+        {
+          "id": "zh-grammar-hsk1-02",
+          "kind": "multiple_choice",
+          "objective": "Form a yes/no question with 吗",
+          "prompt": "你是中国人___？",
+          "prompt_vi": "Anh là người Trung Quốc à?",
+          "options": ["吗", "是", "不", "很"],
+          "answer": "吗",
+          "explanation": "Add 吗 (ma) to the end of a statement to turn it into a yes/no question. The word order does not change.",
+          "explanation_vi": "Chỉ cần thêm 吗 (ma) vào cuối câu trần thuật là thành câu hỏi có/không, giống \"…à? / …không?\" trong tiếng Việt. Trật tự từ giữ nguyên, không cần đảo động từ lên đầu."
+        },
+        {
+          "id": "zh-grammar-hsk1-03",
+          "kind": "multiple_choice",
+          "objective": "Do not use 是 before adjectives; put time before the verb",
+          "prompt": "Câu nào đúng? (Hôm nay em rất vui.)",
+          "prompt_vi": "Hôm nay em rất vui.",
+          "options": ["我今天很高兴。", "我是很高兴今天。", "我很高兴今天。", "我今天高兴是。"],
+          "answer": "我今天很高兴。",
+          "explanation": "Adjectives act as the predicate by themselves, usually with 很: 我很高兴, not 我是很高兴. Time words (今天) go before the verb/adjective, not at the end.",
+          "explanation_vi": "Trong tiếng Trung, tính từ tự làm vị ngữ, thường đi với 很: 我很高兴. Người Việt hay dịch \"là\" thành 是 và nói \"我是很高兴\" — sai. Ngoài ra, tiếng Việt hay để thời gian ở cuối (\"vui hôm nay\") nhưng tiếng Trung đặt từ thời gian (今天) TRƯỚC vị ngữ."
+        },
+        {
+          "id": "zh-grammar-hsk1-04",
+          "kind": "multiple_choice",
+          "objective": "Use 不 for likes and habits",
+          "prompt": "我___喜欢喝咖啡。",
+          "prompt_vi": "Anh không thích uống cà phê.",
+          "options": ["不", "没", "别", "是"],
+          "answer": "不",
+          "explanation": "不 (bù) negates habits, wishes and feelings like 喜欢. 没 is for things that did not happen or for 有. 别 means 'don't!' in commands.",
+          "explanation_vi": "不 (bù) dùng để phủ định thói quen, sở thích, ý muốn: 不喜欢 = không thích. 没 dùng cho việc đã không xảy ra hoặc với 有. 别 là \"đừng\" (câu mệnh lệnh). Tiếng Việt chỉ có một chữ \"không\" nên người Việt dễ nhầm 不 và 没."
+        },
+        {
+          "id": "zh-grammar-hsk1-05",
+          "kind": "multiple_choice",
+          "objective": "Negate 有 with 没",
+          "prompt": "我___有哥哥。",
+          "prompt_vi": "Em không có anh trai.",
+          "options": ["没", "不", "别", "很"],
+          "answer": "没",
+          "explanation": "有 (yǒu) is always negated with 没: 没有. Never say 不有.",
+          "explanation_vi": "Động từ 有 (có) LUÔN phủ định bằng 没: 没有 = không có. Tuyệt đối không nói \"不有\" — đây là lỗi rất hay gặp vì tiếng Việt nói \"không có\"."
+        },
+        {
+          "id": "zh-grammar-hsk1-06",
+          "kind": "multiple_choice",
+          "objective": "Use 没 for past events that did not happen",
+          "prompt": "昨天他___来。",
+          "prompt_vi": "Hôm qua anh ấy đã không đến.",
+          "options": ["没", "不", "别", "是"],
+          "answer": "没",
+          "explanation": "For an action that did not happen in the past, use 没 (méi): 昨天他没来. 不 is for habits, the present or the future.",
+          "explanation_vi": "Muốn nói một việc đã KHÔNG xảy ra trong quá khứ thì dùng 没 (méi): 昨天他没来 = hôm qua anh ấy không đến. 不 dùng cho hiện tại, tương lai hoặc thói quen (明天他不来 = mai anh ấy không đến). Mẹo: \"chưa / đã không\" → 没."
+        },
+        {
+          "id": "zh-grammar-hsk1-07",
+          "kind": "multiple_choice",
+          "objective": "Put time and place before the verb",
+          "prompt": "Câu nào đúng? (Tối nay anh ăn cơm ở nhà.)",
+          "prompt_vi": "Tối nay anh ăn cơm ở nhà.",
+          "options": ["我今天晚上在家吃饭。", "我吃饭在家今天晚上。", "我今天晚上吃饭在家。", "我在家吃饭今天晚上。"],
+          "answer": "我今天晚上在家吃饭。",
+          "explanation": "Chinese order: Subject + Time + Place + Verb + Object. 我 + 今天晚上 + 在家 + 吃饭.",
+          "explanation_vi": "Trật tự chuẩn: Chủ ngữ + Thời gian + Nơi chốn + Động từ + Tân ngữ. Tiếng Việt nói \"ăn cơm ở nhà tối nay\" (nơi chốn, thời gian đứng SAU động từ), còn tiếng Trung đưa cả hai lên TRƯỚC động từ: 我今天晚上在家吃饭."
+        },
+        {
+          "id": "zh-grammar-hsk1-08",
+          "kind": "multiple_choice",
+          "objective": "Put the time word before the verb",
+          "prompt": "Câu nào đúng? (Ngày mai em đi Bắc Kinh.)",
+          "prompt_vi": "Ngày mai em đi Bắc Kinh.",
+          "options": ["我明天去北京。", "我去北京明天。", "我去明天北京。", "去北京我明天。"],
+          "answer": "我明天去北京。",
+          "explanation": "Time words like 明天 go before the verb (after or before the subject), never at the end: 我明天去北京.",
+          "explanation_vi": "Từ chỉ thời gian (明天, 今天, 每天…) đứng TRƯỚC động từ — có thể đứng sau hoặc trước chủ ngữ — nhưng không bao giờ đặt cuối câu như tiếng Việt hay tiếng Anh. Nói 我明天去北京, đừng nói \"我去北京明天\"."
+        },
+        {
+          "id": "zh-grammar-hsk1-09",
+          "kind": "multiple_choice",
+          "objective": "Do not add 吗 to questions with question words",
+          "prompt": "Câu nào đúng? (Em tên là gì?)",
+          "prompt_vi": "Em tên là gì?",
+          "options": ["你叫什么名字？", "你叫什么名字吗？", "你是叫什么名字吗？", "你名字叫吗什么？"],
+          "answer": "你叫什么名字？",
+          "explanation": "A question with a question word (什么, 谁, 哪儿) is already a question, so do not add 吗.",
+          "explanation_vi": "Câu đã có từ để hỏi (什么 = gì, 谁 = ai, 哪儿 = đâu) thì KHÔNG thêm 吗 nữa. 吗 chỉ dùng cho câu hỏi có/không. Từ để hỏi đứng đúng vị trí của thông tin cần hỏi, không đảo lên đầu câu."
+        },
+        {
+          "id": "zh-grammar-hsk1-10",
+          "kind": "multiple_choice",
+          "objective": "Use 很 (not 是) before adjectives",
+          "prompt": "她___漂亮。",
+          "prompt_vi": "Cô ấy rất xinh.",
+          "options": ["很", "是", "在", "有"],
+          "answer": "很",
+          "explanation": "Adjective predicates take 很 (hěn), not 是: 她很漂亮. 很 is often weak, close to just 'is'.",
+          "explanation_vi": "Trước tính từ dùng 很 (hěn), không dùng 是: 她很漂亮. Người Việt hay nói \"她是漂亮\" vì dịch từng chữ \"cô ấy là xinh\" — sai. 很 ở đây nhiều khi chỉ mang nghĩa nhẹ, gần như chỉ để câu tự nhiên."
+        }
+      ]
+    },
+    {
+      "slug": "zh-grammar-hsk2-aspect-compare",
+      "language": "zh",
+      "category": "grammar",
+      "level": "HSK2",
+      "topic": "了, 过, 在, 比",
+      "title": "Our Story So Far: 了, 过, 在 & 比",
+      "title_vi": "Chuyện của tụi mình: 了, 过, 在 và 比",
+      "objectives": [
+        "Use 了 for completed actions",
+        "Use 过 for past experiences",
+        "Use 在 + verb for actions in progress",
+        "Compare two things with 比"
+      ],
+      "questions": [
+        {
+          "id": "zh-grammar-hsk2-01",
+          "kind": "multiple_choice",
+          "objective": "Use 了 after a verb for a completed action",
+          "prompt": "我昨天买___一本书。",
+          "prompt_vi": "Hôm qua em đã mua một cuốn sách.",
+          "options": ["了", "着", "在", "的"],
+          "answer": "了",
+          "explanation": "了 (le) after a verb shows the action is completed: 买了一本书 = bought a book.",
+          "explanation_vi": "了 (le) đứng sau động từ để cho biết hành động đã hoàn thành: 买了一本书 = đã mua một cuốn sách. Chú ý: 了 đứng SAU động từ, không đứng trước như chữ \"đã\" trong tiếng Việt."
+        },
+        {
+          "id": "zh-grammar-hsk2-02",
+          "kind": "multiple_choice",
+          "objective": "Use 没 + verb + 过 for 'have never'",
+          "prompt": "我没去___中国。",
+          "prompt_vi": "Anh chưa từng đi Trung Quốc.",
+          "options": ["过", "了", "着", "在"],
+          "answer": "过",
+          "explanation": "过 (guo) marks experience: 去过 = have been to. Its negative is 没 + verb + 过. 没 and 了 cannot be used together.",
+          "explanation_vi": "过 (guo) diễn tả trải nghiệm \"đã từng\": 去过中国 = đã từng đến Trung Quốc. Phủ định: 没 + động từ + 过 = chưa từng. Lỗi hay gặp: nói \"没去了\" — 没 và 了 không đi cùng nhau trong câu phủ định."
+        },
+        {
+          "id": "zh-grammar-hsk2-03",
+          "kind": "multiple_choice",
+          "objective": "Use 在 + verb + 呢 for actions in progress",
+          "prompt": "我们___吃饭呢。",
+          "prompt_vi": "Bọn anh đang ăn cơm.",
+          "options": ["在", "了", "过", "是"],
+          "answer": "在",
+          "explanation": "在 (zài) before a verb means the action is in progress, often with 呢 at the end: 我们在吃饭呢.",
+          "explanation_vi": "在 (zài) đặt TRƯỚC động từ = \"đang\": 我们在吃饭呢 = bọn anh đang ăn cơm. 呢 ở cuối câu làm câu tự nhiên hơn. Vị trí giống chữ \"đang\" của tiếng Việt nên khá dễ nhớ."
+        },
+        {
+          "id": "zh-grammar-hsk2-04",
+          "kind": "multiple_choice",
+          "objective": "Use A 比 B + adjective without 很",
+          "prompt": "Câu nào đúng? (Anh cao hơn em.)",
+          "prompt_vi": "Anh cao hơn em.",
+          "options": ["我比你高。", "我比你很高。", "我高比你。", "我比你是高。"],
+          "answer": "我比你高。",
+          "explanation": "Pattern: A + 比 + B + adjective. Do not put 很 before the adjective in a 比 sentence, and 比 B comes before the adjective.",
+          "explanation_vi": "Cấu trúc so sánh: A + 比 + B + tính từ: 我比你高. Tiếng Việt nói \"cao hơn em\" (tính từ trước), còn tiếng Trung đưa 比你 lên TRƯỚC tính từ. Không dùng 很 (hay 是) trong câu 比: \"我比你很高\" là sai."
+        },
+        {
+          "id": "zh-grammar-hsk2-05",
+          "kind": "multiple_choice",
+          "objective": "Add 一点儿 after the adjective in a 比 sentence",
+          "prompt": "今天比昨天___。",
+          "prompt_vi": "Hôm nay lạnh hơn hôm qua một chút.",
+          "options": ["冷一点儿", "很冷", "一点儿冷", "非常冷"],
+          "answer": "冷一点儿",
+          "explanation": "To say 'a little more', put 一点儿 after the adjective: 冷一点儿. 很 and 非常 cannot be used in 比 sentences.",
+          "explanation_vi": "Muốn nói \"hơn một chút\" thì đặt 一点儿 SAU tính từ: 比昨天冷一点儿. Không nói \"一点儿冷\". Các phó từ 很, 非常 không dùng trong câu so sánh với 比."
+        },
+        {
+          "id": "zh-grammar-hsk2-06",
+          "kind": "multiple_choice",
+          "objective": "Negate an experience with 没…过",
+          "prompt": "我___看过这个电影。",
+          "prompt_vi": "Em chưa xem bộ phim này bao giờ.",
+          "options": ["没", "不", "别", "很"],
+          "answer": "没",
+          "explanation": "Experiences with 过 are negated with 没: 没看过 = have never seen. 不 cannot go with 过.",
+          "explanation_vi": "Câu có 过 phủ định bằng 没: 没看过 = chưa từng xem. Không dùng 不 với 过. Mẹo: nói về quá khứ hoặc trải nghiệm → dùng 没."
+        },
+        {
+          "id": "zh-grammar-hsk2-07",
+          "kind": "multiple_choice",
+          "objective": "Drop 了 in negative past sentences",
+          "prompt": "Câu nào đúng? (Hôm qua anh ấy không đến.)",
+          "prompt_vi": "Hôm qua anh ấy không đến.",
+          "options": ["他昨天没来。", "他昨天没来了。", "他昨天不来了。", "他昨天没有来了。"],
+          "answer": "他昨天没来。",
+          "explanation": "When you negate a completed action with 没/没有, remove 了: 他来了 → 他没来.",
+          "explanation_vi": "Câu khẳng định: 他来了 (anh ấy đến rồi). Khi phủ định bằng 没 / 没有 thì PHẢI bỏ 了: 他没来. Người Việt hay giữ 了 vì nghĩ đến chữ \"rồi\" — \"没来了\" là sai."
+        },
+        {
+          "id": "zh-grammar-hsk2-08",
+          "kind": "multiple_choice",
+          "objective": "Ask whether something has been done with 了吗",
+          "prompt": "你吃饭___吗？",
+          "prompt_vi": "Em ăn cơm chưa?",
+          "options": ["了", "过", "在", "着"],
+          "answer": "了",
+          "explanation": "了吗 asks whether an action is done: 你吃饭了吗? 过 must come right after the verb (吃过饭), so 吃饭过 is wrong.",
+          "explanation_vi": "Hỏi \"đã… chưa?\" dùng 了吗: 你吃饭了吗？ = Em ăn cơm chưa? Lưu ý 过 phải đứng ngay sau động từ (吃过饭), nên \"吃饭过\" là sai. 在 và 着 không đứng ở vị trí này."
+        },
+        {
+          "id": "zh-grammar-hsk2-09",
+          "kind": "multiple_choice",
+          "objective": "Place 在 before the verb for progressive actions",
+          "prompt": "Câu nào đúng? (Lúc anh gọi, em đang xem tivi.)",
+          "prompt_vi": "Lúc anh gọi điện, em đang xem tivi.",
+          "options": ["你打电话的时候，我在看电视。", "你打电话的时候，我看电视在。", "你打电话的时候，我在看过电视。", "你打电话的时候，我看在电视。"],
+          "answer": "你打电话的时候，我在看电视。",
+          "explanation": "Progressive 在 goes directly before the verb: 我在看电视. It cannot follow the verb, and 过 (experience) does not mix with 在 (in progress).",
+          "explanation_vi": "在 (đang) đứng ngay TRƯỚC động từ: 我在看电视. Không đặt 在 sau động từ hay cuối câu. 过 (đã từng) và 在 (đang) mâu thuẫn nhau nên không dùng chung."
+        },
+        {
+          "id": "zh-grammar-hsk2-10",
+          "kind": "multiple_choice",
+          "objective": "Use 更 (not 很) in 比 sentences",
+          "prompt": "他比我___高。",
+          "prompt_vi": "Anh ấy còn cao hơn em nữa.",
+          "options": ["更", "很", "非常", "太"],
+          "answer": "更",
+          "explanation": "In 比 sentences you may add 更 (gèng, even more) or 还 before the adjective, but not 很, 非常 or 太.",
+          "explanation_vi": "Trong câu 比 có thể thêm 更 (càng, còn… hơn) trước tính từ: 他比我更高. Nhưng KHÔNG dùng 很, 非常, 太. Người Việt hay nói \"比我很高\" vì tiếng Việt nói \"cao hơn rất nhiều\" — muốn nói \"hơn nhiều\" thì dùng 高多了 / 高得多."
+        }
+      ]
+    },
+    {
+      "slug": "zh-grammar-hsk3-ba-complements",
+      "language": "zh",
+      "category": "grammar",
+      "level": "HSK3",
+      "topic": "把, resultative complements, 越来越, 因为…所以, 虽然…但是",
+      "title": "Growing Closer: 把, Results & Linking Ideas",
+      "title_vi": "Ngày càng gần nhau: câu chữ 把, bổ ngữ kết quả và liên từ",
+      "objectives": [
+        "Build 把 sentences: 把 + object + verb + result",
+        "Use resultative complements like 听懂 and 看完",
+        "Describe change with 越来越",
+        "Link ideas with 因为…所以… and 虽然…但是…"
+      ],
+      "questions": [
+        {
+          "id": "zh-grammar-hsk3-01",
+          "kind": "multiple_choice",
+          "objective": "Use 把 to bring the object before the verb",
+          "prompt": "请___门关上。",
+          "prompt_vi": "Làm ơn đóng cửa lại.",
+          "options": ["把", "被", "在", "比"],
+          "answer": "把",
+          "explanation": "把 (bǎ) moves the object before the verb to show what you do to it: 把门关上 = close the door. 被 is passive.",
+          "explanation_vi": "把 (bǎ) đưa tân ngữ lên TRƯỚC động từ để nhấn mạnh việc xử lý nó: 把门关上 = đóng cửa lại. 被 là câu bị động (\"bị\"), 在 là \"ở/đang\", 比 là so sánh — đều không hợp."
+        },
+        {
+          "id": "zh-grammar-hsk3-02",
+          "kind": "multiple_choice",
+          "objective": "A 把 sentence needs a result after the verb",
+          "prompt": "Câu nào đúng? (Em ăn hết bánh kem rồi.)",
+          "prompt_vi": "Em ăn hết bánh kem rồi.",
+          "options": ["我把蛋糕吃完了。", "我把蛋糕吃。", "我把吃完蛋糕了。", "我吃完把蛋糕了。"],
+          "answer": "我把蛋糕吃完了。",
+          "explanation": "Pattern: Subject + 把 + object + verb + something extra (result, 了, place…). A bare verb (把蛋糕吃) is incomplete.",
+          "explanation_vi": "Cấu trúc: Chủ ngữ + 把 + tân ngữ + động từ + thành phần khác (kết quả, 了…): 我把蛋糕吃完了. Động từ trong câu 把 không được đứng trơ một mình (\"我把蛋糕吃\" là thiếu). Tân ngữ phải đứng ngay sau 把, trước động từ."
+        },
+        {
+          "id": "zh-grammar-hsk3-03",
+          "kind": "multiple_choice",
+          "objective": "Place the resultative complement right after the verb",
+          "prompt": "Câu nào đúng? (Em nghe hiểu tiếng Trung của anh rồi.)",
+          "prompt_vi": "Em nghe hiểu tiếng Trung của anh rồi.",
+          "options": ["我听懂了你的中文。", "我懂听了你的中文。", "我听了懂你的中文。", "我听很懂你的中文。"],
+          "answer": "我听懂了你的中文。",
+          "explanation": "Resultative complement: verb + result (听 + 懂). The two stay together, and 了 comes after the whole unit: 听懂了.",
+          "explanation_vi": "Bổ ngữ kết quả: động từ + kết quả (听 nghe + 懂 hiểu = nghe hiểu). Hai chữ này dính liền, 了 đặt SAU cả cụm: 听懂了. Không chen 了 hay 很 vào giữa, không đảo thành 懂听. Tiếng Việt cũng nói \"nghe hiểu\" nên thứ tự giống nhau."
+        },
+        {
+          "id": "zh-grammar-hsk3-04",
+          "kind": "multiple_choice",
+          "objective": "Use 完 to show an action is finished",
+          "prompt": "这本书我看___了，你拿去吧。",
+          "prompt_vi": "Cuốn sách này em đọc xong rồi, anh cầm đi.",
+          "options": ["完", "是", "很", "在"],
+          "answer": "完",
+          "explanation": "完 (wán) after a verb means 'finished': 看完了 = finished reading.",
+          "explanation_vi": "完 (wán) đứng sau động từ = \"xong\": 看完了 = đọc xong rồi, 吃完 = ăn xong. Giống tiếng Việt \"đọc xong\" — kết quả đứng ngay sau động từ."
+        },
+        {
+          "id": "zh-grammar-hsk3-05",
+          "kind": "multiple_choice",
+          "objective": "Use 越来越 + adjective without 很",
+          "prompt": "天气越来越___了。",
+          "prompt_vi": "Thời tiết càng ngày càng lạnh.",
+          "options": ["冷", "很冷", "非常冷", "冷很"],
+          "answer": "冷",
+          "explanation": "越来越 (yuè lái yuè) + adjective = 'more and more'. It already shows degree, so no 很 or 非常.",
+          "explanation_vi": "越来越 + tính từ = \"càng ngày càng…\". Bản thân 越来越 đã chỉ mức độ nên KHÔNG thêm 很 / 非常: 越来越冷, không nói \"越来越很冷\". Thường có 了 ở cuối câu để chỉ sự thay đổi."
+        },
+        {
+          "id": "zh-grammar-hsk3-06",
+          "kind": "multiple_choice",
+          "objective": "Use 越来越 correctly in a full sentence",
+          "prompt": "Câu nào đúng? (Tiếng Trung của em càng ngày càng tốt.)",
+          "prompt_vi": "Tiếng Trung của em càng ngày càng tốt.",
+          "options": ["我的中文越来越好了。", "我的中文越来越很好了。", "我的中文越来越好很。", "我的中文越好越来了。"],
+          "answer": "我的中文越来越好了。",
+          "explanation": "越来越 is a fixed unit placed right before the adjective: 越来越好. Do not split it or add 很.",
+          "explanation_vi": "越来越 là một cụm cố định, đứng ngay trước tính từ: 越来越好. Không tách ra, không đảo, không thêm 很. Người Việt hay dịch \"càng ngày càng rất tốt\" — sai."
+        },
+        {
+          "id": "zh-grammar-hsk3-07",
+          "kind": "multiple_choice",
+          "objective": "Pair 因为 with 所以",
+          "prompt": "___今天下雨，所以我们不去公园了。",
+          "prompt_vi": "Vì hôm nay trời mưa nên tụi mình không đi công viên nữa.",
+          "options": ["因为", "虽然", "但是", "如果"],
+          "answer": "因为",
+          "explanation": "因为…所以… = because… so…. Chinese commonly uses both words together.",
+          "explanation_vi": "因为…所以… = \"vì… nên…\". Tiếng Trung thường dùng cả cặp, giống tiếng Việt \"vì… nên…\". 虽然 (tuy) đi với 但是 (nhưng); 如果 (nếu) thường đi với 就, không đi với 所以."
+        },
+        {
+          "id": "zh-grammar-hsk3-08",
+          "kind": "multiple_choice",
+          "objective": "Pair 虽然 with 但是",
+          "prompt": "虽然很累，___我很开心。",
+          "prompt_vi": "Tuy rất mệt nhưng em rất vui.",
+          "options": ["但是", "所以", "因为", "和"],
+          "answer": "但是",
+          "explanation": "虽然…但是… = although… (but)…. Chinese keeps 但是 in the second clause, unlike English.",
+          "explanation_vi": "虽然…但是… = \"tuy… nhưng…\", giống hệt tiếng Việt. 和 chỉ nối danh từ (anh 和 em), không dùng để nối hai vế câu — người Việt hay dùng 和 thay cho \"và\" giữa hai mệnh đề, đó là lỗi."
+        },
+        {
+          "id": "zh-grammar-hsk3-09",
+          "kind": "multiple_choice",
+          "objective": "Combine 虽然…但是… in a full sentence",
+          "prompt": "Câu nào đúng? (Tuy tụi mình không ở cạnh nhau nhưng ngày nào anh cũng nhớ em.)",
+          "prompt_vi": "Tuy tụi mình không ở cạnh nhau nhưng ngày nào anh cũng nhớ em.",
+          "options": ["虽然我们不在一起，但是我每天都想你。", "虽然我们不在一起，所以我每天都想你。", "因为我们不在一起，但是我每天都想你。", "虽然我们不在一起，我但是每天都想你。"],
+          "answer": "虽然我们不在一起，但是我每天都想你。",
+          "explanation": "虽然 pairs with 但是, 因为 pairs with 所以 — do not mix them. 但是 starts its clause, before the subject.",
+          "explanation_vi": "Nhớ đúng cặp: 虽然 → 但是, 因为 → 所以, không trộn lẫn. 但是 đứng ĐẦU vế sau, trước chủ ngữ (但是我…), không chen giữa chủ ngữ và động từ."
+        },
+        {
+          "id": "zh-grammar-hsk3-10",
+          "kind": "multiple_choice",
+          "objective": "Use 把 + object + verb + 在 + place",
+          "prompt": "Câu nào đúng? (Anh để điện thoại trên bàn rồi.)",
+          "prompt_vi": "Anh để điện thoại trên bàn rồi.",
+          "options": ["我把手机放在桌子上了。", "我放把手机在桌子上了。", "我把放手机在桌子上了。", "我手机把放在桌子上了。"],
+          "answer": "我把手机放在桌子上了。",
+          "explanation": "Order: Subject + 把 + object + verb + 在 + place. 把 comes before the object, and the object comes before the verb.",
+          "explanation_vi": "Trật tự: Chủ ngữ + 把 + tân ngữ + động từ + 在 + nơi chốn: 我把手机放在桌子上了. Tiếng Việt nói \"để điện thoại trên bàn\" (động từ trước tân ngữ), còn câu 把 thì tân ngữ (手机) phải đứng TRƯỚC động từ (放)."
+        }
+      ]
+    }
+  ]
+}

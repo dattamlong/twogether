@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Vi } from "@/components/ui/panel";
-import type { AnswerFeedback, QuestionCard } from "@/features/learning/types";
+import { displayAnswer, speechLang, type AnswerFeedback, type QuestionCard } from "@/features/learning/types";
 import { friendlyError } from "@/lib/errors";
 import { sfx } from "@/lib/sfx";
 import { t } from "@/lib/i18n";
@@ -81,12 +81,14 @@ export function QuestionView({
   return (
     <div className="flex flex-col gap-5">
       <div>
-        <p className="text-xs font-bold uppercase tracking-wide text-lavender-400">{card.objective}</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-lavender-400">
+          {card.level} · {card.kind === "listening" ? "Listening" : card.kind === "sentence_order" ? "Build the sentence" : "Choose the answer"}
+        </p>
         <h2 className="mt-1 text-2xl font-semibold leading-snug text-plum-700 sm:text-3xl">{card.prompt}</h2>
         {card.prompt_vi ? <Vi className="mt-1 text-base">{card.prompt_vi}</Vi> : null}
       </div>
 
-      {card.kind === "listening" && card.audio_text ? <ListeningPlayer text={card.audio_text} /> : null}
+      {card.kind === "listening" && card.audio_text ? <ListeningPlayer text={card.audio_text} lang={speechLang(card.language)} /> : null}
 
       {isOrder ? (
         <>
@@ -154,11 +156,14 @@ export function QuestionView({
             className={cn("flex flex-col gap-3 rounded-3xl p-4 ring-2", feedback.correct ? "bg-mint-100 ring-mint-200" : "bg-peach-100 ring-peach-200")}
           >
             <p className="font-display text-xl font-semibold">{feedback.correct ? praise : comfort}</p>
+            <p className="text-xs font-bold uppercase tracking-wide text-lavender-400">Goal: {card.objective}</p>
             {!feedback.correct ? (
               <p>
-                Correct answer: <b className="text-mint-600">{feedback.correctAnswer}</b>
+                Correct answer: <b className="text-mint-600">{displayAnswer(feedback.correctAnswer, card.language)}</b>
                 {feedback.acceptedAnswers && feedback.acceptedAnswers.length > 1 ? (
-                  <span className="block text-xs text-cocoa-400">Also accepted: {feedback.acceptedAnswers.slice(1).join(" · ")}</span>
+                  <span className="block text-xs text-cocoa-400">
+                    Also accepted: {feedback.acceptedAnswers.slice(1).map((a) => displayAnswer(a, card.language)).join(" · ")}
+                  </span>
                 ) : null}
               </p>
             ) : null}

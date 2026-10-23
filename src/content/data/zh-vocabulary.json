@@ -1,0 +1,1263 @@
+{
+  "lessons": [
+    {
+      "slug": "zh-vocab-hsk1-greetings",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK1",
+      "topic": "greetings and people",
+      "title": "Hello, Friend!",
+      "title_vi": "Xin chào, bạn thân mến!",
+      "objectives": [
+        "Say thank you, sorry and goodbye in Chinese",
+        "Name the people around you: friends, classmates, teachers and family",
+        "Ask someone's name and say you're happy to meet them"
+      ],
+      "questions": [
+        {
+          "id": "zh-vocab-hsk1-greet-01",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'thank you': 谢谢 (xièxie)",
+          "prompt": "Chọn từ có nghĩa là 'cảm ơn'",
+          "options": ["谢谢", "再见", "对不起", "你好"],
+          "answer": "谢谢",
+          "explanation": "谢谢 (xièxie) means 'thank you'. The second 谢 is read in the neutral tone.",
+          "explanation_vi": "谢谢 (xièxie) nghĩa là cảm ơn. Chữ 谢 thứ hai đọc thanh nhẹ, ngắn và nhẹ hơn chữ đầu. Hán-Việt là 'tạ' (như cảm tạ). Đừng nhầm với 再见 (tạm biệt) hay 对不起 (xin lỗi).",
+          "word": {
+            "term": "谢谢",
+            "pinyin": "xièxie",
+            "part_of_speech": "verb",
+            "meaning_vi": "cảm ơn",
+            "example": "谢谢你每天给我打电话。",
+            "example_pinyin": "Xièxie nǐ měi tiān gěi wǒ dǎ diànhuà.",
+            "example_vi": "Cảm ơn em ngày nào cũng gọi điện cho anh."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-02",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 朋友 (péngyou)",
+          "prompt": "「朋友」nghĩa là gì?",
+          "options": ["bạn, bạn bè", "thầy giáo", "học sinh", "gia đình"],
+          "answer": "bạn, bạn bè",
+          "explanation": "朋友 (péngyou) means 'friend'. 友 is read in the neutral tone.",
+          "explanation_vi": "朋友 (péngyou) là bạn, bạn bè. Hán-Việt là 'bằng hữu', nên rất dễ nhớ. Chữ 友 đọc thanh nhẹ: péngyou, không phải péngyǒu. 好朋友 là bạn thân.",
+          "word": {
+            "term": "朋友",
+            "pinyin": "péngyou",
+            "part_of_speech": "noun",
+            "meaning_vi": "bạn, bạn bè",
+            "example": "他是我最好的朋友。",
+            "example_pinyin": "Tā shì wǒ zuì hǎo de péngyou.",
+            "example_vi": "Anh ấy là người bạn thân nhất của tôi."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-03",
+          "kind": "multiple_choice",
+          "objective": "Use 老师 (lǎoshī) to address a teacher",
+          "prompt": "___，您好！我是您的学生。",
+          "prompt_vi": "Em chào thầy/cô ạ! Em là học sinh của thầy/cô.",
+          "options": ["老师", "名字", "再见", "对不起"],
+          "answer": "老师",
+          "explanation": "老师 (lǎoshī) means 'teacher', and Chinese students greet their teacher with 老师好 or 老师，您好.",
+          "explanation_vi": "老师 (lǎoshī) là thầy giáo, cô giáo, dùng cho cả nam lẫn nữ. Người Trung Quốc gọi thẳng '老师' để chào, giống mình nói 'Em chào cô'. Chú ý 老 thanh 3, 师 thanh 1.",
+          "word": {
+            "term": "老师",
+            "pinyin": "lǎoshī",
+            "part_of_speech": "noun",
+            "meaning_vi": "thầy giáo, cô giáo",
+            "example": "我的汉语老师是北京人。",
+            "example_pinyin": "Wǒ de Hànyǔ lǎoshī shì Běijīng rén.",
+            "example_vi": "Cô giáo tiếng Trung của tôi là người Bắc Kinh."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-04",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'student': 学生 (xuésheng)",
+          "prompt": "Chọn từ có nghĩa là 'học sinh, sinh viên'",
+          "options": ["学生", "老师", "同学", "朋友"],
+          "answer": "学生",
+          "explanation": "学生 (xuésheng) means 'student'. 同学 (tóngxué) is a classmate, not a student in general.",
+          "explanation_vi": "学生 (xuésheng) là học sinh, sinh viên — Hán-Việt chính là 'học sinh'. Đừng nhầm với 同学 (tóngxué – bạn học, bạn cùng lớp). Chữ 生 trong 学生 thường đọc thanh nhẹ.",
+          "word": {
+            "term": "学生",
+            "pinyin": "xuésheng",
+            "part_of_speech": "noun",
+            "meaning_vi": "học sinh, sinh viên",
+            "example": "我们都是学生。",
+            "example_pinyin": "Wǒmen dōu shì xuésheng.",
+            "example_vi": "Chúng tôi đều là học sinh."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-05",
+          "kind": "multiple_choice",
+          "objective": "Use 名字 (míngzi) to ask someone's name",
+          "prompt": "你叫什么___？",
+          "prompt_vi": "Bạn tên là gì?",
+          "options": ["名字", "朋友", "老师", "同学"],
+          "answer": "名字",
+          "explanation": "名字 (míngzi) means 'name'. 你叫什么名字？ is the standard way to ask 'What's your name?'.",
+          "explanation_vi": "名字 (míngzi) là tên. Câu 你叫什么名字？ là cách hỏi tên phổ biến nhất. Chữ 字 đọc thanh nhẹ. Hán-Việt 'danh tự' (danh = tên).",
+          "word": {
+            "term": "名字",
+            "pinyin": "míngzi",
+            "part_of_speech": "noun",
+            "meaning_vi": "tên",
+            "example": "你的名字真好听。",
+            "example_pinyin": "Nǐ de míngzi zhēn hǎotīng.",
+            "example_vi": "Tên của em hay thật."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-06",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 再见 (zàijiàn)",
+          "prompt": "「再见」nghĩa là gì?",
+          "options": ["tạm biệt", "xin chào", "xin lỗi", "cảm ơn"],
+          "answer": "tạm biệt",
+          "explanation": "再见 (zàijiàn) means 'goodbye' — literally 'see again'.",
+          "explanation_vi": "再见 (zàijiàn) là tạm biệt. Hán-Việt 'tái kiến' — 'tái' là lại, 'kiến' là gặp, tức là 'hẹn gặp lại'. Cả hai chữ đều thanh 4.",
+          "word": {
+            "term": "再见",
+            "pinyin": "zàijiàn",
+            "part_of_speech": "verb",
+            "meaning_vi": "tạm biệt, hẹn gặp lại",
+            "example": "再见，明天给你打电话！",
+            "example_pinyin": "Zàijiàn, míngtiān gěi nǐ dǎ diànhuà!",
+            "example_vi": "Tạm biệt, mai anh gọi cho em nhé!"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-07",
+          "kind": "multiple_choice",
+          "objective": "Use 对不起 (duìbuqǐ) to apologize",
+          "prompt": "___，我来晚了。",
+          "prompt_vi": "Xin lỗi, anh đến muộn rồi.",
+          "options": ["对不起", "谢谢", "再见", "认识"],
+          "answer": "对不起",
+          "explanation": "对不起 (duìbuqǐ) means 'sorry'. The usual reply is 没关系 (méi guānxi), 'it's okay'.",
+          "explanation_vi": "对不起 (duìbuqǐ) là xin lỗi. Chữ 不 ở giữa đọc thanh nhẹ. Khi ai đó xin lỗi mình, đáp lại bằng 没关系 (méi guānxi – không sao đâu).",
+          "word": {
+            "term": "对不起",
+            "pinyin": "duìbuqǐ",
+            "part_of_speech": "verb",
+            "meaning_vi": "xin lỗi",
+            "example": "对不起，我今天很忙。",
+            "example_pinyin": "Duìbuqǐ, wǒ jīntiān hěn máng.",
+            "example_vi": "Xin lỗi em, hôm nay anh bận quá."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 认识 (rènshi)",
+          "prompt": "「认识」nghĩa là gì?",
+          "options": ["quen biết", "nhớ nhung", "học tập", "gặp lại"],
+          "answer": "quen biết",
+          "explanation": "认识 (rènshi) means 'to know (a person), to get to know'. 很高兴认识你 means 'Nice to meet you'.",
+          "explanation_vi": "认识 (rènshi) là quen, biết (một người). Hán-Việt 'nhận thức', nhưng trong giao tiếp hằng ngày nó thường là 'quen biết'. Câu kinh điển: 很高兴认识你 – Rất vui được làm quen với bạn. Chữ 识 đọc thanh nhẹ.",
+          "word": {
+            "term": "认识",
+            "pinyin": "rènshi",
+            "part_of_speech": "verb",
+            "meaning_vi": "quen biết, nhận ra",
+            "example": "很高兴认识你。",
+            "example_pinyin": "Hěn gāoxìng rènshi nǐ.",
+            "example_vi": "Rất vui được làm quen với bạn."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-09",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'classmate': 同学 (tóngxué)",
+          "prompt": "Chọn từ có nghĩa là 'bạn học, bạn cùng lớp'",
+          "options": ["同学", "同事", "老师", "学生"],
+          "answer": "同学",
+          "explanation": "同学 (tóngxué) means 'classmate'. 同事 (tóngshì) is a colleague at work.",
+          "explanation_vi": "同学 (tóngxué) là bạn học. Hán-Việt 'đồng học' — cùng học. Dễ nhầm với 同事 (tóngshì – đồng sự, đồng nghiệp ở chỗ làm) và 学生 (học sinh nói chung).",
+          "word": {
+            "term": "同学",
+            "pinyin": "tóngxué",
+            "part_of_speech": "noun",
+            "meaning_vi": "bạn học, bạn cùng lớp",
+            "example": "她是我的大学同学。",
+            "example_pinyin": "Tā shì wǒ de dàxué tóngxué.",
+            "example_vi": "Cô ấy là bạn học đại học của tôi."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-greet-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 妈妈 (māma)",
+          "prompt": "「妈妈」nghĩa là gì?",
+          "options": ["mẹ", "bố", "chị gái", "bà"],
+          "answer": "mẹ",
+          "explanation": "妈妈 (māma) means 'mom'. 爸爸 (bàba) is 'dad'.",
+          "explanation_vi": "妈妈 (māma) là mẹ, chữ 妈 thứ hai đọc thanh nhẹ. Bộ 女 (nữ) bên trái gợi ý đây là người phụ nữ. Bố là 爸爸 (bàba).",
+          "word": {
+            "term": "妈妈",
+            "pinyin": "māma",
+            "part_of_speech": "noun",
+            "meaning_vi": "mẹ",
+            "example": "我妈妈很喜欢你。",
+            "example_pinyin": "Wǒ māma hěn xǐhuan nǐ.",
+            "example_vi": "Mẹ anh rất quý em."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-vocab-hsk1-numbers-time",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK1",
+      "topic": "numbers, time and daily life",
+      "title": "What Time Is It There?",
+      "title_vi": "Chỗ em bây giờ mấy giờ rồi?",
+      "objectives": [
+        "Tell the time and say your age in Chinese",
+        "Talk about today, tomorrow and the days of the week",
+        "Name simple daily actions like drinking and sleeping"
+      ],
+      "questions": [
+        {
+          "id": "zh-vocab-hsk1-time-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the number 八 (bā)",
+          "prompt": "「八」là số mấy?",
+          "options": ["số 8", "số 6", "số 9", "số 10"],
+          "answer": "số 8",
+          "explanation": "八 (bā) is the number 8. Six is 六 (liù), nine is 九 (jiǔ), ten is 十 (shí).",
+          "explanation_vi": "八 (bā) là số 8, Hán-Việt 'bát'. Đừng nhầm với chữ 人 (rén – người) và 入 (rù – vào) vì nét khá giống nhau. Người Trung Quốc rất thích số 8 vì đọc gần giống 发 (fā – phát tài).",
+          "word": {
+            "term": "八",
+            "pinyin": "bā",
+            "part_of_speech": "number",
+            "meaning_vi": "số tám",
+            "example": "我们八点见。",
+            "example_pinyin": "Wǒmen bā diǎn jiàn.",
+            "example_vi": "Mình gặp nhau lúc 8 giờ nhé."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-02",
+          "kind": "multiple_choice",
+          "objective": "Use 岁 (suì) to say someone's age",
+          "prompt": "你今年多大？——我二十五___。",
+          "prompt_vi": "Năm nay bạn bao nhiêu tuổi? — Tôi 25 tuổi.",
+          "options": ["岁", "点", "块", "个"],
+          "answer": "岁",
+          "explanation": "岁 (suì) means 'years old'. Put it right after the number: 二十五岁, 25 years old.",
+          "explanation_vi": "岁 (suì) là tuổi, đứng ngay sau con số: 二十五岁 = 25 tuổi. Hán-Việt 'tuế' (như 'vạn tuế'). Đừng nhầm với 点 (giờ) hay 块 (đồng, tệ).",
+          "word": {
+            "term": "岁",
+            "pinyin": "suì",
+            "part_of_speech": "measure_word",
+            "meaning_vi": "tuổi",
+            "example": "我妹妹今年十八岁。",
+            "example_pinyin": "Wǒ mèimei jīnnián shíbā suì.",
+            "example_vi": "Em gái tôi năm nay 18 tuổi."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-03",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'today': 今天 (jīntiān)",
+          "prompt": "Chọn từ có nghĩa là 'hôm nay'",
+          "options": ["今天", "明天", "昨天", "每天"],
+          "answer": "今天",
+          "explanation": "今天 (jīntiān) means 'today'. 明天 is tomorrow, 昨天 is yesterday, 每天 is every day.",
+          "explanation_vi": "今天 (jīntiān) là hôm nay. 今 Hán-Việt là 'kim' (như 'kim nhật', 'cổ kim'). Bộ ba cần nhớ: 昨天 (hôm qua) – 今天 (hôm nay) – 明天 (ngày mai).",
+          "word": {
+            "term": "今天",
+            "pinyin": "jīntiān",
+            "part_of_speech": "noun",
+            "meaning_vi": "hôm nay",
+            "example": "今天你忙吗？",
+            "example_pinyin": "Jīntiān nǐ máng ma?",
+            "example_vi": "Hôm nay em có bận không?"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-04",
+          "kind": "multiple_choice",
+          "objective": "Use 明天 (míngtiān) to talk about tomorrow",
+          "prompt": "今天是星期五，___是星期六。",
+          "prompt_vi": "Hôm nay là thứ Sáu, ngày mai là thứ Bảy.",
+          "options": ["明天", "昨天", "上午", "现在"],
+          "answer": "明天",
+          "explanation": "明天 (míngtiān) means 'tomorrow'. If today is Friday, tomorrow is Saturday.",
+          "explanation_vi": "明天 (míngtiān) là ngày mai. Hôm nay thứ Sáu thì ngày mai là thứ Bảy, nên chọn 明天, không phải 昨天 (hôm qua). Chào tạm biệt kiểu 明天见 nghĩa là 'mai gặp nhé'.",
+          "word": {
+            "term": "明天",
+            "pinyin": "míngtiān",
+            "part_of_speech": "noun",
+            "meaning_vi": "ngày mai",
+            "example": "明天见！",
+            "example_pinyin": "Míngtiān jiàn!",
+            "example_vi": "Mai gặp nhé!"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 现在 (xiànzài)",
+          "prompt": "「现在」nghĩa là gì?",
+          "options": ["bây giờ", "hôm qua", "buổi sáng", "sau này"],
+          "answer": "bây giờ",
+          "explanation": "现在 (xiànzài) means 'now'. 现在几点？ means 'What time is it now?'.",
+          "explanation_vi": "现在 (xiànzài) là bây giờ, hiện tại — Hán-Việt chính là 'hiện tại'. Cả hai chữ đều thanh 4. Câu hay dùng: 现在几点？ – Bây giờ mấy giờ rồi?",
+          "word": {
+            "term": "现在",
+            "pinyin": "xiànzài",
+            "part_of_speech": "noun",
+            "meaning_vi": "bây giờ, hiện tại",
+            "example": "你那里现在几点？",
+            "example_pinyin": "Nǐ nàli xiànzài jǐ diǎn?",
+            "example_vi": "Chỗ em bây giờ là mấy giờ?"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-06",
+          "kind": "multiple_choice",
+          "objective": "Use 点 (diǎn) to tell the time",
+          "prompt": "现在几___？——三点。",
+          "prompt_vi": "Bây giờ mấy giờ? — Ba giờ.",
+          "options": ["点", "岁", "天", "年"],
+          "answer": "点",
+          "explanation": "点 (diǎn) means 'o'clock'. 几点 asks 'what time', and 三点 is three o'clock.",
+          "explanation_vi": "点 (diǎn) dùng để nói giờ: 三点 = 3 giờ, 几点？ = mấy giờ? Hán-Việt 'điểm'. Đừng nhầm với 岁 (tuổi) hay 天 (ngày).",
+          "word": {
+            "term": "点",
+            "pinyin": "diǎn",
+            "part_of_speech": "measure_word",
+            "meaning_vi": "giờ (chỉ thời gian)",
+            "example": "我晚上十点给你打电话。",
+            "example_pinyin": "Wǒ wǎnshang shí diǎn gěi nǐ dǎ diànhuà.",
+            "example_vi": "Anh sẽ gọi cho em lúc 10 giờ tối."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-07",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'week': 星期 (xīngqī)",
+          "prompt": "Chọn từ có nghĩa là 'tuần, thứ (trong tuần)'",
+          "options": ["星期", "时候", "上午", "今天"],
+          "answer": "星期",
+          "explanation": "星期 (xīngqī) means 'week'. Add a number for the weekday: 星期一 is Monday, and Sunday is 星期天 or 星期日.",
+          "explanation_vi": "星期 (xīngqī) là tuần, thứ trong tuần. Cẩn thận: 星期一 là thứ Hai (không phải thứ Nhất), 星期二 là thứ Ba… nghĩa là con số luôn nhỏ hơn tiếng Việt 1 đơn vị. Chủ nhật là 星期天 hoặc 星期日.",
+          "word": {
+            "term": "星期",
+            "pinyin": "xīngqī",
+            "part_of_speech": "noun",
+            "meaning_vi": "tuần; thứ (trong tuần)",
+            "example": "下个星期我们见面吧。",
+            "example_pinyin": "Xià ge xīngqī wǒmen jiànmiàn ba.",
+            "example_vi": "Tuần sau mình gặp nhau nhé."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 上午 (shàngwǔ)",
+          "prompt": "「上午」nghĩa là gì?",
+          "options": ["buổi sáng (trước 12 giờ trưa)", "buổi chiều", "buổi tối", "nửa đêm"],
+          "answer": "buổi sáng (trước 12 giờ trưa)",
+          "explanation": "上午 (shàngwǔ) means 'morning, before noon'. 下午 (xiàwǔ) is the afternoon.",
+          "explanation_vi": "上午 (shàngwǔ) là buổi sáng, khoảng thời gian trước 12 giờ trưa. 午 Hán-Việt là 'ngọ' (giờ ngọ = giữa trưa): 上午 là trước trưa, 中午 là buổi trưa, 下午 là buổi chiều.",
+          "word": {
+            "term": "上午",
+            "pinyin": "shàngwǔ",
+            "part_of_speech": "noun",
+            "meaning_vi": "buổi sáng (trước trưa)",
+            "example": "我上午有课。",
+            "example_pinyin": "Wǒ shàngwǔ yǒu kè.",
+            "example_vi": "Buổi sáng tôi có tiết học."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-09",
+          "kind": "multiple_choice",
+          "objective": "Use 睡觉 (shuìjiào) to talk about going to sleep",
+          "prompt": "很晚了，你快去___吧。",
+          "prompt_vi": "Khuya rồi, em mau đi ngủ đi.",
+          "options": ["睡觉", "认识", "喝", "现在"],
+          "answer": "睡觉",
+          "explanation": "睡觉 (shuìjiào) means 'to sleep, to go to bed'. Here 觉 is read jiào, not jué.",
+          "explanation_vi": "睡觉 (shuìjiào) là đi ngủ. Chú ý chữ 觉 có hai cách đọc: trong 睡觉 đọc là jiào, còn trong 觉得 (cảm thấy) đọc là jué. Câu 快去睡觉吧 là lời nhắc ngọt ngào mỗi tối đó!",
+          "word": {
+            "term": "睡觉",
+            "pinyin": "shuìjiào",
+            "part_of_speech": "verb",
+            "meaning_vi": "ngủ, đi ngủ",
+            "example": "你几点睡觉？",
+            "example_pinyin": "Nǐ jǐ diǎn shuìjiào?",
+            "example_vi": "Em mấy giờ đi ngủ?"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk1-time-10",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'to drink': 喝 (hē)",
+          "prompt": "Chọn từ có nghĩa là 'uống'",
+          "options": ["喝", "吃", "看", "睡"],
+          "answer": "喝",
+          "explanation": "喝 (hē) means 'to drink'. 吃 (chī) means 'to eat'.",
+          "explanation_vi": "喝 (hē) là uống, thanh 1. Bộ 口 (miệng) bên trái gợi ý hành động bằng miệng. Đừng nhầm với 吃 (chī – ăn), cũng có bộ 口: 喝水 (uống nước), 吃饭 (ăn cơm).",
+          "word": {
+            "term": "喝",
+            "pinyin": "hē",
+            "part_of_speech": "verb",
+            "meaning_vi": "uống",
+            "example": "你想喝什么？",
+            "example_pinyin": "Nǐ xiǎng hē shénme?",
+            "example_vi": "Em muốn uống gì?"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-vocab-hsk2-food-shopping",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK2",
+      "topic": "food and shopping",
+      "title": "Dinner and a Little Shopping",
+      "title_vi": "Ăn tối và đi mua sắm",
+      "objectives": [
+        "Name common foods like rice, eggs, fruit and dishes",
+        "Talk about prices: cheap, expensive and how many kuai",
+        "Say what a shop sells and what tastes good"
+      ],
+      "questions": [
+        {
+          "id": "zh-vocab-hsk2-food-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 米饭 (mǐfàn)",
+          "prompt": "「米饭」nghĩa là gì?",
+          "options": ["cơm", "mì", "bánh bao", "cháo"],
+          "answer": "cơm",
+          "explanation": "米饭 (mǐfàn) means 'cooked rice'. Noodles are 面条 (miàntiáo).",
+          "explanation_vi": "米饭 (mǐfàn) là cơm (gạo đã nấu chín). Hán-Việt 'mễ phạn' — 'mễ' là gạo, 'phạn' là cơm. Mì là 面条 (miàntiáo), cháo là 粥 (zhōu).",
+          "word": {
+            "term": "米饭",
+            "pinyin": "mǐfàn",
+            "part_of_speech": "noun",
+            "meaning_vi": "cơm",
+            "example": "我想吃米饭。",
+            "example_pinyin": "Wǒ xiǎng chī mǐfàn.",
+            "example_vi": "Tôi muốn ăn cơm."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-02",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'fruit': 水果 (shuǐguǒ)",
+          "prompt": "Chọn từ có nghĩa là 'trái cây, hoa quả (nói chung)'",
+          "options": ["水果", "水", "苹果", "菜"],
+          "answer": "水果",
+          "explanation": "水果 (shuǐguǒ) means 'fruit' in general. 苹果 (píngguǒ) is one fruit: an apple.",
+          "explanation_vi": "水果 (shuǐguǒ) là trái cây nói chung. 苹果 (píngguǒ) chỉ là quả táo. Lưu ý 水 và 果 đều thanh 3, khi đọc liền thì 水 biến thành gần như thanh 2: shuí guǒ.",
+          "word": {
+            "term": "水果",
+            "pinyin": "shuǐguǒ",
+            "part_of_speech": "noun",
+            "meaning_vi": "trái cây, hoa quả",
+            "example": "多吃水果对身体好。",
+            "example_pinyin": "Duō chī shuǐguǒ duì shēntǐ hǎo.",
+            "example_vi": "Ăn nhiều trái cây tốt cho sức khỏe."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-03",
+          "kind": "multiple_choice",
+          "objective": "Use 鸡蛋 (jīdàn) in a sentence about food",
+          "prompt": "我早上吃了两个___。",
+          "prompt_vi": "Sáng nay tôi đã ăn hai quả trứng gà.",
+          "options": ["鸡蛋", "水", "商店", "贵"],
+          "answer": "鸡蛋",
+          "explanation": "鸡蛋 (jīdàn) means 'chicken egg'. You count eggs with 个: 两个鸡蛋.",
+          "explanation_vi": "鸡蛋 (jīdàn) là trứng gà: 鸡 là con gà, 蛋 là trứng. Đếm trứng dùng lượng từ 个: 两个鸡蛋 (hai quả trứng). Món quen thuộc: 西红柿炒鸡蛋 – trứng xào cà chua.",
+          "word": {
+            "term": "鸡蛋",
+            "pinyin": "jīdàn",
+            "part_of_speech": "noun",
+            "meaning_vi": "trứng gà",
+            "example": "我会做西红柿炒鸡蛋。",
+            "example_pinyin": "Wǒ huì zuò xīhóngshì chǎo jīdàn.",
+            "example_vi": "Anh biết làm món trứng xào cà chua."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 便宜 (piányi)",
+          "prompt": "「便宜」nghĩa là gì?",
+          "options": ["rẻ", "đắt", "ngon", "mới"],
+          "answer": "rẻ",
+          "explanation": "便宜 (piányi) means 'cheap, inexpensive'. Here 便 is read pián, not biàn.",
+          "explanation_vi": "便宜 (piányi) là rẻ. Bẫy phát âm: trong từ này 便 đọc là pián, còn trong 方便 (fāngbiàn – tiện lợi) lại đọc là biàn. Chữ 宜 đọc thanh nhẹ. Trái nghĩa là 贵 (đắt).",
+          "word": {
+            "term": "便宜",
+            "pinyin": "piányi",
+            "part_of_speech": "adjective",
+            "meaning_vi": "rẻ",
+            "example": "这里的水果很便宜。",
+            "example_pinyin": "Zhèli de shuǐguǒ hěn piányi.",
+            "example_vi": "Trái cây ở đây rất rẻ."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-05",
+          "kind": "multiple_choice",
+          "objective": "Use 贵 (guì) to say something is expensive",
+          "prompt": "这件衣服太___了，三千块！",
+          "prompt_vi": "Cái áo này đắt quá, những ba nghìn tệ!",
+          "options": ["贵", "便宜", "好吃", "饿"],
+          "answer": "贵",
+          "explanation": "贵 (guì) means 'expensive'. 太贵了 means 'too expensive'.",
+          "explanation_vi": "贵 (guì) là đắt. 太贵了！ (Đắt quá!) là câu rất hữu ích khi mặc cả. Hán-Việt 'quý' — đồ quý thì đắt. 贵 cũng có trong câu lịch sự 您贵姓？ (Quý danh của ngài là gì?).",
+          "word": {
+            "term": "贵",
+            "pinyin": "guì",
+            "part_of_speech": "adjective",
+            "meaning_vi": "đắt, quý",
+            "example": "这个手机太贵了。",
+            "example_pinyin": "Zhège shǒujī tài guì le.",
+            "example_vi": "Cái điện thoại này đắt quá."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-06",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'to sell': 卖 (mài)",
+          "prompt": "Chọn từ có nghĩa là 'bán'",
+          "options": ["卖", "买", "送", "看"],
+          "answer": "卖",
+          "explanation": "卖 (mài, 4th tone) means 'to sell'. 买 (mǎi, 3rd tone) means 'to buy'.",
+          "explanation_vi": "卖 (mài – thanh 4) là bán, còn 买 (mǎi – thanh 3) là mua. Mẹo nhớ: 卖 có thêm chữ 十 ở trên — phải 'có thêm' hàng mới đem bán được. Nói sai thanh điệu là mua thành bán đấy!",
+          "word": {
+            "term": "卖",
+            "pinyin": "mài",
+            "part_of_speech": "verb",
+            "meaning_vi": "bán",
+            "example": "这个商店卖水果吗？",
+            "example_pinyin": "Zhège shāngdiàn mài shuǐguǒ ma?",
+            "example_vi": "Cửa hàng này có bán trái cây không?"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-07",
+          "kind": "multiple_choice",
+          "objective": "Use 块 (kuài) to talk about prices",
+          "prompt": "这个苹果五___钱。",
+          "prompt_vi": "Quả táo này giá năm tệ.",
+          "options": ["块", "岁", "点", "个"],
+          "answer": "块",
+          "explanation": "块 (kuài) is the spoken word for the yuan, China's money: 五块钱 means 'five yuan'.",
+          "explanation_vi": "块 (kuài) là cách nói khẩu ngữ của 'tệ' (đồng nhân dân tệ), tương đương 元 (yuán) trong văn viết. 五块钱 = 5 tệ. Đừng nhầm với 岁 (tuổi) hay 点 (giờ).",
+          "word": {
+            "term": "块",
+            "pinyin": "kuài",
+            "part_of_speech": "measure_word",
+            "meaning_vi": "đồng, tệ (đơn vị tiền, khẩu ngữ); miếng",
+            "example": "这杯咖啡二十块。",
+            "example_pinyin": "Zhè bēi kāfēi èrshí kuài.",
+            "example_vi": "Cốc cà phê này 20 tệ."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 商店 (shāngdiàn)",
+          "prompt": "「商店」nghĩa là gì?",
+          "options": ["cửa hàng", "nhà hàng", "trường học", "bệnh viện"],
+          "answer": "cửa hàng",
+          "explanation": "商店 (shāngdiàn) means 'shop, store'. A restaurant is 饭馆 (fànguǎn).",
+          "explanation_vi": "商店 (shāngdiàn) là cửa hàng, tiệm. Hán-Việt 'thương điếm' — 'thương' như thương mại, 'điếm' là tiệm. Nhà hàng thì là 饭馆 (fànguǎn), đừng nhầm nhé.",
+          "word": {
+            "term": "商店",
+            "pinyin": "shāngdiàn",
+            "part_of_speech": "noun",
+            "meaning_vi": "cửa hàng",
+            "example": "我去商店买东西。",
+            "example_pinyin": "Wǒ qù shāngdiàn mǎi dōngxi.",
+            "example_vi": "Tôi đi cửa hàng mua đồ."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-09",
+          "kind": "multiple_choice",
+          "objective": "Use 好吃 (hǎochī) to say food is delicious",
+          "prompt": "妈妈做的菜很___。",
+          "prompt_vi": "Đồ ăn mẹ nấu rất ngon.",
+          "options": ["好吃", "好喝", "商店", "鸡蛋"],
+          "answer": "好吃",
+          "explanation": "好吃 (hǎochī) means 'delicious' for food. For drinks, use 好喝 (hǎohē).",
+          "explanation_vi": "好吃 (hǎochī) là ngon (dùng cho đồ ăn) — nghĩa đen là 'dễ ăn'. Đồ uống ngon thì dùng 好喝 (hǎohē). Cùng kiểu: 好看 (đẹp, hay – để xem), 好听 (hay – để nghe).",
+          "word": {
+            "term": "好吃",
+            "pinyin": "hǎochī",
+            "part_of_speech": "adjective",
+            "meaning_vi": "ngon (đồ ăn)",
+            "example": "这个菜真好吃！",
+            "example_pinyin": "Zhège cài zhēn hǎochī!",
+            "example_vi": "Món này ngon thật!"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-food-10",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'dish, vegetable': 菜 (cài)",
+          "prompt": "Chọn từ có nghĩa là 'món ăn; rau'",
+          "options": ["菜", "茶", "水", "钱"],
+          "answer": "菜",
+          "explanation": "菜 (cài) means 'dish (of food)' and also 'vegetable'. 茶 (chá) is tea.",
+          "explanation_vi": "菜 (cài) vừa là món ăn vừa là rau. Hán-Việt là 'thái'. 中国菜 là món ăn Trung Quốc, 点菜 là gọi món. Đừng nhầm với 茶 (chá – trà), hai chữ đều có bộ thảo 艹 ở trên.",
+          "word": {
+            "term": "菜",
+            "pinyin": "cài",
+            "part_of_speech": "noun",
+            "meaning_vi": "món ăn; rau",
+            "example": "我给你做中国菜。",
+            "example_pinyin": "Wǒ gěi nǐ zuò Zhōngguó cài.",
+            "example_vi": "Anh nấu món Trung Quốc cho em ăn."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-vocab-hsk2-feelings",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK2",
+      "topic": "feelings and relationships",
+      "title": "Missing You, Loving You",
+      "title_vi": "Nhớ em, thương em",
+      "objectives": [
+        "Express love, missing someone and happiness",
+        "Give wishes for birthdays and the future",
+        "Talk about waiting for, telling and giving gifts to your partner"
+      ],
+      "questions": [
+        {
+          "id": "zh-vocab-hsk2-feel-01",
+          "kind": "multiple_choice",
+          "objective": "Use 想 (xiǎng) to say you miss someone",
+          "prompt": "我很___你，你什么时候回来？",
+          "prompt_vi": "Anh rất nhớ em, khi nào em về?",
+          "options": ["想", "送", "告诉", "等"],
+          "answer": "想",
+          "explanation": "想 (xiǎng) means 'to miss (someone)' when followed by a person. It also means 'to want' or 'to think'.",
+          "explanation_vi": "想 (xiǎng) có nhiều nghĩa: 想你 là nhớ em, 想吃 là muốn ăn, 我想… là tôi nghĩ… Hán-Việt 'tưởng' (tưởng nhớ). 我很想你 hoặc 我好想你 là câu 'anh nhớ em lắm' mà các cặp đôi yêu xa dùng hằng ngày.",
+          "word": {
+            "term": "想",
+            "pinyin": "xiǎng",
+            "part_of_speech": "verb",
+            "meaning_vi": "nhớ; muốn; nghĩ",
+            "example": "我好想你。",
+            "example_pinyin": "Wǒ hǎo xiǎng nǐ.",
+            "example_vi": "Anh nhớ em lắm."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-02",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 喜欢 (xǐhuan)",
+          "prompt": "「喜欢」nghĩa là gì?",
+          "options": ["thích", "ghét", "sợ", "đợi"],
+          "answer": "thích",
+          "explanation": "喜欢 (xǐhuan) means 'to like'. 欢 is read in the neutral tone.",
+          "explanation_vi": "喜欢 (xǐhuan) là thích. Hán-Việt 'hỉ hoan' (vui mừng). Chữ 欢 đọc thanh nhẹ. 我喜欢你 (anh thích em) nhẹ nhàng hơn 我爱你 (anh yêu em).",
+          "word": {
+            "term": "喜欢",
+            "pinyin": "xǐhuan",
+            "part_of_speech": "verb",
+            "meaning_vi": "thích",
+            "example": "我喜欢和你说话。",
+            "example_pinyin": "Wǒ xǐhuan hé nǐ shuōhuà.",
+            "example_vi": "Anh thích nói chuyện với em."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-03",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'happy, glad': 高兴 (gāoxìng)",
+          "prompt": "Chọn từ có nghĩa là 'vui, vui mừng'",
+          "options": ["高兴", "漂亮", "累", "饿"],
+          "answer": "高兴",
+          "explanation": "高兴 (gāoxìng) means 'happy, glad'. 很高兴认识你 means 'Glad to meet you'.",
+          "explanation_vi": "高兴 (gāoxìng) là vui, vui mừng. Hán-Việt 'cao hứng'. Chú ý 兴 ở đây đọc xìng (thanh 4). Các từ còn lại: 漂亮 (đẹp), 累 (mệt), 饿 (đói).",
+          "word": {
+            "term": "高兴",
+            "pinyin": "gāoxìng",
+            "part_of_speech": "adjective",
+            "meaning_vi": "vui, vui mừng",
+            "example": "看到你，我很高兴。",
+            "example_pinyin": "Kàndào nǐ, wǒ hěn gāoxìng.",
+            "example_vi": "Được gặp em, anh rất vui."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-04",
+          "kind": "multiple_choice",
+          "objective": "Use 快乐 (kuàilè) in birthday wishes",
+          "prompt": "生日___！",
+          "prompt_vi": "Chúc mừng sinh nhật!",
+          "options": ["快乐", "高兴", "希望", "爱"],
+          "answer": "快乐",
+          "explanation": "快乐 (kuàilè) means 'happy, joyful' and is the fixed word in wishes: 生日快乐 (Happy birthday), 新年快乐 (Happy New Year).",
+          "explanation_vi": "快乐 (kuàilè) là vui vẻ, hạnh phúc — Hán-Việt 'khoái lạc'. Trong lời chúc luôn dùng 快乐: 生日快乐, 新年快乐. Không nói '生日高兴' — 高兴 thường dùng để tả cảm xúc lúc đó (我很高兴), không dùng trong câu chúc.",
+          "word": {
+            "term": "快乐",
+            "pinyin": "kuàilè",
+            "part_of_speech": "adjective",
+            "meaning_vi": "vui vẻ, hạnh phúc",
+            "example": "祝你每天都快乐！",
+            "example_pinyin": "Zhù nǐ měi tiān dōu kuàilè!",
+            "example_vi": "Chúc em ngày nào cũng vui vẻ!"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 爱 (ài)",
+          "prompt": "「爱」nghĩa là gì?",
+          "options": ["yêu", "ghét", "quen biết", "đợi"],
+          "answer": "yêu",
+          "explanation": "爱 (ài) means 'to love'. 我爱你 means 'I love you'.",
+          "explanation_vi": "爱 (ài) là yêu, thương — Hán-Việt 'ái' (như ái tình, ân ái). Thanh 4, đọc dứt khoát. 我爱你 (Wǒ ài nǐ) là câu đáng học nhất trong bài này đó!",
+          "word": {
+            "term": "爱",
+            "pinyin": "ài",
+            "part_of_speech": "verb",
+            "meaning_vi": "yêu, thương",
+            "example": "我爱你。",
+            "example_pinyin": "Wǒ ài nǐ.",
+            "example_vi": "Anh yêu em."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-06",
+          "kind": "multiple_choice",
+          "objective": "Use 送 (sòng) to talk about giving a gift",
+          "prompt": "你生日的时候，我想___你一个礼物。",
+          "prompt_vi": "Vào sinh nhật em, anh muốn tặng em một món quà.",
+          "options": ["送", "等", "爱", "希望"],
+          "answer": "送",
+          "explanation": "送 (sòng) means 'to give (as a gift)'. It can also mean 'to see someone off'.",
+          "explanation_vi": "送 (sòng) là tặng: 送你一个礼物 = tặng em một món quà. Nó còn có nghĩa là tiễn, đưa: 送你去机场 (đưa em ra sân bay). Hán-Việt 'tống' (như tống tiễn).",
+          "word": {
+            "term": "送",
+            "pinyin": "sòng",
+            "part_of_speech": "verb",
+            "meaning_vi": "tặng; tiễn, đưa",
+            "example": "这是我送你的礼物。",
+            "example_pinyin": "Zhè shì wǒ sòng nǐ de lǐwù.",
+            "example_vi": "Đây là món quà anh tặng em."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-07",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'birthday': 生日 (shēngrì)",
+          "prompt": "Chọn từ có nghĩa là 'sinh nhật'",
+          "options": ["生日", "生活", "节日", "日期"],
+          "answer": "生日",
+          "explanation": "生日 (shēngrì) means 'birthday'. 生活 (shēnghuó) means 'life'.",
+          "explanation_vi": "生日 (shēngrì) là sinh nhật — Hán-Việt chính là 'sinh nhật'! Dễ nhầm với 生活 (sinh hoạt, cuộc sống), 节日 (ngày lễ) và 日期 (ngày tháng).",
+          "word": {
+            "term": "生日",
+            "pinyin": "shēngrì",
+            "part_of_speech": "noun",
+            "meaning_vi": "sinh nhật",
+            "example": "你的生日是几月几号？",
+            "example_pinyin": "Nǐ de shēngrì shì jǐ yuè jǐ hào?",
+            "example_vi": "Sinh nhật em là ngày mấy tháng mấy?"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 希望 (xīwàng)",
+          "prompt": "「希望」nghĩa là gì?",
+          "options": ["hy vọng, mong", "thất vọng", "nhớ nhung", "chờ đợi"],
+          "answer": "hy vọng, mong",
+          "explanation": "希望 (xīwàng) means 'to hope, to wish' and also 'hope' as a noun.",
+          "explanation_vi": "希望 (xīwàng) là hy vọng, mong muốn — Hán-Việt chính là 'hy vọng'. Đặt trước cả một câu: 希望我们很快见面 (Mong chúng mình sớm gặp nhau). Thất vọng là 失望 (shīwàng), chỉ khác một chữ.",
+          "word": {
+            "term": "希望",
+            "pinyin": "xīwàng",
+            "part_of_speech": "verb",
+            "meaning_vi": "hy vọng, mong",
+            "example": "希望我们很快见面。",
+            "example_pinyin": "Xīwàng wǒmen hěn kuài jiànmiàn.",
+            "example_vi": "Mong chúng mình sớm gặp nhau."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-09",
+          "kind": "multiple_choice",
+          "objective": "Use 告诉 (gàosu) to tell someone news",
+          "prompt": "我___你一个好消息：下个月我去看你！",
+          "prompt_vi": "Anh báo cho em một tin vui: tháng sau anh sang thăm em!",
+          "options": ["告诉", "希望", "等", "爱"],
+          "answer": "告诉",
+          "explanation": "告诉 (gàosu) means 'to tell (someone something)'. 诉 is read in the neutral tone.",
+          "explanation_vi": "告诉 (gàosu) là nói cho biết, báo cho: 告诉你 = nói cho em biết. Hán-Việt 'cáo tố'. Chữ 诉 đọc thanh nhẹ. Khác với 说 (nói) ở chỗ 告诉 luôn có người nghe đi kèm: 告诉我 (nói cho anh biết).",
+          "word": {
+            "term": "告诉",
+            "pinyin": "gàosu",
+            "part_of_speech": "verb",
+            "meaning_vi": "nói cho biết, báo cho",
+            "example": "你可以告诉我你的想法。",
+            "example_pinyin": "Nǐ kěyǐ gàosu wǒ nǐ de xiǎngfǎ.",
+            "example_vi": "Em có thể nói cho anh biết suy nghĩ của em."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk2-feel-10",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'to wait': 等 (děng)",
+          "prompt": "Chọn từ có nghĩa là 'đợi, chờ'",
+          "options": ["等", "想", "送", "走"],
+          "answer": "等",
+          "explanation": "等 (děng) means 'to wait'. 等我 means 'wait for me'.",
+          "explanation_vi": "等 (děng) là đợi, chờ, thanh 3. 等我 = đợi anh nhé; 我等你 = anh đợi em. Hán-Việt 'đẳng' (đẳng cấp) — nghĩa đó dùng trong từ khác, còn trong giao tiếp 等 chủ yếu là 'đợi'.",
+          "word": {
+            "term": "等",
+            "pinyin": "děng",
+            "part_of_speech": "verb",
+            "meaning_vi": "đợi, chờ",
+            "example": "我在机场等你。",
+            "example_pinyin": "Wǒ zài jīchǎng děng nǐ.",
+            "example_vi": "Anh đợi em ở sân bay."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-vocab-hsk3-travel",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK3",
+      "topic": "travel and places",
+      "title": "Our Next Trip Together",
+      "title_vi": "Chuyến đi tiếp theo của hai đứa",
+      "objectives": [
+        "Name travel essentials: passport, ticket, map and hotel",
+        "Talk about places in a city: airport, park, nearby spots",
+        "Say how far one place is from another with 离"
+      ],
+      "questions": [
+        {
+          "id": "zh-vocab-hsk3-travel-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 旅游 (lǚyóu)",
+          "prompt": "「旅游」nghĩa là gì?",
+          "options": ["du lịch", "làm việc", "học tập", "mua sắm"],
+          "answer": "du lịch",
+          "explanation": "旅游 (lǚyóu) means 'to travel, to tour'.",
+          "explanation_vi": "旅游 (lǚyóu) là đi du lịch. Hán-Việt 'lữ du' (lữ khách, du lịch). Chú ý 旅 đọc lǚ với nguyên âm ü — môi tròn như khi nói 'uy' nhưng giữ yên.",
+          "word": {
+            "term": "旅游",
+            "pinyin": "lǚyóu",
+            "part_of_speech": "verb",
+            "meaning_vi": "du lịch",
+            "example": "我们明年去中国旅游吧！",
+            "example_pinyin": "Wǒmen míngnián qù Zhōngguó lǚyóu ba!",
+            "example_vi": "Năm sau mình đi du lịch Trung Quốc nhé!"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-02",
+          "kind": "multiple_choice",
+          "objective": "Use 机场 (jīchǎng) in a travel sentence",
+          "prompt": "我们明天早上去___坐飞机。",
+          "prompt_vi": "Sáng mai chúng mình ra sân bay đi máy bay.",
+          "options": ["机场", "公园", "商店", "地图"],
+          "answer": "机场",
+          "explanation": "机场 (jīchǎng) means 'airport' — where you go to take a plane (坐飞机).",
+          "explanation_vi": "机场 (jīchǎng) là sân bay. Hán-Việt 'cơ trường' — 'cơ' trong phi cơ (máy bay), 'trường' là bãi, sân. Muốn đi máy bay (坐飞机) thì phải ra 机场.",
+          "word": {
+            "term": "机场",
+            "pinyin": "jīchǎng",
+            "part_of_speech": "noun",
+            "meaning_vi": "sân bay",
+            "example": "我开车去机场接你。",
+            "example_pinyin": "Wǒ kāichē qù jīchǎng jiē nǐ.",
+            "example_vi": "Anh lái xe ra sân bay đón em."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-03",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'passport': 护照 (hùzhào)",
+          "prompt": "Chọn từ có nghĩa là 'hộ chiếu'",
+          "options": ["护照", "地图", "票", "照片"],
+          "answer": "护照",
+          "explanation": "护照 (hùzhào) means 'passport'. 照片 (zhàopiàn) is a photo.",
+          "explanation_vi": "护照 (hùzhào) là hộ chiếu — Hán-Việt y hệt 'hộ chiếu'! Đừng nhầm với 照片 (zhàopiàn – ảnh chụp), cũng có chữ 照. Cả hai âm tiết của 护照 đều thanh 4.",
+          "word": {
+            "term": "护照",
+            "pinyin": "hùzhào",
+            "part_of_speech": "noun",
+            "meaning_vi": "hộ chiếu",
+            "example": "别忘了带护照！",
+            "example_pinyin": "Bié wàngle dài hùzhào!",
+            "example_vi": "Đừng quên mang hộ chiếu nhé!"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 地图 (dìtú)",
+          "prompt": "「地图」nghĩa là gì?",
+          "options": ["bản đồ", "vé", "sân bay", "khách sạn"],
+          "answer": "bản đồ",
+          "explanation": "地图 (dìtú) means 'map'.",
+          "explanation_vi": "地图 (dìtú) là bản đồ. Hán-Việt 'địa đồ' — 'địa' là đất, 'đồ' là hình vẽ (như đồ họa). Chữ 图 thanh 2, đừng đọc thành thanh 3.",
+          "word": {
+            "term": "地图",
+            "pinyin": "dìtú",
+            "part_of_speech": "noun",
+            "meaning_vi": "bản đồ",
+            "example": "我们看看地图吧。",
+            "example_pinyin": "Wǒmen kànkan dìtú ba.",
+            "example_vi": "Mình xem bản đồ chút đi."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-05",
+          "kind": "multiple_choice",
+          "objective": "Use 附近 (fùjìn) to say something is nearby",
+          "prompt": "我家___有一个公园。",
+          "prompt_vi": "Gần nhà tôi có một công viên.",
+          "options": ["附近", "城市", "旅游", "护照"],
+          "answer": "附近",
+          "explanation": "附近 (fùjìn) means 'nearby, in the vicinity'. It comes after the place: 我家附近, near my home.",
+          "explanation_vi": "附近 (fùjìn) là gần đây, lân cận. Hán-Việt 'phụ cận'. Khác tiếng Việt, 附近 đứng SAU địa điểm: 我家附近 = gần nhà tôi (nghĩa đen 'nhà tôi – gần đó').",
+          "word": {
+            "term": "附近",
+            "pinyin": "fùjìn",
+            "part_of_speech": "noun",
+            "meaning_vi": "gần đây, lân cận",
+            "example": "宾馆附近有很多饭馆。",
+            "example_pinyin": "Bīnguǎn fùjìn yǒu hěn duō fànguǎn.",
+            "example_vi": "Gần khách sạn có rất nhiều quán ăn."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-06",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'city': 城市 (chéngshì)",
+          "prompt": "Chọn từ có nghĩa là 'thành phố'",
+          "options": ["城市", "国家", "地方", "公园"],
+          "answer": "城市",
+          "explanation": "城市 (chéngshì) means 'city'. 国家 (guójiā) is a country and 地方 (dìfang) is a place.",
+          "explanation_vi": "城市 (chéngshì) là thành phố. Hán-Việt 'thành thị'. Chú ý 城 đọc chéng (thanh 2, âm 'ch' uốn lưỡi), còn 市 đọc shì (thanh 4). 国家 là quốc gia, 地方 là nơi, chỗ.",
+          "word": {
+            "term": "城市",
+            "pinyin": "chéngshì",
+            "part_of_speech": "noun",
+            "meaning_vi": "thành phố",
+            "example": "这个城市很漂亮。",
+            "example_pinyin": "Zhège chéngshì hěn piàoliang.",
+            "example_vi": "Thành phố này rất đẹp."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 宾馆 (bīnguǎn)",
+          "prompt": "「宾馆」nghĩa là gì?",
+          "options": ["khách sạn", "nhà hàng", "ngân hàng", "bệnh viện"],
+          "answer": "khách sạn",
+          "explanation": "宾馆 (bīnguǎn) means 'hotel, guesthouse'. Another common word is 酒店 (jiǔdiàn).",
+          "explanation_vi": "宾馆 (bīnguǎn) là khách sạn, nhà khách. Hán-Việt 'tân quán' — 'tân' là khách (như tân khách), 'quán' là nhà. Ở Trung Quốc người ta cũng hay nói 酒店 (jiǔdiàn), đừng tưởng đó là quán rượu nhé!",
+          "word": {
+            "term": "宾馆",
+            "pinyin": "bīnguǎn",
+            "part_of_speech": "noun",
+            "meaning_vi": "khách sạn, nhà khách",
+            "example": "我们住的宾馆离海很近。",
+            "example_pinyin": "Wǒmen zhù de bīnguǎn lí hǎi hěn jìn.",
+            "example_vi": "Khách sạn bọn mình ở rất gần biển."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-08",
+          "kind": "multiple_choice",
+          "objective": "Use 票 (piào) to talk about buying tickets",
+          "prompt": "我买了两张火车___，下个星期去看你。",
+          "prompt_vi": "Anh đã mua hai vé tàu hỏa, tuần sau đi thăm em.",
+          "options": ["票", "护照", "宾馆", "附近"],
+          "answer": "票",
+          "explanation": "票 (piào) means 'ticket'. Tickets are counted with 张: 两张票.",
+          "explanation_vi": "票 (piào) là vé. Hán-Việt 'phiếu'. Đếm vé dùng lượng từ 张 (zhāng): 两张票 = hai cái vé. 火车票 là vé tàu, 机票 là vé máy bay.",
+          "word": {
+            "term": "票",
+            "pinyin": "piào",
+            "part_of_speech": "noun",
+            "meaning_vi": "vé",
+            "example": "你买票了吗？",
+            "example_pinyin": "Nǐ mǎi piào le ma?",
+            "example_vi": "Em mua vé chưa?"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-09",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'park': 公园 (gōngyuán)",
+          "prompt": "Chọn từ có nghĩa là 'công viên'",
+          "options": ["公园", "公司", "花园", "机场"],
+          "answer": "公园",
+          "explanation": "公园 (gōngyuán) means 'park'. 公司 (gōngsī) means 'company'.",
+          "explanation_vi": "公园 (gōngyuán) là công viên — Hán-Việt y hệt! Cẩn thận với 公司 (gōngsī – công ty): cùng chữ 公 nên rất dễ nhầm. 花园 (huāyuán) là vườn hoa.",
+          "word": {
+            "term": "公园",
+            "pinyin": "gōngyuán",
+            "part_of_speech": "noun",
+            "meaning_vi": "công viên",
+            "example": "我们去公园走走吧。",
+            "example_pinyin": "Wǒmen qù gōngyuán zǒuzou ba.",
+            "example_vi": "Mình ra công viên đi dạo chút nhé."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-travel-10",
+          "kind": "multiple_choice",
+          "objective": "Use 离 (lí) to talk about distance",
+          "prompt": "我家___机场很远。",
+          "prompt_vi": "Nhà tôi cách sân bay rất xa.",
+          "options": ["离", "和", "在", "是"],
+          "answer": "离",
+          "explanation": "离 (lí) means 'away from' and shows distance: A 离 B 很远 means 'A is far from B'.",
+          "explanation_vi": "离 (lí) là cách (bao xa). Cấu trúc: A + 离 + B + 很远/很近 = A cách B rất xa/rất gần. Hán-Việt 'ly' (chia ly). Không dùng 在 hay 和 trong cấu trúc này.",
+          "word": {
+            "term": "离",
+            "pinyin": "lí",
+            "part_of_speech": "preposition",
+            "meaning_vi": "cách (khoảng cách)",
+            "example": "你家离这儿远吗？",
+            "example_pinyin": "Nǐ jiā lí zhèr yuǎn ma?",
+            "example_vi": "Nhà em cách đây có xa không?"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-vocab-hsk3-study-work",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK3",
+      "topic": "study, work and plans",
+      "title": "Working Toward Our Future",
+      "title_vi": "Cùng cố gắng cho tương lai",
+      "objectives": [
+        "Talk about exams, homework, practice and review",
+        "Describe going to work and your company",
+        "Share your plans and how hard you're working"
+      ],
+      "questions": [
+        {
+          "id": "zh-vocab-hsk3-work-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 考试 (kǎoshì)",
+          "prompt": "「考试」nghĩa là gì?",
+          "options": ["thi, kỳ thi", "bài tập về nhà", "ôn tập", "cuộc họp"],
+          "answer": "thi, kỳ thi",
+          "explanation": "考试 (kǎoshì) means 'exam' or 'to take an exam'.",
+          "explanation_vi": "考试 (kǎoshì) là thi, kỳ thi. Hán-Việt 'khảo thí' (như khảo sát, thí sinh). Vừa là danh từ (明天有考试 – mai có bài thi) vừa là động từ (我在考试 – tôi đang thi).",
+          "word": {
+            "term": "考试",
+            "pinyin": "kǎoshì",
+            "part_of_speech": "noun",
+            "meaning_vi": "kỳ thi; thi",
+            "example": "明天我有汉语考试。",
+            "example_pinyin": "Míngtiān wǒ yǒu Hànyǔ kǎoshì.",
+            "example_vi": "Ngày mai tôi có bài thi tiếng Trung."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-02",
+          "kind": "multiple_choice",
+          "objective": "Use 打算 (dǎsuan) to ask about plans",
+          "prompt": "这个周末你___做什么？",
+          "prompt_vi": "Cuối tuần này em định làm gì?",
+          "options": ["打算", "复习", "练习", "认真"],
+          "answer": "打算",
+          "explanation": "打算 (dǎsuan) means 'to plan, to intend'. It goes before the planned action: 打算做什么, plan to do what.",
+          "explanation_vi": "打算 (dǎsuan) là định, dự định. Đặt trước động từ: 你打算做什么？ = Em định làm gì? Nghĩa đen là 'tính toán', giống tiếng Việt mình hay nói 'em tính làm gì?'. Chữ 算 thường đọc thanh nhẹ.",
+          "word": {
+            "term": "打算",
+            "pinyin": "dǎsuan",
+            "part_of_speech": "verb",
+            "meaning_vi": "định, dự định",
+            "example": "你打算什么时候来看我？",
+            "example_pinyin": "Nǐ dǎsuan shénme shíhou lái kàn wǒ?",
+            "example_vi": "Khi nào em định đến thăm anh?"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-03",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'to prepare': 准备 (zhǔnbèi)",
+          "prompt": "Chọn từ có nghĩa là 'chuẩn bị'",
+          "options": ["准备", "打算", "练习", "复习"],
+          "answer": "准备",
+          "explanation": "准备 (zhǔnbèi) means 'to prepare, to get ready'. 打算 (dǎsuan) means 'to plan'.",
+          "explanation_vi": "准备 (zhǔnbèi) là chuẩn bị — Hán-Việt y hệt 'chuẩn bị'. Chú ý chữ 准 (zhǔn) có bộ băng 冫 hai chấm, không phải ba chấm thủy. Đừng nhầm với 打算 (định, dự định).",
+          "word": {
+            "term": "准备",
+            "pinyin": "zhǔnbèi",
+            "part_of_speech": "verb",
+            "meaning_vi": "chuẩn bị",
+            "example": "我在准备明天的考试。",
+            "example_pinyin": "Wǒ zài zhǔnbèi míngtiān de kǎoshì.",
+            "example_vi": "Anh đang chuẩn bị cho bài thi ngày mai."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 公司 (gōngsī)",
+          "prompt": "「公司」nghĩa là gì?",
+          "options": ["công ty", "công viên", "trường học", "cửa hàng"],
+          "answer": "công ty",
+          "explanation": "公司 (gōngsī) means 'company'. 公园 (gōngyuán) means 'park'.",
+          "explanation_vi": "公司 (gōngsī) là công ty — Hán-Việt 'công ty', rất dễ nhớ. Cẩn thận đừng nhầm với 公园 (gōngyuán – công viên). Cả hai chữ của 公司 đều thanh 1.",
+          "word": {
+            "term": "公司",
+            "pinyin": "gōngsī",
+            "part_of_speech": "noun",
+            "meaning_vi": "công ty",
+            "example": "她在中国公司工作。",
+            "example_pinyin": "Tā zài Zhōngguó gōngsī gōngzuò.",
+            "example_vi": "Cô ấy làm việc ở công ty Trung Quốc."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-05",
+          "kind": "multiple_choice",
+          "objective": "Use 作业 (zuòyè) to talk about homework",
+          "prompt": "我做完___了，现在给你打电话。",
+          "prompt_vi": "Anh làm xong bài tập rồi, giờ gọi điện cho em đây.",
+          "options": ["作业", "公司", "努力", "认真"],
+          "answer": "作业",
+          "explanation": "作业 (zuòyè) means 'homework, assignment'. 做作业 means 'to do homework'.",
+          "explanation_vi": "作业 (zuòyè) là bài tập (về nhà). Hán-Việt 'tác nghiệp'. Cụm hay dùng: 做作业 (làm bài tập), 做完作业 (làm xong bài tập). Chú ý 做 và 作 đều đọc zuò nhưng là hai chữ khác nhau.",
+          "word": {
+            "term": "作业",
+            "pinyin": "zuòyè",
+            "part_of_speech": "noun",
+            "meaning_vi": "bài tập (về nhà)",
+            "example": "今天的作业很多。",
+            "example_pinyin": "Jīntiān de zuòyè hěn duō.",
+            "example_vi": "Bài tập hôm nay nhiều lắm."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-06",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'to practice': 练习 (liànxí)",
+          "prompt": "Chọn từ có nghĩa là 'luyện tập'",
+          "options": ["练习", "复习", "学习", "准备"],
+          "answer": "练习",
+          "explanation": "练习 (liànxí) means 'to practice' or 'an exercise'. 复习 (fùxí) means 'to review'.",
+          "explanation_vi": "练习 (liànxí) là luyện tập — Hán-Việt y hệt 'luyện tập'. Ba từ cùng chữ 习 dễ nhầm: 学习 (học tập), 复习 (ôn tập), 练习 (luyện tập).",
+          "word": {
+            "term": "练习",
+            "pinyin": "liànxí",
+            "part_of_speech": "verb",
+            "meaning_vi": "luyện tập; bài luyện tập",
+            "example": "我们每天用汉语练习说话吧。",
+            "example_pinyin": "Wǒmen měi tiān yòng Hànyǔ liànxí shuōhuà ba.",
+            "example_vi": "Mỗi ngày mình dùng tiếng Trung luyện nói với nhau nhé."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 复习 (fùxí)",
+          "prompt": "「复习」nghĩa là gì?",
+          "options": ["ôn tập, ôn bài", "luyện tập", "học trước bài mới", "đi thi"],
+          "answer": "ôn tập, ôn bài",
+          "explanation": "复习 (fùxí) means 'to review (what you've learned)'. Previewing new lessons is 预习 (yùxí).",
+          "explanation_vi": "复习 (fùxí) là ôn tập, ôn lại bài cũ. Hán-Việt 'phục tập' — 'phục' là lặp lại (như phục hồi). Học trước bài mới là 预习 (yùxí – dự tập), đừng nhầm nhé.",
+          "word": {
+            "term": "复习",
+            "pinyin": "fùxí",
+            "part_of_speech": "verb",
+            "meaning_vi": "ôn tập",
+            "example": "考试前要复习。",
+            "example_pinyin": "Kǎoshì qián yào fùxí.",
+            "example_vi": "Trước khi thi phải ôn bài."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-08",
+          "kind": "multiple_choice",
+          "objective": "Use 上班 (shàngbān) to talk about going to work",
+          "prompt": "我每天早上八点去公司___。",
+          "prompt_vi": "Mỗi sáng tôi đến công ty làm việc lúc 8 giờ.",
+          "options": ["上班", "作业", "认真", "努力"],
+          "answer": "上班",
+          "explanation": "上班 (shàngbān) means 'to go to work, to be at work'. The opposite is 下班 (xiàbān), 'to get off work'.",
+          "explanation_vi": "上班 (shàngbān) là đi làm, vào ca. Trái nghĩa là 下班 (xiàbān – tan làm). Hán-Việt 'thượng ban' — 'ban' là ca làm việc. Câu hỏi thăm dễ thương: 你下班了吗？ – Em tan làm chưa?",
+          "word": {
+            "term": "上班",
+            "pinyin": "shàngbān",
+            "part_of_speech": "verb",
+            "meaning_vi": "đi làm",
+            "example": "你明天几点上班？",
+            "example_pinyin": "Nǐ míngtiān jǐ diǎn shàngbān?",
+            "example_vi": "Mai mấy giờ em đi làm?"
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-09",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'serious, conscientious': 认真 (rènzhēn)",
+          "prompt": "Chọn từ có nghĩa là 'nghiêm túc, chăm chú'",
+          "options": ["认真", "认识", "真正", "当然"],
+          "answer": "认真",
+          "explanation": "认真 (rènzhēn) means 'serious, conscientious, careful'. 认识 (rènshi) means 'to know someone'.",
+          "explanation_vi": "认真 (rènzhēn) là nghiêm túc, chăm chỉ cẩn thận. Hán-Việt 'nhận chân'. Đừng nhầm với 认识 (rènshi – quen biết): cùng chữ 认 nhưng nghĩa khác hẳn. 学习很认真 = học hành rất chăm chỉ, nghiêm túc.",
+          "word": {
+            "term": "认真",
+            "pinyin": "rènzhēn",
+            "part_of_speech": "adjective",
+            "meaning_vi": "nghiêm túc, chăm chú, cẩn thận",
+            "example": "他学习很认真。",
+            "example_pinyin": "Tā xuéxí hěn rènzhēn.",
+            "example_vi": "Anh ấy học hành rất nghiêm túc."
+          }
+        },
+        {
+          "id": "zh-vocab-hsk3-work-10",
+          "kind": "multiple_choice",
+          "objective": "Use 努力 (nǔlì) to talk about working hard",
+          "prompt": "为了我们的未来，我会___工作。",
+          "prompt_vi": "Vì tương lai của chúng mình, anh sẽ làm việc chăm chỉ.",
+          "options": ["努力", "复习", "公司", "作业"],
+          "answer": "努力",
+          "explanation": "努力 (nǔlì) means 'hard-working, to make an effort'. 努力工作 means 'to work hard'.",
+          "explanation_vi": "努力 (nǔlì) là cố gắng, nỗ lực — Hán-Việt chính là 'nỗ lực'. Đặt trước động từ: 努力工作 (làm việc chăm chỉ), 努力学习 (học hành chăm chỉ). Chú ý 努 thanh 3, 力 thanh 4.",
+          "word": {
+            "term": "努力",
+            "pinyin": "nǔlì",
+            "part_of_speech": "adjective",
+            "meaning_vi": "cố gắng, nỗ lực, chăm chỉ",
+            "example": "我们都要努力！",
+            "example_pinyin": "Wǒmen dōu yào nǔlì!",
+            "example_vi": "Cả hai chúng mình đều phải cố gắng nhé!"
+          }
+        }
+      ]
+    }
+  ]
+}
