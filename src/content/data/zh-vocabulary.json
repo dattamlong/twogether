@@ -782,20 +782,20 @@
         {
           "id": "zh-vocab-hsk2-feel-08",
           "kind": "multiple_choice",
-          "objective": "Recognize the meaning of 希望 (xīwàng)",
-          "prompt": "「希望」nghĩa là gì?",
-          "options": ["hy vọng, mong", "thất vọng", "nhớ nhung", "chờ đợi"],
-          "answer": "hy vọng, mong",
-          "explanation": "希望 (xīwàng) means 'to hope, to wish' and also 'hope' as a noun.",
-          "explanation_vi": "希望 (xīwàng) là hy vọng, mong muốn — Hán-Việt chính là 'hy vọng'. Đặt trước cả một câu: 希望我们很快见面 (Mong chúng mình sớm gặp nhau). Thất vọng là 失望 (shīwàng), chỉ khác một chữ.",
+          "objective": "Recognize the meaning of 关心 (guānxīn)",
+          "prompt": "「关心」nghĩa là gì?",
+          "options": ["quan tâm, lo lắng cho", "thất vọng", "nhớ nhung", "chờ đợi"],
+          "answer": "quan tâm, lo lắng cho",
+          "explanation": "关心 (guānxīn) means 'to care about, to be concerned about' someone or something.",
+          "explanation_vi": "关心 (guānxīn) là quan tâm, lo lắng cho ai đó — Hán-Việt chính là 'quan tâm' (心 = tâm). Dùng thẳng với người: 关心你 (quan tâm em). Muốn nói 'cảm ơn vì đã quan tâm' thì nói 谢谢你的关心.",
           "word": {
-            "term": "希望",
-            "pinyin": "xīwàng",
+            "term": "关心",
+            "pinyin": "guānxīn",
             "part_of_speech": "verb",
-            "meaning_vi": "hy vọng, mong",
-            "example": "希望我们很快见面。",
-            "example_pinyin": "Xīwàng wǒmen hěn kuài jiànmiàn.",
-            "example_vi": "Mong chúng mình sớm gặp nhau."
+            "meaning_vi": "quan tâm, lo lắng cho",
+            "example": "谢谢你一直这么关心我。",
+            "example_pinyin": "Xièxie nǐ yìzhí zhème guānxīn wǒ.",
+            "example_vi": "Cảm ơn anh lúc nào cũng quan tâm em như vậy."
           }
         },
         {
@@ -849,7 +849,7 @@
       "title_vi": "Chuyến đi tiếp theo của hai đứa",
       "objectives": [
         "Name travel essentials: passport, ticket, map and hotel",
-        "Talk about places in a city: airport, park, nearby spots",
+        "Talk about places in a city: airport, park, the area around a place",
         "Say how far one place is from another with 离"
       ],
       "questions": [
@@ -933,21 +933,21 @@
         {
           "id": "zh-vocab-hsk3-travel-05",
           "kind": "multiple_choice",
-          "objective": "Use 附近 (fùjìn) to say something is nearby",
-          "prompt": "我家___有一个公园。",
-          "prompt_vi": "Gần nhà tôi có một công viên.",
-          "options": ["附近", "城市", "旅游", "护照"],
-          "answer": "附近",
-          "explanation": "附近 (fùjìn) means 'nearby, in the vicinity'. It comes after the place: 我家附近, near my home.",
-          "explanation_vi": "附近 (fùjìn) là gần đây, lân cận. Hán-Việt 'phụ cận'. Khác tiếng Việt, 附近 đứng SAU địa điểm: 我家附近 = gần nhà tôi (nghĩa đen 'nhà tôi – gần đó').",
+          "objective": "Use 周围 (zhōuwéi) to talk about the area around a place",
+          "prompt": "我家___有很多饭馆。",
+          "prompt_vi": "Xung quanh nhà tôi có rất nhiều quán ăn.",
+          "options": ["周围", "城市", "旅游", "护照"],
+          "answer": "周围",
+          "explanation": "周围 (zhōuwéi) means 'around, the surrounding area'. It comes after the place: 我家周围, around my home.",
+          "explanation_vi": "周围 (zhōuwéi) là xung quanh, vùng lân cận. Hán-Việt 'chu vi' — nhưng trong tiếng Trung nó chỉ khu vực bao quanh chứ không phải số đo chu vi. Khác tiếng Việt, 周围 đứng SAU địa điểm: 我家周围 = xung quanh nhà tôi.",
           "word": {
-            "term": "附近",
-            "pinyin": "fùjìn",
+            "term": "周围",
+            "pinyin": "zhōuwéi",
             "part_of_speech": "noun",
-            "meaning_vi": "gần đây, lân cận",
-            "example": "宾馆附近有很多饭馆。",
-            "example_pinyin": "Bīnguǎn fùjìn yǒu hěn duō fànguǎn.",
-            "example_vi": "Gần khách sạn có rất nhiều quán ăn."
+            "meaning_vi": "xung quanh, vùng lân cận",
+            "example": "旅馆周围很安静，我们晚上睡得很好。",
+            "example_pinyin": "Lǚguǎn zhōuwéi hěn ānjìng, wǒmen wǎnshang shuì de hěn hǎo.",
+            "example_vi": "Xung quanh nhà nghỉ rất yên tĩnh, buổi tối tụi mình ngủ rất ngon."
           }
         },
         {
@@ -972,20 +972,20 @@
         {
           "id": "zh-vocab-hsk3-travel-07",
           "kind": "multiple_choice",
-          "objective": "Recognize the meaning of 宾馆 (bīnguǎn)",
-          "prompt": "「宾馆」nghĩa là gì?",
-          "options": ["khách sạn", "nhà hàng", "ngân hàng", "bệnh viện"],
-          "answer": "khách sạn",
-          "explanation": "宾馆 (bīnguǎn) means 'hotel, guesthouse'. Another common word is 酒店 (jiǔdiàn).",
-          "explanation_vi": "宾馆 (bīnguǎn) là khách sạn, nhà khách. Hán-Việt 'tân quán' — 'tân' là khách (như tân khách), 'quán' là nhà. Ở Trung Quốc người ta cũng hay nói 酒店 (jiǔdiàn), đừng tưởng đó là quán rượu nhé!",
+          "objective": "Recognize the meaning of 旅馆 (lǚguǎn)",
+          "prompt": "「旅馆」nghĩa là gì?",
+          "options": ["khách sạn, nhà nghỉ", "nhà hàng", "ngân hàng", "bệnh viện"],
+          "answer": "khách sạn, nhà nghỉ",
+          "explanation": "旅馆 (lǚguǎn) means 'hotel, inn' — a place where travellers stay. Another common word is 酒店 (jiǔdiàn).",
+          "explanation_vi": "旅馆 (lǚguǎn) là khách sạn, nhà nghỉ. Hán-Việt 'lữ quán' — 'lữ' là đi xa (như lữ khách, 旅游), 'quán' là nhà. Ở Trung Quốc người ta cũng hay nói 酒店 (jiǔdiàn), đừng tưởng đó là quán rượu nhé!",
           "word": {
-            "term": "宾馆",
-            "pinyin": "bīnguǎn",
+            "term": "旅馆",
+            "pinyin": "lǚguǎn",
             "part_of_speech": "noun",
-            "meaning_vi": "khách sạn, nhà khách",
-            "example": "我们住的宾馆离海很近。",
-            "example_pinyin": "Wǒmen zhù de bīnguǎn lí hǎi hěn jìn.",
-            "example_vi": "Khách sạn bọn mình ở rất gần biển."
+            "meaning_vi": "khách sạn, nhà nghỉ",
+            "example": "我们住的旅馆离海很近。",
+            "example_pinyin": "Wǒmen zhù de lǚguǎn lí hǎi hěn jìn.",
+            "example_vi": "Nhà nghỉ bọn mình ở rất gần biển."
           }
         },
         {

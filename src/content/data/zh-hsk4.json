@@ -1,0 +1,789 @@
+{
+  "lessons": [
+    {
+      "slug": "zh-vocab-hsk4-emotions",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK4",
+      "topic": "emotions, personality and relationships",
+      "title": "Heart to Heart: Feelings & Personality",
+      "title_vi": "Thật lòng với nhau: cảm xúc và tính cách",
+      "objectives": [
+        "Name feelings like excitement, disappointment and surprise",
+        "Describe personality: kind-hearted, calm",
+        "Talk about missing someone, misunderstandings and getting along"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk4-emo-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 想念 (xiǎngniàn)",
+          "prompt": "「想念」nghĩa là gì?",
+          "options": ["nhớ, nhớ nhung", "suy nghĩ kỹ", "tưởng tượng", "mong đợi"],
+          "answer": "nhớ, nhớ nhung",
+          "explanation": "想念 (xiǎngniàn) means 'to miss (someone or a place)'. It is warmer and more written than plain 想.",
+          "explanation_vi": "想念 (xiǎngniàn) = nhớ, nhớ nhung (người, quê nhà…). Hán-Việt 'tưởng niệm'. Nghĩa giống 想 (HSK1) khi nói 'nhớ', nhưng 想念 tình cảm và trang trọng hơn, và KHÔNG có nghĩa 'muốn' như 想. 'Tưởng tượng' là 想象.",
+          "word": {
+            "term": "想念",
+            "pinyin": "xiǎngniàn",
+            "part_of_speech": "verb",
+            "meaning_vi": "nhớ, nhớ nhung",
+            "example": "你去上海以后，我每天都很想念你。",
+            "example_pinyin": "Nǐ qù Shànghǎi yǐhòu, wǒ měitiān dōu hěn xiǎngniàn nǐ.",
+            "example_vi": "Từ khi em đi Thượng Hải, ngày nào anh cũng nhớ em."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-02",
+          "kind": "multiple_choice",
+          "objective": "Use 在乎 (zàihu) to say what matters to you",
+          "prompt": "只要你开心，别的我都不___。",
+          "prompt_vi": "Chỉ cần em vui, những chuyện khác anh đều không để tâm.",
+          "options": ["在乎", "相处", "失望", "误会"],
+          "answer": "在乎",
+          "explanation": "在乎 (zàihu) means 'to care about, to mind'. It is very often negated: 不在乎 = not care.",
+          "explanation_vi": "在乎 (zàihu) = để tâm, quan tâm, coi trọng. Hay đi với phủ định: 不在乎 = không để tâm, sao cũng được. 相处 (sống chung, cư xử), 失望 (thất vọng), 误会 (hiểu lầm) đều không ghép được với 'những chuyện khác anh đều không…'. Chữ 乎 đọc thanh nhẹ.",
+          "word": {
+            "term": "在乎",
+            "pinyin": "zàihu",
+            "part_of_speech": "verb",
+            "meaning_vi": "để tâm, quan tâm, coi trọng",
+            "example": "我不在乎礼物贵不贵，我在乎的是你。",
+            "example_pinyin": "Wǒ bú zàihu lǐwù guì bu guì, wǒ zàihu de shì nǐ.",
+            "example_vi": "Anh không để tâm quà đắt hay rẻ, điều anh quan tâm là em."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-03",
+          "kind": "multiple_choice",
+          "objective": "Recognize 误会 (wùhuì) as 'misunderstanding'",
+          "prompt": "Chọn từ có nghĩa là 'hiểu lầm'.",
+          "options": ["误会", "理解", "解释", "怀疑"],
+          "answer": "误会",
+          "explanation": "误会 (wùhuì) = to misunderstand / a misunderstanding. 理解 = understand, 解释 = explain, 怀疑 = doubt.",
+          "explanation_vi": "误会 (wùhuì) = hiểu lầm. Hán-Việt 'ngộ hội' — 误 (ngộ) là sai, nhầm như trong 'ngộ nhận'. Vừa là động từ (你误会我了 – em hiểu lầm anh rồi) vừa là danh từ (这是一个误会). 理解 = hiểu, thông cảm; 解释 = giải thích; 怀疑 = nghi ngờ.",
+          "word": {
+            "term": "误会",
+            "pinyin": "wùhuì",
+            "part_of_speech": "verb",
+            "meaning_vi": "hiểu lầm; sự hiểu lầm",
+            "example": "你误会了，她只是我的同事。",
+            "example_pinyin": "Nǐ wùhuì le, tā zhǐshì wǒ de tóngshì.",
+            "example_vi": "Em hiểu lầm rồi, cô ấy chỉ là đồng nghiệp của anh thôi."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-04",
+          "kind": "multiple_choice",
+          "objective": "Use 相处 (xiāngchǔ) for getting along with people",
+          "prompt": "他性格很好，跟谁都___得很好。",
+          "prompt_vi": "Anh ấy tính tình rất tốt, với ai cũng hòa hợp được.",
+          "options": ["相处", "吸引", "想念", "误会"],
+          "answer": "相处",
+          "explanation": "相处 (xiāngchǔ) = to get along, to spend time together. 跟…相处得很好 = get along well with…",
+          "explanation_vi": "相处 (xiāngchǔ) = sống chung, cư xử, hòa hợp với nhau. Mẫu quen thuộc: 跟 + người + 相处得很好 = hòa hợp tốt với ai. Chú ý 处 ở đây đọc chǔ (thanh 3), không phải chù như trong 到处.",
+          "word": {
+            "term": "相处",
+            "pinyin": "xiāngchǔ",
+            "part_of_speech": "verb",
+            "meaning_vi": "sống chung, cư xử, hòa hợp",
+            "example": "我们相处了两年，越来越了解对方。",
+            "example_pinyin": "Wǒmen xiāngchǔ le liǎng nián, yuè lái yuè liǎojiě duìfāng.",
+            "example_vi": "Tụi mình bên nhau hai năm rồi, càng ngày càng hiểu nhau hơn."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 激动 (jīdòng)",
+          "prompt": "「激动」nghĩa là gì?",
+          "options": ["xúc động, phấn khích", "tức giận", "lo lắng", "bình tĩnh"],
+          "answer": "xúc động, phấn khích",
+          "explanation": "激动 (jīdòng) = excited, emotional, deeply moved. The opposite is 冷静 (calm).",
+          "explanation_vi": "激动 (jīdòng) = xúc động, kích động, phấn khích (cảm xúc dâng trào, thường là tích cực). Hán-Việt 'kích động' nhưng trong tiếng Trung nghĩa nhẹ nhàng hơn, không mang nghĩa xấu: 见到你我太激动了 = gặp em anh xúc động quá. Trái nghĩa: 冷静 (bình tĩnh).",
+          "word": {
+            "term": "激动",
+            "pinyin": "jīdòng",
+            "part_of_speech": "adjective",
+            "meaning_vi": "xúc động, phấn khích",
+            "example": "在机场看到你的时候，我激动得说不出话来。",
+            "example_pinyin": "Zài jīchǎng kàndào nǐ de shíhou, wǒ jīdòng de shuō bu chū huà lái.",
+            "example_vi": "Lúc nhìn thấy em ở sân bay, anh xúc động đến mức không nói nên lời."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-06",
+          "kind": "multiple_choice",
+          "objective": "Use 失望 (shīwàng) to express disappointment",
+          "prompt": "你说好要来，最后又没来，我真的很___。",
+          "prompt_vi": "Anh đã hứa sẽ đến, cuối cùng lại không đến, em thật sự rất thất vọng.",
+          "options": ["失望", "善良", "冷静", "诚实"],
+          "answer": "失望",
+          "explanation": "失望 (shīwàng) = disappointed. 对…很失望 = disappointed in…",
+          "explanation_vi": "失望 (shīwàng) = thất vọng (Hán-Việt 'thất vọng', y như tiếng Việt). Mẫu: 对 + ai/việc gì + 很失望. 善良 (tốt bụng), 冷静 (bình tĩnh), 诚实 (thật thà) là tính cách, không hợp với ngữ cảnh bị lỡ hẹn.",
+          "word": {
+            "term": "失望",
+            "pinyin": "shīwàng",
+            "part_of_speech": "adjective",
+            "meaning_vi": "thất vọng",
+            "example": "别让对方失望，答应的事一定要做到。",
+            "example_pinyin": "Bié ràng duìfāng shīwàng, dāying de shì yídìng yào zuòdào.",
+            "example_vi": "Đừng để đối phương thất vọng, việc đã hứa thì nhất định phải làm."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize 善良 (shànliáng) as 'kind-hearted'",
+          "prompt": "Chọn từ có nghĩa là 'tốt bụng, hiền lành'.",
+          "options": ["善良", "勇敢", "天真", "调皮"],
+          "answer": "善良",
+          "explanation": "善良 (shànliáng) = kind-hearted, good-natured. 勇敢 = brave, 天真 = naive/innocent, 调皮 = naughty.",
+          "explanation_vi": "善良 (shànliáng) = tốt bụng, lương thiện. Hán-Việt 'thiện lương' — ghép từ 善 (thiện) và 良 (lương). 勇敢 = dũng cảm; 天真 = ngây thơ; 调皮 = nghịch ngợm, tinh nghịch.",
+          "word": {
+            "term": "善良",
+            "pinyin": "shànliáng",
+            "part_of_speech": "adjective",
+            "meaning_vi": "tốt bụng, lương thiện",
+            "example": "我喜欢她，因为她又聪明又善良。",
+            "example_pinyin": "Wǒ xǐhuan tā, yīnwèi tā yòu cōngming yòu shànliáng.",
+            "example_vi": "Anh thích cô ấy vì cô ấy vừa thông minh vừa tốt bụng."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-08",
+          "kind": "multiple_choice",
+          "objective": "Use 冷静 (lěngjìng) with 下来 to say 'calm down'",
+          "prompt": "吵架的时候，我们都应该先___下来。",
+          "prompt_vi": "Khi cãi nhau, cả hai chúng ta đều nên bình tĩnh lại trước đã.",
+          "options": ["冷静", "激动", "失望", "兴奋"],
+          "answer": "冷静",
+          "explanation": "冷静 (lěngjìng) = calm, level-headed. 冷静下来 = calm down (下来 shows moving into a calmer state).",
+          "explanation_vi": "冷静 (lěngjìng) = bình tĩnh (Hán-Việt 'lãnh tĩnh': lạnh và yên). 冷静下来 = bình tĩnh lại — 下来 chỉ trạng thái từ 'động' chuyển sang 'tĩnh'. 激动, 兴奋 là trạng thái ngược lại và đi với 起来 (激动起来 = trở nên kích động). 失望 không đi với 下来.",
+          "word": {
+            "term": "冷静",
+            "pinyin": "lěngjìng",
+            "part_of_speech": "adjective",
+            "meaning_vi": "bình tĩnh",
+            "example": "你先冷静一下，我们好好儿谈谈。",
+            "example_pinyin": "Nǐ xiān lěngjìng yíxià, wǒmen hǎohāor tántan.",
+            "example_vi": "Em bình tĩnh một chút đã, tụi mình nói chuyện đàng hoàng nhé."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 吃惊 (chījīng)",
+          "prompt": "「吃惊」nghĩa là gì?",
+          "options": ["ngạc nhiên, giật mình", "ăn no", "xấu hổ", "ghen tị"],
+          "answer": "ngạc nhiên, giật mình",
+          "explanation": "吃惊 (chījīng) = surprised, startled. 吃 here does not mean 'eat'; 惊 means 'alarm, surprise'.",
+          "explanation_vi": "吃惊 (chījīng) = ngạc nhiên, giật mình. Đừng bị chữ 吃 (ăn) đánh lừa! 惊 (kinh) là kinh ngạc, như 'kinh hãi'. Hay dùng: 大吃一惊 = giật cả mình. 让我很吃惊 = làm tôi rất bất ngờ.",
+          "word": {
+            "term": "吃惊",
+            "pinyin": "chījīng",
+            "part_of_speech": "adjective",
+            "meaning_vi": "ngạc nhiên, giật mình",
+            "example": "他突然出现在我家门口，我很吃惊。",
+            "example_pinyin": "Tā tūrán chūxiàn zài wǒ jiā ménkǒu, wǒ hěn chījīng.",
+            "example_vi": "Anh ấy bỗng xuất hiện trước cửa nhà em, em rất bất ngờ."
+          }
+        },
+        {
+          "id": "zh-hsk4-emo-10",
+          "kind": "multiple_choice",
+          "objective": "Use 约会 (yuēhuì) for a date",
+          "prompt": "今天晚上我和女朋友有个___，不能加班了。",
+          "prompt_vi": "Tối nay anh có hẹn hò với bạn gái, không tăng ca được.",
+          "options": ["约会", "误会", "体会", "社会"],
+          "answer": "约会",
+          "explanation": "约会 (yuēhuì) = a date, an appointment; also 'to go on a date'. All options share 会, only 约会 fits.",
+          "explanation_vi": "约会 (yuēhuì) = cuộc hẹn, hẹn hò. Vừa là danh từ (有个约会 – có một cuộc hẹn) vừa là động từ (我们去约会吧 – mình đi hẹn hò đi). Các đáp án khác cũng có chữ 会: 误会 (hiểu lầm), 体会 (thấm thía, trải nghiệm), 社会 (xã hội).",
+          "word": {
+            "term": "约会",
+            "pinyin": "yuēhuì",
+            "part_of_speech": "noun",
+            "meaning_vi": "cuộc hẹn, hẹn hò",
+            "example": "还记得我们第一次约会是在哪儿吗？",
+            "example_pinyin": "Hái jìde wǒmen dì-yī cì yuēhuì shì zài nǎr ma?",
+            "example_vi": "Em còn nhớ buổi hẹn hò đầu tiên của tụi mình ở đâu không?"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-vocab-hsk4-health-home",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK4",
+      "topic": "health, daily routines and household",
+      "title": "Taking Care: Health & Home Life",
+      "title_vi": "Chăm sóc nhau: sức khỏe và việc nhà",
+      "objectives": [
+        "Talk about fevers, check-ups, exercise and dieting",
+        "Describe daily routines: alarm clocks, brushing teeth, falling asleep",
+        "Share household chores like cleaning"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk4-health-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 锻炼 (duànliàn)",
+          "prompt": "「锻炼」nghĩa là gì?",
+          "options": ["rèn luyện, tập thể dục", "nghỉ ngơi", "đi khám bệnh", "nấu ăn"],
+          "answer": "rèn luyện, tập thể dục",
+          "explanation": "锻炼 (duànliàn) = to exercise, to work out; also 'to train/temper' skills. 锻炼身体 = do physical exercise.",
+          "explanation_vi": "锻炼 (duànliàn) = rèn luyện, tập luyện. Hán-Việt 'đoán luyện' — vốn là rèn kim loại, nên nghĩa gốc là 'rèn'. Cụm hay gặp: 锻炼身体 = rèn luyện thân thể, tập thể dục.",
+          "word": {
+            "term": "锻炼",
+            "pinyin": "duànliàn",
+            "part_of_speech": "verb",
+            "meaning_vi": "rèn luyện, tập thể dục",
+            "example": "我们每天早上一起去公园锻炼身体吧。",
+            "example_pinyin": "Wǒmen měitiān zǎoshang yìqǐ qù gōngyuán duànliàn shēntǐ ba.",
+            "example_vi": "Sáng nào tụi mình cũng cùng ra công viên tập thể dục nhé."
+          }
+        },
+        {
+          "id": "zh-hsk4-health-02",
+          "kind": "multiple_choice",
+          "objective": "Use 发烧 (fāshāo) to describe a fever",
+          "prompt": "我___了，三十九度，今天不能去上班。",
+          "prompt_vi": "Em bị sốt rồi, 39 độ, hôm nay không đi làm được.",
+          "options": ["发烧", "打针", "体检", "减肥"],
+          "answer": "发烧",
+          "explanation": "发烧 (fāshāo) = to have a fever. 三十九度 (39 degrees) is the clue.",
+          "explanation_vi": "发烧 (fāshāo) = sốt, phát sốt (烧 là đốt, nóng). Manh mối là 三十九度 (39 độ). 打针 = tiêm, 体检 = khám sức khỏe, 减肥 = giảm cân — không đi với nhiệt độ cơ thể.",
+          "word": {
+            "term": "发烧",
+            "pinyin": "fāshāo",
+            "part_of_speech": "verb",
+            "meaning_vi": "sốt, phát sốt",
+            "example": "你还发烧吗？记得多喝点儿热水。",
+            "example_pinyin": "Nǐ hái fāshāo ma? Jìde duō hē diǎnr rè shuǐ.",
+            "example_vi": "Em còn sốt không? Nhớ uống nhiều nước ấm nhé."
+          }
+        },
+        {
+          "id": "zh-hsk4-health-03",
+          "kind": "multiple_choice",
+          "objective": "Recognize 体检 (tǐjiǎn) as 'health check-up'",
+          "prompt": "Chọn từ có nghĩa là 'khám sức khỏe (tổng quát)'.",
+          "options": ["体检", "体重", "手术", "治疗"],
+          "answer": "体检",
+          "explanation": "体检 (tǐjiǎn) is short for 身体检查, a physical check-up. 体重 = body weight, 手术 = surgery, 治疗 = treatment.",
+          "explanation_vi": "体检 (tǐjiǎn) là dạng rút gọn của 身体检查 = kiểm tra sức khỏe, khám tổng quát. 体重 = cân nặng; 手术 = phẫu thuật; 治疗 = điều trị. Mẹo: 体 (thể) = cơ thể, 检 (kiểm) = kiểm tra.",
+          "word": {
+            "term": "体检",
+            "pinyin": "tǐjiǎn",
+            "part_of_speech": "noun",
+            "meaning_vi": "khám sức khỏe tổng quát",
+            "example": "公司每年都让我们去医院做一次体检。",
+            "example_pinyin": "Gōngsī měi nián dōu ràng wǒmen qù yīyuàn zuò yí cì tǐjiǎn.",
+            "example_vi": "Năm nào công ty cũng cho tụi mình đi bệnh viện khám sức khỏe một lần."
+          }
+        },
+        {
+          "id": "zh-hsk4-health-04",
+          "kind": "multiple_choice",
+          "objective": "Use 减肥 (jiǎnféi) for losing weight",
+          "prompt": "你一点儿也不胖，不用___。",
+          "prompt_vi": "Em không mập chút nào, không cần giảm cân đâu.",
+          "options": ["减肥", "发烧", "刷牙", "打扫"],
+          "answer": "减肥",
+          "explanation": "减肥 (jiǎnféi) = to lose weight, to go on a diet. 胖 (fat) is the clue.",
+          "explanation_vi": "减肥 (jiǎnféi) = giảm cân (减 giảm + 肥 béo). Manh mối là 胖 (mập). Lưu ý: 肥 thường dùng cho thịt/động vật, nói người thì dùng 胖; nhưng 'giảm cân' vẫn cố định là 减肥.",
+          "word": {
+            "term": "减肥",
+            "pinyin": "jiǎnféi",
+            "part_of_speech": "verb",
+            "meaning_vi": "giảm cân",
+            "example": "她说要减肥，可是晚上又吃了一块蛋糕。",
+            "example_pinyin": "Tā shuō yào jiǎnféi, kěshì wǎnshang yòu chī le yí kuài dàngāo.",
+            "example_vi": "Cô ấy nói phải giảm cân, vậy mà tối lại ăn thêm một miếng bánh kem."
+          }
+        },
+        {
+          "id": "zh-hsk4-health-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 刷牙 (shuāyá)",
+          "prompt": "「刷牙」nghĩa là gì?",
+          "options": ["đánh răng", "rửa mặt", "gội đầu", "tắm"],
+          "answer": "đánh răng",
+          "explanation": "刷牙 (shuāyá) = to brush one's teeth: 刷 (brush) + 牙 (tooth). 洗脸 = wash face, 洗头 = wash hair, 洗澡 = shower.",
+          "explanation_vi": "刷牙 (shuāyá) = đánh răng: 刷 (chải, quét) + 牙 (răng — Hán-Việt 'nha' như nha khoa). Rửa mặt là 洗脸, gội đầu là 洗头, tắm là 洗澡. 牙刷 (đảo ngược) = bàn chải đánh răng.",
+          "word": {
+            "term": "刷牙",
+            "pinyin": "shuāyá",
+            "part_of_speech": "verb",
+            "meaning_vi": "đánh răng",
+            "example": "睡觉以前别忘了刷牙。",
+            "example_pinyin": "Shuìjiào yǐqián bié wàng le shuāyá.",
+            "example_vi": "Trước khi đi ngủ đừng quên đánh răng nhé."
+          }
+        },
+        {
+          "id": "zh-hsk4-health-06",
+          "kind": "multiple_choice",
+          "objective": "Use 打扫 (dǎsǎo) for cleaning a room",
+          "prompt": "客人马上就要到了，我们快把房间___干净吧。",
+          "prompt_vi": "Khách sắp đến rồi, mình mau dọn phòng cho sạch đi.",
+          "options": ["打扫", "打针", "打折", "打败"],
+          "answer": "打扫",
+          "explanation": "打扫 (dǎsǎo) = to clean, to sweep. 打扫干净 = clean up thoroughly. The other 打 words mean get an injection, give a discount, defeat.",
+          "explanation_vi": "打扫 (dǎsǎo) = quét dọn, dọn dẹp (扫 = quét). 把房间打扫干净 = dọn phòng sạch sẽ. Cả bốn đáp án đều bắt đầu bằng 打 nhưng nghĩa khác hẳn: 打针 = tiêm, 打折 = giảm giá, 打败 = đánh bại.",
+          "word": {
+            "term": "打扫",
+            "pinyin": "dǎsǎo",
+            "part_of_speech": "verb",
+            "meaning_vi": "quét dọn, dọn dẹp",
+            "example": "周末我打扫厨房，你打扫客厅，好不好？",
+            "example_pinyin": "Zhōumò wǒ dǎsǎo chúfáng, nǐ dǎsǎo kètīng, hǎo bu hǎo?",
+            "example_vi": "Cuối tuần anh dọn bếp, em dọn phòng khách, được không?"
+          }
+        },
+        {
+          "id": "zh-hsk4-health-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize 家务 (jiāwù) as 'housework'",
+          "prompt": "Chọn từ có nghĩa là 'việc nhà'.",
+          "options": ["家务", "家庭", "家具", "家乡"],
+          "answer": "家务",
+          "explanation": "家务 (jiāwù) = housework, chores. 家庭 = family, 家具 = furniture, 家乡 = hometown.",
+          "explanation_vi": "家务 (jiāwù) = việc nhà. Hán-Việt 'gia vụ' (务 như 'nhiệm vụ'). Hay dùng: 做家务 = làm việc nhà. Các từ khác: 家庭 (gia đình), 家具 (đồ nội thất), 家乡 (quê nhà).",
+          "word": {
+            "term": "家务",
+            "pinyin": "jiāwù",
+            "part_of_speech": "noun",
+            "meaning_vi": "việc nhà",
+            "example": "我们俩一起做家务，谁也不会太累。",
+            "example_pinyin": "Wǒmen liǎ yìqǐ zuò jiāwù, shéi yě bú huì tài lèi.",
+            "example_vi": "Hai đứa mình cùng làm việc nhà thì chẳng ai mệt quá cả."
+          }
+        },
+        {
+          "id": "zh-hsk4-health-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 闹钟 (nàozhōng)",
+          "prompt": "「闹钟」nghĩa là gì?",
+          "options": ["đồng hồ báo thức", "đồng hồ đeo tay", "chuông cửa", "điện thoại"],
+          "answer": "đồng hồ báo thức",
+          "explanation": "闹钟 (nàozhōng) = alarm clock. 闹 = to make noise, 钟 = clock. A wristwatch is 手表.",
+          "explanation_vi": "闹钟 (nàozhōng) = đồng hồ báo thức: 闹 (náo – ồn ào, như 'náo nhiệt') + 钟 (chung – đồng hồ, chuông). Đồng hồ đeo tay là 手表. Cụm hay dùng: 定闹钟 = đặt báo thức.",
+          "word": {
+            "term": "闹钟",
+            "pinyin": "nàozhōng",
+            "part_of_speech": "noun",
+            "meaning_vi": "đồng hồ báo thức",
+            "example": "闹钟响了三次，我才起床。",
+            "example_pinyin": "Nàozhōng xiǎng le sān cì, wǒ cái qǐchuáng.",
+            "example_vi": "Đồng hồ báo thức reo ba lần anh mới dậy."
+          }
+        },
+        {
+          "id": "zh-hsk4-health-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize 睡着 (shuìzháo) as 'fall asleep'",
+          "prompt": "Chọn từ có nghĩa là 'ngủ thiếp đi, ngủ được'.",
+          "options": ["睡着", "醒", "躺", "做梦"],
+          "answer": "睡着",
+          "explanation": "睡着 (shuìzháo) = to fall asleep; 着 (zháo) is a result complement. 睡不着 = can't fall asleep. 醒 = wake up, 躺 = lie down, 做梦 = dream.",
+          "explanation_vi": "睡着 (shuìzháo) = ngủ thiếp đi, ngủ được. 着 ở đây đọc zháo (thanh 2) và là bổ ngữ kết quả (đạt được), không phải trợ từ zhe. Phủ định: 睡不着 = không ngủ được. 醒 = tỉnh dậy, 躺 = nằm, 做梦 = nằm mơ.",
+          "word": {
+            "term": "睡着",
+            "pinyin": "shuìzháo",
+            "part_of_speech": "verb",
+            "meaning_vi": "ngủ thiếp đi, ngủ được",
+            "example": "跟你打电话的时候，我不知不觉就睡着了。",
+            "example_pinyin": "Gēn nǐ dǎ diànhuà de shíhou, wǒ bù zhī bù jué jiù shuìzháo le.",
+            "example_vi": "Đang gọi điện với em thì anh ngủ thiếp đi lúc nào không hay."
+          }
+        },
+        {
+          "id": "zh-hsk4-health-10",
+          "kind": "multiple_choice",
+          "objective": "Use 放松 (fàngsōng) to talk about relaxing",
+          "prompt": "工作了一个星期，周末好好儿___一下吧。",
+          "prompt_vi": "Làm việc cả tuần rồi, cuối tuần thư giãn cho thật thoải mái nhé.",
+          "options": ["放松", "紧张", "加班", "着急"],
+          "answer": "放松",
+          "explanation": "放松 (fàngsōng) = to relax, to loosen up. Its opposite is 紧张 (nervous, tense).",
+          "explanation_vi": "放松 (fàngsōng) = thư giãn, thả lỏng (放 thả + 松 lỏng). Trái nghĩa với 紧张 (căng thẳng). 加班 (tăng ca) và 着急 (sốt ruột) ngược với ý nghỉ ngơi cuối tuần. 放松一下 = thư giãn một chút.",
+          "word": {
+            "term": "放松",
+            "pinyin": "fàngsōng",
+            "part_of_speech": "verb",
+            "meaning_vi": "thư giãn, thả lỏng",
+            "example": "听一会儿音乐吧，能让你放松一点儿。",
+            "example_pinyin": "Tīng yíhuìr yīnyuè ba, néng ràng nǐ fàngsōng yìdiǎnr.",
+            "example_vi": "Nghe nhạc một lát đi, sẽ giúp em thư giãn hơn chút."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-grammar-hsk4",
+      "language": "zh",
+      "category": "grammar",
+      "level": "HSK4",
+      "topic": "不但…而且, 即使…也, 只要…就, 只有…才, 被, 连…都, 对…来说, 起来/下去/出来",
+      "title": "Stronger Together: Linking Ideas & Extended Complements",
+      "title_vi": "Vững vàng bên nhau: liên từ và bổ ngữ xu hướng mở rộng",
+      "objectives": [
+        "Link clauses with 不但…而且, 即使…也, 只要…就 and 只有…才",
+        "Build passive sentences with 被 and emphasis with 连…都",
+        "Give a viewpoint with 对…来说",
+        "Use 起来, 下去 and 出来 with extended meanings"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk4-grammar-01",
+          "kind": "multiple_choice",
+          "objective": "Pair 不但 with 而且",
+          "prompt": "他不但会做饭，___会打扫房间。",
+          "prompt_vi": "Anh ấy không những biết nấu ăn mà còn biết dọn phòng.",
+          "options": ["而且", "但是", "所以", "就"],
+          "answer": "而且",
+          "explanation": "不但…而且… = not only… but also… The second clause adds a further point, so it needs 而且 (often with 还/也).",
+          "explanation_vi": "不但…而且… = không những… mà còn…. Vế sau bổ sung thêm ý cùng chiều nên dùng 而且. 但是 là chuyển ý ngược (nhưng), 所以 là kết quả (cho nên) — đều không hợp. Khi hai vế cùng chủ ngữ, 不但 đứng SAU chủ ngữ: 他不但…."
+        },
+        {
+          "id": "zh-hsk4-grammar-02",
+          "kind": "multiple_choice",
+          "objective": "Use 即使…也 for 'even if'",
+          "prompt": "___明天下雨，我也要去机场接你。",
+          "prompt_vi": "Cho dù ngày mai trời mưa, anh cũng sẽ ra sân bay đón em.",
+          "options": ["即使", "因为", "只要", "虽然"],
+          "answer": "即使",
+          "explanation": "即使…也… = even if… still… It is used for a hypothetical situation. 虽然 is for facts and pairs with 但是; 只要 pairs with 就.",
+          "explanation_vi": "即使…也… = cho dù/dù cho… cũng…, dùng cho giả thiết (mưa hay không thì chưa biết). 虽然 (tuy) dùng cho sự thật đã có và đi với 但是, không đi với 也 ở mẫu này. 只要 đi với 就, 因为 đi với 所以. Thấy 也 ở vế sau → nghĩ ngay đến 即使."
+        },
+        {
+          "id": "zh-hsk4-grammar-03",
+          "kind": "multiple_choice",
+          "objective": "Pair 只要 with 就",
+          "prompt": "只要你每天练习，你的汉语___会越来越好。",
+          "prompt_vi": "Chỉ cần em luyện tập mỗi ngày, tiếng Trung của em sẽ ngày càng tốt lên.",
+          "options": ["就", "才", "也", "都"],
+          "answer": "就",
+          "explanation": "只要…就… = as long as… then… The condition is enough (a sufficient condition), so the result follows with 就.",
+          "explanation_vi": "只要…就… = chỉ cần… thì…: điều kiện này là ĐỦ để có kết quả. Vế sau dùng 就. Đừng nhầm với 只有…才… (chỉ có… mới…), là điều kiện BẮT BUỘC. 就 đứng sau chủ ngữ của vế sau, trước động từ/động từ năng nguyện: 你的汉语就会…."
+        },
+        {
+          "id": "zh-hsk4-grammar-04",
+          "kind": "multiple_choice",
+          "objective": "Pair 只有 with 才",
+          "prompt": "只有多跟中国人聊天，你的口语___能进步。",
+          "prompt_vi": "Chỉ có nói chuyện nhiều với người Trung Quốc thì khẩu ngữ của em mới tiến bộ được.",
+          "options": ["才", "就", "也", "还"],
+          "answer": "才",
+          "explanation": "只有…才… = only if… (then)… The condition is the only way, so the result takes 才.",
+          "explanation_vi": "只有…才… = chỉ có… mới…: điều kiện DUY NHẤT, thiếu nó thì không được. Vế sau bắt buộc dùng 才 (mới), không dùng 就. So sánh: 只要…就 (chỉ cần… là) — điều kiện dễ; 只有…才 (chỉ có… mới) — điều kiện khắt khe."
+        },
+        {
+          "id": "zh-hsk4-grammar-05",
+          "kind": "multiple_choice",
+          "objective": "Build a 被 passive sentence with a result complement",
+          "prompt": "Câu nào đúng? (Sô-cô-la của em bị em gái ăn sạch rồi.)",
+          "prompt_vi": "Sô-cô-la của em bị em gái ăn sạch rồi.",
+          "options": [
+            "我的巧克力被妹妹吃光了。",
+            "我的巧克力被妹妹吃。",
+            "妹妹被我的巧克力吃光了。",
+            "我的巧克力吃光被妹妹了。"
+          ],
+          "answer": "我的巧克力被妹妹吃光了。",
+          "explanation": "Pattern: receiver + 被 + doer + verb + result/了. The verb cannot stand alone, and 被 + doer comes before the verb.",
+          "explanation_vi": "Cấu trúc câu bị động: Người/vật chịu tác động + 被 + người làm + động từ + thành phần khác (光了, 坏了…). Giống câu 把, động từ không được đứng trơ một mình (吃 → 吃光了). 被 + người làm đứng TRƯỚC động từ, không đặt ở cuối như tiếng Việt đôi khi nói. Câu 被 thường mang sắc thái 'bị', không mong muốn."
+        },
+        {
+          "id": "zh-hsk4-grammar-06",
+          "kind": "multiple_choice",
+          "objective": "Use 连…都 for emphasis",
+          "prompt": "他最近忙得连饭___没时间吃。",
+          "prompt_vi": "Dạo này anh ấy bận đến mức ngay cả ăn cơm cũng không có thời gian.",
+          "options": ["都", "才", "就", "还"],
+          "answer": "都",
+          "explanation": "连…都/也… = even… Put the extreme example after 连, then 都 or 也 before the verb.",
+          "explanation_vi": "连…都/也… = ngay cả… cũng…. Sau 连 là ví dụ 'cực đoan' nhất (ăn cơm là việc ai cũng phải làm), rồi 都 hoặc 也 đứng trước động từ/phủ định. Tiếng Việt nói 'ngay cả… cũng…' nên rất dễ nhớ: 连 = ngay cả, 都 = cũng."
+        },
+        {
+          "id": "zh-hsk4-grammar-07",
+          "kind": "multiple_choice",
+          "objective": "Give a viewpoint with 对…来说",
+          "prompt": "___我来说，你的健康比什么都重要。",
+          "prompt_vi": "Đối với anh mà nói, sức khỏe của em quan trọng hơn bất cứ thứ gì.",
+          "options": ["对", "跟", "给", "为"],
+          "answer": "对",
+          "explanation": "对…来说 = as far as … is concerned / for… It introduces whose point of view it is.",
+          "explanation_vi": "对 + người + 来说 = đối với… mà nói. Đây là cụm cố định, chỉ dùng 对 (không dùng 跟, 给, 为). Thường đứng đầu câu, sau đó là nhận xét: 对我来说，… = đối với tôi thì…."
+        },
+        {
+          "id": "zh-hsk4-grammar-08",
+          "kind": "multiple_choice",
+          "objective": "Use 起来 to show a change starting",
+          "prompt": "春天到了，天气渐渐暖和___了。",
+          "prompt_vi": "Mùa xuân đến rồi, thời tiết dần dần ấm lên.",
+          "options": ["起来", "下去", "出来", "过来"],
+          "answer": "起来",
+          "explanation": "Adjective + 起来 = start to become… (a change beginning and growing): 暖和起来 = getting warmer.",
+          "explanation_vi": "Tính từ + 起来 = bắt đầu trở nên… (trạng thái mới bắt đầu và tăng dần): 暖和起来 = ấm lên, 热闹起来 = nhộn nhịp lên. Nghĩa gốc của 起来 là 'đứng dậy, đi lên', nên mở rộng thành 'bắt đầu lên'. 下去 là 'tiếp tục', 出来 là 'nhận ra, làm ra'."
+        },
+        {
+          "id": "zh-hsk4-grammar-09",
+          "kind": "multiple_choice",
+          "objective": "Use 下去 to mean 'keep on'",
+          "prompt": "虽然很累，但是我们一定要坚持___。",
+          "prompt_vi": "Tuy rất mệt, nhưng tụi mình nhất định phải kiên trì tiếp.",
+          "options": ["下去", "起来", "出来", "过去"],
+          "answer": "下去",
+          "explanation": "Verb + 下去 = continue doing something that is already going on: 坚持下去 = keep going, hold on.",
+          "explanation_vi": "Động từ + 下去 = tiếp tục (việc đang làm) cho đến sau này: 坚持下去 = kiên trì tiếp, 说下去 = nói tiếp đi. Nghĩa gốc của 下去 là 'đi xuống', mở rộng thành 'kéo dài tiếp về sau'. Cặp dễ nhầm: 起来 = bắt đầu, 下去 = tiếp tục."
+        },
+        {
+          "id": "zh-hsk4-grammar-10",
+          "kind": "multiple_choice",
+          "objective": "Use 出来 to mean 'recognize, figure out'",
+          "prompt": "你一开口我就听___了，是你！",
+          "prompt_vi": "Em vừa mở miệng là anh nhận ra ngay, là em mà!",
+          "options": ["出来", "起来", "下去", "过去"],
+          "answer": "出来",
+          "explanation": "听出来 / 看出来 = to recognize / tell by hearing / seeing. 出来 shows something becoming identified or revealed.",
+          "explanation_vi": "Động từ cảm nhận + 出来 = nhận ra, phân biệt được: 听出来 = nghe là nhận ra, 看出来 = nhìn ra, 吃出来 = nếm ra. Nghĩa gốc 'đi ra ngoài' → mở rộng thành 'từ không rõ trở nên lộ ra'. Phủ định: 听不出来 = nghe không nhận ra."
+        }
+      ]
+    },
+    {
+      "slug": "zh-puzzle-hsk4",
+      "language": "zh",
+      "category": "writing",
+      "level": "HSK4",
+      "topic": "不但…而且, 即使…也, 只要…就, 只有…才, 被, 连…都, 对…来说, 起来/下去/出来",
+      "title": "Sentence Puzzle: Promises & Conditions",
+      "title_vi": "Ghép câu: lời hứa và điều kiện",
+      "objectives": [
+        "Order two-clause sentences with paired connectors",
+        "Place 被, 连…都 and 对…来说 correctly",
+        "Put directional complements after the verb"
+      ],
+      "questions": [
+        {
+          "id": "zh-puzzle-hsk4-01",
+          "kind": "sentence_order",
+          "objective": "Build a 不但…而且 sentence with one subject",
+          "prompt": "Ghép câu: Cô ấy không những xinh đẹp mà còn rất tốt bụng.",
+          "tokens": ["而且", "善良。", "她", "漂亮，", "很", "不但"],
+          "answers": ["她 不但 漂亮， 而且 很 善良。"],
+          "hint": "Same subject: subject first, then 不但; 而且 opens the second clause.",
+          "hint_vi": "Cùng một chủ ngữ: chủ ngữ đứng trước 不但; 而且 mở đầu vế sau.",
+          "explanation": "她不但漂亮，而且很善良. With one subject, 不但 follows the subject.",
+          "explanation_vi": "Khi hai vế cùng chủ ngữ (她), chủ ngữ đứng TRƯỚC 不但: 她不但漂亮，而且很善良. Nếu hai vế khác chủ ngữ thì 不但 mới đứng đầu câu."
+        },
+        {
+          "id": "zh-puzzle-hsk4-02",
+          "kind": "sentence_order",
+          "objective": "Build a 即使…也 sentence",
+          "prompt": "Ghép câu: Dù em không ở bên cạnh, anh cũng sẽ nhớ em.",
+          "tokens": ["想念", "也", "身边，", "你。", "即使", "会", "我", "你", "不在"],
+          "answers": [
+            "即使 你 不在 身边， 我 也 会 想念 你。",
+            "你 即使 不在 身边， 我 也 会 想念 你。"
+          ],
+          "hint": "即使 + condition, then subject + 也 + 会 + verb.",
+          "hint_vi": "即使 + giả thiết, rồi chủ ngữ + 也 + 会 + động từ.",
+          "explanation": "即使你不在身边，我也会想念你. 也 goes after the second subject 我, before 会.",
+          "explanation_vi": "即使你不在身边，我也会想念你. 即使 đứng đầu câu (hoặc ngay sau chủ ngữ 你); 也 đứng SAU chủ ngữ 我 của vế sau, trước 会 — không đặt 也 trước 我 như chữ 'cũng' đôi khi đứng trong tiếng Việt."
+        },
+        {
+          "id": "zh-puzzle-hsk4-03",
+          "kind": "sentence_order",
+          "objective": "Build a 只要…就 sentence",
+          "prompt": "Ghép câu: Chỉ cần tập thể dục nhiều, sức khỏe sẽ ngày càng tốt.",
+          "tokens": ["会", "身体", "锻炼，", "好。", "只要", "就", "越来越", "多"],
+          "answers": ["只要 多 锻炼， 身体 就 会 越来越 好。"],
+          "hint": "只要 + condition; then subject + 就 + 会 + 越来越 + adjective.",
+          "hint_vi": "只要 + điều kiện; rồi chủ ngữ + 就 + 会 + 越来越 + tính từ.",
+          "explanation": "只要多锻炼，身体就会越来越好. 就 comes after the subject 身体 and before 会.",
+          "explanation_vi": "只要多锻炼，身体就会越来越好. 多 đứng TRƯỚC động từ (多锻炼 = tập nhiều), khác tiếng Việt 'tập nhiều'. 就 đứng sau chủ ngữ 身体, trước 会."
+        },
+        {
+          "id": "zh-puzzle-hsk4-04",
+          "kind": "sentence_order",
+          "objective": "Build a 只有…才 sentence",
+          "prompt": "Ghép câu: Tụi mình chỉ có cuối tuần mới có thời gian hẹn hò.",
+          "tokens": ["时间", "才", "我们", "约会。", "只有", "有", "周末"],
+          "answers": [
+            "只有 周末 我们 才 有 时间 约会。",
+            "我们 只有 周末 才 有 时间 约会。"
+          ],
+          "hint": "只有 + the only condition (time); 才 goes right before the verb.",
+          "hint_vi": "只有 + điều kiện duy nhất (thời gian); 才 đứng ngay trước động từ.",
+          "explanation": "只有周末我们才有时间约会 / 我们只有周末才有时间约会. 才 always sits after the subject, before 有.",
+          "explanation_vi": "只有周末我们才有时间约会 hoặc 我们只有周末才有时间约会 đều đúng. 才 (mới) luôn đứng sau chủ ngữ, ngay trước động từ 有 — giống 'mới có' trong tiếng Việt."
+        },
+        {
+          "id": "zh-puzzle-hsk4-05",
+          "kind": "sentence_order",
+          "objective": "Build a 被 passive sentence",
+          "prompt": "Ghép câu: Điện thoại của anh bị con chó làm hỏng rồi.",
+          "tokens": ["弄坏", "小狗", "我的", "了。", "手机", "被"],
+          "answers": ["我的 手机 被 小狗 弄坏 了。"],
+          "hint": "Receiver + 被 + doer + verb + result + 了.",
+          "hint_vi": "Vật chịu tác động + 被 + kẻ gây ra + động từ + kết quả + 了.",
+          "explanation": "我的手机被小狗弄坏了. 被 + doer comes before the verb 弄坏.",
+          "explanation_vi": "我的手机被小狗弄坏了. 被 + kẻ gây ra (小狗) đứng TRƯỚC động từ; 弄坏 = làm hỏng (动词 + bổ ngữ kết quả 坏). 了 ở cuối câu."
+        },
+        {
+          "id": "zh-puzzle-hsk4-06",
+          "kind": "sentence_order",
+          "objective": "Build a 连…都 sentence",
+          "prompt": "Ghép câu: Anh ấy ngay cả một câu tiếng Trung cũng không biết nói.",
+          "tokens": ["都", "汉语", "说。", "他", "不会", "一句", "连"],
+          "answers": [
+            "他 连 一句 汉语 都 不会 说。",
+            "连 一句 汉语 他 都 不会 说。"
+          ],
+          "hint": "连 + the extreme example + 都 + negative verb.",
+          "hint_vi": "连 + ví dụ cực đoan + 都 + động từ phủ định.",
+          "explanation": "他连一句汉语都不会说. The 连 phrase can also open the sentence: 连一句汉语他都不会说.",
+          "explanation_vi": "他连一句汉语都不会说 = anh ấy ngay cả một câu tiếng Trung cũng không biết nói. Cụm 连… có thể đứng sau hoặc trước chủ ngữ, nhưng 都 luôn đứng ngay trước 不会说."
+        },
+        {
+          "id": "zh-puzzle-hsk4-07",
+          "kind": "sentence_order",
+          "objective": "Build a 对…来说 sentence",
+          "prompt": "Ghép câu: Đối với anh, em là người quan trọng nhất.",
+          "tokens": ["的", "来说，", "重要", "你", "我", "人。", "最", "对", "是"],
+          "answers": ["对 我 来说， 你 是 最 重要 的 人。"],
+          "hint": "对 + person + 来说 opens the sentence, then the statement.",
+          "hint_vi": "对 + người + 来说 mở đầu câu, sau đó là nhận định.",
+          "explanation": "对我来说，你是最重要的人. 最 + adjective + 的 + noun.",
+          "explanation_vi": "对我来说，你是最重要的人. 对…来说 bọc lấy người đánh giá (我). Vế sau: 最重要的人 = người quan trọng nhất — định ngữ (最重要的) đứng TRƯỚC danh từ, ngược với tiếng Việt."
+        },
+        {
+          "id": "zh-puzzle-hsk4-08",
+          "kind": "sentence_order",
+          "objective": "Use 起来 for an action suddenly starting",
+          "prompt": "Ghép câu: Nghe được tin này, cô ấy vui đến nhảy cẫng lên.",
+          "tokens": ["起来。", "消息，", "高兴得", "这个", "跳了", "她", "听到"],
+          "answers": [
+            "听到 这个 消息， 她 高兴得 跳了 起来。",
+            "她 听到 这个 消息， 高兴得 跳了 起来。"
+          ],
+          "hint": "Adjective + 得 + verb + 了 + 起来 at the end.",
+          "hint_vi": "Tính từ + 得 + động từ + 了 + 起来 ở cuối.",
+          "explanation": "她高兴得跳了起来. 了 goes between the verb and 起来 here; 起来 means the action starts suddenly.",
+          "explanation_vi": "听到这个消息，她高兴得跳了起来. 高兴得 + kết quả = vui đến mức…; 跳了起来 = nhảy cẫng lên (起来 = động tác bắt đầu đột ngột, hướng lên). Chủ ngữ 她 có thể đứng đầu câu hoặc đầu vế sau."
+        },
+        {
+          "id": "zh-puzzle-hsk4-09",
+          "kind": "sentence_order",
+          "objective": "Use 下去 to mean 'keep going'",
+          "prompt": "Ghép câu: Tụi mình nhất định phải kiên trì tiếp.",
+          "tokens": ["坚持", "一定", "下去。", "我们", "要"],
+          "answers": ["我们 一定 要 坚持 下去。"],
+          "hint": "Subject + 一定 + 要 + verb + 下去.",
+          "hint_vi": "Chủ ngữ + 一定 + 要 + động từ + 下去.",
+          "explanation": "我们一定要坚持下去. 一定 comes before 要; 下去 follows the verb.",
+          "explanation_vi": "我们一定要坚持下去. 一定 (nhất định) đứng TRƯỚC 要 (phải); 下去 (tiếp tục) đứng sau động từ 坚持."
+        },
+        {
+          "id": "zh-puzzle-hsk4-10",
+          "kind": "sentence_order",
+          "objective": "Use 看出来 to mean 'can tell'",
+          "prompt": "Ghép câu: Anh nhìn ra rồi, hôm nay tâm trạng em không tốt.",
+          "tokens": ["心情", "了，", "今天", "不好。", "看出来", "我", "你"],
+          "answers": [
+            "我 看出来 了， 你 今天 心情 不好。",
+            "我 看出来 了， 今天 你 心情 不好。"
+          ],
+          "hint": "看出来 + 了, then what you noticed.",
+          "hint_vi": "看出来 + 了, rồi đến điều mình nhận ra.",
+          "explanation": "我看出来了，你今天心情不好. 看出来 = can tell by looking.",
+          "explanation_vi": "我看出来了 = anh nhìn ra rồi (出来 = nhận ra). Vế sau là câu chủ-vị lồng: 你今天心情不好 = em hôm nay tâm trạng không tốt; 今天 có thể đứng trước hoặc sau 你."
+        }
+      ]
+    },
+    {
+      "slug": "zh-listen-hsk4",
+      "language": "zh",
+      "category": "listening",
+      "level": "HSK4",
+      "topic": "long distance, health and daily life",
+      "title": "Far but Close: Listening to Longer Sentences",
+      "title_vi": "Xa mà gần: nghe hiểu câu dài",
+      "objectives": [
+        "Follow two-clause sentences with connectors",
+        "Catch advice and reasons in everyday talk",
+        "Hear the difference between 即使, 只要 and 只有"
+      ],
+      "questions": [
+        {
+          "id": "zh-listen-hsk4-01",
+          "kind": "listening",
+          "objective": "Understand how a long-distance couple keeps in touch",
+          "audio_text": "我们虽然不在一个城市，但是每天晚上都会打视频电话。",
+          "prompt": "Hai người giữ liên lạc với nhau như thế nào?",
+          "options": ["Gọi video mỗi tối", "Viết thư mỗi tuần", "Gặp nhau mỗi cuối tuần", "Nhắn tin mỗi sáng"],
+          "answer": "Gọi video mỗi tối",
+          "explanation": "每天晚上都会打视频电话 = make a video call every evening. 不在一个城市 = not in the same city.",
+          "explanation_vi": "每天晚上 = mỗi tối, 打视频电话 = gọi video. Vế đầu 虽然不在一个城市 (tuy không ở cùng một thành phố) cho biết họ yêu xa. Chú ý 每天…都… luôn đi cùng nhau: 'ngày nào cũng'."
+        },
+        {
+          "id": "zh-listen-hsk4-02",
+          "kind": "listening",
+          "objective": "Catch the doctor's advice",
+          "audio_text": "医生说我没什么大问题，只是太累了，要多休息，少加班。",
+          "prompt": "Bác sĩ khuyên người nói điều gì?",
+          "options": ["Nghỉ ngơi nhiều, bớt tăng ca", "Uống thuốc đúng giờ", "Đi phẫu thuật", "Tập thể dục mỗi sáng"],
+          "answer": "Nghỉ ngơi nhiều, bớt tăng ca",
+          "explanation": "要多休息，少加班 = should rest more and work less overtime. 没什么大问题 = nothing serious.",
+          "explanation_vi": "多休息 = nghỉ ngơi nhiều, 少加班 = bớt tăng ca — 多/少 đứng TRƯỚC động từ. 没什么大问题 = không có vấn đề gì lớn; 只是太累了 = chỉ là quá mệt thôi."
+        },
+        {
+          "id": "zh-listen-hsk4-03",
+          "kind": "listening",
+          "objective": "Distinguish 即使…也 from 只要…就 and 只有…才",
+          "audio_text": "即使工作再忙，他也会给我打电话。",
+          "prompt": "Bạn nghe thấy câu nào?",
+          "options": [
+            "即使工作再忙，他也会给我打电话。",
+            "只要工作不忙，他就会给我打电话。",
+            "只有工作不忙，他才会给我打电话。",
+            "即使工作不忙，他也不给我打电话。"
+          ],
+          "answer": "即使工作再忙，他也会给我打电话。",
+          "explanation": "即使…再忙…也会 = no matter how busy, he will still call. Listen for jíshǐ at the start and yě in the second clause.",
+          "explanation_vi": "Nghe từ đầu câu: 即使 (jíshǐ) khác 只要 (zhǐyào) và 只有 (zhǐyǒu). Rồi kiểm tra vế sau: 也会 (yě huì) khớp với 即使, 就会 khớp với 只要, 才会 khớp với 只有. 再忙 = dù bận đến mấy. Câu này nghĩa: dù công việc bận đến đâu, anh ấy vẫn gọi cho em."
+        },
+        {
+          "id": "zh-listen-hsk4-04",
+          "kind": "listening",
+          "objective": "Understand the reason for a change of plan",
+          "audio_text": "本来想周末去爬山，可是我发烧了，只好在家躺着。",
+          "prompt": "Vì sao cuối tuần người nói không đi leo núi?",
+          "options": ["Bị sốt", "Trời mưa", "Phải tăng ca", "Bạn không muốn đi"],
+          "answer": "Bị sốt",
+          "explanation": "本来想… = originally planned to…; 可是我发烧了 = but I had a fever; 只好 = had no choice but to.",
+          "explanation_vi": "本来想 = vốn định; 可是我发烧了 = nhưng tôi bị sốt; 只好在家躺着 = đành nằm ở nhà. Cụm 本来…可是…只好… là cách kể 'kế hoạch bị đổ' rất hay gặp ở HSK4."
+        },
+        {
+          "id": "zh-listen-hsk4-05",
+          "kind": "listening",
+          "objective": "Hear 连…都 and the exact meal word",
+          "audio_text": "他连早饭都没吃就去上班了。",
+          "prompt": "Bạn nghe thấy câu nào về bữa ăn của anh ấy?",
+          "options": [
+            "他连早饭都没吃就去上班了。",
+            "他连午饭都没吃就去上班了。",
+            "他吃了早饭就去上班了。",
+            "他连早饭都没做就去上班了。"
+          ],
+          "answer": "他连早饭都没吃就去上班了。",
+          "explanation": "连早饭都没吃 = didn't even eat breakfast. 早饭 (zǎofàn) = breakfast vs 午饭 (wǔfàn) = lunch; 吃 vs 做.",
+          "explanation_vi": "Ba chỗ cần nghe: 连…都 (ngay cả… cũng), 早饭 (zǎofàn, bữa sáng) khác 午饭 (wǔfàn, bữa trưa), và động từ 吃 (ăn) khác 做 (nấu). 没…就… = chưa… đã…: chưa ăn sáng đã đi làm."
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 > Two hearts. One adventure.
 
-A cozy, anime-inspired web app for a long-distance couple: a shared isometric home rendered with PixiJS, real English lessons with Vietnamese explanations and spaced repetition, two mini-games, quests, streaks, Love Coins, a Love Shop, and a private love space with messages, gifts, a Daily Love Question and a memory album.
+A cozy, anime-inspired web app for a long-distance couple: a shared isometric home rendered with PixiJS, real English (CEFR) and Chinese (HSK 3.0, levels 1–6) lessons with Vietnamese explanations and spaced repetition — each partner picks their own language — two mini-games, quests, streaks, Love Coins, a Love Shop, and a private love space with messages, gifts, a Daily Love Question and a memory album.
 
 ## Stack
 
@@ -84,6 +84,7 @@ docs/GAME_SYSTEMS.md    formulas and rules (XP, rewards, SRS, streaks, quests, r
 - **Art is procedural.** Characters, furniture and icons are drawn in code (PixiJS Graphics / inline SVG) with an original style; there are no hand-made sprite sheets. Swapping in illustrated atlases would be the biggest visual upgrade.
 - **Audio.** Listening exercises and pronunciation playback use the browser's text-to-speech (labelled as a computer voice, not native recordings). Voice recording is for self-comparison only — there is **no pronunciation scoring**.
 - **Sound effects** are synthesized with WebAudio (toggle in Profile).
+- **Chinese content** covers HSK 3.0 levels 1–6; every word card was checked against the community HSK 3.0 lists (drkameleon/complete-hsk-vocabulary). Grammar connectors follow common HSK teaching order and some are listed at a lower level officially. Levels 7–9 are not written yet.
 - **Single room.** The data model (`room_reserved_tiles`, `furniture_placements`, `couple_progress.home_level`) allows expansion, but only one room exists.
 - **Future games** (1v1 battle, couple boss, listening challenge, love quiz) appear as "coming soon" in the games registry; they are not playable.
 - Daily Love Question reveal relies on RLS + polling/realtime; if a partner answers while you are offline you see it on next load.

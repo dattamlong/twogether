@@ -1,0 +1,1051 @@
+{
+  "lessons": [
+    {
+      "slug": "zh-vocab-hsk6-culture",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK6",
+      "topic": "culture, arts & media",
+      "title": "Art Date: Culture, Arts & Media",
+      "title_vi": "Hẹn hò nghệ thuật: văn hoá, nghệ thuật và truyền thông",
+      "objectives": [
+        "Talk about enjoying and creating art: 欣赏, 创作, 演奏",
+        "Name art forms and media: 书法, 剧本, 短片",
+        "Describe heritage and collections: 戏曲, 收藏, 民间"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk6-culture-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 欣赏 (xīnshǎng)",
+          "prompt": "「欣赏」nghĩa là gì?",
+          "options": [
+            "sáng tác",
+            "thưởng thức, chiêm ngưỡng",
+            "sưu tầm",
+            "phát sóng"
+          ],
+          "answer": "thưởng thức, chiêm ngưỡng",
+          "explanation": "欣赏 (xīnshǎng) means 'to enjoy, appreciate' art, scenery or music. It is more refined than plain 看/听, and can also mean 'to think highly of' a person: 我很欣赏他的性格.",
+          "explanation_vi": "欣赏 (xīnshǎng) là thưởng thức, chiêm ngưỡng (tranh, nhạc, phong cảnh). Trang trọng, văn vẻ hơn 看/听 thông thường. Nghĩa thứ hai: đánh giá cao, quý mến một người — 我很欣赏他的性格 (tôi rất quý tính cách của anh ấy). Hán-Việt: 'hân thưởng'.",
+          "word": {
+            "term": "欣赏",
+            "pinyin": "xīnshǎng",
+            "part_of_speech": "verb",
+            "meaning_vi": "thưởng thức, chiêm ngưỡng; đánh giá cao",
+            "example": "周末我们一起去美术馆欣赏画展吧。",
+            "example_pinyin": "Zhōumò wǒmen yìqǐ qù měishùguǎn xīnshǎng huàzhǎn ba.",
+            "example_vi": "Cuối tuần mình cùng đến bảo tàng mỹ thuật thưởng thức triển lãm tranh nhé."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-02",
+          "kind": "multiple_choice",
+          "objective": "Recall the word for creating artistic works: 创作 (chuàngzuò)",
+          "prompt": "Chọn từ có nghĩa là 'sáng tác (tác phẩm nghệ thuật)'",
+          "options": [
+            "创造",
+            "制作",
+            "创作",
+            "收藏"
+          ],
+          "answer": "创作",
+          "explanation": "创作 (chuàngzuò) is to create a work of art — songs, novels, paintings. 创造 means to create/invent something new in general (创造历史), 制作 means to make or produce (制作视频).",
+          "explanation_vi": "创作 (chuàngzuò) = sáng tác tác phẩm nghệ thuật: bài hát, tiểu thuyết, tranh. Đừng nhầm với 创造 (sáng tạo, tạo ra cái mới nói chung — 创造历史 làm nên lịch sử) và 制作 (chế tác, sản xuất — 制作视频 làm video). Viết bài hát cho người yêu thì dùng 创作.",
+          "word": {
+            "term": "创作",
+            "pinyin": "chuàngzuò",
+            "part_of_speech": "verb",
+            "meaning_vi": "sáng tác",
+            "example": "这首歌是他为女朋友创作的。",
+            "example_pinyin": "Zhè shǒu gē shì tā wèi nǚpéngyou chuàngzuò de.",
+            "example_vi": "Bài hát này là anh ấy sáng tác cho bạn gái."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-03",
+          "kind": "multiple_choice",
+          "objective": "Use 书法 (shūfǎ) to talk about calligraphy",
+          "prompt": "我爷爷特别喜欢___，每天都要写几个毛笔字。",
+          "prompt_vi": "Ông em rất thích thư pháp, ngày nào cũng phải viết vài chữ bằng bút lông.",
+          "options": [
+            "剧本",
+            "书法",
+            "文物",
+            "纪录片"
+          ],
+          "answer": "书法",
+          "explanation": "书法 (shūfǎ) is calligraphy — writing characters artistically, usually with a brush (毛笔). The clue is 写毛笔字.",
+          "explanation_vi": "书法 (shūfǎ) là thư pháp — Hán-Việt trùng khớp 'thư pháp'. Manh mối là 写毛笔字 (viết chữ bằng bút lông). 剧本 là kịch bản, 文物 là cổ vật, 纪录片 là phim tài liệu — đều không 'viết bằng bút lông mỗi ngày' được.",
+          "word": {
+            "term": "书法",
+            "pinyin": "shūfǎ",
+            "part_of_speech": "noun",
+            "meaning_vi": "thư pháp",
+            "example": "她把自己写的书法挂在客厅里。",
+            "example_pinyin": "Tā bǎ zìjǐ xiě de shūfǎ guà zài kètīng li.",
+            "example_vi": "Cô ấy treo bức thư pháp tự mình viết trong phòng khách."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 剧本 (jùběn)",
+          "prompt": "「剧本」nghĩa là gì?",
+          "options": [
+            "kịch bản",
+            "đạo diễn",
+            "khán giả",
+            "diễn viên"
+          ],
+          "answer": "kịch bản",
+          "explanation": "剧本 (jùběn) is a script or screenplay. 剧 = drama, 本 = book/text. Director is 导演, audience is 观众, actor is 演员.",
+          "explanation_vi": "剧本 (jùběn) là kịch bản — Hán-Việt 'kịch bản', rất dễ nhớ. Phân biệt: 导演 (đạo diễn), 观众 (khán giả), 演员 (diễn viên). Lượng từ thường dùng: 一个剧本 / 一部剧本.",
+          "word": {
+            "term": "剧本",
+            "pinyin": "jùběn",
+            "part_of_speech": "noun",
+            "meaning_vi": "kịch bản",
+            "example": "这部电影的剧本写得非常感人。",
+            "example_pinyin": "Zhè bù diànyǐng de jùběn xiě de fēicháng gǎnrén.",
+            "example_vi": "Kịch bản của bộ phim này viết vô cùng cảm động."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-05",
+          "kind": "multiple_choice",
+          "objective": "Use 演奏 (yǎnzòu) for playing a musical piece",
+          "prompt": "音乐会上，她用钢琴___了一首浪漫的曲子。",
+          "prompt_vi": "Ở buổi hoà nhạc, cô ấy dùng đàn piano biểu diễn một bản nhạc lãng mạn.",
+          "options": [
+            "演讲",
+            "播放",
+            "收藏",
+            "演奏"
+          ],
+          "answer": "演奏",
+          "explanation": "演奏 (yǎnzòu) is to perform music on an instrument — a formal word for concerts. In everyday speech you can say 弹钢琴 (play piano). 演讲 is to give a speech; 播放 is to play a recording.",
+          "explanation_vi": "演奏 (yǎnzòu) = biểu diễn nhạc cụ (diễn tấu) — từ trang trọng, hay dùng cho hoà nhạc. Văn nói hằng ngày chỉ cần 弹钢琴 (chơi piano), 拉小提琴 (kéo violin). 演讲 là diễn thuyết; 播放 là phát (bản ghi, video) — không phải tự tay chơi đàn.",
+          "word": {
+            "term": "演奏",
+            "pinyin": "yǎnzòu",
+            "part_of_speech": "verb",
+            "meaning_vi": "biểu diễn (nhạc cụ), diễn tấu",
+            "example": "他在婚礼上为新娘演奏了一首曲子。",
+            "example_pinyin": "Tā zài hūnlǐ shang wèi xīnniáng yǎnzòu le yì shǒu qǔzi.",
+            "example_vi": "Anh ấy đã chơi một bản nhạc tặng cô dâu trong lễ cưới."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-06",
+          "kind": "multiple_choice",
+          "objective": "Recall the word for 'short film': 短片 (duǎnpiàn)",
+          "prompt": "Chọn từ có nghĩa là 'phim ngắn'",
+          "options": [
+            "连续剧",
+            "短片",
+            "动画片",
+            "广告"
+          ],
+          "answer": "短片",
+          "explanation": "短片 (duǎnpiàn) is a short film or video clip — 短 'short' + 片 'film'. 连续剧 is a TV series, 动画片 a cartoon, 广告 an advertisement.",
+          "explanation_vi": "短片 (duǎnpiàn) là phim ngắn, video clip — 短 (ngắn) + 片 (phim, như trong 影片). Hán-Việt 'đoản phiến', chữ 'đoản' giống trong 'đoản mệnh'. Phân biệt: 连续剧 (phim bộ truyền hình), 动画片 (phim hoạt hình), 广告 (quảng cáo).",
+          "word": {
+            "term": "短片",
+            "pinyin": "duǎnpiàn",
+            "part_of_speech": "noun",
+            "meaning_vi": "phim ngắn, video clip",
+            "example": "他用手机拍了一个关于我们旅行的短片。",
+            "example_pinyin": "Tā yòng shǒujī pāi le yí gè guānyú wǒmen lǚxíng de duǎnpiàn.",
+            "example_vi": "Anh ấy dùng điện thoại quay một đoạn phim ngắn về chuyến đi của tụi mình."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-07",
+          "kind": "multiple_choice",
+          "objective": "Use 播放 (bōfàng) for broadcasting or playing media",
+          "prompt": "这个节目每周六晚上八点在电视上___。",
+          "prompt_vi": "Chương trình này được phát trên TV lúc 8 giờ tối thứ Bảy hằng tuần.",
+          "options": [
+            "播放",
+            "演奏",
+            "创作",
+            "欣赏"
+          ],
+          "answer": "播放",
+          "explanation": "播放 (bōfàng) means to broadcast or play (a programme, video, song). It is the media word; 演奏 is live playing on an instrument.",
+          "explanation_vi": "播放 (bōfàng) = phát sóng, phát (chương trình, video, nhạc). Hán-Việt 'bá phóng'. Dùng cho TV, radio, điện thoại: 播放音乐 (mở nhạc). Khác 演奏 — người thật chơi nhạc cụ trực tiếp.",
+          "word": {
+            "term": "播放",
+            "pinyin": "bōfàng",
+            "part_of_speech": "verb",
+            "meaning_vi": "phát sóng, phát (video, nhạc)",
+            "example": "电视上正在播放我们第一次约会时看的那部电影。",
+            "example_pinyin": "Diànshì shang zhèngzài bōfàng wǒmen dì-yī cì yuēhuì shí kàn de nà bù diànyǐng.",
+            "example_vi": "Trên TV đang chiếu bộ phim tụi mình xem trong buổi hẹn hò đầu tiên."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 收藏 (shōucáng)",
+          "prompt": "「收藏」nghĩa là gì?",
+          "options": [
+            "triển lãm",
+            "bán đấu giá",
+            "sưu tầm, cất giữ",
+            "sửa chữa"
+          ],
+          "answer": "sưu tầm, cất giữ",
+          "explanation": "收藏 (shōucáng) means to collect and keep (art, stamps, souvenirs). Online it also means to save/bookmark a post or link.",
+          "explanation_vi": "收藏 (shōucáng) = sưu tầm, cất giữ (tranh, tem, kỷ vật). Hán-Việt 'thu tàng'. Trên mạng, 收藏 còn là 'lưu / đánh dấu' bài viết, video. Chú ý 藏 ở đây đọc cáng, không phải zàng (西藏 Tây Tạng).",
+          "word": {
+            "term": "收藏",
+            "pinyin": "shōucáng",
+            "part_of_speech": "verb",
+            "meaning_vi": "sưu tầm, cất giữ; lưu (trên mạng)",
+            "example": "她收藏了我们一起看过的每一张电影票。",
+            "example_pinyin": "Tā shōucáng le wǒmen yìqǐ kàn guo de měi yì zhāng diànyǐngpiào.",
+            "example_vi": "Cô ấy giữ lại từng tấm vé xem phim tụi mình từng xem cùng nhau."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-09",
+          "kind": "multiple_choice",
+          "objective": "Use 戏曲 (xìqǔ) for traditional Chinese opera",
+          "prompt": "京剧是中国最有名的___之一。",
+          "prompt_vi": "Kinh kịch là một trong những loại hí khúc nổi tiếng nhất của Trung Quốc.",
+          "options": [
+            "剧本",
+            "戏曲",
+            "观众",
+            "舞台"
+          ],
+          "answer": "戏曲",
+          "explanation": "戏曲 (xìqǔ) is the umbrella term for traditional Chinese opera; 京剧 (Peking opera) is its best-known form.",
+          "explanation_vi": "戏曲 (xìqǔ) là hí khúc — tên gọi chung các loại kịch hát truyền thống Trung Quốc, Hán-Việt 'hí khúc'. 京剧 (Kinh kịch) là một loại 戏曲, nên câu này nói 'một trong những loại hí khúc'. 剧本 (kịch bản), 观众 (khán giả), 舞台 (sân khấu) đều không phải là một loại hình nghệ thuật như 京剧.",
+          "word": {
+            "term": "戏曲",
+            "pinyin": "xìqǔ",
+            "part_of_speech": "noun",
+            "meaning_vi": "hí khúc, kịch hát truyền thống Trung Quốc",
+            "example": "爷爷每天晚上都要听一会儿戏曲。",
+            "example_pinyin": "Yéye měi tiān wǎnshang dōu yào tīng yíhuìr xìqǔ.",
+            "example_vi": "Tối nào ông nội cũng phải nghe hí khúc một lúc."
+          }
+        },
+        {
+          "id": "zh-hsk6-culture-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 民间 (mínjiān)",
+          "prompt": "「民间」nghĩa là gì?",
+          "options": [
+            "chính phủ",
+            "hiện đại",
+            "nước ngoài",
+            "dân gian"
+          ],
+          "answer": "dân gian",
+          "explanation": "民间 (mínjiān) means 'among the people, folk' as opposed to official or court culture: 民间故事 (folk tales), 民间艺术 (folk art).",
+          "explanation_vi": "民间 (mínjiān) = dân gian — Hán-Việt y hệt. Dùng trước danh từ: 民间故事 (truyện dân gian), 民间艺术 (nghệ thuật dân gian), 民间音乐. Đối lập với 官方 (chính thức, nhà nước).",
+          "word": {
+            "term": "民间",
+            "pinyin": "mínjiān",
+            "part_of_speech": "noun",
+            "meaning_vi": "dân gian",
+            "example": "奶奶会讲很多有趣的民间故事。",
+            "example_pinyin": "Nǎinai huì jiǎng hěn duō yǒuqù de mínjiān gùshi.",
+            "example_vi": "Bà biết kể rất nhiều truyện dân gian thú vị."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-vocab-hsk6-opinions",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK6",
+      "topic": "abstract ideas, opinions & formal expressions",
+      "title": "Let's Talk It Through: Ideas & Opinions",
+      "title_vi": "Cùng nói cho rõ: ý tưởng và quan điểm",
+      "objectives": [
+        "Express viewpoints formally: 观点, 立场, 主张, 观念",
+        "Talk about evidence and conditions: 依据, 前提, 认可, 争议",
+        "Stay rational and rephrase a point: 理智, 这就是说"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk6-opinion-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 观点 (guāndiǎn)",
+          "prompt": "「观点」nghĩa là gì?",
+          "options": [
+            "quan điểm",
+            "phong cảnh",
+            "điểm số",
+            "thói quen"
+          ],
+          "answer": "quan điểm",
+          "explanation": "观点 (guāndiǎn) is a viewpoint, often in discussions or writing. In casual talk people prefer 看法 (kànfǎ): 你有什么看法？",
+          "explanation_vi": "观点 (guāndiǎn) = quan điểm — Hán-Việt trùng khớp. Dùng nhiều trong thảo luận, bài viết. Văn nói thường dùng 看法 (cách nhìn): 你有什么看法？ Cụm hay gặp: 表达观点 (bày tỏ quan điểm), 观点不同 (khác quan điểm).",
+          "word": {
+            "term": "观点",
+            "pinyin": "guāndiǎn",
+            "part_of_speech": "noun",
+            "meaning_vi": "quan điểm",
+            "example": "我们的观点不一样，但我尊重你的看法。",
+            "example_pinyin": "Wǒmen de guāndiǎn bù yíyàng, dàn wǒ zūnzhòng nǐ de kànfǎ.",
+            "example_vi": "Quan điểm của chúng mình khác nhau, nhưng anh tôn trọng cách nghĩ của em."
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-02",
+          "kind": "multiple_choice",
+          "objective": "Recall the word for 'standpoint': 立场 (lìchǎng)",
+          "prompt": "Chọn từ có nghĩa là 'lập trường, góc đứng (của một người)'",
+          "options": [
+            "市场",
+            "现场",
+            "立场",
+            "广场"
+          ],
+          "answer": "立场",
+          "explanation": "立场 (lìchǎng) is one's standpoint or position. 站在…的立场上 = to see things from someone's position. 市场 market, 现场 scene/on-site, 广场 square.",
+          "explanation_vi": "立场 (lìchǎng) = lập trường. Cụm rất hay dùng: 站在对方的立场上想 (đặt mình vào vị trí người kia mà nghĩ). Bốn đáp án đều có 场 — 市场 (chợ, thị trường), 现场 (hiện trường, tại chỗ), 广场 (quảng trường) — nhìn chữ đầu để phân biệt.",
+          "word": {
+            "term": "立场",
+            "pinyin": "lìchǎng",
+            "part_of_speech": "noun",
+            "meaning_vi": "lập trường, vị trí (quan điểm)",
+            "example": "你要站在我的立场上想一想。",
+            "example_pinyin": "Nǐ yào zhàn zài wǒ de lìchǎng shang xiǎng yi xiǎng.",
+            "example_vi": "Anh phải đặt mình vào vị trí của em mà nghĩ thử xem."
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-03",
+          "kind": "multiple_choice",
+          "objective": "Use 主张 (zhǔzhāng) to state a held position",
+          "prompt": "爸爸一直___孩子应该多读书、少玩手机。",
+          "prompt_vi": "Bố luôn chủ trương rằng con cái nên đọc sách nhiều, bớt chơi điện thoại.",
+          "options": [
+            "主持",
+            "主张",
+            "主动",
+            "主题"
+          ],
+          "answer": "主张",
+          "explanation": "主张 (zhǔzhāng) means to advocate / to hold that…, and is also a noun 'position, proposal'. It is firmer and more formal than 认为. 主持 is to host, 主动 is proactive, 主题 is theme.",
+          "explanation_vi": "主张 (zhǔzhāng) = chủ trương, chủ ý cho rằng — vừa là động từ vừa là danh từ. Mạnh và trang trọng hơn 认为 (cho rằng). Phân biệt: 主持 (dẫn chương trình, chủ trì), 主动 (chủ động), 主题 (chủ đề).",
+          "word": {
+            "term": "主张",
+            "pinyin": "zhǔzhāng",
+            "part_of_speech": "verb",
+            "meaning_vi": "chủ trương, chủ ý cho rằng",
+            "example": "她主张两个人有问题要当面说清楚。",
+            "example_pinyin": "Tā zhǔzhāng liǎng gè rén yǒu wèntí yào dāngmiàn shuō qīngchu.",
+            "example_vi": "Cô ấy chủ trương hai người có vấn đề thì phải nói rõ trực tiếp với nhau."
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 认可 (rènkě)",
+          "prompt": "「认可」nghĩa là gì?",
+          "options": [
+            "nhận ra, quen biết",
+            "công nhận, tán thành",
+            "từ chối",
+            "tha thứ"
+          ],
+          "answer": "công nhận, tán thành",
+          "explanation": "认可 (rènkě) means to approve of, to recognise as good. 得到…的认可 = to win someone's approval. Do not confuse it with 认识 (to know someone).",
+          "explanation_vi": "认可 (rènkě) = công nhận, tán thành, chấp thuận. Cấu trúc hay gặp: 得到…的认可 (được … công nhận). Khác 认识 (quen biết, nhận ra). Sắc thái trang trọng hơn 同意 (đồng ý).",
+          "word": {
+            "term": "认可",
+            "pinyin": "rènkě",
+            "part_of_speech": "verb",
+            "meaning_vi": "công nhận, tán thành",
+            "example": "他的努力终于得到了家人的认可。",
+            "example_pinyin": "Tā de nǔlì zhōngyú dédào le jiārén de rènkě.",
+            "example_vi": "Sự cố gắng của anh ấy cuối cùng cũng được gia đình công nhận."
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-05",
+          "kind": "multiple_choice",
+          "objective": "Use 争议 (zhēngyì) for controversy",
+          "prompt": "这部电影的结局引起了很大的___。",
+          "prompt_vi": "Cái kết của bộ phim này đã gây ra tranh cãi rất lớn.",
+          "options": [
+            "意义",
+            "建议",
+            "会议",
+            "争议"
+          ],
+          "answer": "争议",
+          "explanation": "争议 (zhēngyì) is controversy or dispute; 引起争议 = to stir up controversy. It is more formal than 吵架 (to quarrel). 意义 meaning, 建议 suggestion, 会议 meeting.",
+          "explanation_vi": "争议 (zhēngyì) = tranh nghị, sự tranh cãi (về quan điểm). Cụm cố định: 引起争议 (gây tranh cãi), 有争议 (còn gây tranh cãi). Trang trọng, khác với 吵架 (cãi nhau to tiếng). Bốn đáp án đều có 议/义 — chú ý chữ đầu.",
+          "word": {
+            "term": "争议",
+            "pinyin": "zhēngyì",
+            "part_of_speech": "noun",
+            "meaning_vi": "sự tranh cãi, tranh luận",
+            "example": "这个问题有争议，我们慢慢讨论吧。",
+            "example_pinyin": "Zhège wèntí yǒu zhēngyì, wǒmen mànmàn tǎolùn ba.",
+            "example_vi": "Vấn đề này còn nhiều ý kiến trái chiều, mình từ từ bàn nhé."
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-06",
+          "kind": "multiple_choice",
+          "objective": "Recall the word for long-held beliefs: 观念 (guānniàn)",
+          "prompt": "Chọn từ có nghĩa là 'quan niệm (cách nghĩ đã thành nếp)'",
+          "options": [
+            "观众",
+            "观念",
+            "观察",
+            "观光"
+          ],
+          "answer": "观念",
+          "explanation": "观念 (guānniàn) is a deep-rooted idea or belief (传统观念, 消费观念). 观点 is an opinion on a specific issue. 观众 audience, 观察 to observe, 观光 sightseeing.",
+          "explanation_vi": "观念 (guānniàn) = quan niệm — cách nghĩ lâu dài, có tính hệ thống: 传统观念 (quan niệm truyền thống), 消费观念 (quan niệm tiêu dùng). So với 观点 (quan điểm về một vấn đề cụ thể), 观念 rộng và bền hơn. Các đáp án khác: 观众 (khán giả), 观察 (quan sát), 观光 (tham quan).",
+          "word": {
+            "term": "观念",
+            "pinyin": "guānniàn",
+            "part_of_speech": "noun",
+            "meaning_vi": "quan niệm",
+            "example": "结婚以后，他的很多观念都变了。",
+            "example_pinyin": "Jiéhūn yǐhòu, tā de hěn duō guānniàn dōu biàn le.",
+            "example_vi": "Sau khi kết hôn, rất nhiều quan niệm của anh ấy đã thay đổi."
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-07",
+          "kind": "multiple_choice",
+          "objective": "Use 前提 (qiántí) for a precondition",
+          "prompt": "健康是幸福的___，所以你要早点儿休息。",
+          "prompt_vi": "Sức khoẻ là tiền đề của hạnh phúc, nên anh phải nghỉ ngơi sớm một chút.",
+          "options": [
+            "前途",
+            "前面",
+            "前提",
+            "提前"
+          ],
+          "answer": "前提",
+          "explanation": "前提 (qiántí) is a precondition or premise: A是B的前提 = A is the basis for B. 前途 future prospects, 前面 in front, 提前 in advance.",
+          "explanation_vi": "前提 (qiántí) = tiền đề, điều kiện tiên quyết. Mẫu: A是B的前提 (A là tiền đề của B); 在…的前提下 (với điều kiện …). Đừng nhầm 提前 (đảo chữ — làm trước, sớm hơn), 前途 (tiền đồ, tương lai), 前面 (phía trước).",
+          "word": {
+            "term": "前提",
+            "pinyin": "qiántí",
+            "part_of_speech": "noun",
+            "meaning_vi": "tiền đề, điều kiện tiên quyết",
+            "example": "互相信任是一段感情的前提。",
+            "example_pinyin": "Hùxiāng xìnrèn shì yí duàn gǎnqíng de qiántí.",
+            "example_vi": "Tin tưởng lẫn nhau là tiền đề của một mối quan hệ."
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 依据 (yījù)",
+          "prompt": "「依据」nghĩa là gì?",
+          "options": [
+            "kết quả",
+            "nghi ngờ",
+            "căn cứ, cơ sở",
+            "ví dụ"
+          ],
+          "answer": "căn cứ, cơ sở",
+          "explanation": "依据 (yījù) is a basis or grounds (noun), and also 'according to' (preposition) in formal writing. In everyday speech 根据 is the common preposition: 根据天气预报…",
+          "explanation_vi": "依据 (yījù) = căn cứ, cơ sở (danh từ) — 有什么依据？ (có căn cứ gì?). Cũng làm giới từ 'căn cứ theo' trong văn viết, văn bản pháp luật. Văn nói thường dùng 根据: 根据天气预报… (theo dự báo thời tiết…).",
+          "word": {
+            "term": "依据",
+            "pinyin": "yījù",
+            "part_of_speech": "noun",
+            "meaning_vi": "căn cứ, cơ sở",
+            "example": "你说他不喜欢我，有什么依据吗？",
+            "example_pinyin": "Nǐ shuō tā bù xǐhuan wǒ, yǒu shénme yījù ma?",
+            "example_vi": "Em bảo anh ấy không thích anh, có căn cứ gì không?"
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-09",
+          "kind": "multiple_choice",
+          "objective": "Use 理智 (lǐzhì) to talk about staying rational",
+          "prompt": "两个人看法不同的时候，要___一点，不要太激动。",
+          "prompt_vi": "Khi hai người có quan điểm khác nhau, cần lý trí một chút, đừng quá kích động.",
+          "options": [
+            "主流",
+            "理智",
+            "本土",
+            "悲惨"
+          ],
+          "answer": "理智",
+          "explanation": "理智 (lǐzhì) means 'rational, level-headed' (adjective) or 'reason' (noun). It contrasts with being 激动 (worked up). 主流 'mainstream', 本土 'local, native', 悲惨 'tragic'.",
+          "explanation_vi": "理智 (lǐzhì) = lý trí: bình tĩnh, suy nghĩ bằng lý lẽ chứ không theo cảm xúc. Vừa là tính từ (要理智一点 — tỉnh táo một chút) vừa là danh từ (保持理智 — giữ lý trí). Các đáp án khác: 主流 (xu hướng chủ đạo), 本土 (bản địa), 悲惨 (bi thảm) đều không hợp với 'đừng quá kích động'.",
+          "word": {
+            "term": "理智",
+            "pinyin": "lǐzhì",
+            "part_of_speech": "adjective",
+            "meaning_vi": "lý trí, tỉnh táo",
+            "example": "吵架的时候，很难保持理智。",
+            "example_pinyin": "Chǎojià de shíhou, hěn nán bǎochí lǐzhì.",
+            "example_vi": "Lúc cãi nhau thì rất khó giữ được lý trí."
+          }
+        },
+        {
+          "id": "zh-hsk6-opinion-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 这就是说 (zhè jiù shì shuō)",
+          "prompt": "「这就是说」nghĩa là gì?",
+          "options": [
+            "ngược lại",
+            "ví dụ như",
+            "ngoài ra",
+            "nói cách khác, tức là"
+          ],
+          "answer": "nói cách khác, tức là",
+          "explanation": "这就是说 (zhè jiù shì shuō) means 'that is to say, in other words'. It restates or draws out the implication of what was just said.",
+          "explanation_vi": "这就是说 = nói cách khác, tức là — dùng để diễn đạt lại hoặc rút ra hệ quả của câu vừa nói. Nghĩa đen 'điều này chính là nói'. Hay gặp khi lập luận, phát biểu: 这就是说，我们还需要更多时间 (Nói cách khác, chúng ta còn cần thêm thời gian). Đừng nhầm với 相反 (ngược lại), 比如 (ví dụ như), 另外 (ngoài ra).",
+          "word": {
+            "term": "这就是说",
+            "pinyin": "zhè jiù shì shuō",
+            "part_of_speech": "phrase",
+            "meaning_vi": "nói cách khác, tức là",
+            "example": "你明天要加班？这就是说，我们的约会又要改时间了。",
+            "example_pinyin": "Nǐ míngtiān yào jiābān? Zhè jiù shì shuō, wǒmen de yuēhuì yòu yào gǎi shíjiān le.",
+            "example_vi": "Mai anh phải tăng ca à? Nói cách khác, buổi hẹn của mình lại phải đổi giờ rồi."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-grammar-hsk6",
+      "language": "zh",
+      "category": "grammar",
+      "level": "HSK6",
+      "topic": "以…为…, 一旦, 宁可, 不得不, 未必, 毕竟, 反而, 甚至, 以免, 从而",
+      "title": "Reasoning Together: Advanced Connectors",
+      "title_vi": "Cùng nhau lập luận: liên từ và phó từ nâng cao",
+      "objectives": [
+        "Frame ideas with 以…为… and conditions with 一旦…就…",
+        "Weigh choices with 宁可…也不… and 不得不",
+        "Soften or justify claims with 未必 and 毕竟",
+        "Link cause, purpose and contrast with 反而, 甚至, 以免, 从而"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk6-grammar-01",
+          "kind": "multiple_choice",
+          "objective": "Use 以…为… to mean 'take A as B'",
+          "prompt": "我们的婚礼___中国传统文化为主题。",
+          "prompt_vi": "Đám cưới của chúng mình lấy văn hoá truyền thống Trung Hoa làm chủ đề.",
+          "options": [
+            "把",
+            "以",
+            "被",
+            "对"
+          ],
+          "answer": "以",
+          "explanation": "以 A 为 B means 'to take A as B' — a formal written pattern: 以…为主题 (with … as the theme), 以…为荣 (be proud of …).",
+          "explanation_vi": "以 A 为 B = lấy A làm B — mẫu câu trang trọng, văn viết. Hay gặp: 以…为主题 (lấy … làm chủ đề), 以…为主 (lấy … làm chính), 以…为荣 (lấy … làm vinh dự). 把 và 被 không đi với 为 theo cách này."
+        },
+        {
+          "id": "zh-hsk6-grammar-02",
+          "kind": "multiple_choice",
+          "objective": "Use 一旦…就… for 'once (something happens), then…'",
+          "prompt": "___你决定了，我就全力支持你。",
+          "prompt_vi": "Một khi em đã quyết định, anh sẽ dốc hết sức ủng hộ em.",
+          "options": [
+            "一旦",
+            "虽然",
+            "尽管",
+            "不管"
+          ],
+          "answer": "一旦",
+          "explanation": "一旦…就… means 'once …, then …': the second event follows as soon as the first happens. 虽然/尽管 mean 'although' and need 但是/还是; 不管 means 'no matter' and needs a question form plus 都.",
+          "explanation_vi": "一旦…就… = một khi … thì … — chỉ cần điều kiện xảy ra là kết quả theo sau ngay. 虽然/尽管 (mặc dù) phải đi với 但是/还是; 不管 (bất kể) phải đi với dạng nghi vấn + 都. Chỉ 一旦 hợp với 就 ở đây."
+        },
+        {
+          "id": "zh-hsk6-grammar-03",
+          "kind": "multiple_choice",
+          "objective": "Use 宁可…也不… to express a preferred sacrifice",
+          "prompt": "我___少睡一会儿，也不想错过和你视频的时间。",
+          "prompt_vi": "Anh thà ngủ ít đi một chút, chứ không muốn bỏ lỡ giờ gọi video với em.",
+          "options": [
+            "不但",
+            "只要",
+            "宁可",
+            "因为"
+          ],
+          "answer": "宁可",
+          "explanation": "宁可 A 也不 B means 'would rather A than B': the speaker accepts a cost (A) to avoid something worse (B).",
+          "explanation_vi": "宁可 A，也不 B = thà A chứ không B. Người nói chấp nhận một điều thiệt (ngủ ít) để tránh điều mình không muốn hơn (bỏ lỡ cuộc gọi). 不但 đi với 而且, 只要 đi với 就, 因为 đi với 所以 — đều không khớp với 也不."
+        },
+        {
+          "id": "zh-hsk6-grammar-04",
+          "kind": "multiple_choice",
+          "objective": "Use 不得不 for 'have no choice but to'",
+          "prompt": "航班取消了，我们___改到明天出发。",
+          "prompt_vi": "Chuyến bay bị huỷ, chúng mình đành phải đổi sang ngày mai mới khởi hành.",
+          "options": [
+            "不见得",
+            "不得不",
+            "不在乎",
+            "不至于"
+          ],
+          "answer": "不得不",
+          "explanation": "不得不 + verb means 'have no choice but to': the situation forces the action. 不见得 'not necessarily', 不在乎 'not care', 不至于 'not go so far as to'.",
+          "explanation_vi": "不得不 + động từ = buộc phải, đành phải (không làm không được). Phủ định kép mang nghĩa bắt buộc. Phân biệt: 不见得 (chưa chắc), 不在乎 (không quan tâm), 不至于 (không đến mức)."
+        },
+        {
+          "id": "zh-hsk6-grammar-05",
+          "kind": "multiple_choice",
+          "objective": "Use 未必 for 'not necessarily'",
+          "prompt": "价格贵的东西___就好，我们还是看看评价吧。",
+          "prompt_vi": "Đồ đắt chưa chắc đã tốt, mình cứ xem đánh giá đã.",
+          "options": [
+            "必须",
+            "一定",
+            "未必",
+            "必然"
+          ],
+          "answer": "未必",
+          "explanation": "未必 (wèibì) means 'not necessarily' — a polite, formal way to doubt a claim. 必须/一定/必然 all assert certainty, which contradicts 还是看看评价吧.",
+          "explanation_vi": "未必 (wèibì) = chưa chắc, không nhất thiết — cách phủ nhận nhẹ nhàng, lịch sự. Tương đương 不一定 nhưng trang trọng hơn. 必须 (bắt buộc), 一定 (nhất định), 必然 (tất nhiên) đều khẳng định chắc chắn, mâu thuẫn với vế sau 'cứ xem đánh giá đã'."
+        },
+        {
+          "id": "zh-hsk6-grammar-06",
+          "kind": "multiple_choice",
+          "objective": "Use 毕竟 to give an undeniable reason",
+          "prompt": "别生他的气了，他___还是个孩子。",
+          "prompt_vi": "Đừng giận nó nữa, dù sao nó cũng vẫn còn là một đứa trẻ.",
+          "options": [
+            "终于",
+            "毕竟",
+            "居然",
+            "果然"
+          ],
+          "answer": "毕竟",
+          "explanation": "毕竟 (bìjìng) means 'after all' — it points to a basic fact that explains or excuses something. 终于 'finally', 居然 'unexpectedly', 果然 'as expected'.",
+          "explanation_vi": "毕竟 (bìjìng) = dù sao thì, xét cho cùng — nêu ra một sự thật cơ bản để giải thích hoặc bào chữa. Phân biệt: 终于 (cuối cùng thì), 居然 (vậy mà, không ngờ), 果然 (quả nhiên)."
+        },
+        {
+          "id": "zh-hsk6-grammar-07",
+          "kind": "multiple_choice",
+          "objective": "Use 反而 for a result opposite to expectation",
+          "prompt": "我本来想帮她，没想到___给她添了麻烦。",
+          "prompt_vi": "Anh vốn định giúp cô ấy, không ngờ lại còn gây thêm phiền phức cho cô ấy.",
+          "options": [
+            "而且",
+            "于是",
+            "反而",
+            "并且"
+          ],
+          "answer": "反而",
+          "explanation": "反而 (fǎn'ér) means 'instead, on the contrary': the outcome is the opposite of what was intended. 而且/并且 add information, 于是 shows a natural sequence.",
+          "explanation_vi": "反而 (fǎn'ér) = ngược lại, trái lại — kết quả trái với mong đợi (muốn giúp mà lại gây phiền). 而且/并且 (hơn nữa) chỉ bổ sung ý; 于是 (thế là) chỉ hệ quả tự nhiên, không có nghĩa 'trái ngược'."
+        },
+        {
+          "id": "zh-hsk6-grammar-08",
+          "kind": "multiple_choice",
+          "objective": "Use 甚至 to push to an extreme example",
+          "prompt": "他太忙了，___连吃饭的时间都没有。",
+          "prompt_vi": "Anh ấy bận quá, thậm chí đến thời gian ăn cơm cũng không có.",
+          "options": [
+            "甚至",
+            "何况",
+            "以免",
+            "从而"
+          ],
+          "answer": "甚至",
+          "explanation": "甚至 (shènzhì) means 'even' and introduces the most extreme case. It often pairs with 连…都/也.",
+          "explanation_vi": "甚至 (shènzhì) = thậm chí — đưa ra ví dụ cực đoan nhất. Rất hay đi với 连…都/也 (ngay cả … cũng). 何况 (huống chi) dùng ở vế sau để so sánh; 以免 (để tránh) và 从而 (từ đó) không hợp nghĩa."
+        },
+        {
+          "id": "zh-hsk6-grammar-09",
+          "kind": "multiple_choice",
+          "objective": "Use 以免 for 'so as to avoid'",
+          "prompt": "出门前多穿一件衣服，___感冒。",
+          "prompt_vi": "Trước khi ra ngoài mặc thêm một chiếc áo, để tránh bị cảm.",
+          "options": [
+            "从而",
+            "以免",
+            "以便",
+            "甚至"
+          ],
+          "answer": "以免",
+          "explanation": "以免 (yǐmiǎn) introduces something undesirable to avoid. 以便 also expresses purpose but for a desired goal (以便联系 'so as to contact'), so 以便感冒 would mean wanting to catch a cold.",
+          "explanation_vi": "以免 (yǐmiǎn) = để tránh, kẻo — theo sau là điều KHÔNG mong muốn (感冒, 迟到). Bẫy: 以便 cũng chỉ mục đích nhưng theo sau là điều MONG MUỐN (以便联系 = để tiện liên lạc). Dùng 以便感冒 sẽ thành 'để được bị cảm'!"
+        },
+        {
+          "id": "zh-hsk6-grammar-10",
+          "kind": "multiple_choice",
+          "objective": "Use 从而 to link a method to its result",
+          "prompt": "我们每天坚持用中文聊天，___提高了口语水平。",
+          "prompt_vi": "Mỗi ngày chúng mình kiên trì trò chuyện bằng tiếng Trung, nhờ đó nâng cao trình độ khẩu ngữ.",
+          "options": [
+            "以免",
+            "宁可",
+            "未必",
+            "从而"
+          ],
+          "answer": "从而",
+          "explanation": "从而 (cóng'ér) means 'thereby, thus': the first clause is the method, the second its result. It is a written-style connector; in speech people say 所以 or 这样.",
+          "explanation_vi": "从而 (cóng'ér) = từ đó, nhờ vậy mà — vế trước là cách làm, vế sau là kết quả đạt được. Thiên về văn viết; văn nói hay dùng 所以 hoặc 这样就…. 从而 đứng đầu vế sau và thường dùng chung chủ ngữ với vế trước."
+        }
+      ]
+    },
+    {
+      "slug": "zh-puzzle-hsk6",
+      "language": "zh",
+      "category": "writing",
+      "level": "HSK6",
+      "topic": "HSK6 sentence structures",
+      "title": "Sentence Puzzle: Saying It Like a Grown-Up",
+      "title_vi": "Ghép câu: nói năng chín chắn hơn",
+      "objectives": [
+        "Build paired-connector sentences: 与其…不如, 即使…也, 无论…都, 只有…才",
+        "Give reasons and conclusions with 既然, 之所以…是因为, 难怪",
+        "Order clauses with 不但不…反而, 以…为, 一旦…就"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk6-puzzle-01",
+          "kind": "sentence_order",
+          "objective": "Build a 与其…不如… sentence",
+          "prompt": "Ghép câu: Thay vì ở nhà giận dỗi, chi bằng mình ra ngoài đi dạo đi.",
+          "tokens": [
+            "不如",
+            "生气，",
+            "走走",
+            "与其",
+            "吧。",
+            "在家",
+            "出去"
+          ],
+          "answers": [
+            "与其 在家 生气， 不如 出去 走走 吧。"
+          ],
+          "hint": "与其 opens the rejected option; 不如 introduces the better one.",
+          "hint_vi": "与其 mở đầu phương án bị loại; 不如 dẫn ra phương án tốt hơn.",
+          "explanation": "与其 A，不如 B = 'rather than A, better to B'. 在家 (place) goes before 生气; 出去走走 is 'go out for a walk'.",
+          "explanation_vi": "与其 A，不如 B = thay vì A, chi bằng B. Nơi chốn 在家 đứng trước động từ 生气. 出去走走 = ra ngoài đi dạo (động từ lặp lại cho nhẹ nhàng), 吧 ở cuối để rủ rê."
+        },
+        {
+          "id": "zh-hsk6-puzzle-02",
+          "kind": "sentence_order",
+          "objective": "Build a concessive 即使…也… sentence",
+          "prompt": "Ghép câu: Dù công việc bận đến đâu, anh cũng sẽ gọi điện cho em.",
+          "tokens": [
+            "也",
+            "再",
+            "打电话。",
+            "我",
+            "即使",
+            "会",
+            "忙，",
+            "工作",
+            "给你"
+          ],
+          "answers": [
+            "即使 工作 再 忙， 我 也 会 给你 打电话。",
+            "我 即使 工作 再 忙， 也 会 给你 打电话。",
+            "即使 我 工作 再 忙， 也 会 给你 打电话。"
+          ],
+          "hint": "即使…也… = even if … still …; 再 + adjective means 'no matter how'.",
+          "hint_vi": "即使…也… = cho dù … cũng …; 再 + tính từ = dù … đến đâu.",
+          "explanation": "即使 introduces a hypothetical extreme; 也 must come after the subject in the second clause. The subject 我 can stand before 即使, after it, or in the second clause.",
+          "explanation_vi": "即使 nêu giả thiết (kể cả trường hợp xấu nhất), 也 ở vế sau, đứng sau chủ ngữ và trước động từ. Chủ ngữ 我 có thể đặt trước 即使, sau 即使, hoặc đầu vế sau. 再忙 = bận mấy đi nữa."
+        },
+        {
+          "id": "zh-hsk6-puzzle-03",
+          "kind": "sentence_order",
+          "objective": "Build an unconditional 无论…都… sentence",
+          "prompt": "Ghép câu: Dù có xảy ra chuyện gì, anh cũng sẽ luôn ở bên em.",
+          "tokens": [
+            "陪着",
+            "都",
+            "什么，",
+            "我",
+            "你。",
+            "无论",
+            "会",
+            "发生"
+          ],
+          "answers": [
+            "无论 发生 什么， 我 都 会 陪着 你。",
+            "我 无论 发生 什么， 都 会 陪着 你。"
+          ],
+          "hint": "无论 + question word …, subject + 都 + verb.",
+          "hint_vi": "无论 + từ để hỏi …, chủ ngữ + 都 + động từ.",
+          "explanation": "无论 must be followed by a question word (什么) or an either/or choice, and the main clause uses 都. 陪着 = keep someone company.",
+          "explanation_vi": "无论 (bất kể) luôn đi với từ để hỏi (什么, 谁, 哪儿) hoặc lựa chọn, vế sau dùng 都. 陪着你 = ở bên cạnh em. Chủ ngữ 我 có thể đứng đầu câu hoặc đầu vế sau."
+        },
+        {
+          "id": "zh-hsk6-puzzle-04",
+          "kind": "sentence_order",
+          "objective": "Build a 既然…就… sentence",
+          "prompt": "Ghép câu: Đã quyết định rồi thì đừng do dự nữa.",
+          "tokens": [
+            "犹豫",
+            "就",
+            "了。",
+            "既然",
+            "再",
+            "了，",
+            "别",
+            "决定"
+          ],
+          "answers": [
+            "既然 决定 了， 就 别 再 犹豫 了。"
+          ],
+          "hint": "既然 states an accepted fact; 就 introduces the conclusion. 别再…了 = don't … any more.",
+          "hint_vi": "既然 nêu sự thật đã rõ; 就 dẫn ra kết luận. 别再…了 = đừng … nữa.",
+          "explanation": "既然 A，就 B = 'since A (already true), then B'. In the negative command 别再…了, 再 follows 别.",
+          "explanation_vi": "既然 A，就 B = đã A thì B. Khác 如果 (giả thiết): 既然 nói về điều đã xảy ra. Mệnh lệnh phủ định 别再…了 = đừng … nữa: 别 đứng trước 再."
+        },
+        {
+          "id": "zh-hsk6-puzzle-05",
+          "kind": "sentence_order",
+          "objective": "Build a 不但不…反而… sentence",
+          "prompt": "Ghép câu: Anh ấy không những không giận, ngược lại còn bật cười.",
+          "tokens": [
+            "反而",
+            "了",
+            "生气，",
+            "起来。",
+            "他",
+            "不",
+            "笑",
+            "不但"
+          ],
+          "answers": [
+            "他 不但 不 生气， 反而 笑 了 起来。"
+          ],
+          "hint": "不但不 A，反而 B = not only not A, but on the contrary B.",
+          "hint_vi": "不但不 A，反而 B = không những không A, ngược lại còn B.",
+          "explanation": "不但不…反而… shows a result opposite to expectation. 笑了起来 = burst out laughing (了 sits between the verb and 起来).",
+          "explanation_vi": "不但不…反而… diễn tả kết quả trái ngược hẳn với dự đoán. 笑了起来 = bật cười: 了 chen giữa động từ và bổ ngữ xu hướng 起来."
+        },
+        {
+          "id": "zh-hsk6-puzzle-06",
+          "kind": "sentence_order",
+          "objective": "Give a reason with 之所以…是因为…",
+          "prompt": "Ghép câu: Sở dĩ anh học tiếng Trung là vì muốn hiểu em hơn.",
+          "tokens": [
+            "更",
+            "中文，",
+            "之所以",
+            "你。",
+            "学",
+            "是因为",
+            "我",
+            "了解",
+            "想"
+          ],
+          "answers": [
+            "我 之所以 学 中文， 是因为 想 更 了解 你。"
+          ],
+          "hint": "Subject + 之所以 + result, 是因为 + reason.",
+          "hint_vi": "Chủ ngữ + 之所以 + kết quả, 是因为 + nguyên nhân.",
+          "explanation": "之所以 A，是因为 B puts the result first and the reason second, stressing the reason. 更 comes before the verb 了解.",
+          "explanation_vi": "之所以 A，是因为 B = sở dĩ A là vì B — nêu kết quả trước, nhấn mạnh nguyên nhân sau (ngược với 因为…所以…). Chủ ngữ đứng trước 之所以; 更 (hơn) đứng trước động từ 了解."
+        },
+        {
+          "id": "zh-hsk6-puzzle-07",
+          "kind": "sentence_order",
+          "objective": "State a necessary condition with 只有…才…",
+          "prompt": "Ghép câu: Chỉ có tin tưởng lẫn nhau, tình cảm mới có thể bền lâu.",
+          "tokens": [
+            "才",
+            "信任，",
+            "长久。",
+            "只有",
+            "感情",
+            "互相",
+            "能"
+          ],
+          "answers": [
+            "只有 互相 信任， 感情 才 能 长久。",
+            "感情 只有 互相 信任， 才 能 长久。"
+          ],
+          "hint": "只有 + condition, subject + 才 + result.",
+          "hint_vi": "只有 + điều kiện, chủ ngữ + 才 + kết quả.",
+          "explanation": "只有 A 才 B = 'only if A, then B' (A is required). 才 must come after the subject and before 能.",
+          "explanation_vi": "只有 A 才 B = chỉ có A thì mới B — A là điều kiện bắt buộc (khác 只要…就 'chỉ cần … là'). 才 đứng sau chủ ngữ, trước 能. Chủ ngữ 感情 có thể đặt đầu câu hoặc đầu vế sau."
+        },
+        {
+          "id": "zh-hsk6-puzzle-08",
+          "kind": "sentence_order",
+          "objective": "Draw a realisation with 难怪…原来…",
+          "prompt": "Ghép câu: Thảo nào hôm nay em vui thế, hoá ra là nhận được quà.",
+          "tokens": [
+            "原来",
+            "了",
+            "开心，",
+            "你",
+            "礼物。",
+            "难怪",
+            "这么",
+            "收到",
+            "今天",
+            "是"
+          ],
+          "answers": [
+            "难怪 你 今天 这么 开心， 原来 是 收到 了 礼物。",
+            "难怪 今天 你 这么 开心， 原来 是 收到 了 礼物。"
+          ],
+          "hint": "难怪 = no wonder; 原来 = it turns out.",
+          "hint_vi": "难怪 = thảo nào; 原来 = hoá ra.",
+          "explanation": "难怪 introduces something that now makes sense; 原来 gives the newly discovered reason. The time word 今天 can go before or after the subject.",
+          "explanation_vi": "难怪 (thảo nào) nêu hiện tượng giờ đã hiểu ra; 原来 (hoá ra) nêu nguyên nhân vừa phát hiện. Từ chỉ thời gian 今天 có thể đứng trước hoặc sau chủ ngữ 你."
+        },
+        {
+          "id": "zh-hsk6-puzzle-09",
+          "kind": "sentence_order",
+          "objective": "Build a 以…为… sentence",
+          "prompt": "Ghép câu: Cô ấy tự hào về quê hương của mình.",
+          "tokens": [
+            "为",
+            "家乡",
+            "她",
+            "骄傲。",
+            "以",
+            "的",
+            "自己"
+          ],
+          "answers": [
+            "她 以 自己 的 家乡 为 骄傲。"
+          ],
+          "hint": "Subject + 以 + A + 为 + 骄傲 = be proud of A.",
+          "hint_vi": "Chủ ngữ + 以 + A + 为 + 骄傲 = lấy A làm niềm tự hào.",
+          "explanation": "以 A 为骄傲 (or 以 A 为荣) means 'to be proud of A'. It is a formal alternative to 为…感到骄傲.",
+          "explanation_vi": "以 A 为骄傲 = lấy A làm niềm tự hào, tức là tự hào về A. Cách nói trang trọng; văn nói có thể dùng 为…感到骄傲. A ở đây là 自己的家乡 (quê hương của mình)."
+        },
+        {
+          "id": "zh-hsk6-puzzle-10",
+          "kind": "sentence_order",
+          "objective": "Build a 一旦…就… sentence",
+          "prompt": "Ghép câu: Một khi bỏ lỡ cơ hội lần này, sẽ rất khó gặp lại.",
+          "tokens": [
+            "遇到",
+            "就",
+            "这次",
+            "难",
+            "了。",
+            "一旦",
+            "再",
+            "机会，",
+            "很",
+            "错过"
+          ],
+          "answers": [
+            "一旦 错过 这次 机会， 就 很 难 再 遇到 了。"
+          ],
+          "hint": "一旦 + condition, 就 + result; 很难再 + verb = hard to … again.",
+          "hint_vi": "一旦 + điều kiện, 就 + kết quả; 很难再 + động từ = khó mà … lại.",
+          "explanation": "一旦…就… links a decisive condition to its consequence. 再 (again, for future events) comes right before the verb 遇到.",
+          "explanation_vi": "一旦…就… nối điều kiện mang tính bước ngoặt với hậu quả. 再 (lại, dùng cho việc chưa xảy ra) đứng ngay trước động từ 遇到; 很难 đứng trước 再."
+        }
+      ]
+    },
+    {
+      "slug": "zh-listen-hsk6",
+      "language": "zh",
+      "category": "listening",
+      "level": "HSK6",
+      "topic": "opinions, plans & culture",
+      "title": "Listening Between the Lines",
+      "title_vi": "Nghe hiểu ẩn ý",
+      "objectives": [
+        "Follow 2–3 sentence passages at natural speed",
+        "Infer attitudes from 未必, 反而, 毕竟",
+        "Catch suggestions, reasons and advice"
+      ],
+      "questions": [
+        {
+          "id": "zh-listen-hsk6-01",
+          "kind": "listening",
+          "objective": "Infer a change of feeling signalled by 反而",
+          "audio_text": "这部纪录片我本来没什么兴趣，是你非要拉我去看的。没想到看完以后，我反而成了最感动的那个人。",
+          "prompt": "Sau khi xem phim tài liệu, người nói cảm thấy thế nào?",
+          "options": [
+            "Thấy phim nhàm chán đúng như dự đoán",
+            "Xúc động hơn cả người đã rủ mình đi",
+            "Hối hận vì đã đi xem",
+            "Muốn tự xem lại một mình"
+          ],
+          "answer": "Xúc động hơn cả người đã rủ mình đi",
+          "explanation": "本来没什么兴趣 (originally not interested) + 反而成了最感动的那个人 (instead became the most moved one): the outcome reverses the expectation.",
+          "explanation_vi": "本来没什么兴趣 = lúc đầu chẳng hứng thú gì; 是你非要拉我去 = là em nhất quyết kéo anh đi. 反而成了最感动的那个人 = ngược lại, anh lại thành người xúc động nhất. Từ khoá 反而 báo hiệu kết quả trái với dự đoán."
+        },
+        {
+          "id": "zh-listen-hsk6-02",
+          "kind": "listening",
+          "objective": "Understand a postponed plan and a suggestion",
+          "audio_text": "周末的书法展我恐怕去不了了，公司临时安排我出差。不过展览会一直持续到下个月底，等我回来，我们再一起去也不迟。",
+          "prompt": "Người nói đề nghị điều gì?",
+          "options": [
+            "Huỷ hẳn việc đi xem triển lãm",
+            "Bạn đi xem trước một mình",
+            "Đợi mình đi công tác về rồi cùng đi xem",
+            "Đổi sang đi xem phim"
+          ],
+          "answer": "Đợi mình đi công tác về rồi cùng đi xem",
+          "explanation": "恐怕去不了了 (afraid I can't go) because of 出差 (business trip). The exhibition lasts until next month, so 等我回来，我们再一起去也不迟 (when I'm back we can still go together).",
+          "explanation_vi": "恐怕去不了了 = e là không đi được rồi, vì 临时安排出差 (đột xuất phải đi công tác). Triển lãm kéo dài đến cuối tháng sau, nên 等我回来，我们再一起去也不迟 = đợi anh về, mình cùng đi cũng chưa muộn. 也不迟 = cũng không muộn."
+        },
+        {
+          "id": "zh-listen-hsk6-03",
+          "kind": "listening",
+          "objective": "Identify a sceptical attitude from 未必 and 与其…不如",
+          "audio_text": "我觉得网上的评论未必可靠，很多都是商家自己写的。与其相信那些评论，不如我们亲自去尝一尝。",
+          "prompt": "Thái độ của người nói đối với các bình luận trên mạng là gì?",
+          "options": [
+            "Hoàn toàn tin tưởng",
+            "Thấy không liên quan gì",
+            "Muốn tự viết bình luận",
+            "Nghi ngờ, cho rằng chưa chắc đáng tin"
+          ],
+          "answer": "Nghi ngờ, cho rằng chưa chắc đáng tin",
+          "explanation": "未必可靠 = not necessarily reliable; many are written by the sellers themselves. 与其…不如亲自去尝 = rather than trust them, go and taste it ourselves.",
+          "explanation_vi": "未必可靠 = chưa chắc đáng tin; 很多都是商家自己写的 = nhiều cái do chính người bán tự viết. 与其相信…，不如亲自去尝一尝 = thay vì tin mấy bình luận đó, chi bằng tự mình đi ăn thử. Thái độ: hoài nghi."
+        },
+        {
+          "id": "zh-listen-hsk6-04",
+          "kind": "listening",
+          "objective": "Understand a reason given with 之所以…是因为 and 不是…而是",
+          "audio_text": "我们之所以很少吵架，并不是因为观点总是一样，而是因为我们愿意站在对方的立场想问题。毕竟两个人在一起，互相理解最重要。",
+          "prompt": "Theo người nói, vì sao hai người ít khi cãi nhau?",
+          "options": [
+            "Vì biết đặt mình vào vị trí của đối phương",
+            "Vì quan điểm lúc nào cũng giống nhau",
+            "Vì ít khi gặp nhau",
+            "Vì một người luôn nhường nhịn"
+          ],
+          "answer": "Vì biết đặt mình vào vị trí của đối phương",
+          "explanation": "并不是因为观点总是一样 rejects the obvious reason; 而是因为…站在对方的立场想问题 gives the real one: seeing things from the partner's standpoint.",
+          "explanation_vi": "并不是因为观点总是一样 = hoàn toàn không phải vì quan điểm lúc nào cũng giống nhau (loại đáp án bẫy). 而是因为我们愿意站在对方的立场想问题 = mà là vì sẵn lòng đứng ở lập trường của người kia để suy nghĩ. Cấu trúc 不是…而是… luôn đặt ý đúng ở vế 而是."
+        },
+        {
+          "id": "zh-listen-hsk6-05",
+          "kind": "listening",
+          "objective": "Catch practical advice introduced by 最好 and 以免",
+          "audio_text": "这家博物馆收藏了很多珍贵的文物，周一闭馆，其他时间都可以免费参观。不过平时人特别多，最好提前在网上预约，以免白跑一趟。",
+          "prompt": "Người nói khuyên nên làm gì?",
+          "options": [
+            "Đi vào thứ Hai cho vắng người",
+            "Đặt lịch trước trên mạng",
+            "Mua vé tại quầy",
+            "Mang theo máy ảnh"
+          ],
+          "answer": "Đặt lịch trước trên mạng",
+          "explanation": "最好提前在网上预约 = it's best to book online in advance, 以免白跑一趟 = so you don't make a wasted trip. The museum is closed on Mondays and entry is free.",
+          "explanation_vi": "最好提前在网上预约 = tốt nhất nên đặt lịch trước trên mạng; 以免白跑一趟 = để khỏi đi một chuyến công cốc. Bẫy: 周一闭馆 = thứ Hai đóng cửa, nên đi thứ Hai là sai; 免费参观 = miễn phí, không cần mua vé."
+        }
+      ]
+    }
+  ]
+}

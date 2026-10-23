@@ -1,0 +1,1045 @@
+{
+  "lessons": [
+    {
+      "slug": "zh-vocab-hsk5-work",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK5",
+      "topic": "work, career & money",
+      "title": "Love & Paychecks: Talking Work and Money",
+      "title_vi": "Tình yêu và đồng lương: chuyện công việc, tiền bạc",
+      "objectives": [
+        "Talk about career moves: resigning, business trips, shifts and positions",
+        "Discuss savings, loans, profit and the cost of living",
+        "Tell apart near-synonyms such as 签约 and 签名, 存款 and 贷款"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk5-vocab-work-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 辞职 (cízhí)",
+          "prompt": "「辞职」nghĩa là gì?",
+          "options": [
+            "xin nghỉ việc, từ chức",
+            "đi công tác",
+            "trực ca",
+            "ký hợp đồng"
+          ],
+          "answer": "xin nghỉ việc, từ chức",
+          "explanation": "辞职 (cízhí) means 'to resign, to quit one's job'. It is an intransitive verb: say 从公司辞职 or 辞去工作, not 辞职公司.",
+          "explanation_vi": "辞职 (cízhí) là xin nghỉ việc, từ chức. Hán-Việt chính là 'từ chức', rất dễ nhớ. Lưu ý: 辞职 không mang tân ngữ trực tiếp — nói 从公司辞职 (nghỉ việc ở công ty), không nói 辞职公司.",
+          "word": {
+            "term": "辞职",
+            "pinyin": "cízhí",
+            "part_of_speech": "verb",
+            "meaning_vi": "xin nghỉ việc, từ chức",
+            "example": "他觉得压力太大，决定下个月辞职。",
+            "example_pinyin": "Tā juéde yālì tài dà, juédìng xià ge yuè cízhí.",
+            "example_vi": "Anh ấy thấy áp lực quá lớn nên quyết định tháng sau nghỉ việc."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-02",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'go on a business trip': 出差 (chūchāi)",
+          "prompt": "Chọn từ có nghĩa là 'đi công tác'",
+          "options": [
+            "出差",
+            "值班",
+            "加班",
+            "辞职"
+          ],
+          "answer": "出差",
+          "explanation": "出差 (chūchāi) means 'to go on a business trip'. 差 is read chāi here, not chà. 值班 is to be on duty, 加班 is to work overtime.",
+          "explanation_vi": "出差 (chūchāi) là đi công tác. Chữ 差 ở đây đọc chāi (thanh 1), không phải chà như trong 差不多. Phân biệt: 值班 = trực ca, 加班 = làm thêm giờ, 辞职 = nghỉ việc. 出差 là động từ ly hợp: 出了三天差 (đi công tác ba ngày).",
+          "word": {
+            "term": "出差",
+            "pinyin": "chūchāi",
+            "part_of_speech": "verb",
+            "meaning_vi": "đi công tác",
+            "example": "他下个星期要去上海出差三天。",
+            "example_pinyin": "Tā xià ge xīngqī yào qù Shànghǎi chūchāi sān tiān.",
+            "example_vi": "Tuần sau anh ấy phải đi Thượng Hải công tác ba ngày."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-03",
+          "kind": "multiple_choice",
+          "objective": "Use 值班 (zhíbān) in context",
+          "prompt": "今天晚上我在医院___，不能陪你吃饭了。",
+          "prompt_vi": "Tối nay anh trực ca ở bệnh viện, không ăn tối cùng em được rồi.",
+          "options": [
+            "值班",
+            "出差",
+            "辞职",
+            "签约"
+          ],
+          "answer": "值班",
+          "explanation": "值班 (zhíbān) means 'to be on duty, to work a shift' — it fits a place like 在医院. 出差 means travelling away for work, which doesn't match 在医院.",
+          "explanation_vi": "值班 (zhíbān) là trực ca, trực ban — hợp với 在医院 (ở bệnh viện). 出差 là đi công tác xa nên không đi với 在医院; 辞职 (nghỉ việc) và 签约 (ký hợp đồng) không hợp nghĩa câu. Hán-Việt: 值班 = 'trực ban'.",
+          "word": {
+            "term": "值班",
+            "pinyin": "zhíbān",
+            "part_of_speech": "verb",
+            "meaning_vi": "trực ca, trực ban",
+            "example": "这个周末我值班，下周末再陪你去看电影吧。",
+            "example_pinyin": "Zhège zhōumò wǒ zhíbān, xià zhōumò zài péi nǐ qù kàn diànyǐng ba.",
+            "example_vi": "Cuối tuần này anh trực, cuối tuần sau anh đưa em đi xem phim nhé."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 职位 (zhíwèi)",
+          "prompt": "「职位」nghĩa là gì?",
+          "options": [
+            "chức vụ, vị trí công việc",
+            "tiền lương",
+            "hợp đồng lao động",
+            "đồng nghiệp"
+          ],
+          "answer": "chức vụ, vị trí công việc",
+          "explanation": "职位 (zhíwèi) means 'position, post, job title'. 职 = office/duty, 位 = place/seat.",
+          "explanation_vi": "职位 (zhíwèi) là chức vụ, vị trí công việc. Hán-Việt 'chức vị': 职 = chức, 位 = vị (chỗ, vị trí). Dùng khi nói về tuyển dụng: 申请这个职位 (ứng tuyển vị trí này).",
+          "word": {
+            "term": "职位",
+            "pinyin": "zhíwèi",
+            "part_of_speech": "noun",
+            "meaning_vi": "chức vụ, vị trí công việc",
+            "example": "这个职位要求会说中文和越南语。",
+            "example_pinyin": "Zhège zhíwèi yāoqiú huì shuō Zhōngwén hé Yuènányǔ.",
+            "example_vi": "Vị trí này yêu cầu biết nói tiếng Trung và tiếng Việt."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-05",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'earn money': 挣钱 (zhèngqián)",
+          "prompt": "Chọn từ có nghĩa là 'kiếm tiền'",
+          "options": [
+            "挣钱",
+            "存款",
+            "花钱",
+            "借钱"
+          ],
+          "answer": "挣钱",
+          "explanation": "挣钱 (zhèngqián) means 'to earn money'. 挣 is 4th tone here (zhèng). 花钱 = spend money, 借钱 = borrow/lend money, 存款 = savings.",
+          "explanation_vi": "挣钱 (zhèngqián) là kiếm tiền (bằng sức lao động). Chữ 挣 đọc thanh 4 zhèng, đừng nhầm với 争 (zhēng, tranh). Phân biệt: 花钱 = tiêu tiền, 借钱 = vay/cho mượn tiền, 存款 = tiền gửi tiết kiệm.",
+          "word": {
+            "term": "挣钱",
+            "pinyin": "zhèngqián",
+            "part_of_speech": "verb",
+            "meaning_vi": "kiếm tiền",
+            "example": "他白天上课，晚上去饭店打工挣钱。",
+            "example_pinyin": "Tā báitiān shàngkè, wǎnshang qù fàndiàn dǎgōng zhèngqián.",
+            "example_vi": "Ban ngày cậu ấy đi học, buổi tối đi làm thêm ở nhà hàng để kiếm tiền."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-06",
+          "kind": "multiple_choice",
+          "objective": "Choose 存款 (savings) over 贷款 (loan) in context",
+          "prompt": "我每个月都把一部分工资存进银行，现在已经有一笔___了。",
+          "prompt_vi": "Mỗi tháng em đều gửi một phần lương vào ngân hàng, giờ đã có một khoản tiền tiết kiệm rồi.",
+          "options": [
+            "存款",
+            "贷款",
+            "利润",
+            "物价"
+          ],
+          "answer": "存款",
+          "explanation": "存款 (cúnkuǎn) is money deposited in a bank — savings. 存进银行 (put into the bank) points to it. 贷款 is a loan, the opposite direction.",
+          "explanation_vi": "存款 (cúnkuǎn) là tiền gửi ngân hàng, tiền tiết kiệm — khớp với 存进银行 (gửi vào ngân hàng). 贷款 là khoản vay, ngược hẳn nghĩa; 利润 là lợi nhuận của doanh nghiệp; 物价 là vật giá. Hán-Việt: 存款 = 'tồn khoản'.",
+          "word": {
+            "term": "存款",
+            "pinyin": "cúnkuǎn",
+            "part_of_speech": "noun",
+            "meaning_vi": "tiền gửi ngân hàng, tiền tiết kiệm",
+            "example": "结婚以前，我们想先有一些存款。",
+            "example_pinyin": "Jiéhūn yǐqián, wǒmen xiǎng xiān yǒu yìxiē cúnkuǎn.",
+            "example_vi": "Trước khi cưới, tụi mình muốn có chút tiền tiết kiệm trước đã."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 贷款 (dàikuǎn)",
+          "prompt": "「贷款」nghĩa là gì?",
+          "options": [
+            "khoản vay, vay tiền (ngân hàng)",
+            "tiền gửi tiết kiệm",
+            "tiền lãi",
+            "tiền đặt cọc"
+          ],
+          "answer": "khoản vay, vay tiền (ngân hàng)",
+          "explanation": "贷款 (dàikuǎn) means 'a loan' or 'to take out a loan', usually from a bank: 向银行贷款.",
+          "explanation_vi": "贷款 (dàikuǎn) là khoản vay hoặc vay tiền, thường là vay ngân hàng: 向银行贷款 (vay ngân hàng). Hán-Việt 'thải khoản'. Đừng nhầm với 存款 (tiền gửi) — chỉ khác một chữ nhưng nghĩa ngược nhau. Tiền lãi là 利息, tiền cọc là 押金.",
+          "word": {
+            "term": "贷款",
+            "pinyin": "dàikuǎn",
+            "part_of_speech": "noun",
+            "meaning_vi": "khoản vay; vay tiền",
+            "example": "很多年轻人向银行贷款买房。",
+            "example_pinyin": "Hěn duō niánqīngrén xiàng yínháng dàikuǎn mǎi fáng.",
+            "example_vi": "Nhiều người trẻ vay ngân hàng để mua nhà."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-08",
+          "kind": "multiple_choice",
+          "objective": "Use 利润 (lìrùn) in a business context",
+          "prompt": "产品卖得很好，今年公司的___比去年增加了一倍。",
+          "prompt_vi": "Sản phẩm bán rất chạy, lợi nhuận của công ty năm nay tăng gấp đôi so với năm ngoái.",
+          "options": [
+            "利润",
+            "物价",
+            "职位",
+            "贷款"
+          ],
+          "answer": "利润",
+          "explanation": "利润 (lìrùn) means 'profit'. Good sales (卖得很好) lead to higher profit. 物价 is the general price level, not a company's figure.",
+          "explanation_vi": "利润 (lìrùn) là lợi nhuận. Hàng bán chạy (卖得很好) thì lợi nhuận tăng — hợp lý. 物价 là giá cả chung của xã hội, không phải con số của một công ty; 职位 (chức vụ) và 贷款 (khoản vay) không hợp ngữ cảnh. Hán-Việt 'lợi nhuận'.",
+          "word": {
+            "term": "利润",
+            "pinyin": "lìrùn",
+            "part_of_speech": "noun",
+            "meaning_vi": "lợi nhuận",
+            "example": "这家小店一年的利润有二十多万。",
+            "example_pinyin": "Zhè jiā xiǎo diàn yì nián de lìrùn yǒu èrshí duō wàn.",
+            "example_vi": "Lợi nhuận một năm của cửa hàng nhỏ này hơn hai trăm nghìn tệ."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 物价 (wùjià)",
+          "prompt": "「物价」nghĩa là gì?",
+          "options": [
+            "giá cả hàng hóa, vật giá",
+            "lợi nhuận",
+            "tiền lương",
+            "hàng hóa"
+          ],
+          "answer": "giá cả hàng hóa, vật giá",
+          "explanation": "物价 (wùjià) means 'prices of goods, cost of living' in general. 物价涨了 = prices have gone up.",
+          "explanation_vi": "物价 (wùjià) là vật giá — mức giá cả hàng hóa nói chung trong xã hội. Chú ý: 物价 là GIÁ, không phải bản thân hàng hóa (hàng hóa là 商品). Hay đi với 涨 (tăng): 物价涨了 = giá cả tăng rồi.",
+          "word": {
+            "term": "物价",
+            "pinyin": "wùjià",
+            "part_of_speech": "noun",
+            "meaning_vi": "vật giá, giá cả hàng hóa",
+            "example": "这几年物价涨得很快，房租也贵了不少。",
+            "example_pinyin": "Zhè jǐ nián wùjià zhǎng de hěn kuài, fángzū yě guìle bù shǎo.",
+            "example_vi": "Mấy năm nay giá cả tăng rất nhanh, tiền thuê nhà cũng đắt lên nhiều."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-work-10",
+          "kind": "multiple_choice",
+          "objective": "Tell 签约 (sign a contract) from 签名 (sign one's name)",
+          "prompt": "Chọn từ có nghĩa là 'ký hợp đồng'",
+          "options": [
+            "签约",
+            "签名",
+            "辞职",
+            "出差"
+          ],
+          "answer": "签约",
+          "explanation": "签约 (qiānyuē) means 'to sign a contract or agreement'. 签名 (qiānmíng) only means 'to sign one's name / signature'.",
+          "explanation_vi": "签约 (qiānyuē) là ký hợp đồng, ký kết (约 = ước, giao ước). 签名 (qiānmíng) chỉ là ký tên, chữ ký — ví dụ xin chữ ký người nổi tiếng. Ký hợp đồng thì phải dùng 签约 hoặc 签合同.",
+          "word": {
+            "term": "签约",
+            "pinyin": "qiānyuē",
+            "part_of_speech": "verb",
+            "meaning_vi": "ký hợp đồng, ký kết",
+            "example": "下个月我们就要和那家公司正式签约了。",
+            "example_pinyin": "Xià ge yuè wǒmen jiù yào hé nà jiā gōngsī zhèngshì qiānyuē le.",
+            "example_vi": "Tháng sau chúng tôi sẽ chính thức ký hợp đồng với công ty đó."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-vocab-hsk5-society",
+      "language": "zh",
+      "category": "vocabulary",
+      "level": "HSK5",
+      "topic": "society, environment & technology",
+      "title": "Our Green, Connected World",
+      "title_vi": "Thế giới xanh và kết nối của chúng mình",
+      "objectives": [
+        "Talk about pollution, recycling and natural disasters",
+        "Use everyday tech words: software, search, virus, robot, user",
+        "Describe what society promotes and provides"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk5-vocab-society-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 污染 (wūrǎn)",
+          "prompt": "「污染」nghĩa là gì?",
+          "options": [
+            "ô nhiễm, làm ô nhiễm",
+            "bảo vệ",
+            "tái chế",
+            "thiên tai"
+          ],
+          "answer": "ô nhiễm, làm ô nhiễm",
+          "explanation": "污染 (wūrǎn) means 'pollution' or 'to pollute'. It works as a noun (环境污染) and a verb (污染了河水).",
+          "explanation_vi": "污染 (wūrǎn) là ô nhiễm — Hán-Việt đúng là 'ô nhiễm'. Dùng được cả danh từ (环境污染 = ô nhiễm môi trường) lẫn động từ (污染了这条河 = làm ô nhiễm con sông). Bảo vệ là 保护, tái chế là 回收.",
+          "word": {
+            "term": "污染",
+            "pinyin": "wūrǎn",
+            "part_of_speech": "verb",
+            "meaning_vi": "ô nhiễm, làm ô nhiễm",
+            "example": "工厂的污水污染了这条河。",
+            "example_pinyin": "Gōngchǎng de wūshuǐ wūrǎnle zhè tiáo hé.",
+            "example_vi": "Nước thải của nhà máy đã làm ô nhiễm con sông này."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-02",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'recycle': 回收 (huíshōu)",
+          "prompt": "Chọn từ có nghĩa là 'thu hồi, tái chế'",
+          "options": [
+            "回收",
+            "回报",
+            "污染",
+            "提倡"
+          ],
+          "answer": "回收",
+          "explanation": "回收 (huíshōu) means 'to recycle, to collect back'. 回报 (huíbào) looks similar but means 'to repay, return (on investment)'.",
+          "explanation_vi": "回收 (huíshōu) là thu hồi, tái chế (rác, chai lọ…). Hán-Việt 'hồi thu'. Cẩn thận với 回报 (huíbào) — cũng bắt đầu bằng 回 nhưng nghĩa là đền đáp, lợi nhuận thu về. 污染 = ô nhiễm, 提倡 = khuyến khích.",
+          "word": {
+            "term": "回收",
+            "pinyin": "huíshōu",
+            "part_of_speech": "verb",
+            "meaning_vi": "thu hồi, tái chế",
+            "example": "这些塑料瓶可以回收再利用。",
+            "example_pinyin": "Zhèxiē sùliàopíng kěyǐ huíshōu zài lìyòng.",
+            "example_vi": "Những chai nhựa này có thể thu hồi để tái sử dụng."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-03",
+          "kind": "multiple_choice",
+          "objective": "Use 提倡 (tíchàng) in context",
+          "prompt": "学校___大家少用塑料袋，多用环保袋。",
+          "prompt_vi": "Nhà trường khuyến khích mọi người dùng ít túi ni-lông, dùng nhiều túi thân thiện môi trường.",
+          "options": [
+            "提倡",
+            "污染",
+            "回收",
+            "搜索"
+          ],
+          "answer": "提倡",
+          "explanation": "提倡 (tíchàng) means 'to advocate, to promote' a behaviour: 提倡 + someone + do something. Only 提倡 can take '大家少用…' as its object.",
+          "explanation_vi": "提倡 (tíchàng) là đề xướng, khuyến khích (một cách làm, lối sống): 提倡 + ai đó + làm gì. Hán-Việt 'đề xướng'. Các từ còn lại không thể đi với cả mệnh đề '大家少用塑料袋' phía sau.",
+          "word": {
+            "term": "提倡",
+            "pinyin": "tíchàng",
+            "part_of_speech": "verb",
+            "meaning_vi": "đề xướng, khuyến khích",
+            "example": "政府提倡大家坐公共交通上班。",
+            "example_pinyin": "Zhèngfǔ tíchàng dàjiā zuò gōnggòng jiāotōng shàngbān.",
+            "example_vi": "Chính phủ khuyến khích mọi người đi làm bằng phương tiện công cộng."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 灾害 (zāihài)",
+          "prompt": "「灾害」nghĩa là gì?",
+          "options": [
+            "thiên tai, thảm họa",
+            "phúc lợi",
+            "khí hậu",
+            "ô nhiễm"
+          ],
+          "answer": "thiên tai, thảm họa",
+          "explanation": "灾害 (zāihài) means 'disaster, calamity', often in 自然灾害 (natural disaster).",
+          "explanation_vi": "灾害 (zāihài) là tai họa, thiên tai — Hán-Việt 'tai hại'. Thường gặp trong cụm 自然灾害 (thiên tai): lũ lụt, bão, động đất… Lưu ý 'tai hại' trong tiếng Việt thường là tính từ, còn 灾害 tiếng Trung là danh từ.",
+          "word": {
+            "term": "灾害",
+            "pinyin": "zāihài",
+            "part_of_speech": "noun",
+            "meaning_vi": "tai họa, thiên tai",
+            "example": "这次自然灾害让很多人失去了家。",
+            "example_pinyin": "Zhè cì zìrán zāihài ràng hěn duō rén shīqùle jiā.",
+            "example_vi": "Trận thiên tai lần này khiến nhiều người mất nhà cửa."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-05",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'software': 软件 (ruǎnjiàn)",
+          "prompt": "Chọn từ có nghĩa là 'phần mềm'",
+          "options": [
+            "软件",
+            "硬件",
+            "视频",
+            "用户"
+          ],
+          "answer": "软件",
+          "explanation": "软件 (ruǎnjiàn) is 'software' — literally 'soft component'. 硬件 (yìngjiàn) is hardware.",
+          "explanation_vi": "软件 (ruǎnjiàn) là phần mềm — nghĩa đen 'linh kiện mềm' (软 = mềm). Ngược lại 硬件 (yìngjiàn, 硬 = cứng) là phần cứng. 视频 = video, 用户 = người dùng. Ứng dụng điện thoại cũng hay gọi là 软件 hoặc 应用.",
+          "word": {
+            "term": "软件",
+            "pinyin": "ruǎnjiàn",
+            "part_of_speech": "noun",
+            "meaning_vi": "phần mềm, ứng dụng",
+            "example": "我手机上装了一个学中文的软件。",
+            "example_pinyin": "Wǒ shǒujī shang zhuāngle yí ge xué Zhōngwén de ruǎnjiàn.",
+            "example_vi": "Em đã cài một ứng dụng học tiếng Trung trên điện thoại."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-06",
+          "kind": "multiple_choice",
+          "objective": "Use 搜索 (sōusuǒ) in context",
+          "prompt": "不知道这个词是什么意思的话，你可以上网___一下。",
+          "prompt_vi": "Nếu không biết từ này nghĩa là gì, em có thể lên mạng tìm kiếm thử.",
+          "options": [
+            "搜索",
+            "回收",
+            "提倡",
+            "启动"
+          ],
+          "answer": "搜索",
+          "explanation": "搜索 (sōusuǒ) means 'to search (online)'. 上网搜索一下 = look it up online.",
+          "explanation_vi": "搜索 (sōusuǒ) là tìm kiếm, nhất là tìm trên mạng: 上网搜索一下 = lên mạng tra thử. 回收 = tái chế, 提倡 = khuyến khích, 启动 = khởi động — đều không hợp nghĩa. Hán-Việt 'sưu tác'.",
+          "word": {
+            "term": "搜索",
+            "pinyin": "sōusuǒ",
+            "part_of_speech": "verb",
+            "meaning_vi": "tìm kiếm (trên mạng)",
+            "example": "我在网上搜索了很多旅游信息。",
+            "example_pinyin": "Wǒ zài wǎngshang sōusuǒle hěn duō lǚyóu xìnxī.",
+            "example_vi": "Anh đã tìm trên mạng rất nhiều thông tin du lịch."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 病毒 (bìngdú)",
+          "prompt": "「病毒」nghĩa là gì?",
+          "options": [
+            "virus",
+            "phần mềm",
+            "mật khẩu",
+            "dữ liệu"
+          ],
+          "answer": "virus",
+          "explanation": "病毒 (bìngdú) means 'virus' — both biological and computer viruses. A computer 'catches' a virus: 中了病毒 (zhòngle).",
+          "explanation_vi": "病毒 (bìngdú) là virus — cả virus gây bệnh lẫn virus máy tính. Hán-Việt 'bệnh độc'. Máy tính bị nhiễm virus nói là 中了病毒 (中 đọc zhòng). Phần mềm là 软件, mật khẩu là 密码, dữ liệu là 数据.",
+          "word": {
+            "term": "病毒",
+            "pinyin": "bìngdú",
+            "part_of_speech": "noun",
+            "meaning_vi": "virus",
+            "example": "我的电脑中了病毒，文件都打不开了。",
+            "example_pinyin": "Wǒ de diànnǎo zhòngle bìngdú, wénjiàn dōu dǎ bu kāi le.",
+            "example_vi": "Máy tính của anh bị nhiễm virus, không mở được tệp nào cả."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-08",
+          "kind": "multiple_choice",
+          "objective": "Recall the Chinese word for 'robot': 机器人 (jīqìrén)",
+          "prompt": "Chọn từ có nghĩa là 'người máy, robot'",
+          "options": [
+            "机器人",
+            "机器",
+            "用户",
+            "电池"
+          ],
+          "answer": "机器人",
+          "explanation": "机器人 (jīqìrén) is 'robot' — literally 'machine person'. 机器 alone is just 'machine'.",
+          "explanation_vi": "机器人 (jīqìrén) là người máy, robot — nghĩa đen 'người máy móc' (机器 = máy móc + 人 = người). Chỉ 机器 thì chỉ là cái máy nói chung. 用户 = người dùng, 电池 = pin.",
+          "word": {
+            "term": "机器人",
+            "pinyin": "jīqìrén",
+            "part_of_speech": "noun",
+            "meaning_vi": "người máy, robot",
+            "example": "现在有些餐厅用机器人送菜。",
+            "example_pinyin": "Xiànzài yǒuxiē cāntīng yòng jīqìrén sòng cài.",
+            "example_vi": "Bây giờ một số nhà hàng dùng robot để mang món ăn."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-09",
+          "kind": "multiple_choice",
+          "objective": "Use 用户 (yònghù) in context",
+          "prompt": "这个聊天软件已经有一千万___了。",
+          "prompt_vi": "Ứng dụng nhắn tin này đã có mười triệu người dùng rồi.",
+          "options": [
+            "用户",
+            "病毒",
+            "灾害",
+            "福利"
+          ],
+          "answer": "用户",
+          "explanation": "用户 (yònghù) means 'user, subscriber' of a product or service. Apps count their 用户.",
+          "explanation_vi": "用户 (yònghù) là người dùng, khách hàng sử dụng (một sản phẩm, dịch vụ). Hán-Việt 'dụng hộ'. Ứng dụng thì đếm số 用户. 病毒 = virus, 灾害 = thiên tai, 福利 = phúc lợi — không hợp.",
+          "word": {
+            "term": "用户",
+            "pinyin": "yònghù",
+            "part_of_speech": "noun",
+            "meaning_vi": "người dùng",
+            "example": "这个软件的用户大多是年轻人。",
+            "example_pinyin": "Zhège ruǎnjiàn de yònghù dàduō shì niánqīngrén.",
+            "example_vi": "Người dùng phần mềm này phần lớn là người trẻ."
+          }
+        },
+        {
+          "id": "zh-hsk5-vocab-society-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 福利 (fúlì)",
+          "prompt": "「福利」nghĩa là gì?",
+          "options": [
+            "phúc lợi",
+            "lợi nhuận",
+            "tiền thưởng",
+            "thuế"
+          ],
+          "answer": "phúc lợi",
+          "explanation": "福利 (fúlì) means 'welfare, benefits' — what a company or society provides for people. Profit is 利润, a bonus is 奖金.",
+          "explanation_vi": "福利 (fúlì) là phúc lợi — Hán-Việt y hệt. Dùng cho chế độ đãi ngộ của công ty hoặc phúc lợi xã hội. Đừng nhầm với 利润 (lợi nhuận) dù cùng có chữ 利; tiền thưởng là 奖金, thuế là 税.",
+          "word": {
+            "term": "福利",
+            "pinyin": "fúlì",
+            "part_of_speech": "noun",
+            "meaning_vi": "phúc lợi",
+            "example": "这家公司的福利很好，每年都组织员工去旅游。",
+            "example_pinyin": "Zhè jiā gōngsī de fúlì hěn hǎo, měi nián dōu zǔzhī yuángōng qù lǚyóu.",
+            "example_vi": "Phúc lợi của công ty này rất tốt, năm nào cũng tổ chức cho nhân viên đi du lịch."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zh-grammar-hsk5",
+      "language": "zh",
+      "category": "grammar",
+      "level": "HSK5",
+      "topic": "无论, 既然, 哪怕, 与其…不如, 之所以, 难道, 何况, 尽管",
+      "title": "Linking Ideas Like a Pro: HSK 5 Connectors",
+      "title_vi": "Nối ý thật mượt: các cặp liên từ HSK 5",
+      "objectives": [
+        "Express 'no matter what' and 'even if' with 无论…都 and 哪怕…也",
+        "Draw conclusions and give reasons with 既然…就 and 之所以…是因为",
+        "Compare choices with 与其…不如",
+        "Add emphasis with 难道…吗, 何况 and 尽管…还是"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk5-grammar-01",
+          "kind": "multiple_choice",
+          "objective": "Use 无论 + question word … 都",
+          "prompt": "___天气怎么样，我都会陪你去散步。",
+          "prompt_vi": "Dù thời tiết thế nào, anh cũng sẽ đi dạo cùng em.",
+          "options": [
+            "无论",
+            "虽然",
+            "因为",
+            "如果"
+          ],
+          "answer": "无论",
+          "explanation": "无论 (wúlùn) + a question word (怎么样) … 都 = 'no matter how…'. 虽然 and 如果 cannot be followed by an open question like 怎么样.",
+          "explanation_vi": "无论 (wúlùn) + từ để hỏi (怎么样, 什么, 多…) … 都 = 'dù… thế nào thì cũng…'. Vế sau thường có 都 hoặc 也. 虽然 (tuy) và 如果 (nếu) không đi với cụm hỏi 怎么样 kiểu này, và cũng không ghép với 都."
+        },
+        {
+          "id": "zh-hsk5-grammar-02",
+          "kind": "multiple_choice",
+          "objective": "Draw a conclusion with 既然…就",
+          "prompt": "___大家都同意了，我们就这么办吧。",
+          "prompt_vi": "Đã mọi người đều đồng ý rồi thì chúng ta cứ làm vậy đi.",
+          "options": [
+            "既然",
+            "虽然",
+            "无论",
+            "哪怕"
+          ],
+          "answer": "既然",
+          "explanation": "既然 (jìrán) … 就 = 'since (it's a known fact)…, then…'. The first clause states a fact everyone accepts; the second draws a conclusion.",
+          "explanation_vi": "既然 (jìrán) … 就 = 'đã… thì…'. Vế đầu là sự thật đã rõ (mọi người đồng ý rồi), vế sau là kết luận. 虽然 cần đi với 但是, 无论 cần từ để hỏi, 哪怕 đi với 也 — đều không khớp với 就."
+        },
+        {
+          "id": "zh-hsk5-grammar-03",
+          "kind": "multiple_choice",
+          "objective": "Express 'even if' with 哪怕…也",
+          "prompt": "___工作再忙，我也会每天给你打电话。",
+          "prompt_vi": "Dù công việc có bận đến mấy, anh cũng sẽ gọi cho em mỗi ngày.",
+          "options": [
+            "哪怕",
+            "既然",
+            "因为",
+            "不但"
+          ],
+          "answer": "哪怕",
+          "explanation": "哪怕 (nǎpà) … 也 = 'even if…, still…'. It often pairs with 再 + adjective (再忙 = however busy). 既然 needs 就, 不但 needs 而且.",
+          "explanation_vi": "哪怕 (nǎpà) … 也 = 'cho dù… cũng…', mang giả thiết nhượng bộ, khẩu ngữ. Hay đi với 再 + tính từ (再忙 = có bận mấy). 既然 đi với 就, 不但 đi với 而且, 因为 đi với 所以."
+        },
+        {
+          "id": "zh-hsk5-grammar-04",
+          "kind": "multiple_choice",
+          "objective": "Compare two options with 与其…不如",
+          "prompt": "___在家里玩手机，不如我们出去走走。",
+          "prompt_vi": "Thay vì ở nhà chơi điện thoại, chi bằng tụi mình ra ngoài đi dạo.",
+          "options": [
+            "与其",
+            "虽然",
+            "既然",
+            "尽管"
+          ],
+          "answer": "与其",
+          "explanation": "与其 (yǔqí) A，不如 B = 'rather than A, better to B'. The speaker prefers the option after 不如.",
+          "explanation_vi": "与其 (yǔqí) A，不如 B = 'thay vì A, chi bằng B' — người nói chọn phương án B (sau 不如). Chỉ 与其 mới ghép đôi với 不如; 虽然, 既然, 尽管 đều có cặp riêng (但是, 就, 还是)."
+        },
+        {
+          "id": "zh-hsk5-grammar-05",
+          "kind": "multiple_choice",
+          "objective": "Put the result first with 之所以…是因为",
+          "prompt": "我今天___这么累，是因为昨天晚上加班到两点。",
+          "prompt_vi": "Sở dĩ hôm nay anh mệt thế này là vì tối qua tăng ca đến hai giờ.",
+          "options": [
+            "之所以",
+            "所以",
+            "因此",
+            "既然"
+          ],
+          "answer": "之所以",
+          "explanation": "Subject + 之所以 (zhīsuǒyǐ) + result，是因为 + reason = 'the reason why… is that…'. It puts the result first; plain 所以 or 因此 cannot be followed by 是因为.",
+          "explanation_vi": "Chủ ngữ + 之所以 + kết quả，是因为 + nguyên nhân = 'sở dĩ… là vì…'. Cấu trúc này nêu kết quả trước, lý do sau — ngược với 因为…所以. 所以, 因此 đứng ở vế kết quả sau lý do, không ghép với 是因为."
+        },
+        {
+          "id": "zh-hsk5-grammar-06",
+          "kind": "multiple_choice",
+          "objective": "Ask a rhetorical question with 难道…吗",
+          "prompt": "你___不记得今天是什么日子吗？",
+          "prompt_vi": "Lẽ nào anh không nhớ hôm nay là ngày gì sao?",
+          "options": [
+            "难道",
+            "到底",
+            "究竟",
+            "难怪"
+          ],
+          "answer": "难道",
+          "explanation": "难道 (nándào) … 吗 forms a rhetorical question showing surprise or reproach: 'Don't tell me you…?'. 到底 / 究竟 ask for the real answer and can't end in 吗; 难怪 means 'no wonder'.",
+          "explanation_vi": "难道 (nándào) … 吗 là câu hỏi tu từ, thể hiện ngạc nhiên hoặc trách móc: 'lẽ nào…?, chẳng lẽ…?'. 到底, 究竟 (rốt cuộc) dùng để hỏi thật và không đi với 吗; 难怪 là 'thảo nào' — không hợp."
+        },
+        {
+          "id": "zh-hsk5-grammar-07",
+          "kind": "multiple_choice",
+          "objective": "Use 何况 to say 'let alone'",
+          "prompt": "这个问题连老师都回答不了，___我们呢？",
+          "prompt_vi": "Câu hỏi này đến thầy giáo còn không trả lời được, huống hồ là chúng ta?",
+          "options": [
+            "何况",
+            "而且",
+            "甚至",
+            "并且"
+          ],
+          "answer": "何况",
+          "explanation": "何况 (hékuàng) = 'let alone, much less', often after 连…都… and ending with 呢. 而且 / 并且 simply add information, 甚至 means 'even'.",
+          "explanation_vi": "何况 (hékuàng) = 'huống hồ, huống chi', hay đi sau 连…都… và kết thúc bằng 呢: thầy còn không làm được, huống hồ chúng ta. 而且, 并且 chỉ là 'hơn nữa' (thêm ý), 甚至 là 'thậm chí' — không tạo được ý so sánh tăng tiến này."
+        },
+        {
+          "id": "zh-hsk5-grammar-08",
+          "kind": "multiple_choice",
+          "objective": "Concede a fact with 尽管…还是",
+          "prompt": "___外面下着大雨，他还是按时来上班了。",
+          "prompt_vi": "Mặc dù bên ngoài đang mưa to, anh ấy vẫn đi làm đúng giờ.",
+          "options": [
+            "尽管",
+            "既然",
+            "只要",
+            "无论"
+          ],
+          "answer": "尽管",
+          "explanation": "尽管 (jǐnguǎn) … 还是 / 也 = 'although (a real fact)…, still…'. 无论 needs a question word or alternatives, 只要 means 'as long as', 既然 needs 就.",
+          "explanation_vi": "尽管 (jǐnguǎn) … 还是/仍然 = 'mặc dù… vẫn…', vế đầu là sự thật đã xảy ra (đang mưa thật). 无论 cần từ để hỏi hoặc lựa chọn, 只要 là 'chỉ cần', 既然 đi với 就 — không hợp."
+        },
+        {
+          "id": "zh-hsk5-grammar-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the correct 无论 + 多 + adjective … 都 pattern",
+          "prompt": "Câu nào đúng? (Dù bận đến đâu, anh ấy vẫn kiên trì tập thể dục.)",
+          "prompt_vi": "Dù bận đến đâu, anh ấy vẫn kiên trì tập thể dục.",
+          "options": [
+            "无论多忙，他都坚持锻炼。",
+            "无论很忙，他都坚持锻炼。",
+            "无论多忙，他就坚持锻炼。",
+            "无论忙，他都坚持锻炼。"
+          ],
+          "answer": "无论多忙，他都坚持锻炼。",
+          "explanation": "无论 needs an open element: a question word (多忙 = however busy) or alternatives. 很忙 is a plain statement, and the second clause takes 都/也, not 就.",
+          "explanation_vi": "Sau 无论 phải là yếu tố 'mở': từ để hỏi (多忙 = bận bao nhiêu) hoặc các lựa chọn (忙不忙). 无论很忙 sai vì 很忙 là câu khẳng định. Vế sau dùng 都 (hoặc 也), không dùng 就."
+        },
+        {
+          "id": "zh-hsk5-grammar-10",
+          "kind": "multiple_choice",
+          "objective": "Complete the 与其…不如 pair",
+          "prompt": "与其花很多钱买礼物，___自己亲手做一个。",
+          "prompt_vi": "Thay vì tốn nhiều tiền mua quà, chi bằng tự tay làm một món.",
+          "options": [
+            "不如",
+            "而是",
+            "就",
+            "都"
+          ],
+          "answer": "不如",
+          "explanation": "与其 must be answered by 不如 in the second clause. 而是 pairs with 不是 (not A but B), and 就 / 都 belong to other patterns.",
+          "explanation_vi": "与其 luôn đi cặp với 不如 ở vế sau: 与其 A，不如 B. 而是 đi với 不是 (không phải A mà là B); 就 và 都 thuộc các cấu trúc khác (既然…就, 无论…都)."
+        }
+      ]
+    },
+    {
+      "slug": "zh-puzzle-hsk5",
+      "language": "zh",
+      "category": "writing",
+      "level": "HSK5",
+      "topic": "HSK 5 complex sentences",
+      "title": "Sentence Puzzle: Complex Sentences for Two",
+      "title_vi": "Ghép câu: câu phức cho hai người",
+      "objectives": [
+        "Order two-clause sentences with paired connectors",
+        "Place the subject before or after 无论, 既然, 哪怕, 尽管 correctly",
+        "Build rhetorical and 'let alone' sentences"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk5-puzzle-01",
+          "kind": "sentence_order",
+          "objective": "Build a 无论…都 sentence",
+          "prompt": "Ghép câu: Dù gặp khó khăn gì, anh cũng sẽ luôn ở bên em.",
+          "tokens": [
+            "陪着",
+            "都",
+            "什么困难，",
+            "你。",
+            "无论",
+            "我",
+            "会",
+            "遇到"
+          ],
+          "answers": [
+            "无论 遇到 什么困难， 我 都 会 陪着 你。",
+            "我 无论 遇到 什么困难， 都 会 陪着 你。"
+          ],
+          "hint": "无论 + verb + 什么…, then 都 before 会 in the second clause.",
+          "hint_vi": "无论 + động từ + 什么…, vế sau có 都 đứng trước 会.",
+          "explanation": "无论遇到什么困难，我都会陪着你。The subject 我 can also come before 无论: 我无论遇到什么困难，都会陪着你。",
+          "explanation_vi": "无论 + 遇到什么困难 (dù gặp khó khăn gì), vế sau 我都会陪着你. Chủ ngữ 我 có thể đứng đầu vế sau hoặc đứng trước 无论 ở đầu câu. Phó từ 都 luôn đứng trước 会 và động từ."
+        },
+        {
+          "id": "zh-hsk5-puzzle-02",
+          "kind": "sentence_order",
+          "objective": "Build a 既然…就 sentence",
+          "prompt": "Ghép câu: Em đã quyết định rồi thì anh sẽ ủng hộ em.",
+          "tokens": [
+            "支持",
+            "我",
+            "决定了，",
+            "就",
+            "既然",
+            "你。",
+            "已经",
+            "你"
+          ],
+          "answers": [
+            "既然 你 已经 决定了， 我 就 支持 你。",
+            "你 既然 已经 决定了， 我 就 支持 你。"
+          ],
+          "hint": "既然 opens the first clause; 就 comes after the subject 我 in the second.",
+          "hint_vi": "既然 mở đầu vế đầu; 就 đứng sau chủ ngữ 我 ở vế sau.",
+          "explanation": "既然你已经决定了，我就支持你。既然 may come before or after the first subject 你; 就 must follow 我.",
+          "explanation_vi": "既然 có thể đứng trước hoặc sau chủ ngữ vế đầu (既然你… / 你既然…). Ở vế sau, 就 là phó từ nên đứng SAU chủ ngữ 我 và trước động từ 支持: 我就支持你, không nói 就我支持你."
+        },
+        {
+          "id": "zh-hsk5-puzzle-03",
+          "kind": "sentence_order",
+          "objective": "Build a 哪怕…也 sentence",
+          "prompt": "Ghép câu: Cho dù có bận đến mấy, anh ấy cũng sẽ gọi điện cho em.",
+          "tokens": [
+            "也",
+            "打电话。",
+            "他",
+            "再忙，",
+            "会",
+            "哪怕",
+            "给我"
+          ],
+          "answers": [
+            "哪怕 再忙， 他 也 会 给我 打电话。",
+            "他 哪怕 再忙， 也 会 给我 打电话。",
+            "哪怕 他 再忙， 也 会 给我 打电话。"
+          ],
+          "hint": "哪怕 + 再 + adjective; 也 goes before 会 in the second clause.",
+          "hint_vi": "哪怕 + 再 + tính từ; vế sau 也 đứng trước 会.",
+          "explanation": "哪怕再忙，他也会给我打电话。他 can also stand before or right after 哪怕, as long as it appears only once.",
+          "explanation_vi": "哪怕 + 再忙 (dù bận mấy), vế sau 也会给我打电话. Chủ ngữ 他 có thể đứng đầu vế sau, trước 哪怕, hoặc ngay sau 哪怕. 给我 (cho em) đứng trước động từ 打电话."
+        },
+        {
+          "id": "zh-hsk5-puzzle-04",
+          "kind": "sentence_order",
+          "objective": "Build a 与其…不如 sentence",
+          "prompt": "Ghép câu: Thay vì ngày nào cũng than phiền, chi bằng tự mình nghĩ cách.",
+          "tokens": [
+            "不如",
+            "办法。",
+            "抱怨，",
+            "与其",
+            "想",
+            "每天",
+            "自己"
+          ],
+          "answers": [
+            "与其 每天 抱怨， 不如 自己 想 办法。"
+          ],
+          "hint": "与其 + the worse option, 不如 + the better option.",
+          "hint_vi": "与其 + phương án kém, 不如 + phương án tốt hơn.",
+          "explanation": "与其每天抱怨，不如自己想办法。The time word 每天 goes before the verb 抱怨; 自己 goes before 想办法.",
+          "explanation_vi": "与其 + 每天抱怨 (thay vì ngày nào cũng than), 不如 + 自己想办法 (chi bằng tự nghĩ cách). Từ chỉ thời gian 每天 đứng trước động từ; 自己 (tự mình) cũng đứng trước động từ 想."
+        },
+        {
+          "id": "zh-hsk5-puzzle-05",
+          "kind": "sentence_order",
+          "objective": "Build a 之所以…是因为 sentence",
+          "prompt": "Ghép câu: Sở dĩ anh chăm chỉ học tiếng Trung là vì em.",
+          "tokens": [
+            "因为",
+            "中文，",
+            "之所以",
+            "你。",
+            "学",
+            "我",
+            "是",
+            "努力"
+          ],
+          "answers": [
+            "我 之所以 努力 学 中文， 是 因为 你。"
+          ],
+          "hint": "Subject + 之所以 + result, 是因为 + reason.",
+          "hint_vi": "Chủ ngữ + 之所以 + kết quả, 是因为 + lý do.",
+          "explanation": "我之所以努力学中文，是因为你。之所以 follows the subject, and the reason comes last after 是因为.",
+          "explanation_vi": "之所以 đứng SAU chủ ngữ 我: 我之所以努力学中文 (sở dĩ anh chăm học tiếng Trung). Lý do đặt cuối sau 是因为: 是因为你 (là vì em). 努力 (chăm chỉ) đứng trước động từ 学."
+        },
+        {
+          "id": "zh-hsk5-puzzle-06",
+          "kind": "sentence_order",
+          "objective": "Build a rhetorical question with 难道…吗",
+          "prompt": "Ghép câu: Lẽ nào anh quên nơi lần đầu tụi mình gặp nhau rồi sao?",
+          "tokens": [
+            "地方",
+            "吗？",
+            "忘了",
+            "难道",
+            "第一次见面的",
+            "你",
+            "我们"
+          ],
+          "answers": [
+            "难道 你 忘了 我们 第一次见面的 地方 吗？",
+            "你 难道 忘了 我们 第一次见面的 地方 吗？"
+          ],
+          "hint": "难道 goes before or after the subject; 吗 ends the question.",
+          "hint_vi": "难道 đứng trước hoặc sau chủ ngữ; 吗 ở cuối câu.",
+          "explanation": "难道你忘了我们第一次见面的地方吗？The modifier 我们第一次见面的 comes before 地方.",
+          "explanation_vi": "难道 có thể đứng đầu câu hoặc sau chủ ngữ 你. Định ngữ 我们第一次见面的 (nơi tụi mình lần đầu gặp) đứng TRƯỚC danh từ 地方 — ngược với tiếng Việt 'nơi + lần đầu gặp'. 吗 kết thúc câu hỏi tu từ."
+        },
+        {
+          "id": "zh-hsk5-puzzle-07",
+          "kind": "sentence_order",
+          "objective": "Build a 连…都…，何况…呢 sentence",
+          "prompt": "Ghép câu: Đến người lớn còn thấy mệt, huống hồ là trẻ con?",
+          "tokens": [
+            "孩子",
+            "觉得",
+            "何况",
+            "大人",
+            "呢？",
+            "连",
+            "累，",
+            "都"
+          ],
+          "answers": [
+            "连 大人 都 觉得 累， 何况 孩子 呢？"
+          ],
+          "hint": "连 + noun + 都…, then 何况 + noun + 呢.",
+          "hint_vi": "连 + danh từ + 都…, rồi 何况 + danh từ + 呢.",
+          "explanation": "连大人都觉得累，何况孩子呢？连…都 marks the 'even' case; 何况…呢 adds the obvious 'let alone' case.",
+          "explanation_vi": "连大人都觉得累 = đến người lớn còn thấy mệt (连…都 = ngay cả… cũng). 何况孩子呢 = huống hồ là trẻ con. 都 đứng sau danh từ được nhấn mạnh và trước động từ 觉得."
+        },
+        {
+          "id": "zh-hsk5-puzzle-08",
+          "kind": "sentence_order",
+          "objective": "Build a 尽管…还是 sentence",
+          "prompt": "Ghép câu: Mặc dù rất mệt, anh ấy vẫn cùng em xem hết bộ phim.",
+          "tokens": [
+            "电影。",
+            "还是",
+            "很",
+            "看完了",
+            "尽管",
+            "他",
+            "累，",
+            "陪我"
+          ],
+          "answers": [
+            "尽管 很 累， 他 还是 陪我 看完了 电影。",
+            "他 尽管 很 累， 还是 陪我 看完了 电影。",
+            "尽管 他 很 累， 还是 陪我 看完了 电影。"
+          ],
+          "hint": "尽管 + fact, then 还是 before the verb phrase.",
+          "hint_vi": "尽管 + sự thật, vế sau 还是 đứng trước cụm động từ.",
+          "explanation": "尽管很累，他还是陪我看完了电影。他 can stand before 尽管, after it, or at the start of the second clause.",
+          "explanation_vi": "尽管很累 (mặc dù rất mệt), 他还是陪我看完了电影 (anh ấy vẫn cùng em xem hết phim). Chủ ngữ 他 có thể đứng trước 尽管, ngay sau 尽管 hoặc đầu vế sau. 还是 (vẫn) đứng trước 陪我."
+        },
+        {
+          "id": "zh-hsk5-puzzle-09",
+          "kind": "sentence_order",
+          "objective": "Build a 除非…否则 sentence",
+          "prompt": "Ghép câu: Trừ khi em tự miệng nói ra, nếu không anh sẽ không tin.",
+          "tokens": [
+            "否则",
+            "相信。",
+            "你",
+            "亲口",
+            "除非",
+            "不会",
+            "说，",
+            "我"
+          ],
+          "answers": [
+            "除非 你 亲口 说， 否则 我 不会 相信。"
+          ],
+          "hint": "除非 + the only condition, 否则 + what happens otherwise.",
+          "hint_vi": "除非 + điều kiện duy nhất, 否则 + kết quả nếu không có điều kiện đó.",
+          "explanation": "除非你亲口说，否则我不会相信。除非 states the only condition; 否则 (otherwise) opens the second clause, before the subject.",
+          "explanation_vi": "除非 (trừ khi) nêu điều kiện duy nhất: 除非你亲口说. 否则 (nếu không thì) đứng ĐẦU vế sau, trước chủ ngữ 我: 否则我不会相信. 亲口 (chính miệng) đứng trước động từ 说."
+        },
+        {
+          "id": "zh-hsk5-puzzle-10",
+          "kind": "sentence_order",
+          "objective": "Build a 即使…也 sentence",
+          "prompt": "Ghép câu: Cho dù có thất bại, chúng mình cũng sẽ không hối hận.",
+          "tokens": [
+            "后悔。",
+            "也",
+            "失败了，",
+            "我们",
+            "不会",
+            "即使"
+          ],
+          "answers": [
+            "即使 失败了， 我们 也 不会 后悔。",
+            "我们 即使 失败了， 也 不会 后悔。"
+          ],
+          "hint": "即使 + hypothesis, 也 before 不会 in the second clause.",
+          "hint_vi": "即使 + giả thiết, vế sau 也 đứng trước 不会.",
+          "explanation": "即使失败了，我们也不会后悔。即使…也 = even if…, still… The subject 我们 can also open the sentence.",
+          "explanation_vi": "即使 (jíshǐ) … 也 = 'cho dù… cũng…', trang trọng hơn 哪怕 một chút. Chủ ngữ 我们 đứng đầu vế sau hoặc đầu câu trước 即使. 也 đứng trước 不会: 也不会后悔, không nói 不会也后悔."
+        }
+      ]
+    },
+    {
+      "slug": "zh-listen-hsk5",
+      "language": "zh",
+      "category": "listening",
+      "level": "HSK5",
+      "topic": "work, money, environment & technology",
+      "title": "Real Talk: HSK 5 Listening",
+      "title_vi": "Nghe chuyện thật: luyện nghe HSK 5",
+      "objectives": [
+        "Follow a short story about changing jobs",
+        "Catch suggestions made with 与其…不如",
+        "Understand short talks about recycling and computer problems",
+        "Pick out the exact connector you heard"
+      ],
+      "questions": [
+        {
+          "id": "zh-hsk5-listen-01",
+          "kind": "listening",
+          "objective": "Follow a story about resigning and starting a business",
+          "audio_text": "我原来在一家银行工作，工资不低，但是几乎每天都要加班。上个月我辞职了，自己开了一家小咖啡店。虽然挣得比以前少，但是我觉得很开心。",
+          "prompt": "Hiện giờ người nói đang làm gì?",
+          "options": [
+            "Tự mở một quán cà phê nhỏ",
+            "Vẫn làm việc ở ngân hàng",
+            "Đang tìm công việc mới",
+            "Làm thêm giờ ở công ty"
+          ],
+          "answer": "Tự mở một quán cà phê nhỏ",
+          "explanation": "上个月我辞职了，自己开了一家小咖啡店 = I quit last month and opened a small coffee shop myself. The bank job was before (原来).",
+          "explanation_vi": "上个月我辞职了，自己开了一家小咖啡店 = tháng trước tôi nghỉ việc và tự mở một quán cà phê nhỏ. 原来 (trước đây) cho biết công việc ở ngân hàng là chuyện cũ. 挣得比以前少 = kiếm được ít hơn trước, nhưng vui hơn."
+        },
+        {
+          "id": "zh-hsk5-listen-02",
+          "kind": "listening",
+          "objective": "Understand a suggestion made with 与其…不如",
+          "audio_text": "这个周末我们别去饭店吃饭了。与其花那么多钱，不如在家一起做饭，省下来的钱还能存起来买房子。",
+          "prompt": "Người nói đề nghị cuối tuần này làm gì?",
+          "options": [
+            "Ở nhà cùng nhau nấu ăn",
+            "Đi ăn nhà hàng",
+            "Đi xem nhà để mua",
+            "Ra ngân hàng gửi tiền"
+          ],
+          "answer": "Ở nhà cùng nhau nấu ăn",
+          "explanation": "与其花那么多钱，不如在家一起做饭 = rather than spend so much money, let's cook together at home. The option after 不如 is the suggestion.",
+          "explanation_vi": "与其花那么多钱，不如在家一起做饭 = thay vì tốn nhiều tiền, chi bằng ở nhà cùng nấu ăn. Phương án sau 不如 chính là lời đề nghị. Mua nhà (买房子) chỉ là mục đích tiết kiệm lâu dài, không phải việc làm cuối tuần này."
+        },
+        {
+          "id": "zh-hsk5-listen-03",
+          "kind": "listening",
+          "objective": "Understand a short talk about recycling",
+          "audio_text": "现在网上购物越来越方便，可是包装用的塑料太多了。我们小区提倡大家把纸箱和塑料瓶分开放，这样方便回收。",
+          "prompt": "Khu dân cư khuyến khích mọi người làm gì?",
+          "options": [
+            "Để riêng thùng giấy và chai nhựa để dễ tái chế",
+            "Không mua hàng trên mạng nữa",
+            "Dùng ít điện và nước hơn",
+            "Trồng thêm cây xanh"
+          ],
+          "answer": "Để riêng thùng giấy và chai nhựa để dễ tái chế",
+          "explanation": "小区提倡大家把纸箱和塑料瓶分开放 = the neighbourhood encourages everyone to put cardboard boxes and plastic bottles separately, 方便回收 = to make recycling easier.",
+          "explanation_vi": "提倡 = khuyến khích; 把纸箱和塑料瓶分开放 = để riêng thùng giấy và chai nhựa; 方便回收 = để tiện tái chế. Người nói không bảo ngừng mua hàng online — chỉ nói bao bì nhựa quá nhiều."
+        },
+        {
+          "id": "zh-hsk5-listen-04",
+          "kind": "listening",
+          "objective": "Understand an explanation of a computer problem",
+          "audio_text": "你别担心，这不是病毒，只是软件需要更新了。更新完以后，把电脑重新打开就没问题了。",
+          "prompt": "Máy tính đang gặp vấn đề gì?",
+          "options": [
+            "Phần mềm cần cập nhật",
+            "Bị nhiễm virus",
+            "Hết pin",
+            "Quên mật khẩu"
+          ],
+          "answer": "Phần mềm cần cập nhật",
+          "explanation": "这不是病毒，只是软件需要更新了 = it's not a virus, the software just needs updating. 不是…只是… rules out the virus.",
+          "explanation_vi": "这不是病毒 = đây không phải virus; 只是软件需要更新了 = chỉ là phần mềm cần cập nhật. Cẩn thận: nghe thấy 病毒 nhưng câu đã phủ định bằng 不是. 重新打开 = mở lại, khởi động lại."
+        },
+        {
+          "id": "zh-hsk5-listen-05",
+          "kind": "listening",
+          "objective": "Pick out the exact connector you heard: 无论…都",
+          "audio_text": "我的工作经常要出差。无论工作多忙，我都会抽时间陪家人。",
+          "prompt": "Câu thứ hai bạn nghe được là câu nào?",
+          "options": [
+            "无论工作多忙，我都会抽时间陪家人。",
+            "尽管工作很忙，我还是会抽时间陪家人。",
+            "哪怕工作再忙，我也会抽时间陪家人。",
+            "既然工作很忙，我就不陪家人了。"
+          ],
+          "answer": "无论工作多忙，我都会抽时间陪家人。",
+          "explanation": "The speaker said 无论工作多忙，我都会… (no matter how busy). Listen for wúlùn … duō … dōu, not jǐnguǎn … hái shì or nǎpà … zài … yě.",
+          "explanation_vi": "Câu nghe được: 无论 (wúlùn) 工作多忙，我都 (dōu) 会抽时间陪家人. Ba câu kia nghĩa gần giống nhưng dùng cặp từ khác: 尽管…还是 (jǐnguǎn…háishi), 哪怕…再…也 (nǎpà…zài…yě), còn 既然…就 thì nghĩa ngược hẳn (không ở bên gia đình). 抽时间 = dành thời gian."
+        }
+      ]
+    }
+  ]
+}
