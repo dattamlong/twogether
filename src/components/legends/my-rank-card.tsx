@@ -1,10 +1,8 @@
 "use client";
 
-import { Eye, EyeOff } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { HeartIcon } from "@/components/ui/icons";
 import { ProgressBar } from "@/components/ui/progress-bar";
-import { useSetLegendVisibility, type LegendStatus } from "@/features/legends/queries";
+import type { LegendStatus } from "@/features/legends/queries";
 import { tierById } from "@/features/legends/tiers";
 import type { SessionData } from "@/features/session/types";
 import { cn } from "@/lib/utils";
@@ -13,7 +11,6 @@ import { TierBadge } from "./legend-art";
 import { Movement } from "./leaderboard-list";
 
 export function MyRankCard({ status, session, compact = false }: { status: LegendStatus; session: SessionData; compact?: boolean }) {
-  const setVisibility = useSetLegendVisibility();
   const tier = tierById(status.tier);
   const nextTier = tierById(status.tier + 1);
   const me = session.profile.display_name;
@@ -35,11 +32,6 @@ export function MyRankCard({ status, session, compact = false }: { status: Legen
           </span>
         </span>
         <TierBadge tier={status.tier} size={26} />
-        {!status.isPublic ? (
-          <Button size="sm" onClick={() => setVisibility.mutate(true)} loading={setVisibility.isPending}>
-            Join
-          </Button>
-        ) : null}
       </div>
     );
   }
@@ -98,22 +90,9 @@ export function MyRankCard({ status, session, compact = false }: { status: Legen
       ) : (
         <p className="text-xs font-bold text-plum-500">Highest tier reached: {tier.name}</p>
       )}
-      <div className="border-t border-lavender-100 pt-3">
-        {status.isPublic ? (
-          <Button variant="ghost" size="sm" onClick={() => setVisibility.mutate(false)} loading={setVisibility.isPending}>
-            <EyeOff size={14} /> Hide us from the leaderboard
-          </Button>
-        ) : (
-          <div className="flex flex-col gap-2">
-            <p className="text-xs text-plum-500">
-              Your couple is private. Join to appear on the leaderboard — only your names, characters, tier, score and badges are shown. Messages, answers and memories stay private.
-            </p>
-            <Button onClick={() => setVisibility.mutate(true)} loading={setVisibility.isPending}>
-              <Eye size={16} /> Join Love Legends
-            </Button>
-          </div>
-        )}
-      </div>
+      <p className="border-t border-lavender-100 pt-3 text-[11px] text-cocoa-400">
+        Every couple is ranked automatically. Only names, characters, tier, scores and badges are shown — messages, answers and memories stay private.
+      </p>
     </div>
   );
 }

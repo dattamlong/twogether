@@ -20,7 +20,7 @@ export function LegendCelebration() {
   const reduced = usePrefersReducedMotion();
 
   const due: "top3" | "first" | null =
-    status?.isPublic && status.rank && status.score > 0
+    status?.rank && status.score > 0
       ? status.rank === 1 && !status.celebrations.includes("first")
         ? "first"
         : status.rank <= 3 && !status.celebrations.includes("top3") && !status.celebrations.includes("first")

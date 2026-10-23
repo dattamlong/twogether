@@ -2020,6 +2020,10 @@ export type Database = {
           isSetofReturn: true;
         };
       };
+      rebuild_legend_totals: {
+        Args: Record<PropertyKey, never>;
+        Returns: undefined;
+      };
       record_qualifying_activity: { Args: { uid: string }; Returns: undefined };
       redeem_reward: {
         Args: { request_id: string; reward: string };

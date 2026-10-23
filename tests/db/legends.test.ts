@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { describe, expect, it } from "vitest";
-import { admin, createCouple, createUser, errorMessage, expectOk, giveCoins, playLesson } from "./helpers";
+import { admin, createCouple, createUser, expectOk, giveCoins, playLesson } from "./helpers";
 
 const db = () => admin();
 
@@ -11,9 +11,7 @@ async function weeklyScore(coupleId: string) {
 }
 
 async function publicCouple() {
-  const couple = await createCouple();
-  expectOk(await couple.a.client.rpc("set_legend_visibility", { make_public: true }));
-  return couple;
+  return createCouple();
 }
 
 describe("Love Legends scoring", () => {
@@ -78,22 +76,23 @@ describe("Love Legends scoring", () => {
 });
 
 describe("Love Legends leaderboard", () => {
-  it("lists only couples that opted in and hides private profiles", async () => {
-    const shown = await publicCouple();
-    const hidden = await createCouple();
-    for (const c of [shown, hidden]) await db().rpc("grant_reward", { uid: c.a.id, add_xp: 50, add_coins: 0, reason: "lesson", ref: randomUUID() });
+  it("ranks every couple automatically without exposing private data", async () => {
+    const one = await createCouple();
+    const two = await createCouple();
+    for (const c of [one, two]) await db().rpc("grant_reward", { uid: c.a.id, add_xp: 50, add_coins: 0, reason: "lesson", ref: randomUUID() });
+    expectOk(await one.a.client.rpc("send_love_message", { message_kind: "text", message_body: "a very private note" }));
 
-    const board = expectOk(await hidden.a.client.rpc("get_leaderboard", { board: "weekly", max_rows: 100 }));
+    const board = expectOk(await two.a.client.rpc("get_leaderboard", { board: "weekly", max_rows: 100 }));
     const ids = board.map((r) => r.couple_id);
-    expect(ids).toContain(shown.coupleId);
-    expect(ids).not.toContain(hidden.coupleId);
-    expect(board.find((r) => r.couple_id === shown.coupleId)!.members).toHaveLength(2);
+    expect(ids).toEqual(expect.arrayContaining([one.coupleId, two.coupleId]));
+    expect(board.find((r) => r.couple_id === one.coupleId)!.members).toHaveLength(2);
+
+    const hide = await one.a.client.rpc("set_legend_visibility", { make_public: false });
+    expect(hide.error).not.toBeNull();
 
     const outsider = await createUser();
-    expect(errorMessage(await outsider.client.rpc("get_couple_legend_profile", { target: hidden.coupleId }))).toBe("profile_private");
-    const profile = expectOk(await outsider.client.rpc("get_couple_legend_profile", { target: shown.coupleId })) as Record<string, unknown>;
-    expect(profile).not.toHaveProperty("messages");
-    expect(JSON.stringify(profile)).not.toMatch(/love_answers|body|email/);
+    const profile = expectOk(await outsider.client.rpc("get_couple_legend_profile", { target: one.coupleId })) as Record<string, unknown>;
+    expect(JSON.stringify(profile)).not.toMatch(/very private note|love_answers|email/);
   });
 
   it("reports the couple's own rank and the gap to the next couple", async () => {
@@ -108,7 +107,9 @@ describe("Love Legends leaderboard", () => {
     expect(status.rank).toBe(chaserRow.rank);
     expect(chaserRow.is_me).toBe(true);
     expect(status.score).toBe(120);
-    expect(status.pointsToNext).toBe(leaderRow.score - 120 + 1);
+    const ahead = board.find((r) => r.rank === chaserRow.rank - 1)!;
+    expect(leaderRow.rank).toBeLessThan(chaserRow.rank);
+    expect(status.pointsToNext).toBe(ahead.score - 120 + 1);
   });
 });
 

@@ -1,9 +1,7 @@
 "use client";
 
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { friendlyError } from "@/lib/errors";
+import { useQuery } from "@tanstack/react-query";
 import { getSupabase } from "@/lib/supabase/client";
-import { toast } from "@/stores/toast-store";
 import type { Avatar } from "../session/types";
 import { useSession } from "../session/use-session";
 import type { BoardId } from "./tiers";
@@ -99,28 +97,6 @@ export function useCoupleLegendProfile(coupleId: string | null) {
       if (error) throw error;
       return data as unknown as CoupleLegendProfile;
     },
-  });
-}
-
-export function useSetLegendVisibility() {
-  const client = useQueryClient();
-  return useMutation({
-    mutationFn: async (makePublic: boolean) => {
-      const { error } = await getSupabase().rpc("set_legend_visibility", { make_public: makePublic });
-      if (error) throw error;
-      return makePublic;
-    },
-    onSuccess: (isPublic) =>
-      toast({
-        tone: "love",
-        title: isPublic ? "You joined Love Legends!" : "Your couple is now hidden from Love Legends",
-        vi: isPublic ? "Hai bạn đã tham gia bảng xếp hạng!" : "Cặp đôi đã được ẩn khỏi bảng xếp hạng",
-      }),
-    onError: (error) => {
-      const m = friendlyError(error);
-      toast({ tone: "error", title: m.en, vi: m.vi });
-    },
-    onSettled: () => client.invalidateQueries({ queryKey: ["legends"] }),
   });
 }
 

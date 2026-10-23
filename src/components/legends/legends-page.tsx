@@ -89,7 +89,7 @@ export function LegendsPage() {
               <p className="font-display text-lg font-semibold">{rows.length === 0 ? "Your love story is just beginning." : "More couples will join the adventure soon."}</p>
               <Vi>{rows.length === 0 ? "Hãy là cặp đôi đầu tiên trở thành huyền thoại!" : "Sẽ có thêm nhiều cặp đôi tham gia."}</Vi>
               <p className="mt-1 max-w-md text-sm text-plum-500">
-                Only real couples who chose to join appear here — empty podiums are waiting for you. Invite friends who learn together to compete.
+                Every real couple appears here as soon as they earn points — empty podiums are waiting. Finish a lesson together to claim your spot.
               </p>
             </Panel>
           ) : null}
