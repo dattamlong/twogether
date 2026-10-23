@@ -24,7 +24,16 @@ const KNOWN: Record<string, Friendly> = {
   reward_not_approved: { en: "Your partner needs to approve this first.", vi: "Người ấy cần đồng ý trước." },
   item_not_owned: { en: "You don't own that item yet.", vi: "Bạn chưa có món này." },
   "Invalid login credentials": { en: "Email or password is incorrect.", vi: "Email hoặc mật khẩu không đúng." },
+  invalid_credentials: { en: "Email or password is incorrect.", vi: "Email hoặc mật khẩu không đúng." },
   "User already registered": { en: "This email already has an account.", vi: "Email này đã có tài khoản." },
+  user_already_exists: { en: "This email already has an account — try signing in.", vi: "Email này đã có tài khoản — hãy đăng nhập." },
+  email_exists: { en: "This email already has an account — try signing in.", vi: "Email này đã có tài khoản — hãy đăng nhập." },
+  email_not_confirmed: { en: "Please confirm your email first, then sign in.", vi: "Hãy xác nhận email trước rồi đăng nhập." },
+  email_address_invalid: { en: "That email address doesn't look valid.", vi: "Địa chỉ email không hợp lệ." },
+  weak_password: { en: "Please choose a stronger password (at least 8 characters).", vi: "Hãy chọn mật khẩu mạnh hơn (ít nhất 8 ký tự)." },
+  over_email_send_rate_limit: { en: "Too many sign-ups right now. Please wait a few minutes and try again.", vi: "Đang có quá nhiều lượt đăng ký. Đợi vài phút rồi thử lại nhé." },
+  over_request_rate_limit: { en: "Too many attempts. Please wait a minute and try again.", vi: "Thử quá nhiều lần. Đợi một chút rồi thử lại nhé." },
+  signup_disabled: { en: "Sign-ups are closed right now.", vi: "Hiện chưa mở đăng ký." },
 };
 
 export function errorCode(error: unknown): string {
@@ -32,9 +41,19 @@ export function errorCode(error: unknown): string {
   return String(error ?? "");
 }
 
+function authCode(error: unknown): string | null {
+  if (error && typeof error === "object" && "code" in error && typeof (error as { code: unknown }).code === "string") {
+    return (error as { code: string }).code;
+  }
+  return null;
+}
+
 export function friendlyError(error: unknown): Friendly {
   const code = errorCode(error);
+  const auth = authCode(error);
+  if (auth && KNOWN[auth]) return KNOWN[auth];
   if (KNOWN[code]) return KNOWN[code];
+  if (/rate limit/i.test(code)) return KNOWN.over_request_rate_limit;
   if (/fetch|network|Failed to fetch/i.test(code)) {
     return { en: "Can't reach the server. Check your connection.", vi: "Không kết nối được máy chủ. Kiểm tra mạng nhé." };
   }
