@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-sakura-50: #fff4f8;
+  --color-sakura-100: #fde4ee;
+  --color-sakura-200: #f8bbd0;
+  --color-sakura-300: #f39bbb;
+  --color-sakura-400: #e7779f;
+  --color-sakura-500: #d45a86;
+  --color-lavender-100: #efeafb;
+  --color-lavender-200: #c7b8ea;
+  --color-lavender-300: #a995dc;
+  --color-lavender-400: #8a73c8;
+  --color-cream-50: #fffcf7;
+  --color-cream-100: #fff7ed;
+  --color-cream-200: #fbecd8;
+  --color-mint-100: #e3f5ee;
+  --color-mint-200: #bce5d5;
+  --color-mint-400: #6cc3a2;
+  --color-mint-600: #3a9474;
+  --color-peach-100: #fff0e8;
+  --color-peach-200: #ffd6c2;
+  --color-peach-400: #f6a88a;
+  --color-plum-500: #6a5583;
+  --color-plum-700: #45365b;
+  --color-plum-900: #2c2140;
+  --color-cocoa-400: #9a8288;
+  --color-cocoa-600: #745d64;
+  --color-gold-200: #fbe3b1;
+  --color-gold-300: #f5cb78;
+  --color-gold-500: #d9a440;
+  --color-sky-100: #e5f3fc;
+  --color-sky-200: #b8ddf5;
+  --color-sky-400: #6fb5e3;
+  --color-rose-err: #e0607e;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
+  --font-display: var(--font-fredoka), var(--font-nunito), ui-rounded, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --radius-panel: 1.5rem;
+  --shadow-soft: 0 10px 30px -12px rgb(69 54 91 / 0.25);
+  --shadow-pop: 0 4px 0 0 rgb(69 54 91 / 0.18);
+  --shadow-glow: 0 0 0 4px rgb(248 187 208 / 0.45);
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-flicker: flicker 1.4s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes flicker {
+    0%, 100% { transform: scale(1) rotate(-2deg); }
+    50% { transform: scale(1.08) rotate(2deg); }
+  }
+  @keyframes shimmer {
+    from { background-position: -200% 0; }
+    to { background-position: 200% 0; }
   }
 }
 
+:root {
+  --app-bg: radial-gradient(1200px 600px at 10% -10%, #fde4ee 0%, transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, #efeafb 0%, transparent 55%),
+    radial-gradient(800px 600px at 50% 120%, #e3f5ee 0%, transparent 60%), #fff7ed;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+  color-scheme: light;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--app-bg);
+  background-attachment: fixed;
+  color: var(--color-plum-700);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-lavender-300);
+  outline-offset: 2px;
+  border-radius: 0.75rem;
+}
+
+::selection {
+  background: var(--color-sakura-200);
+}
+
+@utility panel {
+  background: rgb(255 252 247 / 0.92);
+  border: 2px solid rgb(255 255 255 / 0.9);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-soft), inset 0 -3px 0 0 rgb(199 184 234 / 0.25);
+}
+
+@utility skeleton {
+  background: linear-gradient(90deg, #fbecd8 0%, #fff7ed 50%, #fbecd8 100%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+  border-radius: 1rem;
+}
+
+@utility pb-safe {
+  padding-bottom: calc(var(--safe-bottom) + 0.5rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(html, body, div, span, button, a, p, li, svg, section, main, header, nav) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.96); }
+  to { opacity: 1; transform: none; }
 }

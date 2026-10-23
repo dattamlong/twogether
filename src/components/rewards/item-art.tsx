@@ -1,0 +1,209 @@
+import type { ReactNode } from "react";
+import { GiftIcon, HeartIcon, SparkleIcon } from "@/components/ui/icons";
+
+const Pot = ({ color = "#ffd6c2" }: { color?: string }) => (
+  <>
+    <ellipse cx="32" cy="58" rx="14" ry="3" fill="#45365b" opacity=".12" />
+    <path d="M20 40h24l-3 17H23z" fill={color} stroke="#45365b" strokeOpacity=".3" />
+    <ellipse cx="32" cy="40" rx="12" ry="3" fill="#00000018" />
+  </>
+);
+
+const Block = ({ top, left, right, y = 30, h = 18 }: { top: string; left: string; right: string; y?: number; h?: number }) => (
+  <>
+    <path d={`M12 ${y} L32 ${y + 10} L32 ${y + 10 + h} L12 ${y + h} Z`} fill={left} />
+    <path d={`M52 ${y} L32 ${y + 10} L32 ${y + 10 + h} L52 ${y + h} Z`} fill={right} />
+    <path d={`M12 ${y} L32 ${y - 10} L52 ${y} L32 ${y + 10} Z`} fill={top} />
+  </>
+);
+
+const ART: Record<string, ReactNode> = {
+  floor_lamp: (
+    <>
+      <ellipse cx="32" cy="58" rx="9" ry="3" fill="#8a73c8" />
+      <path d="M32 58V22" stroke="#45365b" strokeWidth="2.5" opacity=".7" />
+      <circle cx="32" cy="16" r="16" fill="#fbe3b1" opacity=".5" />
+      <path d="M18 24h28l-6-16H24z" fill="#fff0e8" stroke="#45365b" strokeOpacity=".3" />
+    </>
+  ),
+  golden_lamp: (
+    <>
+      <ellipse cx="32" cy="58" rx="9" ry="3" fill="#8a73c8" />
+      <path d="M32 58V22" stroke="#45365b" strokeWidth="2.5" opacity=".7" />
+      <circle cx="32" cy="16" r="18" fill="#f5cb78" opacity=".45" />
+      <path d="M18 24h28l-6-16H24z" fill="#f5cb78" stroke="#d9a440" />
+    </>
+  ),
+  armchair: (
+    <>
+      <Block top="#e3f5ee" left="#bce5d5" right="#9fd8c2" y={34} h={14} />
+      <path d="M14 18h36v16H14z" fill="#6cc3a2" rx="4" />
+      <rect x="22" y="30" width="20" height="8" rx="3" fill="#fff7ed" />
+    </>
+  ),
+  side_table: (
+    <>
+      <rect x="30" y="34" width="4" height="22" fill="#c49a83" />
+      <ellipse cx="32" cy="32" rx="18" ry="7" fill="#e8c6a8" stroke="#45365b" strokeOpacity=".25" />
+      <rect x="22" y="22" width="6" height="8" rx="2" fill="#fff" />
+      <rect x="34" y="22" width="6" height="8" rx="2" fill="#f8bbd0" />
+    </>
+  ),
+  beanbag: (
+    <>
+      <ellipse cx="32" cy="56" rx="22" ry="5" fill="#45365b" opacity=".12" />
+      <ellipse cx="32" cy="42" rx="22" ry="15" fill="#ffd6c2" stroke="#45365b" strokeOpacity=".25" />
+      <ellipse cx="28" cy="36" rx="12" ry="6" fill="#fff0e8" />
+    </>
+  ),
+  aquarium: (
+    <>
+      <rect x="6" y="44" width="52" height="10" rx="2" fill="#c49a83" />
+      <rect x="8" y="16" width="48" height="28" rx="3" fill="#b8ddf5" stroke="#6fb5e3" strokeWidth="2" />
+      <ellipse cx="24" cy="30" rx="5" ry="3" fill="#f6a88a" />
+      <path d="M19 30l-4-3v6z" fill="#f6a88a" />
+      <ellipse cx="40" cy="24" rx="5" ry="3" fill="#f8bbd0" />
+      <path d="M45 24l4-3v6z" fill="#f8bbd0" />
+    </>
+  ),
+  cactus: (
+    <>
+      <Pot color="#c7b8ea" />
+      <rect x="27" y="14" width="10" height="27" rx="5" fill="#6cc3a2" stroke="#3a9474" />
+      <rect x="36" y="22" width="8" height="5" rx="2.5" fill="#6cc3a2" />
+      <circle cx="32" cy="13" r="3" fill="#f39bbb" />
+    </>
+  ),
+  monstera: (
+    <>
+      <Pot color="#fff7ed" />
+      <ellipse cx="24" cy="26" rx="9" ry="14" transform="rotate(-30 24 26)" fill="#3a9474" />
+      <ellipse cx="40" cy="24" rx="9" ry="14" transform="rotate(30 40 24)" fill="#3a9474" />
+      <ellipse cx="32" cy="16" rx="8" ry="13" fill="#6cc3a2" />
+    </>
+  ),
+  sunflower_pot: (
+    <>
+      <Pot color="#fde4ee" />
+      <path d="M32 40V18" stroke="#3a9474" strokeWidth="3" />
+      {Array.from({ length: 10 }, (_, i) => (
+        <ellipse key={i} cx={32 + Math.cos((i / 10) * Math.PI * 2) * 8} cy={16 + Math.sin((i / 10) * Math.PI * 2) * 8} rx="4" ry="2.6" fill="#f5cb78" transform={`rotate(${i * 36} ${32 + Math.cos((i / 10) * Math.PI * 2) * 8} ${16 + Math.sin((i / 10) * Math.PI * 2) * 8})`} />
+      ))}
+      <circle cx="32" cy="16" r="5" fill="#9a6b4f" />
+    </>
+  ),
+  bonsai: (
+    <>
+      <Pot color="#c7b8ea" />
+      <path d="M32 40c-6-8 6-12 0-20" stroke="#745d64" strokeWidth="4" fill="none" />
+      <circle cx="24" cy="18" r="9" fill="#6cc3a2" />
+      <circle cx="40" cy="16" r="10" fill="#3a9474" />
+      <circle cx="32" cy="10" r="8" fill="#6cc3a2" />
+    </>
+  ),
+  teddy_bear: (
+    <>
+      <circle cx="22" cy="14" r="5" fill="#d8a985" />
+      <circle cx="42" cy="14" r="5" fill="#d8a985" />
+      <ellipse cx="32" cy="46" rx="14" ry="13" fill="#d8a985" />
+      <circle cx="32" cy="24" r="12" fill="#d8a985" />
+      <ellipse cx="32" cy="28" rx="5" ry="4" fill="#fff0e8" />
+      <circle cx="27" cy="22" r="1.6" fill="#45365b" />
+      <circle cx="37" cy="22" r="1.6" fill="#45365b" />
+      <path d="M28 37l4 4 4-4z" fill="#e7779f" />
+    </>
+  ),
+  star_lamp: (
+    <>
+      <circle cx="32" cy="28" r="22" fill="#fbe3b1" opacity=".5" />
+      <path d="M32 10l5 11 12 1-9 8 3 12-11-7-11 7 3-12-9-8 12-1z" fill="#f5cb78" stroke="#d9a440" />
+      <rect x="24" y="50" width="16" height="6" rx="2" fill="#c7b8ea" />
+    </>
+  ),
+  heart_lantern: (
+    <>
+      <circle cx="32" cy="28" r="22" fill="#f8bbd0" opacity=".5" />
+      <HeartGlyph />
+      <rect x="24" y="50" width="16" height="6" rx="2" fill="#c7b8ea" />
+    </>
+  ),
+  photo_stand: (
+    <>
+      <rect x="16" y="12" width="32" height="38" rx="3" fill="#fff7ed" stroke="#c49a83" strokeWidth="4" />
+      <rect x="21" y="17" width="22" height="28" fill="#fde4ee" />
+      <circle cx="28" cy="28" r="4" fill="#e7779f" />
+      <circle cx="36" cy="28" r="4" fill="#8a73c8" />
+      <rect x="20" y="52" width="24" height="4" rx="2" fill="#c49a83" />
+    </>
+  ),
+  cat_bed: (
+    <>
+      <ellipse cx="32" cy="46" rx="24" ry="12" fill="#c7b8ea" />
+      <ellipse cx="32" cy="42" rx="18" ry="8" fill="#efeafb" />
+      <ellipse cx="30" cy="38" rx="13" ry="8" fill="#f6a88a" />
+      <circle cx="41" cy="32" r="7" fill="#f6a88a" />
+      <path d="M36 27l2-7 4 5zM42 25l4-6 1 7z" fill="#f6a88a" />
+      <path d="M38 32q2 1.5 4 0" stroke="#45365b" strokeWidth="1.2" fill="none" />
+    </>
+  ),
+  cushion_pile: (
+    <>
+      <rect x="10" y="40" width="44" height="14" rx="7" fill="#f8bbd0" />
+      <rect x="16" y="28" width="32" height="14" rx="7" fill="#bce5d5" />
+      <rect x="22" y="17" width="20" height="13" rx="6" fill="#fbe3b1" />
+    </>
+  ),
+  hoodie_lavender: <Shirt color="#c7b8ea" accent="#a995dc" />,
+  sweater_mint: <Shirt color="#bce5d5" accent="#6cc3a2" />,
+  yukata_sakura: <Shirt color="#fde4ee" accent="#e7779f" />,
+  bow: <path d="M32 32 L12 18 V46 Z M32 32 L52 18 V46 Z" fill="#e7779f" stroke="#d45a86" strokeWidth="2" strokeLinejoin="round" />,
+  glasses: (
+    <g stroke="#45365b" strokeWidth="3" fill="#e5f3fc">
+      <circle cx="20" cy="32" r="11" />
+      <circle cx="44" cy="32" r="11" />
+      <path d="M31 32h2" fill="none" />
+    </g>
+  ),
+  flower_crown: (
+    <>
+      <path d="M8 40 Q32 22 56 40" stroke="#6cc3a2" strokeWidth="3" fill="none" />
+      {[10, 20, 32, 44, 54].map((x, i) => (
+        <circle key={x} cx={x} cy={38 - (i === 2 ? 8 : i % 4 === 0 ? 0 : 5)} r="6" fill={i % 2 ? "#f8bbd0" : "#fbe3b1"} />
+      ))}
+    </>
+  ),
+  beanie: (
+    <>
+      <path d="M12 42a20 20 0 0 1 40 0z" fill="#a995dc" />
+      <rect x="10" y="40" width="44" height="10" rx="4" fill="#8a73c8" />
+      <circle cx="32" cy="18" r="6" fill="#fff7ed" />
+    </>
+  ),
+};
+
+function HeartGlyph() {
+  return <path d="M32 46c-12-8-16-14-16-20 0-5 4-9 8-9 3 0 6 2 8 5 2-3 5-5 8-5 4 0 8 4 8 9 0 6-4 12-16 20z" fill="#f39bbb" stroke="#e7779f" strokeWidth="1.5" />;
+}
+
+function Shirt({ color, accent }: { color: string; accent: string }) {
+  return (
+    <>
+      <path d="M22 10 L12 16 L6 30 L14 33 L16 26 V56 H48 V26 L50 33 L58 30 L52 16 L42 10 Q32 18 22 10Z" fill={color} stroke="#45365b" strokeOpacity=".3" strokeWidth="1.5" />
+      <path d="M22 10 Q32 18 42 10" stroke={accent} strokeWidth="3" fill="none" />
+      <rect x="16" y="44" width="32" height="5" fill={accent} opacity=".6" />
+    </>
+  );
+}
+
+export function ItemArt({ itemId, size = 64, className }: { itemId: string; size?: number; className?: string }) {
+  if (itemId.startsWith("gift_")) {
+    const glyph = itemId === "gift_rose" ? <HeartIcon size={size} /> : <GiftIcon size={size} />;
+    return <span className={className}>{glyph}</span>;
+  }
+  if (itemId.startsWith("emote_")) return <span className={className}>{itemId === "emote_heart_burst" ? <HeartIcon size={size} /> : <SparkleIcon size={size} />}</span>;
+  return (
+    <svg viewBox="0 0 64 64" width={size} height={size} className={className} aria-hidden>
+      {ART[itemId] ?? <Block top="#efeafb" left="#c7b8ea" right="#a995dc" />}
+    </svg>
+  );
+}

@@ -1,0 +1,1330 @@
+{
+  "lessons": [
+    {
+      "slug": "vocab-a1-daily-routine",
+      "category": "vocabulary",
+      "level": "A1",
+      "topic": "daily routine",
+      "title": "Our Little Days: Daily Routine Words",
+      "title_vi": "Một ngày của hai đứa: từ vựng về sinh hoạt hằng ngày",
+      "objectives": [
+        "Name everyday actions from morning to night",
+        "Talk about when you usually do things",
+        "Share your daily schedule with your partner"
+      ],
+      "questions": [
+        {
+          "id": "vocab-a1-routine-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'wake up'",
+          "prompt": "My alarm rings and I ___ at 6 a.m.",
+          "prompt_vi": "Chuông báo thức reo và anh ___ lúc 6 giờ sáng.",
+          "options": ["wake up", "fall asleep", "go to bed", "stay asleep"],
+          "answer": "wake up",
+          "explanation": "\"Wake up\" means to stop sleeping. When the alarm rings, you wake up — you don't fall asleep or go to bed.",
+          "explanation_vi": "\"Wake up\" là thức dậy. Chuông báo thức reo thì mình thức dậy, chứ không phải ngủ thiếp đi (fall asleep) hay đi ngủ (go to bed).",
+          "word": {
+            "term": "wake up",
+            "ipa": "/weɪk ʌp/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "thức dậy",
+            "example": "I wake up early so I can say good morning to you before your day starts.",
+            "example_vi": "Anh dậy sớm để kịp chào buổi sáng em trước khi ngày của em bắt đầu."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-02",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'brush'",
+          "prompt": "What does 'brush' mean in \"brush your teeth\"?",
+          "prompt_vi": "Từ 'brush' trong \"brush your teeth\" có nghĩa là gì?",
+          "options": [
+            "to clean something with a tool that has many small hairs",
+            "to wash your whole body with water",
+            "to cut something into small pieces",
+            "to dry something with a towel"
+          ],
+          "answer": "to clean something with a tool that has many small hairs",
+          "explanation": "To brush is to clean or tidy something with a brush. We brush our teeth and brush our hair every day.",
+          "explanation_vi": "\"Brush\" là chải, đánh (bằng bàn chải). Mình nói brush your teeth (đánh răng) và brush your hair (chải tóc).",
+          "word": {
+            "term": "brush",
+            "ipa": "/brʌʃ/",
+            "part_of_speech": "verb",
+            "meaning_vi": "chải, đánh (răng)",
+            "example": "I brush my teeth after breakfast and before bed.",
+            "example_vi": "Em đánh răng sau bữa sáng và trước khi đi ngủ."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-03",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'breakfast'",
+          "prompt": "'breakfast' nghĩa là gì?",
+          "options": ["bữa sáng", "bữa trưa", "bữa tối", "bữa ăn nhẹ"],
+          "answer": "bữa sáng",
+          "explanation": "Breakfast is the first meal of the day, eaten in the morning. Lunch is at midday and dinner is in the evening.",
+          "explanation_vi": "Breakfast là bữa sáng — bữa ăn đầu tiên trong ngày. Bữa trưa là lunch, bữa tối là dinner.",
+          "word": {
+            "term": "breakfast",
+            "ipa": "/ˈbrɛkfəst/",
+            "part_of_speech": "noun",
+            "meaning_vi": "bữa sáng",
+            "example": "What did you have for breakfast today? I had bánh mì.",
+            "example_vi": "Hôm nay em ăn sáng món gì? Anh ăn bánh mì."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'shower'",
+          "prompt": "I take a quick ___ before work, so my hair is still wet.",
+          "prompt_vi": "Em ___ nhanh trước khi đi làm nên tóc vẫn còn ướt.",
+          "options": ["shower", "nap", "walk", "breakfast"],
+          "answer": "shower",
+          "explanation": "A shower is when you wash your body under running water. Wet hair is the clue — a nap or a walk won't make your hair wet.",
+          "explanation_vi": "\"Shower\" là tắm vòi sen. Manh mối là tóc còn ướt — ngủ trưa (nap) hay đi dạo (walk) thì không làm ướt tóc. Cụm hay dùng: take a shower.",
+          "word": {
+            "term": "shower",
+            "ipa": "/ˈʃaʊər/",
+            "part_of_speech": "noun",
+            "meaning_vi": "sự tắm vòi sen; vòi sen",
+            "example": "I'll take a shower and call you in ten minutes.",
+            "example_vi": "Anh đi tắm rồi mười phút nữa gọi em nhé."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'nap'",
+          "prompt": "What does 'nap' mean?",
+          "prompt_vi": "Từ 'nap' có nghĩa là gì?",
+          "options": [
+            "a short sleep during the day",
+            "a long walk in the morning",
+            "a small meal in the afternoon",
+            "a break to drink coffee"
+          ],
+          "answer": "a short sleep during the day",
+          "explanation": "A nap is a short sleep, usually after lunch or in the afternoon. We often say \"take a nap\".",
+          "explanation_vi": "\"Nap\" là giấc ngủ ngắn ban ngày, giống ngủ trưa ở Việt Nam. Cụm hay dùng: take a nap.",
+          "word": {
+            "term": "nap",
+            "ipa": "/næp/",
+            "part_of_speech": "noun",
+            "meaning_vi": "giấc ngủ ngắn, ngủ trưa",
+            "example": "I took a nap after lunch, so I'm not sleepy tonight.",
+            "example_vi": "Em ngủ trưa rồi nên tối nay chưa buồn ngủ."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-06",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'alarm'",
+          "prompt": "I set my ___ for 5 a.m. so I can call you before you go to sleep.",
+          "prompt_vi": "Anh đặt ___ lúc 5 giờ sáng để kịp gọi em trước khi em đi ngủ.",
+          "options": ["alarm", "shoes", "breakfast", "shower"],
+          "answer": "alarm",
+          "explanation": "An alarm is a clock or phone sound that wakes you up at a set time. We say \"set an alarm\" for a time.",
+          "explanation_vi": "\"Alarm\" là chuông báo thức. Mình nói set an alarm (đặt báo thức) cho một giờ nhất định.",
+          "word": {
+            "term": "alarm",
+            "ipa": "/əˈlɑrm/",
+            "part_of_speech": "noun",
+            "meaning_vi": "chuông báo thức",
+            "example": "My alarm didn't ring, so I was late for work.",
+            "example_vi": "Báo thức không reo nên em đi làm trễ."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'get dressed'",
+          "prompt": "What does 'get dressed' mean?",
+          "prompt_vi": "Cụm 'get dressed' có nghĩa là gì?",
+          "options": [
+            "to put on your clothes",
+            "to take a bath",
+            "to buy new clothes",
+            "to wash your clothes"
+          ],
+          "answer": "to put on your clothes",
+          "explanation": "To get dressed means to put your clothes on, usually after you wake up or take a shower.",
+          "explanation_vi": "\"Get dressed\" là mặc quần áo vào, thường làm sau khi thức dậy hoặc tắm xong. Không phải mua hay giặt quần áo.",
+          "word": {
+            "term": "get dressed",
+            "ipa": "/ɡɛt drɛst/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "mặc quần áo",
+            "example": "Give me five minutes to get dressed, then we can video call.",
+            "example_vi": "Cho em năm phút thay đồ rồi mình gọi video nha."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'usually'",
+          "prompt": "I ___ drink coffee in the morning, but today I had tea.",
+          "prompt_vi": "Anh ___ uống cà phê vào buổi sáng, nhưng hôm nay anh uống trà.",
+          "options": ["usually", "never", "yesterday", "tomorrow"],
+          "answer": "usually",
+          "explanation": "\"Usually\" means most of the time. The word \"but today\" shows that today is different from the normal habit.",
+          "explanation_vi": "\"Usually\" là thường thường, hầu như lúc nào cũng vậy. Chữ \"but today\" cho thấy hôm nay khác với thói quen thường ngày. \"Never\" (không bao giờ) thì không hợp nghĩa.",
+          "word": {
+            "term": "usually",
+            "ipa": "/ˈjuʒuəli/",
+            "part_of_speech": "adverb",
+            "meaning_vi": "thường thường, thường xuyên",
+            "example": "We usually talk on the phone after dinner.",
+            "example_vi": "Tụi mình thường gọi điện cho nhau sau bữa tối."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'early'",
+          "prompt": "You go to bed so ___! It's only 9 p.m.",
+          "prompt_vi": "Em đi ngủ ___ quá! Mới có 9 giờ tối thôi mà.",
+          "options": ["early", "late", "slowly", "loud"],
+          "answer": "early",
+          "explanation": "\"Early\" means before the usual time. \"It's only 9 p.m.\" tells us the time is earlier than normal, not late.",
+          "explanation_vi": "\"Early\" là sớm, trước giờ bình thường. \"It's only 9 p.m.\" cho thấy giờ còn sớm, nên không thể là \"late\" (muộn).",
+          "word": {
+            "term": "early",
+            "ipa": "/ˈɝli/",
+            "part_of_speech": "adverb",
+            "meaning_vi": "sớm",
+            "example": "I have to get up early tomorrow for my flight.",
+            "example_vi": "Mai anh phải dậy sớm để bay."
+          }
+        },
+        {
+          "id": "vocab-a1-routine-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'bedtime'",
+          "prompt": "'bedtime' nghĩa là gì?",
+          "options": ["giờ đi ngủ", "phòng ngủ", "giờ thức dậy", "giờ ăn trưa"],
+          "answer": "giờ đi ngủ",
+          "explanation": "Bedtime is the time when you usually go to bed. Don't mix it up with \"bedroom\", the room where you sleep.",
+          "explanation_vi": "\"Bedtime\" là giờ đi ngủ. Đừng nhầm với \"bedroom\" là phòng ngủ nhé.",
+          "word": {
+            "term": "bedtime",
+            "ipa": "/ˈbɛdtaɪm/",
+            "part_of_speech": "noun",
+            "meaning_vi": "giờ đi ngủ",
+            "example": "It's your bedtime soon — sweet dreams!",
+            "example_vi": "Sắp tới giờ em đi ngủ rồi — chúc em ngủ ngon!"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vocab-a1-food-cooking",
+      "category": "vocabulary",
+      "level": "A1",
+      "topic": "food & cooking",
+      "title": "Cooking for Two: Food & Kitchen Words",
+      "title_vi": "Nấu cho hai người: từ vựng về đồ ăn và nấu nướng",
+      "objectives": [
+        "Describe how food tastes",
+        "Name simple cooking actions",
+        "Talk about meals with your partner"
+      ],
+      "questions": [
+        {
+          "id": "vocab-a1-food-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'cook'",
+          "prompt": "When you visit, I'll ___ dinner for you — my mom taught me her recipe.",
+          "prompt_vi": "Khi em sang chơi, anh sẽ ___ bữa tối cho em — mẹ anh đã dạy anh công thức của mẹ.",
+          "options": ["cook", "sleep", "drink", "wash"],
+          "answer": "cook",
+          "explanation": "To cook is to make food ready to eat by heating it. A recipe tells you how to cook a dish.",
+          "explanation_vi": "\"Cook\" là nấu ăn. Manh mối là \"recipe\" (công thức nấu ăn) — công thức thì dùng để nấu.",
+          "word": {
+            "term": "cook",
+            "ipa": "/kʊk/",
+            "part_of_speech": "verb",
+            "meaning_vi": "nấu ăn",
+            "example": "Let's cook the same dish tonight and eat together on video.",
+            "example_vi": "Tối nay mình nấu cùng một món rồi ăn chung qua video nha."
+          }
+        },
+        {
+          "id": "vocab-a1-food-02",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'delicious'",
+          "prompt": "What does 'delicious' mean?",
+          "prompt_vi": "Từ 'delicious' có nghĩa là gì?",
+          "options": [
+            "having a very good taste",
+            "very hot in temperature",
+            "not cooked yet",
+            "having too much salt"
+          ],
+          "answer": "having a very good taste",
+          "explanation": "\"Delicious\" means very tasty. It's a strong, happy word — perfect for praising someone's cooking.",
+          "explanation_vi": "\"Delicious\" là rất ngon. Đây là từ khen mạnh, rất hợp để khen người yêu nấu ăn.",
+          "word": {
+            "term": "delicious",
+            "ipa": "/dɪˈlɪʃəs/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "ngon, rất ngon",
+            "example": "Your bún chả looks delicious! I wish I could try it.",
+            "example_vi": "Bún chả của em nhìn ngon quá! Ước gì anh được ăn thử."
+          }
+        },
+        {
+          "id": "vocab-a1-food-03",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'spicy'",
+          "prompt": "This soup has a lot of chili in it. It's very ___.",
+          "prompt_vi": "Món canh này cho nhiều ớt lắm. Nó rất ___.",
+          "options": ["spicy", "sweet", "frozen", "plain"],
+          "answer": "spicy",
+          "explanation": "Food with a lot of chili is spicy — it gives a hot, burning feeling in your mouth.",
+          "explanation_vi": "Đồ ăn nhiều ớt thì \"spicy\" — cay. \"Sweet\" là ngọt, \"plain\" là nhạt, không gia vị.",
+          "word": {
+            "term": "spicy",
+            "ipa": "/ˈspaɪsi/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "cay",
+            "example": "I can't eat spicy food, but you love it!",
+            "example_vi": "Anh không ăn cay được, còn em thì mê đồ cay!"
+          }
+        },
+        {
+          "id": "vocab-a1-food-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'bowl'",
+          "prompt": "What does 'bowl' mean?",
+          "prompt_vi": "Từ 'bowl' có nghĩa là gì?",
+          "options": [
+            "a round, deep dish for soup or rice",
+            "a flat plate for cutting bread",
+            "a tool for picking up noodles",
+            "a cup with a handle for coffee"
+          ],
+          "answer": "a round, deep dish for soup or rice",
+          "explanation": "A bowl is a round, deep dish. We eat phở, soup, and rice from a bowl.",
+          "explanation_vi": "\"Bowl\" là cái bát (cái chén) — đồ đựng tròn, sâu. Ăn phở, canh, cơm đều dùng bowl.",
+          "word": {
+            "term": "bowl",
+            "ipa": "/boʊl/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cái bát, cái tô, cái chén",
+            "example": "I just ate a big bowl of phở and I'm so full.",
+            "example_vi": "Em vừa ăn một tô phở to, no căng luôn."
+          }
+        },
+        {
+          "id": "vocab-a1-food-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'recipe'",
+          "prompt": "What does 'recipe' mean?",
+          "prompt_vi": "Từ 'recipe' có nghĩa là gì?",
+          "options": [
+            "instructions that tell you how to cook a dish",
+            "a list of prices in a restaurant",
+            "a bill you pay after eating",
+            "a person who cooks in a restaurant"
+          ],
+          "answer": "instructions that tell you how to cook a dish",
+          "explanation": "A recipe lists the ingredients and steps for making a dish. Careful: \"receipt\" (the paper you get after paying) is a different word.",
+          "explanation_vi": "\"Recipe\" là công thức nấu ăn. Cẩn thận đừng nhầm với \"receipt\" (hóa đơn, biên lai) nhé.",
+          "word": {
+            "term": "recipe",
+            "ipa": "/ˈrɛsəpi/",
+            "part_of_speech": "noun",
+            "meaning_vi": "công thức nấu ăn",
+            "example": "Can you send me your grandma's recipe for caramel pork?",
+            "example_vi": "Em gửi anh công thức thịt kho của bà em được không?"
+          }
+        },
+        {
+          "id": "vocab-a1-food-06",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'boil'",
+          "prompt": "First, ___ the water, then add the noodles.",
+          "prompt_vi": "Đầu tiên, ___ nước, rồi cho mì vào.",
+          "options": ["boil", "freeze", "cut", "peel"],
+          "answer": "boil",
+          "explanation": "To boil is to heat water (or food in water) until it bubbles. You can't cut or peel water, and frozen water won't cook noodles.",
+          "explanation_vi": "\"Boil\" là đun sôi, luộc. Nước thì không thể cắt (cut) hay gọt (peel), còn làm đông (freeze) thì không nấu mì được.",
+          "word": {
+            "term": "boil",
+            "ipa": "/bɔɪl/",
+            "part_of_speech": "verb",
+            "meaning_vi": "đun sôi, luộc",
+            "example": "Boil the eggs for about eight minutes.",
+            "example_vi": "Luộc trứng khoảng tám phút."
+          }
+        },
+        {
+          "id": "vocab-a1-food-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'fry'",
+          "prompt": "'fry' nghĩa là gì?",
+          "options": ["chiên, rán", "luộc", "nướng", "hấp"],
+          "answer": "chiên, rán",
+          "explanation": "To fry is to cook food in hot oil, like fried rice or spring rolls. Boil = luộc, grill = nướng, steam = hấp.",
+          "explanation_vi": "\"Fry\" là chiên, rán trong dầu nóng, như cơm chiên hay chả giò. Luộc là boil, nướng là grill, hấp là steam.",
+          "word": {
+            "term": "fry",
+            "ipa": "/fraɪ/",
+            "part_of_speech": "verb",
+            "meaning_vi": "chiên, rán",
+            "example": "My mom is frying spring rolls — the whole house smells amazing.",
+            "example_vi": "Mẹ em đang chiên chả giò — cả nhà thơm phức."
+          }
+        },
+        {
+          "id": "vocab-a1-food-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'hungry'",
+          "prompt": "I didn't eat lunch, so I'm really ___ now.",
+          "prompt_vi": "Anh chưa ăn trưa nên giờ anh ___ lắm.",
+          "options": ["hungry", "full", "thirsty", "sleepy"],
+          "answer": "hungry",
+          "explanation": "When you need food, you are hungry. Skipping lunch makes you hungry, not full. \"Thirsty\" is about needing a drink.",
+          "explanation_vi": "\"Hungry\" là đói. Bỏ bữa trưa thì đói chứ không no (full). \"Thirsty\" là khát nước.",
+          "word": {
+            "term": "hungry",
+            "ipa": "/ˈhʌŋɡri/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "đói",
+            "example": "Are you hungry? Let's order something and eat together on video.",
+            "example_vi": "Em đói chưa? Mình đặt đồ ăn rồi ăn chung qua video nha."
+          }
+        },
+        {
+          "id": "vocab-a1-food-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'vegetable'",
+          "prompt": "What does 'vegetable' mean?",
+          "prompt_vi": "Từ 'vegetable' có nghĩa là gì?",
+          "options": [
+            "a plant or part of a plant that we eat, like carrots",
+            "a sweet food eaten after dinner",
+            "a type of meat from chickens",
+            "a drink made from fruit"
+          ],
+          "answer": "a plant or part of a plant that we eat, like carrots",
+          "explanation": "Vegetables are plants we eat, such as carrots, cabbage, and morning glory. Note the short pronunciation: VEJ-tuh-bul.",
+          "explanation_vi": "\"Vegetable\" là rau củ, như cà rốt, bắp cải, rau muống. Lưu ý phát âm chỉ có ba âm tiết: /ˈvɛdʒtəbəl/.",
+          "word": {
+            "term": "vegetable",
+            "ipa": "/ˈvɛdʒtəbəl/",
+            "part_of_speech": "noun",
+            "meaning_vi": "rau củ",
+            "example": "You should eat more vegetables, not just instant noodles!",
+            "example_vi": "Anh phải ăn thêm rau đi, đừng chỉ ăn mì gói!"
+          }
+        },
+        {
+          "id": "vocab-a1-food-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'snack'",
+          "prompt": "I'm not very hungry — just a small ___ is enough.",
+          "prompt_vi": "Em không đói lắm — chỉ cần một ___ nhỏ là đủ.",
+          "options": ["snack", "feast", "kitchen", "recipe"],
+          "answer": "snack",
+          "explanation": "A snack is a small amount of food eaten between meals. A feast is a very big meal, so it doesn't fit \"not very hungry\".",
+          "explanation_vi": "\"Snack\" là đồ ăn vặt, bữa ăn nhẹ. \"Feast\" là bữa tiệc lớn nên không hợp với \"không đói lắm\".",
+          "word": {
+            "term": "snack",
+            "ipa": "/snæk/",
+            "part_of_speech": "noun",
+            "meaning_vi": "đồ ăn vặt, bữa ăn nhẹ",
+            "example": "I'm sending you a box of your favorite Vietnamese snacks.",
+            "example_vi": "Anh gửi cho em một thùng đồ ăn vặt Việt Nam mà em thích."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vocab-a1-home-furniture",
+      "category": "vocabulary",
+      "level": "A1",
+      "topic": "home & furniture",
+      "title": "Home Sweet Home: Rooms & Furniture",
+      "title_vi": "Tổ ấm: từ vựng về phòng ốc và đồ nội thất",
+      "objectives": [
+        "Name rooms in a house",
+        "Name common furniture and household things",
+        "Describe your room on a video call"
+      ],
+      "questions": [
+        {
+          "id": "vocab-a1-home-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'sofa'",
+          "prompt": "What does 'sofa' mean?",
+          "prompt_vi": "Từ 'sofa' có nghĩa là gì?",
+          "options": [
+            "a long, soft seat for two or more people",
+            "a small bed for a baby",
+            "a small table next to a bed",
+            "a cupboard for clothes"
+          ],
+          "answer": "a long, soft seat for two or more people",
+          "explanation": "A sofa (also called a couch) is a long, soft seat in the living room where several people can sit together.",
+          "explanation_vi": "\"Sofa\" (hay \"couch\") là ghế dài, êm, ngồi được nhiều người, thường đặt ở phòng khách.",
+          "word": {
+            "term": "sofa",
+            "ipa": "/ˈsoʊfə/",
+            "part_of_speech": "noun",
+            "meaning_vi": "ghế sofa, ghế dài",
+            "example": "One day we'll watch movies together on the same sofa.",
+            "example_vi": "Một ngày nào đó tụi mình sẽ cùng xem phim trên một chiếc sofa."
+          }
+        },
+        {
+          "id": "vocab-a1-home-02",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'kitchen'",
+          "prompt": "Mom is making dinner in the ___.",
+          "prompt_vi": "Mẹ đang nấu bữa tối trong ___.",
+          "options": ["kitchen", "bedroom", "garage", "bathroom"],
+          "answer": "kitchen",
+          "explanation": "The kitchen is the room where we cook food. That's where Mom makes dinner.",
+          "explanation_vi": "\"Kitchen\" là nhà bếp — phòng để nấu ăn.",
+          "word": {
+            "term": "kitchen",
+            "ipa": "/ˈkɪtʃən/",
+            "part_of_speech": "noun",
+            "meaning_vi": "nhà bếp",
+            "example": "Show me your kitchen — what are you cooking?",
+            "example_vi": "Cho anh xem bếp của em đi — em đang nấu gì đó?"
+          }
+        },
+        {
+          "id": "vocab-a1-home-03",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'bedroom'",
+          "prompt": "'bedroom' nghĩa là gì?",
+          "options": ["phòng ngủ", "phòng khách", "phòng tắm", "nhà bếp"],
+          "answer": "phòng ngủ",
+          "explanation": "A bedroom is the room where you sleep. The living room is \"phòng khách\" and the bathroom is \"phòng tắm\".",
+          "explanation_vi": "\"Bedroom\" là phòng ngủ. Phòng khách là living room, phòng tắm là bathroom, nhà bếp là kitchen.",
+          "word": {
+            "term": "bedroom",
+            "ipa": "/ˈbɛdrum/",
+            "part_of_speech": "noun",
+            "meaning_vi": "phòng ngủ",
+            "example": "I put the photo of us on the wall in my bedroom.",
+            "example_vi": "Em treo tấm ảnh hai đứa lên tường phòng ngủ."
+          }
+        },
+        {
+          "id": "vocab-a1-home-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'lamp'",
+          "prompt": "It's dark in here. Can you turn on the ___?",
+          "prompt_vi": "Trong này tối quá. Em bật ___ lên được không?",
+          "options": ["lamp", "sofa", "pillow", "shelf"],
+          "answer": "lamp",
+          "explanation": "A lamp is a light you can turn on and off, often on a table or desk. You can't turn on a sofa or a pillow.",
+          "explanation_vi": "\"Lamp\" là cái đèn (thường là đèn bàn, đèn ngủ). Ghế sofa hay gối thì không \"bật\" được.",
+          "word": {
+            "term": "lamp",
+            "ipa": "/læmp/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cái đèn (đèn bàn, đèn ngủ)",
+            "example": "I bought a warm yellow lamp, so you can see my face better on video.",
+            "example_vi": "Anh mua một cái đèn vàng ấm để em nhìn rõ mặt anh hơn khi gọi video."
+          }
+        },
+        {
+          "id": "vocab-a1-home-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'pillow'",
+          "prompt": "What does 'pillow' mean?",
+          "prompt_vi": "Từ 'pillow' có nghĩa là gì?",
+          "options": [
+            "a soft thing you put your head on in bed",
+            "a thick cover that keeps you warm in bed",
+            "a small rug next to the door",
+            "a hard seat with no back"
+          ],
+          "answer": "a soft thing you put your head on in bed",
+          "explanation": "A pillow is the soft thing under your head when you sleep. The warm cover over your body is a blanket.",
+          "explanation_vi": "\"Pillow\" là cái gối để kê đầu khi ngủ. Còn cái đắp lên người cho ấm là \"blanket\" (cái chăn/mền).",
+          "word": {
+            "term": "pillow",
+            "ipa": "/ˈpɪloʊ/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cái gối",
+            "example": "I hug my pillow and pretend it's you.",
+            "example_vi": "Em ôm gối rồi tưởng tượng đó là anh."
+          }
+        },
+        {
+          "id": "vocab-a1-home-06",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'blanket'",
+          "prompt": "It's cold tonight, so I'm under a warm ___ while we video call.",
+          "prompt_vi": "Tối nay lạnh nên anh trùm một cái ___ ấm trong lúc tụi mình gọi video.",
+          "options": ["blanket", "mirror", "shelf", "lamp"],
+          "answer": "blanket",
+          "explanation": "A blanket is a large, warm cover for your body, especially in bed. You get \"under\" a blanket to stay warm.",
+          "explanation_vi": "\"Blanket\" là cái chăn, cái mền. Trời lạnh thì chui vào (under) chăn cho ấm.",
+          "word": {
+            "term": "blanket",
+            "ipa": "/ˈblæŋkɪt/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cái chăn, cái mền",
+            "example": "This blanket is so soft — it's my favorite.",
+            "example_vi": "Cái chăn này mềm quá — em thích nó nhất."
+          }
+        },
+        {
+          "id": "vocab-a1-home-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'fridge'",
+          "prompt": "What does 'fridge' mean?",
+          "prompt_vi": "Từ 'fridge' có nghĩa là gì?",
+          "options": [
+            "a machine that keeps food cold",
+            "a machine that washes clothes",
+            "a machine that heats food quickly",
+            "a box for keeping shoes"
+          ],
+          "answer": "a machine that keeps food cold",
+          "explanation": "A fridge (short for refrigerator) keeps food and drinks cold and fresh. A machine that heats food quickly is a microwave.",
+          "explanation_vi": "\"Fridge\" (viết tắt của refrigerator) là tủ lạnh. Máy hâm nóng đồ ăn nhanh là microwave (lò vi sóng).",
+          "word": {
+            "term": "fridge",
+            "ipa": "/frɪdʒ/",
+            "part_of_speech": "noun",
+            "meaning_vi": "tủ lạnh",
+            "example": "There's some leftover chè in the fridge for you.",
+            "example_vi": "Trong tủ lạnh còn ít chè để dành cho em đó."
+          }
+        },
+        {
+          "id": "vocab-a1-home-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'shelf'",
+          "prompt": "I put our photo on the ___ above my desk.",
+          "prompt_vi": "Anh để ảnh hai đứa trên ___ phía trên bàn làm việc.",
+          "options": ["shelf", "sofa", "pillow", "sink"],
+          "answer": "shelf",
+          "explanation": "A shelf is a flat board on a wall or in a cupboard for putting things on, like books or photos.",
+          "explanation_vi": "\"Shelf\" là cái kệ, giá để đồ — tấm ván phẳng gắn trên tường hoặc trong tủ để đặt sách, ảnh. Số nhiều là shelves.",
+          "word": {
+            "term": "shelf",
+            "ipa": "/ʃɛlf/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cái kệ, giá để đồ",
+            "example": "The gift you sent me is on my bookshelf.",
+            "example_vi": "Món quà anh gửi đang nằm trên kệ sách của em."
+          }
+        },
+        {
+          "id": "vocab-a1-home-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'mirror'",
+          "prompt": "She checked her hair in the ___ before their date.",
+          "prompt_vi": "Cô ấy soi lại tóc trong ___ trước buổi hẹn.",
+          "options": ["mirror", "lamp", "fridge", "blanket"],
+          "answer": "mirror",
+          "explanation": "A mirror is a piece of glass where you can see yourself. People look in a mirror to check their hair or clothes.",
+          "explanation_vi": "\"Mirror\" là cái gương. Mình soi gương để xem lại tóc tai, quần áo.",
+          "word": {
+            "term": "mirror",
+            "ipa": "/ˈmɪrər/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cái gương",
+            "example": "I practiced saying \"I love you\" in English in front of the mirror.",
+            "example_vi": "Anh tập nói \"I love you\" bằng tiếng Anh trước gương."
+          }
+        },
+        {
+          "id": "vocab-a1-home-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'cozy'",
+          "prompt": "'cozy' nghĩa là gì?",
+          "options": ["ấm cúng", "rộng rãi", "lạnh lẽo", "bừa bộn"],
+          "answer": "ấm cúng",
+          "explanation": "\"Cozy\" describes a place that feels warm, comfortable, and relaxing — like a small room with soft lights and a blanket.",
+          "explanation_vi": "\"Cozy\" là ấm cúng, dễ chịu — như một căn phòng nhỏ có đèn vàng và chăn êm. British English viết là \"cosy\".",
+          "word": {
+            "term": "cozy",
+            "ipa": "/ˈkoʊzi/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "ấm cúng",
+            "example": "Your room looks so cozy with all those little lights.",
+            "example_vi": "Phòng em nhìn ấm cúng quá với mấy dây đèn nhỏ đó."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vocab-a2-feelings-emotions",
+      "category": "vocabulary",
+      "level": "A2",
+      "topic": "feelings & emotions",
+      "title": "Heart to Heart: Feelings & Emotions",
+      "title_vi": "Thật lòng với nhau: từ vựng về cảm xúc",
+      "objectives": [
+        "Name common feelings in English",
+        "Choose the right feeling word for a situation",
+        "Tell your partner how you really feel"
+      ],
+      "questions": [
+        {
+          "id": "vocab-a2-feelings-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'grateful'",
+          "prompt": "Thank you for staying up late to talk to me. I'm really ___.",
+          "prompt_vi": "Cảm ơn anh đã thức khuya nói chuyện với em. Em thật sự rất ___.",
+          "options": ["grateful", "bored", "angry", "jealous"],
+          "answer": "grateful",
+          "explanation": "\"Grateful\" means thankful — you feel it when someone does something kind for you. We say \"grateful for\" something.",
+          "explanation_vi": "\"Grateful\" là biết ơn, cảm kích — cảm giác khi ai đó làm điều tốt cho mình. Cụm hay dùng: grateful for something.",
+          "word": {
+            "term": "grateful",
+            "ipa": "/ˈɡreɪtfəl/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "biết ơn, cảm kích",
+            "example": "I'm so grateful for every minute we spend together.",
+            "example_vi": "Anh rất biết ơn từng phút giây tụi mình bên nhau."
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-02",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'lonely'",
+          "prompt": "What does 'lonely' mean?",
+          "prompt_vi": "Từ 'lonely' có nghĩa là gì?",
+          "options": [
+            "sad because you are alone or have no one to talk to",
+            "happy to be with many friends",
+            "tired after working hard",
+            "afraid of the dark"
+          ],
+          "answer": "sad because you are alone or have no one to talk to",
+          "explanation": "\"Lonely\" is the sad feeling of being alone. \"Alone\" just means no one is with you; \"lonely\" adds the sadness.",
+          "explanation_vi": "\"Lonely\" là cô đơn — buồn vì chỉ có một mình. \"Alone\" chỉ là ở một mình, còn \"lonely\" có thêm cảm giác buồn.",
+          "word": {
+            "term": "lonely",
+            "ipa": "/ˈloʊnli/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "cô đơn",
+            "example": "Weekends feel lonely without you, so let's video call on Saturday.",
+            "example_vi": "Cuối tuần thiếu em thấy cô đơn lắm, thứ Bảy mình gọi video nha."
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-03",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'nervous'",
+          "prompt": "I'm so ___ about meeting your parents for the first time!",
+          "prompt_vi": "Anh ___ quá khi lần đầu gặp bố mẹ em!",
+          "options": ["nervous", "bored", "sleepy", "full"],
+          "answer": "nervous",
+          "explanation": "\"Nervous\" means a little worried or scared about something that will happen, like a first meeting or a test.",
+          "explanation_vi": "\"Nervous\" là hồi hộp, lo lắng về chuyện sắp xảy ra, như lần đầu ra mắt hay đi thi.",
+          "word": {
+            "term": "nervous",
+            "ipa": "/ˈnɝvəs/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "hồi hộp, lo lắng",
+            "example": "I always feel nervous before speaking English in public.",
+            "example_vi": "Em lúc nào cũng hồi hộp trước khi nói tiếng Anh trước đám đông."
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'excited'",
+          "prompt": "What does 'excited' mean?",
+          "prompt_vi": "Từ 'excited' có nghĩa là gì?",
+          "options": [
+            "very happy and eager about something good that will happen",
+            "angry about something unfair",
+            "tired and not interested",
+            "sad about the past"
+          ],
+          "answer": "very happy and eager about something good that will happen",
+          "explanation": "\"Excited\" means very happy and full of energy because something good is coming. Remember: a person is excited; a thing that causes it is exciting.",
+          "explanation_vi": "\"Excited\" là háo hức, phấn khích vì sắp có chuyện vui. Nhớ nhé: người cảm thấy thì dùng excited, còn sự việc gây ra cảm giác đó là exciting.",
+          "word": {
+            "term": "excited",
+            "ipa": "/ɪkˈsaɪtɪd/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "háo hức, phấn khích",
+            "example": "Only ten more days until I see you — I'm so excited!",
+            "example_vi": "Chỉ còn mười ngày nữa là gặp anh rồi — em háo hức quá!"
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'proud'",
+          "prompt": "You passed your English test! I'm so ___ of you.",
+          "prompt_vi": "Em đậu bài kiểm tra tiếng Anh rồi! Anh rất ___ về em.",
+          "options": ["proud", "bored", "hungry", "sleepy"],
+          "answer": "proud",
+          "explanation": "You feel proud when you or someone you love does something good. The pattern is \"proud of someone\".",
+          "explanation_vi": "\"Proud\" là tự hào. Cấu trúc: proud of someone (tự hào về ai đó).",
+          "word": {
+            "term": "proud",
+            "ipa": "/praʊd/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "tự hào",
+            "example": "I'm proud of us for making this long-distance thing work.",
+            "example_vi": "Anh tự hào về hai đứa mình vì đã cùng nhau vượt qua khoảng cách."
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-06",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'upset'",
+          "prompt": "'upset' nghĩa là gì?",
+          "options": ["buồn bực, khó chịu", "phấn khích", "bình tĩnh", "tự hào"],
+          "answer": "buồn bực, khó chịu",
+          "explanation": "\"Upset\" means unhappy or worried because something bad happened. It's a softer word than \"angry\".",
+          "explanation_vi": "\"Upset\" là buồn bực, khó chịu, phiền lòng vì chuyện không vui. Nhẹ hơn \"angry\" (tức giận).",
+          "word": {
+            "term": "upset",
+            "ipa": "/ʌpˈsɛt/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "buồn bực, khó chịu, phiền lòng",
+            "example": "Are you upset with me? You're very quiet tonight.",
+            "example_vi": "Em đang buồn anh hả? Tối nay em im lặng quá."
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'calm'",
+          "prompt": "What does 'calm' mean?",
+          "prompt_vi": "Từ 'calm' có nghĩa là gì?",
+          "options": [
+            "relaxed and not worried or angry",
+            "very loud and full of energy",
+            "sad and crying",
+            "angry and shouting"
+          ],
+          "answer": "relaxed and not worried or angry",
+          "explanation": "\"Calm\" means peaceful and relaxed. Note the silent \"l\": it sounds like /kɑm/.",
+          "explanation_vi": "\"Calm\" là bình tĩnh, điềm tĩnh. Lưu ý chữ \"l\" câm, đọc là /kɑm/.",
+          "word": {
+            "term": "calm",
+            "ipa": "/kɑm/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "bình tĩnh, điềm tĩnh",
+            "example": "Your voice always makes me feel calm after a hard day.",
+            "example_vi": "Giọng em lúc nào cũng làm anh thấy bình yên sau một ngày mệt mỏi."
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'jealous'",
+          "prompt": "He felt a little ___ when she kept talking about her handsome coworker.",
+          "prompt_vi": "Anh ấy hơi ___ khi cô ấy cứ kể về anh đồng nghiệp đẹp trai.",
+          "options": ["jealous", "grateful", "hungry", "sleepy"],
+          "answer": "jealous",
+          "explanation": "\"Jealous\" is the unhappy feeling when you worry someone might take away the person you love, or when you want what others have.",
+          "explanation_vi": "\"Jealous\" là ghen, ghen tị — cảm giác khó chịu khi sợ người khác \"cướp\" người mình thương, hoặc khi muốn có thứ người khác có.",
+          "word": {
+            "term": "jealous",
+            "ipa": "/ˈdʒɛləs/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "ghen, ghen tị",
+            "example": "Don't be jealous — he's just a friend from class.",
+            "example_vi": "Đừng ghen mà — cậu ấy chỉ là bạn cùng lớp thôi."
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'relieved'",
+          "prompt": "Your flight landed safely? I'm so ___!",
+          "prompt_vi": "Chuyến bay của em hạ cánh an toàn rồi hả? Anh ___ quá!",
+          "options": ["relieved", "jealous", "bored", "lonely"],
+          "answer": "relieved",
+          "explanation": "You feel relieved when a worry goes away and something ends well — like hearing that a flight landed safely.",
+          "explanation_vi": "\"Relieved\" là nhẹ nhõm, yên tâm — cảm giác khi nỗi lo qua đi, mọi chuyện ổn thỏa.",
+          "word": {
+            "term": "relieved",
+            "ipa": "/rɪˈlivd/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "nhẹ nhõm, yên tâm",
+            "example": "I was so relieved when you finally answered your phone.",
+            "example_vi": "Em nhẹ cả người khi cuối cùng anh cũng nghe máy."
+          }
+        },
+        {
+          "id": "vocab-a2-feelings-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'bored'",
+          "prompt": "What does 'bored' mean?",
+          "prompt_vi": "Từ 'bored' có nghĩa là gì?",
+          "options": [
+            "tired and unhappy because nothing interesting is happening",
+            "very surprised by good news",
+            "scared of something dangerous",
+            "pleased with something you did"
+          ],
+          "answer": "tired and unhappy because nothing interesting is happening",
+          "explanation": "\"Bored\" means you have nothing interesting to do. Say \"I'm bored\" (how you feel), not \"I'm boring\" (that means you are not interesting!).",
+          "explanation_vi": "\"Bored\" là chán. Nói \"I'm bored\" (em thấy chán), đừng nói \"I'm boring\" — câu đó nghĩa là \"em là người nhàm chán\" đấy!",
+          "word": {
+            "term": "bored",
+            "ipa": "/bɔrd/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "chán, buồn chán",
+            "example": "I'm bored at home — tell me something funny from your day.",
+            "example_vi": "Ở nhà chán quá — kể em nghe chuyện gì vui hôm nay đi."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vocab-a2-weather-nature",
+      "category": "vocabulary",
+      "level": "A2",
+      "topic": "weather & nature",
+      "title": "Under the Same Sky: Weather & Nature",
+      "title_vi": "Chung một bầu trời: từ vựng về thời tiết và thiên nhiên",
+      "objectives": [
+        "Describe today's weather",
+        "Name simple things in nature and the sky",
+        "Compare the weather where each of you lives"
+      ],
+      "questions": [
+        {
+          "id": "vocab-a2-weather-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'sunny'",
+          "prompt": "It's ___ today, so don't forget your sunglasses.",
+          "prompt_vi": "Hôm nay trời ___, đừng quên mang kính râm nhé.",
+          "options": ["sunny", "rainy", "foggy", "snowy"],
+          "answer": "sunny",
+          "explanation": "\"Sunny\" means the sun is shining brightly. Sunglasses are the clue — you need them on a sunny day.",
+          "explanation_vi": "\"Sunny\" là trời nắng. Manh mối là kính râm (sunglasses) — trời nắng mới cần.",
+          "word": {
+            "term": "sunny",
+            "ipa": "/ˈsʌni/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "có nắng, nắng đẹp",
+            "example": "It's sunny here — I wish you could walk by the river with me.",
+            "example_vi": "Ở đây trời nắng đẹp — ước gì em được đi dạo bờ sông cùng anh."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-02",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'cloudy'",
+          "prompt": "What does 'cloudy' mean?",
+          "prompt_vi": "Từ 'cloudy' có nghĩa là gì?",
+          "options": [
+            "with a lot of clouds in the sky",
+            "with very strong winds",
+            "very hot and dry",
+            "with ice on the roads"
+          ],
+          "answer": "with a lot of clouds in the sky",
+          "explanation": "\"Cloudy\" describes a sky full of clouds, so you can't see much sun. Many weather words are a noun + -y: cloud → cloudy, sun → sunny.",
+          "explanation_vi": "\"Cloudy\" là nhiều mây, trời âm u. Nhiều từ thời tiết được tạo bằng danh từ + -y: cloud → cloudy, sun → sunny, fog → foggy.",
+          "word": {
+            "term": "cloudy",
+            "ipa": "/ˈklaʊdi/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "nhiều mây, âm u",
+            "example": "It's cloudy and gray today, just like my mood without you.",
+            "example_vi": "Hôm nay trời âm u xám xịt, y như tâm trạng anh khi thiếu em."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-03",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'foggy'",
+          "prompt": "It's so ___ this morning that I can't see the bridge.",
+          "prompt_vi": "Sáng nay trời ___ đến mức em không nhìn thấy cây cầu.",
+          "options": ["foggy", "sunny", "warm", "dry"],
+          "answer": "foggy",
+          "explanation": "\"Foggy\" means there is thick, cloudy air near the ground, so it's hard to see far.",
+          "explanation_vi": "\"Foggy\" là có sương mù dày, khó nhìn xa — như buổi sáng ở Đà Lạt hay Sa Pa.",
+          "word": {
+            "term": "foggy",
+            "ipa": "/ˈfɑɡi/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "có sương mù",
+            "example": "Đà Lạt is foggy and romantic in the early morning.",
+            "example_vi": "Đà Lạt sáng sớm sương mù giăng, lãng mạn lắm."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'storm'",
+          "prompt": "What does 'storm' mean?",
+          "prompt_vi": "Từ 'storm' có nghĩa là gì?",
+          "options": [
+            "very bad weather with strong wind, rain, and often thunder",
+            "a light, warm wind",
+            "a time of year with no rain",
+            "a small amount of snow"
+          ],
+          "answer": "very bad weather with strong wind, rain, and often thunder",
+          "explanation": "A storm is very bad weather with strong winds and heavy rain. A light, warm wind is a breeze.",
+          "explanation_vi": "\"Storm\" là cơn bão, giông bão — gió mạnh, mưa to, thường có sấm sét. Còn gió nhẹ là \"breeze\".",
+          "word": {
+            "term": "storm",
+            "ipa": "/stɔrm/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cơn bão, giông bão",
+            "example": "There's a big storm tonight, so please stay inside and stay safe.",
+            "example_vi": "Tối nay có bão lớn, em ở trong nhà cho an toàn nhé."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'humid'",
+          "prompt": "'humid' nghĩa là gì?",
+          "options": ["ẩm, oi ẩm", "khô hanh", "lạnh buốt", "nhiều gió"],
+          "answer": "ẩm, oi ẩm",
+          "explanation": "\"Humid\" means the air feels wet and heavy, like a hot summer day in Sài Gòn.",
+          "explanation_vi": "\"Humid\" là ẩm, oi ẩm — không khí nhiều hơi nước, nặng nề, như mùa nồm ở miền Bắc hay ngày hè oi bức ở Sài Gòn.",
+          "word": {
+            "term": "humid",
+            "ipa": "/ˈhjumɪd/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "ẩm, oi ẩm",
+            "example": "It's so humid today that my clothes won't dry.",
+            "example_vi": "Hôm nay trời ẩm quá, phơi đồ mãi không khô."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-06",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'breeze'",
+          "prompt": "A cool ___ from the sea made the hot afternoon feel nice.",
+          "prompt_vi": "Một làn ___ mát từ biển làm buổi chiều nóng bức trở nên dễ chịu.",
+          "options": ["breeze", "storm", "rainbow", "flood"],
+          "answer": "breeze",
+          "explanation": "A breeze is a light, gentle wind. A storm or a flood would not make the afternoon \"feel nice\".",
+          "explanation_vi": "\"Breeze\" là làn gió nhẹ, gió hiu hiu. Bão (storm) hay lũ (flood) thì không làm buổi chiều dễ chịu được.",
+          "word": {
+            "term": "breeze",
+            "ipa": "/briz/",
+            "part_of_speech": "noun",
+            "meaning_vi": "làn gió nhẹ",
+            "example": "I love sitting on the balcony in the evening breeze and texting you.",
+            "example_vi": "Anh thích ngồi ngoài ban công hóng gió chiều và nhắn tin cho em."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'rainbow'",
+          "prompt": "What does 'rainbow' mean?",
+          "prompt_vi": "Từ 'rainbow' có nghĩa là gì?",
+          "options": [
+            "an arc of colors in the sky, often after rain",
+            "a loud noise during a storm",
+            "a bright flash of light in a storm",
+            "a cloud that is close to the ground"
+          ],
+          "answer": "an arc of colors in the sky, often after rain",
+          "explanation": "A rainbow is the curve of colors you see in the sky when the sun shines after rain. The loud noise is thunder and the flash is lightning.",
+          "explanation_vi": "\"Rainbow\" là cầu vồng. Tiếng nổ lớn khi giông là thunder (sấm), tia sáng lóe lên là lightning (chớp).",
+          "word": {
+            "term": "rainbow",
+            "ipa": "/ˈreɪnˌboʊ/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cầu vồng",
+            "example": "Look, a rainbow! I took a photo for you.",
+            "example_vi": "Nhìn kìa, cầu vồng! Em chụp cho anh một tấm nè."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'freezing'",
+          "prompt": "It's ___ here — minus five degrees! Is it warm in Sài Gòn?",
+          "prompt_vi": "Ở đây ___ lắm — âm năm độ! Sài Gòn có ấm không em?",
+          "options": ["freezing", "hot", "warm", "boiling"],
+          "answer": "freezing",
+          "explanation": "\"Freezing\" means extremely cold — cold enough for water to turn into ice. Minus five degrees is freezing!",
+          "explanation_vi": "\"Freezing\" là lạnh cóng, lạnh buốt — lạnh tới mức nước đóng băng. Âm năm độ thì chắc chắn là freezing!",
+          "word": {
+            "term": "freezing",
+            "ipa": "/ˈfrizɪŋ/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "lạnh cóng, lạnh buốt",
+            "example": "My hands are freezing — I need you to hold them.",
+            "example_vi": "Tay em lạnh cóng rồi — cần anh nắm tay sưởi ấm."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'forecast'",
+          "prompt": "What does 'forecast' mean?",
+          "prompt_vi": "Từ 'forecast' có nghĩa là gì?",
+          "options": [
+            "a report that says what the weather will be like",
+            "a map of the stars at night",
+            "a photo of the sky",
+            "a season with heavy rain"
+          ],
+          "answer": "a report that says what the weather will be like",
+          "explanation": "A forecast tells you what the weather will probably be in the future. We often say \"the weather forecast\".",
+          "explanation_vi": "\"Forecast\" là bản dự báo, thường gặp trong cụm \"weather forecast\" (dự báo thời tiết).",
+          "word": {
+            "term": "forecast",
+            "ipa": "/ˈfɔrˌkæst/",
+            "part_of_speech": "noun",
+            "meaning_vi": "dự báo (thời tiết)",
+            "example": "I check the forecast for your city every morning.",
+            "example_vi": "Sáng nào anh cũng xem dự báo thời tiết ở thành phố của em."
+          }
+        },
+        {
+          "id": "vocab-a2-weather-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'sunset'",
+          "prompt": "'sunset' nghĩa là gì?",
+          "options": ["hoàng hôn", "bình minh", "cầu vồng", "ánh trăng"],
+          "answer": "hoàng hôn",
+          "explanation": "Sunset is when the sun goes down in the evening. The opposite, when the sun comes up, is sunrise.",
+          "explanation_vi": "\"Sunset\" là hoàng hôn, lúc mặt trời lặn. Ngược lại, bình minh là \"sunrise\".",
+          "word": {
+            "term": "sunset",
+            "ipa": "/ˈsʌnˌsɛt/",
+            "part_of_speech": "noun",
+            "meaning_vi": "hoàng hôn",
+            "example": "Your sunset is my sunrise — we're never far in my heart.",
+            "example_vi": "Hoàng hôn của em là bình minh của anh — trong tim anh, mình chưa bao giờ xa."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vocab-a2-communication",
+      "category": "vocabulary",
+      "level": "A2",
+      "topic": "communication: calls & messages",
+      "title": "Always Connected: Calls & Messages",
+      "title_vi": "Luôn kết nối: từ vựng về gọi điện và nhắn tin",
+      "objectives": [
+        "Talk about phone calls, video calls, and messages",
+        "Explain small tech problems like a weak signal",
+        "Keep in touch with your partner in English"
+      ],
+      "questions": [
+        {
+          "id": "vocab-a2-comm-01",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'call back'",
+          "prompt": "I'm in a meeting right now. I'll ___ in an hour, okay?",
+          "prompt_vi": "Giờ anh đang họp. Một tiếng nữa anh ___ nhé?",
+          "options": ["call you back", "hang up on you", "mute you", "text yourself"],
+          "answer": "call you back",
+          "explanation": "To call someone back means to phone them again later, usually because you couldn't talk before. The person goes in the middle: call you back.",
+          "explanation_vi": "\"Call back\" là gọi lại sau. Người được gọi đứng giữa: call you back, call her back.",
+          "word": {
+            "term": "call back",
+            "ipa": "/kɔl bæk/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "gọi lại",
+            "example": "Sorry I missed your call — I'll call you back after class.",
+            "example_vi": "Xin lỗi em lỡ cuộc gọi của anh — tan học em gọi lại nha."
+          }
+        },
+        {
+          "id": "vocab-a2-comm-02",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'text'",
+          "prompt": "What does 'text' mean in \"I'll text you later\"?",
+          "prompt_vi": "Từ 'text' trong \"I'll text you later\" có nghĩa là gì?",
+          "options": [
+            "to send a written message by phone",
+            "to speak loudly on the phone",
+            "to read a book aloud",
+            "to write a long letter by hand"
+          ],
+          "answer": "to send a written message by phone",
+          "explanation": "As a verb, \"text\" means to send someone a written message on your phone. The past form is \"texted\".",
+          "explanation_vi": "Khi là động từ, \"text\" là nhắn tin qua điện thoại. Quá khứ là \"texted\".",
+          "word": {
+            "term": "text",
+            "ipa": "/tɛkst/",
+            "part_of_speech": "verb",
+            "meaning_vi": "nhắn tin",
+            "example": "Text me when you get home safely, okay?",
+            "example_vi": "Về tới nhà an toàn thì nhắn anh nhé?"
+          }
+        },
+        {
+          "id": "vocab-a2-comm-03",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'voice message'",
+          "prompt": "You were asleep, so I left you a ___ singing \"Happy Birthday\".",
+          "prompt_vi": "Lúc đó em đang ngủ nên anh để lại một ___ hát \"Happy Birthday\" cho em.",
+          "options": ["voice message", "battery", "signal", "password"],
+          "answer": "voice message",
+          "explanation": "A voice message is a recorded audio message someone can listen to later. Singing is the clue — you need your voice!",
+          "explanation_vi": "\"Voice message\" là tin nhắn thoại — đoạn ghi âm để người kia nghe sau. Manh mối là \"singing\" — hát thì cần giọng nói.",
+          "word": {
+            "term": "voice message",
+            "ipa": "/vɔɪs ˈmɛsɪdʒ/",
+            "part_of_speech": "noun",
+            "meaning_vi": "tin nhắn thoại",
+            "example": "I listen to your voice messages again when I miss you.",
+            "example_vi": "Những lúc nhớ anh, em lại mở nghe tin nhắn thoại của anh."
+          }
+        },
+        {
+          "id": "vocab-a2-comm-04",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'video call'",
+          "prompt": "What does 'video call' mean?",
+          "prompt_vi": "Cụm 'video call' có nghĩa là gì?",
+          "options": [
+            "a call where you can see each other's faces on a screen",
+            "a short written message",
+            "a movie you watch online",
+            "a phone call with no sound"
+          ],
+          "answer": "a call where you can see each other's faces on a screen",
+          "explanation": "On a video call you can see and hear each other through the camera. It can also be a verb: \"Let's video call tonight.\"",
+          "explanation_vi": "\"Video call\" là cuộc gọi video — nhìn thấy và nghe nhau qua camera. Cũng dùng như động từ: \"Let's video call tonight.\"",
+          "word": {
+            "term": "video call",
+            "ipa": "/ˈvɪdioʊ kɔl/",
+            "part_of_speech": "noun",
+            "meaning_vi": "cuộc gọi video",
+            "example": "Our Sunday video call is the best part of my week.",
+            "example_vi": "Cuộc gọi video ngày Chủ nhật là khoảnh khắc vui nhất trong tuần của anh."
+          }
+        },
+        {
+          "id": "vocab-a2-comm-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'hang up'",
+          "prompt": "Don't ___ yet — I want to say good night one more time!",
+          "prompt_vi": "Đừng ___ vội — em muốn chúc anh ngủ ngon thêm lần nữa!",
+          "options": ["hang up", "pick up", "turn on", "sit down"],
+          "answer": "hang up",
+          "explanation": "To hang up means to end a phone call. \"Pick up\" is the opposite — answering a call.",
+          "explanation_vi": "\"Hang up\" là cúp máy, tắt cuộc gọi. Ngược lại, \"pick up\" là nhấc máy, nghe điện thoại.",
+          "word": {
+            "term": "hang up",
+            "ipa": "/hæŋ ʌp/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "cúp máy",
+            "example": "Neither of us wanted to hang up first.",
+            "example_vi": "Chẳng ai trong hai đứa muốn cúp máy trước."
+          }
+        },
+        {
+          "id": "vocab-a2-comm-06",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'signal'",
+          "prompt": "Sorry, I'm on the train and my phone ___ is really weak. I can't hear you well.",
+          "prompt_vi": "Xin lỗi, anh đang trên tàu và ___ điện thoại yếu quá. Anh nghe em không rõ.",
+          "options": ["signal", "ticket", "coffee", "seat"],
+          "answer": "signal",
+          "explanation": "A phone signal is the connection your phone needs to make calls and use data. A weak signal makes voices break up.",
+          "explanation_vi": "\"Signal\" là sóng, tín hiệu điện thoại. Sóng yếu (weak signal) thì cuộc gọi bị ngắt quãng, nghe không rõ.",
+          "word": {
+            "term": "signal",
+            "ipa": "/ˈsɪɡnəl/",
+            "part_of_speech": "noun",
+            "meaning_vi": "sóng, tín hiệu (điện thoại)",
+            "example": "There's no signal in the mountains, so I'll text you tomorrow.",
+            "example_vi": "Trên núi không có sóng nên mai em nhắn anh nha."
+          }
+        },
+        {
+          "id": "vocab-a2-comm-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'reply'",
+          "prompt": "'reply' nghĩa là gì?",
+          "options": ["trả lời, hồi âm", "gọi lại", "xóa", "gửi đi"],
+          "answer": "trả lời, hồi âm",
+          "explanation": "To reply means to answer a message, letter, or question. We say \"reply to\" someone or something.",
+          "explanation_vi": "\"Reply\" là trả lời, hồi âm (tin nhắn, thư). Cấu trúc: reply to someone/something.",
+          "word": {
+            "term": "reply",
+            "ipa": "/rɪˈplaɪ/",
+            "part_of_speech": "verb",
+            "meaning_vi": "trả lời, hồi âm",
+            "example": "Sorry I didn't reply — my phone was in my bag.",
+            "example_vi": "Xin lỗi anh không trả lời — điện thoại anh để trong túi."
+          }
+        },
+        {
+          "id": "vocab-a2-comm-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'battery'",
+          "prompt": "My phone ___ is at 2%. I need to charge it before we talk!",
+          "prompt_vi": "___ điện thoại em còn 2%. Em phải sạc trước khi mình nói chuyện!",
+          "options": ["battery", "signal", "screen", "camera"],
+          "answer": "battery",
+          "explanation": "A battery stores power for your phone. When it's low (like 2%), you need to charge it.",
+          "explanation_vi": "\"Battery\" là pin. Pin còn ít (2%) thì phải sạc (charge).",
+          "word": {
+            "term": "battery",
+            "ipa": "/ˈbætəri/",
+            "part_of_speech": "noun",
+            "meaning_vi": "pin",
+            "example": "My battery died in the middle of our call — sorry!",
+            "example_vi": "Điện thoại anh hết pin giữa cuộc gọi — xin lỗi em nha!"
+          }
+        },
+        {
+          "id": "vocab-a2-comm-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'mute'",
+          "prompt": "What does 'mute' mean on a call?",
+          "prompt_vi": "Từ 'mute' trong cuộc gọi có nghĩa là gì?",
+          "options": [
+            "to turn off the sound so others can't hear you",
+            "to make the screen brighter",
+            "to end the call",
+            "to send a photo"
+          ],
+          "answer": "to turn off the sound so others can't hear you",
+          "explanation": "To mute means to turn the sound off. If your partner can't hear you, maybe you're on mute!",
+          "explanation_vi": "\"Mute\" là tắt tiếng. Nếu người kia không nghe thấy mình, có thể mình đang bật chế độ tắt mic (on mute) đó!",
+          "word": {
+            "term": "mute",
+            "ipa": "/mjut/",
+            "part_of_speech": "verb",
+            "meaning_vi": "tắt tiếng",
+            "example": "I can't hear you — I think you muted yourself.",
+            "example_vi": "Anh không nghe em nói gì hết — hình như em tự tắt mic rồi."
+          }
+        },
+        {
+          "id": "vocab-a2-comm-10",
+          "kind": "multiple_choice",
+          "objective": "Recognize the meaning of 'online'",
+          "prompt": "I see you're ___ — are you free to chat now?",
+          "prompt_vi": "Anh thấy em đang ___ — giờ em rảnh nói chuyện không?",
+          "options": ["online", "offline", "absent", "closed"],
+          "answer": "online",
+          "explanation": "\"Online\" means connected to the internet and active, so you can chat. \"Offline\" is the opposite.",
+          "explanation_vi": "\"Online\" là đang trực tuyến, đang kết nối mạng nên có thể nói chuyện. Ngược lại là \"offline\".",
+          "word": {
+            "term": "online",
+            "ipa": "/ˌɑnˈlaɪn/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "trực tuyến, đang online",
+            "example": "You're still online at 2 a.m.? Go to sleep, my love!",
+            "example_vi": "Hai giờ sáng mà em vẫn còn online hả? Đi ngủ đi em yêu!"
+          }
+        }
+      ]
+    }
+  ]
+}

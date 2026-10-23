@@ -1,0 +1,364 @@
+{
+  "lessons": [
+    {
+      "slug": "listen-a1-calls-daily-life",
+      "category": "listening",
+      "level": "A1",
+      "topic": "video calls & daily life",
+      "title": "Hello, Can You Hear Me? First Listening",
+      "title_vi": "Alo, nghe rõ không? Bài nghe đầu tiên",
+      "objectives": [
+        "Hear the difference between similar sounds: live / leave, ship / sheep",
+        "Notice final sounds like the t in cat",
+        "Catch simple times and places in one sentence"
+      ],
+      "questions": [
+        {
+          "id": "listen-a1-01",
+          "kind": "listening",
+          "objective": "Hear the difference between live and leave",
+          "audio_text": "I live in a small house near the river.",
+          "prompt": "Which sentence did you hear about the house?",
+          "prompt_vi": "Bạn đã nghe câu nào về ngôi nhà?",
+          "options": [
+            "I leave a small house near the river.",
+            "I live in a small house near the river.",
+            "I love a small house near the river."
+          ],
+          "answer": "I live in a small house near the river.",
+          "explanation": "\"Live\" has a short /ɪ/ sound; \"leave\" has a long /i/ sound. The speaker says \"live in\", which means where they stay.",
+          "explanation_vi": "\"Live\" /lɪv/ có âm i ngắn, còn \"leave\" /liv/ có âm i dài (kéo dài hơn, miệng căng hơn). Người nói dùng \"live in\" = sống ở."
+        },
+        {
+          "id": "listen-a1-02",
+          "kind": "listening",
+          "objective": "Catch the key verb in a video-call question",
+          "audio_text": "Can you hear me now?",
+          "prompt": "Which question did you hear at the start of the video call?",
+          "prompt_vi": "Bạn đã nghe câu hỏi nào lúc bắt đầu cuộc gọi video?",
+          "options": [
+            "Can you see me now?",
+            "Can you call me now?",
+            "Can you hear me now?"
+          ],
+          "answer": "Can you hear me now?",
+          "explanation": "The speaker says \"hear\", which is about sound. This is a very common question when the connection is bad.",
+          "explanation_vi": "Người nói dùng \"hear\" (nghe), liên quan đến âm thanh. Đây là câu rất hay dùng khi mạng yếu trong lúc gọi video."
+        },
+        {
+          "id": "listen-a1-03",
+          "kind": "listening",
+          "objective": "Hear the difference between ship and sheep",
+          "audio_text": "There is a sheep in the photo.",
+          "prompt": "Which sentence did you hear about the photo?",
+          "prompt_vi": "Bạn đã nghe câu nào về bức ảnh?",
+          "options": [
+            "There is a ship in the photo.",
+            "There is a sheep in the photo.",
+            "There is a shop in the photo."
+          ],
+          "answer": "There is a sheep in the photo.",
+          "explanation": "\"Sheep\" has a long /i/ sound, like in \"see\". \"Ship\" has a short /ɪ/ sound, like in \"sit\".",
+          "explanation_vi": "\"Sheep\" (con cừu) có âm i dài như trong \"see\". \"Ship\" (con tàu) có âm i ngắn, bật nhanh như trong \"sit\"."
+        },
+        {
+          "id": "listen-a1-04",
+          "kind": "listening",
+          "objective": "Catch a time in a sentence about a daily routine",
+          "audio_text": "I drink coffee at seven every morning.",
+          "prompt": "What time does the speaker drink coffee?",
+          "prompt_vi": "Người nói uống cà phê lúc mấy giờ?",
+          "options": ["At six", "At seven", "At eleven"],
+          "answer": "At seven",
+          "explanation": "The speaker says \"at seven every morning\". \"Seven\" and \"eleven\" both end in -ven, so listen for the start of the word.",
+          "explanation_vi": "Người nói nói \"at seven every morning\" (bảy giờ mỗi sáng). \"Seven\" và \"eleven\" đều kết thúc bằng -ven, nên hãy chú ý phần đầu của từ."
+        },
+        {
+          "id": "listen-a1-05",
+          "kind": "listening",
+          "objective": "Hear final consonant sounds like t and p",
+          "audio_text": "She has a black cat.",
+          "prompt": "Which sentence did you hear about what she has?",
+          "prompt_vi": "Bạn đã nghe câu nào về thứ cô ấy có?",
+          "options": [
+            "She has a black cap.",
+            "She has a black car.",
+            "She has a black cat."
+          ],
+          "answer": "She has a black cat.",
+          "explanation": "The words cat, cap and car differ only in their last sound. English speakers say the final sound clearly, so listen to the very end of the word.",
+          "explanation_vi": "Cat, cap và car chỉ khác nhau ở âm cuối. Người Việt hay nuốt âm cuối, nhưng trong tiếng Anh âm cuối quyết định nghĩa của từ, nên hãy nghe kỹ phần cuối."
+        }
+      ]
+    },
+    {
+      "slug": "listen-a2-planning-to-meet",
+      "category": "listening",
+      "level": "A2",
+      "topic": "planning to meet",
+      "title": "See You Soon! Planning to Meet",
+      "title_vi": "Sắp gặp rồi! Lên kế hoạch gặp nhau",
+      "objectives": [
+        "Hear the difference between thirteen / thirty and fifteen / fifty",
+        "Understand where and when people plan to meet",
+        "Hear the difference between walk and work"
+      ],
+      "questions": [
+        {
+          "id": "listen-a2-01",
+          "kind": "listening",
+          "objective": "Hear the difference between thirteen and thirty",
+          "audio_text": "I will visit you in thirteen days. I already have my ticket.",
+          "prompt": "How many days until the visit?",
+          "prompt_vi": "Còn bao nhiêu ngày nữa thì đến chuyến thăm?",
+          "options": ["Three days", "Thirteen days", "Thirty days"],
+          "answer": "Thirteen days",
+          "explanation": "In \"thirteen\", the stress is at the end: thir-TEEN, with a long /i/ sound. In \"thirty\", the stress is at the start: THIR-ty.",
+          "explanation_vi": "\"Thirteen\" nhấn ở cuối (thir-TEEN) và có âm \"n\" ở cuối. \"Thirty\" nhấn ở đầu (THIR-ty) và kết thúc bằng âm \"ti\" ngắn."
+        },
+        {
+          "id": "listen-a2-02",
+          "kind": "listening",
+          "objective": "Understand where people plan to meet",
+          "audio_text": "Let's meet at the coffee shop near the park on Saturday.",
+          "prompt": "Where will they meet?",
+          "prompt_vi": "Họ sẽ gặp nhau ở đâu?",
+          "options": [
+            "At the bookshop near the park",
+            "At the park near the station",
+            "At the coffee shop near the park"
+          ],
+          "answer": "At the coffee shop near the park",
+          "explanation": "The speaker says \"the coffee shop near the park\". The park is only a landmark to help find the coffee shop.",
+          "explanation_vi": "Người nói nói \"the coffee shop near the park\" (quán cà phê gần công viên). Công viên chỉ là mốc để dễ tìm quán."
+        },
+        {
+          "id": "listen-a2-03",
+          "kind": "listening",
+          "objective": "Hear the difference between walk and work",
+          "audio_text": "We can walk on the beach in the evening.",
+          "prompt": "Which sentence did you hear about the beach?",
+          "prompt_vi": "Bạn đã nghe câu nào về bãi biển?",
+          "options": [
+            "We can work on the beach in the evening.",
+            "We can walk on the beach in the evening.",
+            "We can wake on the beach in the evening."
+          ],
+          "answer": "We can walk on the beach in the evening.",
+          "explanation": "In \"walk\", the l is silent and the vowel is open: /wɔk/. \"Work\" has an r sound: /wɜrk/.",
+          "explanation_vi": "Trong \"walk\" /wɔk/, chữ l câm và miệng mở tròn. \"Work\" /wɜrk/ có âm r, lưỡi cong lên. Đây là cặp từ người Việt rất hay nhầm."
+        },
+        {
+          "id": "listen-a2-04",
+          "kind": "listening",
+          "objective": "Hear the difference between fifteen and fifty",
+          "audio_text": "The bus ticket costs fifty dollars, so I will take the train instead.",
+          "prompt": "How much does the bus ticket cost?",
+          "prompt_vi": "Vé xe buýt giá bao nhiêu?",
+          "options": ["Five dollars", "Fifteen dollars", "Fifty dollars"],
+          "answer": "Fifty dollars",
+          "explanation": "\"Fifty\" is stressed at the start: FIF-ty. \"Fifteen\" is stressed at the end: fif-TEEN. The price is high, so the speaker chooses the train.",
+          "explanation_vi": "\"Fifty\" nhấn ở đầu (FIF-ty), \"fifteen\" nhấn ở cuối (fif-TEEN). Vé đắt nên người nói chọn đi tàu thay vì xe buýt."
+        },
+        {
+          "id": "listen-a2-05",
+          "kind": "listening",
+          "objective": "Understand advice before a visit",
+          "audio_text": "Don't forget to bring a warm jacket. It is very cold here in December.",
+          "prompt": "What should the listener bring?",
+          "prompt_vi": "Người nghe nên mang theo gì?",
+          "options": ["An umbrella", "A warm jacket", "A swimsuit"],
+          "answer": "A warm jacket",
+          "explanation": "\"Don't forget to bring\" introduces what to pack: a warm jacket, because December is cold there.",
+          "explanation_vi": "\"Don't forget to bring\" (đừng quên mang theo) giới thiệu món cần mang: áo khoác ấm, vì tháng Mười Hai ở đó rất lạnh."
+        }
+      ]
+    },
+    {
+      "slug": "listen-b1-calls-daily-life",
+      "category": "listening",
+      "level": "B1",
+      "topic": "video calls & daily life",
+      "title": "Our Evening Calls: Daily Life on Video",
+      "title_vi": "Những cuộc gọi buổi tối: Cuộc sống hằng ngày qua video",
+      "objectives": [
+        "Understand reasons and problems during a video call",
+        "Follow the order of activities in a daily routine",
+        "Hear small differences like left / lost and thirty / thirteen"
+      ],
+      "questions": [
+        {
+          "id": "listen-b1-01",
+          "kind": "listening",
+          "objective": "Understand the reason for calling back",
+          "audio_text": "Sorry, my internet is really slow tonight. Can I call you back in ten minutes from my phone?",
+          "prompt": "Why does the speaker want to call back?",
+          "prompt_vi": "Tại sao người nói muốn gọi lại?",
+          "options": [
+            "Because the internet is slow",
+            "Because the phone battery is low",
+            "Because they are busy at work"
+          ],
+          "answer": "Because the internet is slow",
+          "explanation": "The speaker says \"my internet is really slow tonight\", then offers to call back from their phone.",
+          "explanation_vi": "Người nói bảo \"my internet is really slow tonight\" (mạng tối nay rất chậm), rồi đề nghị gọi lại bằng điện thoại."
+        },
+        {
+          "id": "listen-b1-02",
+          "kind": "listening",
+          "objective": "Hear the difference between left and lost",
+          "audio_text": "Wait a minute, I think I left my keys at the office. I need to go back and get them.",
+          "prompt": "Which sentence did you hear about the keys?",
+          "prompt_vi": "Bạn đã nghe câu nào về chùm chìa khóa?",
+          "options": [
+            "I think I lost my keys at the office.",
+            "I think I left my keys at the office.",
+            "I think I lent my keys at the office."
+          ],
+          "answer": "I think I left my keys at the office.",
+          "explanation": "\"Left\" (past of leave) means the keys are still at the office, so the speaker can go back and get them. \"Lost\" would mean they don't know where the keys are.",
+          "explanation_vi": "\"Left\" (quá khứ của leave) nghĩa là để quên ở văn phòng, nên người nói có thể quay lại lấy. \"Lost\" là làm mất, không biết chìa khóa ở đâu."
+        },
+        {
+          "id": "listen-b1-03",
+          "kind": "listening",
+          "objective": "Follow the order of activities in the evening",
+          "audio_text": "I usually cook dinner at eight. After that, I study English for thirty minutes before bed.",
+          "prompt": "What does the speaker do after dinner?",
+          "prompt_vi": "Người nói làm gì sau bữa tối?",
+          "options": [
+            "Goes for a walk",
+            "Studies English",
+            "Calls their family"
+          ],
+          "answer": "Studies English",
+          "explanation": "\"After that\" shows the next activity: studying English for thirty minutes before going to bed.",
+          "explanation_vi": "\"After that\" (sau đó) cho biết hoạt động tiếp theo: học tiếng Anh ba mươi phút trước khi đi ngủ."
+        },
+        {
+          "id": "listen-b1-04",
+          "kind": "listening",
+          "objective": "Hear the difference between thirty and thirteen in a longer sentence",
+          "audio_text": "My sister is thirty years old, and she lives in the city with her husband.",
+          "prompt": "Which sentence did you hear about the speaker's sister?",
+          "prompt_vi": "Bạn đã nghe câu nào về chị/em gái của người nói?",
+          "options": [
+            "My sister is thirteen years old, and she lives in the city with her husband.",
+            "My sister is thirty years old, and she lives in the city with her husband.",
+            "My sister is thirty years old, and she leaves the city with her husband."
+          ],
+          "answer": "My sister is thirty years old, and she lives in the city with her husband.",
+          "explanation": "You hear THIR-ty, stressed at the start, and \"lives in\" with a short /ɪ/. A sister with a husband is also more likely to be thirty than thirteen.",
+          "explanation_vi": "Bạn nghe THIR-ty (nhấn ở đầu) và \"lives in\" với âm i ngắn. Ngữ cảnh \"sống với chồng\" cũng cho thấy ba mươi tuổi hợp lý hơn mười ba."
+        },
+        {
+          "id": "listen-b1-05",
+          "kind": "listening",
+          "objective": "Understand the cause of a problem on a video call",
+          "audio_text": "The light in my room is broken. That's why the video is so dark. I'll fix it tomorrow.",
+          "prompt": "Why is the video so dark?",
+          "prompt_vi": "Tại sao video lại tối như vậy?",
+          "options": [
+            "The camera is old",
+            "It is night outside",
+            "The light in the room is broken"
+          ],
+          "answer": "The light in the room is broken",
+          "explanation": "\"That's why\" connects the cause to the result: the broken light is the reason the video is dark.",
+          "explanation_vi": "\"That's why\" (đó là lý do) nối nguyên nhân với kết quả: đèn trong phòng bị hỏng nên video bị tối."
+        }
+      ]
+    },
+    {
+      "slug": "listen-b1-travel",
+      "category": "listening",
+      "level": "B1",
+      "topic": "travel",
+      "title": "On the Way to You: Travel Listening",
+      "title_vi": "Trên đường đến bên em: Nghe về du lịch",
+      "objectives": [
+        "Understand announcements and requests while travelling",
+        "Hear the difference between ship / sheep and fifteen / fifty",
+        "Catch the main question in a hotel conversation"
+      ],
+      "questions": [
+        {
+          "id": "listen-b1-06",
+          "kind": "listening",
+          "objective": "Understand where the speaker is going",
+          "audio_text": "Excuse me, does this train go to the airport? I have to check in by six o'clock.",
+          "prompt": "Where is the speaker going?",
+          "prompt_vi": "Người nói đang đi đâu?",
+          "options": ["To the hotel", "To the airport", "To the train station"],
+          "answer": "To the airport",
+          "explanation": "The speaker asks if the train goes \"to the airport\" and mentions checking in, which you do before a flight.",
+          "explanation_vi": "Người nói hỏi tàu có đi \"to the airport\" (đến sân bay) không, và nhắc đến \"check in\" là thủ tục trước khi bay. Họ đang ở trên tàu nên không phải đi đến nhà ga."
+        },
+        {
+          "id": "listen-b1-07",
+          "kind": "listening",
+          "objective": "Hear the difference between ship and sheep in a travel story",
+          "audio_text": "We took a ship to the island, and the sea was very calm.",
+          "prompt": "Which sentence did you hear about the island?",
+          "prompt_vi": "Bạn đã nghe câu nào về hòn đảo?",
+          "options": [
+            "We took a sheep to the island, and the sea was very calm.",
+            "We took a trip to the island, and the sea was very calm.",
+            "We took a ship to the island, and the sea was very calm."
+          ],
+          "answer": "We took a ship to the island, and the sea was very calm.",
+          "explanation": "\"Ship\" has a short, quick /ɪ/ sound. \"Sheep\" is longer, like \"see\". \"Trip\" starts with a different sound, tr.",
+          "explanation_vi": "\"Ship\" (con tàu) có âm i ngắn và nhanh. \"Sheep\" (con cừu) có âm i dài như \"see\". \"Trip\" bắt đầu bằng âm tr khác hẳn."
+        },
+        {
+          "id": "listen-b1-08",
+          "kind": "listening",
+          "objective": "Understand what the speaker will do during a delay",
+          "audio_text": "Our flight is delayed by two hours, so we will have dinner at the airport. I will text you when we get on the plane.",
+          "prompt": "What will the speaker do while waiting?",
+          "prompt_vi": "Người nói sẽ làm gì trong lúc chờ?",
+          "options": [
+            "Go back to the hotel",
+            "Have dinner at the airport",
+            "Sleep on the plane"
+          ],
+          "answer": "Have dinner at the airport",
+          "explanation": "Because the flight is delayed, the speaker says \"we will have dinner at the airport\". \"So\" introduces the result of the delay.",
+          "explanation_vi": "Vì chuyến bay bị trễ, người nói bảo \"we will have dinner at the airport\" (tụi mình sẽ ăn tối ở sân bay). Từ \"so\" giới thiệu kết quả của việc bị trễ."
+        },
+        {
+          "id": "listen-b1-09",
+          "kind": "listening",
+          "objective": "Hear the difference between fifteen and fifty in directions",
+          "audio_text": "The hotel is fifteen minutes from the beach, so we can walk there every morning.",
+          "prompt": "Which sentence did you hear about the hotel?",
+          "prompt_vi": "Bạn đã nghe câu nào về khách sạn?",
+          "options": [
+            "The hotel is fifty minutes from the beach, so we can walk there every morning.",
+            "The hotel is fifteen minutes from the beach, so we can walk there every morning.",
+            "The hotel is five minutes from the beach, so we can walk there every morning."
+          ],
+          "answer": "The hotel is fifteen minutes from the beach, so we can walk there every morning.",
+          "explanation": "You hear fif-TEEN, with stress at the end and a clear n sound. Fifteen minutes is also a comfortable walk every morning.",
+          "explanation_vi": "Bạn nghe fif-TEEN, nhấn ở cuối và có âm n rõ. Mười lăm phút cũng là quãng đường đi bộ hợp lý mỗi sáng."
+        },
+        {
+          "id": "listen-b1-10",
+          "kind": "listening",
+          "objective": "Catch the main question at a hotel reception",
+          "audio_text": "Hello, I would like a room for two nights, please. Does the price include breakfast?",
+          "prompt": "What does the speaker ask about?",
+          "prompt_vi": "Người nói hỏi về điều gì?",
+          "options": [
+            "Whether breakfast is included",
+            "Where the swimming pool is",
+            "What time they must check out"
+          ],
+          "answer": "Whether breakfast is included",
+          "explanation": "The question is \"Does the price include breakfast?\", so the speaker wants to know if breakfast is part of the price.",
+          "explanation_vi": "Câu hỏi là \"Does the price include breakfast?\" (giá phòng có bao gồm bữa sáng không?), nên người nói muốn biết bữa sáng có được tính trong giá không."
+        }
+      ]
+    }
+  ]
+}

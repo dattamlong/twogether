@@ -1,0 +1,32 @@
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from "vitest/config";
+
+export default defineConfig({
+  plugins: [tsconfigPaths(), react()],
+  test: {
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: "unit",
+          environment: "jsdom",
+          include: ["src/**/*.test.{ts,tsx}"],
+          setupFiles: ["./tests/setup-unit.ts"],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "db",
+          environment: "node",
+          include: ["tests/db/**/*.test.ts"],
+          setupFiles: ["./tests/setup-db.ts"],
+          fileParallelism: false,
+          testTimeout: 20000,
+          hookTimeout: 30000,
+        },
+      },
+    ],
+  },
+});

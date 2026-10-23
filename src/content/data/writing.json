@@ -1,0 +1,409 @@
+{
+  "lessons": [
+    {
+      "slug": "writing-a1-sentence-puzzle",
+      "category": "writing",
+      "level": "A1",
+      "topic": "basic word order",
+      "title": "Sentence Puzzle: First Words",
+      "title_vi": "Ghép câu: những câu đầu tiên",
+      "objectives": [
+        "Put the subject before the verb",
+        "Build simple statements and questions",
+        "Place time words at the end of the sentence"
+      ],
+      "questions": [
+        {
+          "id": "puzzle-a1-01",
+          "kind": "sentence_order",
+          "objective": "Build a subject + verb + object sentence",
+          "prompt": "Make the sentence: Em nhớ anh rất nhiều.",
+          "tokens": ["so", "I", "much.", "you", "miss"],
+          "answers": ["I miss you so much."],
+          "hint": "Subject first, then the verb, then the person. \"So much\" goes at the end.",
+          "hint_vi": "Chủ ngữ đứng đầu, rồi đến động từ, rồi đến người được nhớ. \"So much\" đặt ở cuối.",
+          "explanation": "English word order is Subject + Verb + Object: I (subject) miss (verb) you (object). Words that show how much usually come after: so much.",
+          "explanation_vi": "Trật tự câu tiếng Anh: Chủ ngữ + Động từ + Tân ngữ: I + miss + you. Cụm chỉ mức độ \"so much\" thường đứng sau cùng."
+        },
+        {
+          "id": "puzzle-a1-02",
+          "kind": "sentence_order",
+          "objective": "Build a Wh- question with \"to be\"",
+          "prompt": "Make the sentence: Bên đó bây giờ là mấy giờ?",
+          "tokens": ["it", "What", "there?", "time", "is"],
+          "answers": ["What time is it there?"],
+          "hint": "Start with the question words \"What time\", then the verb \"is\", then \"it\".",
+          "hint_vi": "Bắt đầu bằng \"What time\", sau đó là động từ \"is\", rồi đến \"it\".",
+          "explanation": "In questions with \"to be\", the verb comes before the subject: What time is it? We use \"it\" for time. \"There\" means \"where you are\".",
+          "explanation_vi": "Trong câu hỏi với \"to be\", động từ đứng trước chủ ngữ: What time is it? Dùng \"it\" khi nói về giờ. \"There\" nghĩa là \"ở chỗ anh/em\"."
+        },
+        {
+          "id": "puzzle-a1-03",
+          "kind": "sentence_order",
+          "objective": "Use \"to be\" with an adjective",
+          "prompt": "Make the sentence: Hôm nay em rất vui.",
+          "tokens": ["today.", "am", "happy", "I"],
+          "answers": ["I am happy today."],
+          "hint": "Don't forget \"am\" between \"I\" and the adjective.",
+          "hint_vi": "Đừng quên \"am\" giữa \"I\" và tính từ.",
+          "explanation": "English needs \"to be\" before an adjective: I am happy. Vietnamese says \"Em vui\" without a verb, but English cannot drop \"am\".",
+          "explanation_vi": "Tiếng Anh cần \"to be\" trước tính từ: I am happy. Tiếng Việt nói \"Em vui\" không cần động từ, nhưng tiếng Anh không được bỏ \"am\"."
+        },
+        {
+          "id": "puzzle-a1-04",
+          "kind": "sentence_order",
+          "objective": "Build a yes/no question with do",
+          "prompt": "Make the sentence: Anh có thích cà phê không?",
+          "tokens": ["coffee?", "like", "Do", "you"],
+          "answers": ["Do you like coffee?"],
+          "hint": "Yes/no questions start with \"Do\", then the subject, then the verb.",
+          "hint_vi": "Câu hỏi Có/Không bắt đầu bằng \"Do\", rồi chủ ngữ, rồi động từ.",
+          "explanation": "Present simple yes/no questions: Do / Does + subject + base verb + …? Vietnamese uses \"có… không\", English uses \"Do… ?\".",
+          "explanation_vi": "Câu hỏi Có/Không ở hiện tại đơn: Do / Does + chủ ngữ + động từ nguyên mẫu? Tiếng Việt dùng \"có… không\", tiếng Anh dùng \"Do…?\"."
+        },
+        {
+          "id": "puzzle-a1-05",
+          "kind": "sentence_order",
+          "objective": "Put time expressions at the end",
+          "prompt": "Make the sentence: Tối nào tụi mình cũng nói chuyện với nhau.",
+          "tokens": ["night.", "We", "every", "talk"],
+          "answers": ["We talk every night."],
+          "hint": "Subject + verb first. The time phrase \"every night\" goes at the end.",
+          "hint_vi": "Chủ ngữ + động từ trước. Cụm thời gian \"every night\" đặt ở cuối.",
+          "explanation": "Time phrases like every night, every day or on Sundays usually go at the end of an English sentence: We talk every night.",
+          "explanation_vi": "Cụm thời gian như every night, every day thường đứng cuối câu tiếng Anh: We talk every night."
+        },
+        {
+          "id": "puzzle-a1-06",
+          "kind": "sentence_order",
+          "objective": "Put the adjective before the noun",
+          "prompt": "Make the sentence: Anh ấy có một con chó nhỏ.",
+          "tokens": ["a", "dog.", "He", "small", "has"],
+          "answers": ["He has a small dog."],
+          "hint": "In English the adjective comes before the noun: \"small dog\", not \"dog small\".",
+          "hint_vi": "Trong tiếng Anh, tính từ đứng trước danh từ: \"small dog\", không phải \"dog small\".",
+          "explanation": "Vietnamese puts the adjective after the noun (con chó nhỏ), but English puts it before: a small dog. Also remember: he has (not he have).",
+          "explanation_vi": "Tiếng Việt đặt tính từ sau danh từ (con chó nhỏ), còn tiếng Anh đặt trước: a small dog. Nhớ thêm: he has (không phải he have)."
+        },
+        {
+          "id": "puzzle-a1-07",
+          "kind": "sentence_order",
+          "objective": "Build a Where question with \"to be\"",
+          "prompt": "Make the sentence: Bây giờ anh đang ở đâu?",
+          "tokens": ["now?", "you", "Where", "are"],
+          "answers": ["Where are you now?"],
+          "hint": "Question word first, then \"are\", then \"you\".",
+          "hint_vi": "Từ để hỏi đứng đầu, rồi đến \"are\", rồi \"you\".",
+          "explanation": "Wh- questions with \"to be\": question word + am / is / are + subject. \"Where you are now?\" is a common mistake — the verb must come before the subject.",
+          "explanation_vi": "Câu hỏi Wh- với \"to be\": từ để hỏi + am / is / are + chủ ngữ. \"Where you are now?\" là lỗi thường gặp — động từ phải đứng trước chủ ngữ."
+        },
+        {
+          "id": "puzzle-a1-08",
+          "kind": "sentence_order",
+          "objective": "Use \"It is\" for weather",
+          "prompt": "Make the sentence: Ở đây trời rất lạnh.",
+          "tokens": ["here.", "is", "It", "cold", "very"],
+          "answers": ["It is very cold here."],
+          "hint": "Weather sentences start with \"It is\". \"Very\" comes before the adjective.",
+          "hint_vi": "Câu nói về thời tiết bắt đầu bằng \"It is\". \"Very\" đứng trước tính từ.",
+          "explanation": "English sentences need a subject, so for weather we use \"it\": It is cold. \"Very\" goes before the adjective, and the place word \"here\" goes at the end.",
+          "explanation_vi": "Câu tiếng Anh luôn cần chủ ngữ, nên khi nói thời tiết ta dùng \"it\": It is cold. \"Very\" đứng trước tính từ, \"here\" đặt cuối câu."
+        },
+        {
+          "id": "puzzle-a1-09",
+          "kind": "sentence_order",
+          "objective": "Put the clock time at the end",
+          "prompt": "Make the sentence: Em ăn sáng lúc bảy giờ.",
+          "tokens": ["at", "breakfast", "seven.", "eat", "I"],
+          "answers": ["I eat breakfast at seven."],
+          "hint": "Subject + verb + what you eat, then \"at\" + the time.",
+          "hint_vi": "Chủ ngữ + động từ + bữa ăn, rồi \"at\" + giờ.",
+          "explanation": "We say \"eat breakfast\" (no article). Clock times use \"at\" and usually come at the end: at seven.",
+          "explanation_vi": "Ta nói \"eat breakfast\" (không có mạo từ). Giờ giấc dùng \"at\" và thường đứng cuối câu: at seven."
+        },
+        {
+          "id": "puzzle-a1-10",
+          "kind": "sentence_order",
+          "objective": "Use make + person + adjective",
+          "prompt": "Make the sentence: Anh làm em hạnh phúc.",
+          "tokens": ["happy.", "me", "You", "make"],
+          "answers": ["You make me happy."],
+          "hint": "Pattern: someone + make + person + feeling.",
+          "hint_vi": "Cấu trúc: ai đó + make + người + cảm xúc.",
+          "explanation": "The pattern \"make + someone + adjective\" means to cause a feeling: You make me happy. Use the object form \"me\", not \"I\", after the verb.",
+          "explanation_vi": "Cấu trúc \"make + ai đó + tính từ\" nghĩa là làm cho ai cảm thấy thế nào: You make me happy. Sau động từ dùng \"me\", không dùng \"I\"."
+        }
+      ]
+    },
+    {
+      "slug": "writing-a2-sentence-puzzle",
+      "category": "writing",
+      "level": "A2",
+      "topic": "past, future and question word order",
+      "title": "Sentence Puzzle: Our Days Apart",
+      "title_vi": "Ghép câu: những ngày xa nhau",
+      "objectives": [
+        "Order words in past simple statements and questions",
+        "Place adverbs of frequency correctly",
+        "Build sentences with \"going to\" and polite requests"
+      ],
+      "questions": [
+        {
+          "id": "puzzle-a2-01",
+          "kind": "sentence_order",
+          "objective": "Order a past simple statement with a time phrase",
+          "prompt": "Make the sentence: Cuối tuần trước em đã về thăm bố mẹ.",
+          "tokens": ["my", "last", "visited", "I", "parents", "weekend."],
+          "answers": ["I visited my parents last weekend."],
+          "hint": "Subject + past verb + who, then the time phrase at the end.",
+          "hint_vi": "Chủ ngữ + động từ quá khứ + ai, rồi cụm thời gian ở cuối.",
+          "explanation": "Past simple statement: subject + verb-ed + object + time. \"Last weekend\" shows finished time, so the verb is in the past: visited.",
+          "explanation_vi": "Câu quá khứ đơn: chủ ngữ + V-ed + tân ngữ + thời gian. \"Last weekend\" là thời gian đã qua nên động từ chia quá khứ: visited."
+        },
+        {
+          "id": "puzzle-a2-02",
+          "kind": "sentence_order",
+          "objective": "Build a past simple question with did",
+          "prompt": "Make the sentence: Tối qua anh ngủ có ngon không?",
+          "tokens": ["sleep", "last", "Did", "well", "night?", "you"],
+          "answers": ["Did you sleep well last night?"],
+          "hint": "Did + subject + base verb. \"Well\" comes right after the verb.",
+          "hint_vi": "Did + chủ ngữ + động từ nguyên mẫu. \"Well\" đứng ngay sau động từ.",
+          "explanation": "Past questions: Did + subject + base verb…? The adverb \"well\" describes the verb, so it follows \"sleep\", and the time phrase comes last.",
+          "explanation_vi": "Câu hỏi quá khứ: Did + chủ ngữ + động từ nguyên mẫu…? Trạng từ \"well\" bổ nghĩa cho động từ nên đứng sau \"sleep\", cụm thời gian đặt cuối."
+        },
+        {
+          "id": "puzzle-a2-03",
+          "kind": "sentence_order",
+          "objective": "Build a future plan with \"going to\"",
+          "prompt": "Make the sentence: Tụi mình sẽ gặp nhau vào tháng Mười Hai.",
+          "tokens": ["meet", "We", "in", "going", "December.", "are", "to"],
+          "answers": ["We are going to meet in December."],
+          "hint": "Pattern: subject + am / is / are + going to + base verb.",
+          "hint_vi": "Cấu trúc: chủ ngữ + am / is / are + going to + động từ nguyên mẫu.",
+          "explanation": "\"Be going to + verb\" talks about future plans: We are going to meet. Months take \"in\": in December.",
+          "explanation_vi": "\"Be going to + động từ\" dùng cho kế hoạch tương lai: We are going to meet. Tháng đi với \"in\": in December."
+        },
+        {
+          "id": "puzzle-a2-04",
+          "kind": "sentence_order",
+          "objective": "Build a negative with doesn't",
+          "prompt": "Make the sentence: Cô ấy không ăn đồ cay.",
+          "tokens": ["spicy", "doesn't", "She", "food.", "eat"],
+          "answers": ["She doesn't eat spicy food."],
+          "hint": "She + doesn't + base verb. The adjective \"spicy\" comes before \"food\".",
+          "hint_vi": "She + doesn't + động từ nguyên mẫu. Tính từ \"spicy\" đứng trước \"food\".",
+          "explanation": "Present simple negative: subject + don't / doesn't + base verb. Remember: adjective before noun — spicy food (đồ cay).",
+          "explanation_vi": "Phủ định hiện tại đơn: chủ ngữ + don't / doesn't + động từ nguyên mẫu. Nhớ: tính từ đứng trước danh từ — spicy food."
+        },
+        {
+          "id": "puzzle-a2-05",
+          "kind": "sentence_order",
+          "objective": "Build a Wh- question in the past",
+          "prompt": "Make the sentence: Bữa tối anh đã ăn gì?",
+          "tokens": ["for", "you", "What", "dinner?", "have", "did"],
+          "answers": ["What did you have for dinner?"],
+          "hint": "Question word + did + subject + base verb.",
+          "hint_vi": "Từ để hỏi + did + chủ ngữ + động từ nguyên mẫu.",
+          "explanation": "Wh- questions in the past: What + did + you + have…? We often say \"have\" for meals: have dinner, have breakfast.",
+          "explanation_vi": "Câu hỏi Wh- ở quá khứ: What + did + you + have…? Người bản xứ hay dùng \"have\" cho bữa ăn: have dinner, have breakfast."
+        },
+        {
+          "id": "puzzle-a2-06",
+          "kind": "sentence_order",
+          "objective": "Place adverbs of frequency before the main verb",
+          "prompt": "Make the sentence: Em lúc nào cũng nghĩ về anh.",
+          "tokens": ["about", "always", "I", "you.", "think"],
+          "answers": ["I always think about you."],
+          "hint": "Adverbs like \"always\" go between the subject and the main verb.",
+          "hint_vi": "Trạng từ tần suất như \"always\" đứng giữa chủ ngữ và động từ chính.",
+          "explanation": "Adverbs of frequency (always, usually, often, never) go before the main verb: I always think. But they go after \"to be\": I am always happy.",
+          "explanation_vi": "Trạng từ tần suất (always, usually, often, never) đứng trước động từ thường: I always think. Nhưng đứng sau \"to be\": I am always happy."
+        },
+        {
+          "id": "puzzle-a2-07",
+          "kind": "sentence_order",
+          "objective": "Use was with a weather adjective",
+          "prompt": "Make the sentence: Hôm qua thời tiết rất tệ.",
+          "tokens": ["terrible", "weather", "The", "yesterday.", "was"],
+          "answers": ["The weather was terrible yesterday."],
+          "hint": "Start with \"The weather\", then the past of \"to be\", then the adjective.",
+          "hint_vi": "Bắt đầu bằng \"The weather\", rồi \"to be\" ở quá khứ, rồi tính từ.",
+          "explanation": "\"The weather\" is singular, so the past of \"to be\" is was. Time words like \"yesterday\" can go at the end.",
+          "explanation_vi": "\"The weather\" là số ít nên \"to be\" quá khứ là was. Từ chỉ thời gian như \"yesterday\" có thể đặt cuối câu."
+        },
+        {
+          "id": "puzzle-a2-08",
+          "kind": "sentence_order",
+          "objective": "Make a request with \"Can you\"",
+          "prompt": "Make the sentence: Anh gửi cho em một tấm ảnh được không?",
+          "tokens": ["me", "a", "Can", "photo?", "send", "you"],
+          "answers": ["Can you send me a photo?"],
+          "hint": "Can + you + verb + person + thing.",
+          "hint_vi": "Can + you + động từ + người nhận + vật.",
+          "explanation": "Requests: Can you + base verb…? With \"send\", the person usually comes before the thing: send me a photo.",
+          "explanation_vi": "Câu nhờ vả: Can you + động từ nguyên mẫu…? Với \"send\", người nhận thường đứng trước vật: send me a photo."
+        },
+        {
+          "id": "puzzle-a2-09",
+          "kind": "sentence_order",
+          "objective": "Use the present simple for timetables",
+          "prompt": "Make the sentence: Chuyến bay của em cất cánh lúc nửa đêm.",
+          "tokens": ["leaves", "midnight.", "My", "at", "flight"],
+          "answers": ["My flight leaves at midnight."],
+          "hint": "\"My flight\" is the subject. Use \"at\" with midnight.",
+          "hint_vi": "\"My flight\" là chủ ngữ. Dùng \"at\" với midnight.",
+          "explanation": "We often use the present simple for timetables, even in the future: My flight leaves at midnight. \"Flight\" is singular, so leave + s.",
+          "explanation_vi": "Thì hiện tại đơn thường dùng cho lịch trình, kể cả trong tương lai: My flight leaves at midnight. \"Flight\" là số ít nên leave thêm -s."
+        },
+        {
+          "id": "puzzle-a2-10",
+          "kind": "sentence_order",
+          "objective": "Combine past continuous and past simple with when",
+          "prompt": "Make the sentence: Em đang xem phim thì anh gọi.",
+          "tokens": ["when", "a", "I", "you", "movie", "was", "called.", "watching"],
+          "answers": ["I was watching a movie when you called."],
+          "hint": "The longer action uses was + -ing. The short action after \"when\" uses the past simple.",
+          "hint_vi": "Hành động kéo dài dùng was + V-ing. Hành động ngắn xen vào sau \"when\" dùng quá khứ đơn.",
+          "explanation": "Past continuous (was watching) for the longer background action, past simple (called) for the short action that interrupts it.",
+          "explanation_vi": "Quá khứ tiếp diễn (was watching) cho hành động đang diễn ra, quá khứ đơn (called) cho hành động ngắn xen vào."
+        }
+      ]
+    },
+    {
+      "slug": "writing-b1-sentence-puzzle",
+      "category": "writing",
+      "level": "B1",
+      "topic": "perfect tenses, conditionals and complex sentences",
+      "title": "Sentence Puzzle: Closer Than It Seems",
+      "title_vi": "Ghép câu: gần hơn mình nghĩ",
+      "objectives": [
+        "Order words in present perfect sentences",
+        "Build conditional and embedded-question sentences",
+        "Join ideas with relative clauses and \"although\""
+      ],
+      "questions": [
+        {
+          "id": "puzzle-b1-01",
+          "kind": "sentence_order",
+          "objective": "Place never in a present perfect sentence",
+          "prompt": "Make the sentence: Em chưa bao giờ đến Nhật Bản.",
+          "tokens": ["been", "never", "I", "to", "Japan.", "have"],
+          "answers": ["I have never been to Japan."],
+          "hint": "\"Never\" goes between \"have\" and the past participle.",
+          "hint_vi": "\"Never\" đứng giữa \"have\" và động từ phân từ (V3).",
+          "explanation": "Present perfect for life experience: have + never + past participle. \"Have been to\" means \"have visited\".",
+          "explanation_vi": "Hiện tại hoàn thành nói về trải nghiệm: have + never + V3. \"Have been to\" nghĩa là \"đã từng đến\"."
+        },
+        {
+          "id": "puzzle-b1-02",
+          "kind": "sentence_order",
+          "objective": "Use for with the present perfect",
+          "prompt": "Make the sentence: Tụi mình đã bên nhau được hai năm.",
+          "tokens": ["together", "have", "We", "two", "for", "been", "years."],
+          "answers": ["We have been together for two years."],
+          "hint": "We have been + together, then \"for\" + the length of time.",
+          "hint_vi": "We have been + together, rồi \"for\" + khoảng thời gian.",
+          "explanation": "A situation that started in the past and continues now uses the present perfect: We have been together. \"For\" + length of time goes at the end.",
+          "explanation_vi": "Việc bắt đầu trong quá khứ và vẫn tiếp diễn dùng hiện tại hoàn thành: We have been together. \"For\" + khoảng thời gian đặt cuối câu."
+        },
+        {
+          "id": "puzzle-b1-03",
+          "kind": "sentence_order",
+          "objective": "Build a second conditional sentence",
+          "prompt": "Make the sentence: Nếu em ở đó, em sẽ ôm anh.",
+          "tokens": ["I", "would", "If", "there,", "were", "hug", "you.", "I"],
+          "answers": ["If I were there, I would hug you."],
+          "hint": "If + I + were…, then I + would + base verb.",
+          "hint_vi": "If + I + were…, sau đó I + would + động từ nguyên mẫu.",
+          "explanation": "Second conditional for an imaginary present: If + past simple (were), would + base verb. When the if-part comes first, put a comma after it.",
+          "explanation_vi": "Điều kiện loại 2 cho tình huống không có thật: If + quá khứ đơn (were), would + V nguyên mẫu. Khi vế if đứng đầu, đặt dấu phẩy sau nó."
+        },
+        {
+          "id": "puzzle-b1-04",
+          "kind": "sentence_order",
+          "objective": "Use statement word order in an embedded question",
+          "prompt": "Make the sentence: Anh có thể cho em biết bây giờ là mấy giờ không?",
+          "tokens": ["what", "tell", "Could", "it", "me", "time", "is?", "you"],
+          "answers": ["Could you tell me what time it is?"],
+          "hint": "After \"Could you tell me…\", the hidden question uses normal order: what time + it + is.",
+          "hint_vi": "Sau \"Could you tell me…\", câu hỏi gián tiếp dùng trật tự câu khẳng định: what time + it + is.",
+          "explanation": "In an embedded (indirect) question, the subject comes before the verb: What time is it? → Could you tell me what time it is?",
+          "explanation_vi": "Trong câu hỏi gián tiếp, chủ ngữ đứng trước động từ: What time is it? → Could you tell me what time it is? Không đảo \"is it\" nữa."
+        },
+        {
+          "id": "puzzle-b1-05",
+          "kind": "sentence_order",
+          "objective": "Use \"look forward to\" + -ing",
+          "prompt": "Make the sentence: Em rất mong được gặp anh.",
+          "tokens": ["forward", "seeing", "I'm", "to", "you.", "looking"],
+          "answers": ["I'm looking forward to seeing you."],
+          "hint": "The phrase is \"look forward to\" + verb-ing.",
+          "hint_vi": "Cụm từ là \"look forward to\" + V-ing.",
+          "explanation": "In \"look forward to\", \"to\" is a preposition, so it is followed by -ing: looking forward to seeing you (not to see).",
+          "explanation_vi": "Trong \"look forward to\", \"to\" là giới từ nên theo sau là V-ing: looking forward to seeing you (không phải to see)."
+        },
+        {
+          "id": "puzzle-b1-06",
+          "kind": "sentence_order",
+          "objective": "Build a sentence with a relative clause",
+          "prompt": "Make the sentence: Lá thư anh viết đã làm em khóc.",
+          "tokens": ["made", "you", "The", "that", "cry.", "letter", "wrote", "me"],
+          "answers": ["The letter that you wrote made me cry."],
+          "hint": "The subject is \"The letter that you wrote\". Then: made + me + cry.",
+          "hint_vi": "Chủ ngữ là \"The letter that you wrote\". Sau đó: made + me + cry.",
+          "explanation": "A relative clause (that you wrote) can describe the subject. The main verb comes after it. \"Make someone + base verb\" means cause them to do something: made me cry.",
+          "explanation_vi": "Mệnh đề quan hệ (that you wrote) bổ nghĩa cho chủ ngữ, động từ chính đứng sau nó. \"Make + ai + V nguyên mẫu\" nghĩa là khiến ai làm gì: made me cry."
+        },
+        {
+          "id": "puzzle-b1-07",
+          "kind": "sentence_order",
+          "objective": "Place just in a present perfect sentence",
+          "prompt": "Make the sentence: Cô ấy vừa thi xong.",
+          "tokens": ["finished", "has", "She", "her", "just", "exams."],
+          "answers": ["She has just finished her exams."],
+          "hint": "\"Just\" goes between \"has\" and the past participle.",
+          "hint_vi": "\"Just\" đứng giữa \"has\" và V3.",
+          "explanation": "has / have + just + past participle describes something that happened very recently: She has just finished.",
+          "explanation_vi": "has / have + just + V3 diễn tả việc vừa mới xảy ra: She has just finished."
+        },
+        {
+          "id": "puzzle-b1-08",
+          "kind": "sentence_order",
+          "objective": "Use statement order after \"I don't know\"",
+          "prompt": "Make the sentence: Em không biết anh ấy sống ở đâu.",
+          "tokens": ["where", "know", "I", "lives.", "he", "don't"],
+          "answers": ["I don't know where he lives."],
+          "hint": "After \"I don't know where\", use subject + verb (no \"does\").",
+          "hint_vi": "Sau \"I don't know where\", dùng chủ ngữ + động từ (không dùng \"does\").",
+          "explanation": "Embedded questions don't use do / does and keep statement order: Where does he live? → I don't know where he lives.",
+          "explanation_vi": "Câu hỏi gián tiếp không dùng do / does và giữ trật tự câu khẳng định: Where does he live? → I don't know where he lives."
+        },
+        {
+          "id": "puzzle-b1-09",
+          "kind": "sentence_order",
+          "objective": "Give advice with should",
+          "prompt": "Make the sentence: Tối nay anh nên nghỉ ngơi một chút.",
+          "tokens": ["rest", "You", "some", "tonight.", "get", "should"],
+          "answers": ["You should get some rest tonight."],
+          "hint": "Subject + should + base verb. \"Get some rest\" is one idea.",
+          "hint_vi": "Chủ ngữ + should + động từ nguyên mẫu. \"Get some rest\" là một cụm.",
+          "explanation": "\"Should + base verb\" gives advice. \"Get some rest\" is a natural phrase meaning \"rest a little\".",
+          "explanation_vi": "\"Should + V nguyên mẫu\" dùng để khuyên. \"Get some rest\" là cụm tự nhiên, nghĩa là \"nghỉ ngơi một chút\"."
+        },
+        {
+          "id": "puzzle-b1-10",
+          "kind": "sentence_order",
+          "objective": "Join contrasting ideas with although",
+          "prompt": "Make the sentence: Dù mình ở xa nhau, em vẫn thấy gần anh.",
+          "tokens": ["close", "we", "I", "apart,", "to", "Although", "feel", "far", "you.", "are"],
+          "answers": ["Although we are far apart, I feel close to you."],
+          "hint": "Start with \"Although\" + the first idea, then a comma, then the main idea.",
+          "hint_vi": "Bắt đầu bằng \"Although\" + ý thứ nhất, dấu phẩy, rồi đến ý chính.",
+          "explanation": "\"Although\" introduces a contrast. Don't add \"but\" in the second part — Vietnamese says \"Dù… nhưng…\", but English uses only one linking word: Although…, I feel…",
+          "explanation_vi": "\"Although\" dùng để nói ý tương phản. Không thêm \"but\" ở vế sau — tiếng Việt nói \"Dù… nhưng…\", còn tiếng Anh chỉ dùng một liên từ: Although…, I feel…"
+        }
+      ]
+    }
+  ]
+}

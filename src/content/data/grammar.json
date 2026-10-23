@@ -1,0 +1,792 @@
+{
+  "lessons": [
+    {
+      "slug": "grammar-a1-be-present-simple",
+      "category": "grammar",
+      "level": "A1",
+      "topic": "to be & present simple",
+      "title": "Every Day With You: \"to be\" & the Present Simple",
+      "title_vi": "Mỗi ngày bên nhau: động từ \"to be\" và thì hiện tại đơn",
+      "objectives": [
+        "Use am / is / are correctly",
+        "Add -s / -es to verbs after he, she, it",
+        "Make questions and negatives with do / does"
+      ],
+      "questions": [
+        {
+          "id": "grammar-a1-be-present-01",
+          "kind": "multiple_choice",
+          "objective": "Add -s to the verb after he/she/it",
+          "prompt": "She ___ to work every day.",
+          "prompt_vi": "Cô ấy ___ đi làm mỗi ngày.",
+          "options": ["goes", "go", "going", "is go"],
+          "answer": "goes",
+          "explanation": "In the present simple, verbs after he / she / it take -s or -es: she goes, he works, it rains. \"Is go\" is wrong because we don't put \"to be\" before a normal verb in the present simple.",
+          "explanation_vi": "Ở thì hiện tại đơn, động từ sau he / she / it phải thêm -s hoặc -es: she goes, he works. Tiếng Việt không chia động từ nên người Việt hay quên đuôi -s. Cũng đừng ghép \"is\" với động từ thường (\"is go\" là sai)."
+        },
+        {
+          "id": "grammar-a1-be-present-02",
+          "kind": "multiple_choice",
+          "objective": "Use does in questions with he/she/it",
+          "prompt": "___ he live in Đà Nẵng?",
+          "prompt_vi": "Anh ấy có sống ở Đà Nẵng không?",
+          "options": ["Does", "Do", "Is", "Are"],
+          "answer": "Does",
+          "explanation": "Questions with a normal verb use do / does. With he / she / it we use does, and the main verb goes back to the base form: Does he live…? (not Does he lives…?).",
+          "explanation_vi": "Câu hỏi với động từ thường dùng do / does. Với he / she / it dùng does, và động từ chính trở về nguyên mẫu: Does he live…? Không dùng \"Is he live…?\" vì \"live\" là động từ thường, không phải \"to be\"."
+        },
+        {
+          "id": "grammar-a1-be-present-03",
+          "kind": "multiple_choice",
+          "objective": "Use am with I",
+          "prompt": "I ___ so happy when we talk on video.",
+          "prompt_vi": "Em ___ rất vui khi tụi mình gọi video.",
+          "options": ["am", "is", "are", "be"],
+          "answer": "am",
+          "explanation": "The verb \"to be\" changes with the subject: I am, he / she / it is, you / we / they are. \"Be\" alone is the base form and is not used after I here.",
+          "explanation_vi": "Động từ \"to be\" thay đổi theo chủ ngữ: I am, he / she / it is, you / we / they are. Người Việt hay bỏ \"to be\" trước tính từ (\"I happy\"), nhưng tiếng Anh bắt buộc phải có: I am happy."
+        },
+        {
+          "id": "grammar-a1-be-present-04",
+          "kind": "multiple_choice",
+          "objective": "Make negatives with doesn't",
+          "prompt": "Linh ___ coffee. She drinks tea.",
+          "prompt_vi": "Linh ___ cà phê. Cô ấy uống trà.",
+          "options": ["doesn't like", "don't like", "not like", "isn't like"],
+          "answer": "doesn't like",
+          "explanation": "Negatives with a normal verb use don't / doesn't + base verb. Linh = she, so we use doesn't: She doesn't like coffee.",
+          "explanation_vi": "Câu phủ định với động từ thường dùng don't / doesn't + động từ nguyên mẫu. Linh là \"she\" nên dùng doesn't. Không thể chỉ thêm \"not\" như tiếng Việt thêm \"không\" (\"not like\" là sai)."
+        },
+        {
+          "id": "grammar-a1-be-present-05",
+          "kind": "multiple_choice",
+          "objective": "Spell -es after verbs ending in -ch",
+          "prompt": "Which sentence about a weekly habit is correct?",
+          "prompt_vi": "Câu nào về một thói quen hằng tuần là đúng?",
+          "options": [
+            "He watches movies on Sundays.",
+            "He watch movies on Sundays.",
+            "He watchs movies on Sundays.",
+            "He is watch movies on Sundays."
+          ],
+          "answer": "He watches movies on Sundays.",
+          "explanation": "Verbs ending in -ch, -sh, -s, -x or -o add -es after he / she / it: watches, washes, goes. So \"watchs\" is a spelling mistake, and \"watch\" is missing the ending.",
+          "explanation_vi": "Động từ tận cùng bằng -ch, -sh, -s, -x, -o thì thêm -es với he / she / it: watches, washes, goes. \"Watchs\" sai chính tả, còn \"watch\" thiếu đuôi."
+        },
+        {
+          "id": "grammar-a1-be-present-06",
+          "kind": "multiple_choice",
+          "objective": "Use are with we",
+          "prompt": "We ___ in different cities, but we talk every day.",
+          "prompt_vi": "Tụi mình ___ ở hai thành phố khác nhau, nhưng ngày nào cũng nói chuyện.",
+          "options": ["are", "is", "am", "be"],
+          "answer": "are",
+          "explanation": "With we, you and they, the verb \"to be\" is are: We are in different cities.",
+          "explanation_vi": "Với we, you, they thì \"to be\" là are. Câu này nói về vị trí (ở đâu) nên cần \"to be\": We are in different cities."
+        },
+        {
+          "id": "grammar-a1-be-present-07",
+          "kind": "multiple_choice",
+          "objective": "Use do in questions with you",
+          "prompt": "Where ___ you work?",
+          "prompt_vi": "Anh làm việc ở đâu?",
+          "options": ["do", "does", "are", "is"],
+          "answer": "do",
+          "explanation": "Wh- questions with a normal verb follow this pattern: question word + do / does + subject + base verb. With you, use do: Where do you work?",
+          "explanation_vi": "Câu hỏi Wh- với động từ thường: từ để hỏi + do / does + chủ ngữ + động từ nguyên mẫu. Với \"you\" dùng do. \"Where are you work?\" là lỗi rất phổ biến vì trộn \"to be\" với động từ thường."
+        },
+        {
+          "id": "grammar-a1-be-present-08",
+          "kind": "multiple_choice",
+          "objective": "Use -s with a singular noun subject",
+          "prompt": "The time difference sometimes ___ our calls difficult.",
+          "prompt_vi": "Chênh lệch múi giờ đôi khi ___ các cuộc gọi của tụi mình khó khăn.",
+          "options": ["makes", "make", "making", "is make"],
+          "answer": "makes",
+          "explanation": "\"The time difference\" is one thing, so it works like \"it\": it makes. Any singular noun subject needs the -s verb in the present simple.",
+          "explanation_vi": "\"The time difference\" là danh từ số ít, tương đương \"it\", nên động từ phải thêm -s: makes. Quy tắc thêm -s áp dụng cho mọi chủ ngữ số ít, không chỉ he / she / it."
+        },
+        {
+          "id": "grammar-a1-be-present-09",
+          "kind": "multiple_choice",
+          "objective": "Make questions with \"to be\"",
+          "prompt": "___ your sister a student?",
+          "prompt_vi": "Em gái anh là sinh viên phải không?",
+          "options": ["Is", "Does", "Are", "Do"],
+          "answer": "Is",
+          "explanation": "When the sentence uses \"to be\" (with a noun or adjective, no other verb), we make a question by moving am / is / are to the front: Your sister is a student → Is your sister a student?",
+          "explanation_vi": "Khi câu dùng \"to be\" (không có động từ thường), ta đảo am / is / are lên đầu để hỏi. \"Your sister\" là số ít nên dùng Is. Không dùng do / does với \"to be\"."
+        },
+        {
+          "id": "grammar-a1-be-present-10",
+          "kind": "multiple_choice",
+          "objective": "Use the base verb after does",
+          "prompt": "Which question is correct?",
+          "prompt_vi": "Câu hỏi nào đúng?",
+          "options": [
+            "Does she study English?",
+            "Does she studies English?",
+            "Do she study English?",
+            "Is she study English?"
+          ],
+          "answer": "Does she study English?",
+          "explanation": "After does, the -s moves to the helper verb, so the main verb has no -s: Does she study? Using both (does + studies) is a double mistake.",
+          "explanation_vi": "Khi đã có does thì đuôi -s \"chuyển\" sang does, động từ chính giữ nguyên mẫu: Does she study? Không được thêm -s hai lần (does … studies)."
+        }
+      ]
+    },
+    {
+      "slug": "grammar-a1-articles",
+      "category": "grammar",
+      "level": "A1",
+      "topic": "articles a / an / the / zero article",
+      "title": "A, An, The… or Nothing?",
+      "title_vi": "A, an, the… hay không dùng mạo từ?",
+      "objectives": [
+        "Choose a or an by the first sound of the next word",
+        "Use the for things already known or unique",
+        "Know when to use no article"
+      ],
+      "questions": [
+        {
+          "id": "grammar-a1-articles-01",
+          "kind": "multiple_choice",
+          "objective": "Use an before a vowel sound",
+          "prompt": "I have ___ idea for our next video date.",
+          "prompt_vi": "Em có ___ ý tưởng cho buổi hẹn hò qua video lần tới.",
+          "options": ["an", "a", "no article"],
+          "answer": "an",
+          "explanation": "Use an before a vowel sound (a, e, i, o, u sounds): an idea, an apple. \"Idea\" is a singular countable noun, so it needs an article.",
+          "explanation_vi": "Dùng an trước từ bắt đầu bằng nguyên âm (âm a, e, i, o, u): an idea. Danh từ đếm được số ít luôn cần mạo từ — tiếng Việt không có mạo từ nên người Việt hay bỏ quên."
+        },
+        {
+          "id": "grammar-a1-articles-02",
+          "kind": "multiple_choice",
+          "objective": "Choose a/an by sound, not spelling",
+          "prompt": "She is ___ university student.",
+          "prompt_vi": "Cô ấy là ___ sinh viên đại học.",
+          "options": ["a", "an", "no article"],
+          "answer": "a",
+          "explanation": "The choice depends on the sound, not the letter. \"University\" starts with a /j/ (\"you\") sound, which is a consonant sound, so we say a university.",
+          "explanation_vi": "Chọn a hay an dựa vào âm đầu, không phải chữ cái. \"University\" đọc là /juː/ (giống \"you\"), là phụ âm, nên dùng a: a university, a uniform."
+        },
+        {
+          "id": "grammar-a1-articles-03",
+          "kind": "multiple_choice",
+          "objective": "Use an before a silent h",
+          "prompt": "We waited for ___ hour at the airport.",
+          "prompt_vi": "Tụi mình đã đợi ___ tiếng ở sân bay.",
+          "options": ["an", "a", "no article"],
+          "answer": "an",
+          "explanation": "In \"hour\" the h is silent, so the word starts with a vowel sound: an hour. Compare a house, where the h is pronounced.",
+          "explanation_vi": "Chữ h trong \"hour\" là âm câm, từ này bắt đầu bằng nguyên âm nên dùng an: an hour, an honest person. So sánh: a house (h được phát âm)."
+        },
+        {
+          "id": "grammar-a1-articles-04",
+          "kind": "multiple_choice",
+          "objective": "Use the for something mentioned before",
+          "prompt": "I bought a cake and a card for you. ___ cake was chocolate.",
+          "prompt_vi": "Em đã mua một cái bánh và một tấm thiệp cho anh. Cái bánh là vị sô-cô-la.",
+          "options": ["The", "A", "An"],
+          "answer": "The",
+          "explanation": "Use a / an the first time you mention something. When you talk about it again, both people know which one, so use the: a cake → the cake.",
+          "explanation_vi": "Lần đầu nhắc đến dùng a / an. Từ lần thứ hai trở đi, cả hai đã biết là cái nào nên dùng the — giống như nói \"cái bánh đó\" trong tiếng Việt."
+        },
+        {
+          "id": "grammar-a1-articles-05",
+          "kind": "multiple_choice",
+          "objective": "Use the for unique things",
+          "prompt": "___ sun is really hot in Sài Gòn today.",
+          "prompt_vi": "Hôm nay mặt trời ở Sài Gòn nóng thật.",
+          "options": ["The", "A", "No article"],
+          "answer": "The",
+          "explanation": "Use the for things that are unique — there is only one: the sun, the moon, the sky, the internet.",
+          "explanation_vi": "Dùng the với những thứ duy nhất: the sun, the moon, the sky, the internet. Vì chỉ có một nên ai cũng biết đang nói về cái nào."
+        },
+        {
+          "id": "grammar-a1-articles-06",
+          "kind": "multiple_choice",
+          "objective": "Use no article for general uncountable nouns",
+          "prompt": "I really love ___ music. It helps me relax.",
+          "prompt_vi": "Em thật sự rất thích âm nhạc. Nó giúp em thư giãn.",
+          "options": ["no article", "a", "an"],
+          "answer": "no article",
+          "explanation": "When we talk about something in general, uncountable nouns (music, love, coffee, time) take no article: I love music. A / an are only for singular countable nouns.",
+          "explanation_vi": "Khi nói chung chung, danh từ không đếm được (music, love, coffee, time) không dùng mạo từ: I love music. A / an chỉ đi với danh từ đếm được số ít."
+        },
+        {
+          "id": "grammar-a1-articles-07",
+          "kind": "multiple_choice",
+          "objective": "Use a/an with jobs",
+          "prompt": "Which sentence about a job is correct?",
+          "prompt_vi": "Câu nào nói về nghề nghiệp là đúng?",
+          "options": [
+            "My partner is a nurse.",
+            "My partner is nurse.",
+            "My partner is an nurse.",
+            "My partner is the nurses."
+          ],
+          "answer": "My partner is a nurse.",
+          "explanation": "When we say someone's job, English needs a / an: She is a nurse. He is an engineer. Leaving it out (\"is nurse\") is one of the most common mistakes for Vietnamese speakers.",
+          "explanation_vi": "Khi nói nghề nghiệp, tiếng Anh bắt buộc có a / an: She is a nurse, He is an engineer. Tiếng Việt nói \"Cô ấy là y tá\" không có mạo từ, nên đây là lỗi rất phổ biến của người Việt."
+        },
+        {
+          "id": "grammar-a1-articles-08",
+          "kind": "multiple_choice",
+          "objective": "Know fixed phrases with no article",
+          "prompt": "Which sentence about bedtime is correct?",
+          "prompt_vi": "Câu nào về giờ đi ngủ là đúng?",
+          "options": [
+            "I usually go to bed at 11 p.m.",
+            "I usually go to the bed at 11 p.m.",
+            "I usually go to a bed at 11 p.m."
+          ],
+          "answer": "I usually go to bed at 11 p.m.",
+          "explanation": "Some common phrases use no article: go to bed, go to work, go home, at night, by bus. \"Go to bed\" means \"go to sleep\".",
+          "explanation_vi": "Một số cụm cố định không dùng mạo từ: go to bed, go to work, go home, at night, by bus. Nên học thuộc cả cụm. \"Go to bed\" nghĩa là đi ngủ."
+        },
+        {
+          "id": "grammar-a1-articles-09",
+          "kind": "multiple_choice",
+          "objective": "Use no a/an with plural nouns",
+          "prompt": "I bought ___ new shoes for our trip.",
+          "prompt_vi": "Em đã mua giày mới cho chuyến đi của tụi mình.",
+          "options": ["no article", "a", "an"],
+          "answer": "no article",
+          "explanation": "A / an means \"one\", so it never goes with plural nouns. \"Shoes\" is plural, so we say: I bought new shoes (or some new shoes).",
+          "explanation_vi": "A / an có nghĩa là \"một\", nên không bao giờ đi với danh từ số nhiều. \"Shoes\" là số nhiều nên không dùng a: I bought new shoes."
+        },
+        {
+          "id": "grammar-a1-articles-10",
+          "kind": "multiple_choice",
+          "objective": "Use the with superlatives",
+          "prompt": "Seeing you at the airport was ___ best moment of my year!",
+          "prompt_vi": "Gặp anh ở sân bay là khoảnh khắc tuyệt nhất trong năm của em!",
+          "options": ["the", "a", "no article"],
+          "answer": "the",
+          "explanation": "Superlatives (best, biggest, most beautiful) use the, because there is only one \"best\": the best moment, the happiest day.",
+          "explanation_vi": "So sánh nhất (best, biggest, most beautiful) luôn đi với the, vì chỉ có một cái \"nhất\": the best moment, the happiest day."
+        }
+      ]
+    },
+    {
+      "slug": "grammar-a2-past-simple",
+      "category": "grammar",
+      "level": "A2",
+      "topic": "past simple",
+      "title": "Yesterday With You: the Past Simple",
+      "title_vi": "Hôm qua của chúng mình: thì quá khứ đơn",
+      "objectives": [
+        "Form regular (-ed) and common irregular past verbs",
+        "Use did + base verb in questions and negatives",
+        "Use was / were for the past of \"to be\""
+      ],
+      "questions": [
+        {
+          "id": "grammar-a2-past-simple-01",
+          "kind": "multiple_choice",
+          "objective": "Use an irregular past form",
+          "prompt": "Yesterday I ___ you a long message.",
+          "prompt_vi": "Hôm qua em đã gửi cho anh một tin nhắn dài.",
+          "options": ["sent", "send", "sended", "am send"],
+          "answer": "sent",
+          "explanation": "\"Send\" is irregular: send → sent. Words like \"yesterday\" show finished past time, so the verb must change to the past form.",
+          "explanation_vi": "\"Send\" là động từ bất quy tắc: send → sent. Tiếng Việt chỉ cần thêm \"hôm qua\" là đủ, nhưng tiếng Anh bắt buộc đổi động từ sang quá khứ."
+        },
+        {
+          "id": "grammar-a2-past-simple-02",
+          "kind": "multiple_choice",
+          "objective": "Add -ed to regular verbs",
+          "prompt": "We ___ for two hours last night.",
+          "prompt_vi": "Tối qua tụi mình đã nói chuyện hai tiếng.",
+          "options": ["talked", "talk", "talks", "talking"],
+          "answer": "talked",
+          "explanation": "Regular verbs make the past simple with -ed: talk → talked, call → called. The past form is the same for every subject (I / we / she talked).",
+          "explanation_vi": "Động từ có quy tắc thêm -ed: talk → talked. Ở quá khứ đơn, động từ giống nhau với mọi chủ ngữ — không cần thêm -s cho he / she / it."
+        },
+        {
+          "id": "grammar-a2-past-simple-03",
+          "kind": "multiple_choice",
+          "objective": "Use did in past questions",
+          "prompt": "___ you sleep well last night?",
+          "prompt_vi": "Tối qua anh ngủ ngon không?",
+          "options": ["Did", "Do", "Were", "Are"],
+          "answer": "Did",
+          "explanation": "Past simple questions with a normal verb use did + subject + base verb: Did you sleep…? \"Last night\" tells us it is past, so \"Do\" is wrong.",
+          "explanation_vi": "Câu hỏi quá khứ với động từ thường: Did + chủ ngữ + động từ nguyên mẫu. Có \"last night\" nên phải dùng Did, không dùng Do."
+        },
+        {
+          "id": "grammar-a2-past-simple-04",
+          "kind": "multiple_choice",
+          "objective": "Use the base verb after didn't",
+          "prompt": "She didn't ___ my call this morning.",
+          "prompt_vi": "Sáng nay cô ấy không nghe máy khi em gọi.",
+          "options": ["answer", "answered", "answers", "answering"],
+          "answer": "answer",
+          "explanation": "After did / didn't, always use the base verb. \"Did\" already shows the past, so we don't put -ed on the main verb: didn't answer (not didn't answered).",
+          "explanation_vi": "Sau did / didn't luôn dùng động từ nguyên mẫu. \"Did\" đã thể hiện quá khứ rồi nên không thêm -ed nữa: didn't answer."
+        },
+        {
+          "id": "grammar-a2-past-simple-05",
+          "kind": "multiple_choice",
+          "objective": "Use the irregular past of go",
+          "prompt": "Which sentence about last summer is correct?",
+          "prompt_vi": "Câu nào nói về mùa hè năm ngoái là đúng?",
+          "options": [
+            "I went to Hà Nội last summer.",
+            "I go to Hà Nội last summer.",
+            "I goed to Hà Nội last summer.",
+            "I did went to Hà Nội last summer."
+          ],
+          "answer": "I went to Hà Nội last summer.",
+          "explanation": "\"Go\" is irregular: go → went. \"Goed\" does not exist, and in positive sentences we don't use did with a past verb.",
+          "explanation_vi": "\"Go\" là động từ bất quy tắc: go → went. Không có từ \"goed\". Câu khẳng định không dùng did kèm động từ quá khứ (\"did went\" là sai)."
+        },
+        {
+          "id": "grammar-a2-past-simple-06",
+          "kind": "multiple_choice",
+          "objective": "Use the base verb in Wh- questions with did",
+          "prompt": "Where did you ___ on your birthday?",
+          "prompt_vi": "Sinh nhật anh đã đi đâu?",
+          "options": ["go", "went", "goes", "gone"],
+          "answer": "go",
+          "explanation": "In questions, did carries the past, and the main verb stays in the base form: Where did you go? (not Where did you went?).",
+          "explanation_vi": "Trong câu hỏi, did đã mang nghĩa quá khứ, động từ chính giữ nguyên mẫu: Where did you go? Lỗi \"did you went\" rất hay gặp."
+        },
+        {
+          "id": "grammar-a2-past-simple-07",
+          "kind": "multiple_choice",
+          "objective": "Use was with I",
+          "prompt": "I ___ very tired after the long flight.",
+          "prompt_vi": "Em đã rất mệt sau chuyến bay dài.",
+          "options": ["was", "were", "am", "did"],
+          "answer": "was",
+          "explanation": "The past of \"to be\" is was (I / he / she / it) and were (you / we / they). \"Tired\" is an adjective, so we need \"to be\": I was tired.",
+          "explanation_vi": "Quá khứ của \"to be\": was (I / he / she / it), were (you / we / they). \"Tired\" là tính từ nên cần \"to be\": I was tired."
+        },
+        {
+          "id": "grammar-a2-past-simple-08",
+          "kind": "multiple_choice",
+          "objective": "Make negatives with weren't",
+          "prompt": "They ___ at home last weekend.",
+          "prompt_vi": "Cuối tuần trước họ không ở nhà.",
+          "options": ["weren't", "wasn't", "didn't", "don't"],
+          "answer": "weren't",
+          "explanation": "To talk about where someone was, use \"to be\". With they, the past negative is weren't. \"Didn't\" needs a verb after it (didn't stay).",
+          "explanation_vi": "Nói về việc ở đâu thì dùng \"to be\". Với they, phủ định quá khứ là weren't. \"Didn't\" phải đi kèm động từ thường (didn't stay)."
+        },
+        {
+          "id": "grammar-a2-past-simple-09",
+          "kind": "multiple_choice",
+          "objective": "Use the irregular past of buy",
+          "prompt": "When he visited, he ___ me a beautiful bracelet.",
+          "prompt_vi": "Khi đến thăm, anh ấy đã mua cho em một chiếc vòng tay rất đẹp.",
+          "options": ["bought", "buyed", "buy", "was buy"],
+          "answer": "bought",
+          "explanation": "\"Buy\" is irregular: buy → bought. Both parts of the sentence are in the past (visited, bought).",
+          "explanation_vi": "\"Buy\" là động từ bất quy tắc: buy → bought. Cả hai vế đều ở quá khứ (visited, bought). Không có từ \"buyed\"."
+        },
+        {
+          "id": "grammar-a2-past-simple-10",
+          "kind": "multiple_choice",
+          "objective": "Use did in Wh- questions about the past",
+          "prompt": "What time ___ your flight land yesterday?",
+          "prompt_vi": "Hôm qua chuyến bay của anh hạ cánh lúc mấy giờ?",
+          "options": ["did", "was", "were", "do"],
+          "answer": "did",
+          "explanation": "\"Land\" is a normal verb, so the past question needs did + base verb: What time did your flight land? \"Was\" cannot go with a base verb.",
+          "explanation_vi": "\"Land\" là động từ thường nên câu hỏi quá khứ dùng did + nguyên mẫu. Không dùng \"was\" với động từ thường nguyên mẫu."
+        }
+      ]
+    },
+    {
+      "slug": "grammar-a2-prepositions-in-on-at",
+      "category": "grammar",
+      "level": "A2",
+      "topic": "prepositions of time and place (in / on / at)",
+      "title": "Meet Me There: In, On, At",
+      "title_vi": "Hẹn gặp ở đó: giới từ in, on, at",
+      "objectives": [
+        "Use in / on / at with times, days, months and years",
+        "Use in / on / at for places",
+        "Remember common fixed phrases like at night"
+      ],
+      "questions": [
+        {
+          "id": "grammar-a2-prepositions-01",
+          "kind": "multiple_choice",
+          "objective": "Use in with months",
+          "prompt": "My birthday is ___ May.",
+          "prompt_vi": "Sinh nhật em vào tháng Năm.",
+          "options": ["in", "on", "at"],
+          "answer": "in",
+          "explanation": "Use in for longer periods: months, years, seasons — in May, in 2025, in summer.",
+          "explanation_vi": "Dùng in cho khoảng thời gian dài: tháng, năm, mùa — in May, in 2025, in summer. Mẹo: in (dài) → on (ngày) → at (giờ, rất ngắn)."
+        },
+        {
+          "id": "grammar-a2-prepositions-02",
+          "kind": "multiple_choice",
+          "objective": "Use on with days of the week",
+          "prompt": "Let's have a video call ___ Saturday.",
+          "prompt_vi": "Thứ Bảy mình gọi video nhé.",
+          "options": ["on", "in", "at"],
+          "answer": "on",
+          "explanation": "Use on for days and dates: on Saturday, on 14 February, on my birthday.",
+          "explanation_vi": "Dùng on cho thứ trong tuần và ngày cụ thể: on Saturday, on 14 February, on my birthday."
+        },
+        {
+          "id": "grammar-a2-prepositions-03",
+          "kind": "multiple_choice",
+          "objective": "Use at with clock times",
+          "prompt": "I'll call you ___ 9 p.m.",
+          "prompt_vi": "Em sẽ gọi cho anh lúc 9 giờ tối.",
+          "options": ["at", "on", "in"],
+          "answer": "at",
+          "explanation": "Use at for exact times: at 9 p.m., at noon, at midnight.",
+          "explanation_vi": "Dùng at cho giờ chính xác: at 9 p.m., at noon, at midnight."
+        },
+        {
+          "id": "grammar-a2-prepositions-04",
+          "kind": "multiple_choice",
+          "objective": "Use in with years",
+          "prompt": "We met ___ 2023.",
+          "prompt_vi": "Tụi mình gặp nhau vào năm 2023.",
+          "options": ["in", "on", "at"],
+          "answer": "in",
+          "explanation": "Years take in: in 2023, in 1999.",
+          "explanation_vi": "Năm luôn đi với in: in 2023."
+        },
+        {
+          "id": "grammar-a2-prepositions-05",
+          "kind": "multiple_choice",
+          "objective": "Remember the fixed phrase at night",
+          "prompt": "I always miss you more ___ night.",
+          "prompt_vi": "Ban đêm em luôn nhớ anh nhiều hơn.",
+          "options": ["at", "in", "on"],
+          "answer": "at",
+          "explanation": "We say in the morning, in the afternoon, in the evening — but at night (no \"the\").",
+          "explanation_vi": "Ta nói in the morning, in the afternoon, in the evening — nhưng at night (không có \"the\"). Đây là cụm cố định, nên học thuộc."
+        },
+        {
+          "id": "grammar-a2-prepositions-06",
+          "kind": "multiple_choice",
+          "objective": "Use in with cities and countries",
+          "prompt": "She lives ___ Tokyo now.",
+          "prompt_vi": "Bây giờ cô ấy sống ở Tokyo.",
+          "options": ["in", "at", "on"],
+          "answer": "in",
+          "explanation": "Use in for cities, countries and other large areas: in Tokyo, in Vietnam, in Europe.",
+          "explanation_vi": "Dùng in cho thành phố, quốc gia, khu vực lớn: in Tokyo, in Vietnam. Tiếng Việt chỉ có một chữ \"ở\", nhưng tiếng Anh phải chọn in / on / at."
+        },
+        {
+          "id": "grammar-a2-prepositions-07",
+          "kind": "multiple_choice",
+          "objective": "Use at with a point or meeting place",
+          "prompt": "Meet me ___ the bus stop.",
+          "prompt_vi": "Gặp em ở trạm xe buýt nhé.",
+          "options": ["at", "in", "on"],
+          "answer": "at",
+          "explanation": "Use at for a specific point or meeting place: at the bus stop, at the door, at the station.",
+          "explanation_vi": "Dùng at cho một điểm cụ thể, nơi hẹn gặp: at the bus stop, at the door, at the station."
+        },
+        {
+          "id": "grammar-a2-prepositions-08",
+          "kind": "multiple_choice",
+          "objective": "Use on for surfaces",
+          "prompt": "Your photo is ___ the wall above my desk.",
+          "prompt_vi": "Ảnh của anh được treo trên tường phía trên bàn làm việc của em.",
+          "options": ["on", "in", "at"],
+          "answer": "on",
+          "explanation": "Use on for surfaces: on the wall, on the table, on the floor.",
+          "explanation_vi": "Dùng on cho bề mặt: on the wall, on the table, on the floor."
+        },
+        {
+          "id": "grammar-a2-prepositions-09",
+          "kind": "multiple_choice",
+          "objective": "Use on with a specific named day",
+          "prompt": "We'll finally be together ___ Christmas Day.",
+          "prompt_vi": "Cuối cùng tụi mình cũng được ở bên nhau vào ngày Giáng sinh.",
+          "options": ["on", "in", "at"],
+          "answer": "on",
+          "explanation": "\"Christmas Day\" is one specific day, so it takes on — just like on Monday or on my birthday.",
+          "explanation_vi": "\"Christmas Day\" là một ngày cụ thể nên dùng on, giống on Monday hay on my birthday."
+        },
+        {
+          "id": "grammar-a2-prepositions-10",
+          "kind": "multiple_choice",
+          "objective": "Use in with parts of the day",
+          "prompt": "My plane will arrive ___ the morning.",
+          "prompt_vi": "Máy bay của em sẽ đến vào buổi sáng.",
+          "options": ["in", "on", "at"],
+          "answer": "in",
+          "explanation": "Parts of the day take in the: in the morning, in the afternoon, in the evening. (Remember the exception: at night.)",
+          "explanation_vi": "Các buổi trong ngày dùng in the: in the morning, in the afternoon, in the evening. Ngoại lệ cần nhớ: at night."
+        }
+      ]
+    },
+    {
+      "slug": "grammar-b1-present-perfect-past-simple",
+      "category": "grammar",
+      "level": "B1",
+      "topic": "present perfect vs past simple",
+      "title": "Since the Day We Met: Present Perfect vs Past Simple",
+      "title_vi": "Từ ngày mình gặp nhau: hiện tại hoàn thành và quá khứ đơn",
+      "objectives": [
+        "Use the present perfect for life experience and situations that continue to now",
+        "Use for / since / ago correctly",
+        "Use the past simple with finished time expressions"
+      ],
+      "questions": [
+        {
+          "id": "grammar-b1-perfect-01",
+          "kind": "multiple_choice",
+          "objective": "Use the present perfect with since for a situation that continues",
+          "prompt": "We ___ each other since 2022.",
+          "prompt_vi": "Tụi mình đã quen nhau từ năm 2022.",
+          "options": ["have known", "knew", "know", "are knowing"],
+          "answer": "have known",
+          "explanation": "For a situation that started in the past and is still true now, use the present perfect (have / has + past participle), often with since or for. \"Know\" is a state verb, so it is not used in the -ing form.",
+          "explanation_vi": "Việc bắt đầu trong quá khứ và vẫn còn đến bây giờ dùng hiện tại hoàn thành (have / has + V3), thường đi với since / for. Người Việt hay nói \"I know you since 2022\" vì tiếng Việt không chia thì — đây là lỗi cần tránh."
+        },
+        {
+          "id": "grammar-b1-perfect-02",
+          "kind": "multiple_choice",
+          "objective": "Use the past simple with a finished time",
+          "prompt": "I ___ you last night, but you were asleep.",
+          "prompt_vi": "Tối qua em có gọi cho anh, nhưng anh ngủ mất rồi.",
+          "options": ["called", "have called", "call", "am calling"],
+          "answer": "called",
+          "explanation": "\"Last night\" is a finished time, so we use the past simple. The present perfect cannot be used with finished time words like yesterday, last night or in 2021.",
+          "explanation_vi": "\"Last night\" là thời gian đã kết thúc nên dùng quá khứ đơn. Không dùng hiện tại hoàn thành với các mốc đã qua như yesterday, last night, in 2021."
+        },
+        {
+          "id": "grammar-b1-perfect-03",
+          "kind": "multiple_choice",
+          "objective": "Use been for experience with ever",
+          "prompt": "Have you ever ___ to Đà Lạt?",
+          "prompt_vi": "Anh đã bao giờ đến Đà Lạt chưa?",
+          "options": ["been", "went", "go", "was"],
+          "answer": "been",
+          "explanation": "To ask about life experience, use Have you ever + past participle. For visiting places, we usually say \"have been to\": Have you ever been to Đà Lạt?",
+          "explanation_vi": "Hỏi về trải nghiệm dùng Have you ever + V3. Khi nói đã từng đến đâu, dùng \"have been to\". Sau have phải là V3, nên \"went\" là sai."
+        },
+        {
+          "id": "grammar-b1-perfect-04",
+          "kind": "multiple_choice",
+          "objective": "Use for with a length of time",
+          "prompt": "She has lived in Seoul ___ three years.",
+          "prompt_vi": "Cô ấy đã sống ở Seoul được ba năm.",
+          "options": ["for", "since", "ago", "from"],
+          "answer": "for",
+          "explanation": "Use for + a length of time (for three years, for a week) and since + a starting point (since 2022, since Monday).",
+          "explanation_vi": "for + khoảng thời gian (for three years, for a week); since + mốc bắt đầu (since 2022, since Monday). \"Three years\" là khoảng thời gian nên dùng for."
+        },
+        {
+          "id": "grammar-b1-perfect-05",
+          "kind": "multiple_choice",
+          "objective": "Use since with a starting point",
+          "prompt": "I haven't seen you ___ your last visit.",
+          "prompt_vi": "Em chưa gặp lại anh kể từ lần anh đến thăm gần nhất.",
+          "options": ["since", "for", "ago", "from"],
+          "answer": "since",
+          "explanation": "\"Your last visit\" is a starting point in time, so we use since. Since answers \"from when?\", for answers \"how long?\".",
+          "explanation_vi": "\"Your last visit\" là một mốc thời gian nên dùng since. Since trả lời câu hỏi \"từ khi nào?\", for trả lời \"bao lâu?\"."
+        },
+        {
+          "id": "grammar-b1-perfect-06",
+          "kind": "multiple_choice",
+          "objective": "Avoid the present perfect with a specific past year",
+          "prompt": "Which sentence about a trip in 2021 is correct?",
+          "prompt_vi": "Câu nào nói về chuyến đi năm 2021 là đúng?",
+          "options": [
+            "I visited Huế in 2021.",
+            "I have visited Huế in 2021.",
+            "I have visit Huế in 2021.",
+            "I did visited Huế in 2021."
+          ],
+          "answer": "I visited Huế in 2021.",
+          "explanation": "When you say exactly when something happened (in 2021), use the past simple. Without a time you could say \"I have visited Huế\" (as an experience), but not together with \"in 2021\".",
+          "explanation_vi": "Khi có thời gian cụ thể đã qua (in 2021) thì dùng quá khứ đơn. Nếu không nêu thời gian, có thể nói \"I have visited Huế\" (kể trải nghiệm), nhưng không dùng chung với \"in 2021\"."
+        },
+        {
+          "id": "grammar-b1-perfect-07",
+          "kind": "multiple_choice",
+          "objective": "Use the past participle with never",
+          "prompt": "I have never ___ snow. Let's see it together one day!",
+          "prompt_vi": "Em chưa bao giờ thấy tuyết. Một ngày nào đó mình cùng đi ngắm nhé!",
+          "options": ["seen", "saw", "see", "seeing"],
+          "answer": "seen",
+          "explanation": "Present perfect = have / has + past participle (V3). The verb \"see\" is irregular: see – saw – seen. \"Saw\" is the past simple, not the participle.",
+          "explanation_vi": "Hiện tại hoàn thành = have / has + V3. \"See\" là động từ bất quy tắc: see – saw – seen. \"Saw\" là quá khứ đơn (V2), không dùng sau have."
+        },
+        {
+          "id": "grammar-b1-perfect-08",
+          "kind": "multiple_choice",
+          "objective": "Use the past simple for questions with when",
+          "prompt": "When ___ you start learning English?",
+          "prompt_vi": "Anh bắt đầu học tiếng Anh từ khi nào?",
+          "options": ["did", "have", "has", "do"],
+          "answer": "did",
+          "explanation": "A question with \"When…?\" asks about a specific past moment, so it uses the past simple: When did you start…? We don't say \"When have you started…?\".",
+          "explanation_vi": "Câu hỏi \"When…?\" hỏi về một thời điểm cụ thể trong quá khứ nên dùng quá khứ đơn: When did you start…? Không dùng \"When have you…?\"."
+        },
+        {
+          "id": "grammar-b1-perfect-09",
+          "kind": "multiple_choice",
+          "objective": "Use has just for very recent news",
+          "prompt": "Guess what? The gift you sent ___ just arrived!",
+          "prompt_vi": "Đoán xem? Món quà anh gửi vừa mới đến!",
+          "options": ["has", "have", "did", "is"],
+          "answer": "has",
+          "explanation": "Use have / has + just + past participle for very recent news. \"The gift\" is singular, so we use has: The gift has just arrived.",
+          "explanation_vi": "Dùng have / has + just + V3 cho tin vừa mới xảy ra. \"The gift\" là số ít nên dùng has. \"Just\" tương đương \"vừa mới\" trong tiếng Việt."
+        },
+        {
+          "id": "grammar-b1-perfect-10",
+          "kind": "multiple_choice",
+          "objective": "Use ago with the past simple",
+          "prompt": "I met my partner two years ___.",
+          "prompt_vi": "Em gặp người yêu mình cách đây hai năm.",
+          "options": ["ago", "since", "for"],
+          "answer": "ago",
+          "explanation": "\"Ago\" means \"before now\" and comes after the time: two years ago. It goes with the past simple, not the present perfect.",
+          "explanation_vi": "\"Ago\" nghĩa là \"cách đây\", đứng sau khoảng thời gian: two years ago. \"Ago\" đi với quá khứ đơn, không đi với hiện tại hoàn thành."
+        }
+      ]
+    },
+    {
+      "slug": "grammar-b1-conditionals",
+      "category": "grammar",
+      "level": "B1",
+      "topic": "first and second conditionals",
+      "title": "If You Were Here: First & Second Conditionals",
+      "title_vi": "Nếu anh ở đây: câu điều kiện loại 1 và loại 2",
+      "objectives": [
+        "Use the first conditional for real, possible futures",
+        "Use the second conditional for imaginary situations",
+        "Use \"If I were…\" to give advice and talk about wishes"
+      ],
+      "questions": [
+        {
+          "id": "grammar-b1-conditionals-01",
+          "kind": "multiple_choice",
+          "objective": "Use the present simple in the if-clause of the first conditional",
+          "prompt": "If it ___ tomorrow, we will stay home and watch a movie together on call.",
+          "prompt_vi": "Nếu mai trời mưa, tụi mình sẽ ở nhà và cùng xem phim qua cuộc gọi.",
+          "options": ["rains", "will rain", "rained", "rain"],
+          "answer": "rains",
+          "explanation": "First conditional (a real possibility): If + present simple, will + base verb. We don't use will in the if-part, even though the meaning is future.",
+          "explanation_vi": "Điều kiện loại 1 (có thể xảy ra): If + hiện tại đơn, will + V nguyên mẫu. Không dùng will trong vế if dù nghĩa là tương lai. \"It\" là số ít nên rain thêm -s."
+        },
+        {
+          "id": "grammar-b1-conditionals-02",
+          "kind": "multiple_choice",
+          "objective": "Use \"If I were you\" for advice",
+          "prompt": "If I ___ you, I would book the ticket now.",
+          "prompt_vi": "Nếu em là anh, em sẽ đặt vé ngay bây giờ.",
+          "options": ["were", "am", "will be", "be"],
+          "answer": "were",
+          "explanation": "\"If I were you, I would…\" is the standard way to give advice. In the second conditional, standard English uses were for every subject, including I.",
+          "explanation_vi": "\"If I were you, I would…\" là cách khuyên bảo rất phổ biến. Trong câu điều kiện loại 2, tiếng Anh chuẩn dùng were cho mọi chủ ngữ, kể cả I."
+        },
+        {
+          "id": "grammar-b1-conditionals-03",
+          "kind": "multiple_choice",
+          "objective": "Use would + base verb in the result of the second conditional",
+          "prompt": "If I had wings, I ___ to you every night.",
+          "prompt_vi": "Nếu em có cánh, đêm nào em cũng sẽ bay đến bên anh.",
+          "options": ["would fly", "will fly", "fly", "flew"],
+          "answer": "would fly",
+          "explanation": "Second conditional (imaginary): If + past simple, would + base verb. Having wings is not real, so we use would fly.",
+          "explanation_vi": "Điều kiện loại 2 (không có thật ở hiện tại): If + quá khứ đơn, would + V nguyên mẫu. Có cánh là điều không thật nên dùng would fly."
+        },
+        {
+          "id": "grammar-b1-conditionals-04",
+          "kind": "multiple_choice",
+          "objective": "Avoid will in the if-clause",
+          "prompt": "If you ___ me tonight, I'll answer right away.",
+          "prompt_vi": "Nếu tối nay anh gọi, em sẽ nghe máy ngay.",
+          "options": ["call", "will call", "called", "would call"],
+          "answer": "call",
+          "explanation": "The result uses will ('ll), so this is a first conditional: the if-part uses the present simple — If you call me, I'll answer.",
+          "explanation_vi": "Vế sau dùng will ('ll) nên đây là điều kiện loại 1: vế if dùng hiện tại đơn — If you call me, I'll answer. Lỗi hay gặp là dùng will ở cả hai vế."
+        },
+        {
+          "id": "grammar-b1-conditionals-05",
+          "kind": "multiple_choice",
+          "objective": "Use the past simple in the if-clause of the second conditional",
+          "prompt": "If we ___ in the same city, we would see each other every day.",
+          "prompt_vi": "Nếu tụi mình sống cùng một thành phố, ngày nào mình cũng gặp nhau.",
+          "options": ["lived", "live", "will live", "would live"],
+          "answer": "lived",
+          "explanation": "The result uses would, so this is a second conditional about an imaginary present: If + past simple. \"Lived\" here does not mean the past — it means \"not true now\".",
+          "explanation_vi": "Vế sau có would nên đây là điều kiện loại 2, nói về điều không có thật ở hiện tại: If + quá khứ đơn. \"Lived\" ở đây không mang nghĩa quá khứ mà là \"không đúng với hiện tại\"."
+        },
+        {
+          "id": "grammar-b1-conditionals-06",
+          "kind": "multiple_choice",
+          "objective": "Recognise a correct first conditional",
+          "prompt": "Which sentence about next month's visit is correct?",
+          "prompt_vi": "Câu nào về chuyến thăm tháng sau là đúng?",
+          "options": [
+            "If I see you next month, I'll hug you so tight.",
+            "If I will see you next month, I'll hug you so tight.",
+            "If I saw you next month, I'll hug you so tight.",
+            "If I see you next month, I would hugged you so tight."
+          ],
+          "answer": "If I see you next month, I'll hug you so tight.",
+          "explanation": "A real future plan uses the first conditional: If + present simple, will + base verb. Don't use will after if, and don't mix a past if-clause with will.",
+          "explanation_vi": "Kế hoạch có thật trong tương lai dùng điều kiện loại 1: If + hiện tại đơn, will + V nguyên mẫu. Không dùng will sau if, và không trộn vế if quá khứ với will."
+        },
+        {
+          "id": "grammar-b1-conditionals-07",
+          "kind": "multiple_choice",
+          "objective": "Use would be in the second conditional",
+          "prompt": "I ___ much happier if you were here with me.",
+          "prompt_vi": "Em sẽ hạnh phúc hơn nhiều nếu anh ở đây với em.",
+          "options": ["would be", "will be", "am", "were"],
+          "answer": "would be",
+          "explanation": "The if-part can come second. \"If you were here\" is imaginary (you are not here now), so the result needs would + base verb: I would be happier.",
+          "explanation_vi": "Vế if có thể đứng sau. \"If you were here\" là điều không có thật (anh đang không ở đây), nên vế kết quả dùng would + V nguyên mẫu: I would be happier."
+        },
+        {
+          "id": "grammar-b1-conditionals-08",
+          "kind": "multiple_choice",
+          "objective": "Use the second conditional in imaginary questions",
+          "prompt": "What would you do if you ___ a whole free day with me?",
+          "prompt_vi": "Anh sẽ làm gì nếu có trọn một ngày rảnh bên em?",
+          "options": ["had", "have", "will have", "would have"],
+          "answer": "had",
+          "explanation": "\"What would you do if…?\" is a second-conditional question about an imaginary situation, so the if-part uses the past simple: if you had.",
+          "explanation_vi": "\"What would you do if…?\" là câu hỏi điều kiện loại 2 về tình huống tưởng tượng, nên vế if dùng quá khứ đơn: if you had."
+        },
+        {
+          "id": "grammar-b1-conditionals-09",
+          "kind": "multiple_choice",
+          "objective": "Add -s in the if-clause with he/she/it",
+          "prompt": "If she ___ the train, she'll be late for our call.",
+          "prompt_vi": "Nếu cô ấy lỡ chuyến tàu, cô ấy sẽ trễ cuộc gọi của tụi mình.",
+          "options": ["misses", "missed", "will miss", "would miss"],
+          "answer": "misses",
+          "explanation": "First conditional: If + present simple, will + base verb. With she, the present simple verb needs -es: If she misses the train…",
+          "explanation_vi": "Điều kiện loại 1: If + hiện tại đơn, will + V nguyên mẫu. Chủ ngữ là she nên động từ thêm -es: misses. Đừng quên đuôi -s ngay cả trong câu điều kiện."
+        },
+        {
+          "id": "grammar-b1-conditionals-10",
+          "kind": "multiple_choice",
+          "objective": "Tell the difference between real and imaginary conditions",
+          "prompt": "Which sentence talks correctly about an imaginary situation (not true now)?",
+          "prompt_vi": "Câu nào diễn đạt đúng một tình huống tưởng tượng (không đúng ở hiện tại)?",
+          "options": [
+            "If I had more time, I would learn to cook.",
+            "If I have more time, I will learn to cook.",
+            "If I had more time, I will learn to cook."
+          ],
+          "answer": "If I had more time, I would learn to cook.",
+          "explanation": "Imaginary now = second conditional: If + past simple, would + base verb. \"If I have…, I will…\" is grammatical but describes a real possibility, and \"had… will\" mixes two patterns incorrectly.",
+          "explanation_vi": "Tình huống tưởng tượng ở hiện tại = điều kiện loại 2: If + quá khứ đơn, would + V. Câu \"If I have…, I will…\" đúng ngữ pháp nhưng nói về điều có thể xảy ra thật; câu \"had… will\" trộn sai hai cấu trúc."
+        }
+      ]
+    }
+  ]
+}

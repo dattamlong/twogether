@@ -1,0 +1,889 @@
+{
+  "lessons": [
+    {
+      "slug": "vocab-b1-travel-places",
+      "category": "vocabulary",
+      "level": "B1",
+      "topic": "travel & places",
+      "title": "Our Next Trip Together: Travel & Places",
+      "title_vi": "Chuyến đi tiếp theo của tụi mình: Du lịch và địa điểm",
+      "objectives": [
+        "Talk about trip plans with words like destination and itinerary",
+        "Describe places, views and crowds",
+        "Understand common airport and booking vocabulary"
+      ],
+      "questions": [
+        {
+          "id": "vocab-b1-travel-01",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'destination'",
+          "prompt": "What does 'destination' mean?",
+          "prompt_vi": "'destination' nghĩa là gì?",
+          "options": [
+            "The place you are travelling to",
+            "The ticket you buy for a trip",
+            "The person who travels with you",
+            "The time when a trip starts"
+          ],
+          "answer": "The place you are travelling to",
+          "explanation": "A destination is the place at the end of your journey. \"Our next destination is Hội An\" means Hội An is where we are going.",
+          "explanation_vi": "\"Destination\" là nơi bạn muốn đến, điểm đến cuối cùng của chuyến đi. Ví dụ: \"Our next destination is Hội An\" = Điểm đến tiếp theo của tụi mình là Hội An.",
+          "word": {
+            "term": "destination",
+            "ipa": "/ˌdɛstəˈneɪʃən/",
+            "part_of_speech": "noun",
+            "meaning_vi": "điểm đến",
+            "example": "Đà Lạt is our favorite destination for a weekend away.",
+            "example_vi": "Đà Lạt là điểm đến yêu thích của tụi mình cho những chuyến đi cuối tuần."
+          }
+        },
+        {
+          "id": "vocab-b1-travel-02",
+          "kind": "multiple_choice",
+          "objective": "Use 'itinerary' in context",
+          "prompt": "I made an ___ for our trip: museum in the morning, beach in the afternoon, night market in the evening.",
+          "prompt_vi": "Anh đã lên ___ cho chuyến đi: sáng đi bảo tàng, chiều ra biển, tối đi chợ đêm.",
+          "options": ["itinerary", "souvenir", "passport", "luggage"],
+          "answer": "itinerary",
+          "explanation": "An itinerary is a plan of where you will go and when during a trip. The sentence lists a schedule, so \"itinerary\" fits.",
+          "explanation_vi": "\"Itinerary\" là lịch trình chuyến đi: đi đâu, lúc nào. Câu này đang liệt kê kế hoạch theo giờ nên chọn \"itinerary\".",
+          "word": {
+            "term": "itinerary",
+            "ipa": "/aɪˈtɪnəˌrɛri/",
+            "part_of_speech": "noun",
+            "meaning_vi": "lịch trình (chuyến đi)",
+            "example": "Can you send me the itinerary so I know when your flight lands?",
+            "example_vi": "Em gửi anh lịch trình được không, để anh biết khi nào máy bay của em hạ cánh?"
+          }
+        },
+        {
+          "id": "vocab-b1-travel-03",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'landmark'",
+          "prompt": "What does 'landmark' mean?",
+          "prompt_vi": "'landmark' nghĩa là gì?",
+          "options": [
+            "A small road in the countryside",
+            "A famous building or place that is easy to recognize",
+            "A map you use in a new city",
+            "A piece of land you can buy"
+          ],
+          "answer": "A famous building or place that is easy to recognize",
+          "explanation": "A landmark is a well-known building or place that helps people recognize a city, like the Eiffel Tower or Bến Thành Market.",
+          "explanation_vi": "\"Landmark\" là địa danh, công trình nổi tiếng dễ nhận ra, ví dụ tháp Eiffel hay chợ Bến Thành.",
+          "word": {
+            "term": "landmark",
+            "ipa": "/ˈlændˌmɑrk/",
+            "part_of_speech": "noun",
+            "meaning_vi": "địa danh, công trình nổi tiếng",
+            "example": "Let's take a photo in front of every famous landmark in the city.",
+            "example_vi": "Mình chụp ảnh trước mọi địa danh nổi tiếng trong thành phố nha."
+          }
+        },
+        {
+          "id": "vocab-b1-travel-04",
+          "kind": "multiple_choice",
+          "objective": "Use 'accommodation' in context",
+          "prompt": "We still need to book ___ for three nights. A small homestay near the beach would be perfect.",
+          "prompt_vi": "Tụi mình vẫn cần đặt ___ cho ba đêm. Một homestay nhỏ gần biển là tuyệt nhất.",
+          "options": ["accommodation", "departure", "scenery", "destination"],
+          "answer": "accommodation",
+          "explanation": "Accommodation is a place to stay, like a hotel, hostel or homestay. You book accommodation for nights, so it is the only word that fits.",
+          "explanation_vi": "\"Accommodation\" là chỗ ở (khách sạn, homestay...). Đặt chỗ \"cho ba đêm\" thì chỉ có thể là chỗ ở. Lưu ý từ này có hai chữ c và hai chữ m.",
+          "word": {
+            "term": "accommodation",
+            "ipa": "/əˌkɑməˈdeɪʃən/",
+            "part_of_speech": "noun",
+            "meaning_vi": "chỗ ở",
+            "example": "The accommodation was cheap, but the view from our window was amazing.",
+            "example_vi": "Chỗ ở thì rẻ, nhưng khung cảnh từ cửa sổ phòng tụi mình thì tuyệt đẹp."
+          }
+        },
+        {
+          "id": "vocab-b1-travel-05",
+          "kind": "multiple_choice",
+          "objective": "Recognize the Vietnamese meaning of 'souvenir'",
+          "prompt": "Choose the Vietnamese meaning of 'souvenir'.",
+          "prompt_vi": "Chọn nghĩa tiếng Việt của 'souvenir'.",
+          "options": ["quà lưu niệm", "hành lý", "vé máy bay", "bản đồ"],
+          "answer": "quà lưu niệm",
+          "explanation": "A souvenir is something you buy or keep to remember a place or a trip, like a keychain or a postcard.",
+          "explanation_vi": "\"Souvenir\" là quà lưu niệm, món đồ mua để nhớ về một nơi hoặc một chuyến đi.",
+          "word": {
+            "term": "souvenir",
+            "ipa": "/ˌsuvəˈnɪr/",
+            "part_of_speech": "noun",
+            "meaning_vi": "quà lưu niệm",
+            "example": "I bought you a little souvenir from Huế. I hope you like it!",
+            "example_vi": "Em mua cho anh một món quà lưu niệm nhỏ từ Huế. Mong là anh thích!"
+          }
+        },
+        {
+          "id": "vocab-b1-travel-06",
+          "kind": "multiple_choice",
+          "objective": "Use 'departure' in context",
+          "prompt": "Please arrive at the airport two hours before ___.",
+          "prompt_vi": "Vui lòng có mặt ở sân bay hai tiếng trước giờ ___.",
+          "options": ["departure", "landmark", "souvenir", "accommodation"],
+          "answer": "departure",
+          "explanation": "Departure is the act of leaving, especially when a plane, train or bus leaves. Its opposite is arrival.",
+          "explanation_vi": "\"Departure\" là sự khởi hành, lúc máy bay/tàu/xe rời đi. Từ trái nghĩa là \"arrival\" (sự đến nơi). Ở sân bay bạn sẽ thấy bảng \"Departures\" và \"Arrivals\".",
+          "word": {
+            "term": "departure",
+            "ipa": "/dɪˈpɑrtʃər/",
+            "part_of_speech": "noun",
+            "meaning_vi": "sự khởi hành",
+            "example": "Our departure time is six thirty, so let's sleep early tonight.",
+            "example_vi": "Giờ khởi hành của tụi mình là sáu giờ rưỡi, nên tối nay ngủ sớm nha."
+          }
+        },
+        {
+          "id": "vocab-b1-travel-07",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'scenery'",
+          "prompt": "What does 'scenery' mean?",
+          "prompt_vi": "'scenery' nghĩa là gì?",
+          "options": [
+            "The natural things you see around you, like mountains, rivers and fields",
+            "A short film about a place",
+            "The noise you hear in a busy city",
+            "A list of places you plan to visit"
+          ],
+          "answer": "The natural things you see around you, like mountains, rivers and fields",
+          "explanation": "Scenery means the natural view around you in the countryside. It is uncountable, so we say \"beautiful scenery\", not \"a scenery\".",
+          "explanation_vi": "\"Scenery\" là phong cảnh thiên nhiên. Đây là danh từ không đếm được: nói \"beautiful scenery\", không nói \"a scenery\" hay \"sceneries\".",
+          "word": {
+            "term": "scenery",
+            "ipa": "/ˈsinəri/",
+            "part_of_speech": "noun",
+            "meaning_vi": "phong cảnh",
+            "example": "The scenery on the road to Hà Giang made me wish you were next to me.",
+            "example_vi": "Phong cảnh trên đường lên Hà Giang làm em ước gì có anh ngồi bên cạnh."
+          }
+        },
+        {
+          "id": "vocab-b1-travel-08",
+          "kind": "multiple_choice",
+          "objective": "Use 'crowded' to describe a place",
+          "prompt": "The beach was so ___ on the holiday that we couldn't find a place to sit.",
+          "prompt_vi": "Bãi biển ___ vào ngày lễ đến mức tụi mình không tìm được chỗ ngồi.",
+          "options": ["crowded", "quiet", "empty", "peaceful"],
+          "answer": "crowded",
+          "explanation": "Crowded means full of people. If you couldn't find a place to sit, the beach had too many people.",
+          "explanation_vi": "\"Crowded\" nghĩa là đông người, chật kín. Không tìm được chỗ ngồi tức là quá đông, nên chọn \"crowded\".",
+          "word": {
+            "term": "crowded",
+            "ipa": "/ˈkraʊdɪd/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "đông đúc",
+            "example": "Let's visit the night market on a weekday when it's less crowded.",
+            "example_vi": "Mình đi chợ đêm vào ngày thường nha, lúc đó đỡ đông hơn."
+          }
+        },
+        {
+          "id": "vocab-b1-travel-09",
+          "kind": "multiple_choice",
+          "objective": "Recognize the Vietnamese meaning of 'delayed'",
+          "prompt": "Choose the Vietnamese meaning of 'delayed' in \"My flight is delayed.\"",
+          "prompt_vi": "Chọn nghĩa tiếng Việt của 'delayed' trong câu \"My flight is delayed.\"",
+          "options": ["bị hoãn, bị trễ", "bị hủy", "đã cất cánh", "đã đầy chỗ"],
+          "answer": "bị hoãn, bị trễ",
+          "explanation": "Delayed means later than planned. A delayed flight still leaves, just late; a cancelled flight does not leave at all.",
+          "explanation_vi": "\"Delayed\" là bị trễ, bị hoãn so với giờ dự kiến. Chuyến bay \"delayed\" vẫn bay nhưng trễ; còn \"cancelled\" mới là bị hủy.",
+          "word": {
+            "term": "delayed",
+            "ipa": "/dɪˈleɪd/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "bị trễ, bị hoãn",
+            "example": "My train is delayed by an hour, so I'll call you from the station.",
+            "example_vi": "Tàu của em bị trễ một tiếng, nên em sẽ gọi cho anh từ nhà ga nha."
+          }
+        },
+        {
+          "id": "vocab-b1-travel-10",
+          "kind": "multiple_choice",
+          "objective": "Use 'explore' in context",
+          "prompt": "When you visit me, I want to ___ the old town with you and find all the hidden cafés.",
+          "prompt_vi": "Khi anh sang thăm, em muốn cùng anh ___ khu phố cổ và tìm hết mấy quán cà phê ẩn mình.",
+          "options": ["explore", "arrive", "return", "stay"],
+          "answer": "explore",
+          "explanation": "To explore means to travel around a place to discover it. \"Explore the old town\" is a very natural phrase.",
+          "explanation_vi": "\"Explore\" là khám phá, đi quanh một nơi để tìm hiểu nó. \"Explore the old town\" là cách nói rất tự nhiên. Các từ khác không đi trực tiếp với \"the old town\" theo nghĩa này.",
+          "word": {
+            "term": "explore",
+            "ipa": "/ɪkˈsplɔr/",
+            "part_of_speech": "verb",
+            "meaning_vi": "khám phá",
+            "example": "We spent the whole afternoon exploring the little streets near the river.",
+            "example_vi": "Tụi mình dành cả buổi chiều khám phá mấy con phố nhỏ gần sông."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vocab-b1-love-relationships",
+      "category": "vocabulary",
+      "level": "B1",
+      "topic": "love & relationships",
+      "title": "Close at Heart: Love & Relationships",
+      "title_vi": "Xa mặt nhưng gần lòng: Tình yêu và các mối quan hệ",
+      "objectives": [
+        "Talk about trust, support and commitment",
+        "Describe a loving partner with natural adjectives",
+        "Talk about the ups and downs of a long-distance relationship"
+      ],
+      "questions": [
+        {
+          "id": "vocab-b1-love-01",
+          "kind": "multiple_choice",
+          "objective": "Use 'reassure' in context",
+          "prompt": "She was worried about the exam, so he called to ___ her that everything would be fine.",
+          "prompt_vi": "Cô ấy lo lắng về kỳ thi, nên anh ấy gọi điện để ___ cô ấy rằng mọi chuyện sẽ ổn.",
+          "options": ["reassure", "remind", "complain", "argue"],
+          "answer": "reassure",
+          "explanation": "To reassure someone means to say or do something to make them feel less worried. We often say \"reassure someone that...\".",
+          "explanation_vi": "\"Reassure\" là trấn an, làm ai đó bớt lo lắng. Cấu trúc thường gặp: \"reassure someone that...\". \"Remind\" là nhắc nhở, không hợp với ngữ cảnh đang lo lắng.",
+          "word": {
+            "term": "reassure",
+            "ipa": "/ˌriəˈʃʊr/",
+            "part_of_speech": "verb",
+            "meaning_vi": "trấn an, làm yên lòng",
+            "example": "Whenever I feel lonely, your messages reassure me that we are a team.",
+            "example_vi": "Mỗi khi em thấy cô đơn, tin nhắn của anh làm em yên lòng rằng tụi mình là một đội."
+          }
+        },
+        {
+          "id": "vocab-b1-love-02",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'commitment'",
+          "prompt": "What does 'commitment' mean in a relationship?",
+          "prompt_vi": "'commitment' trong một mối quan hệ nghĩa là gì?",
+          "options": [
+            "A promise to stay loyal and keep working on the relationship",
+            "A short argument between two people",
+            "A gift you give on a special day",
+            "A feeling of being bored with someone"
+          ],
+          "answer": "A promise to stay loyal and keep working on the relationship",
+          "explanation": "Commitment means being dedicated to someone or something for a long time. In love, it shows you are serious about your future together.",
+          "explanation_vi": "\"Commitment\" là sự cam kết, gắn bó lâu dài. Trong tình yêu, nó thể hiện bạn nghiêm túc với tương lai của hai người.",
+          "word": {
+            "term": "commitment",
+            "ipa": "/kəˈmɪtmənt/",
+            "part_of_speech": "noun",
+            "meaning_vi": "sự cam kết, sự gắn bó",
+            "example": "Calling each other every night, even when we're tired, is our small commitment.",
+            "example_vi": "Gọi cho nhau mỗi tối, kể cả khi mệt, là cam kết nhỏ của tụi mình."
+          }
+        },
+        {
+          "id": "vocab-b1-love-03",
+          "kind": "multiple_choice",
+          "objective": "Use 'cherish' in context",
+          "prompt": "I will always ___ the memories of our first trip together.",
+          "prompt_vi": "Em sẽ luôn ___ những kỷ niệm của chuyến đi đầu tiên của tụi mình.",
+          "options": ["cherish", "forget", "borrow", "replace"],
+          "answer": "cherish",
+          "explanation": "To cherish something means to love it and keep it carefully because it is very special to you. Memories, moments and people are often cherished.",
+          "explanation_vi": "\"Cherish\" là trân trọng, nâng niu điều gì đó vì nó rất quý giá. Từ này hay đi với memories (kỷ niệm), moments (khoảnh khắc) hay người mình yêu.",
+          "word": {
+            "term": "cherish",
+            "ipa": "/ˈtʃɛrɪʃ/",
+            "part_of_speech": "verb",
+            "meaning_vi": "trân trọng, nâng niu",
+            "example": "I cherish every little note you hide in my suitcase.",
+            "example_vi": "Anh trân trọng từng mảnh giấy nhỏ em giấu trong vali của anh."
+          }
+        },
+        {
+          "id": "vocab-b1-love-04",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'long-distance'",
+          "prompt": "What is a 'long-distance relationship'?",
+          "prompt_vi": "'long-distance relationship' là gì?",
+          "options": [
+            "A relationship between two people who live far away from each other",
+            "A relationship that has lasted for many years",
+            "A friendship between people of different ages",
+            "A relationship where people talk only once a year"
+          ],
+          "answer": "A relationship between two people who live far away from each other",
+          "explanation": "Long-distance describes something between places that are far apart. A long-distance relationship means the couple lives in different cities or countries.",
+          "explanation_vi": "\"Long-distance\" nghĩa là đường dài, khoảng cách xa. \"Long-distance relationship\" là yêu xa, khi hai người sống ở hai thành phố hoặc hai đất nước khác nhau.",
+          "word": {
+            "term": "long-distance",
+            "ipa": "/ˌlɔŋˈdɪstəns/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "xa, đường dài (yêu xa)",
+            "example": "A long-distance relationship is hard, but it teaches us to communicate better.",
+            "example_vi": "Yêu xa thì khó, nhưng nó dạy tụi mình cách giao tiếp tốt hơn."
+          }
+        },
+        {
+          "id": "vocab-b1-love-05",
+          "kind": "multiple_choice",
+          "objective": "Use 'loyal' to describe a partner",
+          "prompt": "He has been ___ to her for years, even when they lived in different countries.",
+          "prompt_vi": "Anh ấy đã ___ với cô ấy nhiều năm, kể cả khi họ sống ở hai nước khác nhau.",
+          "options": ["loyal", "jealous", "selfish", "lazy"],
+          "answer": "loyal",
+          "explanation": "Loyal means always staying faithful and supportive to someone. We say \"loyal to someone\".",
+          "explanation_vi": "\"Loyal\" là chung thủy, trung thành. Cấu trúc: \"loyal to someone\". Ngữ cảnh \"nhiều năm, kể cả khi xa nhau\" cho thấy ý tích cực, nên chọn \"loyal\".",
+          "word": {
+            "term": "loyal",
+            "ipa": "/ˈlɔɪəl/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "chung thủy, trung thành",
+            "example": "Being loyal means I'm on your side, even when you're far away.",
+            "example_vi": "Chung thủy nghĩa là anh luôn đứng về phía em, kể cả khi em ở xa."
+          }
+        },
+        {
+          "id": "vocab-b1-love-06",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'affectionate'",
+          "prompt": "What does 'affectionate' mean?",
+          "prompt_vi": "'affectionate' nghĩa là gì?",
+          "options": [
+            "Showing love and care, for example with hugs or kind words",
+            "Feeling angry very easily",
+            "Being very busy with work",
+            "Not wanting to talk to anyone"
+          ],
+          "answer": "Showing love and care, for example with hugs or kind words",
+          "explanation": "Affectionate describes someone who shows their love openly, with hugs, sweet messages or kind gestures.",
+          "explanation_vi": "\"Affectionate\" là trìu mến, tình cảm, hay thể hiện tình yêu bằng cái ôm, lời nói ngọt ngào hay cử chỉ quan tâm.",
+          "word": {
+            "term": "affectionate",
+            "ipa": "/əˈfɛkʃənət/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "trìu mến, tình cảm",
+            "example": "You're so affectionate. Your good-morning messages always make me smile.",
+            "example_vi": "Anh tình cảm ghê. Tin nhắn chào buổi sáng của anh lúc nào cũng làm em cười."
+          }
+        },
+        {
+          "id": "vocab-b1-love-07",
+          "kind": "multiple_choice",
+          "objective": "Use 'compromise' in context",
+          "prompt": "You want to call at nine and I want to call at eleven. Let's ___ and call at ten.",
+          "prompt_vi": "Anh muốn gọi lúc chín giờ còn em muốn gọi lúc mười một giờ. Mình ___ và gọi lúc mười giờ nhé.",
+          "options": ["compromise", "promise", "pretend", "disagree"],
+          "answer": "compromise",
+          "explanation": "To compromise means each person gives up a little so you can agree. Ten o'clock is in the middle, so it is a compromise.",
+          "explanation_vi": "\"Compromise\" là thỏa hiệp, mỗi người nhường một chút để đi đến thống nhất. Mười giờ là điểm ở giữa nên đây là thỏa hiệp. Đừng nhầm với \"promise\" (hứa).",
+          "word": {
+            "term": "compromise",
+            "ipa": "/ˈkɑmprəˌmaɪz/",
+            "part_of_speech": "verb",
+            "meaning_vi": "thỏa hiệp, nhường nhau",
+            "example": "Good couples know how to compromise when they disagree.",
+            "example_vi": "Những cặp đôi tốt biết cách nhường nhau khi không cùng ý kiến."
+          }
+        },
+        {
+          "id": "vocab-b1-love-08",
+          "kind": "multiple_choice",
+          "objective": "Recognize the Vietnamese meaning of 'time difference'",
+          "prompt": "Choose the Vietnamese meaning of 'time difference'.",
+          "prompt_vi": "Chọn nghĩa tiếng Việt của 'time difference'.",
+          "options": ["chênh lệch múi giờ", "thời gian rảnh", "giờ hẹn gặp", "thời hạn cuối"],
+          "answer": "chênh lệch múi giờ",
+          "explanation": "The time difference is how many hours apart two places are. For long-distance couples, it decides when you can call each other.",
+          "explanation_vi": "\"Time difference\" là chênh lệch múi giờ giữa hai nơi. Với các cặp yêu xa, nó quyết định lúc nào hai người có thể gọi cho nhau.",
+          "word": {
+            "term": "time difference",
+            "ipa": "/ˈtaɪm ˌdɪfərəns/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "chênh lệch múi giờ",
+            "example": "Because of the time difference, your good night is my good morning.",
+            "example_vi": "Vì chênh lệch múi giờ, lời chúc ngủ ngon của anh là lời chào buổi sáng của em."
+          }
+        },
+        {
+          "id": "vocab-b1-love-09",
+          "kind": "multiple_choice",
+          "objective": "Use 'get along with' in context",
+          "prompt": "I'm so happy that you ___ my family. My mom already loves you!",
+          "prompt_vi": "Em vui lắm vì anh ___ gia đình em. Mẹ em đã quý anh rồi!",
+          "options": ["get along with", "get away from", "get rid of", "get over"],
+          "answer": "get along with",
+          "explanation": "To get along with someone means to have a friendly, easy relationship with them. The other phrases mean escape, remove, and recover from.",
+          "explanation_vi": "\"Get along with someone\" là hợp tính, hòa thuận với ai đó. \"Get away from\" là tránh xa, \"get rid of\" là loại bỏ, \"get over\" là vượt qua.",
+          "word": {
+            "term": "get along with",
+            "ipa": "/ɡɛt əˈlɔŋ wɪð/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "hòa hợp với, hợp tính với",
+            "example": "My best friend and my boyfriend get along with each other really well.",
+            "example_vi": "Bạn thân của em và người yêu em rất hợp nhau."
+          }
+        },
+        {
+          "id": "vocab-b1-love-10",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'anniversary'",
+          "prompt": "What does 'anniversary' mean?",
+          "prompt_vi": "'anniversary' nghĩa là gì?",
+          "options": [
+            "The same date each year when something special happened",
+            "A party for a new baby",
+            "The first day of a new job",
+            "A holiday at the end of the year"
+          ],
+          "answer": "The same date each year when something special happened",
+          "explanation": "An anniversary is the date when you remember a special event, like the day you started dating or got married.",
+          "explanation_vi": "\"Anniversary\" là ngày kỷ niệm, ngày đánh dấu một sự kiện đặc biệt mỗi năm, như ngày bắt đầu yêu nhau hay ngày cưới.",
+          "word": {
+            "term": "anniversary",
+            "ipa": "/ˌænəˈvɜrsəri/",
+            "part_of_speech": "noun",
+            "meaning_vi": "ngày kỷ niệm",
+            "example": "For our second anniversary, let's cook the same dinner on video call.",
+            "example_vi": "Kỷ niệm hai năm, mình cùng nấu một món tối qua video call nha."
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vocab-b2-study-work",
+      "category": "vocabulary",
+      "level": "B2",
+      "topic": "study & work",
+      "title": "Busy Days, Big Goals: Study & Work",
+      "title_vi": "Ngày bận rộn, mục tiêu lớn: Học tập và công việc",
+      "objectives": [
+        "Talk about deadlines, workload and feedback",
+        "Describe career steps like internships and promotions",
+        "Use work verbs like collaborate, submit and procrastinate"
+      ],
+      "questions": [
+        {
+          "id": "vocab-b2-work-01",
+          "kind": "multiple_choice",
+          "objective": "Use 'deadline' in context",
+          "prompt": "I can't call tonight. The ___ for my report is tomorrow at nine a.m.",
+          "prompt_vi": "Tối nay em không gọi được. ___ nộp báo cáo của em là chín giờ sáng mai.",
+          "options": ["deadline", "workload", "promotion", "feedback"],
+          "answer": "deadline",
+          "explanation": "A deadline is the latest time by which something must be finished. We meet a deadline or miss a deadline.",
+          "explanation_vi": "\"Deadline\" là hạn chót phải hoàn thành việc gì đó. Hay dùng: \"meet a deadline\" (kịp hạn) và \"miss a deadline\" (trễ hạn).",
+          "word": {
+            "term": "deadline",
+            "ipa": "/ˈdɛdˌlaɪn/",
+            "part_of_speech": "noun",
+            "meaning_vi": "hạn chót",
+            "example": "Once I meet this deadline, the whole weekend is yours.",
+            "example_vi": "Xong hạn chót này là cả cuối tuần anh dành cho em."
+          }
+        },
+        {
+          "id": "vocab-b2-work-02",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'colleague'",
+          "prompt": "What does 'colleague' mean?",
+          "prompt_vi": "'colleague' nghĩa là gì?",
+          "options": [
+            "A person you work with",
+            "A person who teaches at a college",
+            "A person who is looking for a job",
+            "A person who owns a company"
+          ],
+          "answer": "A person you work with",
+          "explanation": "A colleague is someone you work with, usually in the same company or profession. Don't confuse it with \"college\".",
+          "explanation_vi": "\"Colleague\" là đồng nghiệp, người làm việc cùng bạn. Đừng nhầm với \"college\" (trường cao đẳng/đại học). Chú ý cách đọc: /ˈkɑliɡ/.",
+          "word": {
+            "term": "colleague",
+            "ipa": "/ˈkɑliɡ/",
+            "part_of_speech": "noun",
+            "meaning_vi": "đồng nghiệp",
+            "example": "One of my colleagues also has a long-distance partner, so we share tips.",
+            "example_vi": "Một đồng nghiệp của em cũng yêu xa, nên tụi em hay chia sẻ bí quyết với nhau."
+          }
+        },
+        {
+          "id": "vocab-b2-work-03",
+          "kind": "multiple_choice",
+          "objective": "Use 'promotion' in context",
+          "prompt": "After two years of hard work, she finally got a ___ to team leader.",
+          "prompt_vi": "Sau hai năm làm việc chăm chỉ, cuối cùng cô ấy cũng được ___ lên trưởng nhóm.",
+          "options": ["promotion", "deadline", "qualification", "internship"],
+          "answer": "promotion",
+          "explanation": "A promotion is a move to a higher position at work. We say \"get a promotion to + position\".",
+          "explanation_vi": "\"Promotion\" là sự thăng chức. Cấu trúc: \"get a promotion to + vị trí\". Chú ý \"promotion\" cũng có nghĩa là khuyến mãi trong mua sắm.",
+          "word": {
+            "term": "promotion",
+            "ipa": "/prəˈmoʊʃən/",
+            "part_of_speech": "noun",
+            "meaning_vi": "sự thăng chức",
+            "example": "Congratulations on your promotion! I'm so proud of you.",
+            "example_vi": "Chúc mừng anh được thăng chức! Em tự hào về anh lắm."
+          }
+        },
+        {
+          "id": "vocab-b2-work-04",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'internship'",
+          "prompt": "What does 'internship' mean?",
+          "prompt_vi": "'internship' nghĩa là gì?",
+          "options": [
+            "A short period of work, often for students, to gain experience",
+            "A job you do from home on the internet",
+            "A course you take to become a doctor",
+            "A meeting between a manager and a new worker"
+          ],
+          "answer": "A short period of work, often for students, to gain experience",
+          "explanation": "An internship is a temporary job, usually for students or new graduates, where they learn and gain real work experience.",
+          "explanation_vi": "\"Internship\" là kỳ thực tập, thường dành cho sinh viên hoặc người mới ra trường để học hỏi và lấy kinh nghiệm.",
+          "word": {
+            "term": "internship",
+            "ipa": "/ˈɪntɜrnˌʃɪp/",
+            "part_of_speech": "noun",
+            "meaning_vi": "kỳ thực tập",
+            "example": "I'm applying for a summer internship at a design company.",
+            "example_vi": "Em đang nộp đơn thực tập hè ở một công ty thiết kế."
+          }
+        },
+        {
+          "id": "vocab-b2-work-05",
+          "kind": "multiple_choice",
+          "objective": "Use 'workload' in context",
+          "prompt": "My ___ is really heavy this month, so I might reply to your messages late.",
+          "prompt_vi": "___ của anh tháng này nặng lắm, nên có thể anh sẽ trả lời tin nhắn của em trễ.",
+          "options": ["workload", "colleague", "internship", "salary"],
+          "answer": "workload",
+          "explanation": "Workload is the amount of work you have to do. We often describe it as heavy or light.",
+          "explanation_vi": "\"Workload\" là khối lượng công việc. Thường đi với \"heavy\" (nặng) hoặc \"light\" (nhẹ). \"Salary\" (lương) không đi với \"heavy\" theo nghĩa này.",
+          "word": {
+            "term": "workload",
+            "ipa": "/ˈwɜrkˌloʊd/",
+            "part_of_speech": "noun",
+            "meaning_vi": "khối lượng công việc",
+            "example": "When your workload is too heavy, remember to take short breaks.",
+            "example_vi": "Khi khối lượng công việc quá nhiều, nhớ nghỉ giải lao một chút nha."
+          }
+        },
+        {
+          "id": "vocab-b2-work-06",
+          "kind": "multiple_choice",
+          "objective": "Recognize the Vietnamese meaning of 'qualification'",
+          "prompt": "Choose the Vietnamese meaning of 'qualification'.",
+          "prompt_vi": "Chọn nghĩa tiếng Việt của 'qualification'.",
+          "options": ["bằng cấp, chứng chỉ", "kinh nghiệm làm việc", "buổi phỏng vấn", "hợp đồng lao động"],
+          "answer": "bằng cấp, chứng chỉ",
+          "explanation": "A qualification is a degree or certificate you get after finishing a course or passing an exam, like an English certificate.",
+          "explanation_vi": "\"Qualification\" là bằng cấp, chứng chỉ bạn nhận được sau khi học xong hoặc thi đậu, ví dụ chứng chỉ tiếng Anh.",
+          "word": {
+            "term": "qualification",
+            "ipa": "/ˌkwɑləfəˈkeɪʃən/",
+            "part_of_speech": "noun",
+            "meaning_vi": "bằng cấp, chứng chỉ",
+            "example": "An English qualification could help me find a job in your city.",
+            "example_vi": "Một chứng chỉ tiếng Anh có thể giúp em tìm được việc ở thành phố của anh."
+          }
+        },
+        {
+          "id": "vocab-b2-work-07",
+          "kind": "multiple_choice",
+          "objective": "Use 'collaborate' in context",
+          "prompt": "Our two teams ___ on the project, so we share ideas every day.",
+          "prompt_vi": "Hai nhóm của tụi mình ___ trong dự án này, nên ngày nào cũng chia sẻ ý tưởng.",
+          "options": ["collaborate", "compete", "resign", "retire"],
+          "answer": "collaborate",
+          "explanation": "To collaborate means to work together with others to achieve something. Sharing ideas every day shows teamwork, not competition.",
+          "explanation_vi": "\"Collaborate\" là hợp tác, cùng làm việc với nhau. Chia sẻ ý tưởng mỗi ngày là hợp tác, không phải cạnh tranh (\"compete\"). Cấu trúc: \"collaborate on a project\".",
+          "word": {
+            "term": "collaborate",
+            "ipa": "/kəˈlæbəˌreɪt/",
+            "part_of_speech": "verb",
+            "meaning_vi": "hợp tác, cộng tác",
+            "example": "We collaborate like a real team, even when we plan our trips.",
+            "example_vi": "Tụi mình hợp tác như một đội thật sự, kể cả khi lên kế hoạch du lịch."
+          }
+        },
+        {
+          "id": "vocab-b2-work-08",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'procrastinate'",
+          "prompt": "What does 'procrastinate' mean?",
+          "prompt_vi": "'procrastinate' nghĩa là gì?",
+          "options": [
+            "To keep delaying something you should do",
+            "To finish work earlier than expected",
+            "To work extra hours at night",
+            "To ask someone else to do your work"
+          ],
+          "answer": "To keep delaying something you should do",
+          "explanation": "To procrastinate means to keep putting off a task, often by doing something easier or more fun instead.",
+          "explanation_vi": "\"Procrastinate\" là trì hoãn, cứ để việc cần làm sang sau, thường vì làm việc khác dễ hoặc vui hơn. Giống kiểu \"để mai tính\".",
+          "word": {
+            "term": "procrastinate",
+            "ipa": "/proʊˈkræstəˌneɪt/",
+            "part_of_speech": "verb",
+            "meaning_vi": "trì hoãn, chần chừ",
+            "example": "Stop procrastinating and finish your essay. Then we can watch a movie together!",
+            "example_vi": "Đừng chần chừ nữa, viết xong bài luận đi. Rồi mình cùng xem phim!"
+          }
+        },
+        {
+          "id": "vocab-b2-work-09",
+          "kind": "multiple_choice",
+          "objective": "Use 'feedback' in context",
+          "prompt": "My manager gave me some useful ___ on my presentation, so I'll improve it before Friday.",
+          "prompt_vi": "Quản lý đã cho em vài ___ hữu ích về bài thuyết trình, nên em sẽ sửa lại trước thứ Sáu.",
+          "options": ["feedback", "deadline", "colleague", "promotion"],
+          "answer": "feedback",
+          "explanation": "Feedback is comments or advice about how well you did something. It is uncountable: \"some feedback\", not \"a feedback\".",
+          "explanation_vi": "\"Feedback\" là nhận xét, góp ý về việc bạn đã làm. Đây là danh từ không đếm được: nói \"some feedback\" hoặc \"a piece of feedback\", không nói \"a feedback\" hay \"feedbacks\".",
+          "word": {
+            "term": "feedback",
+            "ipa": "/ˈfidˌbæk/",
+            "part_of_speech": "noun",
+            "meaning_vi": "nhận xét, góp ý",
+            "example": "Can you give me some feedback on my English pronunciation?",
+            "example_vi": "Anh góp ý giúp em về cách phát âm tiếng Anh của em được không?"
+          }
+        },
+        {
+          "id": "vocab-b2-work-10",
+          "kind": "multiple_choice",
+          "objective": "Use 'submit' in context",
+          "prompt": "You have to ___ your application online before the end of the month.",
+          "prompt_vi": "Bạn phải ___ đơn ứng tuyển trực tuyến trước cuối tháng.",
+          "options": ["submit", "receive", "collaborate", "procrastinate"],
+          "answer": "submit",
+          "explanation": "To submit means to formally give a document, form or piece of work to someone so they can check it or decide on it.",
+          "explanation_vi": "\"Submit\" là nộp (hồ sơ, bài tập, đơn từ) một cách chính thức. \"Receive\" là nhận, ngược nghĩa với người nộp đơn.",
+          "word": {
+            "term": "submit",
+            "ipa": "/səbˈmɪt/",
+            "part_of_speech": "verb",
+            "meaning_vi": "nộp",
+            "example": "I just submitted my visa application. Fingers crossed!",
+            "example_vi": "Em vừa nộp hồ sơ xin visa. Cầu mong mọi thứ suôn sẻ!"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vocab-b2-plans-future",
+      "category": "vocabulary",
+      "level": "B2",
+      "topic": "plans & the future",
+      "title": "One Day, Same City: Plans & the Future",
+      "title_vi": "Một ngày, chung một thành phố: Kế hoạch và tương lai",
+      "objectives": [
+        "Use phrasal verbs about plans: look forward to, settle down, figure out",
+        "Talk about long-term goals and uncertainty",
+        "Discuss changing and delaying plans"
+      ],
+      "questions": [
+        {
+          "id": "vocab-b2-future-01",
+          "kind": "multiple_choice",
+          "objective": "Use 'look forward to' in context",
+          "prompt": "I'm really looking forward ___ you at the airport next month.",
+          "prompt_vi": "Em rất mong ___ anh ở sân bay vào tháng sau.",
+          "options": ["to seeing", "to see", "seeing", "for seeing"],
+          "answer": "to seeing",
+          "explanation": "In \"look forward to\", \"to\" is a preposition, so it is followed by a noun or a verb + -ing: look forward to seeing you.",
+          "explanation_vi": "Trong \"look forward to\", \"to\" là giới từ, nên theo sau là danh từ hoặc động từ thêm -ing: \"look forward to seeing you\". Lỗi rất hay gặp là \"look forward to see\".",
+          "word": {
+            "term": "look forward to",
+            "ipa": "/lʊk ˈfɔrwərd tu/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "mong chờ, háo hức đợi",
+            "example": "I look forward to our video call every single night.",
+            "example_vi": "Tối nào anh cũng mong chờ cuộc gọi video của tụi mình."
+          }
+        },
+        {
+          "id": "vocab-b2-future-02",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'eventually'",
+          "prompt": "What does 'eventually' mean in \"We will eventually live in the same city\"?",
+          "prompt_vi": "'eventually' nghĩa là gì trong câu \"We will eventually live in the same city\"?",
+          "options": [
+            "In the end, after some time",
+            "Maybe, but probably not",
+            "Immediately, right now",
+            "Every now and then"
+          ],
+          "answer": "In the end, after some time",
+          "explanation": "Eventually means in the end, after a long time or after many steps. It does not mean \"possibly\" or \"maybe\".",
+          "explanation_vi": "\"Eventually\" là cuối cùng thì, sau một thời gian. Nhiều người hiểu lầm là \"có lẽ\" hay \"có thể\", nhưng thật ra nó nói về điều chắc chắn sẽ xảy ra về sau.",
+          "word": {
+            "term": "eventually",
+            "ipa": "/ɪˈvɛntʃuəli/",
+            "part_of_speech": "adverb",
+            "meaning_vi": "cuối cùng thì, rốt cuộc",
+            "example": "The distance is hard now, but eventually we'll be together every day.",
+            "example_vi": "Bây giờ xa nhau thì khó, nhưng rồi cuối cùng tụi mình sẽ được bên nhau mỗi ngày."
+          }
+        },
+        {
+          "id": "vocab-b2-future-03",
+          "kind": "multiple_choice",
+          "objective": "Use 'settle down' in context",
+          "prompt": "After a few years of travelling, they want to ___ and buy a small house.",
+          "prompt_vi": "Sau vài năm đi đây đi đó, họ muốn ___ và mua một căn nhà nhỏ.",
+          "options": ["settle down", "break down", "slow down", "turn down"],
+          "answer": "settle down",
+          "explanation": "To settle down means to start living a calm, stable life in one place, often with a partner. \"Break down\" means stop working, and \"turn down\" means refuse.",
+          "explanation_vi": "\"Settle down\" là ổn định cuộc sống, an cư ở một nơi, thường cùng người mình yêu. \"Break down\" là hỏng, \"turn down\" là từ chối, \"slow down\" là chậm lại.",
+          "word": {
+            "term": "settle down",
+            "ipa": "/ˌsɛtəl ˈdaʊn/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "ổn định cuộc sống, an cư",
+            "example": "Where do you want to settle down: by the sea or in the mountains?",
+            "example_vi": "Em muốn an cư ở đâu: gần biển hay trên núi?"
+          }
+        },
+        {
+          "id": "vocab-b2-future-04",
+          "kind": "multiple_choice",
+          "objective": "Use 'figure out' in context",
+          "prompt": "We still need to ___ how to see each other more often without spending too much money.",
+          "prompt_vi": "Tụi mình vẫn cần ___ cách gặp nhau thường xuyên hơn mà không tốn quá nhiều tiền.",
+          "options": ["figure out", "give up", "put off", "run out"],
+          "answer": "figure out",
+          "explanation": "To figure out means to think about something until you find the answer or solution. It is often followed by how, what, or why.",
+          "explanation_vi": "\"Figure out\" là tìm ra, nghĩ ra cách giải quyết. Hay đi với how/what/why: \"figure out how to...\". \"Give up\" là bỏ cuộc, \"put off\" là hoãn lại, \"run out\" là hết.",
+          "word": {
+            "term": "figure out",
+            "ipa": "/ˌfɪɡjər ˈaʊt/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "tìm ra, nghĩ ra",
+            "example": "Don't worry, we'll figure it out together.",
+            "example_vi": "Đừng lo, tụi mình sẽ cùng nhau tìm ra cách."
+          }
+        },
+        {
+          "id": "vocab-b2-future-05",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'in the long run'",
+          "prompt": "What does 'in the long run' mean?",
+          "prompt_vi": "'in the long run' nghĩa là gì?",
+          "options": [
+            "Over a long period of time in the future",
+            "During a long journey",
+            "While running a long distance",
+            "Very quickly and suddenly"
+          ],
+          "answer": "Over a long period of time in the future",
+          "explanation": "In the long run means when you think about the distant future, not just now. \"It's hard now, but it's worth it in the long run.\"",
+          "explanation_vi": "\"In the long run\" là về lâu dài, khi nhìn xa về tương lai. Ví dụ: \"Bây giờ thì vất vả, nhưng về lâu dài thì đáng.\"",
+          "word": {
+            "term": "in the long run",
+            "ipa": "/ɪn ðə ˈlɔŋ ˌrʌn/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "về lâu dài",
+            "example": "Saving money now will help us a lot in the long run.",
+            "example_vi": "Tiết kiệm tiền bây giờ sẽ giúp tụi mình rất nhiều về lâu dài."
+          }
+        },
+        {
+          "id": "vocab-b2-future-06",
+          "kind": "multiple_choice",
+          "objective": "Use 'postpone' in context",
+          "prompt": "The airline cancelled our flight, so we had to ___ the trip until next month.",
+          "prompt_vi": "Hãng bay hủy chuyến của tụi mình, nên tụi mình phải ___ chuyến đi đến tháng sau.",
+          "options": ["postpone", "prepare", "confirm", "celebrate"],
+          "answer": "postpone",
+          "explanation": "To postpone means to move an event to a later time. The words \"until next month\" show the trip was delayed, not cancelled.",
+          "explanation_vi": "\"Postpone\" là hoãn lại, dời sang thời điểm sau. Cụm \"until next month\" (đến tháng sau) cho biết chuyến đi bị dời chứ không bị hủy.",
+          "word": {
+            "term": "postpone",
+            "ipa": "/poʊstˈpoʊn/",
+            "part_of_speech": "verb",
+            "meaning_vi": "hoãn lại, dời lại",
+            "example": "Let's not postpone our dream trip again. Let's book it this week!",
+            "example_vi": "Mình đừng hoãn chuyến đi mơ ước nữa. Tuần này đặt luôn đi!"
+          }
+        },
+        {
+          "id": "vocab-b2-future-07",
+          "kind": "multiple_choice",
+          "objective": "Recognize the Vietnamese meaning of 'save up'",
+          "prompt": "Choose the Vietnamese meaning of 'save up' in \"I'm saving up for a plane ticket.\"",
+          "prompt_vi": "Chọn nghĩa tiếng Việt của 'save up' trong câu \"I'm saving up for a plane ticket.\"",
+          "options": ["để dành tiền", "tiêu hết tiền", "vay tiền", "đổi tiền"],
+          "answer": "để dành tiền",
+          "explanation": "To save up means to keep money little by little so you can buy something later. We say \"save up for something\".",
+          "explanation_vi": "\"Save up\" là để dành tiền dần dần để mua thứ gì đó sau này. Cấu trúc: \"save up for + thứ muốn mua\".",
+          "word": {
+            "term": "save up",
+            "ipa": "/ˌseɪv ˈʌp/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "để dành tiền, tiết kiệm",
+            "example": "We're both saving up so we can travel to Japan together.",
+            "example_vi": "Cả hai tụi mình đang để dành tiền để cùng đi Nhật."
+          }
+        },
+        {
+          "id": "vocab-b2-future-08",
+          "kind": "multiple_choice",
+          "objective": "Use 'reunite' in context",
+          "prompt": "After eight months apart, the couple was finally ___ at the airport.",
+          "prompt_vi": "Sau tám tháng xa cách, cặp đôi cuối cùng cũng được ___ ở sân bay.",
+          "options": ["reunited", "separated", "postponed", "delayed"],
+          "answer": "reunited",
+          "explanation": "To reunite means to bring people together again after a time apart. \"Finally\" and \"after eight months apart\" show a happy meeting.",
+          "explanation_vi": "\"Reunite\" là đoàn tụ, gặp lại nhau sau thời gian xa cách. \"Finally\" và \"sau tám tháng xa cách\" cho thấy đây là cuộc gặp lại vui vẻ.",
+          "word": {
+            "term": "reunite",
+            "ipa": "/ˌrijuˈnaɪt/",
+            "part_of_speech": "verb",
+            "meaning_vi": "đoàn tụ, gặp lại",
+            "example": "I keep imagining the moment we reunite at the arrival gate.",
+            "example_vi": "Em cứ tưởng tượng mãi khoảnh khắc tụi mình gặp lại nhau ở cửa đến."
+          }
+        },
+        {
+          "id": "vocab-b2-future-09",
+          "kind": "multiple_choice",
+          "objective": "Understand the meaning of 'uncertain'",
+          "prompt": "What does 'uncertain' mean in \"Our plans for next year are still uncertain\"?",
+          "prompt_vi": "'uncertain' nghĩa là gì trong câu \"Our plans for next year are still uncertain\"?",
+          "options": [
+            "Not decided or not known yet",
+            "Completely finished",
+            "Very exciting",
+            "Easy to change"
+          ],
+          "answer": "Not decided or not known yet",
+          "explanation": "Uncertain means not sure or not decided. If plans are uncertain, we don't know exactly what will happen yet.",
+          "explanation_vi": "\"Uncertain\" là chưa chắc chắn, chưa quyết định được. Kế hoạch \"uncertain\" nghĩa là chưa biết rõ sẽ ra sao.",
+          "word": {
+            "term": "uncertain",
+            "ipa": "/ʌnˈsɜrtən/",
+            "part_of_speech": "adjective",
+            "meaning_vi": "không chắc chắn, chưa rõ",
+            "example": "The future feels uncertain sometimes, but I'm sure about you.",
+            "example_vi": "Đôi khi tương lai có vẻ chưa rõ ràng, nhưng anh chắc chắn về em."
+          }
+        },
+        {
+          "id": "vocab-b2-future-10",
+          "kind": "multiple_choice",
+          "objective": "Use 'make up your mind' in context",
+          "prompt": "You have to ___ soon: do you want to visit me in June or in July?",
+          "prompt_vi": "Anh phải ___ sớm nha: anh muốn sang thăm em vào tháng Sáu hay tháng Bảy?",
+          "options": ["make up your mind", "make up a story", "change the subject", "take your time"],
+          "answer": "make up your mind",
+          "explanation": "To make up your mind means to decide. The sentence asks for a choice between two months, so a decision is needed.",
+          "explanation_vi": "\"Make up your mind\" là quyết định, chọn dứt khoát. Câu hỏi bắt phải chọn giữa hai tháng nên cần quyết định. \"Take your time\" (cứ từ từ) mâu thuẫn với \"soon\".",
+          "word": {
+            "term": "make up your mind",
+            "ipa": "/ˌmeɪk ʌp jər ˈmaɪnd/",
+            "part_of_speech": "phrase",
+            "meaning_vi": "quyết định",
+            "example": "I've made up my mind: I'm moving to your city next year.",
+            "example_vi": "Em quyết định rồi: năm sau em sẽ chuyển đến thành phố của anh."
+          }
+        }
+      ]
+    }
+  ]
+}
