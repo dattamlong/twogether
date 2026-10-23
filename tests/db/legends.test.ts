@@ -176,3 +176,19 @@ describe("Perfect Partners badge", () => {
     expect(await badges(lopsided.a.id)).not.toContain("legend_perfect_partners");
   });
 });
+
+describe("Leaderboard list", () => {
+  it("lists couples without points after ranked couples, unranked", async () => {
+    const scored = await createCouple();
+    const idle = await createCouple();
+    await db().rpc("grant_reward", { uid: scored.a.id, add_xp: 40, add_coins: 0, reason: "lesson", ref: randomUUID() });
+    const board = expectOk(await idle.a.client.rpc("get_leaderboard", { board: "weekly", max_rows: 100 }));
+    const scoredRow = board.find((r) => r.couple_id === scored.coupleId)!;
+    const idleRow = board.find((r) => r.couple_id === idle.coupleId)!;
+    expect(scoredRow.rank).toBeGreaterThan(0);
+    expect(idleRow.rank).toBeNull();
+    expect(idleRow.is_me).toBe(true);
+    const firstUnranked = board.findIndex((r) => r.rank === null);
+    expect(board.slice(firstUnranked).every((r) => r.rank === null)).toBe(true);
+  });
+});

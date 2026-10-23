@@ -38,7 +38,7 @@ export function CoupleAvatars({ row, className }: { row: Pick<LeaderboardRow, "m
 
 export function LeaderboardList({ rows, unit, onSelect, showMovement }: { rows: LeaderboardRow[]; unit: string; onSelect: (id: string) => void; showMovement: boolean }) {
   return (
-    <ol className="flex flex-col gap-2" aria-label="Ranks 4 and below">
+    <ol className="flex flex-col gap-2" aria-label="Other couples by rank">
       {rows.map((row, i) => (
         <motion.li key={row.couple_id} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: Math.min(i * 0.03, 0.4) }}>
           <button
@@ -48,7 +48,9 @@ export function LeaderboardList({ rows, unit, onSelect, showMovement }: { rows: 
               row.is_me ? "bg-gradient-to-r from-sakura-100 to-lavender-100 ring-sakura-300" : i % 2 ? "bg-white/70 ring-white" : "bg-cream-50/90 ring-white",
             )}
           >
-            <span className="w-8 shrink-0 text-center font-display text-base font-bold text-plum-500 tabular-nums sm:w-9 sm:text-lg">#{row.rank}</span>
+            <span className={cn("w-8 shrink-0 text-center font-display font-bold tabular-nums sm:w-9", row.rank ? "text-base text-plum-500 sm:text-lg" : "text-sm text-cocoa-400")}>
+              {row.rank ? `#${row.rank}` : "—"}
+            </span>
             <CoupleAvatars row={row} className="h-7 w-7 sm:h-9 sm:w-9" />
             <span className="min-w-0 flex-1">
               <span className="flex items-center gap-1 truncate font-display font-semibold text-plum-700">
@@ -61,20 +63,25 @@ export function LeaderboardList({ rows, unit, onSelect, showMovement }: { rows: 
             </span>
             <TierBadge tier={row.tier} size={26} className="hidden sm:inline-flex" />
             <span className="shrink-0 text-right sm:w-24">
-              <span className="flex items-baseline justify-end gap-1 sm:block">
-                <AnimatedNumber value={row.score} className="block font-display font-bold text-plum-700 tabular-nums" />
-                <span className="block text-[10px] font-semibold uppercase text-cocoa-400">{unit}</span>
-              </span>
-              {showMovement ? (
+              {row.rank ? (
+                <span className="flex items-baseline justify-end gap-1 sm:block">
+                  <AnimatedNumber value={row.score} className="block font-display font-bold text-plum-700 tabular-nums" />
+                  <span className="block text-[10px] font-semibold uppercase text-cocoa-400">{unit}</span>
+                </span>
+              ) : (
+                <span className="block text-[11px] font-semibold text-cocoa-400">
+                  Unranked
+                  <span lang="vi" className="block text-[10px] font-normal">Chưa xếp hạng</span>
+                </span>
+              )}
+              {showMovement && row.rank ? (
                 <span className="flex justify-end sm:hidden">
                   <Movement value={row.movement} />
                 </span>
               ) : null}
             </span>
             {showMovement ? (
-              <span className="hidden w-8 shrink-0 justify-center sm:flex">
-                <Movement value={row.movement} />
-              </span>
+              <span className="hidden w-8 shrink-0 justify-center sm:flex">{row.rank ? <Movement value={row.movement} /> : null}</span>
             ) : null}
           </button>
         </motion.li>

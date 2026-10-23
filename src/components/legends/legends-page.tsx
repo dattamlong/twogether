@@ -39,6 +39,8 @@ export function LegendsPage() {
   const countdown = useCountdown(status.data?.weekEndsAt);
   const active = BOARDS.find((b) => b.id === board)!;
   const rows = leaderboard.data ?? [];
+  const ranked = rows.filter((r) => r.rank !== null);
+  const others = [...ranked.slice(3), ...rows.filter((r) => r.rank === null)];
   const season = status.data?.season;
 
   return (
@@ -88,11 +90,26 @@ export function LegendsPage() {
           <p className="px-1 text-xs text-cocoa-400">{active.hint}</p>
           {leaderboard.isLoading ? <Skeleton className="h-72 rounded-[2rem]" /> : null}
           {leaderboard.error ? <ErrorBlock error={leaderboard.error} onRetry={() => leaderboard.refetch()} /> : null}
-          {leaderboard.data ? <Podium rows={rows.slice(0, 3)} animationKey={board} onSelect={setSelected} emptyMessage={rows.length === 0 ? EMPTY : null} /> : null}
+          {leaderboard.data ? <Podium rows={ranked.slice(0, 3)} animationKey={board} onSelect={setSelected} emptyMessage={ranked.length === 0 ? EMPTY : null} /> : null}
 
-          {rows.length > 3 ? (
+          {leaderboard.data ? (
             <Panel className="p-2.5 sm:p-3">
-              <LeaderboardList rows={rows.slice(3)} unit={active.unit} onSelect={setSelected} showMovement={board === "weekly"} />
+              <div className="mb-2 flex items-baseline justify-between px-1.5">
+                <h2 className="font-display text-base font-semibold text-plum-700">
+                  Rankings <span lang="vi" className="text-xs font-normal text-cocoa-400">· Bảng xếp hạng</span>
+                </h2>
+                <span className="text-xs text-cocoa-400">
+                  {rows.length} couple{rows.length === 1 ? "" : "s"} · {ranked.length} ranked
+                </span>
+              </div>
+              {others.length ? (
+                <LeaderboardList rows={others} unit={active.unit} onSelect={setSelected} showMovement={board === "weekly"} />
+              ) : (
+                <p className="rounded-2xl bg-white/60 px-3 py-3 text-center text-sm text-plum-500">
+                  {ranked.length ? "Every couple is on the podium right now — more couples will appear here as they join." : "No couples yet."}
+                  <span lang="vi" className="block text-xs text-cocoa-400">Các cặp khác sẽ hiện ở đây, xếp theo thứ hạng.</span>
+                </p>
+              )}
             </Panel>
           ) : null}
 

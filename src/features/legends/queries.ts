@@ -15,7 +15,7 @@ export const legendKeys = {
 export type LegendMember = { name: string; avatar: Partial<Avatar> };
 
 export type LeaderboardRow = {
-  rank: number;
+  rank: number | null;
   couple_id: string;
   couple_name: string;
   members: LegendMember[];
