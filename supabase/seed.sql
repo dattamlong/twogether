@@ -829,6 +829,10 @@ insert into public.achievements (id, scope, title, title_vi, description, icon, 
   ('home_level_3', 'couple', 'Cozier Home', 'Ngôi nhà ấm hơn', 'Reach home level 3.', 'house', 40, null),
   ('first_boss_clear', 'user', 'Guardian Slayer', 'Hạ gục Hộ vệ', 'Defeat your first unit boss.', 'sword', 30, null),
   ('adventure_lost_love_letter', 'couple', 'The Lost Love Letter', 'Lá thư tình thất lạc', 'Complete the couple adventure The Lost Love Letter.', 'hearts', 50, null),
+  ('first_home_visit', 'user', 'Friendly Neighbor', 'Hàng xóm thân thiện', 'Visit another couple''s home.', 'house', 10, null),
+  ('community_explorer', 'user', 'Community Explorer', 'Nhà thám hiểm cộng đồng', 'Visit 5 different couples'' homes.', 'map', 30, null),
+  ('first_guestbook_message', 'user', 'Kind Words', 'Lời chúc dễ thương', 'Leave a message in another couple''s guestbook.', 'letter', 10, null),
+  ('first_friend', 'user', 'New Friend', 'Người bạn mới', 'Become friends with another player.', 'handshake', 15, null),
   ('home_level_5', 'couple', 'Dream Home', 'Ngôi nhà mơ ước', 'Reach home level 5.', 'castle', 100, null)
 on conflict (id) do update set scope = excluded.scope, title = excluded.title, title_vi = excluded.title_vi, description = excluded.description, icon = excluded.icon, coin_reward = excluded.coin_reward, reward_item_id = excluded.reward_item_id;
 

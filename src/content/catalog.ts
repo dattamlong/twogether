@@ -205,6 +205,10 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   achievement("home_level_3", "couple", "Cozier Home", "Ngôi nhà ấm hơn", "Reach home level 3.", "house", 40),
   achievement("first_boss_clear", "user", "Guardian Slayer", "Hạ gục Hộ vệ", "Defeat your first unit boss.", "sword", 30),
   achievement("adventure_lost_love_letter", "couple", "The Lost Love Letter", "Lá thư tình thất lạc", "Complete the couple adventure The Lost Love Letter.", "hearts", 50),
+  achievement("first_home_visit", "user", "Friendly Neighbor", "Hàng xóm thân thiện", "Visit another couple's home.", "house", 10),
+  achievement("community_explorer", "user", "Community Explorer", "Nhà thám hiểm cộng đồng", "Visit 5 different couples' homes.", "map", 30),
+  achievement("first_guestbook_message", "user", "Kind Words", "Lời chúc dễ thương", "Leave a message in another couple's guestbook.", "letter", 10),
+  achievement("first_friend", "user", "New Friend", "Người bạn mới", "Become friends with another player.", "handshake", 15),
   achievement("home_level_5", "couple", "Dream Home", "Ngôi nhà mơ ước", "Reach home level 5.", "castle", 100),
 ];
 

@@ -3,7 +3,7 @@
 import { Hand, Paintbrush } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AvatarFace } from "@/components/couple/avatar-face";
 import { GiftCabinet } from "@/components/couple/gift-cabinet";
 import { Mailbox } from "@/components/couple/mailbox";
@@ -25,10 +25,15 @@ import { placementProblem, type Placement } from "@/game/world/placement";
 import { friendlyError } from "@/lib/errors";
 import { useRoomEvents } from "@/stores/room-events";
 import { toast } from "@/stores/toast-store";
+import { GuestbookPanel } from "@/components/world/guestbook-panel";
+import { useSocialSheets } from "@/components/world/social-sheets";
+import { homeChannel, useHomeRealtime } from "@/features/world/home-channel";
+import { useHomeRemotes } from "@/features/world/use-home-remotes";
+import { SPAWN_TILES } from "@/game/world/room";
 import { DecorPanel } from "./decor-panel";
 import { RoomCanvas } from "./room-canvas";
 
-type ModalKind = "mailbox" | "gifts" | "partner" | null;
+type ModalKind = "mailbox" | "gifts" | "partner" | "guestbook" | null;
 
 export function HomeScreen() {
   const session = useRequiredSession();
@@ -47,6 +52,24 @@ export function HomeScreen() {
   const [decorating, setDecorating] = useState(false);
   const [draft, setDraft] = useState<Placement[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
+  const openPlayer = useSocialSheets((s) => s.openPlayer);
+  const coupleId = session.couple?.id;
+  const hostIds = useMemo(() => [session.userId, ...(session.partner ? [session.partner.id] : [])], [session.userId, session.partner]);
+  const remotes = useHomeRemotes({ hostIds, exclude: hostIds });
+  const guestCount = useHomeRealtime((s) => s.members.filter((m) => !hostIds.includes(m.userId)).length);
+
+  useEffect(() => {
+    if (!coupleId) return;
+    homeChannel.connect(coupleId, session.userId, {
+      userId: session.userId,
+      role: "host",
+      tile: SPAWN_TILES[session.slot ?? 0],
+      facing: "se",
+      anim: "idle",
+      onlineAt: new Date().toISOString(),
+    });
+    return () => homeChannel.disconnect();
+  }, [coupleId, session.userId, session.slot]);
 
   const homeLevel = progress.data?.couple?.home_level ?? 1;
   const energy = progress.data?.couple?.love_energy ?? 0;
@@ -113,6 +136,8 @@ export function HomeScreen() {
     },
     onPartnerTap: () => setModal("partner"),
     onBlockedTap: () => undefined,
+    onRemoteTap: (id) => openPlayer(id),
+    onGuestbook: () => setModal("guestbook"),
     onPlaceTile: (tile) => {
       if (!selectedOwned) {
         toast({ tone: "info", title: "Pick an item first", vi: "Hãy chọn một món đồ trước" });
@@ -171,12 +196,17 @@ export function HomeScreen() {
     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_340px]">
       <div className="flex min-w-0 flex-col gap-3">
         <section aria-label="Our room" className="panel relative h-[min(62dvh,620px)] min-h-[340px] overflow-hidden p-0">
-          <RoomCanvas session={session} homeLevel={homeLevel} placements={roomPlacements} decor={decorDraft} callbacks={callbacks} />
+          <RoomCanvas session={session} homeLevel={homeLevel} placements={roomPlacements} decor={decorDraft} callbacks={callbacks} remotes={remotes} />
           <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-1">
             <span className="rounded-full bg-white/85 px-3 py-1 font-display text-sm font-semibold shadow-[var(--shadow-pop)]">{session.couple?.name}</span>
             <span className="w-fit rounded-full bg-white/70 px-2.5 py-0.5 text-[11px] font-semibold text-cocoa-400">
               Home Lv. {homeLevel} · {currentHome.title}
             </span>
+            {guestCount > 0 ? (
+              <span className="w-fit rounded-full bg-lavender-200 px-2.5 py-0.5 text-[11px] font-bold text-plum-700" data-testid="guest-count">
+                🌸 {guestCount} visitor{guestCount === 1 ? "" : "s"} here
+              </span>
+            ) : null}
           </div>
           {partner ? (
             <div className="pointer-events-none absolute right-3 top-3 flex items-center gap-2 rounded-full bg-white/85 py-1 pl-1 pr-3 shadow-[var(--shadow-pop)]">
@@ -245,6 +275,9 @@ export function HomeScreen() {
             <Button variant="soft" size="sm" onClick={() => setModal("gifts")}>
               <GiftIcon size={18} /> Gifts
             </Button>
+            <Button variant="soft" size="sm" onClick={() => setModal("guestbook")}>
+              <SparkleIcon size={18} /> Guestbook
+            </Button>
             <Button variant="secondary" size="sm" className="ml-auto" onClick={startDecorating}>
               <Paintbrush size={16} /> Decorate
             </Button>
@@ -290,6 +323,9 @@ export function HomeScreen() {
         <CoupleQuestPanel />
       </aside>
 
+      {coupleId ? (
+        <GuestbookPanel open={modal === "guestbook"} onClose={() => setModal(null)} coupleId={coupleId} title={session.couple?.name ?? ""} isHost me={session.userId} />
+      ) : null}
       <Modal open={modal === "mailbox"} onOpenChange={(open) => setModal(open ? "mailbox" : null)} title="Mailbox" subtitle="Hộp thư của hai bạn">
         <Mailbox compact />
       </Modal>

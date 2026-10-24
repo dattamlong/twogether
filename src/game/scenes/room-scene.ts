@@ -8,10 +8,12 @@ import { Character } from "../entities/character";
 import { drawFurniture, type FurnitureArt } from "../entities/furniture";
 import { createWalkGrid, findPath, isWalkable, nearestReachable, type WalkGrid } from "../movement/pathfinding";
 import { placedBlockingTiles, placementProblem, type Placement } from "../world/placement";
-import { FIXTURES, SPAWN_TILES, activeFixtures, footprintTiles, tileKey, type Fixture, type RoomAction, type Tile } from "../world/room";
+import { FIXTURES, SPAWN_TILES, activeFixtures, footprintTiles, inBounds, tileKey, type Fixture, type RoomAction, type Tile } from "../world/room";
 import { drawRoomShell, roomScreenBounds, timeOfDay, type RoomShell } from "./room-shell";
 
 const WALK_SPEED = 2.9;
+const GUESTBOOK_TILE = { x: 10.45, y: 7.6 };
+export const GUEST_SPAWN: Tile = SPAWN_TILES[1];
 const BED_SPOTS: [Tile, Tile] = [
   { x: 0.6, y: 1.3 },
   { x: 1.4, y: 1.3 },
@@ -34,6 +36,18 @@ export type RoomCallbacks = {
   onPresence: (patch: Partial<PresenceState>) => void;
   onPlaceTile: (tile: Tile) => void;
   onBlockedTap: () => void;
+  onRemoteTap?: (userId: string) => void;
+  onGuestbook?: () => void;
+};
+
+export type RemoteView = {
+  id: string;
+  name: string;
+  avatar: Avatar;
+  role: "host" | "guest";
+  tile: Tile;
+  facing: Facing;
+  anim: CharacterAnim;
 };
 
 export type PartnerView =
@@ -49,6 +63,8 @@ type Options = {
   homeLevel: number;
   reducedMotion: boolean;
   callbacks: RoomCallbacks;
+  mode?: "home" | "visit";
+  spawn?: Tile;
 };
 
 export class RoomScene {
@@ -68,6 +84,10 @@ export class RoomScene {
   private self: Walker;
   private partner: Walker;
   private partnerView: PartnerView = { mode: "hidden" };
+  private remotes = new Map<string, Walker>();
+  private remoteViews = new Map<string, RemoteView>();
+  private guestbook: Container | null = null;
+  private mode: "home" | "visit";
   private placements: Placement[] = [];
   private homeLevel: number;
   private reducedMotion: boolean;
@@ -92,8 +112,9 @@ export class RoomScene {
     this.reducedMotion = options.reducedMotion;
     this.callbacks = options.callbacks;
     this.slot = options.self.slot;
+    this.mode = options.mode ?? "home";
     this.grid = this.buildGrid();
-    const spawn = SPAWN_TILES[this.slot];
+    const spawn = options.spawn ?? SPAWN_TILES[this.slot];
     this.self = this.makeWalker(new Character(options.self.avatar, options.self.name), spawn);
     this.self.character.setStatus("self");
     this.partner = this.makeWalker(new Character(options.self.avatar, ""), SPAWN_TILES[this.slot === 0 ? 1 : 0]);
@@ -128,8 +149,10 @@ export class RoomScene {
     this.buildRoom();
     this.addWalkerNode("self", this.self);
     this.addWalkerNode("partner", this.partner);
+    for (const [id, walker] of this.remotes) this.addWalkerNode(`remote:${id}`, walker);
     this.partner.character.eventMode = "static";
     this.partner.character.cursor = "pointer";
+    this.buildGuestbook();
 
     this.setupInput();
     this.fit();
@@ -223,6 +246,132 @@ export class RoomScene {
   private placeWalker(walker: Walker) {
     const s = tileToScreen(walker.pos.x, walker.pos.y);
     walker.character.position.set(s.x, s.y);
+  }
+
+  private buildGuestbook() {
+    if (!this.callbacks.onGuestbook) return;
+    const book = new Container();
+    const g = new Graphics();
+    const base = tileToScreen(GUESTBOOK_TILE.x, GUESTBOOK_TILE.y);
+    const glow = new Graphics();
+    glow.circle(base.x, base.y - 40, 26).fill({ color: 0xc7b8ea, alpha: 0.35 });
+    g.poly([base.x - 10, base.y, base.x + 10, base.y, base.x + 6, base.y - 24, base.x - 6, base.y - 24]).fill(0xc49a83).stroke({ color: 0x45365b, width: 1, alpha: 0.35 });
+    g.ellipse(base.x, base.y, 13, 5).fill(0xb3866f);
+    g.poly([base.x - 17, base.y - 30, base.x, base.y - 25, base.x, base.y - 40, base.x - 17, base.y - 45]).fill(0xfff7ed).stroke({ color: 0xa995dc, width: 1.4 });
+    g.poly([base.x + 17, base.y - 30, base.x, base.y - 25, base.x, base.y - 40, base.x + 17, base.y - 45]).fill(0xfde4ee).stroke({ color: 0xa995dc, width: 1.4 });
+    g.moveTo(base.x - 13, base.y - 37).lineTo(base.x - 4, base.y - 34).moveTo(base.x - 13, base.y - 33).lineTo(base.x - 5, base.y - 30).stroke({ color: 0xc7b8ea, width: 1 });
+    g.moveTo(base.x + 8, base.y - 33).bezierCurveTo(base.x + 4, base.y - 37, base.x + 7, base.y - 40, base.x + 8, base.y - 38).bezierCurveTo(base.x + 9, base.y - 40, base.x + 12, base.y - 37, base.x + 8, base.y - 33).fill(0xe7779f);
+    book.addChild(glow, g);
+    book.label = "guestbook";
+    book.eventMode = "static";
+    book.cursor = "pointer";
+    this.objectLayer.addChild(book);
+    this.nodes.set("guestbook", book);
+    this.depthBoxes.set("guestbook", { id: "guestbook", x: GUESTBOOK_TILE.x - 0.3, y: GUESTBOOK_TILE.y - 0.3, w: 0.6, h: 0.6 });
+    this.guestbook = book;
+  }
+
+  setRemotes(views: RemoteView[]) {
+    const next = new Map(views.map((v) => [v.id, v]));
+    for (const [id, walker] of this.remotes) {
+      if (next.has(id)) continue;
+      if (this.ready) {
+        const s = tileToScreen(walker.pos.x, walker.pos.y);
+        this.fxLayer.spawn("sparkle", s.x, s.y - 40, 8);
+      }
+      walker.character.destroy({ children: true });
+      this.nodes.delete(`remote:${id}`);
+      this.remotes.delete(id);
+      this.remoteViews.delete(id);
+    }
+    for (const view of views) {
+      let walker = this.remotes.get(view.id);
+      const tile = this.safeTile(view.tile);
+      if (!walker) {
+        const character = new Character(view.avatar, view.name);
+        character.label = `remote:${view.id}`;
+        character.eventMode = "static";
+        character.cursor = "pointer";
+        character.setStatus("online");
+        walker = this.makeWalker(character, tile);
+        this.remotes.set(view.id, walker);
+        if (this.ready) {
+          this.addWalkerNode(`remote:${view.id}`, walker);
+          const s = tileToScreen(walker.pos.x, walker.pos.y);
+          this.fxLayer.spawn("sparkle", s.x, s.y - 50, 12);
+        }
+        character.setFacing(view.facing);
+        character.setAnim(view.anim === "walk" ? "idle" : view.anim);
+      } else {
+        walker.character.setAvatar(view.avatar);
+        const previous = this.remoteViews.get(view.id);
+        const moved = !previous || previous.tile.x !== view.tile.x || previous.tile.y !== view.tile.y;
+        if (moved && walker.path.length === 0) {
+          const distance = Math.hypot(tile.x + 0.5 - walker.pos.x, tile.y + 0.5 - walker.pos.y);
+          if (distance > 3) {
+            walker.pos = { x: tile.x + 0.5, y: tile.y + 0.5 };
+            this.placeWalker(walker);
+          } else if (distance > 0.05) {
+            walker.path = findPath(this.grid, this.tileOf(walker), tile, []) ?? [];
+          }
+        }
+        if (walker.path.length === 0 && performance.now() > walker.timedAnimUntil) {
+          walker.character.setFacing(view.facing);
+          walker.character.setAnim(view.anim === "walk" ? "idle" : view.anim);
+        }
+      }
+      walker.character.setName(view.role === "host" ? `${view.name} · host` : view.name);
+      this.remoteViews.set(view.id, view);
+    }
+  }
+
+  applyRemoteFrom(envelope: Envelope) {
+    const walker = this.remotes.get(envelope.senderId);
+    if (!walker) return;
+    if (envelope.type === "move") {
+      const from = this.safeTile(envelope.from);
+      const path = this.sanitizePath(from, envelope.path);
+      const lag = Math.hypot(from.x + 0.5 - walker.pos.x, from.y + 0.5 - walker.pos.y);
+      if (lag > 1.5) {
+        walker.pos = { x: from.x + 0.5, y: from.y + 0.5 };
+        this.placeWalker(walker);
+      }
+      walker.path = path;
+      walker.onArrive = null;
+      walker.character.setAnim(path.length ? "walk" : "idle");
+    } else if (envelope.type === "pose") {
+      walker.path = [];
+      const tile = this.safeTile(envelope.tile);
+      walker.pos = { x: tile.x + 0.5, y: tile.y + 0.5 };
+      this.placeWalker(walker);
+      walker.character.setFacing(envelope.facing);
+      walker.character.setAnim(["sit", "study", "sleep"].includes(envelope.anim) ? "idle" : envelope.anim);
+    } else if (envelope.type === "emote") {
+      this.playEmote(walker, envelope.emote);
+    }
+  }
+
+  private safeTile(tile: Tile): Tile {
+    const t = { x: Math.floor(Number(tile?.x)), y: Math.floor(Number(tile?.y)) };
+    if (Number.isFinite(t.x) && Number.isFinite(t.y) && inBounds(t) && isWalkable(this.grid, t)) return t;
+    return GUEST_SPAWN;
+  }
+
+  private sanitizePath(from: Tile, path: Tile[]): Tile[] {
+    if (!Array.isArray(path)) return [];
+    const clean: Tile[] = [];
+    let prev = from;
+    for (const step of path.slice(0, 40)) {
+      const t = { x: Math.floor(Number(step?.x)), y: Math.floor(Number(step?.y)) };
+      const adjacent = Math.abs(t.x - prev.x) <= 1 && Math.abs(t.y - prev.y) <= 1;
+      if (!adjacent || !inBounds(t) || !isWalkable(this.grid, t)) {
+        const end = path.at(-1);
+        return end ? (findPath(this.grid, from, this.safeTile(end), []) ?? clean) : clean;
+      }
+      clean.push(t);
+      prev = t;
+    }
+    return clean;
   }
 
   setHomeLevel(level: number) {
@@ -393,6 +542,15 @@ export class RoomScene {
 
   interact(fixture: Fixture) {
     if (!fixture.action || !fixture.approach) return;
+    if (this.mode === "visit") {
+      const near = nearestReachable(this.grid, this.tileOf(this.self), fixture.approach, []);
+      if (near) this.walkSelf(near.path, undefined, () => {
+        this.self.character.setAnim("idle");
+        this.publishSelf();
+      });
+      else this.callbacks.onBlockedTap();
+      return;
+    }
     this.standUp(this.self);
     const start = this.tileOf(this.self);
     const best = nearestReachable(this.grid, start, fixture.approach, this.partnerBlocking());
@@ -579,13 +737,21 @@ export class RoomScene {
     const raw = screenToTile(local.x, local.y);
     const tile = { x: Math.floor(raw.x), y: Math.floor(raw.y) };
 
-    if (this.decor) {
+    if (this.decor && this.mode === "home") {
       this.callbacks.onPlaceTile(tile);
       return;
     }
 
     let node: Container | null = e.target as Container | null;
     while (node && node !== this.world) {
+      if (node.label?.startsWith("remote:")) {
+        this.callbacks.onRemoteTap?.(node.label.slice(7));
+        return;
+      }
+      if (node === this.guestbook) {
+        this.callbacks.onGuestbook?.();
+        return;
+      }
       if (node === this.partner.character && this.partnerView.mode !== "hidden") {
         this.callbacks.onPartnerTap();
         return;
@@ -659,6 +825,7 @@ export class RoomScene {
     host.dataset.partnerTile = this.partnerView.mode === "hidden" ? "" : `${Math.floor(this.partner.pos.x)},${Math.floor(this.partner.pos.y)}`;
     host.dataset.partnerAnim = this.partnerView.mode === "hidden" ? "" : this.partner.character.anim;
     host.dataset.partnerMode = this.partnerView.mode;
+    host.dataset.remotes = [...this.remotes].map(([id, w]) => `${id}@${Math.floor(w.pos.x)},${Math.floor(w.pos.y)}`).join(";");
   }
 
   private clampCamera() {
@@ -728,6 +895,7 @@ export class RoomScene {
     const walkers: [string, Walker][] = [
       ["self", this.self],
       ["partner", this.partner],
+      ...[...this.remotes].map(([id, w]): [string, Walker] => [`remote:${id}`, w]),
     ];
     for (const [id, w] of walkers) {
       if (!w.character.visible) continue;
@@ -753,6 +921,11 @@ export class RoomScene {
     if (this.partnerView.mode !== "hidden") this.stepWalker(this.partner, dt);
     this.self.character.update(deltaMs, this.reducedMotion);
     this.partner.character.update(deltaMs, this.reducedMotion);
+    for (const walker of this.remotes.values()) {
+      this.stepWalker(walker, dt);
+      walker.character.update(deltaMs, this.reducedMotion);
+    }
+    if (this.guestbook && !this.reducedMotion) this.guestbook.children[0].alpha = 0.7 + Math.sin(this.time * 2.4) * 0.3;
     this.followSelf(dt);
     this.sortDepth();
     this.publishDebugState();

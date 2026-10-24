@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
-import { AlbumIcon, BookIcon, GamepadIcon, GiftIcon, HouseIcon, TrophyIcon } from "@/components/ui/icons";
+import { AlbumIcon, BookIcon, GamepadIcon, GiftIcon, GlobeIcon, HouseIcon, TrophyIcon } from "@/components/ui/icons";
 import { t } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
   { href: "/home", key: "nav.home", short: "nav.home", icon: HouseIcon },
+  { href: "/world", key: "nav.world", short: "nav.worldShort", icon: GlobeIcon },
   { href: "/learn", key: "nav.learn", short: "nav.learn", icon: BookIcon },
   { href: "/games", key: "nav.games", short: "nav.games", icon: GamepadIcon },
   { href: "/legends", key: "nav.legends", short: "nav.legendsShort", icon: TrophyIcon },

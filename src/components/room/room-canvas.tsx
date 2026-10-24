@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { coupleChannel, useCoupleRealtime } from "@/features/realtime/couple-channel";
 import { readAvatar, type SessionData } from "@/features/session/types";
-import type { DecorDraft, PartnerView, RoomCallbacks, RoomScene } from "@/game/scenes/room-scene";
+import { homeChannel } from "@/features/world/home-channel";
+import type { DecorDraft, PartnerView, RemoteView, RoomCallbacks, RoomScene } from "@/game/scenes/room-scene";
+import type { Tile } from "@/game/world/room";
 import type { Placement } from "@/game/world/placement";
 import { usePrefersReducedMotion } from "@/hooks/use-reduced-motion";
 import { useRoomEvents } from "@/stores/room-events";
@@ -14,9 +16,12 @@ type Props = {
   placements: Placement[];
   decor: DecorDraft;
   callbacks: Omit<RoomCallbacks, "onBroadcast" | "onPresence">;
+  mode?: "home" | "visit";
+  remotes?: RemoteView[];
+  spawn?: Tile;
 };
 
-export function RoomCanvas({ session, homeLevel, placements, decor, callbacks }: Props) {
+export function RoomCanvas({ session, homeLevel, placements, decor, callbacks, mode = "home", remotes, spawn }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<RoomScene | null>(null);
   const callbacksRef = useRef(callbacks);
@@ -31,13 +36,14 @@ export function RoomCanvas({ session, homeLevel, placements, decor, callbacks }:
   });
 
   const avatarKey = JSON.stringify(session.profile.avatar);
-  const initial = useRef({ session, homeLevel, reducedMotion });
+  const initial = useRef({ session, homeLevel, reducedMotion, mode, spawn });
 
   useEffect(() => {
     if (!host.current) return;
     let cancelled = false;
     let scene: RoomScene | null = null;
-    const { session: s, homeLevel: level, reducedMotion: reduced } = initial.current;
+    const { session: s, homeLevel: level, reducedMotion: reduced, mode: sceneMode, spawn: spawnTile } = initial.current;
+    const visiting = sceneMode === "visit";
 
     import("@/game/scenes/room-scene")
       .then(async ({ RoomScene }) => {
@@ -47,13 +53,24 @@ export function RoomCanvas({ session, homeLevel, placements, decor, callbacks }:
           self: { name: s.profile.display_name, avatar: readAvatar(s.profile.avatar), slot: s.slot ?? 0 },
           homeLevel: level,
           reducedMotion: reduced,
+          mode: sceneMode,
+          spawn: spawnTile,
           callbacks: {
             onAction: (...args) => callbacksRef.current.onAction(...args),
             onPartnerTap: () => callbacksRef.current.onPartnerTap(),
             onPlaceTile: (tile) => callbacksRef.current.onPlaceTile(tile),
             onBlockedTap: () => callbacksRef.current.onBlockedTap(),
-            onBroadcast: (event) => coupleChannel.send(event),
-            onPresence: (patch) => coupleChannel.updatePresence(patch),
+            onRemoteTap: (id) => callbacksRef.current.onRemoteTap?.(id),
+            onGuestbook: () => callbacksRef.current.onGuestbook?.(),
+            onBroadcast: (event) => {
+              if (!visiting) coupleChannel.send(event);
+              homeChannel.send(event);
+            },
+            onPresence: (patch) => {
+              if (!visiting) coupleChannel.updatePresence(patch);
+              const { tile, facing, anim } = patch;
+              homeChannel.updatePresence({ ...(tile ? { tile } : {}), ...(facing ? { facing } : {}), ...(anim ? { anim } : {}) });
+            },
           },
         });
         await scene.init();
@@ -69,10 +86,12 @@ export function RoomCanvas({ session, homeLevel, placements, decor, callbacks }:
         if (!cancelled) setStatus("error");
       });
 
-    const offBroadcast = coupleChannel.onBroadcast((envelope) => sceneRef.current?.applyRemote(envelope));
+    const offBroadcast = visiting ? () => {} : coupleChannel.onBroadcast((envelope) => sceneRef.current?.applyRemote(envelope));
+    const offHome = homeChannel.onBroadcast((envelope) => sceneRef.current?.applyRemoteFrom(envelope));
     return () => {
       cancelled = true;
       offBroadcast();
+      offHome();
       scene?.destroy();
       sceneRef.current = null;
     };
@@ -99,13 +118,17 @@ export function RoomCanvas({ session, homeLevel, placements, decor, callbacks }:
   }, [reducedMotion, status]);
 
   useEffect(() => {
+    sceneRef.current?.setRemotes(remotes ?? []);
+  }, [remotes, status]);
+
+  useEffect(() => {
     const partner = session.partner;
     let view: PartnerView;
-    if (!partner) view = { mode: "hidden" };
+    if (!partner || mode === "visit") view = { mode: "hidden" };
     else if (!partnerPresence) view = { mode: "resting", name: partner.display_name, avatar: readAvatar(partner.avatar) };
     else view = { mode: "present", name: partner.display_name, avatar: readAvatar(partner.avatar), presence: partnerPresence };
     sceneRef.current?.setPartner(view);
-  }, [session.partner, partnerPresence, status]);
+  }, [session.partner, partnerPresence, status, mode]);
 
   useEffect(() => {
     const scene = sceneRef.current;

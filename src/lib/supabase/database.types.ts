@@ -691,6 +691,34 @@ export type Database = {
         };
         Relationships: [];
       };
+      friendships: {
+        Row: {
+          addressee_id: string;
+          created_at: string;
+          id: string;
+          requester_id: string;
+          responded_at: string | null;
+          status: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          addressee_id: string;
+          created_at?: string;
+          id?: string;
+          requester_id: string;
+          responded_at?: string | null;
+          status?: string;
+        };
+        Update: {
+          addressee_id?: string;
+          created_at?: string;
+          id?: string;
+          requester_id?: string;
+          responded_at?: string | null;
+          status?: string;
+        };
+        Relationships: [];
+      };
       furniture_placements: {
         Row: {
           couple_id: string;
@@ -740,6 +768,46 @@ export type Database = {
           },
         ];
       };
+      game_invitations: {
+        Row: {
+          created_at: string;
+          expires_at: string;
+          from_user: string;
+          game: string;
+          id: string;
+          language: string;
+          question_ids: string[] | null;
+          responded_at: string | null;
+          status: string;
+          to_user: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          created_at?: string;
+          expires_at?: string;
+          from_user: string;
+          game: string;
+          id?: string;
+          language: string;
+          question_ids?: string[] | null;
+          responded_at?: string | null;
+          status?: string;
+          to_user: string;
+        };
+        Update: {
+          created_at?: string;
+          expires_at?: string;
+          from_user?: string;
+          game?: string;
+          id?: string;
+          language?: string;
+          question_ids?: string[] | null;
+          responded_at?: string | null;
+          status?: string;
+          to_user?: string;
+        };
+        Relationships: [];
+      };
       game_sessions: {
         Row: {
           adventure_id: string | null;
@@ -747,6 +815,7 @@ export type Database = {
           completed_at: string | null;
           correct_count: number | null;
           id: string;
+          invitation_id: string | null;
           kind: Database["public"]["Enums"]["game_kind"];
           question_ids: string[];
           started_at: string;
@@ -763,6 +832,7 @@ export type Database = {
           completed_at?: string | null;
           correct_count?: number | null;
           id?: string;
+          invitation_id?: string | null;
           kind: Database["public"]["Enums"]["game_kind"];
           question_ids: string[];
           started_at?: string;
@@ -778,6 +848,7 @@ export type Database = {
           completed_at?: string | null;
           correct_count?: number | null;
           id?: string;
+          invitation_id?: string | null;
           kind?: Database["public"]["Enums"]["game_kind"];
           question_ids?: string[];
           started_at?: string;
@@ -796,6 +867,13 @@ export type Database = {
             referencedColumns: ["id"];
           },
           {
+            foreignKeyName: "game_sessions_invitation_id_fkey";
+            columns: ["invitation_id"];
+            isOneToOne: false;
+            referencedRelation: "game_invitations";
+            referencedColumns: ["id"];
+          },
+          {
             foreignKeyName: "game_sessions_subject_id_fkey";
             columns: ["subject_id"];
             isOneToOne: false;
@@ -807,6 +885,73 @@ export type Database = {
             columns: ["unit_id"];
             isOneToOne: false;
             referencedRelation: "learning_units";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      home_guestbook_messages: {
+        Row: {
+          author_id: string;
+          body: string;
+          couple_id: string;
+          created_at: string;
+          hidden_at: string | null;
+          id: string;
+          guestbook_json: Json | null;
+        };
+        ComputedFields: "guestbook_json";
+        Insert: {
+          author_id: string;
+          body: string;
+          couple_id: string;
+          created_at?: string;
+          hidden_at?: string | null;
+          id?: string;
+        };
+        Update: {
+          author_id?: string;
+          body?: string;
+          couple_id?: string;
+          created_at?: string;
+          hidden_at?: string | null;
+          id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "home_guestbook_messages_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: false;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      home_visits: {
+        Row: {
+          created_at: string;
+          host_couple_id: string;
+          id: string;
+          visitor_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          created_at?: string;
+          host_couple_id: string;
+          id?: string;
+          visitor_id: string;
+        };
+        Update: {
+          created_at?: string;
+          host_couple_id?: string;
+          id?: string;
+          visitor_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "home_visits_host_couple_id_fkey";
+            columns: ["host_couple_id"];
+            isOneToOne: false;
+            referencedRelation: "couples";
             referencedColumns: ["id"];
           },
         ];
@@ -1817,6 +1962,77 @@ export type Database = {
         };
         Relationships: [];
       };
+      social_blocks: {
+        Row: {
+          blocked_id: string;
+          blocker_id: string;
+          created_at: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          blocked_id: string;
+          blocker_id: string;
+          created_at?: string;
+        };
+        Update: {
+          blocked_id?: string;
+          blocker_id?: string;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      social_reports: {
+        Row: {
+          created_at: string;
+          details: string | null;
+          guestbook_id: string | null;
+          id: string;
+          message_id: string | null;
+          reason: string;
+          reporter_id: string;
+          status: string;
+          target_user_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          created_at?: string;
+          details?: string | null;
+          guestbook_id?: string | null;
+          id?: string;
+          message_id?: string | null;
+          reason: string;
+          reporter_id: string;
+          status?: string;
+          target_user_id: string;
+        };
+        Update: {
+          created_at?: string;
+          details?: string | null;
+          guestbook_id?: string | null;
+          id?: string;
+          message_id?: string | null;
+          reason?: string;
+          reporter_id?: string;
+          status?: string;
+          target_user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "social_reports_guestbook_id_fkey";
+            columns: ["guestbook_id"];
+            isOneToOne: false;
+            referencedRelation: "home_guestbook_messages";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "social_reports_message_id_fkey";
+            columns: ["message_id"];
+            isOneToOne: false;
+            referencedRelation: "world_chat_messages";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       streaks: {
         Row: {
           current: number;
@@ -2101,6 +2317,38 @@ export type Database = {
           },
         ];
       };
+      world_chat_messages: {
+        Row: {
+          body: string;
+          channel: string;
+          client_id: string;
+          created_at: string;
+          hidden_at: string | null;
+          id: string;
+          user_id: string;
+          message_json: Json | null;
+        };
+        ComputedFields: "message_json";
+        Insert: {
+          body: string;
+          channel: string;
+          client_id: string;
+          created_at?: string;
+          hidden_at?: string | null;
+          id?: string;
+          user_id: string;
+        };
+        Update: {
+          body?: string;
+          channel?: string;
+          client_id?: string;
+          created_at?: string;
+          hidden_at?: string | null;
+          id?: string;
+          user_id?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       question_cards: {
@@ -2187,6 +2435,14 @@ export type Database = {
       };
       answer_love_question: { Args: { answer_text: string }; Returns: Json };
       archive_reward: { Args: { reward: string }; Returns: undefined };
+      are_friends: { Args: { a: string; b: string }; Returns: boolean };
+      block_player: { Args: { target: string }; Returns: undefined };
+      blocked_between: { Args: { a: string; b: string }; Returns: boolean };
+      blocked_with_couple: {
+        Args: { cid: string; uid: string };
+        Returns: boolean;
+      };
+      can_join_social_topic: { Args: { topic: string }; Returns: boolean };
       check_user_achievements: { Args: { uid: string }; Returns: undefined };
       claim_daily_quest: { Args: { quest: string }; Returns: Json };
       complete_couple_quest: {
@@ -2207,6 +2463,7 @@ export type Database = {
           lesson_id: string;
         }[];
       };
+      couple_card: { Args: { cid: string; viewer: string }; Returns: Json };
       couple_local_date: { Args: { target_couple: string }; Returns: string };
       couple_members_public: { Args: { cid: string }; Returns: Json };
       create_invitation: {
@@ -2229,7 +2486,12 @@ export type Database = {
           isSetofReturn: false;
         };
       };
+      delete_guestbook_message: {
+        Args: { message: string };
+        Returns: undefined;
+      };
       delete_memory: { Args: { memory: string }; Returns: undefined };
+      delete_world_message: { Args: { message: string }; Returns: undefined };
       emit_event: {
         Args: {
           amount: number;
@@ -2245,9 +2507,14 @@ export type Database = {
       };
       finalize_legend_week: { Args: { week: string }; Returns: number };
       finish_adventure_part: { Args: { game_session: string }; Returns: Json };
+      finish_duel: { Args: { game_session: string }; Returns: Json };
       finish_game: { Args: { game_session: string }; Returns: Json };
       finish_placement: { Args: { game_session: string }; Returns: Json };
       finish_unit_challenge: { Args: { game_session: string }; Returns: Json };
+      friendship_status: {
+        Args: { target: string; uid: string };
+        Returns: string;
+      };
       fulfill_redemption: { Args: { redemption: string }; Returns: undefined };
       generate_invite_code: {
         Args: Record<PropertyKey, never>;
@@ -2257,6 +2524,7 @@ export type Database = {
         Args: { map_level: string; subject: string };
         Returns: Json;
       };
+      get_blocked_players: { Args: Record<PropertyKey, never>; Returns: Json };
       get_couple_adventures: {
         Args: Record<PropertyKey, never>;
         Returns: Json;
@@ -2279,6 +2547,7 @@ export type Database = {
           week_start: string;
         }[];
       };
+      get_couple_world_profile: { Args: { target: string }; Returns: Json };
       get_daily_quests: {
         Args: Record<PropertyKey, never>;
         Returns: {
@@ -2294,6 +2563,15 @@ export type Database = {
           title_vi: string;
           xp_reward: number;
         }[];
+      };
+      get_discover_couples: {
+        Args: { page?: number; page_size?: number; sort?: string };
+        Returns: Json;
+      };
+      get_game_invitations: { Args: Record<PropertyKey, never>; Returns: Json };
+      get_guestbook: {
+        Args: { before_id?: string; max_rows?: number; target: string };
+        Returns: Json;
       };
       get_leaderboard: {
         Args: { board?: string; max_rows?: number };
@@ -2324,6 +2602,8 @@ export type Database = {
         }[];
       };
       get_my_legend_status: { Args: Record<PropertyKey, never>; Returns: Json };
+      get_player_cards: { Args: { ids: string[] }; Returns: Json };
+      get_player_profile: { Args: { target: string }; Returns: Json };
       get_review_queue: {
         Args: { max_items?: number };
         Returns: {
@@ -2351,6 +2631,7 @@ export type Database = {
           isSetofReturn: true;
         };
       };
+      get_social_overview: { Args: Record<PropertyKey, never>; Returns: Json };
       get_today_love_question: {
         Args: Record<PropertyKey, never>;
         Returns: Json;
@@ -2367,6 +2648,10 @@ export type Database = {
           word: Json;
         }[];
       };
+      get_world_messages: {
+        Args: { before_id?: string; channel: string; max_rows?: number };
+        Returns: Json;
+      };
       grant_reward: {
         Args: {
           add_coins: number;
@@ -2377,11 +2662,30 @@ export type Database = {
         };
         Returns: Json;
       };
+      guestbook_json: {
+        Args: {
+          g: Omit<
+            Database["public"]["Tables"]["home_guestbook_messages"]["Row"],
+            Database["public"]["Tables"]["home_guestbook_messages"]["ComputedFields"]
+          >;
+        };
+        Returns: Json;
+      };
       has_answered_love_question: {
         Args: { target_couple: string; target_day: string };
         Returns: boolean;
       };
       home_level_for_energy: { Args: { energy: number }; Returns: number };
+      invitation_json: {
+        Args: {
+          inv: Omit<
+            Database["public"]["Tables"]["game_invitations"]["Row"],
+            Database["public"]["Tables"]["game_invitations"]["ComputedFields"]
+          >;
+          viewer: string;
+        };
+        Returns: Json;
+      };
       is_couple_member: { Args: { target_couple: string }; Returns: boolean };
       learner_level: {
         Args: { uid: string };
@@ -2415,10 +2719,20 @@ export type Database = {
         };
       };
       mark_messages_read: { Args: Record<PropertyKey, never>; Returns: number };
+      message_json: {
+        Args: {
+          msg: Omit<
+            Database["public"]["Tables"]["world_chat_messages"]["Row"],
+            Database["public"]["Tables"]["world_chat_messages"]["ComputedFields"]
+          >;
+        };
+        Returns: Json;
+      };
       my_couple_id: { Args: Record<PropertyKey, never>; Returns: string };
       my_partner_id: { Args: Record<PropertyKey, never>; Returns: string };
       normalize_answer: { Args: { raw: string }; Returns: string };
       open_gift: { Args: { message: string }; Returns: undefined };
+      player_card: { Args: { uid: string }; Returns: Json };
       propose_reward: {
         Args: {
           reward_cost: number;
@@ -2460,8 +2774,27 @@ export type Database = {
         Args: { request_id: string; reward: string };
         Returns: Json;
       };
+      remove_friend: { Args: { target: string }; Returns: undefined };
+      report_player: {
+        Args: {
+          details?: string;
+          guestbook?: string;
+          message?: string;
+          reason: string;
+          target: string;
+        };
+        Returns: Json;
+      };
       require_couple: { Args: Record<PropertyKey, never>; Returns: string };
       require_user: { Args: Record<PropertyKey, never>; Returns: string };
+      respond_friend_request: {
+        Args: { accept: boolean; request: string };
+        Returns: string;
+      };
+      respond_game_invitation: {
+        Args: { accept: boolean; invitation: string };
+        Returns: Json;
+      };
       respond_interaction: {
         Args: { accept: boolean; interaction: string };
         Returns: {
@@ -2491,6 +2824,11 @@ export type Database = {
       };
       save_message_as_memory: { Args: { message: string }; Returns: string };
       save_room_layout: { Args: { layout: Json }; Returns: number };
+      send_friend_request: { Args: { target: string }; Returns: string };
+      send_game_invitation: {
+        Args: { game: string; target: string };
+        Returns: Json;
+      };
       send_gift: {
         Args: { item: string; note: string; request_id: string };
         Returns: Json;
@@ -2518,16 +2856,23 @@ export type Database = {
         Args: { message_body?: string; message_kind: string };
         Returns: string;
       };
+      send_world_message: {
+        Args: { body: string; channel: string; client_id: string };
+        Returns: Json;
+      };
       set_legend_visibility: {
         Args: { make_public: boolean };
         Returns: undefined;
       };
+      sign_guestbook: { Args: { body: string; target: string }; Returns: Json };
       srs_interval: { Args: { box: number }; Returns: string };
       start_adventure_part: { Args: { adventure: string }; Returns: Json };
+      start_duel: { Args: { invitation: string }; Returns: Json };
       start_game: {
         Args: { game: Database["public"]["Enums"]["game_kind"] };
         Returns: Json;
       };
+      start_home_visit: { Args: { target: string }; Returns: Json };
       start_lesson: { Args: { target_lesson: string }; Returns: string };
       start_placement: { Args: { subject: string }; Returns: Json };
       start_unit_challenge: {
@@ -2552,6 +2897,7 @@ export type Database = {
         Args: { multiplier?: number; target_level: number };
         Returns: number;
       };
+      unblock_player: { Args: { target: string }; Returns: undefined };
       unit_state: { Args: { target_unit: string; uid: string }; Returns: Json };
       unlock_couple_achievement: {
         Args: { achievement: string; cid: string };
@@ -2578,7 +2924,8 @@ export type Database = {
         | "boss"
         | "unit_review"
         | "placement"
-        | "adventure";
+        | "adventure"
+        | "word_duel";
       cefr_level: "A1" | "A2" | "B1" | "B2" | "C1";
       game_kind:
         | "word_battle"
@@ -2586,7 +2933,8 @@ export type Database = {
         | "boss"
         | "unit_review"
         | "placement"
-        | "adventure";
+        | "adventure"
+        | "word_duel";
       question_kind: "multiple_choice" | "sentence_order" | "listening";
     };
     CompositeTypes: {
@@ -2724,6 +3072,7 @@ export const Constants = {
         "unit_review",
         "placement",
         "adventure",
+        "word_duel",
       ],
       cefr_level: ["A1", "A2", "B1", "B2", "C1"],
       game_kind: [
@@ -2733,6 +3082,7 @@ export const Constants = {
         "unit_review",
         "placement",
         "adventure",
+        "word_duel",
       ],
       question_kind: ["multiple_choice", "sentence_order", "listening"],
     },

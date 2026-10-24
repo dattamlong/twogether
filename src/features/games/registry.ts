@@ -32,7 +32,7 @@ export const GAMES: GameDefinition[] = [
     serverKind: "sentence_puzzle",
     accent: "from-mint-100 to-sky-100",
   },
-  { id: "versus-battle", title: "1v1 English Battle", title_vi: "Đấu 1-1", description: "Race your partner on the same questions.", mode: "versus", href: null, serverKind: null, accent: "from-peach-100 to-sakura-100" },
+  { id: "versus-battle", title: "Word Duel", title_vi: "Đấu từ vựng 1-1", description: "Invite your partner or any friend: you both answer the same 8 words and compare scores.", mode: "versus", href: "/world?tab=friends", serverKind: null, accent: "from-peach-100 to-sakura-100" },
   { id: "couple-boss", title: "Couple Boss Battle", title_vi: "Cùng đánh trùm", description: "Team up to defeat a giant boss together.", mode: "coop", href: null, serverKind: null, accent: "from-lavender-100 to-sky-100" },
   { id: "listening-challenge", title: "Listening Challenge", title_vi: "Thử thách nghe", description: "How well can you catch tricky sounds?", mode: "solo", href: null, serverKind: null, accent: "from-sky-100 to-mint-100" },
   { id: "love-quiz", title: "Love Quiz", title_vi: "Câu đố tình yêu", description: "How well do you know each other — in English?", mode: "coop", href: null, serverKind: null, accent: "from-sakura-100 to-peach-100" },

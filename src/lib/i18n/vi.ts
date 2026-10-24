@@ -2,6 +2,8 @@ import type { en } from "./en";
 
 export const vi: Record<keyof typeof en, string> = {
   "nav.home": "Nhà của mình",
+  "nav.world": "Thế giới TWOGETHER",
+  "nav.worldShort": "Thế giới",
   "nav.learn": "Học",
   "nav.games": "Trò chơi",
   "nav.shop": "Cửa hàng",

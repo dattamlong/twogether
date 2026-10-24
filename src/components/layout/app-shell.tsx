@@ -9,6 +9,8 @@ import { HeartIcon } from "@/components/ui/icons";
 import { usePendingHugs, useUnreadCount } from "@/features/messages/queries";
 import { promptHug, useRealtimeBridge } from "@/features/realtime/use-realtime-bridge";
 import { useSession } from "@/features/session/use-session";
+import { SocialSheets } from "@/components/world/social-sheets";
+import { useWorldLobbyBridge } from "@/features/world/world-channel";
 import { Hud } from "./hud";
 import { Nav } from "./nav";
 
@@ -32,6 +34,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const { data: pendingHugs } = usePendingHugs();
 
   useRealtimeBridge(session);
+  useWorldLobbyBridge(session?.couple ? session : null);
 
   useEffect(() => {
     if (isLoading) return;
@@ -64,6 +67,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </main>
       <CelebrationOverlay />
       <LegendCelebration />
+      <SocialSheets />
     </>
   );
 }

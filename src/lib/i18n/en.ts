@@ -1,5 +1,7 @@
 export const en = {
   "nav.home": "Our Home",
+  "nav.world": "TWOGETHER World",
+  "nav.worldShort": "World",
   "nav.learn": "Learn",
   "nav.games": "Games",
   "nav.shop": "Love Shop",
