@@ -182,7 +182,15 @@ export function useGuestbookActions(coupleId: string) {
     client.invalidateQueries({ queryKey: worldKeys.couple(coupleId) });
   };
   return {
-    sign: useMutation({ mutationFn: (body: string) => rpc<GuestbookEntry>("sign_guestbook", { target: coupleId, body }), onSuccess: invalidate }),
+    sign: useMutation({
+      mutationFn: (body: string) => rpc<GuestbookEntry>("sign_guestbook", { target: coupleId, body }),
+      onSuccess: (entry) => {
+        client.setQueryData<{ pages: GuestbookEntry[][]; pageParams: (string | null)[] }>(worldKeys.guestbook(coupleId), (old) =>
+          old ? { ...old, pages: [[entry, ...(old.pages[0] ?? []).filter((e) => e.id !== entry.id)], ...old.pages.slice(1)] } : old,
+        );
+        invalidate();
+      },
+    }),
     remove: useMutation({ mutationFn: (message: string) => rpc<void>("delete_guestbook_message", { message }), onSettled: invalidate }),
   };
 }
