@@ -63,6 +63,9 @@ const KNOWN: Record<string, Friendly> = {
   invalid_sort: { en: "Unknown sort.", vi: "Cách sắp xếp không hợp lệ." },
   invalid_game_session: { en: "This game session has ended.", vi: "Lượt chơi đã kết thúc." },
   question_not_found: { en: "That word can't be found.", vi: "Không tìm thấy từ này." },
+  love_ping_cooldown: { en: "Your love is already on its way! 💗 Give them a little time to respond.", vi: "Tình yêu đang trên đường rồi! 💗 Cho người ấy chút thời gian nhé." },
+  invalid_love_ping: { en: "Pick a Love Ping message.", vi: "Hãy chọn lời nhắn Love Ping." },
+  invalid_quiet_hours: { en: "Pick both a start and end hour.", vi: "Hãy chọn giờ bắt đầu và kết thúc." },
   signup_disabled: { en: "Sign-ups are closed right now.", vi: "Hiện chưa mở đăng ký." },
 };
 

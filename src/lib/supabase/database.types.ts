@@ -691,6 +691,28 @@ export type Database = {
         };
         Relationships: [];
       };
+      device_presence: {
+        Row: {
+          device_id: string;
+          last_seen_at: string;
+          user_id: string;
+          visible: boolean;
+        };
+        ComputedFields: never;
+        Insert: {
+          device_id: string;
+          last_seen_at?: string;
+          user_id: string;
+          visible: boolean;
+        };
+        Update: {
+          device_id?: string;
+          last_seen_at?: string;
+          user_id?: string;
+          visible?: boolean;
+        };
+        Relationships: [];
+      };
       friendships: {
         Row: {
           addressee_id: string;
@@ -1548,6 +1570,148 @@ export type Database = {
           },
         ];
       };
+      notification_delivery_attempts: {
+        Row: {
+          attempted_at: string;
+          error_code: string | null;
+          id: string;
+          notification_id: string;
+          status: string;
+          status_code: number | null;
+          subscription_id: string | null;
+        };
+        ComputedFields: never;
+        Insert: {
+          attempted_at?: string;
+          error_code?: string | null;
+          id?: string;
+          notification_id: string;
+          status: string;
+          status_code?: number | null;
+          subscription_id?: string | null;
+        };
+        Update: {
+          attempted_at?: string;
+          error_code?: string | null;
+          id?: string;
+          notification_id?: string;
+          status?: string;
+          status_code?: number | null;
+          subscription_id?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "notification_delivery_attempts_notification_id_fkey";
+            columns: ["notification_id"];
+            isOneToOne: false;
+            referencedRelation: "notifications";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "notification_delivery_attempts_subscription_id_fkey";
+            columns: ["subscription_id"];
+            isOneToOne: false;
+            referencedRelation: "push_subscriptions";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      notification_preferences: {
+        Row: {
+          community_enabled: boolean;
+          game_invites_enabled: boolean;
+          love_ping_enabled: boolean;
+          message_previews_enabled: boolean;
+          quiet_end: number | null;
+          quiet_start: number | null;
+          sound_enabled: boolean;
+          study_invites_enabled: boolean;
+          updated_at: string;
+          user_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          community_enabled?: boolean;
+          game_invites_enabled?: boolean;
+          love_ping_enabled?: boolean;
+          message_previews_enabled?: boolean;
+          quiet_end?: number | null;
+          quiet_start?: number | null;
+          sound_enabled?: boolean;
+          study_invites_enabled?: boolean;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          community_enabled?: boolean;
+          game_invites_enabled?: boolean;
+          love_ping_enabled?: boolean;
+          message_previews_enabled?: boolean;
+          quiet_end?: number | null;
+          quiet_start?: number | null;
+          sound_enabled?: boolean;
+          study_invites_enabled?: boolean;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [];
+      };
+      notifications: {
+        Row: {
+          body: string;
+          client_id: string | null;
+          created_at: string;
+          deleted_at: string | null;
+          destination: string;
+          id: string;
+          metadata: NonNullable<Json>;
+          preview: string;
+          push_note: string | null;
+          push_status: string;
+          read_at: string | null;
+          recipient_user_id: string;
+          sender_user_id: string | null;
+          title: string;
+          type: string;
+          notification_json: Json | null;
+        };
+        ComputedFields: "notification_json";
+        Insert: {
+          body: string;
+          client_id?: string | null;
+          created_at?: string;
+          deleted_at?: string | null;
+          destination: string;
+          id?: string;
+          metadata?: NonNullable<Json>;
+          preview: string;
+          push_note?: string | null;
+          push_status?: string;
+          read_at?: string | null;
+          recipient_user_id: string;
+          sender_user_id?: string | null;
+          title: string;
+          type: string;
+        };
+        Update: {
+          body?: string;
+          client_id?: string | null;
+          created_at?: string;
+          deleted_at?: string | null;
+          destination?: string;
+          id?: string;
+          metadata?: NonNullable<Json>;
+          preview?: string;
+          push_note?: string | null;
+          push_status?: string;
+          read_at?: string | null;
+          recipient_user_id?: string;
+          sender_user_id?: string | null;
+          title?: string;
+          type?: string;
+        };
+        Relationships: [];
+      };
       placement_results: {
         Row: {
           correct: number;
@@ -1637,6 +1801,46 @@ export type Database = {
           learning_language?: string;
           timezone?: string;
           updated_at?: string;
+        };
+        Relationships: [];
+      };
+      push_subscriptions: {
+        Row: {
+          auth: string;
+          created_at: string;
+          device_label: string | null;
+          endpoint: string;
+          failure_count: number;
+          id: string;
+          last_success_at: string | null;
+          p256dh: string;
+          updated_at: string;
+          user_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          auth: string;
+          created_at?: string;
+          device_label?: string | null;
+          endpoint: string;
+          failure_count?: number;
+          id?: string;
+          last_success_at?: string | null;
+          p256dh: string;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          auth?: string;
+          created_at?: string;
+          device_label?: string | null;
+          endpoint?: string;
+          failure_count?: number;
+          id?: string;
+          last_success_at?: string | null;
+          p256dh?: string;
+          updated_at?: string;
+          user_id?: string;
         };
         Relationships: [];
       };
@@ -2445,6 +2649,10 @@ export type Database = {
       can_join_social_topic: { Args: { topic: string }; Returns: boolean };
       check_user_achievements: { Args: { uid: string }; Returns: undefined };
       claim_daily_quest: { Args: { quest: string }; Returns: Json };
+      claim_love_ping_reunion: {
+        Args: Record<PropertyKey, never>;
+        Returns: Json;
+      };
       complete_couple_quest: {
         Args: {
           cid: string;
@@ -2491,6 +2699,10 @@ export type Database = {
         Returns: undefined;
       };
       delete_memory: { Args: { memory: string }; Returns: undefined };
+      delete_notification: {
+        Args: { notification: string };
+        Returns: undefined;
+      };
       delete_world_message: { Args: { message: string }; Returns: undefined };
       emit_event: {
         Args: {
@@ -2602,6 +2814,14 @@ export type Database = {
         }[];
       };
       get_my_legend_status: { Args: Record<PropertyKey, never>; Returns: Json };
+      get_notification_settings: {
+        Args: Record<PropertyKey, never>;
+        Returns: Json;
+      };
+      get_notifications: {
+        Args: { before_id?: string; max_rows?: number };
+        Returns: Json;
+      };
       get_player_cards: { Args: { ids: string[] }; Returns: Json };
       get_player_profile: { Args: { target: string }; Returns: Json };
       get_review_queue: {
@@ -2702,6 +2922,7 @@ export type Database = {
         Returns: number;
       };
       level_rank: { Args: { level: string }; Returns: number };
+      lookup_vocabulary: { Args: { term: string }; Returns: Json };
       love_question_for_day: {
         Args: { target_day: string };
         Returns: {
@@ -2719,6 +2940,7 @@ export type Database = {
         };
       };
       mark_messages_read: { Args: Record<PropertyKey, never>; Returns: number };
+      mark_notifications_read: { Args: { ids?: string[] }; Returns: number };
       message_json: {
         Args: {
           msg: Omit<
@@ -2731,6 +2953,52 @@ export type Database = {
       my_couple_id: { Args: Record<PropertyKey, never>; Returns: string };
       my_partner_id: { Args: Record<PropertyKey, never>; Returns: string };
       normalize_answer: { Args: { raw: string }; Returns: string };
+      notification_category: { Args: { kind: string }; Returns: string };
+      notification_json: {
+        Args: {
+          n: Omit<
+            Database["public"]["Tables"]["notifications"]["Row"],
+            Database["public"]["Tables"]["notifications"]["ComputedFields"]
+          >;
+        };
+        Returns: Json;
+      };
+      notify: {
+        Args: {
+          body: string;
+          destination: string;
+          kind: string;
+          meta?: Json;
+          preview: string;
+          recipient: string;
+          request_id?: string;
+          sender: string;
+          title: string;
+        };
+        Returns: {
+          body: string;
+          client_id: string | null;
+          created_at: string;
+          deleted_at: string | null;
+          destination: string;
+          id: string;
+          metadata: NonNullable<Json>;
+          preview: string;
+          push_note: string | null;
+          push_status: string;
+          read_at: string | null;
+          recipient_user_id: string;
+          sender_user_id: string | null;
+          title: string;
+          type: string;
+        };
+        SetofOptions: {
+          from: "*";
+          to: "notifications";
+          isOneToOne: true;
+          isSetofReturn: false;
+        };
+      };
       open_gift: { Args: { message: string }; Returns: undefined };
       player_card: { Args: { uid: string }; Returns: Json };
       propose_reward: {
@@ -2775,6 +3043,10 @@ export type Database = {
         Returns: Json;
       };
       remove_friend: { Args: { target: string }; Returns: undefined };
+      remove_push_subscription: {
+        Args: { endpoint: string };
+        Returns: undefined;
+      };
       report_player: {
         Args: {
           details?: string;
@@ -2823,7 +3095,17 @@ export type Database = {
         Returns: undefined;
       };
       save_message_as_memory: { Args: { message: string }; Returns: string };
+      save_push_subscription: {
+        Args: {
+          auth: string;
+          device_label?: string;
+          endpoint: string;
+          p256dh: string;
+        };
+        Returns: string;
+      };
       save_room_layout: { Args: { layout: Json }; Returns: number };
+      save_vocabulary: { Args: { question: string }; Returns: boolean };
       send_friend_request: { Args: { target: string }; Returns: string };
       send_game_invitation: {
         Args: { game: string; target: string };
@@ -2855,6 +3137,10 @@ export type Database = {
       send_love_message: {
         Args: { message_body?: string; message_kind: string };
         Returns: string;
+      };
+      send_love_ping: {
+        Args: { client_id?: string; kind: string; message?: string };
+        Returns: Json;
       };
       send_world_message: {
         Args: { body: string; channel: string; client_id: string };
@@ -2897,6 +3183,10 @@ export type Database = {
         Args: { multiplier?: number; target_level: number };
         Returns: number;
       };
+      touch_device_presence: {
+        Args: { device: string; visible: boolean };
+        Returns: undefined;
+      };
       unblock_player: { Args: { target: string }; Returns: undefined };
       unit_state: { Args: { target_unit: string; uid: string }; Returns: Json };
       unlock_couple_achievement: {
@@ -2907,6 +3197,11 @@ export type Database = {
         Args: { achievement: string; uid: string };
         Returns: boolean;
       };
+      unread_notification_count: {
+        Args: Record<PropertyKey, never>;
+        Returns: number;
+      };
+      update_notification_settings: { Args: { settings: Json }; Returns: Json };
       update_review_progress: {
         Args: { correct: boolean; qid: string; uid: string };
         Returns: boolean;

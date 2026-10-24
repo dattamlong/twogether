@@ -1,6 +1,6 @@
 import { Container, Graphics, Text } from "pixi.js";
 
-export type ParticleKind = "heart" | "sparkle" | "zzz" | "note" | "dust";
+export type ParticleKind = "heart" | "sparkle" | "zzz" | "note" | "dust" | "petal";
 
 type Particle = {
   node: Container;
@@ -40,19 +40,21 @@ export class ParticleLayer extends Container {
         const g = new Graphics();
         if (kind === "heart") heartShape(g, 6 + Math.random() * 5, [0xe7779f, 0xf39bbb, 0xf8bbd0][i % 3]);
         else if (kind === "sparkle") sparkleShape(g, 4 + Math.random() * 4, [0xf5cb78, 0xffffff, 0xc7b8ea][i % 3]);
+        else if (kind === "petal") g.ellipse(0, 0, 4 + Math.random() * 2, 2.2 + Math.random()).fill([0xf8bbd0, 0xf39bbb, 0xfde4ee][i % 3]);
         else g.circle(0, 0, 1 + Math.random() * 1.4).fill({ color: 0xffffff, alpha: 0.8 });
         node = g;
       }
-      node.position.set(x + (Math.random() - 0.5) * (kind === "dust" ? 120 : 24), y + (Math.random() - 0.5) * (kind === "dust" ? 80 : 10));
+      const spread = kind === "dust" || kind === "petal" ? 120 : 24;
+      node.position.set(x + (Math.random() - 0.5) * spread, y + (Math.random() - 0.5) * (kind === "dust" ? 80 : kind === "petal" ? 40 : 10));
       this.addChild(node);
       const burst = kind === "sparkle" && count > 3;
       this.particles.push({
         node,
         kind,
         vx: burst ? (Math.random() - 0.5) * 140 : (Math.random() - 0.5) * 18,
-        vy: burst ? -60 - Math.random() * 90 : kind === "dust" ? -4 - Math.random() * 4 : -30 - Math.random() * 20,
+        vy: burst ? -60 - Math.random() * 90 : kind === "dust" ? -4 - Math.random() * 4 : kind === "petal" ? 18 + Math.random() * 16 : -30 - Math.random() * 20,
         life: 0,
-        maxLife: kind === "dust" ? 5 + Math.random() * 4 : 1.4 + Math.random() * 0.8,
+        maxLife: kind === "dust" ? 5 + Math.random() * 4 : kind === "petal" ? 2.6 + Math.random() * 1.4 : 1.4 + Math.random() * 0.8,
         spin: (Math.random() - 0.5) * 2,
         wobble: Math.random() * Math.PI * 2,
       });
@@ -67,7 +69,7 @@ export class ParticleLayer extends Container {
       const t = p.life / p.maxLife;
       p.node.x += (p.vx + Math.sin(p.life * 3 + p.wobble) * (p.kind === "dust" ? 6 : 10)) * dt;
       p.node.y += p.vy * dt;
-      if (p.kind === "sparkle") p.node.rotation += p.spin * dt * 3;
+      if (p.kind === "sparkle" || p.kind === "petal") p.node.rotation += p.spin * dt * 3;
       p.node.alpha = p.kind === "dust" ? Math.sin(Math.PI * t) * 0.7 : t < 0.15 ? t / 0.15 : 1 - Math.max(0, (t - 0.6) / 0.4);
       p.node.scale.set(p.kind === "dust" ? 1 : 0.7 + Math.min(t * 2, 0.5));
       if (p.life >= p.maxLife) {

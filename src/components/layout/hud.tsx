@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { AvatarFace } from "@/components/couple/avatar-face";
 import { CoinIcon, EnergyIcon, FlameIcon, StarIcon } from "@/components/ui/icons";
+import { NotificationBell } from "@/components/notifications/notification-center";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { useProgress } from "@/features/progression/queries";
 import { effectiveStreak } from "@/features/progression/streak";
@@ -68,6 +69,7 @@ export function Hud({ session }: { session: SessionData }) {
             <span className={cn("absolute bottom-0 right-0 size-3 rounded-full ring-2 ring-white", partnerPresence ? (partnerPresence.away ? "bg-gold-300" : "bg-mint-400") : "bg-lavender-200")} />
           </div>
         ) : null}
+        <NotificationBell />
         {status === "reconnecting" || status === "offline" ? (
           <span role="status" className="rounded-xl bg-sky-100 px-2 py-1 text-[11px] font-bold text-plum-500">
             {status === "offline" ? "Offline" : "Reconnecting…"}

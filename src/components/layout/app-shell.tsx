@@ -5,20 +5,21 @@ import { useEffect, type ReactNode } from "react";
 import { LegendCelebration } from "@/components/legends/legend-celebration";
 import { CelebrationOverlay } from "@/components/rewards/celebration-overlay";
 import { ErrorBlock } from "@/components/ui/states";
-import { HeartIcon } from "@/components/ui/icons";
 import { usePendingHugs, useUnreadCount } from "@/features/messages/queries";
 import { promptHug, useRealtimeBridge } from "@/features/realtime/use-realtime-bridge";
 import { useSession } from "@/features/session/use-session";
 import { SocialSheets } from "@/components/world/social-sheets";
 import { useWorldLobbyBridge } from "@/features/world/world-channel";
+import { useNotificationBridge } from "@/features/notifications/use-notification-bridge";
 import { Hud } from "./hud";
+import { Logo } from "./logo";
 import { Nav } from "./nav";
 
 function Splash() {
   return (
     <div className="grid min-h-dvh place-items-center" role="status" aria-live="polite">
       <div className="flex flex-col items-center gap-3">
-        <HeartIcon size={56} className="animate-float" />
+        <Logo size={72} className="animate-float" />
         <p className="font-display text-lg text-plum-500">Opening our little home…</p>
         <p lang="vi" className="text-sm text-cocoa-400">Đang mở ngôi nhà nhỏ…</p>
       </div>
@@ -35,6 +36,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   useRealtimeBridge(session);
   useWorldLobbyBridge(session?.couple ? session : null);
+  useNotificationBridge(session?.couple ? session : null);
 
   useEffect(() => {
     if (isLoading) return;

@@ -2,6 +2,7 @@
 
 import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getSupabase } from "@/lib/supabase/client";
+import { dispatchPending } from "../notifications/queries";
 import { useSession } from "../session/use-session";
 import type {
   ChatChannel,
@@ -123,9 +124,14 @@ export function useFriendActions() {
   const invalidate = useInvalidateSocial();
   const client = useQueryClient();
   return {
-    request: useMutation({ mutationFn: (target: string) => rpc<string>("send_friend_request", { target }), onSettled: invalidate }),
+    request: useMutation({
+      mutationFn: (target: string) => rpc<string>("send_friend_request", { target }),
+      onSuccess: () => void dispatchPending(),
+      onSettled: invalidate,
+    }),
     respond: useMutation({
       mutationFn: ({ request, accept }: { request: string; accept: boolean }) => rpc<string>("respond_friend_request", { request, accept }),
+      onSuccess: () => void dispatchPending(),
       onSettled: invalidate,
     }),
     remove: useMutation({ mutationFn: (target: string) => rpc<void>("remove_friend", { target }), onSettled: invalidate }),
@@ -167,7 +173,11 @@ export function useInvitationActions() {
   const client = useQueryClient();
   const invalidate = () => client.invalidateQueries({ queryKey: worldKeys.invitations });
   return {
-    invite: useMutation({ mutationFn: (target: string) => rpc<GameInvitation>("send_game_invitation", { target, game: "word_duel" }), onSettled: invalidate }),
+    invite: useMutation({
+      mutationFn: (target: string) => rpc<GameInvitation>("send_game_invitation", { target, game: "word_duel" }),
+      onSuccess: () => void dispatchPending(),
+      onSettled: invalidate,
+    }),
     respond: useMutation({
       mutationFn: ({ invitation, accept }: { invitation: string; accept: boolean }) => rpc<GameInvitation>("respond_game_invitation", { invitation, accept }),
       onSettled: invalidate,
@@ -189,6 +199,7 @@ export function useGuestbookActions(coupleId: string) {
           old ? { ...old, pages: [[entry, ...(old.pages[0] ?? []).filter((e) => e.id !== entry.id)], ...old.pages.slice(1)] } : old,
         );
         invalidate();
+        void dispatchPending();
       },
     }),
     remove: useMutation({ mutationFn: (message: string) => rpc<void>("delete_guestbook_message", { message }), onSettled: invalidate }),

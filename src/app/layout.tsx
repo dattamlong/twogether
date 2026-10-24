@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: { default: "Twogether — Our Little World", template: "%s · Twogether" },
   description: "Two hearts. One adventure. Learn English together in your own cozy shared home.",
   applicationName: "Twogether",
+  appleWebApp: { capable: true, title: "TWOGETHER", statusBarStyle: "default" },
 };
 
 export const viewport: Viewport = {

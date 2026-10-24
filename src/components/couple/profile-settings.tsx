@@ -1,5 +1,6 @@
 "use client";
 
+import { NotificationSettingsPanel } from "@/components/notifications/notification-settings";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -236,6 +237,10 @@ export function ProfileSettings() {
             <p className="text-[11px] text-cocoa-400">Every couple is ranked automatically. Only names, characters, tier, scores and badges are shown on the leaderboard; messages, answers and memories stay private.</p>
           </Panel>
         ) : null}
+
+        <div id="notifications">
+          <NotificationSettingsPanel />
+        </div>
 
         <Panel className="flex flex-col gap-2">
           <PanelTitle title="Account" subtitle="Tài khoản" />

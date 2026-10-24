@@ -5,7 +5,10 @@ export type RoomEvent =
   | { type: "gift" }
   | { type: "celebrate" }
   | { type: "self_emote"; emote: "wave" | "heart" | "twirl" | "heart_burst" }
-  | { type: "partner_emote"; emote: "heart" };
+  | { type: "partner_emote"; emote: "heart" }
+  | { type: "love_ping_sent" }
+  | { type: "love_ping_received" }
+  | { type: "reunion"; partnerPresent: boolean };
 
 type RoomEventState = {
   events: (RoomEvent & { id: number })[];

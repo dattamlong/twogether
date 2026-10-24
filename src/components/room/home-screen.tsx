@@ -3,7 +3,7 @@
 import { Hand, Paintbrush } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AvatarFace } from "@/components/couple/avatar-face";
 import { GiftCabinet } from "@/components/couple/gift-cabinet";
 import { Mailbox } from "@/components/couple/mailbox";
@@ -30,10 +30,12 @@ import { useSocialSheets } from "@/components/world/social-sheets";
 import { homeChannel, useHomeRealtime } from "@/features/world/home-channel";
 import { useHomeRemotes } from "@/features/world/use-home-remotes";
 import { SPAWN_TILES } from "@/game/world/room";
+import { LovePingModal } from "@/components/notifications/love-ping-modal";
+import { getSupabase } from "@/lib/supabase/client";
 import { DecorPanel } from "./decor-panel";
 import { RoomCanvas } from "./room-canvas";
 
-type ModalKind = "mailbox" | "gifts" | "partner" | "guestbook" | null;
+type ModalKind = "mailbox" | "gifts" | "partner" | "guestbook" | "love_ping" | null;
 
 export function HomeScreen() {
   const session = useRequiredSession();
@@ -57,6 +59,25 @@ export function HomeScreen() {
   const hostIds = useMemo(() => [session.userId, ...(session.partner ? [session.partner.id] : [])], [session.userId, session.partner]);
   const remotes = useHomeRemotes({ hostIds, exclude: hostIds });
   const guestCount = useHomeRealtime((s) => s.members.filter((m) => !hostIds.includes(m.userId)).length);
+
+  const partnerAway = !partnerPresence || partnerPresence.away;
+  const reunionChecked = useRef(false);
+
+  useEffect(() => {
+    if (!session.partner || reunionChecked.current) return;
+    reunionChecked.current = true;
+    const t = setTimeout(() => {
+      void getSupabase()
+        .rpc("claim_love_ping_reunion")
+        .then(({ data }) => {
+          if (!data) return;
+          const ping = data as unknown as { sender: { name: string } | null };
+          emit({ type: "reunion", partnerPresent: Boolean(useCoupleRealtime.getState().partnerPresence) });
+          toast({ tone: "love", title: `${ping.sender?.name ?? "Your partner"} called you home 💗`, vi: "Người ấy đã gọi bạn về nhà — chào mừng trở lại!" });
+        });
+    }, 1800);
+    return () => clearTimeout(t);
+  }, [session.partner, emit]);
 
   useEffect(() => {
     if (!coupleId) return;
@@ -250,6 +271,9 @@ export function HomeScreen() {
           />
         ) : (
           <div className="flex flex-wrap items-center gap-2" role="toolbar" aria-label="Room actions">
+            <Button variant={partner && partnerAway ? "primary" : "soft"} size="sm" onClick={() => setModal("love_ping")}>
+              💌 Love Ping
+            </Button>
             <Button variant="soft" size="sm" onClick={() => interact("wave")} disabled={!partner}>
               <Hand size={16} /> Wave
             </Button>
@@ -323,6 +347,7 @@ export function HomeScreen() {
         <CoupleQuestPanel />
       </aside>
 
+      <LovePingModal open={modal === "love_ping"} onClose={() => setModal(null)} session={session} />
       {coupleId ? (
         <GuestbookPanel open={modal === "guestbook"} onClose={() => setModal(null)} coupleId={coupleId} title={session.couple?.name ?? ""} isHost me={session.userId} />
       ) : null}
@@ -338,6 +363,21 @@ export function HomeScreen() {
         title={partner ? `Be sweet to ${partner.display_name}` : "Your partner"}
         subtitle={partnerPresence ? "Người ấy đang ở đây" : "Người ấy đang nghỉ — họ sẽ thấy khi quay lại"}
       >
+        {partnerAway ? (
+          <button
+            type="button"
+            onClick={() => setModal("love_ping")}
+            className="mb-3 flex w-full items-center gap-3 rounded-3xl bg-gradient-to-r from-sakura-300 to-lavender-300 p-4 text-left font-display text-white shadow-[var(--shadow-pop)] transition hover:brightness-105"
+          >
+            <span className="text-3xl" aria-hidden>
+              💌
+            </span>
+            <span>
+              <span className="block text-lg font-bold">Send Love Ping</span>
+              <span className="block text-xs font-normal text-white/90">{partner?.display_name} isn&apos;t here right now — call them home</span>
+            </span>
+          </button>
+        ) : null}
         <div className="grid grid-cols-3 gap-3">
           <button className="flex flex-col items-center gap-2 rounded-3xl bg-sakura-50 p-4 font-display font-semibold ring-2 ring-white hover:bg-sakura-100" onClick={() => interact("hug")}>
             <SparkleIcon size={40} /> Hug

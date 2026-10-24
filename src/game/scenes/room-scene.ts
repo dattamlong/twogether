@@ -88,6 +88,7 @@ export class RoomScene {
   private remoteViews = new Map<string, RemoteView>();
   private guestbook: Container | null = null;
   private mode: "home" | "visit";
+  private flights: { node: Graphics; from: { x: number; y: number }; to: () => { x: number; y: number }; t: number; duration: number; onLand: () => void }[] = [];
   private placements: Placement[] = [];
   private homeLevel: number;
   private reducedMotion: boolean;
@@ -651,6 +652,76 @@ export class RoomScene {
     }
   }
 
+  private flyHeart(from: Walker, to: Walker | null, onLand: () => void) {
+    const start = tileToScreen(from.pos.x, from.pos.y);
+    const node = new Graphics();
+    node.moveTo(0, 5).bezierCurveTo(-13, -4, -6, -14, 0, -7).bezierCurveTo(6, -14, 13, -4, 0, 5).fill(0xe7779f).stroke({ color: 0xffffff, width: 2 });
+    node.position.set(start.x, start.y - 60);
+    this.fxLayer.addChild(node);
+    const target = () => {
+      if (to) {
+        const s = tileToScreen(to.pos.x, to.pos.y);
+        return { x: s.x, y: s.y - 60 };
+      }
+      const door = tileToScreen(0.2, 4.5);
+      return { x: door.x, y: door.y - 70 };
+    };
+    this.flights.push({ node, from: { x: start.x, y: start.y - 60 }, to: target, t: 0, duration: this.reducedMotion ? 0.4 : 1.6, onLand });
+  }
+
+  playLovePingSent() {
+    const partnerVisible = this.partnerView.mode !== "hidden";
+    this.spawnAbove(this.self, "heart", 3);
+    this.spawnAbove(this.self, "petal", 8);
+    if (!this.self.attachedTo) this.playTimedAnim(this.self, "happy", 1200);
+    this.flyHeart(this.self, partnerVisible ? this.partner : null, () => {
+      if (partnerVisible) this.spawnAbove(this.partner, "sparkle", 10);
+    });
+  }
+
+  playLovePingReceived() {
+    if (this.partnerView.mode === "hidden") {
+      this.spawnAbove(this.self, "heart", 8);
+      this.spawnAbove(this.self, "petal", 10);
+      return;
+    }
+    this.flyHeart(this.partner, this.self, () => {
+      this.spawnAbove(this.self, "heart", 10);
+      this.spawnAbove(this.self, "sparkle", 6);
+      if (!this.self.attachedTo) this.playTimedAnim(this.self, "happy", 1400);
+    });
+  }
+
+  playReunion(partnerPresent: boolean) {
+    const sky = tileToScreen(5, 3);
+    for (let i = 0; i < 4; i++) this.fxLayer.spawn("petal", sky.x + (i - 1.5) * 60, sky.y - 160, 6);
+    if (partnerPresent && this.partnerView.mode === "present") {
+      this.playHug();
+      this.spawnAbove(this.partner, "heart", 10);
+    } else {
+      this.spawnAbove(this.self, "heart", 12);
+      if (!this.self.attachedTo) this.playTimedAnim(this.self, "celebrate", 1800);
+    }
+  }
+
+  private stepFlights(dt: number) {
+    for (const f of [...this.flights]) {
+      f.t += dt / f.duration;
+      const to = f.to();
+      const k = Math.min(f.t, 1);
+      const ease = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
+      const arc = Math.sin(Math.PI * k) * 70;
+      f.node.position.set(f.from.x + (to.x - f.from.x) * ease, f.from.y + (to.y - f.from.y) * ease - arc);
+      f.node.scale.set(1 + Math.sin(Math.PI * k) * 0.4);
+      if (!this.reducedMotion && Math.random() < dt * 14) this.fxLayer.spawn("sparkle", f.node.x, f.node.y, 1);
+      if (k >= 1) {
+        f.node.destroy();
+        this.flights.splice(this.flights.indexOf(f), 1);
+        f.onLand();
+      }
+    }
+  }
+
   celebrateSelf() {
     this.emote("celebrate");
   }
@@ -692,7 +763,7 @@ export class RoomScene {
     walker.timedAnimUntil = performance.now() + (this.reducedMotion ? Math.min(ms, 900) : ms);
   }
 
-  private spawnAbove(walker: Walker, kind: "heart" | "sparkle", count: number) {
+  private spawnAbove(walker: Walker, kind: "heart" | "sparkle" | "petal", count: number) {
     const s = tileToScreen(walker.pos.x, walker.pos.y);
     this.fxLayer.spawn(kind, s.x, s.y - 58, count);
   }
@@ -927,6 +998,7 @@ export class RoomScene {
     }
     if (this.guestbook && !this.reducedMotion) this.guestbook.children[0].alpha = 0.7 + Math.sin(this.time * 2.4) * 0.3;
     this.followSelf(dt);
+    this.stepFlights(dt);
     this.sortDepth();
     this.publishDebugState();
     this.fxLayer.update(deltaMs);

@@ -6,6 +6,7 @@ import { getSupabase } from "@/lib/supabase/client";
 import { requestId } from "@/lib/utils";
 import { celebrate } from "@/stores/celebration-store";
 import { toast } from "@/stores/toast-store";
+import { dispatchPending } from "../notifications/queries";
 import { qk } from "../query-keys";
 import { useSession } from "../session/use-session";
 
@@ -103,6 +104,7 @@ export function useSendGift() {
       return data;
     },
     onSuccess: (reward) => {
+      void dispatchPending();
       celebrate(reward, "Gift sent!");
       toast({ tone: "love", title: "Your gift is on its way", vi: "Quà đang được gửi đi" });
     },

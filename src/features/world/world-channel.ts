@@ -91,6 +91,7 @@ class WorldLobby {
     watch("friendships", `requester_id=eq.${userId}`);
     watch("game_invitations", `to_user=eq.${userId}`);
     watch("game_invitations", `from_user=eq.${userId}`);
+    watch("notifications", `recipient_user_id=eq.${userId}`);
     if (this.coupleId) watch("home_guestbook_messages", `couple_id=eq.${this.coupleId}`);
 
     channel.subscribe(async (status) => {

@@ -139,6 +139,9 @@ export function RoomCanvas({ session, homeLevel, placements, decor, callbacks, m
       else if (event.type === "gift") scene.playGiftReceived();
       else if (event.type === "celebrate") scene.celebrateSelf();
       else if (event.type === "self_emote") scene.emote(event.emote);
+      else if (event.type === "love_ping_sent") scene.playLovePingSent();
+      else if (event.type === "love_ping_received") scene.playLovePingReceived();
+      else if (event.type === "reunion") scene.playReunion(event.partnerPresent);
     }
   }, [events, consume, status]);
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/layout/logo";
 import { WelcomeArt } from "@/components/layout/welcome-art";
 import { Button } from "@/components/ui/button";
 import { BookIcon, GamepadIcon, HeartIcon, HouseIcon } from "@/components/ui/icons";
@@ -13,7 +14,8 @@ const FEATURES = [
 export default function WelcomePage() {
   return (
     <main className="mx-auto flex min-h-dvh max-w-5xl flex-col items-center px-5 pb-16 pt-[calc(var(--safe-top)+2rem)]">
-      <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-sakura-400">Twogether</p>
+      <Logo size={88} className="motion-safe:animate-float" />
+      <p className="mt-2 font-display text-sm font-semibold uppercase tracking-[0.2em] text-sakura-400">Twogether</p>
       <h1 className="mt-2 text-center text-4xl font-bold text-plum-700 sm:text-6xl">Our Little World</h1>
       <p className="mt-3 text-center font-display text-xl text-plum-500">Two hearts. One adventure.</p>
       <p lang="vi" className="text-center text-sm text-cocoa-400">Hai trái tim. Một hành trình.</p>
