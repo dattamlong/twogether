@@ -656,6 +656,7 @@ export type Database = {
       };
       daily_quests: {
         Row: {
+          active: boolean;
           category: string | null;
           coin_reward: number;
           event: string;
@@ -668,6 +669,7 @@ export type Database = {
         };
         ComputedFields: never;
         Insert: {
+          active?: boolean;
           category?: string | null;
           coin_reward: number;
           event: string;
@@ -679,6 +681,7 @@ export type Database = {
           xp_reward: number;
         };
         Update: {
+          active?: boolean;
           category?: string | null;
           coin_reward?: number;
           event?: string;
@@ -3016,6 +3019,7 @@ export type Database = {
       quests_for_day: {
         Args: { target_day: string };
         Returns: {
+          active: boolean;
           category: string | null;
           coin_reward: number;
           event: string;

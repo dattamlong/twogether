@@ -82,7 +82,9 @@ export function UnitChallenge() {
     try {
       const r = await finishUnitChallenge(challenge.sessionId);
       setResult(r);
-      if (r.stars > 0 || mode === "review") sfx.levelUp();
+      if (r.rewardItemId) sfx.rare();
+      else if (r.stars > 0 || mode === "review") sfx.levelUp();
+      else sfx.defeat();
       celebrate(r, mode === "boss" ? (r.stars ? "Boss cleared!" : "Boss challenge") : "Unit review complete!");
       useRoomEvents.getState().emit({ type: "celebrate" });
       client.invalidateQueries({ queryKey: universeKeys.all });

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AvatarFace } from "@/components/couple/avatar-face";
 import { CoinIcon, EnergyIcon, FlameIcon, StarIcon } from "@/components/ui/icons";
 import { NotificationBell } from "@/components/notifications/notification-center";
+import { RadioButton } from "@/components/audio/radio";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { useProgress } from "@/features/progression/queries";
 import { effectiveStreak } from "@/features/progression/streak";
@@ -38,7 +39,7 @@ export function Hud({ session }: { session: SessionData }) {
         </Link>
 
         <div className="flex min-w-0 flex-1 items-center gap-2" title={`${xp.xpIntoLevel} / ${xp.xpForNextLevel} XP`}>
-          <div className="relative grid place-items-center">
+          <div className="relative grid shrink-0 place-items-center">
             <StarIcon size={34} />
             <span className="absolute font-display text-[11px] font-bold text-plum-700">{xp.level}</span>
           </div>
@@ -54,7 +55,7 @@ export function Hud({ session }: { session: SessionData }) {
           <CoinIcon size={24} />
           <span className="font-display text-sm font-bold tabular-nums">{data?.mine.coins ?? "–"}</span>
         </div>
-        <div className="flex items-center gap-0.5 rounded-2xl bg-peach-100 px-2 py-1" aria-label={`${streak.days} day streak`} title={streak.status === "protected" ? "Streak protected by a freeze" : undefined}>
+        <div className="hidden items-center gap-0.5 rounded-2xl bg-peach-100 px-2 py-1 min-[360px]:flex" aria-label={`${streak.days} day streak`} title={streak.status === "protected" ? "Streak protected by a freeze" : undefined}>
           <FlameIcon size={24} lit={streak.status === "done_today"} className={cn(streak.status === "done_today" && "animate-flicker")} />
           <span className="font-display text-sm font-bold tabular-nums">{streak.days}</span>
         </div>
@@ -69,6 +70,7 @@ export function Hud({ session }: { session: SessionData }) {
             <span className={cn("absolute bottom-0 right-0 size-3 rounded-full ring-2 ring-white", partnerPresence ? (partnerPresence.away ? "bg-gold-300" : "bg-mint-400") : "bg-lavender-200")} />
           </div>
         ) : null}
+        <RadioButton />
         <NotificationBell />
         {status === "reconnecting" || status === "offline" ? (
           <span role="status" className="rounded-xl bg-sky-100 px-2 py-1 text-[11px] font-bold text-plum-500">

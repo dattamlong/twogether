@@ -34,6 +34,7 @@ import { LovePingModal } from "@/components/notifications/love-ping-modal";
 import { getSupabase } from "@/lib/supabase/client";
 import { DecorPanel } from "./decor-panel";
 import { RoomCanvas } from "./room-canvas";
+import { sfx } from "@/lib/sfx";
 
 type ModalKind = "mailbox" | "gifts" | "partner" | "guestbook" | "love_ping" | null;
 
@@ -73,6 +74,7 @@ export function HomeScreen() {
           if (!data) return;
           const ping = data as unknown as { sender: { name: string } | null };
           emit({ type: "reunion", partnerPresent: Boolean(useCoupleRealtime.getState().partnerPresence) });
+          sfx.reunion();
           toast({ tone: "love", title: `${ping.sender?.name ?? "Your partner"} called you home 💗`, vi: "Người ấy đã gọi bạn về nhà — chào mừng trở lại!" });
         });
     }, 1800);
@@ -181,6 +183,7 @@ export function HomeScreen() {
       }
       setDraft((d) => [...d.filter((p) => p.inventoryId !== candidate.inventoryId), candidate]);
       setSelected(null);
+      sfx.place();
     },
   };
 
@@ -192,6 +195,7 @@ export function HomeScreen() {
 
   function interact(kind: "hug" | "wave" | "heart") {
     setModal(null);
+    sfx.interact();
     if (kind === "heart") {
       emit({ type: "self_emote", emote: "heart" });
       sendMessage.mutate({ kind: "heart" });

@@ -124,12 +124,11 @@ describe("Learning Universe", () => {
     expect(errorMessage(await a.client.rpc("start_adventure_part", { adventure: "lost_love_letter" }))).toBe("adventure_completed");
   });
 
-  it("feeds unit challenges into Love Legends with the daily cap", async () => {
+  it("feeds unit challenges into Love Legends", async () => {
     const { a, coupleId } = await createCouple();
     await finishLesson(a, "brain-l1-patterns");
     const week = expectOk(await admin().rpc("legend_week_start"));
     const score = expectOk(await admin().from("leaderboard_scores").select("score").eq("couple_id", coupleId).eq("week_start", week).single());
     expect(score.score).toBeGreaterThan(0);
-    expect(score.score).toBeLessThanOrEqual(400 + 30);
   });
 });

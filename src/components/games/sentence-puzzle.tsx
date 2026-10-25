@@ -15,6 +15,7 @@ import { finishGame, startGame, type GameResult, type GameStart } from "@/featur
 import { useInvalidateProgress } from "@/features/progression/queries";
 import { cn, shuffle } from "@/lib/utils";
 import { celebrate } from "@/stores/celebration-store";
+import { sfx } from "@/lib/sfx";
 
 type Outcome = "solved_first" | "solved" | "skipped";
 
@@ -84,6 +85,8 @@ export function SentencePuzzle() {
       try {
         const r = await finishGame(game.sessionId);
         setResult(r);
+        if (r.won) sfx.victory();
+        else sfx.defeat();
         celebrate(r, r.won ? "All puzzles solved!" : "Puzzle time!");
         void invalidate();
       } catch (e) {

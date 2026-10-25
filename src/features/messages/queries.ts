@@ -9,6 +9,7 @@ import { toast } from "@/stores/toast-store";
 import { dispatchPending } from "../notifications/queries";
 import { qk } from "../query-keys";
 import { useSession } from "../session/use-session";
+import { sfx } from "@/lib/sfx";
 
 const showError = (error: unknown) => {
   const message = friendlyError(error);
@@ -74,6 +75,7 @@ export function useOpenGift() {
       const { error } = await getSupabase().rpc("open_gift", { message: messageId });
       if (error) throw error;
     },
+    onSuccess: () => sfx.gift(),
     onError: showError,
     onSettled: () => client.invalidateQueries({ queryKey: qk.messages }),
   });

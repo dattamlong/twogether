@@ -21,6 +21,7 @@ import { friendlyError } from "@/lib/errors";
 import { celebrate } from "@/stores/celebration-store";
 import { useRoomEvents } from "@/stores/room-events";
 import { QuestionView } from "./question-view";
+import { sfx } from "@/lib/sfx";
 
 type IntroCard = { title: string; body: string; body_vi: string; examples: { text: string; translation_vi: string; note?: string }[] };
 
@@ -75,6 +76,7 @@ export function LessonPlayer() {
     const r = result as unknown as Summary;
     setSummary(r);
     setPhase("summary");
+    sfx.lessonComplete();
     celebrate(r, r.firstCompletion ? "Lesson complete!" : "Practice complete!");
     useRoomEvents.getState().emit({ type: "celebrate" });
     client.invalidateQueries({ queryKey: qk.lessonHistory });

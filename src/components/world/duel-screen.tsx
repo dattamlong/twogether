@@ -68,8 +68,11 @@ export function DuelScreen() {
     if (!run) return;
     setBusy(true);
     try {
-      await finishDuel(run.sessionId);
-      sfx.levelUp();
+      const outcome = await finishDuel(run.sessionId);
+      const mine = outcome.results.find((r) => r.userId === session.userId);
+      const rival = outcome.results.find((r) => r.userId !== session.userId);
+      if (mine?.finished && rival?.finished && (rival.correct ?? 0) > (mine.correct ?? 0)) sfx.defeat();
+      else sfx.victory();
       setRun(null);
       await client.invalidateQueries({ queryKey: worldKeys.invitations });
     } catch (e) {

@@ -65,7 +65,7 @@ export function useLeaderboard(board: BoardId) {
   return useQuery({
     queryKey: legendKeys.board(board),
     enabled: Boolean(session?.couple),
-    refetchInterval: 30_000,
+    refetchInterval: 5_000,
     queryFn: async () => {
       const { data, error } = await getSupabase().rpc("get_leaderboard", { board, max_rows: 100 });
       if (error) throw error;
@@ -79,7 +79,7 @@ export function useLegendStatus() {
   return useQuery({
     queryKey: legendKeys.status,
     enabled: Boolean(session?.couple),
-    refetchInterval: 30_000,
+    refetchInterval: 5_000,
     queryFn: async () => {
       const { data, error } = await getSupabase().rpc("get_my_legend_status");
       if (error) throw error;

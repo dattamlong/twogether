@@ -101,6 +101,8 @@ export function WordBattle() {
       try {
         const r = await finishGame(sessionId);
         setResult(r);
+        if (r.won) sfx.victory();
+        else sfx.defeat();
         celebrate(r, r.won ? "Victory!" : "Good fight!");
         void invalidate();
       } catch (e) {
@@ -148,6 +150,7 @@ export function WordBattle() {
     if (phase !== "battle" || feedback || !card || timeLeft <= 0) return;
     const id = setTimeout(() => {
       setTimeLeft(timeLeft - 1);
+      if (timeLeft - 1 > 0 && timeLeft - 1 <= 3) sfx.tick();
       if (timeLeft - 1 <= 0) void answer("");
     }, 1000);
     return () => clearTimeout(id);

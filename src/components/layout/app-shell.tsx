@@ -11,6 +11,8 @@ import { useSession } from "@/features/session/use-session";
 import { SocialSheets } from "@/components/world/social-sheets";
 import { useWorldLobbyBridge } from "@/features/world/world-channel";
 import { useNotificationBridge } from "@/features/notifications/use-notification-bridge";
+import { useAudioDirector } from "@/features/audio/use-audio-director";
+import { MusicInvitation } from "@/components/audio/radio";
 import { Hud } from "./hud";
 import { Logo } from "./logo";
 import { Nav } from "./nav";
@@ -37,6 +39,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   useRealtimeBridge(session);
   useWorldLobbyBridge(session?.couple ? session : null);
   useNotificationBridge(session?.couple ? session : null);
+  useAudioDirector();
 
   useEffect(() => {
     if (isLoading) return;
@@ -70,6 +73,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <CelebrationOverlay />
       <LegendCelebration />
       <SocialSheets />
+      <MusicInvitation />
     </>
   );
 }

@@ -778,21 +778,26 @@ insert into public.shop_items (id, name, name_vi, description, category, price, 
   ('gift_bunny', 'Plush Bunny', 'Thỏ bông', 'Soft bunny to hug when you miss each other.', 'gifts', 80, 'gift_bunny', 0, 0, 1, true)
 on conflict (id) do update set name = excluded.name, name_vi = excluded.name_vi, description = excluded.description, category = excluded.category, price = excluded.price, asset_key = excluded.asset_key, footprint_w = excluded.footprint_w, footprint_h = excluded.footprint_h, min_home_level = excluded.min_home_level, shop_visible = excluded.shop_visible;
 
-insert into public.daily_quests (id, slot, title, title_vi, event, category, target, xp_reward, coin_reward) values
-  ('learn_words_5', 'learn', 'Learn 5 new words', 'Học 5 từ mới', 'word_learned', null, 5, 25, 10),
-  ('learn_words_8', 'learn', 'Learn 8 new words', 'Học 8 từ mới', 'word_learned', null, 8, 35, 15),
-  ('any_lesson_1', 'lesson', 'Finish any lesson', 'Hoàn thành một bài học bất kỳ', 'lesson_completed', null, 1, 20, 10),
-  ('grammar_lesson_1', 'lesson', 'Complete a grammar lesson', 'Hoàn thành một bài ngữ pháp', 'lesson_completed', 'grammar', 1, 30, 15),
-  ('listening_lesson_1', 'lesson', 'Complete a listening lesson', 'Hoàn thành một bài nghe', 'lesson_completed', 'listening', 1, 30, 15),
-  ('review_5', 'review', 'Answer 5 review questions', 'Trả lời 5 câu ôn tập', 'review_answered', null, 5, 20, 10),
-  ('review_10', 'review', 'Answer 10 review questions', 'Trả lời 10 câu ôn tập', 'review_answered', null, 10, 30, 15),
-  ('minigame_1', 'play', 'Play a mini-game', 'Chơi một trò chơi nhỏ', 'game_completed', null, 1, 20, 10),
-  ('battle_win_1', 'play', 'Win a Word Battle', 'Thắng một trận Word Battle', 'battle_won', null, 1, 30, 15),
-  ('world_lesson_1', 'explore', 'Finish a lesson in Brain Academy or World Explorer', 'Hoàn thành 1 bài ở Học viện Trí tuệ hoặc Nhà thám hiểm', 'world_lesson', null, 1, 25, 12),
-  ('boss_attempt_1', 'explore', 'Challenge a unit boss', 'Thách đấu một Boss', 'boss_attempted', null, 1, 25, 12),
-  ('unit_review_1', 'explore', 'Complete a unit review', 'Hoàn thành một bài ôn tập unit', 'unit_review_done', null, 1, 20, 10),
-  ('puzzle_3', 'play', 'Solve 3 sentence puzzles', 'Giải 3 câu đố sắp xếp câu', 'puzzle_solved', null, 3, 25, 12)
-on conflict (id) do update set slot = excluded.slot, title = excluded.title, title_vi = excluded.title_vi, event = excluded.event, category = excluded.category, target = excluded.target, xp_reward = excluded.xp_reward, coin_reward = excluded.coin_reward;
+insert into public.daily_quests (id, slot, title, title_vi, event, category, target, xp_reward, coin_reward, active) values
+  ('learn_words_5', 'learn', 'Learn 5 new words', 'Học 5 từ mới', 'word_learned', null, 5, 25, 10, true),
+  ('learn_words_8', 'learn', 'Learn 8 new words', 'Học 8 từ mới', 'word_learned', null, 8, 35, 15, true),
+  ('any_lesson_1', 'lesson', 'Finish any lesson', 'Hoàn thành một bài học bất kỳ', 'lesson_completed', null, 1, 20, 10, true),
+  ('grammar_lesson_1', 'lesson', 'Complete a grammar lesson', 'Hoàn thành một bài ngữ pháp', 'lesson_completed', 'grammar', 1, 30, 15, true),
+  ('listening_lesson_1', 'lesson', 'Complete a listening lesson', 'Hoàn thành một bài nghe', 'lesson_completed', 'listening', 1, 30, 15, true),
+  ('review_5', 'review', 'Answer 5 review questions', 'Trả lời 5 câu ôn tập', 'review_answered', null, 5, 20, 10, true),
+  ('review_10', 'review', 'Answer 10 review questions', 'Trả lời 10 câu ôn tập', 'review_answered', null, 10, 30, 15, true),
+  ('minigame_1', 'play', 'Play a mini-game', 'Chơi một trò chơi nhỏ', 'game_completed', null, 1, 20, 10, false),
+  ('battle_win_1', 'play', 'Win a Word Battle', 'Thắng một trận Word Battle', 'battle_won', null, 1, 30, 15, false),
+  ('world_lesson_1', 'explore', 'Finish a lesson in Brain Academy or World Explorer', 'Hoàn thành 1 bài ở Học viện Trí tuệ hoặc Nhà thám hiểm', 'world_lesson', null, 1, 25, 12, true),
+  ('boss_attempt_1', 'explore', 'Challenge a unit boss', 'Thách đấu một Boss', 'boss_attempted', null, 1, 25, 12, false),
+  ('unit_review_1', 'explore', 'Complete a unit review', 'Hoàn thành một bài ôn tập unit', 'unit_review_done', null, 1, 20, 10, true),
+  ('puzzle_3', 'play', 'Solve 3 sentence puzzles', 'Giải 3 câu đố sắp xếp câu', 'puzzle_solved', null, 3, 25, 12, false),
+  ('map_lessons_2', 'lesson', 'Finish 2 lessons on the Adventure Map', 'Hoàn thành 2 bài trên Bản đồ phiêu lưu', 'map_lesson', null, 2, 35, 15, true),
+  ('map_step_1', 'explore', 'Take one step forward on the Adventure Map', 'Tiến thêm 1 bước trên Bản đồ phiêu lưu', 'map_step', null, 1, 25, 12, true),
+  ('duel_1', 'play', 'Play a Word Duel', 'Chơi 1 trận Đấu từ vựng', 'duel_played', null, 1, 25, 12, true),
+  ('adventure_part_1', 'play', 'Play an adventure part with your partner', 'Làm 1 phần Phiêu lưu cùng người ấy', 'adventure_part', null, 1, 25, 12, true),
+  ('together_lesson_1', 'together', 'Both of you finish a lesson today', 'Cả hai cùng hoàn thành 1 bài hôm nay', 'together_lesson', null, 1, 30, 15, true)
+on conflict (id) do update set slot = excluded.slot, title = excluded.title, title_vi = excluded.title_vi, event = excluded.event, category = excluded.category, target = excluded.target, xp_reward = excluded.xp_reward, coin_reward = excluded.coin_reward, active = excluded.active;
 
 insert into public.couple_quests (id, title, title_vi, description, mode, event, target, couple_xp, love_energy, coin_reward) values
   ('study_together', 'Study Together', 'Cùng nhau học', 'Each of you finishes a lesson this week.', 'each', 'lesson_completed', 1, 60, 15, 15),

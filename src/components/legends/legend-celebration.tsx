@@ -39,7 +39,7 @@ export function LegendCelebration() {
     const acks = due === "first" ? [ackLegendCelebration("first"), ackLegendCelebration("top3")] : [ackLegendCelebration(due)];
     void Promise.all(acks).then(() => {
       setMilestone(due);
-      sfx.levelUp();
+      sfx.personalBest();
       void refetch();
     });
   }, [due, refetch]);

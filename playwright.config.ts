@@ -1,6 +1,10 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const baseURL = process.env.E2E_BASE_URL ?? "http://localhost:3000";
+const audioInvitationSeen = {
+  cookies: [],
+  origins: [{ origin: new URL(baseURL).origin, localStorage: [{ name: "twogether:audio", value: JSON.stringify({ state: { invitation: "dismissed" }, version: 1 }) }] }],
+};
 
 export default defineConfig({
   testDir: "./tests/e2e",
@@ -14,6 +18,7 @@ export default defineConfig({
     baseURL,
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
+    storageState: audioInvitationSeen,
   },
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1360, height: 860 } } },

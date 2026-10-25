@@ -173,7 +173,7 @@ test("every couple is ranked automatically and #1 sees the celebration", async (
   const celebration = page.getByRole("dialog", { name: "You are the number one couple" });
   await expect(celebration).toBeVisible();
   await celebration.getByRole("button", { name: "Keep shining" }).click();
-  await expect(page.getByRole("button", { name: /^Rank 1: Mai and Minh, 800 points/ })).toBeVisible();
+  await expect(page.getByRole("button", { name: /^Rank 1: Mai and Minh, 10,?000 points/ })).toBeVisible();
   await page.reload();
   await expect(page.getByRole("dialog", { name: "You are the number one couple" })).toHaveCount(0);
   await expectNoHorizontalOverflow(page);

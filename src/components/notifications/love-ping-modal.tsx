@@ -60,7 +60,7 @@ export function LovePingModal({ open, onClose, session }: { open: boolean; onClo
     try {
       const result = await sendLovePing(kind, kind === "custom" ? custom.trim() : null, clientId.current);
       useRoomEvents.getState().emit({ type: "love_ping_sent" });
-      sfx.love();
+      sfx.pingSent();
       const text = deliveryText(result.delivery, partner.display_name);
       setSent(text);
       toast({ tone: "love", title: "Love Ping Sent! 💌", vi: "Your love is on its way · Tình yêu đang được gửi đi" });

@@ -31,16 +31,16 @@ describe("Love Legends scoring", () => {
     expect((await weeklyScore(coupleId)).score).toBe(0);
   });
 
-  it("caps learning points per member per day to discourage grinding", async () => {
+  it("awards every learning point with no daily cap", async () => {
     const { a, b, coupleId } = await createCouple();
     await db().rpc("grant_reward", { uid: a.id, add_xp: 350, add_coins: 0, reason: "lesson", ref: randomUUID() });
     await db().rpc("grant_reward", { uid: a.id, add_xp: 350, add_coins: 0, reason: "word_battle", ref: randomUUID() });
     await db().rpc("grant_reward", { uid: a.id, add_xp: 100, add_coins: 0, reason: "lesson", ref: randomUUID() });
-    expect((await weeklyScore(coupleId)).score).toBe(400);
+    expect((await weeklyScore(coupleId)).score).toBe(800);
     await db().rpc("grant_reward", { uid: b.id, add_xp: 50, add_coins: 0, reason: "lesson", ref: randomUUID() });
     const score = await weeklyScore(coupleId);
-    expect(score.score).toBe(450);
-    expect(score.member_points).toEqual({ [a.id]: 400, [b.id]: 50 });
+    expect(score.score).toBe(850);
+    expect(score.member_points).toEqual({ [a.id]: 800, [b.id]: 50 });
   });
 
   it("adds a cooperative bonus once per day when both partners learn", async () => {
@@ -69,7 +69,7 @@ describe("Love Legends scoring", () => {
     for (let i = 0; i < 2; i++) await db().rpc("grant_reward", { uid: a.id, add_xp: 300, add_coins: 0, reason: "lesson", ref: randomUUID() });
     await db().rpc("add_ranking_points", { cid: coupleId, uid: null as unknown as string, add_points: 200, point_source: "couple_quest", point_ref: "q1" });
     const tier = expectOk(await a.client.from("couple_rank_tiers").select("tier, legend_points").eq("couple_id", coupleId).single());
-    expect(tier).toEqual({ tier: 2, legend_points: 600 });
+    expect(tier).toEqual({ tier: 2, legend_points: 800 });
     const unlocked = expectOk(await a.client.from("user_achievements").select("achievement_id").eq("user_id", a.id));
     expect(unlocked.map((u) => u.achievement_id)).toContain("tier_silver");
   });

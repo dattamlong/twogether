@@ -1,6 +1,7 @@
 "use client";
 
 import { NotificationSettingsPanel } from "@/components/notifications/notification-settings";
+import { RadioPanel } from "@/components/audio/radio";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -17,7 +18,6 @@ import { useRequiredSession } from "@/features/session/use-session";
 import { useInventory, useShopItems } from "@/features/shop/queries";
 import { friendlyError } from "@/lib/errors";
 import { getSupabase } from "@/lib/supabase/client";
-import { setSoundEnabled, soundEnabled, sfx } from "@/lib/sfx";
 import { cn } from "@/lib/utils";
 import { toast } from "@/stores/toast-store";
 import { TierBadge } from "@/components/legends/legend-art";
@@ -85,7 +85,6 @@ export function ProfileSettings() {
   const [learningLanguage, setLearningLanguage] = useState<StudyLanguage>(session.profile.learning_language as StudyLanguage);
   const [coupleName, setCoupleName] = useState(session.couple?.name ?? "Our Little Home");
   const [confirm, setConfirm] = useState<"unpair" | "delete" | null>(null);
-  const [sound, setSound] = useState(soundEnabled);
   const legend = useLegendStatus();
   const zones = useMemo(() => {
     const supported = typeof Intl.supportedValuesOf === "function" ? Intl.supportedValuesOf("timeZone") : [];
@@ -187,19 +186,6 @@ export function ProfileSettings() {
               <input value={coupleName} maxLength={40} onChange={(e) => setCoupleName(e.target.value)} className="h-11 rounded-2xl border-2 border-lavender-100 bg-white px-3 font-normal outline-none focus:border-sakura-300" />
             </label>
           ) : null}
-          <label className="flex items-center justify-between gap-2 text-sm font-bold">
-            Sound effects
-            <input
-              type="checkbox"
-              checked={sound}
-              onChange={(e) => {
-                setSound(e.target.checked);
-                setSoundEnabled(e.target.checked);
-                if (e.target.checked) sfx.pop();
-              }}
-              className="size-5 accent-sakura-400"
-            />
-          </label>
           <fieldset>
             <legend className="mb-1.5 text-sm font-bold">Language I&apos;m learning · Ngôn ngữ đang học</legend>
             <div className="grid grid-cols-2 gap-2">
@@ -238,6 +224,12 @@ export function ProfileSettings() {
           </Panel>
         ) : null}
 
+        <div id="music">
+          <Panel>
+            <PanelTitle title="Music & Sound" subtitle="Nhạc nền, hiệu ứng và âm thanh môi trường" />
+            <RadioPanel compact />
+          </Panel>
+        </div>
         <div id="notifications">
           <NotificationSettingsPanel />
         </div>

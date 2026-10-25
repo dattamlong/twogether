@@ -2,13 +2,14 @@
 
 import { ChevronDown, Clock } from "lucide-react";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TrophyIcon } from "@/components/ui/icons";
 import { Panel } from "@/components/ui/panel";
 import { ErrorBlock, LoadingBlock, Skeleton } from "@/components/ui/states";
 import { useLeaderboard, useLegendStatus } from "@/features/legends/queries";
 import { BOARDS, formatCountdown, type BoardId } from "@/features/legends/tiers";
 import { useRequiredSession } from "@/features/session/use-session";
+import { sfx } from "@/lib/sfx";
 import { cn } from "@/lib/utils";
 import { CoupleProfileModal } from "./couple-profile-modal";
 import { LeaderboardList } from "./leaderboard-list";
@@ -37,6 +38,12 @@ export function LegendsPage() {
   const leaderboard = useLeaderboard(board);
   const [selected, setSelected] = useState<string | null>(null);
   const countdown = useCountdown(status.data?.weekEndsAt);
+  const myRank = status.data?.rank ?? null;
+  const lastRank = useRef<number | null>(null);
+  useEffect(() => {
+    if (myRank !== null && lastRank.current !== null && myRank < lastRank.current) sfx.rankUp();
+    lastRank.current = myRank;
+  }, [myRank]);
   const active = BOARDS.find((b) => b.id === board)!;
   const rows = leaderboard.data ?? [];
   const ranked = rows.filter((r) => r.rank !== null);
