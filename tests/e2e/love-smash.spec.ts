@@ -28,8 +28,15 @@ test("Love Smash: a full practice match against the bot is verified and rewarded
   await expect(page.getByTestId("play-together")).toContainText("Play With My Partner");
   await expectNoHorizontalOverflow(page);
 
+  await admin().from("love_smash_stats").insert({ user_id: user.id, matches: 30, wins: 15, drop_shots: 30, tutorial_done: true });
+  await page.reload();
+  await expect(page.getByTestId("skill-card-sakura_meteor")).toHaveAttribute("data-unlocked", "true");
+  await page.getByTestId("equip-phoenix_drive").click();
+  await expect(page.getByTestId("skill-card-phoenix_drive")).toHaveAttribute("data-equipped", "true");
   await page.getByRole("radio", { name: /Easy/ }).click();
   await page.getByTestId("start-practice").click();
+  await expect(page.getByTestId("skill-special")).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByTestId("skill-special")).toHaveAttribute("data-ready", "false");
   const game = page.getByTestId("love-smash-game");
   await expect(game).toBeVisible();
   await expect(page.getByTestId("scoreline")).toHaveText(/0\s*-\s*0/);
@@ -72,7 +79,7 @@ test("Love Smash: a full practice match against the bot is verified and rewarded
   expect(rows![0].won).toBe(won);
   await expect(page.getByTestId("final-score")).toContainText(`${rows![0].player_score} – ${rows![0].bot_score}`);
   const { data: stats } = await admin().from("love_smash_stats").select("matches, wins").eq("user_id", user.id).single();
-  expect(stats).toEqual({ matches: 1, wins: won ? 1 : 0 });
+  expect(stats).toEqual({ matches: 31, wins: won ? 16 : 15 });
 
   await page.getByTestId("play-again").click();
   await expect(game).toBeVisible();

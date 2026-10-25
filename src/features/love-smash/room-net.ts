@@ -6,7 +6,7 @@ import type { NetSnapshot } from "./net";
 import type { PressKind } from "./sim";
 
 export type RoomPresence = { userId: string; slot: number; host: boolean; at: number };
-export type Report = { slot: number; x: number; y: number; l: boolean; s: number };
+export type Report = { slot: number; x: number; y: number; l: boolean; d?: boolean; f?: boolean; s: number };
 export type PressMessage = { slot: number; kind: PressKind; view: number; id: number };
 
 type Handlers = {

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { replayMatch } from "@/features/love-smash/replay";
 import type { Difficulty } from "@/features/love-smash/bot";
+import type { Loadout } from "@/features/love-smash/skills";
 import { getAdminSupabase } from "@/lib/supabase/admin";
 import { getServerSupabase } from "@/lib/supabase/server";
 
@@ -24,13 +25,13 @@ export async function POST(request: Request) {
 
   const { data: match, error: matchError } = await supabase
     .from("love_smash_matches")
-    .select("id, seed, difficulty, finished_at")
+    .select("id, seed, difficulty, finished_at, loadout")
     .eq("id", body.matchId)
     .maybeSingle();
   if (matchError || !match) return NextResponse.json({ error: "invalid_match" }, { status: 404 });
   if (match.finished_at) return NextResponse.json({ error: "already_finished" }, { status: 409 });
 
-  const replay = replayMatch(match.seed, match.difficulty as Difficulty, body.log);
+  const replay = replayMatch(match.seed, match.difficulty as Difficulty, body.log, (match.loadout as unknown as Loadout | null) ?? null);
   if (!replay.ok) return NextResponse.json({ error: replay.reason }, { status: 422 });
 
   const m = replay.match;
@@ -45,6 +46,7 @@ export async function POST(request: Request) {
     rally_record: m.stats.longestRally,
     perfect_count: mine.perfectHits,
     smash_count: mine.smashes,
+    drop_count: m.stats.players[0].drops,
   });
   if (error) return NextResponse.json({ error: error.message }, { status: error.message === "too_fast" ? 422 : 400 });
   return NextResponse.json({ result: data, score: m.score, winner: m.winner });

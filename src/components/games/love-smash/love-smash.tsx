@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 import { CoinIcon, StarIcon } from "@/components/ui/icons";
 import { Panel, PanelTitle, Vi } from "@/components/ui/panel";
 import { botThink, createBotMind, type Difficulty } from "@/features/love-smash/bot";
-import { startLoveSmash, submitLoveSmash, useLoveSmashStats, type LoveSmashReward, type PlayableDifficulty } from "@/features/love-smash/queries";
+import { completeTutorial, startLoveSmash, submitLoveSmash, useLoveSmashProgress, useLoveSmashStats, type LoveSmashReward, type PlayableDifficulty } from "@/features/love-smash/queries";
+import type { Loadout } from "@/features/love-smash/skills";
+import { SkillsPanel } from "./skills-panel";
 import { createAnim, updateAnim } from "@/features/love-smash/chibi";
 import { createFx, makeCamera, render, snapshot, updateFx } from "@/features/love-smash/render";
 import { buildScene } from "@/features/love-smash/scene";
@@ -45,7 +47,7 @@ const SOON = [
 
 type View =
   | { kind: "lobby" }
-  | { kind: "playing"; matchId: string; seed: number; difficulty: PlayableDifficulty; rematch: boolean }
+  | { kind: "playing"; matchId: string; seed: number; difficulty: PlayableDifficulty; rematch: boolean; loadout: Loadout }
   | { kind: "tutorial"; seed: number }
   | { kind: "results"; summary: MatchSummary; matchId: string; difficulty: PlayableDifficulty }
   | { kind: "doubles"; seed: number; difficulty: PlayableDifficulty }
@@ -135,6 +137,7 @@ function Preview({ avatar }: { avatar: Avatar }) {
 export function LoveSmash() {
   const { data: session } = useSession();
   const stats = useLoveSmashStats(session?.userId);
+  const progress = useLoveSmashProgress(session?.userId);
   const params = useSearchParams();
   const router = useRouter();
   const invitedRoom = params.get("room");
@@ -180,8 +183,8 @@ export function LoveSmash() {
     setStarting(true);
     setError(null);
     try {
-      const { matchId, seed } = await startLoveSmash(level);
-      setView({ kind: "playing", matchId, seed, difficulty: level, rematch });
+      const { matchId, seed, loadout } = await startLoveSmash(level);
+      setView({ kind: "playing", matchId, seed, difficulty: level, rematch, loadout });
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not start a match");
     } finally {
@@ -196,6 +199,7 @@ export function LoveSmash() {
         seed={view.seed}
         difficulty={view.difficulty}
         quickIntro={view.rematch}
+        loadout={view.loadout}
         me={me}
         rival={RIVALS[view.difficulty]}
         onFinished={(summary) => setView({ kind: "results", summary, matchId: view.matchId, difficulty: view.difficulty })}
@@ -248,6 +252,7 @@ export function LoveSmash() {
         difficulty={view.difficulty}
         format="doubles"
         teammates={[BOT_TEAMMATES[0], BOT_TEAMMATES[1]]}
+        loadout={progress.data?.loadout ?? null}
         me={me}
         rival={RIVALS[view.difficulty]}
         onFinished={(summary) => setView({ kind: "doublesResult", summary, difficulty: view.difficulty })}
@@ -257,7 +262,24 @@ export function LoveSmash() {
     );
   }
   if (view.kind === "tutorial") {
-    return <SmashGame key={`tutorial-${view.seed}`} seed={view.seed} difficulty="feeder" tutorial me={me} rival={RIVALS.feeder} onFinished={() => setView({ kind: "lobby" })} onRestart={() => undefined} onQuit={() => setView({ kind: "lobby" })} />;
+    return (
+      <SmashGame
+        key={`tutorial-${view.seed}`}
+        seed={view.seed}
+        difficulty="feeder"
+        tutorial
+        me={me}
+        rival={RIVALS.feeder}
+        onFinished={() => setView({ kind: "lobby" })}
+        onRestart={() => undefined}
+        onQuit={() => setView({ kind: "lobby" })}
+        onTutorialComplete={() => {
+          void completeTutorial()
+            .then(() => client.invalidateQueries({ queryKey: qk.loveSmashStats }))
+            .catch(() => undefined);
+        }}
+      />
+    );
   }
 
   if ((view.kind === "room" || view.kind === "invite") && session) {
@@ -386,6 +408,8 @@ export function LoveSmash() {
           </dl>
         </Panel>
       </div>
+
+      <SkillsPanel userId={session?.userId} />
 
       <Panel data-testid="play-together">
         <PanelTitle title="Doubles — play together" subtitle={<Vi>Đánh đôi — cùng nhau ra sân</Vi>} />

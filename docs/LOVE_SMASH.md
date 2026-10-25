@@ -25,6 +25,42 @@ Anime chibi badminton inside TWOGETHER at `/games/love-smash`.
   - The pink ring under you glows when the shuttle is in reach.
   - A dashed ring on the floor shows where a falling shuttle will land, calculated from the actual simulation.
 
+## Anime skills
+
+All skill logic lives in the deterministic simulation: energy, cooldowns, activation checks, movement and shot changes, and the team meter. Clients only send activation inputs, the host or server simulation applies them, and the server replay re-checks every activation before giving rewards. All balancing numbers are in `src/features/love-smash/skills.ts` (`SKILL_BALANCE`, `SKILLS`).
+
+| Skill | Slot · key | Cost | Cooldown | What it really does |
+|---|---|---|---|---|
+| ⚡ Lightning Dash | Movement · `Q` | 20 | 6 s | A 0.2 s burst at 11.5 m/s in your movement direction. It can't cross the net or leave your side, and gives no invulnerability. |
+| ❄️ Frost Drop | Special · `E` | 25 | 8 s | A precise drop aimed 1.05 m behind the net. It still needs a valid contact, and opponents near the net can return it. |
+| 🔥 Phoenix Drive | Special · `E` | 30 | 10 s | A fast, flat drive. A late contact uses a dipping trajectory that can hit the net. |
+| 🌸 Sakura Meteor | Ultimate · `R` | 80 | 25 s | A smash that is 9 m/s faster. It needs contact at 2.0 m or higher and must not be late, otherwise you play a normal shot and spend no energy. It can still be returned. |
+| 💗 Love Sync / ✨ Duo Sync | Team · `F` | 100 team | 35 s | Doubles only. The team meter fills **only** through teamwork: +34 per combo and +4 when partners alternate hits. For 6 s, the team's next attacking shot is perfectly placed and smashes get +4 m/s. Couples and friend teams get identical strength. |
+
+- **Energy (0–100):**
+  - Gained from real hits only (serves don't count): +3 normal, +5 good, +8 perfect, +10 for a diving or lunging save, +12 for a ⚡ Perfect Counter, +8 to each teammate after a combo.
+  - At most 30 energy per player per rally, to prevent farming. Hits made with a skill earn no energy.
+  - A failed activation (not enough energy, still on cooldown, not equipped, or contact too low) spends nothing.
+- **Perfect Counter:** returning an opponent's smash or Meteor without a late contact, within 0.6 s of your own Lightning Dash. It is presentation and energy on top of a normal valid return.
+- **AI skill use:** bots spend energy and respect cooldowns exactly like players. A `skillIQ` per difficulty (Easy 0.15, Normal 0.45, Hard 0.8) controls how often they pick a sensible moment:
+  - Meteor when the shuttle is high;
+  - Frost Drop when opponents are deep;
+  - Phoenix Drive on mid-height shuttles;
+  - Dash when the intercept is out of reach;
+  - Sync just before an attack.
+- **Unlocks**, computed by the server only from verified matches:
+
+  | Skill | Unlock condition |
+  |---|---|
+  | Lightning Dash | finish the tutorial or one match |
+  | Frost Drop | 20 drop shots |
+  | Phoenix Drive | 10 wins |
+  | Sakura Meteor | Love Smash level 10, where level = 1 + ⌊(matches + 2·wins) / 3⌋ |
+  | Love Sync | 5 doubles matches |
+
+- **Loadouts:** chosen in the Skills panel. `set_love_smash_loadout` removes anything not unlocked. Each match stores the loadout it started with, so the server replay uses exactly that loadout. Nothing gameplay-related is sold.
+- **Controls:** `Q`/`E`/`R`/`F` on desktop, or tap the skill chips above the action buttons on mobile. Chips show the cost, the cooldown sweep and the ready state.
+
 ## Simulation (`src/features/love-smash/`)
 
 The simulation is pure, deterministic TypeScript. It ticks 60 times a second and uses only `+ − × ÷ sqrt`: no `Math.random`, no clock, no trig, no `Math.hypot`. Bots draw from seeded random number generators. The same seed plus the same input logs therefore always reproduce the same match, in any browser and on the server.
@@ -33,6 +69,7 @@ The simulation is pure, deterministic TypeScript. It ticks 60 times a second and
 |---|---|
 | `court.ts` | Singles and doubles geometry, service courts |
 | `physics.ts` | Shuttle with gravity and quadratic drag, net collision, shot solver |
+| `skills.ts` | Skill registry, balance config, unlock rules, loadout sanitising |
 | `sim.ts` | Players: up to 4, each controlled as `human` (inputs), `puppet` (a remote player's reported positions) or `bot`. Also hit timing, doubles rules, scoring and Love Combo |
 | `bot.ts` | Trajectory-predicting AI with doubles teamwork |
 | `net.ts` | Snapshot encoding, puppet frame packing, multi-player input logs, server replay |
@@ -83,7 +120,7 @@ Bots use the same speed limits, reach and physics as human players.
 - **Known limitation:** the host is trusted to forward inputs, and their own inputs have no network delay. This is fine for co-op against bots. For competitive 2v2 it gives the host a small edge. A host can't forge the final score, because the server replays the logs, but a host who disconnects ends the match (it can't be resumed).
 
   A dedicated WebSocket game server running the same `sim.ts` would remove both limits without rewriting the game.
-- **Message budget:** about 12 snapshots a second from the host, plus up to 8 position reports a second from each remote player while they move (only the host receives them; about 60 messages a second for a full 2v2 room). Supabase's free tier caps Realtime messages per second for the whole project, so many simultaneous 2v2 rooms need a paid plan.
+- **Message budget:** about 12 snapshots a second from the host, plus up to 12 position reports a second from each remote player while they move (only the host receives them; about 70 messages a second for a full 2v2 room). The host plays remote positions back 110 ms late and interpolates between reports, so partners move smoothly instead of stop-and-go. Supabase's free tier caps Realtime messages per second for the whole project, so many simultaneous 2v2 rooms need a paid plan.
 
 ## Rewards and anti-cheat
 

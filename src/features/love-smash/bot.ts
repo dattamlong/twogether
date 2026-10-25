@@ -2,7 +2,8 @@ import { sideSign, type Side } from "./court";
 import { predictPath } from "./physics";
 import { between, chance, createRng, next, spread, type Rng } from "./rng";
 import { IDLE, MAX_SPEED, PRESS_BUFFER } from "./rules";
-import type { Input, Match, Player, PressKind } from "./sim";
+import { SKILL_BALANCE, SKILLS } from "./skills";
+import { skillState, type Input, type Match, type Player, type PressKind } from "./sim";
 
 export type Difficulty = "easy" | "normal" | "hard" | "feeder";
 
@@ -18,13 +19,14 @@ type Profile = {
   wildChance: number;
   lunges: boolean;
   smashDepth: number;
+  skillIQ: number;
 };
 
 export const PROFILES: Record<Difficulty, Profile> = {
-  easy: { reaction: 20, speedScale: 0.74, predictError: 0.5, perfectChance: 0.12, missChance: 0.1, smashChance: 0.12, dropChance: 0.15, aim: [0.4, 1.4], wildChance: 0.06, lunges: false, smashDepth: 4.8 },
-  normal: { reaction: 12, speedScale: 0.88, predictError: 0.26, perfectChance: 0.4, missChance: 0.045, smashChance: 0.45, dropChance: 0.3, aim: [1, 1.9], wildChance: 0.03, lunges: true, smashDepth: 5.6 },
-  hard: { reaction: 6, speedScale: 1, predictError: 0.1, perfectChance: 0.72, missChance: 0.015, smashChance: 0.72, dropChance: 0.4, aim: [1.5, 2.15], wildChance: 0.01, lunges: true, smashDepth: 6.1 },
-  feeder: { reaction: 4, speedScale: 1, predictError: 0, perfectChance: 1, missChance: 0, smashChance: 0, dropChance: 0, aim: [0, 0], wildChance: 0, lunges: true, smashDepth: 0 },
+  easy: { reaction: 20, speedScale: 0.74, predictError: 0.5, perfectChance: 0.12, missChance: 0.1, smashChance: 0.12, dropChance: 0.15, aim: [0.4, 1.4], wildChance: 0.06, lunges: false, smashDepth: 4.8, skillIQ: 0.15 },
+  normal: { reaction: 12, speedScale: 0.88, predictError: 0.26, perfectChance: 0.4, missChance: 0.045, smashChance: 0.45, dropChance: 0.3, aim: [1, 1.9], wildChance: 0.03, lunges: true, smashDepth: 5.6, skillIQ: 0.45 },
+  hard: { reaction: 6, speedScale: 1, predictError: 0.1, perfectChance: 0.72, missChance: 0.015, smashChance: 0.72, dropChance: 0.4, aim: [1.5, 2.15], wildChance: 0.01, lunges: true, smashDepth: 6.1, skillIQ: 0.8 },
+  feeder: { reaction: 4, speedScale: 1, predictError: 0, perfectChance: 1, missChance: 0, smashChance: 0, dropChance: 0, aim: [0, 0], wildChance: 0, lunges: true, smashDepth: 0, skillIQ: 0 },
 };
 
 type Plan = { rally: number; x: number; y: number; z: number; hitTick: number; pressTick: number; lunged: boolean };
@@ -139,6 +141,13 @@ function chooseShot(m: Match, mind: BotMind, slot: number, plan: Plan): { press:
   } else if (myDepth < 2.6 && chance(mind.rng, prof.dropChance)) {
     press = "drop";
   }
+  const iq = prof.skillIQ;
+  if (iq > 0 && plan.z >= SKILL_BALANCE.meteor.minHeight + 0.1 && myDepth < 5.2 && skillState(me, "ultimate").ready && chance(mind.rng, iq * 0.8)) press = "ultimate";
+  else if (iq > 0 && skillState(me, "special").ready) {
+    const special = me.loadout.special;
+    if (special === "frost_drop" && oppDepth > 3.8 && chance(mind.rng, iq * 0.5)) press = "special";
+    else if (special === "phoenix_drive" && plan.z >= 0.9 && plan.z <= 1.7 && chance(mind.rng, iq * 0.4)) press = "special";
+  }
   return { press, aim: aimFor(mind, opponents) };
 }
 
@@ -229,10 +238,16 @@ export function botThink(m: Match, mind: BotMind, slot: number): Input {
   const dx = plan.x - me.x;
   const dy = plan.y - me.y;
   const dist = Math.sqrt(dx * dx + dy * dy);
-  if (mind.profile.lunges && !plan.lunged && dist > 0.75 && plan.hitTick - m.tick <= 12 && plan.hitTick - m.tick > 2) {
+  const ticksLeft = plan.hitTick - m.tick;
+  const needed = (dist / (MAX_SPEED * mind.speedScale)) * 60;
+  if (!plan.lunged && dist > 1.1 && ticksLeft > 6 && needed > ticksLeft && me.energy >= SKILLS.lightning_dash.cost && skillState(me, "movement").ready && chance(mind.rng, mind.profile.skillIQ)) {
+    plan.lunged = true;
+    input.dash = true;
+  } else if (mind.profile.lunges && !plan.lunged && dist > 0.75 && ticksLeft <= 12 && ticksLeft > 2) {
     plan.lunged = true;
     input.lunge = true;
   }
+  if (mate && m.teamEnergy[side] >= SKILL_BALANCE.sync.cost && m.teamCooldown[side] === 0 && m.sync[side] === 0 && plan.z >= 1.75 && ticksLeft < 20 && chance(mind.rng, mind.profile.skillIQ * 0.3)) input.sync = true;
   if (m.tick === plan.pressTick) {
     const choice = chooseShot(m, mind, slot, plan);
     input[choice.press] = true;

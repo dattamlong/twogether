@@ -16,7 +16,7 @@ export type Shuttle = {
 
 export type StepOutcome = "flying" | "net" | "landed";
 
-export type ShotKind = "clear" | "lift" | "drop" | "drive" | "smash" | "serve_high" | "serve_short";
+export type ShotKind = "clear" | "lift" | "drop" | "drive" | "smash" | "serve_high" | "serve_short" | "frost_drop" | "phoenix_drive" | "meteor";
 
 type AimedShot = { mode: "aim"; ratio: number; depth: number };
 type SteepShot = { mode: "steep"; speed: number };
@@ -29,6 +29,9 @@ export const SHOTS: Record<ShotKind, AimedShot | SteepShot> = {
   smash: { mode: "steep", speed: 27 },
   serve_high: { mode: "aim", ratio: 2.1, depth: 5.8 },
   serve_short: { mode: "aim", ratio: 0.55, depth: 2.35 },
+  frost_drop: { mode: "aim", ratio: 0.32, depth: 1.05 },
+  phoenix_drive: { mode: "aim", ratio: 0.0, depth: 5.3 },
+  meteor: { mode: "steep", speed: 27 },
 };
 
 export function speedOf(v: Vec3) {
@@ -112,11 +115,11 @@ function direction(from: Vec3, target: { x: number; y: number }) {
 
 const NET_CLEARANCE = 0.12;
 
-function solveAimed(from: Vec3, target: { x: number; y: number }, shot: AimedShot, sameSideLanding: boolean) {
+function solveAimed(from: Vec3, target: { x: number; y: number }, shot: AimedShot, sameSideLanding: boolean, fixedRatio: number | null) {
   const { ux, uy, dist } = direction(from, target);
   let best: Vec3 | null = null;
   for (let step = 0; step <= 12; step++) {
-    const ratio = shot.ratio + step * 0.2;
+    const ratio = fixedRatio ?? shot.ratio + step * 0.2;
     let lo = 0.5;
     let hi = 90;
     let vel: Vec3 = { x: 0, y: 0, z: 0 };
@@ -132,7 +135,7 @@ function solveAimed(from: Vec3, target: { x: number; y: number }, shot: AimedSho
     vel = { x: ux * hi, y: uy * hi, z: ratio * hi };
     flight = simulateFlight(from, vel);
     best = vel;
-    if (sameSideLanding || (!flight.netted && flight.netMargin >= NET_CLEARANCE)) return vel;
+    if (fixedRatio !== null || sameSideLanding || (!flight.netted && flight.netMargin >= NET_CLEARANCE)) return vel;
   }
   return best!;
 }
@@ -156,8 +159,8 @@ function solveSteep(from: Vec3, target: { x: number; y: number }, speed: number)
   return velFor(hi);
 }
 
-export function solveShot(from: Vec3, target: { x: number; y: number }, kind: ShotKind, speedBonus = 0): Vec3 {
+export function solveShot(from: Vec3, target: { x: number; y: number }, kind: ShotKind, speedBonus = 0, riskyRatio: number | null = null): Vec3 {
   const shot = SHOTS[kind];
   if (shot.mode === "steep") return solveSteep(from, target, shot.speed + speedBonus);
-  return solveAimed(from, target, shot, (from.y < 0) === (target.y < 0));
+  return solveAimed(from, target, shot, (from.y < 0) === (target.y < 0), riskyRatio);
 }

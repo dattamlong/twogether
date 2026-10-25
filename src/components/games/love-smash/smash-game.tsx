@@ -17,7 +17,10 @@ import type { Avatar } from "@/features/session/types";
 import { usePrefersReducedMotion } from "@/hooks/use-reduced-motion";
 import { sfx } from "@/lib/sfx";
 import { cn } from "@/lib/utils";
+import { playSkillFx } from "./event-fx";
+import { SkillBar, viewOf } from "./skill-bar";
 import { TouchControls, type PressKind } from "./touch-controls";
+import type { Loadout } from "@/features/love-smash/skills";
 
 export type Competitor = { name: string; avatar: Avatar };
 
@@ -31,12 +34,14 @@ type Props = {
   tutorial?: boolean;
   format?: Format;
   teammates?: [Competitor, Competitor];
+  loadout?: Loadout | null;
   quickIntro?: boolean;
   me: Competitor;
   rival: Competitor;
   onFinished: (summary: MatchSummary) => void;
   onRestart: () => void;
   onQuit: () => void;
+  onTutorialComplete?: () => void;
 };
 
 export const KEYS: Record<string, "up" | "down" | "left" | "right" | PressKind | "pause"> = {
@@ -56,6 +61,10 @@ export const KEYS: Record<string, "up" | "down" | "left" | "right" | PressKind |
   KeyC: "drop",
   Space: "lunge",
   ShiftLeft: "lunge",
+  KeyQ: "dash",
+  KeyE: "special",
+  KeyR: "ultimate",
+  KeyF: "sync",
   Escape: "pause",
   KeyP: "pause",
 };
@@ -86,12 +95,12 @@ declare global {
 
 export function insetsFor(w: number, h: number, touch: boolean): Insets {
   const portrait = h > w;
-  if (touch && portrait) return { top: 92, right: 6, bottom: 212, left: 6 };
+  if (touch && portrait) return { top: 92, right: 6, bottom: 290, left: 6 };
   if (touch) return { top: 60, right: 150, bottom: 6, left: 150 };
   return { top: 84, right: 12, bottom: 14, left: 12 };
 }
 
-export function SmashGame({ seed, difficulty, tutorial = false, format = "singles", teammates, quickIntro = false, me, rival, onFinished, onRestart, onQuit }: Props) {
+export function SmashGame({ seed, difficulty, tutorial = false, format = "singles", teammates, loadout = null, quickIntro = false, me, rival, onFinished, onRestart, onQuit, onTutorialComplete }: Props) {
   const doubles = format === "doubles" && Boolean(teammates);
   const reduced = usePrefersReducedMotion();
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -116,6 +125,12 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
   const finishedRef = useRef(onFinished);
   const people = useRef({ me, rival, teammates });
   const reducedRef = useRef(reduced);
+  const loadoutRef = useRef(loadout);
+  const matchRef = useRef<Match | null>(null);
+  const readSkills = useCallback(() => {
+    const m = matchRef.current;
+    return m ? viewOf(m.players[0], { doubles: m.format === "doubles", teamEnergy: m.teamEnergy[0], teamCooldown: m.teamCooldown[0], syncActive: m.sync[0] > 0, syncAllowed: m.teamSync[0], couple: false }) : null;
+  }, []);
 
   useEffect(() => {
     finishedRef.current = onFinished;
@@ -200,7 +215,8 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
     const canvas = canvasRef.current!;
     const wrap = wrapRef.current!;
     const ctx = canvas.getContext("2d")!;
-    const match = createMatch({ seed, difficulty, tutorial, format: doubles ? "doubles" : "singles" });
+    const match = createMatch({ seed, difficulty, tutorial, format: doubles ? "doubles" : "singles", loadouts: [loadoutRef.current, null, null, null] });
+    matchRef.current = match;
     const recorder = new InputRecorder();
     const stepper = new FixedStepper();
     const fx: Fx = createFx();
@@ -252,14 +268,15 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
 
     const handle = (e: SimEvent) => {
       const count = (n: number) => (reducedRef.current ? Math.ceil(n / 4) : n);
+      playSkillFx(e, { match, fx, at: screenAt, reduced: reducedRef.current, mySlot: 0, coupleTeam: () => false, width: w, height: h });
       switch (e.type) {
         case "hit": {
           const p = match.players[e.slot];
           const head = screenAt(p.x, p.y, 2.3);
           const at = screenAt(match.shuttle.pos.x, match.shuttle.pos.y, match.shuttle.pos.z);
           fx.trail = [];
-          fx.trailKind = e.sakura ? "sakura" : e.shot === "smash" ? "smash" : "normal";
-          if (e.sakura) {
+          if (!e.skill && !e.sync) fx.trailKind = e.sakura ? "sakura" : e.shot === "smash" ? "smash" : "normal";
+          if (e.sakura && e.skill !== "sakura_meteor") {
             sfx.sakuraSmash();
             banner(fx, "SAKURA SMASH!", "🌸 Perfect jump smash", "#e7779f", 1.1);
             burst(fx, at.x, at.y, "petal", count(26), 1.4);
@@ -489,7 +506,14 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
               {TUTORIAL_TEXT[step_].vi}
             </p>
             {step_ === "score" || step_ === "done" ? (
-              <Button size="sm" className="mt-2" onClick={onQuit}>
+              <Button
+                size="sm"
+                className="mt-2"
+                onClick={() => {
+                  onTutorialComplete?.();
+                  onQuit();
+                }}
+              >
                 Finish tutorial
               </Button>
             ) : (
@@ -500,12 +524,13 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
           </div>
         </div>
       ) : yourServe ? (
-        <div className={cn("pointer-events-none absolute inset-x-0 z-10 flex justify-center", touch ? "bottom-[232px]" : "bottom-8")}>
+        <div className={cn("pointer-events-none absolute inset-x-0 z-10 flex justify-center", touch ? "bottom-[300px]" : "bottom-24")}>
           <p className="animate-[toast-in_.25s_ease-out] rounded-full bg-white/90 px-4 py-1.5 font-display text-sm font-semibold text-plum-700 shadow-[var(--shadow-soft)]">
             {touch ? "Your serve: 🏸 HIT high · 🌸 DROP short" : "Your serve: J high · L short"}
           </p>
         </div>
       ) : null}
+      {!tutorial && !intro && !paused && phase !== "over" ? <SkillBar read={readSkills} onPress={(action) => presses.current.add(action)} touch={touch} /> : null}
       {touch && !paused && !intro ? (
         <TouchControls
           onMove={(x, y) => {

@@ -19,6 +19,7 @@ import { sfx } from "@/lib/sfx";
 import { cn } from "@/lib/utils";
 import { playEventFx } from "./event-fx";
 import { Intro, INTRO_STEPS, insetsFor, KEYS, ScoreCard, STEP_MS, type Competitor } from "./smash-game";
+import { SkillBar, viewOf } from "./skill-bar";
 import { TouchControls, type PressKind } from "./touch-controls";
 
 export const BOT_TEAMMATES: Competitor[] = [
@@ -27,7 +28,8 @@ export const BOT_TEAMMATES: Competitor[] = [
 ];
 
 const SNAPSHOT_EVERY = 5;
-const REPORT_MS = 125;
+const REPORT_MS = 83;
+const PLAYBACK_DELAY_MS = 110;
 const IDLE_REPORT_MS = 600;
 const INTERP_TICKS = 4;
 const WAIT_LIMIT_MS = 45_000;
@@ -44,7 +46,7 @@ export function roomCompetitors(room: Room): Competitor[] {
 
 declare global {
   interface Window {
-    __loveSmashOnline?: { state: () => { tick: number; score: [number, number]; winner: number | null; waiting: string[]; host: boolean }; autopilot: (on: boolean) => void };
+    __loveSmashOnline?: { state: () => { tick: number; score: [number, number]; winner: number | null; waiting: string[]; host: boolean; players: { x: number; y: number }[] }; autopilot: (on: boolean) => void };
   }
 }
 
@@ -80,6 +82,14 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
   const [saving, setSaving] = useState<string | null>(null);
   const [matchPoint, setMatchPoint] = useState<0 | 1 | null>(null);
   const resultRef = useRef(onResult);
+  const matchRef = useRef<ReturnType<typeof createConfiguredMatch> | null>(null);
+  const readSkills = useCallback(() => {
+    const m = matchRef.current;
+    if (!m) return null;
+    const side = (mySlot % 2) as 0 | 1;
+    const couple = room.mode === "couple_ai" ? side === 0 : Boolean(partnerId && room.members.some((x) => x.userId === partnerId && x.slot % 2 === side));
+    return viewOf(m.players[mySlot], { doubles: true, teamEnergy: m.teamEnergy[side], teamCooldown: m.teamCooldown[side], syncActive: m.sync[side] > 0, syncAllowed: m.teamSync[side], couple });
+  }, [mySlot, room, partnerId]);
   const netRef = useRef<RoomNet | null>(null);
   const leaveRef = useRef(onLeave);
 
@@ -140,6 +150,7 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
     const wrap = wrapRef.current!;
     const ctx = canvas.getContext("2d")!;
     const match = createConfiguredMatch(config);
+    matchRef.current = match;
     const fx: Fx = createFx();
     const anims = match.players.map((_, i) => createAnim(i * 1.3));
     const stepper = new FixedStepper();
@@ -159,7 +170,20 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
     let waitingSince: number | null = null;
     let lastWaitingKey = "";
 
-    const remote = new Map<number, { x: number; y: number; l: boolean; presses: PressMessage[]; seen: Set<number> }>();
+    type Remote = { x: number; y: number; l: boolean; d: boolean; f: boolean; presses: PressMessage[]; seen: Set<number>; samples: { t: number; x: number; y: number }[]; offset: number | null };
+    const remote = new Map<number, Remote>();
+    const blank = (x: number, y: number): Remote => ({ x, y, l: false, d: false, f: false, presses: [], seen: new Set<number>(), samples: [], offset: null });
+    const playback = (entry: Remote, now: number) => {
+      const list = entry.samples;
+      if (!list.length || entry.offset === null) return { x: entry.x, y: entry.y };
+      const t = now - entry.offset - PLAYBACK_DELAY_MS;
+      while (list.length > 2 && list[1].t <= t) list.shift();
+      const a = list[0];
+      const b = list[1];
+      if (!b || t <= a.t) return t <= a.t ? { x: a.x, y: a.y } : { x: list[list.length - 1].x, y: list[list.length - 1].y };
+      const k = Math.min(1, (t - a.t) / Math.max(1, b.t - a.t));
+      return { x: a.x + (b.x - a.x) * k, y: a.y + (b.y - a.y) * k };
+    };
     let pendingEvents: SimEvent[] = [];
     const recorder = isHost ? new FrameRecorder(config.controllers, []) : null;
 
@@ -174,6 +198,8 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
     let pressId = 0;
     let lastReport = 0;
     let lungeFlag = false;
+    let dashFlag = false;
+    let syncFlag = false;
     const lastSent = { x: Number.NaN, y: Number.NaN };
     let hostSeenAt = performance.now();
     let clientAlpha = 1;
@@ -260,14 +286,24 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
           if (members.some((m) => m.host)) hostSeenAt = performance.now();
         },
         onReport: (r: Report) => {
-          const entry = remote.get(r.slot) ?? { x: r.x, y: r.y, l: false, presses: [], seen: new Set<number>() };
+          const entry = remote.get(r.slot) ?? blank(r.x, r.y);
+          const arrival = performance.now();
+          const offset = arrival - r.s;
+          entry.offset = entry.offset === null ? offset : Math.min(entry.offset + 2, offset);
+          const last = entry.samples[entry.samples.length - 1];
+          if (last && r.s <= last.t) return;
+          if (last && r.s - last.t > REPORT_MS * 2.5) entry.samples.push({ t: r.s - REPORT_MS, x: last.x, y: last.y });
+          entry.samples.push({ t: r.s, x: r.x, y: r.y });
+          if (entry.samples.length > 40) entry.samples.splice(0, entry.samples.length - 40);
           entry.x = r.x;
           entry.y = r.y;
           entry.l = entry.l || r.l;
+          entry.d = entry.d || Boolean(r.d);
+          entry.f = entry.f || Boolean(r.f);
           remote.set(r.slot, entry);
         },
         onPress: (p: PressMessage) => {
-          const entry = remote.get(p.slot) ?? { x: match.players[p.slot].x, y: match.players[p.slot].y, l: false, presses: [], seen: new Set<number>() };
+          const entry = remote.get(p.slot) ?? blank(match.players[p.slot].x, match.players[p.slot].y);
           if (entry.seen.has(p.id)) return;
           entry.seen.add(p.id);
           entry.presses.push(p);
@@ -340,13 +376,20 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
           const p = match.players[r.slot];
           const entry = remote.get(r.slot);
           const press = entry?.presses.shift();
+          const target = entry ? { x: entry.x, y: entry.y } : { x: p.x, y: p.y };
           frame.puppets![r.slot] = {
-            x: entry ? entry.x : p.x,
-            y: entry ? entry.y : p.y,
+            x: target.x,
+            y: target.y,
             lunge: entry?.l ?? false,
+            dash: entry?.d ?? false,
+            sync: entry?.f ?? false,
             press: press ? { kind: press.kind, rewind: Math.max(0, match.tick - press.view) } : undefined,
           };
-          if (entry) entry.l = false;
+          if (entry) {
+            entry.l = false;
+            entry.d = false;
+            entry.f = false;
+          }
         }
         step(match, recorder!.record(frame));
         for (const e of match.events) onEvent(e);
@@ -389,9 +432,15 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
           localPrev = { x: local.x, y: local.y };
           const input = localInput();
           const before = local.lunge;
-          movePlayer(match, local, input);
+          local.energy = server.energy;
+          local.cooldowns = { ...server.cooldowns };
+          local.loadout = server.loadout;
+          const dashBefore = local.dash;
+          movePlayer(match, local, { ...input, sync: false });
           if (local.lunge > before) lungeFlag = true;
-          const kind: PressKind | null = input.smash ? "smash" : input.drop ? "drop" : input.hit ? "hit" : null;
+          if (local.dash > dashBefore) dashFlag = true;
+          if (input.sync) syncFlag = true;
+          const kind = input.ultimate ? "ultimate" : input.special ? "special" : input.smash ? "smash" : input.drop ? "drop" : input.hit ? "hit" : null;
           if (kind) {
             pressId++;
             net.press({ slot: mySlot, kind, view: displayedTick, id: pressId });
@@ -400,13 +449,15 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
       }
       const rx = Math.round(local.x * 100) / 100;
       const ry = Math.round(local.y * 100) / 100;
-      const moved = rx !== lastSent.x || ry !== lastSent.y || lungeFlag;
+      const moved = rx !== lastSent.x || ry !== lastSent.y || lungeFlag || dashFlag || syncFlag;
       if ((moved && now - lastReport >= REPORT_MS) || now - lastReport >= IDLE_REPORT_MS) {
         lastReport = now;
         lastSent.x = rx;
         lastSent.y = ry;
-        net.report({ slot: mySlot, x: rx, y: ry, l: lungeFlag, s: Math.round(now) });
+        net.report({ slot: mySlot, x: rx, y: ry, l: lungeFlag, d: dashFlag, f: syncFlag, s: Math.round(now * 10) / 10 });
         lungeFlag = false;
+        dashFlag = false;
+        syncFlag = false;
       }
       Object.assign(match.players[mySlot], { x: local.x, y: local.y, vx: local.vx, vy: local.vy, facing: local.facing, moveX: local.moveX, moveY: local.moveY, lunge: local.lunge, lungeDir: local.lungeDir });
       if (now - hostSeenAt > HOST_SILENCE_MS && !finished && match.winner === null) {
@@ -430,7 +481,25 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
       match.players.forEach((_, i) => updateAnim(anims[i], match, i, dt));
       const alpha = isHost ? (match.winner !== null || introRef.current ? 1 : stepper.alpha) : clientAlpha;
       ctx.clearRect(0, 0, w, h);
+      const saved: { slot: number; x: number; y: number }[] = [];
+      if (isHost) {
+        for (const r of remoteSlots) {
+          const entry = remote.get(r.slot);
+          if (!entry || entry.samples.length < 2) continue;
+          const shown = playback(entry, now);
+          const p = match.players[r.slot];
+          if (Math.hypot(shown.x - p.x, shown.y - p.y) > 1.5) continue;
+          saved.push({ slot: r.slot, x: p.x, y: p.y });
+          p.x = shown.x;
+          p.y = shown.y;
+          if (prev.players[r.slot]) prev.players[r.slot] = { x: shown.x, y: shown.y };
+        }
+      }
       if (scene) render(ctx, cam, w, h, { match, prev, alpha, avatars: competitors.map((c) => c.avatar), names: competitors.map((c, i) => (i === mySlot ? "You" : c.name)), anims, scene, fx, dt, human: mySlot, flip, offscreenMarker: true, markerY: touch && h > w ? 132 : 104 });
+      for (const back of saved) {
+        match.players[back.slot].x = back.x;
+        match.players[back.slot].y = back.y;
+      }
       if (isHost && finishedAt !== null && now - finishedAt > 1800) {
         finishedAt = null;
         void finishAsHost();
@@ -440,7 +509,7 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
 
     if (process.env.NODE_ENV !== "production") {
       window.__loveSmashOnline = {
-        state: () => ({ tick: match.tick, score: [match.score[0], match.score[1]], winner: match.winner, waiting: [...waitingRef.current], host: isHost }),
+        state: () => ({ tick: match.tick, score: [match.score[0], match.score[1]], winner: match.winner, waiting: [...waitingRef.current], host: isHost, players: match.players.map((p) => ({ x: p.x, y: p.y })) }),
         autopilot: (on) => {
           autopilot.current = on ? createBotMind("hard", 4242 + mySlot) : null;
         },
@@ -504,7 +573,7 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
         </div>
       ) : null}
       {serverSlot === mySlot && !intro && score[0] + score[1] >= 0 ? (
-        <div className={cn("pointer-events-none absolute inset-x-0 z-10 flex justify-center", touch ? "bottom-[232px]" : "bottom-8")}>
+        <div className={cn("pointer-events-none absolute inset-x-0 z-10 flex justify-center", touch ? "bottom-[300px]" : "bottom-24")}>
           <p className="rounded-full bg-white/90 px-4 py-1.5 font-display text-sm font-semibold text-plum-700 shadow-[var(--shadow-soft)]">{touch ? "Your serve: 🏸 HIT high · 🌸 DROP short" : "Your serve: J high · L short"}</p>
         </div>
       ) : null}
@@ -526,6 +595,7 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
           </p>
         </div>
       ) : null}
+      {!intro ? <SkillBar read={readSkills} onPress={(action) => presses.current.add(action)} touch={touch} /> : null}
       {touch && !intro ? (
         <TouchControls
           onMove={(x, y) => {

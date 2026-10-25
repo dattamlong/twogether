@@ -3,7 +3,7 @@
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { cn } from "@/lib/utils";
 
-export type PressKind = "hit" | "smash" | "drop" | "lunge";
+export type PressKind = "hit" | "smash" | "drop" | "lunge" | "dash" | "special" | "ultimate" | "sync";
 
 const BUTTONS: { kind: PressKind; label: string; icon: string; className: string }[] = [
   { kind: "hit", label: "HIT", icon: "🏸", className: "size-[4.6rem] bg-sakura-400 text-white shadow-[0_4px_0_0_#c2527c]" },

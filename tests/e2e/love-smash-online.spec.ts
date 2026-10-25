@@ -26,6 +26,8 @@ test("Couple vs Bots: partners on two devices finish a synchronized doubles matc
   test.skip(testInfo.project.name !== "desktop", "multi-device run once");
   test.setTimeout(360_000);
   const [a, b] = await couple(browser, testInfo.project.use, ["Dat", "An"]);
+  const loadout = { movement: "lightning_dash", special: "frost_drop", ultimate: "sakura_meteor" };
+  await admin().from("love_smash_stats").insert([a, b].map((p) => ({ user_id: p.user.id, matches: 30, wins: 15, drop_shots: 30, doubles_matches: 6, tutorial_done: true, loadout })));
 
   await a.page.goto("/games/love-smash");
   await a.page.getByTestId("play-with-partner").click();
@@ -49,6 +51,8 @@ test("Couple vs Bots: partners on two devices finish a synchronized doubles matc
   await expect(a.page.getByTestId("love-smash-online")).toHaveAttribute("data-host", "true");
   await expect(b.page.getByTestId("love-smash-online")).toHaveAttribute("data-host", "false");
   await expect.poll(async () => b.page.evaluate(() => window.__loveSmashOnline?.state().tick ?? 0), { timeout: 20_000 }).toBeGreaterThan(120);
+  await expect(b.page.getByTestId("skill-sync")).toBeVisible();
+  await expect.poll(async () => Number(await b.page.getByTestId("energy-fill").getAttribute("data-energy")), { timeout: 90_000 }).toBeGreaterThan(0);
 
   for (const page of [a.page, b.page]) await expect(page.getByTestId("online-results")).toBeVisible({ timeout: 300_000 });
   const scoreA = await a.page.getByTestId("online-final-score").innerText();

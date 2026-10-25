@@ -1,14 +1,17 @@
 import type { Difficulty } from "./bot";
 import { TICK_RATE } from "./court";
 import { createMatch, step, type Input, type Match } from "./sim";
+import type { Loadout } from "./skills";
 
 export const MAX_MATCH_TICKS = TICK_RATE * 60 * 20;
 const AXIS_LEVELS = 4;
 
 const quantize = (v: number) => Math.max(-AXIS_LEVELS, Math.min(AXIS_LEVELS, Math.round(v * AXIS_LEVELS)));
 
+export const INPUT_CODES = 81 * 256;
+
 export function encodeInput(input: Input) {
-  const bits = (input.hit ? 1 : 0) | (input.smash ? 2 : 0) | (input.drop ? 4 : 0) | (input.lunge ? 8 : 0);
+  const bits = (input.hit ? 1 : 0) | (input.smash ? 2 : 0) | (input.drop ? 4 : 0) | (input.lunge ? 8 : 0) | (input.dash ? 16 : 0) | (input.special ? 32 : 0) | (input.ultimate ? 64 : 0) | (input.sync ? 128 : 0);
   return quantize(input.mx) + AXIS_LEVELS + 9 * (quantize(input.my) + AXIS_LEVELS) + 81 * bits;
 }
 
@@ -22,6 +25,10 @@ export function decodeInput(code: number): Input {
   if (bits & 2) input.smash = true;
   if (bits & 4) input.drop = true;
   if (bits & 8) input.lunge = true;
+  if (bits & 16) input.dash = true;
+  if (bits & 32) input.special = true;
+  if (bits & 64) input.ultimate = true;
+  if (bits & 128) input.sync = true;
   return input;
 }
 
@@ -59,17 +66,17 @@ export type ReplayResult =
   | { ok: true; match: Match; ticks: number }
   | { ok: false; reason: "invalid_log" | "too_long" | "unfinished" };
 
-export function replayMatch(seed: number, difficulty: Difficulty, log: unknown): ReplayResult {
+export function replayMatch(seed: number, difficulty: Difficulty, log: unknown, loadout: Loadout | null = null): ReplayResult {
   if (!Array.isArray(log) || log.length % 2 !== 0) return { ok: false, reason: "invalid_log" };
   let total = 0;
   for (let i = 0; i < log.length; i += 2) {
     const code = log[i];
     const count = log[i + 1];
-    if (!Number.isInteger(code) || code < 0 || code >= 81 * 16 || !Number.isInteger(count) || count < 1) return { ok: false, reason: "invalid_log" };
+    if (!Number.isInteger(code) || code < 0 || code >= INPUT_CODES || !Number.isInteger(count) || count < 1) return { ok: false, reason: "invalid_log" };
     total += count;
     if (total > MAX_MATCH_TICKS) return { ok: false, reason: "too_long" };
   }
-  const match = createMatch({ seed, difficulty });
+  const match = createMatch({ seed, difficulty, loadouts: [loadout, null] });
   let ticks = 0;
   const done = () => match.winner !== null;
   for (let i = 0; i < log.length && !done(); i += 2) {

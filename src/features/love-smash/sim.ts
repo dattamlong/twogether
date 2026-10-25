@@ -2,6 +2,7 @@ import { botThink, createBotMind, PROFILES, type BotMind, type Difficulty } from
 import { COURT, DT, inDoubles, inDoublesServiceCourt, inServiceCourt, inSingles, serviceCourt, sideOf, sideSign, type Side } from "./court";
 import { solveShot, stepShuttle, type ShotKind, type Shuttle, type Vec3 } from "./physics";
 import { ACCEL, DECEL, IDLE, LUNGE_REACH, LUNGE_SPEED, MAX_SPEED, PRESS_BUFFER, REACH, SCORE_CAP, TARGET_SCORE } from "./rules";
+import { EMPTY_LOADOUT, FULL_LOADOUT, SKILL_BALANCE, SKILLS, type Loadout, type SkillCategory, type SkillId } from "./skills";
 
 const WHIFF_COOLDOWN = 22;
 const LUNGE_TICKS = 16;
@@ -17,7 +18,7 @@ export const MAX_REWIND = 24;
 const PUPPET_STEP = LUNGE_SPEED * DT * 1.1;
 const TEAMMATE_GAP = 0.55;
 
-export type PressKind = "hit" | "smash" | "drop";
+export type PressKind = "hit" | "smash" | "drop" | "special" | "ultimate";
 export type Quality = "perfect" | "good" | "late";
 export type Format = "singles" | "doubles";
 
@@ -28,10 +29,14 @@ export type Input = {
   smash?: boolean;
   drop?: boolean;
   lunge?: boolean;
+  dash?: boolean;
+  special?: boolean;
+  ultimate?: boolean;
+  sync?: boolean;
   aim?: { x: number; depth: number };
 };
 
-export type PuppetFrame = { x: number; y: number; lunge?: boolean; press?: { kind: PressKind; rewind: number } };
+export type PuppetFrame = { x: number; y: number; lunge?: boolean; dash?: boolean; sync?: boolean; press?: { kind: PressKind; rewind: number } };
 
 export type Controller = { kind: "human" } | { kind: "puppet" } | { kind: "bot"; difficulty: Difficulty };
 
@@ -58,6 +63,13 @@ export type Player = {
   aim: Input["aim"];
   moveX: number;
   moveY: number;
+  energy: number;
+  rallyGain: number;
+  cooldowns: Record<SkillCategory, number>;
+  dash: number;
+  dashDir: { x: number; y: number };
+  dashedAt: number;
+  loadout: Loadout;
 };
 
 export type Phase = "serve" | "rally" | "point" | "over";
@@ -67,7 +79,11 @@ export type PointReason = "in" | "out" | "net" | "serve_fault";
 export type ComboKind = "love_combo" | "sakura_duo" | "teamwork";
 
 export type SimEvent =
-  | { type: "hit"; side: Side; slot: number; shot: ShotKind; quality: Quality; sakura: boolean; save: boolean; speed: number }
+  | { type: "hit"; side: Side; slot: number; shot: ShotKind; quality: Quality; sakura: boolean; save: boolean; speed: number; skill: SkillId | null; sync: boolean }
+  | { type: "skill"; side: Side; slot: number; skill: SkillId | "love_sync" }
+  | { type: "skill_fail"; side: Side; slot: number; skill: SkillId | "love_sync" | null; reason: "energy" | "cooldown" | "locked" | "position" }
+  | { type: "counter"; side: Side; slot: number }
+  | { type: "sync_ready"; side: Side }
   | { type: "whiff"; side: Side; slot: number }
   | { type: "lunge"; side: Side; slot: number }
   | { type: "net"; side: Side }
@@ -79,11 +95,11 @@ export type SimEvent =
 
 export type SideStats = { perfectHits: number; smashes: number; smashWinners: number; hits: number; combos: number };
 
-export type PlayerStats = { perfectHits: number; smashes: number; smashWinners: number; hits: number; saves: number };
+export type PlayerStats = { perfectHits: number; smashes: number; smashWinners: number; hits: number; saves: number; drops: number };
 
 export type MatchStats = { longestRally: number; rallies: number; sides: [SideStats, SideStats]; players: PlayerStats[] };
 
-export type MatchOptions = { seed: number; difficulty: Difficulty; tutorial?: boolean; format?: Format; controllers?: Controller[] };
+export type MatchOptions = { seed: number; difficulty: Difficulty; tutorial?: boolean; format?: Format; controllers?: Controller[]; loadouts?: (Loadout | null)[]; teamSync?: [boolean, boolean] };
 
 type ShuttleFrame = { pos: Vec3; vel: Vec3; netted: boolean; lastHitter: Side | null; inPlay: boolean };
 
@@ -109,6 +125,11 @@ export type Match = {
   bot: BotMind;
   format: Format;
   options: MatchOptions;
+  teamEnergy: [number, number];
+  teamCooldown: [number, number];
+  sync: [number, number];
+  teamSync: [boolean, boolean];
+  lastTeamHitter: [number, number];
   history: ShuttleFrame[];
   events: SimEvent[];
   lastPoint: { winner: Side; reason: PointReason } | null;
@@ -116,7 +137,7 @@ export type Match = {
 
 export const teamOf = (slot: number): Side => (slot % 2) as Side;
 
-function newPlayer(slot: number, control: Controller): Player {
+function newPlayer(slot: number, control: Controller, loadout: Loadout | null | undefined): Player {
   const side = teamOf(slot);
   return {
     side,
@@ -139,11 +160,22 @@ function newPlayer(slot: number, control: Controller): Player {
     aim: undefined,
     moveX: 0,
     moveY: 0,
+    energy: 0,
+    rallyGain: 0,
+    cooldowns: { movement: 0, special: 0, ultimate: 0 },
+    dash: 0,
+    dashDir: { x: 0, y: 0 },
+    dashedAt: -9999,
+    loadout: loadout ?? (control.kind === "bot" ? botLoadout(control.difficulty) : EMPTY_LOADOUT),
   };
 }
 
+function botLoadout(difficulty: Difficulty): Loadout {
+  return difficulty === "hard" ? { ...FULL_LOADOUT, special: "phoenix_drive" } : FULL_LOADOUT;
+}
+
 const emptySide = (): SideStats => ({ perfectHits: 0, smashes: 0, smashWinners: 0, hits: 0, combos: 0 });
-const emptyPlayer = (): PlayerStats => ({ perfectHits: 0, smashes: 0, smashWinners: 0, hits: 0, saves: 0 });
+const emptyPlayer = (): PlayerStats => ({ perfectHits: 0, smashes: 0, smashWinners: 0, hits: 0, saves: 0, drops: 0 });
 
 export function defaultControllers(format: Format, difficulty: Difficulty): Controller[] {
   const bot: Controller = { kind: "bot", difficulty };
@@ -153,7 +185,7 @@ export function defaultControllers(format: Format, difficulty: Difficulty): Cont
 export function createMatch(options: MatchOptions): Match {
   const format = options.format ?? "singles";
   const controllers = options.controllers ?? defaultControllers(format, options.difficulty);
-  const players = controllers.map((c, slot) => newPlayer(slot, c));
+  const players = controllers.map((c, slot) => newPlayer(slot, c, options.loadouts?.[slot]));
   const minds = controllers.map((c, slot) => (c.kind === "bot" ? createBotMind(c.difficulty, slot === 1 ? options.seed : options.seed + slot * 7919) : null));
   const match: Match = {
     tick: 0,
@@ -177,6 +209,11 @@ export function createMatch(options: MatchOptions): Match {
     bot: (minds[1] ?? createBotMind(options.difficulty, options.seed)) as BotMind,
     format,
     options,
+    teamEnergy: [0, 0],
+    teamCooldown: [0, 0],
+    sync: [0, 0],
+    teamSync: options.teamSync ?? [true, true],
+    lastTeamHitter: [-1, -1],
     history: [],
     events: [],
     lastPoint: null,
@@ -210,7 +247,10 @@ function setupServe(m: Match) {
     p.recover = 0;
     p.lunge = 0;
     p.lungeCooldown = 0;
+    p.dash = 0;
+    p.rallyGain = 0;
   }
+  m.lastTeamHitter = [-1, -1];
   const server = m.players[m.serverSlot];
   const receiver = m.players[receiverSlot];
   server.x = court.serverX;
@@ -269,6 +309,76 @@ function tickTimers(p: Player) {
   if (p.cooldown > 0) p.cooldown--;
   if (p.lungeCooldown > 0) p.lungeCooldown--;
   if (p.recover > 0) p.recover--;
+  if (p.cooldowns.movement > 0) p.cooldowns.movement--;
+  if (p.cooldowns.special > 0) p.cooldowns.special--;
+  if (p.cooldowns.ultimate > 0) p.cooldowns.ultimate--;
+}
+
+export function skillState(p: Player, category: SkillCategory): { skill: SkillId | null; ready: boolean; reason: "energy" | "cooldown" | "locked" | null } {
+  const skill = p.loadout[category];
+  if (!skill) return { skill: null, ready: false, reason: "locked" };
+  if (p.cooldowns[category] > 0) return { skill, ready: false, reason: "cooldown" };
+  if (p.energy < SKILLS[skill].cost) return { skill, ready: false, reason: "energy" };
+  return { skill, ready: true, reason: null };
+}
+
+function spend(p: Player, category: SkillCategory) {
+  const skill = p.loadout[category]!;
+  p.energy -= SKILLS[skill].cost;
+  p.cooldowns[category] = SKILLS[skill].cooldown;
+}
+
+function tryDash(m: Match, p: Player, dirX: number, dirY: number) {
+  if (m.phase === "serve" || p.dash > 0 || p.lunge > 0) return;
+  const state = skillState(p, "movement");
+  if (!state.ready) {
+    m.events.push({ type: "skill_fail", side: p.side, slot: p.slot, skill: state.skill, reason: state.reason ?? "locked" });
+    return;
+  }
+  let lx = dirX;
+  let ly = dirY;
+  if (lx === 0 && ly === 0) {
+    lx = m.shuttle.pos.x - p.x;
+    ly = m.shuttle.pos.y - p.y;
+  }
+  const len = Math.sqrt(lx * lx + ly * ly) || 1;
+  spend(p, "movement");
+  p.dashDir = { x: lx / len, y: ly / len };
+  p.dash = SKILL_BALANCE.dash.ticks;
+  p.dashedAt = m.tick;
+  m.events.push({ type: "skill", side: p.side, slot: p.slot, skill: state.skill! });
+}
+
+function trySync(m: Match, p: Player) {
+  const side = p.side;
+  const cost = SKILL_BALANCE.sync.cost;
+  if (m.format !== "doubles" || !m.teamSync[side] || m.sync[side] > 0) {
+    m.events.push({ type: "skill_fail", side, slot: p.slot, skill: "love_sync", reason: "locked" });
+    return;
+  }
+  if (m.teamCooldown[side] > 0 || m.teamEnergy[side] < cost) {
+    m.events.push({ type: "skill_fail", side, slot: p.slot, skill: "love_sync", reason: m.teamCooldown[side] > 0 ? "cooldown" : "energy" });
+    return;
+  }
+  m.teamEnergy[side] -= cost;
+  m.teamCooldown[side] = SKILL_BALANCE.sync.cooldown;
+  m.sync[side] = SKILL_BALANCE.sync.window;
+  m.events.push({ type: "skill", side, slot: p.slot, skill: "love_sync" });
+}
+
+function gainEnergy(m: Match, p: Player, amount: number) {
+  const room = Math.max(0, SKILL_BALANCE.rallyGainCap - p.rallyGain);
+  const add = Math.min(amount, room, SKILL_BALANCE.maxEnergy - p.energy);
+  if (add <= 0) return;
+  p.energy += add;
+  p.rallyGain += add;
+}
+
+function gainTeam(m: Match, side: Side, amount: number) {
+  if (!m.teamSync[side] || m.format !== "doubles") return;
+  const before = m.teamEnergy[side];
+  m.teamEnergy[side] = Math.min(SKILL_BALANCE.sync.cost, before + amount);
+  if (before < SKILL_BALANCE.sync.cost && m.teamEnergy[side] >= SKILL_BALANCE.sync.cost && m.teamCooldown[side] === 0) m.events.push({ type: "sync_ready", side });
 }
 
 function startLunge(m: Match, p: Player, dirX: number, dirY: number) {
@@ -299,9 +409,15 @@ export function movePlayer(m: Match, p: Player, input: Input) {
   p.moveY = dir.y;
   tickTimers(p);
   const serving = m.phase === "serve";
-  if (input.lunge && p.lunge === 0 && p.lungeCooldown === 0 && p.recover === 0 && !serving) startLunge(m, p, dir.x, dir.y);
+  if (input.dash) tryDash(m, p, dir.x, dir.y);
+  if (input.lunge && p.lunge === 0 && p.dash === 0 && p.lungeCooldown === 0 && p.recover === 0 && !serving) startLunge(m, p, dir.x, dir.y);
 
-  if (p.lunge > 0) {
+  if (p.dash > 0) {
+    const fade = p.dash / SKILL_BALANCE.dash.ticks;
+    p.vx = p.dashDir.x * SKILL_BALANCE.dash.speed * (0.5 + 0.5 * fade);
+    p.vy = p.dashDir.y * SKILL_BALANCE.dash.speed * (0.5 + 0.5 * fade);
+    p.dash--;
+  } else if (p.lunge > 0) {
     const fade = p.lunge / LUNGE_TICKS;
     p.vx = p.lungeDir.x * LUNGE_SPEED * (0.4 + 0.6 * fade);
     p.vy = p.lungeDir.y * LUNGE_SPEED * (0.4 + 0.6 * fade);
@@ -333,6 +449,9 @@ export function movePlayer(m: Match, p: Player, input: Input) {
 
 function movePuppet(m: Match, p: Player, frame: PuppetFrame) {
   tickTimers(p);
+  if (frame.dash) tryDash(m, p, frame.x - p.x, frame.y - p.y);
+  const stepLimit = p.dash > 0 ? SKILL_BALANCE.dash.speed * DT * 1.1 : PUPPET_STEP;
+  if (p.dash > 0) p.dash--;
   const serving = m.phase === "serve" && m.serverSlot === p.slot;
   const s = sideSign(p.side);
   const tx = Math.max(-3.4, Math.min(3.4, frame.x));
@@ -340,12 +459,12 @@ function movePuppet(m: Match, p: Player, frame: PuppetFrame) {
   let dx = serving ? 0 : tx - p.x;
   let dy = serving ? 0 : ty - p.y;
   const d = Math.sqrt(dx * dx + dy * dy);
-  if (d > PUPPET_STEP) {
-    dx = (dx / d) * PUPPET_STEP;
-    dy = (dy / d) * PUPPET_STEP;
+  if (d > stepLimit) {
+    dx = (dx / d) * stepLimit;
+    dy = (dy / d) * stepLimit;
   }
-  p.moveX = d > 0.001 ? dx / (d > PUPPET_STEP ? PUPPET_STEP : d || 1) : 0;
-  p.moveY = d > 0.001 ? dy / (d > PUPPET_STEP ? PUPPET_STEP : d || 1) : 0;
+  p.moveX = d > 0.001 ? dx / (d > stepLimit ? stepLimit : d || 1) : 0;
+  p.moveY = d > 0.001 ? dy / (d > stepLimit ? stepLimit : d || 1) : 0;
   p.vx = dx / DT;
   p.vy = dy / DT;
   p.x += dx;
@@ -456,7 +575,7 @@ function aimTarget(m: Match, p: Player, shot: ShotKind, q: Quality, aim: Input["
   x = x * (1 - pull);
   const limit = m.format === "doubles" ? 3.4 : 2.9;
   x = Math.max(-limit, Math.min(limit, x));
-  const base: Record<ShotKind, number> = { clear: 5.9, lift: 5.7, drop: 1.4, drive: 4.8, smash: 4.2, serve_high: 5.8, serve_short: 2.35 };
+  const base: Record<ShotKind, number> = { clear: 5.9, lift: 5.7, drop: 1.4, drive: 4.8, smash: 4.2, serve_high: 5.8, serve_short: 2.35, frost_drop: 1.05, phoenix_drive: 5.3, meteor: 4.2 };
   let depth = base[shot] + depthShift;
   if (q === "late") depth += shot === "drop" ? 1.1 : shot === "clear" || shot === "lift" ? -1.7 : -0.6;
   if (q === "good" && (shot === "clear" || shot === "lift")) depth -= 0.4;
@@ -466,14 +585,45 @@ function aimTarget(m: Match, p: Player, shot: ShotKind, q: Quality, aim: Input["
 
 function executeHit(m: Match, p: Player, press: PressKind, aim: Input["aim"], hitQuality: Quality, reachUsed: number, from: ShuttleFrame, rewind: number) {
   const s = m.shuttle;
-  const save = p.lunge > 0 || (reachUsed > REACH * 0.8 && from.pos.z < 1.1);
-  const shot = chooseShot(press, from.pos.z, Math.abs(p.y));
-  const target = aimTarget(m, p, shot, hitQuality, aim);
-  const sakura = shot === "smash" && hitQuality === "perfect" && from.pos.z >= 2.3;
-  const bonus = shot === "smash" ? (sakura ? 6 : hitQuality === "perfect" ? 3 : hitQuality === "late" ? -5 : 0) : 0;
+  const save = p.lunge > 0 || p.dash > 0 || (reachUsed > REACH * 0.8 && from.pos.z < 1.1);
+  const incoming = m.lastShot;
+  let skill: SkillId | null = null;
+  let shot: ShotKind;
+  if (press === "special" && p.loadout.special && skillState(p, "special").ready) {
+    skill = p.loadout.special;
+    shot = skill === "frost_drop" ? "frost_drop" : "phoenix_drive";
+  } else if (press === "ultimate" && p.loadout.ultimate && skillState(p, "ultimate").ready && from.pos.z >= SKILL_BALANCE.meteor.minHeight && hitQuality !== "late") {
+    skill = p.loadout.ultimate;
+    shot = "meteor";
+  } else {
+    if (press === "ultimate" || press === "special") m.events.push({ type: "skill_fail", side: p.side, slot: p.slot, skill: press === "ultimate" ? p.loadout.ultimate : p.loadout.special, reason: "position" });
+    shot = chooseShot(press === "ultimate" ? "smash" : press === "special" ? "hit" : press, from.pos.z, Math.abs(p.y));
+  }
+  if (skill) spend(p, SKILLS[skill].category);
+  const synced = m.sync[p.side] > 0 && (shot === "smash" || shot === "meteor" || shot === "drive" || shot === "phoenix_drive" || shot === "drop" || shot === "frost_drop");
+  if (synced) m.sync[p.side] = 0;
+  const placement: Quality = skill === "frost_drop" || synced ? "perfect" : hitQuality;
+  const target = aimTarget(m, p, shot, placement, aim);
+  if (shot === "frost_drop") target.y = sideSign(p.side === 0 ? 1 : 0) * SKILL_BALANCE.frostDrop.depth;
+  if (shot === "phoenix_drive") target.y = sideSign(p.side === 0 ? 1 : 0) * SKILL_BALANCE.phoenixDrive.depth;
+  const sakura = (shot === "smash" && hitQuality === "perfect" && from.pos.z >= 2.3) || shot === "meteor";
+  let bonus = shot === "smash" ? (sakura ? 6 : hitQuality === "perfect" ? 3 : hitQuality === "late" ? -5 : 0) : shot === "meteor" ? SKILL_BALANCE.meteor.speedBonus + (hitQuality === "perfect" ? 2 : 0) : 0;
+  if (synced) bonus += SKILL_BALANCE.sync.speedBonus;
   s.pos = { ...from.pos };
   s.netted = false;
-  s.vel = solveShot({ ...from.pos }, target, shot, bonus);
+  s.vel = solveShot({ ...from.pos }, target, shot, bonus, shot === "phoenix_drive" && hitQuality === "late" ? SKILL_BALANCE.phoenixDrive.lateDip : null);
+  let gain = hitQuality === "perfect" ? SKILL_BALANCE.gain.perfect : hitQuality === "good" ? SKILL_BALANCE.gain.good : SKILL_BALANCE.gain.hit;
+  if (save) gain = Math.max(gain, SKILL_BALANCE.gain.save);
+  const countered = incoming !== null && incoming.side !== p.side && (incoming.shot === "smash" || incoming.shot === "meteor") && m.tick - p.dashedAt <= SKILL_BALANCE.counterWindow && hitQuality !== "late";
+  if (countered) {
+    gain += SKILL_BALANCE.gain.counter;
+    m.events.push({ type: "counter", side: p.side, slot: p.slot });
+  }
+  if (skill) gain = 0;
+  gainEnergy(m, p, gain);
+  const lastMate = m.lastTeamHitter[p.side];
+  if (lastMate >= 0 && lastMate !== p.slot) gainTeam(m, p.side, SKILL_BALANCE.sync.perHandoff);
+  m.lastTeamHitter[p.side] = p.slot;
   m.lastHitter = p.side;
   m.isServe = false;
   m.rally++;
@@ -485,21 +635,23 @@ function executeHit(m: Match, p: Player, press: PressKind, aim: Input["aim"], hi
     st.perfectHits++;
     ps.perfectHits++;
   }
-  if (shot === "smash") {
+  if (shot === "smash" || shot === "meteor") {
     st.smashes++;
     ps.smashes++;
   }
+  if (shot === "drop" || shot === "frost_drop") ps.drops++;
   if (save) ps.saves++;
   m.rallyLog.push({ slot: p.slot, side: p.side, save, perfect: hitQuality === "perfect", smash: shot === "smash" });
   m.lastShot = { side: p.side, slot: p.slot, shot, quality: hitQuality, sakura };
   const dx = s.pos.x - p.x;
   p.swing = {
-    kind: shot === "smash" ? "smash" : shot === "clear" ? "overhead" : shot === "drop" ? "drop" : shot === "lift" ? "lift" : dx * (p.side === 0 ? 1 : -1) >= 0 ? "forehand" : "backhand",
+    kind: shot === "smash" || shot === "meteor" ? "smash" : shot === "clear" ? "overhead" : shot === "drop" || shot === "frost_drop" ? "drop" : shot === "lift" ? "lift" : dx * (p.side === 0 ? 1 : -1) >= 0 ? "forehand" : "backhand",
     t: 0,
     quality: hitQuality,
   };
-  if (shot === "smash") p.recover = Math.max(p.recover, sakura ? 24 : 18);
-  m.events.push({ type: "hit", side: p.side, slot: p.slot, shot, quality: hitQuality, sakura, save, speed: Math.sqrt(s.vel.x * s.vel.x + s.vel.y * s.vel.y + s.vel.z * s.vel.z) });
+  if (shot === "smash" || shot === "meteor") p.recover = Math.max(p.recover, sakura ? 24 : 18);
+  if (skill) m.events.push({ type: "skill", side: p.side, slot: p.slot, skill });
+  m.events.push({ type: "hit", side: p.side, slot: p.slot, shot, quality: hitQuality, sakura, save, speed: Math.sqrt(s.vel.x * s.vel.x + s.vel.y * s.vel.y + s.vel.z * s.vel.z), skill, sync: synced });
   for (let i = 0; i < rewind && m.inPlay; i++) {
     const outcome = stepShuttle(s);
     if (outcome === "net") m.events.push({ type: "net", side: p.side });
@@ -527,10 +679,17 @@ function serve(m: Match, press: PressKind) {
   m.phase = "rally";
   m.phaseTicks = 0;
   p.swing = { kind: "serve", t: 0, quality: null };
-  m.events.push({ type: "hit", side: m.server, slot: p.slot, shot, quality: "good", sakura: false, save: false, speed: 0 });
+  m.events.push({ type: "hit", side: m.server, slot: p.slot, shot, quality: "good", sakura: false, save: false, speed: 0, skill: null, sync: false });
 }
 
-function queuePress(p: Player, kind: PressKind | null, aim: Input["aim"], rewind: number) {
+function queuePress(m: Match, p: Player, kind: PressKind | null, aim: Input["aim"], rewind: number) {
+  if ((kind === "special" || kind === "ultimate") && m.phase === "rally") {
+    const state = skillState(p, kind);
+    if (!state.ready) {
+      m.events.push({ type: "skill_fail", side: p.side, slot: p.slot, skill: state.skill, reason: state.reason ?? "locked" });
+      return;
+    }
+  }
   if (kind && p.cooldown === 0 && !p.pending && !(p.swing && p.swing.kind !== "whiff" && p.swing.t < 8)) {
     p.pending = { kind, ticks: PRESS_BUFFER, aim, rewind: Math.max(0, Math.min(MAX_REWIND, Math.round(rewind))) };
   }
@@ -616,6 +775,8 @@ function awardPoint(m: Match, winner: Side, reason: PointReason) {
   if (combo) {
     m.stats.sides[winner].combos++;
     m.events.push({ type: "combo", side: winner, kind: combo });
+    for (const p of m.players) if (p.side === winner) gainEnergy(m, p, SKILL_BALANCE.gain.teamwork);
+    gainTeam(m, winner, SKILL_BALANCE.sync.perCombo);
   }
   if (m.format === "doubles" && winner === servingTeam) {
     const team = m.players.filter((p) => p.side === winner);
@@ -663,6 +824,10 @@ export function step(m: Match, input: Input | Frame) {
   m.tick++;
   m.phaseTicks++;
   if (m.phase === "over") return m;
+  for (const side of [0, 1] as const) {
+    if (m.teamCooldown[side] > 0) m.teamCooldown[side]--;
+    if (m.sync[side] > 0) m.sync[side]--;
+  }
   const resting = m.phase === "point";
   const controls: (Input | null)[] = m.players.map((p) => {
     if (resting) return IDLE;
@@ -680,10 +845,13 @@ export function step(m: Match, input: Input | Frame) {
   if (!resting) {
     for (const p of m.players) {
       const c = controls[p.slot];
-      if (c) queuePress(p, c.smash ? "smash" : c.drop ? "drop" : c.hit ? "hit" : null, c.aim, 0);
-      else {
-        const press = frame.puppets?.[p.slot]?.press;
-        if (press) queuePress(p, press.kind, undefined, press.rewind);
+      if (c) {
+        if (c.sync) trySync(m, p);
+        queuePress(m, p, c.ultimate ? "ultimate" : c.special ? "special" : c.smash ? "smash" : c.drop ? "drop" : c.hit ? "hit" : null, c.aim, 0);
+      } else {
+        const puppet = frame.puppets?.[p.slot];
+        if (puppet?.sync) trySync(m, p);
+        if (puppet?.press) queuePress(m, p, puppet.press.kind, undefined, puppet.press.rewind);
       }
     }
   }

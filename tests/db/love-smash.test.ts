@@ -98,3 +98,31 @@ describe("Love Smash rewards", () => {
     expect(errorMessage(await user.client.rpc("start_love_smash", { difficulty: "easy" }))).toBe("too_many_open_matches");
   });
 });
+
+describe("Love Smash skills progression", () => {
+  it("unlocks skills from verified stats and ignores locked skills in a loadout", async () => {
+    const user = await createUser();
+    const fresh = expectOk(await user.client.rpc("get_love_smash_progress")) as { unlocked: string[]; loadout: Record<string, unknown>; level: number };
+    expect(fresh.unlocked).toEqual([]);
+    expect(fresh.level).toBe(1);
+    const cheat = expectOk(await user.client.rpc("set_love_smash_loadout", { new_loadout: { movement: "lightning_dash", special: "phoenix_drive", ultimate: "sakura_meteor" } }));
+    expect(cheat).toEqual({ movement: null, special: null, ultimate: null });
+    const done = expectOk(await user.client.rpc("complete_love_smash_tutorial")) as { unlocked: string[] };
+    expect(done.unlocked).toEqual(["lightning_dash"]);
+    expect(expectOk(await user.client.rpc("set_love_smash_loadout", { new_loadout: { movement: "lightning_dash", special: "frost_drop" } }))).toEqual({ movement: "lightning_dash", special: null, ultimate: null });
+    expect((await user.client.from("love_smash_stats").update({ wins: 99 }).eq("user_id", user.id).select()).data ?? []).toEqual([]);
+  });
+
+  it("locks the equipped loadout into each match and counts verified drop shots", async () => {
+    const user = await createUser();
+    expectOk(await db().from("love_smash_stats").insert({ user_id: user.id, matches: 20, wins: 10, drop_shots: 19, tutorial_done: true }).select("user_id"));
+    expectOk(await user.client.rpc("set_love_smash_loadout", { new_loadout: { movement: "lightning_dash", special: "phoenix_drive", ultimate: "sakura_meteor" } }));
+    const started = expectOk(await user.client.rpc("start_love_smash", { difficulty: "normal" })) as { matchId: string; loadout: Record<string, string | null> };
+    expect(started.loadout).toEqual({ movement: "lightning_dash", special: "phoenix_drive", ultimate: "sakura_meteor" });
+    await age(started.matchId, 70);
+    const result = expectOk(await db().rpc("finish_love_smash", { match_id: started.matchId, player: user.id, player_won: true, final_player_score: 7, final_bot_score: 2, match_ticks: 3600, rally_record: 5, perfect_count: 1, smash_count: 1, drop_count: 3 })) as { unlocked: string[] };
+    expect(result.unlocked).toContain("frost_drop");
+    const { data } = await db().from("love_smash_stats").select("drop_shots").eq("user_id", user.id).single();
+    expect(data!.drop_shots).toBe(22);
+  });
+});

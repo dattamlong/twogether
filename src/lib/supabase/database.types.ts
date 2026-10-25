@@ -1535,6 +1535,7 @@ export type Database = {
           difficulty: string | null;
           finished_at: string | null;
           id: string;
+          loadout: Json | null;
           longest_rally: number | null;
           mode: string;
           perfect_hits: number | null;
@@ -1555,6 +1556,7 @@ export type Database = {
           difficulty?: string | null;
           finished_at?: string | null;
           id?: string;
+          loadout?: Json | null;
           longest_rally?: number | null;
           mode?: string;
           perfect_hits?: number | null;
@@ -1574,6 +1576,7 @@ export type Database = {
           difficulty?: string | null;
           finished_at?: string | null;
           id?: string;
+          loadout?: Json | null;
           longest_rally?: number | null;
           mode?: string;
           perfect_hits?: number | null;
@@ -1689,11 +1692,14 @@ export type Database = {
         Row: {
           couple_wins: number;
           doubles_matches: number;
+          drop_shots: number;
+          loadout: NonNullable<Json>;
           longest_rally: number;
           losses: number;
           matches: number;
           perfect_hits: number;
           smashes: number;
+          tutorial_done: boolean;
           updated_at: string;
           user_id: string;
           wins: number;
@@ -1702,11 +1708,14 @@ export type Database = {
         Insert: {
           couple_wins?: number;
           doubles_matches?: number;
+          drop_shots?: number;
+          loadout?: NonNullable<Json>;
           longest_rally?: number;
           losses?: number;
           matches?: number;
           perfect_hits?: number;
           smashes?: number;
+          tutorial_done?: boolean;
           updated_at?: string;
           user_id: string;
           wins?: number;
@@ -1714,11 +1723,14 @@ export type Database = {
         Update: {
           couple_wins?: number;
           doubles_matches?: number;
+          drop_shots?: number;
+          loadout?: NonNullable<Json>;
           longest_rally?: number;
           losses?: number;
           matches?: number;
           perfect_hits?: number;
           smashes?: number;
+          tutorial_done?: boolean;
           updated_at?: string;
           user_id?: string;
           wins?: number;
@@ -2897,6 +2909,10 @@ export type Database = {
         Returns: undefined;
       };
       complete_lesson: { Args: { lesson_attempt: string }; Returns: Json };
+      complete_love_smash_tutorial: {
+        Args: Record<PropertyKey, never>;
+        Returns: Json;
+      };
       completed_lessons: {
         Args: { uid: string };
         Returns: {
@@ -2963,6 +2979,7 @@ export type Database = {
       finish_game: { Args: { game_session: string }; Returns: Json };
       finish_love_smash: {
         Args: {
+          drop_count?: number;
           final_bot_score: number;
           final_player_score: number;
           match_id: string;
@@ -3077,6 +3094,10 @@ export type Database = {
           prompt: string;
           question_id: string;
         }[];
+      };
+      get_love_smash_progress: {
+        Args: Record<PropertyKey, never>;
+        Returns: Json;
       };
       get_love_smash_room: { Args: { target_room: string }; Returns: Json };
       get_my_legend_status: { Args: Record<PropertyKey, never>; Returns: Json };
@@ -3213,12 +3234,17 @@ export type Database = {
           isSetofReturn: false;
         };
       };
+      love_smash_clean_loadout: {
+        Args: { raw: Json; uid: string };
+        Returns: Json;
+      };
       love_smash_member_of: {
         Args: { include_invited?: boolean; target_room: string };
         Returns: boolean;
       };
       love_smash_open_slots: { Args: { room_mode: string }; Returns: number[] };
       love_smash_room_json: { Args: { target_room: string }; Returns: Json };
+      love_smash_unlocks: { Args: { uid: string }; Returns: string[] };
       mark_messages_read: { Args: Record<PropertyKey, never>; Returns: number };
       mark_notifications_read: { Args: { ids?: string[] }; Returns: number };
       message_json: {
@@ -3443,6 +3469,7 @@ export type Database = {
         Args: { make_public: boolean };
         Returns: undefined;
       };
+      set_love_smash_loadout: { Args: { new_loadout: Json }; Returns: Json };
       set_love_smash_ready: {
         Args: { is_ready: boolean; target_room: string };
         Returns: Json;

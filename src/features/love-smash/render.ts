@@ -12,7 +12,7 @@ export const CHIBI_SCALE = 1.3;
 
 export type Snapshot = { players: { x: number; y: number }[]; shuttle: Vec3 };
 
-export type Particle = { alive: boolean; x: number; y: number; vx: number; vy: number; rot: number; vr: number; life: number; max: number; size: number; color: string; kind: "petal" | "spark" | "confetti" | "streak" };
+export type Particle = { alive: boolean; x: number; y: number; vx: number; vy: number; rot: number; vr: number; life: number; max: number; size: number; color: string; kind: "petal" | "spark" | "confetti" | "streak" | "snow" | "ember" | "heart" | "bolt" };
 
 export type Pop = { text: string; x: number; y: number; life: number; max: number; color: string; size: number };
 
@@ -24,7 +24,7 @@ export type Fx = {
   impacts: Impact[];
   banner: { text: string; sub: string; life: number; max: number; color: string } | null;
   trail: Vec3[];
-  trailKind: "normal" | "smash" | "sakura";
+  trailKind: "normal" | "smash" | "sakura" | "frost" | "phoenix" | "sync";
   shake: number;
   flash: number;
   cheer: number;
@@ -70,9 +70,9 @@ export function burst(fx: Fx, x: number, y: number, kind: Particle["kind"], coun
       rot: kind === "streak" ? a : Math.random() * 6,
       vr: kind === "streak" ? 0 : (Math.random() - 0.5) * 8,
       life: 0,
-      max: kind === "spark" ? 0.3 + Math.random() * 0.2 : kind === "streak" ? 0.28 : 0.9 + Math.random() * 0.9,
-      size: kind === "spark" ? 2 + Math.random() * 2.5 : kind === "streak" ? 14 + Math.random() * 12 : 5 + Math.random() * 5,
-      color: kind === "confetti" ? CONFETTI[i % CONFETTI.length] : kind === "spark" ? "#fff6b0" : kind === "streak" ? "#ffffff" : PETAL_COLORS[i % PETAL_COLORS.length],
+      max: kind === "spark" || kind === "bolt" ? 0.3 + Math.random() * 0.2 : kind === "streak" ? 0.28 : kind === "ember" ? 0.6 + Math.random() * 0.4 : 0.9 + Math.random() * 0.9,
+      size: kind === "spark" ? 2 + Math.random() * 2.5 : kind === "streak" || kind === "bolt" ? 14 + Math.random() * 12 : kind === "ember" ? 2.5 + Math.random() * 3 : 5 + Math.random() * 5,
+      color: kind === "confetti" ? CONFETTI[i % CONFETTI.length] : kind === "spark" ? "#fff6b0" : kind === "streak" ? "#ffffff" : kind === "bolt" ? "#7cc3ef" : kind === "snow" ? "#e5f3fc" : kind === "ember" ? (i % 2 ? "#f6a88a" : "#f5cb78") : kind === "heart" ? (i % 2 ? "#e7779f" : "#a995dc") : PETAL_COLORS[i % PETAL_COLORS.length],
       kind,
     });
   }
@@ -101,8 +101,8 @@ export function updateFx(fx: Fx, dt: number, reduced: boolean, w = 0) {
       p.alive = false;
       continue;
     }
-    if (p.kind === "streak") continue;
-    const drag = p.kind === "petal" ? 1.6 : 3;
+    if (p.kind === "streak" || p.kind === "bolt") continue;
+    const drag = p.kind === "petal" || p.kind === "snow" || p.kind === "heart" ? 1.6 : 3;
     p.vx -= p.vx * drag * dt;
     p.vy += (p.kind === "petal" ? 55 : p.kind === "confetti" ? 160 : 90) * dt - p.vy * drag * dt * 0.5;
     if (p.kind === "petal") p.vx += Math.sin(fx.time * 3 + p.rot) * 30 * dt;
@@ -295,8 +295,9 @@ export function render(ctx: CanvasRenderingContext2D, rawCam: Camera, w: number,
         for (let i = 1; i < fx.trail.length; i++) {
           const cur = P(fx.trail[i]);
           const k = i / fx.trail.length;
-          ctx.strokeStyle = fx.trailKind === "sakura" ? `rgba(243,155,187,${k})` : fx.trailKind === "smash" ? `rgba(255,200,110,${k * 0.9})` : `rgba(255,255,255,${k * (0.35 + intensity * 0.5)})`;
-          ctx.lineWidth = (fx.trailKind === "normal" ? 3 + intensity * 4 : 9) * k;
+          const tint = { sakura: `rgba(243,155,187,${k})`, smash: `rgba(255,200,110,${k * 0.9})`, frost: `rgba(150,215,245,${k * 0.9})`, phoenix: `rgba(246,140,90,${k})`, sync: `rgba(201,150,230,${k})`, normal: `rgba(255,255,255,${k * (0.35 + intensity * 0.5)})` }[fx.trailKind];
+          ctx.strokeStyle = tint;
+          ctx.lineWidth = (fx.trailKind === "normal" ? 3 + intensity * 4 : fx.trailKind === "frost" ? 6 : 9) * k;
           ctx.beginPath();
           ctx.moveTo(last.x, last.y);
           ctx.lineTo(cur.x, cur.y);
@@ -385,7 +386,30 @@ export function render(ctx: CanvasRenderingContext2D, rawCam: Camera, w: number,
       ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
       ctx.fill();
     } else if (p.kind === "confetti") ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
-    else if (p.kind === "streak") {
+    else if (p.kind === "snow") {
+      ctx.lineWidth = 1.5;
+      for (let a = 0; a < 3; a++) {
+        ctx.rotate(Math.PI / 3);
+        ctx.beginPath();
+        ctx.moveTo(-p.size, 0);
+        ctx.lineTo(p.size, 0);
+        ctx.stroke();
+      }
+    } else if (p.kind === "heart") {
+      const r = p.size * 0.5;
+      ctx.beginPath();
+      ctx.moveTo(0, r * 1.2);
+      ctx.bezierCurveTo(-r * 2, -r * 0.2, -r * 0.8, -r * 1.6, 0, -r * 0.5);
+      ctx.bezierCurveTo(r * 0.8, -r * 1.6, r * 2, -r * 0.2, 0, r * 1.2);
+      ctx.fill();
+    } else if (p.kind === "bolt") {
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(-p.size * fade, -2);
+      ctx.lineTo(0, 2);
+      ctx.lineTo(p.size * fade, -2);
+      ctx.stroke();
+    } else if (p.kind === "streak") {
       ctx.lineWidth = 2.5;
       ctx.beginPath();
       ctx.moveTo(-p.size * fade, 0);

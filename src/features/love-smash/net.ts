@@ -1,23 +1,24 @@
 import type { Difficulty } from "./bot";
+import type { Loadout } from "./skills";
 import type { Side } from "./court";
-import { decodeInput, encodeInput, MAX_MATCH_TICKS } from "./replay";
+import { decodeInput, encodeInput, INPUT_CODES, MAX_MATCH_TICKS } from "./replay";
 import { createMatch, MAX_REWIND, step, type Controller, type Format, type Frame, type Input, type Match, type Phase, type PressKind, type PuppetFrame, type SimEvent, type Swing } from "./sim";
 
-export type MatchConfig = { seed: number; format: Format; difficulty: Difficulty; controllers: Controller[] };
+export type MatchConfig = { seed: number; format: Format; difficulty: Difficulty; controllers: Controller[]; loadouts?: (Loadout | null)[]; teamSync?: [boolean, boolean] };
 
 export function createConfiguredMatch(config: MatchConfig) {
-  return createMatch({ seed: config.seed, difficulty: config.difficulty, format: config.format, controllers: config.controllers });
+  return createMatch({ seed: config.seed, difficulty: config.difficulty, format: config.format, controllers: config.controllers, loadouts: config.loadouts, teamSync: config.teamSync });
 }
 
-const PRESS_CODES: (PressKind | null)[] = [null, "hit", "smash", "drop"];
+const PRESS_CODES: (PressKind | null)[] = [null, "hit", "smash", "drop", "special", "ultimate"];
 
 export function encodePuppet(frame: PuppetFrame) {
   const x = Math.max(0, Math.min(800, Math.round(frame.x * 100) + 400));
   const y = Math.max(0, Math.min(1600, Math.round(frame.y * 100) + 800));
   const press = frame.press ? PRESS_CODES.indexOf(frame.press.kind) : 0;
-  const flags = (frame.lunge ? 1 : 0) + press * 2;
+  const flags = (frame.lunge ? 1 : 0) + press * 2 + (frame.dash ? 16 : 0) + (frame.sync ? 32 : 0);
   const rewind = frame.press ? Math.max(0, Math.min(MAX_REWIND, Math.round(frame.press.rewind))) : 0;
-  return x + 1024 * (y + 2048 * (flags + 8 * rewind));
+  return x + 1024 * (y + 2048 * (flags + 64 * rewind));
 }
 
 export function decodePuppet(code: number): PuppetFrame {
@@ -25,11 +26,13 @@ export function decodePuppet(code: number): PuppetFrame {
   const rest = Math.floor(code / 1024);
   const y = rest % 2048;
   const rest2 = Math.floor(rest / 2048);
-  const flags = rest2 % 8;
-  const rewind = Math.floor(rest2 / 8);
+  const flags = rest2 % 64;
+  const rewind = Math.floor(rest2 / 64);
   const frame: PuppetFrame = { x: (x - 400) / 100, y: (y - 800) / 100 };
   if (flags & 1) frame.lunge = true;
-  const press = PRESS_CODES[flags >> 1];
+  if (flags & 16) frame.dash = true;
+  if (flags & 32) frame.sync = true;
+  const press = PRESS_CODES[(flags >> 1) & 7];
   if (press) frame.press = { kind: press, rewind };
   return frame;
 }
@@ -117,7 +120,7 @@ export function replayWithLogs(config: MatchConfig, logs: unknown): MultiReplay 
   for (const [slot, c] of config.controllers.entries()) {
     if (c.kind === "bot") continue;
     const source = c.kind === "human" ? inputs?.[slot] : puppets?.[slot];
-    const values = c.kind === "human" ? expand(source, 81 * 16 - 1, decodeInput) : expand(source, 2 ** 31 - 1, decodePuppet);
+    const values = c.kind === "human" ? expand(source, INPUT_CODES - 1, decodeInput) : expand(source, 2 ** 32, decodePuppet);
     if (!values) return { ok: false, reason: "invalid_log" };
     streams.set(slot, { kind: c.kind === "human" ? "input" : "puppet", values });
   }
@@ -142,7 +145,7 @@ export function replayWithLogs(config: MatchConfig, logs: unknown): MultiReplay 
 
 const r3 = (n: number) => Math.round(n * 1000) / 1000;
 
-export type NetPlayer = [number, number, number, number, number, Swing["kind"] | null, number, Swing["quality"], number, number, number, number, number, number, number];
+export type NetPlayer = [number, number, number, number, number, Swing["kind"] | null, number, Swing["quality"], number, number, number, number, number, number, number, number, number, number, number, number];
 
 export type NetSnapshot = {
   t: number;
@@ -160,6 +163,7 @@ export type NetSnapshot = {
   pl: NetPlayer[];
   ls: Match["lastShot"];
   ev: SimEvent[];
+  te: [number, number, number, number, number, number];
   st?: Match["stats"];
   wait?: string[];
 };
@@ -179,9 +183,10 @@ export function encodeSnapshot(m: Match, events: SimEvent[], extras: { stats?: b
     ra: m.rally,
     w: m.winner,
     sh: [r3(s.pos.x), r3(s.pos.y), r3(s.pos.z), r3(s.vel.x), r3(s.vel.y), r3(s.vel.z), s.netted],
-    pl: m.players.map((p) => [r3(p.x), r3(p.y), r3(p.vx), r3(p.vy), p.facing, p.swing?.kind ?? null, p.swing?.t ?? 0, p.swing?.quality ?? null, p.lunge, r3(p.lungeDir.x), r3(p.lungeDir.y), p.recover, p.cooldown, r3(p.moveX), r3(p.moveY)]),
+    pl: m.players.map((p) => [r3(p.x), r3(p.y), r3(p.vx), r3(p.vy), p.facing, p.swing?.kind ?? null, p.swing?.t ?? 0, p.swing?.quality ?? null, p.lunge, r3(p.lungeDir.x), r3(p.lungeDir.y), p.recover, p.cooldown, r3(p.moveX), r3(p.moveY), p.energy, p.cooldowns.movement, p.cooldowns.special, p.cooldowns.ultimate, p.dash]),
     ls: m.lastShot,
     ev: events,
+    te: [m.teamEnergy[0], m.teamEnergy[1], m.teamCooldown[0], m.teamCooldown[1], m.sync[0], m.sync[1]],
     ...(extras.stats ? { st: m.stats } : {}),
     ...(extras.waiting?.length ? { wait: extras.waiting } : {}),
   };
@@ -213,8 +218,14 @@ export function applySnapshot(m: Match, snap: NetSnapshot) {
     p.cooldown = row[12];
     p.moveX = row[13];
     p.moveY = row[14];
+    p.energy = row[15];
+    p.cooldowns = { movement: row[16], special: row[17], ultimate: row[18] };
+    p.dash = row[19];
   });
   m.lastShot = snap.ls;
+  m.teamEnergy = [snap.te[0], snap.te[1]];
+  m.teamCooldown = [snap.te[2], snap.te[3]];
+  m.sync = [snap.te[4], snap.te[5]];
   if (snap.st) m.stats = snap.st;
   return m;
 }
