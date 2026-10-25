@@ -19,4 +19,5 @@ export const qk = {
   invitations: ["invitations"] as const,
   interactions: ["interactions"] as const,
   rewards: ["couple-rewards"] as const,
+  loveSmashStats: ["love-smash-stats"] as const,
 };

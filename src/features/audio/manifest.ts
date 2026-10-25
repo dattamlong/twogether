@@ -50,6 +50,7 @@ export const TRACKS: Track[] = [
   composed("playtime", "Playtime!", "games", "Bouncy and playful"),
   composed("lucky-hearts", "Lucky Hearts", "games", "Sparkly pop"),
   composed("ready-set-love", "Ready, Set, Love!", "games", "Energetic anime pop"),
+  composed("smash-together", "Smash Together!", "games", "Love Smash match theme"),
   composed("beyond-our-home", "Beyond Our Home", "world", "Wandering adventure"),
   composed("sakura-village", "Sakura Village", "world", "Whimsical village stroll"),
   composed("little-adventures", "Little Adventures", "world", "Playful exploration"),

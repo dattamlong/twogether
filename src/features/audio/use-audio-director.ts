@@ -23,6 +23,7 @@ export function desiredTrack(pathname: string, current: string | null, hour = ne
   const s = useAudioSettings.getState();
   if (!s.musicOn) return null;
   if (!s.autoMusic && s.pinnedTrack && trackById(s.pinnedTrack)) return s.pinnedTrack;
+  if (pathname.startsWith("/games/love-smash") && !unavailable.has("smash-together")) return "smash-together";
   const category = categoryForPath(pathname);
   if (!category) return current ?? areaTrack("home", hour).id;
   let pick = areaTrack(category, hour, current).id;

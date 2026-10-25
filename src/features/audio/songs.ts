@@ -238,6 +238,23 @@ export const SONGS: Song[] = [
     },
   },
   {
+    id: "smash-together",
+    bpm: 152,
+    key: D,
+    scale: "major",
+    chords: ["I", "V", "vi", "IV", "I", "V", "IV", "V"],
+    layers: [
+      { kind: "arp", inst: "pulse", pattern: "0 2 1 2 0 2 1 2 0 2 1 2 0 2 1 2", step: 0.25, center: 74, velocity: 0.55 },
+      { kind: "bass", inst: "bass", pattern: "R . R R . R 5 .", velocity: 0.9 },
+      { kind: "drums", kit: { kick: "x..x..x.x..x..x.", snare: "....x.......x...", clap: "....x.......x..x", hat: "x.x.x.x.x.x.x.x." }, velocity: 0.85 },
+    ],
+    melody: {
+      inst: "square",
+      notes: "5 - 5 6 1' - 7 6 | 5 - 3 - 2 - 3 - | 4 - 4 5 6 - 5 4 | 3 - - - 5 - - - | 5 - 5 6 1' - 2' 1' | 7 - 5 - 6 - 7 - | 1' - 7 6 5 - 4 3 | 2 - - - 1 - . .",
+      alt: { inst: "brass" },
+    },
+  },
+  {
     id: "beyond-our-home",
     gain: 1.1,
     bpm: 96,

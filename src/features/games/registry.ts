@@ -13,6 +13,16 @@ export type GameDefinition = {
 
 export const GAMES: GameDefinition[] = [
   {
+    id: "love-smash",
+    title: "Love Smash!",
+    title_vi: "Cầu lông tình yêu",
+    description: "Anime chibi badminton: rally, smash and score against Mochi the bot. Couple 2v2 is coming next.",
+    mode: "solo",
+    href: "/games/love-smash",
+    serverKind: null,
+    accent: "from-sakura-100 to-sky-100",
+  },
+  {
     id: "word-battle",
     title: "Word Battle",
     title_vi: "Đại chiến từ vựng",

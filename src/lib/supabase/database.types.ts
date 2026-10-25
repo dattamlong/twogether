@@ -1528,6 +1528,98 @@ export type Database = {
           },
         ];
       };
+      love_smash_matches: {
+        Row: {
+          bot_score: number | null;
+          coins_awarded: number;
+          difficulty: string;
+          finished_at: string | null;
+          id: string;
+          longest_rally: number | null;
+          perfect_hits: number | null;
+          player_score: number | null;
+          seed: number;
+          smashes: number | null;
+          started_at: string;
+          ticks: number | null;
+          user_id: string;
+          won: boolean | null;
+          xp_awarded: number;
+        };
+        ComputedFields: never;
+        Insert: {
+          bot_score?: number | null;
+          coins_awarded?: number;
+          difficulty: string;
+          finished_at?: string | null;
+          id?: string;
+          longest_rally?: number | null;
+          perfect_hits?: number | null;
+          player_score?: number | null;
+          seed: number;
+          smashes?: number | null;
+          started_at?: string;
+          ticks?: number | null;
+          user_id: string;
+          won?: boolean | null;
+          xp_awarded?: number;
+        };
+        Update: {
+          bot_score?: number | null;
+          coins_awarded?: number;
+          difficulty?: string;
+          finished_at?: string | null;
+          id?: string;
+          longest_rally?: number | null;
+          perfect_hits?: number | null;
+          player_score?: number | null;
+          seed?: number;
+          smashes?: number | null;
+          started_at?: string;
+          ticks?: number | null;
+          user_id?: string;
+          won?: boolean | null;
+          xp_awarded?: number;
+        };
+        Relationships: [];
+      };
+      love_smash_stats: {
+        Row: {
+          couple_wins: number;
+          longest_rally: number;
+          losses: number;
+          matches: number;
+          perfect_hits: number;
+          smashes: number;
+          updated_at: string;
+          user_id: string;
+          wins: number;
+        };
+        ComputedFields: never;
+        Insert: {
+          couple_wins?: number;
+          longest_rally?: number;
+          losses?: number;
+          matches?: number;
+          perfect_hits?: number;
+          smashes?: number;
+          updated_at?: string;
+          user_id: string;
+          wins?: number;
+        };
+        Update: {
+          couple_wins?: number;
+          longest_rally?: number;
+          losses?: number;
+          matches?: number;
+          perfect_hits?: number;
+          smashes?: number;
+          updated_at?: string;
+          user_id?: string;
+          wins?: number;
+        };
+        Relationships: [];
+      };
       memories: {
         Row: {
           body: string | null;
@@ -2751,6 +2843,20 @@ export type Database = {
       finish_adventure_part: { Args: { game_session: string }; Returns: Json };
       finish_duel: { Args: { game_session: string }; Returns: Json };
       finish_game: { Args: { game_session: string }; Returns: Json };
+      finish_love_smash: {
+        Args: {
+          final_bot_score: number;
+          final_player_score: number;
+          match_id: string;
+          match_ticks: number;
+          perfect_count: number;
+          player: string;
+          player_won: boolean;
+          rally_record: number;
+          smash_count: number;
+        };
+        Returns: Json;
+      };
       finish_placement: { Args: { game_session: string }; Returns: Json };
       finish_unit_challenge: { Args: { game_session: string }; Returns: Json };
       friendship_status: {
@@ -3195,6 +3301,7 @@ export type Database = {
       };
       start_home_visit: { Args: { target: string }; Returns: Json };
       start_lesson: { Args: { target_lesson: string }; Returns: string };
+      start_love_smash: { Args: { difficulty: string }; Returns: Json };
       start_placement: { Args: { subject: string }; Returns: Json };
       start_unit_challenge: {
         Args: { mode: string; target_unit: string };

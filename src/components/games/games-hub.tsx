@@ -24,7 +24,7 @@ export function GamesHub() {
               className={cn("group flex h-full flex-col gap-3 rounded-[1.75rem] bg-gradient-to-br p-6 ring-2 ring-white shadow-[var(--shadow-soft)] transition hover:-translate-y-1", g.accent)}
             >
               <div className="flex items-center gap-3">
-                {g.id === "word-battle" ? <SparkleIcon size={48} /> : <GamepadIcon size={48} />}
+                {g.id === "love-smash" ? <span className="grid size-12 place-items-center text-4xl" aria-hidden>🏸</span> : g.id === "word-battle" ? <SparkleIcon size={48} /> : <GamepadIcon size={48} />}
                 <div>
                   <h2 className="text-2xl font-semibold">{g.title}</h2>
                   <p lang="vi" className="text-sm text-cocoa-400">{g.title_vi}</p>

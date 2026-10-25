@@ -166,8 +166,8 @@ test("every couple is ranked automatically and #1 sees the celebration", async (
   await expect(page.getByRole("tab", { name: /Weekly Legends/ })).toHaveAttribute("aria-selected", "true");
   await expect(page.getByRole("button", { name: /Join/ })).toHaveCount(0);
 
-  await admin().rpc("grant_reward", { uid: a.id, add_xp: 5000, add_coins: 0, reason: "lesson", ref: `e2e-${a.id}` });
-  await admin().rpc("grant_reward", { uid: b.id, add_xp: 5000, add_coins: 0, reason: "lesson", ref: `e2e-${b.id}` });
+  await admin().rpc("grant_reward", { uid: a.id, add_xp: 5000, add_coins: 0, reason: "daily_quest", ref: `e2e-${a.id}` });
+  await admin().rpc("grant_reward", { uid: b.id, add_xp: 5000, add_coins: 0, reason: "daily_quest", ref: `e2e-${b.id}` });
   await page.reload();
 
   const celebration = page.getByRole("dialog", { name: "You are the number one couple" });
