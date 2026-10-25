@@ -122,3 +122,24 @@ test("Couple vs Bots: the match pauses for a disconnected partner and resumes wh
   for (const page of [a.page, back]) await expect(page.getByTestId("online-results")).toBeVisible({ timeout: 300_000 });
   await expect(back.getByTestId("online-reward")).toContainText("XP");
 });
+
+test("Couple vs Bots: leaving ends the room for everyone right away", async ({ browser }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "multi-device run once");
+  const [a, b] = await couple(browser, testInfo.project.use, ["Dat", "An"]);
+  await a.page.goto("/games/love-smash");
+  await a.page.getByTestId("play-with-partner").click();
+  await expect(a.page.getByTestId("room-slot-2")).toHaveAttribute("data-status", "invited");
+  const { data: note } = await admin().from("notifications").select("destination").eq("recipient_user_id", b.user.id).eq("type", "game_invitation").single();
+  await b.page.goto(note!.destination);
+  await b.page.getByTestId("invite-accept").click();
+  await b.page.getByTestId("room-ready").click();
+  await expect(a.page.getByTestId("room-start")).toBeEnabled({ timeout: 10_000 });
+  await a.page.getByTestId("room-start").click();
+  await play([a.page, b.page]);
+  await b.page.getByRole("button", { name: "Leave match" }).click();
+  await expect(b.page.getByTestId("love-smash-lobby")).toBeVisible();
+  await expect(a.page.getByTestId("love-smash-lobby")).toBeVisible({ timeout: 15_000 });
+  await expect(a.page.getByTestId("play-together")).toContainText("disconnected");
+  const { data: room } = await admin().from("love_smash_rooms").select("status").eq("host_id", a.user.id).single();
+  expect(room!.status).toBe("abandoned");
+});

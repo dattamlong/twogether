@@ -8,7 +8,7 @@ import { createAnim, updateAnim } from "@/features/love-smash/chibi";
 import { applySnapshot, createConfiguredMatch, encodeSnapshot, FrameRecorder, type NetSnapshot } from "@/features/love-smash/net";
 import { createFx, makeCamera, project, render, snapshot, toView, updateFx, type Camera, type Fx, type Snapshot } from "@/features/love-smash/render";
 import { RoomNet, type PressMessage, type Report, type RoomPresence } from "@/features/love-smash/room-net";
-import { abandonRoom, finishRoom, type Room } from "@/features/love-smash/rooms";
+import { abandonRoom, finishRoom, leaveRoom, type Room } from "@/features/love-smash/rooms";
 import { TARGET_SCORE } from "@/features/love-smash/rules";
 import { buildScene, type Scene } from "@/features/love-smash/scene";
 import { movePlayer, step, type Frame, type Input, type Player, type SimEvent } from "@/features/love-smash/sim";
@@ -80,6 +80,7 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
   const [saving, setSaving] = useState<string | null>(null);
   const [matchPoint, setMatchPoint] = useState<0 | 1 | null>(null);
   const resultRef = useRef(onResult);
+  const netRef = useRef<RoomNet | null>(null);
   const leaveRef = useRef(onLeave);
 
   useEffect(() => {
@@ -290,6 +291,7 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
       isHost,
     );
     void net.open();
+    netRef.current = net;
 
     const finishAsHost = async () => {
       if (!recorder || finished) return;
@@ -454,6 +456,12 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [room.id]);
 
+  const leave = () => {
+    netRef.current?.abort("player_left");
+    void leaveRoom(room.id).catch(() => undefined);
+    onLeave("left");
+  };
+
   const team = (side: 0 | 1): Competitor => {
     const a = competitors[side];
     const b = competitors[side + 2];
@@ -483,7 +491,7 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
             <span className={cn("grid size-9 place-items-center rounded-full bg-white/90 shadow-[var(--shadow-soft)]", status === "connected" ? "text-mint-600" : "text-rose-err")} aria-label={`Connection ${status}`} data-testid="connection" data-status={status}>
               <Wifi size={16} />
             </span>
-            <button type="button" onClick={() => onLeave("left")} className="grid size-9 place-items-center rounded-full bg-white/90 text-plum-700 shadow-[var(--shadow-soft)]" aria-label="Leave match">
+            <button type="button" onClick={leave} className="grid size-9 place-items-center rounded-full bg-white/90 text-plum-700 shadow-[var(--shadow-soft)]" aria-label="Leave match">
               <LogOut size={16} />
             </button>
           </div>
@@ -505,7 +513,7 @@ export function OnlineGame({ room, userId, partnerId, onResult, onLeave }: Props
           <div className="max-w-xs rounded-[1.75rem] bg-[#fffaf6] p-6 text-center shadow-[var(--shadow-soft)]">
             <p className="font-display text-xl font-bold text-plum-700">Waiting for {waiting.join(" & ")}…</p>
             <p className="mt-1 text-sm text-cocoa-400">The match is paused until they reconnect. It ends without rewards after 45 seconds.</p>
-            <Button variant="soft" className="mt-3" onClick={() => onLeave("left")}>
+            <Button variant="soft" className="mt-3" onClick={leave}>
               Leave match
             </Button>
           </div>
