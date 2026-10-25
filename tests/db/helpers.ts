@@ -75,5 +75,11 @@ export async function playLesson(user: TestUser, lessonId: string, correctCount:
       expectOk(await user.client.rpc("submit_answer", { question: q.id!, answer: right, lesson_attempt: attempt }));
     }
   }
+  await humanPace("lesson_attempts", attempt as string);
   return { attempt, total: questions.length };
+}
+
+export async function humanPace(table: "lesson_attempts" | "game_sessions", id: string, seconds = 600) {
+  const startedAt = new Date(Date.now() - seconds * 1000).toISOString();
+  expectOk(await admin().from(table).update({ started_at: startedAt }).eq("id", id).select("id"));
 }

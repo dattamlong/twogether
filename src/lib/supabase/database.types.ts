@@ -1916,6 +1916,33 @@ export type Database = {
           },
         ];
       };
+      ranking_blocks: {
+        Row: {
+          couple_id: string;
+          created_at: string;
+          reason: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          couple_id: string;
+          created_at?: string;
+          reason: string;
+        };
+        Update: {
+          couple_id?: string;
+          created_at?: string;
+          reason?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "ranking_blocks_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: true;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       ranking_reward_claims: {
         Row: {
           claimed_at: string;
@@ -3036,6 +3063,10 @@ export type Database = {
           isOneToOne: false;
           isSetofReturn: true;
         };
+      };
+      ranking_learning_eligible: {
+        Args: { reason: string; ref_id: string; uid: string };
+        Returns: boolean;
       };
       rebuild_legend_totals: {
         Args: Record<PropertyKey, never>;

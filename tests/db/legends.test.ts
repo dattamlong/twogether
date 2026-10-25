@@ -33,14 +33,28 @@ describe("Love Legends scoring", () => {
 
   it("awards every learning point with no daily cap", async () => {
     const { a, b, coupleId } = await createCouple();
-    await db().rpc("grant_reward", { uid: a.id, add_xp: 350, add_coins: 0, reason: "lesson", ref: randomUUID() });
-    await db().rpc("grant_reward", { uid: a.id, add_xp: 350, add_coins: 0, reason: "word_battle", ref: randomUUID() });
-    await db().rpc("grant_reward", { uid: a.id, add_xp: 100, add_coins: 0, reason: "lesson", ref: randomUUID() });
+    await db().rpc("grant_reward", { uid: a.id, add_xp: 350, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
+    await db().rpc("grant_reward", { uid: a.id, add_xp: 350, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
+    await db().rpc("grant_reward", { uid: a.id, add_xp: 100, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
     expect((await weeklyScore(coupleId)).score).toBe(800);
-    await db().rpc("grant_reward", { uid: b.id, add_xp: 50, add_coins: 0, reason: "lesson", ref: randomUUID() });
+    await db().rpc("grant_reward", { uid: b.id, add_xp: 50, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
     const score = await weeklyScore(coupleId);
     expect(score.score).toBe(850);
     expect(score.member_points).toEqual({ [a.id]: 800, [b.id]: 50 });
+  });
+
+  it("freezes a blocked couple's score until the block is lifted", async () => {
+    const { a, b, coupleId } = await createCouple();
+    await db().rpc("grant_reward", { uid: a.id, add_xp: 100, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
+    expectOk(await db().from("ranking_blocks").insert({ couple_id: coupleId, reason: "spam" }));
+    await db().rpc("grant_reward", { uid: a.id, add_xp: 300, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
+    await db().rpc("record_qualifying_activity", { uid: a.id });
+    await db().rpc("record_qualifying_activity", { uid: b.id });
+    expect((await weeklyScore(coupleId)).score).toBe(100);
+    expect((await a.client.from("ranking_blocks").select("couple_id")).data ?? []).toEqual([]);
+    expectOk(await db().from("ranking_blocks").delete().eq("couple_id", coupleId));
+    await db().rpc("grant_reward", { uid: a.id, add_xp: 50, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
+    expect((await weeklyScore(coupleId)).score).toBe(150);
   });
 
   it("adds a cooperative bonus once per day when both partners learn", async () => {
@@ -66,7 +80,7 @@ describe("Love Legends scoring", () => {
 
   it("raises the permanent tier and unlocks its reward", async () => {
     const { a, coupleId } = await createCouple();
-    for (let i = 0; i < 2; i++) await db().rpc("grant_reward", { uid: a.id, add_xp: 300, add_coins: 0, reason: "lesson", ref: randomUUID() });
+    for (let i = 0; i < 2; i++) await db().rpc("grant_reward", { uid: a.id, add_xp: 300, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
     await db().rpc("add_ranking_points", { cid: coupleId, uid: null as unknown as string, add_points: 200, point_source: "couple_quest", point_ref: "q1" });
     const tier = expectOk(await a.client.from("couple_rank_tiers").select("tier, legend_points").eq("couple_id", coupleId).single());
     expect(tier).toEqual({ tier: 2, legend_points: 800 });
@@ -79,7 +93,7 @@ describe("Love Legends leaderboard", () => {
   it("ranks every couple automatically without exposing private data", async () => {
     const one = await createCouple();
     const two = await createCouple();
-    for (const c of [one, two]) await db().rpc("grant_reward", { uid: c.a.id, add_xp: 50, add_coins: 0, reason: "lesson", ref: randomUUID() });
+    for (const c of [one, two]) await db().rpc("grant_reward", { uid: c.a.id, add_xp: 50, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
     expectOk(await one.a.client.rpc("send_love_message", { message_kind: "text", message_body: "a very private note" }));
 
     const board = expectOk(await two.a.client.rpc("get_leaderboard", { board: "weekly", max_rows: 100 }));
@@ -98,8 +112,8 @@ describe("Love Legends leaderboard", () => {
   it("reports the couple's own rank and the gap to the next couple", async () => {
     const leader = await publicCouple();
     const chaser = await publicCouple();
-    await db().rpc("grant_reward", { uid: leader.a.id, add_xp: 300, add_coins: 0, reason: "lesson", ref: randomUUID() });
-    await db().rpc("grant_reward", { uid: chaser.a.id, add_xp: 120, add_coins: 0, reason: "lesson", ref: randomUUID() });
+    await db().rpc("grant_reward", { uid: leader.a.id, add_xp: 300, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
+    await db().rpc("grant_reward", { uid: chaser.a.id, add_xp: 120, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
     const status = expectOk(await chaser.b.client.rpc("get_my_legend_status")) as Record<string, number | null>;
     const board = expectOk(await chaser.b.client.rpc("get_leaderboard", { board: "weekly", max_rows: 100 }));
     const leaderRow = board.find((r) => r.couple_id === leader.coupleId)!;
@@ -181,7 +195,7 @@ describe("Leaderboard list", () => {
   it("lists couples without points after ranked couples, unranked", async () => {
     const scored = await createCouple();
     const idle = await createCouple();
-    await db().rpc("grant_reward", { uid: scored.a.id, add_xp: 40, add_coins: 0, reason: "lesson", ref: randomUUID() });
+    await db().rpc("grant_reward", { uid: scored.a.id, add_xp: 40, add_coins: 0, reason: "daily_quest", ref: randomUUID() });
     const board = expectOk(await idle.a.client.rpc("get_leaderboard", { board: "weekly", max_rows: 100 }));
     const scoredRow = board.find((r) => r.couple_id === scored.coupleId)!;
     const idleRow = board.find((r) => r.couple_id === idle.coupleId)!;
