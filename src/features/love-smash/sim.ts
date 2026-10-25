@@ -355,8 +355,11 @@ function handlePresses(m: Match, p: Player, input: Input) {
   }
   if (!p.pending) return;
   if (m.phase === "serve") {
-    if (m.server === p.side && m.phaseTicks > 12) serve(m, p.pending.kind);
-    p.pending = null;
+    if (m.server !== p.side) p.pending = null;
+    else if (m.phaseTicks > 12) {
+      serve(m, p.pending.kind);
+      p.pending = null;
+    }
     return;
   }
   if (m.phase !== "rally") {

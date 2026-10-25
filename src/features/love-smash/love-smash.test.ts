@@ -197,6 +197,14 @@ describe("scoring", () => {
     expect(m.players[0].x).toBeLessThan(0);
   });
 
+  it("keeps an early serve press until the serve is allowed", () => {
+    const m = createMatch({ seed: 7, difficulty: "easy" });
+    step(m, { mx: 0, my: 0, hit: true });
+    for (let i = 0; i < 14 && m.phase === "serve"; i++) step(m, { mx: 0, my: 0 });
+    expect(m.phase).toBe("rally");
+    expect(m.lastShot?.shot).toBe("serve_high");
+  });
+
   it("never ends a tutorial match", () => {
     const m = createMatch({ seed: 6, difficulty: "feeder", tutorial: true });
     m.score = [20, 0];

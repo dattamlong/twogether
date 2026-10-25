@@ -402,7 +402,7 @@ export function SmashGame({ seed, difficulty, tutorial = false, me, rival, onFin
         </div>
       ) : yourServe ? (
         <div className="pointer-events-none absolute inset-x-0 bottom-[38%] z-10 flex justify-center">
-          <p className="rounded-full bg-white/85 px-4 py-1.5 font-display text-sm font-semibold text-plum-700 shadow-[var(--shadow-soft)]">Your serve: J high · L short</p>
+          <p className="rounded-full bg-white/85 px-4 py-1.5 font-display text-sm font-semibold text-plum-700 shadow-[var(--shadow-soft)]">{touch ? "Your serve: 🏸 HIT high · 🌸 DROP short" : "Your serve: J high · L short"}</p>
         </div>
       ) : null}
       {touch && !paused ? (
