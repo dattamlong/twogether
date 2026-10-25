@@ -20,7 +20,7 @@ import { DEFAULT_AVATAR, readAvatar, type Avatar } from "@/features/session/type
 import { usePrefersReducedMotion } from "@/hooks/use-reduced-motion";
 import { cn } from "@/lib/utils";
 import { useQueryClient } from "@tanstack/react-query";
-import { abandonRoom, activeRoom, createRoom, joinRoomByCode, ROOM_ERRORS, type Room } from "@/features/love-smash/rooms";
+import { abandonRoom, activeRoom, createRoom, joinRoomByCode, pendingInvite, ROOM_ERRORS, type Room } from "@/features/love-smash/rooms";
 import { BOT_TEAMMATES, OnlineGame } from "./online-game";
 import { InviteCard, OnlineResults, RoomLobby } from "./room-lobby";
 import { SmashGame, type Competitor, type MatchSummary } from "./smash-game";
@@ -144,6 +144,11 @@ export function LoveSmash() {
   const client = useQueryClient();
   const invalidate = useInvalidateProgress();
   const [resume, setResume] = useState<Room | null>(null);
+  const [invite, setInvite] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (view.kind === "room" || view.kind === "invite") window.scrollTo({ top: 0 });
+  }, [view.kind]);
 
   useEffect(() => {
     if (view.kind !== "lobby" || !session) return;
@@ -151,6 +156,11 @@ export function LoveSmash() {
     activeRoom()
       .then((room) => {
         if (alive) setResume(room);
+      })
+      .catch(() => undefined);
+    pendingInvite(session.userId)
+      .then((roomId) => {
+        if (alive) setInvite(roomId);
       })
       .catch(() => undefined);
     return () => {
@@ -250,6 +260,21 @@ export function LoveSmash() {
     return <SmashGame key={`tutorial-${view.seed}`} seed={view.seed} difficulty="feeder" tutorial me={me} rival={RIVALS.feeder} onFinished={() => setView({ kind: "lobby" })} onRestart={() => undefined} onQuit={() => setView({ kind: "lobby" })} />;
   }
 
+  if ((view.kind === "room" || view.kind === "invite") && session) {
+    return (
+      <div className="mx-auto flex w-full max-w-3xl flex-col gap-4" data-testid="love-smash-room-view">
+        <button type="button" onClick={() => backToLobby()} className="flex w-fit items-center gap-1 text-sm font-semibold text-plum-500 hover:text-plum-700">
+          <ArrowLeft size={16} /> Love Smash
+        </button>
+        {view.kind === "invite" ? (
+          <InviteCard roomId={view.roomId} onJoined={(room) => setView({ kind: "room", roomId: room.id })} onDismiss={() => backToLobby()} />
+        ) : (
+          <RoomLobby roomId={view.roomId} userId={session.userId} onStart={(room) => setView({ kind: "online", room })} onExit={() => backToLobby()} />
+        )}
+      </div>
+    );
+  }
+
   const s = stats.data;
   const winRate = s && s.matches > 0 ? Math.round((s.wins / s.matches) * 100) : 0;
 
@@ -285,8 +310,7 @@ export function LoveSmash() {
           )}
         </Panel>
       ) : null}
-      {view.kind === "invite" ? <InviteCard roomId={view.roomId} onJoined={(room) => setView({ kind: "room", roomId: room.id })} onDismiss={() => backToLobby()} /> : null}
-      {view.kind === "room" && session ? <RoomLobby roomId={view.roomId} userId={session.userId} onStart={(room) => setView({ kind: "online", room })} onExit={() => backToLobby()} /> : null}
+      {view.kind === "lobby" && invite ? <InviteCard roomId={invite} onJoined={(room) => setView({ kind: "room", roomId: room.id })} onDismiss={() => setInvite(null)} /> : null}
       <Link href="/games" className="flex w-fit items-center gap-1 text-sm font-semibold text-plum-500 hover:text-plum-700">
         <ArrowLeft size={16} /> Games
       </Link>

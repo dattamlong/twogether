@@ -76,3 +76,16 @@ export const ROOM_ERRORS: Record<string, string> = {
   players_not_ready: "Everyone needs to press Ready.",
   not_host: "Only the host can do that.",
 };
+
+export async function pendingInvite(userId: string) {
+  const { data } = await getSupabase()
+    .from("love_smash_room_members")
+    .select("room_id, updated_at, love_smash_rooms!inner(status)")
+    .eq("user_id", userId)
+    .eq("status", "invited")
+    .eq("love_smash_rooms.status", "lobby")
+    .order("updated_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  return data?.room_id ?? null;
+}

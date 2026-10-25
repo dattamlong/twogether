@@ -128,10 +128,13 @@ test("Couple vs Bots: leaving ends the room for everyone right away", async ({ b
   const [a, b] = await couple(browser, testInfo.project.use, ["Dat", "An"]);
   await a.page.goto("/games/love-smash");
   await a.page.getByTestId("play-with-partner").click();
+  await expect(a.page.getByTestId("love-smash-room-view")).toBeVisible();
   await expect(a.page.getByTestId("room-slot-2")).toHaveAttribute("data-status", "invited");
-  const { data: note } = await admin().from("notifications").select("destination").eq("recipient_user_id", b.user.id).eq("type", "game_invitation").single();
-  await b.page.goto(note!.destination);
+  await expect(a.page.getByTestId("room-next-steps")).toContainText("An got a notification");
+  await b.page.goto("/games/love-smash");
+  await expect(b.page.getByTestId("room-invite")).toContainText("Dat invited you");
   await b.page.getByTestId("invite-accept").click();
+  await expect(b.page.getByTestId("room-next-steps")).toContainText("I'm ready");
   await b.page.getByTestId("room-ready").click();
   await expect(a.page.getByTestId("room-start")).toBeEnabled({ timeout: 10_000 });
   await a.page.getByTestId("room-start").click();

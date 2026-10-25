@@ -207,12 +207,58 @@ export function RoomLobby({ roomId, userId, onStart, onExit }: { roomId: string;
           <LogOut size={16} /> Leave
         </Button>
       </div>
+      <NextSteps room={room} userId={userId} />
       {!everyoneReady ? (
         <p className="text-sm text-cocoa-400" data-testid="room-hint">
           {joined.length < needed ? `Waiting for ${needed - joined.length} more player${needed - joined.length > 1 ? "s" : ""} — share the code ${room.code}.` : "Waiting for everyone to press Ready."}
         </p>
       ) : null}
     </Panel>
+  );
+}
+
+function NextSteps({ room, userId }: { room: Room; userId: string }) {
+  const [copied, setCopied] = useState(false);
+  const isHost = room.hostId === userId;
+  const invited = room.members.find((m) => m.status === "invited");
+  const partnerJoined = room.members.find((m) => m.userId !== room.hostId && m.status === "joined");
+  const link = typeof window === "undefined" ? "" : `${window.location.origin}/games/love-smash?room=${room.id}`;
+  const steps =
+    room.mode === "couple_ai"
+      ? isHost
+        ? [
+            invited ? `💌 ${invited.name} got a notification. On their phone: open TWOGETHER → Games → Love Smash (the invitation is at the top) or tap the 🔔 notification.` : `✅ ${partnerJoined?.name ?? "Your partner"} is in the room.`,
+            `${partnerJoined?.name ?? "They"} press Join, then “I'm ready!”.`,
+            "You press 🏸 Start match — you both play on your own devices against two bots.",
+          ]
+        : ["Press “I'm ready!”.", "Wait for the host to press Start — the match opens automatically for both of you."]
+      : isHost
+        ? [`Share the code ${room.code}. Friends open Love Smash → 2v2 Room → type the code → Join.`, "Everyone presses “I'm ready!” and picks a team.", "You press 🏸 Start match when all four are ready."]
+        : ["Pick your team and press “I'm ready!”.", "The host starts the match — it opens automatically."];
+  return (
+    <div className="rounded-3xl bg-white/80 p-4 ring-2 ring-white" data-testid="room-next-steps">
+      <p className="mb-2 font-display font-semibold text-plum-700">What happens next</p>
+      <ol className="flex list-decimal flex-col gap-1 pl-5 text-sm text-plum-500">
+        {steps.map((step) => (
+          <li key={step}>{step}</li>
+        ))}
+      </ol>
+      {isHost ? (
+        <Button
+          variant="soft"
+          size="sm"
+          className="mt-3"
+          onClick={() => {
+            void navigator.clipboard?.writeText(link).catch(() => undefined);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1500);
+          }}
+          data-testid="copy-invite-link"
+        >
+          {copied ? <Check size={14} /> : <Copy size={14} />} {copied ? "Link copied — send it in chat" : "Copy invite link"}
+        </Button>
+      ) : null}
+    </div>
   );
 }
 
