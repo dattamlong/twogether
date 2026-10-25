@@ -311,3 +311,22 @@ describe("court constants", () => {
     expect(COURT.netHeight).toBeCloseTo(1.55, 2);
   });
 });
+
+describe("camera", () => {
+  it("keeps the whole court in view and fills most of the play area on every screen", async () => {
+    const { courtCoverage, makeCamera } = await import("./camera");
+    const screens: [number, number, { top: number; right: number; bottom: number; left: number }][] = [
+      [1360, 860, { top: 84, right: 12, bottom: 14, left: 12 }],
+      [1280, 720, { top: 84, right: 12, bottom: 14, left: 12 }],
+      [412, 839, { top: 92, right: 6, bottom: 212, left: 6 }],
+      [375, 667, { top: 92, right: 6, bottom: 212, left: 6 }],
+      [839, 412, { top: 60, right: 150, bottom: 6, left: 150 }],
+    ];
+    for (const [w, h, insets] of screens) {
+      const cam = makeCamera(w, h, insets);
+      const c = courtCoverage(cam, w, h, insets);
+      expect(c.inside).toBe(true);
+      expect(Math.max(c.width, c.height)).toBeGreaterThan(0.75);
+    }
+  });
+});

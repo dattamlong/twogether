@@ -194,3 +194,23 @@ h1, h2, h3, .font-display {
   0% { transform: scale(1); opacity: 0.7; }
   100% { transform: scale(1.35); opacity: 0; }
 }
+
+@keyframes score-bump {
+  0% { transform: scale(1.6); }
+  100% { transform: scale(1); }
+}
+
+@keyframes toast-in {
+  0% { opacity: 0; transform: translateY(-8px) scale(.94); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes intro-pop {
+  0% { opacity: 0; transform: scale(.6); }
+  70% { opacity: 1; transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[score-bump_\.35s_ease-out\], .animate-\[toast-in_\.25s_ease-out\], .animate-\[intro-pop_\.35s_ease-out\] { animation: none; }
+}

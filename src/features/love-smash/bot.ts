@@ -2,7 +2,7 @@ import { sideSign, type Side } from "./court";
 import { predictPath } from "./physics";
 import { between, chance, createRng, next, spread, type Rng } from "./rng";
 import { IDLE, MAX_SPEED, PRESS_BUFFER } from "./rules";
-import type { Input, Match, PressKind } from "./sim";
+import type { Input, Match, Player, PressKind } from "./sim";
 
 export type Difficulty = "easy" | "normal" | "hard" | "feeder";
 
@@ -53,9 +53,9 @@ function moveToward(x: number, y: number, tx: number, ty: number, slowRadius = 0
   return { mx: (dx / d) * k, my: (dy / d) * k };
 }
 
-function makePlan(m: Match, mind: BotMind, side: Side): Plan | null {
-  const me = m.players[side];
-  const sign = sideSign(side);
+function makePlan(m: Match, mind: BotMind, slot: number): Plan | null {
+  const me = m.players[slot];
+  const sign = sideSign(me.side);
   const path = predictPath(m.shuttle, 260);
   const reachSpeed = MAX_SPEED * mind.speedScale;
   let pick = -1;
@@ -91,14 +91,46 @@ function makePlan(m: Match, mind: BotMind, side: Side): Plan | null {
   };
 }
 
-function chooseShot(m: Match, mind: BotMind, side: Side, plan: Plan): { press: PressKind; aim: Input["aim"] } {
-  const me = m.players[side];
-  const opp = m.players[side === 0 ? 1 : 0];
+function aimFor(mind: BotMind, opponents: Player[]) {
   const prof = mind.profile;
-  if (mind.difficulty === "feeder") return { press: "hit", aim: { x: opp.x * 0.4, depth: plan.z >= 1.75 ? -1.6 : plan.z >= 0.95 ? -1.3 : -1.4 } };
+  if (opponents.length === 1) {
+    const opp = opponents[0];
+    const sign = opp.x > 0.3 ? -1 : opp.x < -0.3 ? 1 : next(mind.rng) < 0.5 ? -1 : 1;
+    let x = sign * between(mind.rng, prof.aim[0], prof.aim[1]);
+    let depth = 0;
+    if (chance(mind.rng, prof.wildChance)) {
+      x = sign * 2.8;
+      depth = 0.5;
+    }
+    return { x, depth };
+  }
+  let best = 0;
+  let bestGap = -1;
+  for (const cx of [-2.5, -1.3, 0, 1.3, 2.5]) {
+    const gap = Math.min(...opponents.map((o) => Math.abs(o.x - cx))) + next(mind.rng) * 0.3;
+    if (gap > bestGap) {
+      bestGap = gap;
+      best = cx;
+    }
+  }
+  const accuracy = between(mind.rng, prof.aim[0], prof.aim[1]) / 2.15;
+  let x = best * Math.max(0.5, accuracy);
+  let depth = 0;
+  if (chance(mind.rng, prof.wildChance)) {
+    x = (best >= 0 ? 1 : -1) * 3.3;
+    depth = 0.5;
+  }
+  return { x, depth };
+}
+
+function chooseShot(m: Match, mind: BotMind, slot: number, plan: Plan): { press: PressKind; aim: Input["aim"] } {
+  const me = m.players[slot];
+  const opponents = m.players.filter((o) => o.side !== me.side);
+  const prof = mind.profile;
+  if (mind.difficulty === "feeder") return { press: "hit", aim: { x: opponents[0].x * 0.4, depth: plan.z >= 1.75 ? -1.6 : plan.z >= 0.95 ? -1.3 : -1.4 } };
   let press: PressKind = "hit";
   const myDepth = Math.abs(me.y);
-  const oppDepth = Math.abs(opp.y);
+  const oppDepth = Math.min(...opponents.map((o) => Math.abs(o.y)));
   if (plan.z >= 1.75) {
     if (myDepth < prof.smashDepth && chance(mind.rng, prof.smashChance)) press = "smash";
     else if (oppDepth > 3.8 && chance(mind.rng, prof.dropChance)) press = "drop";
@@ -107,23 +139,46 @@ function chooseShot(m: Match, mind: BotMind, side: Side, plan: Plan): { press: P
   } else if (myDepth < 2.6 && chance(mind.rng, prof.dropChance)) {
     press = "drop";
   }
-  const sign = opp.x > 0.3 ? -1 : opp.x < -0.3 ? 1 : next(mind.rng) < 0.5 ? -1 : 1;
-  let x = sign * between(mind.rng, prof.aim[0], prof.aim[1]);
-  let depth = 0;
-  if (chance(mind.rng, prof.wildChance)) {
-    x = sign * 2.8;
-    depth = 0.5;
-  }
-  return { press, aim: { x, depth } };
+  return { press, aim: aimFor(mind, opponents) };
 }
 
-export function botThink(m: Match, mind: BotMind, side: Side): Input {
-  const me = m.players[side];
+function responsibilityPoint(m: Match, side: Side) {
+  const path = predictPath(m.shuttle, 260);
+  const sign = sideSign(side);
+  for (let i = 1; i < path.length; i++) {
+    const p = path[i];
+    if (p.y * sign > 0.15 && p.z <= 1.7 && p.z < path[i - 1].z) return p;
+  }
+  return path[path.length - 1] ?? m.shuttle.pos;
+}
+
+function travelTime(p: Player, x: number, y: number) {
+  const dx = x - p.x;
+  const dy = y - p.y;
+  return Math.sqrt(dx * dx + dy * dy) / (MAX_SPEED * p.speedScale);
+}
+
+function formationHome(m: Match, me: Player, mate: Player) {
+  const s = sideSign(me.side);
+  const own = m.lastShot && m.lastShot.side === me.side ? m.lastShot.shot : null;
+  const attacking = own === "smash" || own === "drop" || own === "drive";
+  if (attacking) {
+    const iAmFront = mate.control === "bot" ? Math.abs(me.y) < Math.abs(mate.y) || (Math.abs(me.y) === Math.abs(mate.y) && me.slot < mate.slot) : Math.abs(mate.y) >= 3.3;
+    return iAmFront ? { x: -mate.x * 0.3, y: 2.1 * s } : { x: -mate.x * 0.3, y: 4.5 * s };
+  }
+  const iAmLeft = mate.control === "bot" ? me.x < mate.x || (me.x === mate.x && me.slot < mate.slot) : mate.x >= 0;
+  return { x: iAmLeft ? -1.35 : 1.35, y: 3.5 * s };
+}
+
+export function botThink(m: Match, mind: BotMind, slot: number): Input {
+  const me = m.players[slot];
+  const side = me.side;
   const other: Side = side === 0 ? 1 : 0;
+  const mate = m.players.find((p) => p.side === side && p.slot !== slot) ?? null;
   if (m.phase === "serve") {
     mind.plan = null;
     mind.reactAt = null;
-    if (m.server !== side) return IDLE;
+    if (m.serverSlot !== slot) return IDLE;
     if (mind.serveAt === null) mind.serveAt = m.tick + Math.round(between(mind.rng, 45, 85));
     if (m.tick < mind.serveAt) return IDLE;
     mind.serveAt = null;
@@ -139,14 +194,33 @@ export function botThink(m: Match, mind: BotMind, side: Side): Input {
   if (!incoming) {
     mind.plan = null;
     mind.reactAt = null;
+    if (mate) {
+      const home = formationHome(m, me, mate);
+      return { ...moveToward(me.x, me.y, home.x, home.y) };
+    }
     const last = m.lastShot;
     const homeY = last?.side === side && last.shot === "drop" ? 2.7 : 3.4;
     return { ...moveToward(me.x, me.y, 0, homeY * sideSign(side)) };
   }
+  if (mate && (!mind.plan || mind.plan.rally !== m.rally)) {
+    const point = responsibilityPoint(m, side);
+    const mine = travelTime(me, point.x, point.y);
+    const theirs = travelTime(mate, point.x, point.y);
+    const toX = point.x - mate.x;
+    const toY = point.y - mate.y;
+    const len = Math.sqrt(toX * toX + toY * toY) || 1;
+    const heading = (mate.vx * toX + mate.vy * toY) / len / MAX_SPEED;
+    const mateTakes = mate.control === "bot" ? theirs < mine || (theirs === mine && mate.slot < slot) : theirs <= mine || (theirs <= mine * 1.3 + 0.1 && heading > 0.45);
+    if (mateTakes) {
+      const s = sideSign(side);
+      const depth = Math.abs(point.y) < 3.5 ? 4.3 : 2.4;
+      return { ...moveToward(me.x, me.y, -Math.sign(point.x || 1) * 1.2, depth * s) };
+    }
+  }
   if (!mind.plan || mind.plan.rally !== m.rally) {
     if (mind.reactAt === null) mind.reactAt = m.tick + mind.profile.reaction;
     if (m.tick < mind.reactAt) return { mx: me.moveX, my: me.moveY };
-    mind.plan = makePlan(m, mind, side);
+    mind.plan = makePlan(m, mind, slot);
     mind.reactAt = null;
     if (!mind.plan) return IDLE;
   }
@@ -160,7 +234,7 @@ export function botThink(m: Match, mind: BotMind, side: Side): Input {
     input.lunge = true;
   }
   if (m.tick === plan.pressTick) {
-    const choice = chooseShot(m, mind, side, plan);
+    const choice = chooseShot(m, mind, slot, plan);
     input[choice.press] = true;
     input.aim = choice.aim;
   }

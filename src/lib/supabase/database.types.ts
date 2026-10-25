@@ -1532,12 +1532,14 @@ export type Database = {
         Row: {
           bot_score: number | null;
           coins_awarded: number;
-          difficulty: string;
+          difficulty: string | null;
           finished_at: string | null;
           id: string;
           longest_rally: number | null;
+          mode: string;
           perfect_hits: number | null;
           player_score: number | null;
+          room_id: string | null;
           seed: number;
           smashes: number | null;
           started_at: string;
@@ -1550,12 +1552,14 @@ export type Database = {
         Insert: {
           bot_score?: number | null;
           coins_awarded?: number;
-          difficulty: string;
+          difficulty?: string | null;
           finished_at?: string | null;
           id?: string;
           longest_rally?: number | null;
+          mode?: string;
           perfect_hits?: number | null;
           player_score?: number | null;
+          room_id?: string | null;
           seed: number;
           smashes?: number | null;
           started_at?: string;
@@ -1567,12 +1571,14 @@ export type Database = {
         Update: {
           bot_score?: number | null;
           coins_awarded?: number;
-          difficulty?: string;
+          difficulty?: string | null;
           finished_at?: string | null;
           id?: string;
           longest_rally?: number | null;
+          mode?: string;
           perfect_hits?: number | null;
           player_score?: number | null;
+          room_id?: string | null;
           seed?: number;
           smashes?: number | null;
           started_at?: string;
@@ -1581,11 +1587,108 @@ export type Database = {
           won?: boolean | null;
           xp_awarded?: number;
         };
+        Relationships: [
+          {
+            foreignKeyName: "love_smash_matches_room_id_fkey";
+            columns: ["room_id"];
+            isOneToOne: false;
+            referencedRelation: "love_smash_rooms";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      love_smash_room_members: {
+        Row: {
+          joined_at: string | null;
+          ready: boolean;
+          room_id: string;
+          slot: number;
+          status: string;
+          updated_at: string;
+          user_id: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          joined_at?: string | null;
+          ready?: boolean;
+          room_id: string;
+          slot: number;
+          status: string;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          joined_at?: string | null;
+          ready?: boolean;
+          room_id?: string;
+          slot?: number;
+          status?: string;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "love_smash_room_members_room_id_fkey";
+            columns: ["room_id"];
+            isOneToOne: false;
+            referencedRelation: "love_smash_rooms";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      love_smash_rooms: {
+        Row: {
+          code: string;
+          config: Json | null;
+          created_at: string;
+          difficulty: string;
+          finished_at: string | null;
+          host_id: string;
+          id: string;
+          mode: string;
+          result: Json | null;
+          seed: number | null;
+          started_at: string | null;
+          status: string;
+          updated_at: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          code: string;
+          config?: Json | null;
+          created_at?: string;
+          difficulty?: string;
+          finished_at?: string | null;
+          host_id: string;
+          id?: string;
+          mode: string;
+          result?: Json | null;
+          seed?: number | null;
+          started_at?: string | null;
+          status?: string;
+          updated_at?: string;
+        };
+        Update: {
+          code?: string;
+          config?: Json | null;
+          created_at?: string;
+          difficulty?: string;
+          finished_at?: string | null;
+          host_id?: string;
+          id?: string;
+          mode?: string;
+          result?: Json | null;
+          seed?: number | null;
+          started_at?: string | null;
+          status?: string;
+          updated_at?: string;
+        };
         Relationships: [];
       };
       love_smash_stats: {
         Row: {
           couple_wins: number;
+          doubles_matches: number;
           longest_rally: number;
           losses: number;
           matches: number;
@@ -1598,6 +1701,7 @@ export type Database = {
         ComputedFields: never;
         Insert: {
           couple_wins?: number;
+          doubles_matches?: number;
           longest_rally?: number;
           losses?: number;
           matches?: number;
@@ -1609,6 +1713,7 @@ export type Database = {
         };
         Update: {
           couple_wins?: number;
+          doubles_matches?: number;
           longest_rally?: number;
           losses?: number;
           matches?: number;
@@ -2723,6 +2828,10 @@ export type Database = {
       };
     };
     Functions: {
+      abandon_love_smash_room: {
+        Args: { target_room: string };
+        Returns: undefined;
+      };
       accept_invitation: { Args: { invite_code: string }; Returns: string };
       ack_legend_celebration: {
         Args: { milestone: string };
@@ -2768,6 +2877,7 @@ export type Database = {
         Args: { cid: string; uid: string };
         Returns: boolean;
       };
+      can_join_love_smash_topic: { Args: { topic: string }; Returns: boolean };
       can_join_social_topic: { Args: { topic: string }; Returns: boolean };
       check_user_achievements: { Args: { uid: string }; Returns: undefined };
       claim_daily_quest: { Args: { quest: string }; Returns: Json };
@@ -2816,6 +2926,14 @@ export type Database = {
           isSetofReturn: false;
         };
       };
+      create_love_smash_room: {
+        Args: {
+          invite_partner?: boolean;
+          room_difficulty?: string;
+          room_mode: string;
+        };
+        Returns: Json;
+      };
       delete_guestbook_message: {
         Args: { message: string };
         Returns: undefined;
@@ -2854,6 +2972,17 @@ export type Database = {
           player_won: boolean;
           rally_record: number;
           smash_count: number;
+        };
+        Returns: Json;
+      };
+      finish_love_smash_room: {
+        Args: {
+          final_scores: number[];
+          match_ticks: number;
+          player_stats: Json;
+          rally_record: number;
+          target_room: string;
+          winner_team: number;
         };
         Returns: Json;
       };
@@ -2949,6 +3078,7 @@ export type Database = {
           question_id: string;
         }[];
       };
+      get_love_smash_room: { Args: { target_room: string }; Returns: Json };
       get_my_legend_status: { Args: Record<PropertyKey, never>; Returns: Json };
       get_notification_settings: {
         Args: Record<PropertyKey, never>;
@@ -3043,6 +3173,10 @@ export type Database = {
         Returns: Json;
       };
       is_couple_member: { Args: { target_couple: string }; Returns: boolean };
+      join_love_smash_room: {
+        Args: { room_code?: string; target_room?: string };
+        Returns: Json;
+      };
       learner_level: {
         Args: { uid: string };
         Returns: {
@@ -3051,6 +3185,10 @@ export type Database = {
         }[];
       };
       leave_couple: { Args: Record<PropertyKey, never>; Returns: undefined };
+      leave_love_smash_room: {
+        Args: { target_room: string };
+        Returns: undefined;
+      };
       legend_tier_for_points: { Args: { points: number }; Returns: number };
       legend_week_start: { Args: { at_time?: string }; Returns: string };
       level_for_xp: {
@@ -3075,6 +3213,12 @@ export type Database = {
           isSetofReturn: false;
         };
       };
+      love_smash_member_of: {
+        Args: { include_invited?: boolean; target_room: string };
+        Returns: boolean;
+      };
+      love_smash_open_slots: { Args: { room_mode: string }; Returns: number[] };
+      love_smash_room_json: { Args: { target_room: string }; Returns: Json };
       mark_messages_read: { Args: Record<PropertyKey, never>; Returns: number };
       mark_notifications_read: { Args: { ids?: string[] }; Returns: number };
       message_json: {
@@ -3084,6 +3228,10 @@ export type Database = {
             Database["public"]["Tables"]["world_chat_messages"]["ComputedFields"]
           >;
         };
+        Returns: Json;
+      };
+      my_active_love_smash_room: {
+        Args: Record<PropertyKey, never>;
         Returns: Json;
       };
       my_couple_id: { Args: Record<PropertyKey, never>; Returns: string };
@@ -3227,6 +3375,10 @@ export type Database = {
           isSetofReturn: false;
         };
       };
+      respond_love_smash_room: {
+        Args: { accept: boolean; target_room: string };
+        Returns: Json;
+      };
       respond_reward: {
         Args: { approve: boolean; reward: string };
         Returns: undefined;
@@ -3291,6 +3443,14 @@ export type Database = {
         Args: { make_public: boolean };
         Returns: undefined;
       };
+      set_love_smash_ready: {
+        Args: { is_ready: boolean; target_room: string };
+        Returns: Json;
+      };
+      set_love_smash_room_difficulty: {
+        Args: { room_difficulty: string; target_room: string };
+        Returns: Json;
+      };
       sign_guestbook: { Args: { body: string; target: string }; Returns: Json };
       srs_interval: { Args: { box: number }; Returns: string };
       start_adventure_part: { Args: { adventure: string }; Returns: Json };
@@ -3302,6 +3462,7 @@ export type Database = {
       start_home_visit: { Args: { target: string }; Returns: Json };
       start_lesson: { Args: { target_lesson: string }; Returns: string };
       start_love_smash: { Args: { difficulty: string }; Returns: Json };
+      start_love_smash_room: { Args: { target_room: string }; Returns: Json };
       start_placement: { Args: { subject: string }; Returns: Json };
       start_unit_challenge: {
         Args: { mode: string; target_unit: string };
@@ -3321,6 +3482,7 @@ export type Database = {
         };
         Returns: Json;
       };
+      switch_love_smash_team: { Args: { target_room: string }; Returns: Json };
       total_xp_for_level: {
         Args: { multiplier?: number; target_level: number };
         Returns: number;

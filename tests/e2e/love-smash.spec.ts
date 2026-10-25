@@ -1,4 +1,8 @@
 import { expect, test, type Page } from "@playwright/test";
+
+test.afterEach(async ({ browser }) => {
+  for (const context of browser.contexts()) await context.close();
+});
 import { admin, createAccount, expectNoHorizontalOverflow, newSignedInPage, pairAccounts, waitForRoom } from "./helpers";
 
 const state = (page: Page) => page.evaluate(() => window.__loveSmash!.state());
@@ -19,8 +23,9 @@ test("Love Smash: a full practice match against the bot is verified and rewarded
   test.setTimeout(300_000);
   const { page, user } = await lobby(browser, testInfo.project.use);
   await expect(page.getByRole("heading", { name: /Love Smash!/ })).toBeVisible();
-  for (const mode of ["Online 1v1", "Couple 2v2", "Private Room", "Ranked"]) await expect(page.getByText(mode, { exact: true })).toBeVisible();
-  await expect(page.locator('section[aria-labelledby="smash-soon"]').getByText("Coming soon")).toHaveCount(4);
+  for (const mode of ["Online 1v1", "Ranked"]) await expect(page.getByText(mode, { exact: true })).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="smash-soon"]').getByText("Coming soon")).toHaveCount(2);
+  await expect(page.getByTestId("play-together")).toContainText("Play With My Partner");
   await expectNoHorizontalOverflow(page);
 
   await page.getByRole("radio", { name: /Easy/ }).click();

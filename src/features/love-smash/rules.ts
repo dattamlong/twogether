@@ -10,3 +10,4 @@ export const LUNGE_REACH = 1.55;
 export const PRESS_BUFFER = 9;
 
 export const IDLE: Input = { mx: 0, my: 0 };
+export const LUNGE_SPEED = 8.2;

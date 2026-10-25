@@ -36,3 +36,16 @@ export function inServiceCourt(server: Side, serverScore: number, x: number, y: 
   if (Math.abs(x) > COURT.singlesHalfWidth) return false;
   return targetX > 0 ? x >= 0 : x <= 0;
 }
+
+export function inDoubles(x: number, y: number) {
+  return Math.abs(x) <= COURT.doublesHalfWidth && Math.abs(y) <= COURT.halfLength;
+}
+
+export function inDoublesServiceCourt(server: Side, serverScore: number, x: number, y: number) {
+  const { receiver, targetX } = serviceCourt(server, serverScore);
+  if (sideOf(y) !== receiver) return false;
+  const depth = Math.abs(y);
+  if (depth < COURT.shortService || depth > COURT.doublesLongService) return false;
+  if (Math.abs(x) > COURT.doublesHalfWidth) return false;
+  return targetX > 0 ? x >= 0 : x <= 0;
+}

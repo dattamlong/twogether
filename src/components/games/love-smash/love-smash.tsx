@@ -2,13 +2,16 @@
 
 import { ArrowLeft, Lock } from "lucide-react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CoinIcon, StarIcon } from "@/components/ui/icons";
 import { Panel, PanelTitle, Vi } from "@/components/ui/panel";
 import { botThink, createBotMind, type Difficulty } from "@/features/love-smash/bot";
 import { startLoveSmash, submitLoveSmash, useLoveSmashStats, type LoveSmashReward, type PlayableDifficulty } from "@/features/love-smash/queries";
+import { createAnim, updateAnim } from "@/features/love-smash/chibi";
 import { createFx, makeCamera, render, snapshot, updateFx } from "@/features/love-smash/render";
+import { buildScene } from "@/features/love-smash/scene";
 import { createMatch, step } from "@/features/love-smash/sim";
 import { useInvalidateProgress } from "@/features/progression/queries";
 import { qk } from "@/features/query-keys";
@@ -17,6 +20,9 @@ import { DEFAULT_AVATAR, readAvatar, type Avatar } from "@/features/session/type
 import { usePrefersReducedMotion } from "@/hooks/use-reduced-motion";
 import { cn } from "@/lib/utils";
 import { useQueryClient } from "@tanstack/react-query";
+import { abandonRoom, activeRoom, createRoom, joinRoomByCode, ROOM_ERRORS, type Room } from "@/features/love-smash/rooms";
+import { BOT_TEAMMATES, OnlineGame } from "./online-game";
+import { InviteCard, OnlineResults, RoomLobby } from "./room-lobby";
 import { SmashGame, type Competitor, type MatchSummary } from "./smash-game";
 
 const RIVALS: Record<Difficulty, Competitor> = {
@@ -33,17 +39,21 @@ const LEVELS: { id: PlayableDifficulty; label: string; vi: string; blurb: string
 ];
 
 const SOON = [
-  { title: "Online 1v1", vi: "Đấu online 1-1", detail: "Real-time matches with server-checked results" },
-  { title: "Couple 2v2", vi: "Cặp đôi 2-2", detail: "You and your partner vs another couple" },
-  { title: "Private Room", vi: "Phòng riêng", detail: "Invite friends with a room code" },
+  { title: "Online 1v1", vi: "Đấu online 1-1", detail: "Real-time 1v1 against another player" },
   { title: "Ranked", vi: "Xếp hạng", detail: "Skill rating and seasons" },
 ];
 
 type View =
   | { kind: "lobby" }
-  | { kind: "playing"; matchId: string; seed: number; difficulty: PlayableDifficulty }
+  | { kind: "playing"; matchId: string; seed: number; difficulty: PlayableDifficulty; rematch: boolean }
   | { kind: "tutorial"; seed: number }
-  | { kind: "results"; summary: MatchSummary; matchId: string; difficulty: PlayableDifficulty };
+  | { kind: "results"; summary: MatchSummary; matchId: string; difficulty: PlayableDifficulty }
+  | { kind: "doubles"; seed: number; difficulty: PlayableDifficulty }
+  | { kind: "doublesResult"; summary: MatchSummary; difficulty: PlayableDifficulty }
+  | { kind: "room"; roomId: string }
+  | { kind: "invite"; roomId: string }
+  | { kind: "online"; room: Room }
+  | { kind: "onlineResult"; room: Room };
 
 const submitted = new Map<string, Promise<LoveSmashReward>>();
 
@@ -76,14 +86,18 @@ function Preview({ avatar }: { avatar: Avatar }) {
     canvas.width = Math.round(rect.width * dpr);
     canvas.height = Math.round(rect.height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const cam = makeCamera(rect.width, rect.height);
+    const cam = makeCamera(rect.width, rect.height, { top: 6, right: 6, bottom: 6, left: 6 });
+    const scene = buildScene(cam, rect.width, rect.height, dpr);
+    const anims = [createAnim(0), createAnim(1.3)] as [ReturnType<typeof createAnim>, ReturnType<typeof createAnim>];
     const io = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
     });
     io.observe(canvas);
     const draw = (dt: number) => {
       ctx.clearRect(0, 0, rect.width, rect.height);
-      render(ctx, cam, rect.width, rect.height, { match, prev, alpha: acc * 60, avatars: [avatar, RIVALS.normal.avatar], fx, showLanding: false, dt });
+      updateAnim(anims[0], match, 0, dt);
+      updateAnim(anims[1], match, 1, dt);
+      render(ctx, cam, rect.width, rect.height, { match, prev, alpha: Math.min(1, acc * 60), avatars: [avatar, RIVALS.normal.avatar], anims, scene, fx, dt, human: null });
     };
     const frame = (now: number) => {
       raf = requestAnimationFrame(frame);
@@ -121,7 +135,28 @@ function Preview({ avatar }: { avatar: Avatar }) {
 export function LoveSmash() {
   const { data: session } = useSession();
   const stats = useLoveSmashStats(session?.userId);
-  const [view, setView] = useState<View>({ kind: "lobby" });
+  const params = useSearchParams();
+  const router = useRouter();
+  const invitedRoom = params.get("room");
+  const [view, setView] = useState<View>(() => (invitedRoom && /^[0-9a-f-]{36}$/.test(invitedRoom) ? { kind: "invite", roomId: invitedRoom } : { kind: "lobby" }));
+  const [code, setCode] = useState("");
+  const [onlineMessage, setOnlineMessage] = useState<string | null>(null);
+  const client = useQueryClient();
+  const invalidate = useInvalidateProgress();
+  const [resume, setResume] = useState<Room | null>(null);
+
+  useEffect(() => {
+    if (view.kind !== "lobby" || !session) return;
+    let alive = true;
+    activeRoom()
+      .then((room) => {
+        if (alive) setResume(room);
+      })
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [view.kind, session]);
   const [difficulty, setDifficulty] = useState<PlayableDifficulty>("normal");
   const [starting, setStarting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -131,12 +166,12 @@ export function LoveSmash() {
     [session],
   );
 
-  const start = async (level: PlayableDifficulty) => {
+  const start = async (level: PlayableDifficulty, rematch = false) => {
     setStarting(true);
     setError(null);
     try {
       const { matchId, seed } = await startLoveSmash(level);
-      setView({ kind: "playing", matchId, seed, difficulty: level });
+      setView({ kind: "playing", matchId, seed, difficulty: level, rematch });
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not start a match");
     } finally {
@@ -150,10 +185,63 @@ export function LoveSmash() {
         key={view.matchId}
         seed={view.seed}
         difficulty={view.difficulty}
+        quickIntro={view.rematch}
         me={me}
         rival={RIVALS[view.difficulty]}
         onFinished={(summary) => setView({ kind: "results", summary, matchId: view.matchId, difficulty: view.difficulty })}
-        onRestart={() => void start(view.difficulty)}
+        onRestart={() => void start(view.difficulty, true)}
+        onQuit={() => setView({ kind: "lobby" })}
+      />
+    );
+  }
+  const openRoom = async (fn: () => Promise<Room>) => {
+    setStarting(true);
+    setOnlineMessage(null);
+    try {
+      const room = await fn();
+      setView({ kind: "room", roomId: room.id });
+    } catch (e) {
+      const raw = e instanceof Error ? e.message : String(e);
+      setOnlineMessage(ROOM_ERRORS[raw] ?? raw);
+    } finally {
+      setStarting(false);
+    }
+  };
+
+  const backToLobby = (reason?: string) => {
+    if (invitedRoom) router.replace("/games/love-smash");
+    if (reason === "player_left" || reason === "host_left") setOnlineMessage("A player disconnected for too long, so the match ended without rewards.");
+    setView({ kind: "lobby" });
+  };
+
+  if (view.kind === "online" && session) {
+    return (
+      <OnlineGame
+        key={view.room.id}
+        room={view.room}
+        userId={session.userId}
+        partnerId={session.partner?.id ?? null}
+        onResult={(room) => {
+          void invalidate();
+          void client.invalidateQueries({ queryKey: qk.loveSmashStats });
+          setView({ kind: "onlineResult", room });
+        }}
+        onLeave={(reason) => backToLobby(reason)}
+      />
+    );
+  }
+  if (view.kind === "doubles") {
+    return (
+      <SmashGame
+        key={`doubles-${view.seed}`}
+        seed={view.seed}
+        difficulty={view.difficulty}
+        format="doubles"
+        teammates={[BOT_TEAMMATES[0], BOT_TEAMMATES[1]]}
+        me={me}
+        rival={RIVALS[view.difficulty]}
+        onFinished={(summary) => setView({ kind: "doublesResult", summary, difficulty: view.difficulty })}
+        onRestart={() => setView({ kind: "doubles", seed: Date.now() % 1_000_000, difficulty: view.difficulty })}
         onQuit={() => setView({ kind: "lobby" })}
       />
     );
@@ -167,7 +255,38 @@ export function LoveSmash() {
 
   return (
     <div className="flex flex-col gap-5" data-testid="love-smash-lobby">
-      {view.kind === "results" ? <Results view={view} me={me} onAgain={() => void start(view.difficulty)} onLobby={() => setView({ kind: "lobby" })} starting={starting} /> : null}
+      {view.kind === "results" ? <Results view={view} me={me} onAgain={() => void start(view.difficulty, true)} onLobby={() => setView({ kind: "lobby" })} starting={starting} /> : null}
+      {view.kind === "onlineResult" && session ? <OnlineResults room={view.room} userId={session.userId} onLobby={() => backToLobby()} /> : null}
+      {view.kind === "doublesResult" ? <DoublesResult view={view} me={me} onAgain={() => setView({ kind: "doubles", seed: Date.now() % 1_000_000, difficulty: view.difficulty })} onLobby={() => setView({ kind: "lobby" })} /> : null}
+      {view.kind === "lobby" && resume && session ? (
+        <Panel className="flex flex-wrap items-center justify-between gap-3 ring-2 ring-gold-300" data-testid="resume-room">
+          <div>
+            <p className="font-display text-lg font-semibold text-plum-700">{resume.status === "playing" ? "🏸 You have a match in progress" : "🏸 You're in a Love Smash room"}</p>
+            <p className="text-sm text-cocoa-400">
+              {resume.status === "playing" && resume.hostId === session.userId
+                ? "This device hosted the match and restarted, so it can't continue. End it so everyone can play again."
+                : `Room ${resume.code} · ${resume.mode === "couple_ai" ? "Couple vs Bots" : "2v2"}`}
+            </p>
+          </div>
+          {resume.status === "playing" && resume.hostId === session.userId ? (
+            <Button
+              variant="soft"
+              onClick={async () => {
+                await abandonRoom(resume.id).catch(() => undefined);
+                setResume(null);
+              }}
+            >
+              End match
+            </Button>
+          ) : (
+            <Button onClick={() => setView(resume.status === "playing" ? { kind: "online", room: resume } : { kind: "room", roomId: resume.id })} data-testid="resume-button">
+              {resume.status === "playing" ? "Rejoin match" : "Back to room"}
+            </Button>
+          )}
+        </Panel>
+      ) : null}
+      {view.kind === "invite" ? <InviteCard roomId={view.roomId} onJoined={(room) => setView({ kind: "room", roomId: room.id })} onDismiss={() => backToLobby()} /> : null}
+      {view.kind === "room" && session ? <RoomLobby roomId={view.roomId} userId={session.userId} onStart={(room) => setView({ kind: "online", room })} onExit={() => backToLobby()} /> : null}
       <Link href="/games" className="flex w-fit items-center gap-1 text-sm font-semibold text-plum-500 hover:text-plum-700">
         <ArrowLeft size={16} /> Games
       </Link>
@@ -243,6 +362,68 @@ export function LoveSmash() {
           </dl>
         </Panel>
       </div>
+
+      <Panel data-testid="play-together">
+        <PanelTitle title="Doubles — play together" subtitle={<Vi>Đánh đôi — cùng nhau ra sân</Vi>} />
+        {onlineMessage ? (
+          <p role="alert" className="mb-3 rounded-2xl bg-sakura-50 px-3 py-2 text-sm font-semibold text-rose-err">
+            {onlineMessage}
+          </p>
+        ) : null}
+        <div className="grid gap-3 lg:grid-cols-3">
+          <div className="flex flex-col gap-2 rounded-3xl bg-gradient-to-br from-sakura-100 to-peach-100 p-4 ring-2 ring-white">
+            <p className="font-display text-lg font-semibold text-plum-700">💗 Play With My Partner</p>
+            <p className="text-sm text-plum-500">
+              {session?.partner ? `You and ${session.partner.display_name} vs two ${difficulty} bots, each on your own device.` : "Pair with your partner first to team up online."}
+            </p>
+            <Button
+              className="mt-auto"
+              disabled={!session?.partner}
+              loading={starting}
+              onClick={() => void openRoom(() => createRoom("couple_ai", difficulty, true))}
+              data-testid="play-with-partner"
+            >
+              Invite {session?.partner?.display_name ?? "partner"}
+            </Button>
+          </div>
+          <div className="flex flex-col gap-2 rounded-3xl bg-gradient-to-br from-mint-100 to-sky-100 p-4 ring-2 ring-white">
+            <p className="font-display text-lg font-semibold text-plum-700">🤝 Solo Doubles</p>
+            <p className="text-sm text-plum-500">You + Mochi 🤖 vs two {difficulty} bots on this device. Practice only — no rewards.</p>
+            <Button className="mt-auto" variant="mint" onClick={() => setView({ kind: "doubles", seed: Date.now() % 1_000_000, difficulty })} data-testid="start-solo-doubles">
+              Play solo doubles
+            </Button>
+          </div>
+          <div className="flex flex-col gap-2 rounded-3xl bg-gradient-to-br from-lavender-100 to-sakura-50 p-4 ring-2 ring-white">
+            <p className="font-display text-lg font-semibold text-plum-700">🏸 2v2 Room</p>
+            <p className="text-sm text-plum-500">Couple vs couple or friends vs friends. Share the room code — 4 players, each on their own device.</p>
+            <div className="mt-auto flex flex-wrap gap-2">
+              <Button variant="secondary" loading={starting} onClick={() => void openRoom(() => createRoom("versus", difficulty, false))} data-testid="create-versus-room">
+                Create room
+              </Button>
+              <form
+                className="flex gap-2"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (code.trim().length >= 4) void openRoom(() => joinRoomByCode(code));
+                }}
+              >
+                <input
+                  value={code}
+                  onChange={(e) => setCode(e.target.value.toUpperCase())}
+                  maxLength={6}
+                  placeholder="CODE"
+                  aria-label="Room code"
+                  className="w-24 rounded-2xl bg-white px-3 font-display font-semibold tracking-widest text-plum-700 ring-2 ring-lavender-200 focus:outline-none focus:ring-sakura-300"
+                />
+                <Button type="submit" variant="soft" data-testid="join-room">
+                  Join
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <p className="mt-3 text-xs text-cocoa-400">Online matches run on the host&apos;s device and are re-checked by the server before XP and coins are given. If someone disconnects for more than 45 seconds the match ends without rewards.</p>
+      </Panel>
 
       <Panel>
         <PanelTitle title="Controls" subtitle={<Vi>Cách điều khiển</Vi>} />
@@ -321,16 +502,17 @@ function Results({ view, me, onAgain, onLobby, starting }: { view: Extract<View,
   return (
     <div className="fixed inset-0 z-[70] grid place-items-center overflow-y-auto bg-plum-900/30 p-4 backdrop-blur-sm" role="dialog" aria-label="Match results" data-testid="love-smash-results" data-won={won}>
       <div className="flex w-full max-w-md flex-col gap-4 rounded-[2rem] bg-[#fffaf6] p-6 text-center shadow-[var(--shadow-soft)]">
-        <p className="font-display text-4xl font-bold text-plum-700">{won ? "You win! 🏆" : "Good game! 💗"}</p>
+        <p className="font-display text-4xl font-bold text-plum-700">{won ? `${me.name} wins! 🏆` : `${RIVALS[view.difficulty].name} wins`}</p>
+        <p className="-mt-3 text-sm text-cocoa-400">{won ? "Smash Together. Win Together. 💗" : "Good game! Every rally makes you stronger 💗"}</p>
         <p className="font-display text-2xl font-semibold tabular-nums text-plum-500" data-testid="final-score">
           {me.name} {match.score[0]} – {match.score[1]} {RIVALS[view.difficulty].name}
         </p>
         <dl className="grid grid-cols-2 gap-2 text-sm">
           {[
-            ["Longest rally", match.stats.longestRally],
+            ["Longest rally", `${match.stats.longestRally} hits`],
             ["Perfect hits", mine.perfectHits],
-            ["Smashes", mine.smashes],
-            ["Smash winners", mine.smashWinners],
+            ["Successful smashes", `${mine.smashWinners} / ${mine.smashes}`],
+            ["Match time", `${Math.floor(view.summary.ticks / 3600)}:${String(Math.floor((view.summary.ticks / 60) % 60)).padStart(2, "0")}`],
           ].map(([label, value]) => (
             <div key={label} className="rounded-2xl bg-white px-3 py-2">
               <dt className="text-xs font-semibold text-cocoa-400">{label}</dt>
@@ -362,10 +544,48 @@ function Results({ view, me, onAgain, onLobby, starting }: { view: Extract<View,
         </div>
         <div className="flex flex-wrap justify-center gap-3">
           <Button onClick={onAgain} loading={starting} data-testid="play-again">
-            Play again
+            🔄 Rematch
           </Button>
+          <Button variant="soft" asChild>
+            <Link href="/games">🏡 Back to Games</Link>
+          </Button>
+          <Button variant="ghost" onClick={onLobby}>
+            Love Smash lobby
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DoublesResult({ view, me, onAgain, onLobby }: { view: Extract<View, { kind: "doublesResult" }>; me: Competitor; onAgain: () => void; onLobby: () => void }) {
+  const { match } = view.summary;
+  const won = match.winner === 0;
+  const names = [me.name, RIVALS[view.difficulty].name, BOT_TEAMMATES[0].name, BOT_TEAMMATES[1].name];
+  return (
+    <div className="fixed inset-0 z-[70] grid place-items-center overflow-y-auto bg-plum-900/30 p-4 backdrop-blur-sm" role="dialog" aria-label="Match results" data-testid="doubles-results" data-won={won}>
+      <div className="flex w-full max-w-md flex-col gap-3 rounded-[2rem] bg-[#fffaf6] p-6 text-center shadow-[var(--shadow-soft)]">
+        <p className="font-display text-3xl font-bold text-plum-700">{won ? `${me.name} & ${BOT_TEAMMATES[0].name} win! 🏆` : "The bots win this time"}</p>
+        <p className="font-display text-2xl font-semibold tabular-nums text-plum-500">
+          {match.score[0]} – {match.score[1]}
+        </p>
+        <ul className="grid grid-cols-2 gap-2 text-sm">
+          {[0, 2, 1, 3].map((slot) => (
+            <li key={slot} className="rounded-2xl bg-white px-3 py-2 text-left">
+              <p className="truncate font-semibold text-plum-700">{names[slot]}</p>
+              <p className="text-xs text-cocoa-400">
+                {match.stats.players[slot].hits} hits · {match.stats.players[slot].perfectHits} perfect · {match.stats.players[slot].saves} saves
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p className="text-sm text-cocoa-400">
+          Longest rally {match.stats.longestRally} · Team combos {match.stats.sides[0].combos} · Practice mode, no rewards
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <Button onClick={onAgain}>🔄 Rematch</Button>
           <Button variant="soft" onClick={onLobby}>
-            Back to lobby
+            Love Smash lobby
           </Button>
         </div>
       </div>
