@@ -4,7 +4,7 @@ import type { Side } from "./court";
 import { decodeInput, encodeInput, INPUT_CODES, MAX_MATCH_TICKS } from "./replay";
 import { createMatch, MAX_REWIND, step, type Controller, type Format, type Frame, type Input, type Match, type Phase, type PressKind, type PuppetFrame, type SimEvent, type Swing } from "./sim";
 
-export type MatchConfig = { seed: number; format: Format; difficulty: Difficulty; controllers: Controller[]; loadouts?: (Loadout | null)[]; teamSync?: [boolean, boolean] };
+export type MatchConfig = { seed: number; format: Format; difficulty: Difficulty; controllers: Controller[]; loadouts?: (Loadout | null)[]; teamSync?: [boolean, boolean]; cast?: (string | null)[] };
 
 export function createConfiguredMatch(config: MatchConfig) {
   return createMatch({ seed: config.seed, difficulty: config.difficulty, format: config.format, controllers: config.controllers, loadouts: config.loadouts, teamSync: config.teamSync });

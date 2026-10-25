@@ -4,6 +4,7 @@ import { LogOut, Wifi } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { botThink, createBotMind } from "@/features/love-smash/bot";
+import { CHARACTERS } from "@/features/love-smash/career";
 import { createAnim, updateAnim } from "@/features/love-smash/chibi";
 import { applySnapshot, createConfiguredMatch, encodeSnapshot, FrameRecorder, type NetSnapshot } from "@/features/love-smash/net";
 import { createFx, makeCamera, project, render, snapshot, toView, updateFx, type Camera, type Fx, type Snapshot } from "@/features/love-smash/render";
@@ -40,6 +41,8 @@ export function roomCompetitors(room: Room): Competitor[] {
   return [0, 1, 2, 3].map((slot) => {
     const member = room.members.find((m) => m.slot === slot && m.status === "joined");
     if (member) return { name: member.name, avatar: readAvatar(member.avatar) };
+    const castId = room.config?.cast?.[slot];
+    if (castId && CHARACTERS[castId]) return { name: CHARACTERS[castId].name, avatar: CHARACTERS[castId].avatar };
     return BOT_TEAMMATES[botIndex++ % BOT_TEAMMATES.length];
   });
 }

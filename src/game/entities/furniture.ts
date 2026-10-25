@@ -466,8 +466,15 @@ export function drawFurniture(kind: string, w: number, h: number, flipped = fals
     case "tier_trophy_gold":
     case "tier_trophy_diamond":
     case "tier_trophy_sakura":
-    case "tier_trophy_eternal": {
-      const cup = { legend_trophy: 0xf5cb78, tier_trophy_gold: 0xf5cb78, tier_trophy_diamond: 0xb8ddf5, tier_trophy_sakura: 0xf39bbb, tier_trophy_eternal: 0xc7b8ea }[kind]!;
+    case "tier_trophy_eternal":
+    case "career_trophy_1":
+    case "career_trophy_2":
+    case "career_trophy_3":
+    case "career_trophy_4":
+    case "career_trophy_5":
+    case "career_trophy_6":
+    case "career_trophy_7": {
+      const cup = { legend_trophy: 0xf5cb78, tier_trophy_gold: 0xf5cb78, tier_trophy_diamond: 0xb8ddf5, tier_trophy_sakura: 0xf39bbb, tier_trophy_eternal: 0xc7b8ea, career_trophy_1: 0xf39bbb, career_trophy_2: 0x6fb5e3, career_trophy_3: 0xf6a88a, career_trophy_4: 0xf5cb78, career_trophy_5: 0xa995dc, career_trophy_6: 0x6cc3a2, career_trophy_7: 0xd45a86 }[kind]!;
       const c = tileToScreen(0.5, 0.5);
       isoBox(g, 0.25, 0.25, 0.5, 0.5, 0, 10, { color: 0x8a73c8 });
       g.rect(c.x - 2.5, c.y - 30, 5, 14).fill(shade(cup, -40));

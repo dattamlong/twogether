@@ -21,6 +21,9 @@ import { playSkillFx } from "./event-fx";
 import { SkillBar, viewOf } from "./skill-bar";
 import { TouchControls, type PressKind } from "./touch-controls";
 import type { Loadout } from "@/features/love-smash/skills";
+import { createConfiguredMatch, type MatchConfig } from "@/features/love-smash/net";
+
+export type IntroInfo = { title: string; round: string; rivalTitle?: string; lines?: string[] };
 
 export type Competitor = { name: string; avatar: Avatar };
 
@@ -35,6 +38,9 @@ type Props = {
   format?: Format;
   teammates?: [Competitor, Competitor];
   loadout?: Loadout | null;
+  config?: MatchConfig;
+  arena?: string;
+  introInfo?: IntroInfo;
   quickIntro?: boolean;
   me: Competitor;
   rival: Competitor;
@@ -100,7 +106,7 @@ export function insetsFor(w: number, h: number, touch: boolean): Insets {
   return { top: 84, right: 12, bottom: 14, left: 12 };
 }
 
-export function SmashGame({ seed, difficulty, tutorial = false, format = "singles", teammates, loadout = null, quickIntro = false, me, rival, onFinished, onRestart, onQuit, onTutorialComplete }: Props) {
+export function SmashGame({ seed, difficulty, tutorial = false, format = "singles", teammates, loadout = null, config, arena, introInfo, quickIntro = false, me, rival, onFinished, onRestart, onQuit, onTutorialComplete }: Props) {
   const doubles = format === "doubles" && Boolean(teammates);
   const reduced = usePrefersReducedMotion();
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -126,6 +132,8 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
   const people = useRef({ me, rival, teammates });
   const reducedRef = useRef(reduced);
   const loadoutRef = useRef(loadout);
+  const configRef = useRef(config);
+  const arenaRef = useRef(arena);
   const matchRef = useRef<Match | null>(null);
   const readSkills = useCallback(() => {
     const m = matchRef.current;
@@ -215,7 +223,7 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
     const canvas = canvasRef.current!;
     const wrap = wrapRef.current!;
     const ctx = canvas.getContext("2d")!;
-    const match = createMatch({ seed, difficulty, tutorial, format: doubles ? "doubles" : "singles", loadouts: [loadoutRef.current, null, null, null] });
+    const match = configRef.current ? createConfiguredMatch(configRef.current) : createMatch({ seed, difficulty, tutorial, format: doubles ? "doubles" : "singles", loadouts: [loadoutRef.current, null, null, null] });
     matchRef.current = match;
     const recorder = new InputRecorder();
     const stepper = new FixedStepper();
@@ -245,7 +253,7 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       cam = makeCamera(w, h, insetsFor(w, h, touch));
-      scene = buildScene(cam, w, h, dpr);
+      scene = buildScene(cam, w, h, dpr, arenaRef.current);
     };
     resize();
     const observer = new ResizeObserver(resize);
@@ -435,7 +443,7 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
       ctx.clearRect(0, 0, w, h);
       const crew = people.current;
       const slots = doubles && crew.teammates ? [crew.me, crew.rival, crew.teammates[0], crew.teammates[1]] : [crew.me, crew.rival];
-      if (scene) render(ctx, cam, w, h, { match, prev, alpha, avatars: slots.map((c) => c.avatar), names: doubles ? slots.map((c, i) => (i === 0 ? "You" : c.name)) : undefined, anims, scene, fx, dt: animDt, human: 0, offscreenMarker: true, markerY: touch && h > w ? 132 : 104 });
+      if (scene) render(ctx, cam, w, h, { match, prev, alpha, avatars: slots.map((c) => c.avatar), names: doubles || configRef.current ? slots.map((c, i) => (i === 0 ? "You" : c.name)) : undefined, anims, scene, fx, dt: animDt, human: 0, offscreenMarker: true, markerY: touch && h > w ? 132 : 104 });
       if (finishedAt !== null && now - finishedAt > 2300) {
         finishedAt = null;
         finishedRef.current({ match, log: recorder.toLog(), ticks: recorder.ticks });
@@ -539,7 +547,7 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
           onPress={(kind) => presses.current.add(kind)}
         />
       ) : null}
-      {intro ? <Intro step={intro} me={me} rival={rival} onSkip={endIntro} /> : null}
+      {intro ? <Intro step={intro} me={doubles && teammates ? { name: `${me.name} & ${teammates[0].name.replace(" 🤖", "")}`, avatar: me.avatar } : me} rival={doubles && teammates ? { name: `${rival.name} & ${teammates[1].name.replace(" 🤖", "")}`, avatar: rival.avatar } : rival} info={introInfo} onSkip={endIntro} /> : null}
       {paused ? (
         <div className="absolute inset-0 z-30 grid place-items-center bg-plum-900/30 backdrop-blur-sm" role="dialog" aria-label="Paused">
           <div className="flex w-72 flex-col gap-3 rounded-[1.75rem] bg-[#fffaf6] p-6 text-center shadow-[var(--shadow-soft)]">
@@ -562,17 +570,20 @@ export function SmashGame({ seed, difficulty, tutorial = false, format = "single
   );
 }
 
-export function Intro({ step, me, rival, onSkip }: { step: string; me: Competitor; rival: Competitor; onSkip: () => void }) {
+export function Intro({ step, me, rival, info, onSkip }: { step: string; me: Competitor; rival: Competitor; info?: IntroInfo; onSkip: () => void }) {
   return (
     <div className="absolute inset-0 z-40 grid place-items-center bg-plum-900/20 backdrop-blur-[2px]" role="dialog" aria-label="Match intro" data-testid="match-intro" data-step={step} onPointerDown={onSkip}>
       <div key={step} className="flex animate-[intro-pop_.35s_ease-out] flex-col items-center gap-3 px-6 text-center">
         {step === "title" ? (
           <>
-            <p className="font-display text-5xl font-bold text-white drop-shadow-[0_4px_0_#c2527c] sm:text-7xl">🏸 LOVE SMASH!</p>
-            <p className="font-display text-lg text-white drop-shadow">Smash Together. Win Together.</p>
+            <p className="font-display text-5xl font-bold text-white drop-shadow-[0_4px_0_#c2527c] sm:text-7xl">{info ? info.title : "🏸 LOVE SMASH!"}</p>
+            <p className="font-display text-lg text-white drop-shadow" data-testid="intro-round">
+              {info ? info.round : "Smash Together. Win Together."}
+            </p>
           </>
         ) : step === "versus" ? (
-          <div className="flex items-center gap-4 sm:gap-8">
+          <>
+            <div className="flex items-center gap-4 sm:gap-8">
             <div className="flex flex-col items-center gap-2">
               <AvatarFace avatar={me.avatar} size={84} className="rounded-full ring-4 ring-white" />
               <p className="max-w-32 truncate font-display text-xl font-bold text-white drop-shadow">{me.name}</p>
@@ -581,8 +592,19 @@ export function Intro({ step, me, rival, onSkip }: { step: string; me: Competito
             <div className="flex flex-col items-center gap-2">
               <AvatarFace avatar={rival.avatar} size={84} className="rounded-full ring-4 ring-white" />
               <p className="max-w-32 truncate font-display text-xl font-bold text-white drop-shadow">{rival.name}</p>
+              {info?.rivalTitle ? <p className="max-w-40 text-sm font-semibold text-gold-200 drop-shadow">{info.rivalTitle}</p> : null}
             </div>
-          </div>
+            </div>
+            {info?.lines?.length ? (
+              <div className="flex max-w-md flex-col gap-1">
+                {info.lines.map((line) => (
+                  <p key={line} className="rounded-2xl bg-white/85 px-3 py-1 text-sm font-semibold text-plum-700">
+                    {line}
+                  </p>
+                ))}
+              </div>
+            ) : null}
+          </>
         ) : step === "ready" ? (
           <p className="font-display text-6xl font-bold text-white drop-shadow-[0_4px_0_#8a73c8]">READY?</p>
         ) : step === "go" ? (

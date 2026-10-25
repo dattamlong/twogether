@@ -20,14 +20,67 @@ type Profile = {
   lunges: boolean;
   smashDepth: number;
   skillIQ: number;
+  special: "frost_drop" | "phoenix_drive";
 };
 
 export const PROFILES: Record<Difficulty, Profile> = {
-  easy: { reaction: 20, speedScale: 0.74, predictError: 0.5, perfectChance: 0.12, missChance: 0.1, smashChance: 0.12, dropChance: 0.15, aim: [0.4, 1.4], wildChance: 0.06, lunges: false, smashDepth: 4.8, skillIQ: 0.15 },
-  normal: { reaction: 12, speedScale: 0.88, predictError: 0.26, perfectChance: 0.4, missChance: 0.045, smashChance: 0.45, dropChance: 0.3, aim: [1, 1.9], wildChance: 0.03, lunges: true, smashDepth: 5.6, skillIQ: 0.45 },
-  hard: { reaction: 6, speedScale: 1, predictError: 0.1, perfectChance: 0.72, missChance: 0.015, smashChance: 0.72, dropChance: 0.4, aim: [1.5, 2.15], wildChance: 0.01, lunges: true, smashDepth: 6.1, skillIQ: 0.8 },
-  feeder: { reaction: 4, speedScale: 1, predictError: 0, perfectChance: 1, missChance: 0, smashChance: 0, dropChance: 0, aim: [0, 0], wildChance: 0, lunges: true, smashDepth: 0, skillIQ: 0 },
+  easy: { reaction: 20, speedScale: 0.74, predictError: 0.5, perfectChance: 0.12, missChance: 0.1, smashChance: 0.12, dropChance: 0.15, aim: [0.4, 1.4], wildChance: 0.06, lunges: false, smashDepth: 4.8, skillIQ: 0.15, special: "frost_drop" },
+  normal: { reaction: 12, speedScale: 0.88, predictError: 0.26, perfectChance: 0.4, missChance: 0.045, smashChance: 0.45, dropChance: 0.3, aim: [1, 1.9], wildChance: 0.03, lunges: true, smashDepth: 5.6, skillIQ: 0.45, special: "frost_drop" },
+  hard: { reaction: 6, speedScale: 1, predictError: 0.1, perfectChance: 0.72, missChance: 0.015, smashChance: 0.72, dropChance: 0.4, aim: [1.5, 2.15], wildChance: 0.01, lunges: true, smashDepth: 6.1, skillIQ: 0.8, special: "phoenix_drive" },
+  feeder: { reaction: 4, speedScale: 1, predictError: 0, perfectChance: 1, missChance: 0, smashChance: 0, dropChance: 0, aim: [0, 0], wildChance: 0, lunges: true, smashDepth: 0, skillIQ: 0, special: "frost_drop" },
 };
+
+export type Style = "balanced" | "aggressive" | "defensive" | "trickster" | "sleepy" | "striker";
+
+const STYLE_TWEAKS: Record<Style, (p: Profile) => Profile> = {
+  balanced: (p) => p,
+  aggressive: (p) => ({ ...p, smashChance: p.smashChance + 0.15, smashDepth: p.smashDepth + 0.4, dropChance: p.dropChance - 0.1, aim: [p.aim[0] + 0.2, p.aim[1]], special: "phoenix_drive" }),
+  defensive: (p) => ({ ...p, reaction: p.reaction - 2, predictError: p.predictError * 0.7, missChance: p.missChance * 0.7, smashChance: p.smashChance - 0.15, lunges: true, special: "frost_drop" }),
+  trickster: (p) => ({ ...p, dropChance: p.dropChance + 0.2, wildChance: p.wildChance * 1.2, aim: [p.aim[0], p.aim[1] + 0.1], special: "frost_drop" }),
+  sleepy: (p) => ({ ...p, missChance: p.missChance * 1.6, reaction: p.reaction + 4, perfectChance: p.perfectChance * 0.8 }),
+  striker: (p) => ({ ...p, smashChance: p.smashChance + 0.05, perfectChance: p.perfectChance + 0.05, dropChance: p.dropChance - 0.05, special: "phoenix_drive" }),
+};
+
+const mix = (a: number, b: number, t: number) => a + (b - a) * t;
+
+export function personaProfile(persona: string): Profile {
+  const [styleRaw, levelRaw] = persona.split(":");
+  const style = (styleRaw in STYLE_TWEAKS ? styleRaw : "balanced") as Style;
+  const level = Math.max(1, Math.min(8, Number(levelRaw) || 1));
+  const t = level >= 8 ? 1.15 : (level - 1) / 6;
+  const e = PROFILES.easy;
+  const h = PROFILES.hard;
+  const base: Profile = {
+    reaction: Math.round(mix(e.reaction, h.reaction, t)),
+    speedScale: mix(e.speedScale, h.speedScale, Math.min(1, t)),
+    predictError: Math.max(0.04, mix(e.predictError, h.predictError, t)),
+    perfectChance: mix(e.perfectChance, h.perfectChance, t),
+    missChance: Math.max(0.005, mix(e.missChance, h.missChance, t)),
+    smashChance: mix(e.smashChance, h.smashChance, t),
+    dropChance: mix(e.dropChance, h.dropChance, t),
+    aim: [mix(e.aim[0], h.aim[0], t), Math.min(2.25, mix(e.aim[1], h.aim[1], t))],
+    wildChance: Math.max(0.004, mix(e.wildChance, h.wildChance, t)),
+    lunges: level >= 2,
+    smashDepth: mix(e.smashDepth, h.smashDepth, t),
+    skillIQ: Math.min(0.95, mix(0.1, h.skillIQ, t)),
+    special: h.special,
+  };
+  const p = STYLE_TWEAKS[style](base);
+  const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
+  return {
+    ...p,
+    reaction: clamp(p.reaction, 3, 26),
+    speedScale: clamp(p.speedScale, 0.6, 1),
+    perfectChance: clamp(p.perfectChance, 0.05, 0.9),
+    missChance: clamp(p.missChance, 0.004, 0.2),
+    smashChance: clamp(p.smashChance, 0, 0.9),
+    dropChance: clamp(p.dropChance, 0, 0.7),
+  };
+}
+
+export function profileFor(difficulty: Difficulty, persona?: string): Profile {
+  return persona ? personaProfile(persona) : PROFILES[difficulty];
+}
 
 type Plan = { rally: number; x: number; y: number; z: number; hitTick: number; pressTick: number; lunged: boolean };
 
@@ -41,8 +94,8 @@ export type BotMind = {
   serveAt: number | null;
 };
 
-export function createBotMind(difficulty: Difficulty, seed: number): BotMind {
-  const profile = PROFILES[difficulty];
+export function createBotMind(difficulty: Difficulty, seed: number, persona?: string): BotMind {
+  const profile = profileFor(difficulty, persona);
   return { difficulty, profile, speedScale: profile.speedScale, rng: createRng(seed ^ 0x5eed5a11), plan: null, reactAt: null, serveAt: null };
 }
 

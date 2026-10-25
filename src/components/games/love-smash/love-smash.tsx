@@ -141,7 +141,7 @@ export function LoveSmash() {
   const params = useSearchParams();
   const router = useRouter();
   const invitedRoom = params.get("room");
-  const [view, setView] = useState<View>(() => (invitedRoom && /^[0-9a-f-]{36}$/.test(invitedRoom) ? { kind: "invite", roomId: invitedRoom } : { kind: "lobby" }));
+  const [view, setView] = useState<View>(() => (invitedRoom && /^[0-9a-f-]{36}$/.test(invitedRoom) ? { kind: params.get("view") === "room" ? "room" : "invite", roomId: invitedRoom } : { kind: "lobby" }));
   const [code, setCode] = useState("");
   const [onlineMessage, setOnlineMessage] = useState<string | null>(null);
   const client = useQueryClient();
@@ -349,6 +349,19 @@ export function LoveSmash() {
           <Preview avatar={me.avatar} />
         </div>
       </header>
+
+      <Link
+        href="/games/love-smash/career"
+        className="group flex flex-wrap items-center justify-between gap-3 rounded-[2rem] bg-gradient-to-r from-gold-200 via-sakura-100 to-lavender-100 p-5 ring-2 ring-white shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5"
+        data-testid="road-to-legend-link"
+      >
+        <div>
+          <p className="font-display text-2xl font-bold text-plum-700">🏆 Road to Legend</p>
+          <p className="text-sm text-plum-500">Seven championships · bosses · rivals · trophies for your home</p>
+          <Vi>Chế độ sự nghiệp — từ tân binh tới huyền thoại</Vi>
+        </div>
+        <span className="rounded-2xl bg-white/90 px-4 py-2 font-display font-semibold text-plum-700 shadow-[var(--shadow-pop)] group-hover:bg-white">▶ Continue career</span>
+      </Link>
 
       {error ? (
         <p role="alert" className="rounded-2xl bg-sakura-50 px-4 py-3 text-sm font-semibold text-rose-err">

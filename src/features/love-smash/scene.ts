@@ -8,6 +8,30 @@ export type Spectator = { x: number; y: number; z: number; skin: string; hair: s
 
 export type Scene = { ground: HTMLCanvasElement; net: HTMLCanvasElement; spectators: Spectator[]; w: number; h: number };
 
+export type SceneTheme = {
+  indoor: boolean;
+  sky: [string, string, string];
+  floor: [string, string];
+  court: [string, string, string];
+  standFront: string;
+  standSide: string;
+  banner: string;
+  bannerColors: [string, string, string];
+  trees: boolean;
+  lights: string | null;
+};
+
+export const THEMES: Record<string, SceneTheme> = {
+  default: { indoor: false, sky: ["#e6dcff", "#ffe6f0", "#fff1e4"], floor: ["#c6ebcf", "#a9dfb8"], court: ["#5fb497", "#8ad5b9", "#6cc3a2"], standFront: "#c7b8ea", standSide: "#f8bbd0", banner: "LOVE SMASH! 🏸💗 SMASH TOGETHER", bannerColors: ["#f39bbb", "#e7779f", "#a995dc"], trees: true, lights: null },
+  sakura_garden: { indoor: false, sky: ["#ffe1ee", "#ffeef5", "#fff6ec"], floor: ["#c9eccf", "#ade0b9"], court: ["#5fb497", "#8ad5b9", "#6cc3a2"], standFront: "#f8bbd0", standSide: "#f8bbd0", banner: "🌸 SAKURA ROOKIE CUP 🌸", bannerColors: ["#f8bbd0", "#f39bbb", "#e7779f"], trees: true, lights: null },
+  academy_gym: { indoor: true, sky: ["#d9c7a8", "#e8d9bd", "#f1e6d0"], floor: ["#e2b980", "#d4a56a"], court: ["#3f8f78", "#6fbfa2", "#58ad90"], standFront: "#6fb5e3", standSide: "#b8ddf5", banner: "🎓 ACADEMY CHAMPIONSHIP", bannerColors: ["#6fb5e3", "#4f8fc4", "#a995dc"], trees: false, lights: "rgba(255,247,220,.35)" },
+  city_hall: { indoor: true, sky: ["#4a4468", "#6b6390", "#9a90b8"], floor: ["#8a86a6", "#77738f"], court: ["#3a7f6b", "#5db095", "#4a9a80"], standFront: "#f6a88a", standSide: "#f39bbb", banner: "🏙️ CITY OPEN", bannerColors: ["#f6a88a", "#e0607e", "#f5cb78"], trees: false, lights: "rgba(255,230,200,.4)" },
+  national_arena: { indoor: true, sky: ["#2c2140", "#45365b", "#6a5583"], floor: ["#5a4c74", "#4a3e62"], court: ["#2f7a64", "#4fa98b", "#3f9277"], standFront: "#f5cb78", standSide: "#d9a440", banner: "🏅 NATIONAL CHAMPIONSHIP", bannerColors: ["#f5cb78", "#d9a440", "#f6a88a"], trees: false, lights: "rgba(255,240,200,.5)" },
+  asia_stadium: { indoor: true, sky: ["#1f2a4a", "#33406b", "#5a6aa0"], floor: ["#4c5a86", "#3d4a72"], court: ["#30766a", "#4ea590", "#3f8e7c"], standFront: "#a995dc", standSide: "#8a73c8", banner: "🌏 ASIA MASTERS", bannerColors: ["#a995dc", "#8a73c8", "#e7779f"], trees: false, lights: "rgba(220,230,255,.5)" },
+  world_stadium: { indoor: true, sky: ["#0f1d2e", "#1e3550", "#33557a"], floor: ["#2e4a66", "#233b54"], court: ["#2c7266", "#47a28c", "#3a8a78"], standFront: "#6cc3a2", standSide: "#3a9474", banner: "🌍 WORLD GRAND PRIX", bannerColors: ["#6cc3a2", "#3a9474", "#6fb5e3"], trees: false, lights: "rgba(210,255,240,.5)" },
+  legends_arena: { indoor: true, sky: ["#1c0f26", "#3a1a40", "#6a2a5a"], floor: ["#4a2440", "#3a1c34"], court: ["#2c6a5e", "#47a08a", "#3a8a76"], standFront: "#d45a86", standSide: "#a995dc", banner: "👑 LEGENDS CHAMPIONSHIP", bannerColors: ["#f5cb78", "#d45a86", "#a995dc"], trees: false, lights: "rgba(255,210,230,.55)" },
+};
+
 const SKINS = ["#ffe3d3", "#f6d0b8", "#e8b896", "#ffeadd", "#d9a37f"];
 const HAIRS = ["#5b4256", "#2c2140", "#a8714f", "#f5cb78", "#c7b8ea", "#e7779f", "#6a5583", "#8fd3c1"];
 const SHIRTS = ["#f8bbd0", "#c7b8ea", "#bce5d5", "#b8ddf5", "#fbe3b1", "#ffd6c2", "#ffffff"];
@@ -141,21 +165,21 @@ function courtLine(ctx: CanvasRenderingContext2D, cam: Camera, a: { x: number; y
   ctx.fill();
 }
 
-function drawCourt(ctx: CanvasRenderingContext2D, cam: Camera, rng: Rng) {
+function drawCourt(ctx: CanvasRenderingContext2D, cam: Camera, rng: Rng, theme: SceneTheme) {
   const L = COURT.halfLength;
   const D = COURT.doublesHalfWidth;
   const S = COURT.singlesHalfWidth;
   ctx.fillStyle = "rgba(69,54,91,.16)";
   quad(ctx, cam, -D - 0.75, -L - 0.85, D + 0.95, L + 0.65);
   ctx.fill();
-  ctx.fillStyle = "#5fb497";
+  ctx.fillStyle = theme.court[0];
   quad(ctx, cam, -D - 0.7, -L - 0.8, D + 0.7, L + 0.7);
   ctx.fill();
   const near = project(cam, { x: 0, y: -L, z: 0 });
   const far = project(cam, { x: 0, y: L, z: 0 });
   const surface = ctx.createLinearGradient(0, far.y, 0, near.y);
-  surface.addColorStop(0, "#8ad5b9");
-  surface.addColorStop(1, "#6cc3a2");
+  surface.addColorStop(0, theme.court[1]);
+  surface.addColorStop(1, theme.court[2]);
   ctx.fillStyle = surface;
   quad(ctx, cam, -D - 0.55, -L - 0.65, D + 0.55, L + 0.55);
   ctx.fill();
@@ -195,12 +219,47 @@ function drawCourt(ctx: CanvasRenderingContext2D, cam: Camera, rng: Rng) {
   ctx.fill();
 }
 
-function drawEnvironment(ctx: CanvasRenderingContext2D, cam: Camera, w: number, h: number, rng: Rng) {
+function drawIndoor(ctx: CanvasRenderingContext2D, cam: Camera, w: number, h: number, theme: SceneTheme) {
+  const wallBase = project(cam, { x: 0, y: 14, z: 0 }).y;
+  const wall = ctx.createLinearGradient(0, 0, 0, Math.max(wallBase, 40));
+  wall.addColorStop(0, theme.sky[0]);
+  wall.addColorStop(0.6, theme.sky[1]);
+  wall.addColorStop(1, theme.sky[2]);
+  ctx.fillStyle = wall;
+  ctx.fillRect(0, 0, w, h);
+  for (let i = 0; i < 6; i++) {
+    const x = (w * (i + 0.5)) / 6;
+    const glow = ctx.createRadialGradient(x, wallBase * 0.08, 0, x, wallBase * 0.08, w * 0.12);
+    glow.addColorStop(0, "rgba(255,255,255,.9)");
+    glow.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.fillStyle = glow;
+    ctx.fillRect(x - w * 0.12, 0, w * 0.24, wallBase * 0.4);
+  }
+  const floor = ctx.createLinearGradient(0, wallBase, 0, h);
+  floor.addColorStop(0, theme.floor[0]);
+  floor.addColorStop(1, theme.floor[1]);
+  ctx.fillStyle = floor;
+  ctx.fillRect(0, wallBase, w, h - wallBase);
+  for (let i = -12; i < 30; i++) {
+    ctx.fillStyle = i % 2 ? "rgba(255,255,255,.05)" : "rgba(0,0,0,.04)";
+    quad(ctx, cam, -40, i * 1.2, 40, i * 1.2 + 1.2);
+    ctx.fill();
+  }
+  ctx.fillStyle = "rgba(255,255,255,.12)";
+  quad(ctx, cam, -5.4, -9.6, 5.4, 9.3);
+  ctx.fill();
+}
+
+function drawEnvironment(ctx: CanvasRenderingContext2D, cam: Camera, w: number, h: number, rng: Rng, theme: SceneTheme) {
+  if (theme.indoor) {
+    drawIndoor(ctx, cam, w, h, theme);
+    return;
+  }
   const horizon = project(cam, { x: 0, y: 60, z: 0 }).y;
   const sky = ctx.createLinearGradient(0, 0, 0, Math.max(horizon, 40));
-  sky.addColorStop(0, "#e6dcff");
-  sky.addColorStop(0.6, "#ffe6f0");
-  sky.addColorStop(1, "#fff1e4");
+  sky.addColorStop(0, theme.sky[0]);
+  sky.addColorStop(0.6, theme.sky[1]);
+  sky.addColorStop(1, theme.sky[2]);
   ctx.fillStyle = sky;
   ctx.fillRect(0, 0, w, h);
   const sun = ctx.createRadialGradient(w * 0.82, horizon * 0.25, 0, w * 0.82, horizon * 0.25, Math.max(w, h) * 0.45);
@@ -228,8 +287,8 @@ function drawEnvironment(ctx: CanvasRenderingContext2D, cam: Camera, w: number, 
     ctx.fill();
   }
   const grass = ctx.createLinearGradient(0, horizon, 0, h);
-  grass.addColorStop(0, "#c6ebcf");
-  grass.addColorStop(1, "#a9dfb8");
+  grass.addColorStop(0, theme.floor[0]);
+  grass.addColorStop(1, theme.floor[1]);
   ctx.fillStyle = grass;
   ctx.fillRect(0, horizon, w, h - horizon);
   for (let i = -10; i < 30; i++) {
@@ -251,15 +310,15 @@ function drawEnvironment(ctx: CanvasRenderingContext2D, cam: Camera, w: number, 
   }
 }
 
-function drawStands(ctx: CanvasRenderingContext2D, cam: Camera) {
+function drawStands(ctx: CanvasRenderingContext2D, cam: Camera, theme: SceneTheme) {
   for (let row = 2; row >= 0; row--) {
     const y0 = 10.1 + row * 0.8;
-    box(ctx, cam, -6.2, 6.2, y0, y0 + 0.8, 0, 0.45 + row * 0.5, "#fff7ed", shade("#c7b8ea", row * 0.12), "#b9a8e2");
+    box(ctx, cam, -6.2, 6.2, y0, y0 + 0.8, 0, 0.45 + row * 0.5, "#fff7ed", shade(theme.standFront, row * 0.12), shade(theme.standFront, -0.08));
   }
   for (const s of [-1, 1]) {
     for (let row = 1; row >= 0; row--) {
       const x0 = s * (7.4 + row * 0.8);
-      box(ctx, cam, Math.min(x0, x0 + s * 0.8), Math.max(x0, x0 + s * 0.8), -5, 6.5, 0, 0.45 + row * 0.5, "#fff7ed", shade("#f8bbd0", row * 0.1), "#f3b3c9");
+      box(ctx, cam, Math.min(x0, x0 + s * 0.8), Math.max(x0, x0 + s * 0.8), -5, 6.5, 0, 0.45 + row * 0.5, "#fff7ed", shade(theme.standSide, row * 0.1), shade(theme.standSide, -0.05));
     }
   }
   const a = project(cam, { x: -4.8, y: 10.08, z: 0.43 });
@@ -268,9 +327,9 @@ function drawStands(ctx: CanvasRenderingContext2D, cam: Camera) {
   const bh = b.y - a.y;
   if (bw > 40) {
     const g = ctx.createLinearGradient(a.x, 0, b.x, 0);
-    g.addColorStop(0, "#f39bbb");
-    g.addColorStop(0.5, "#e7779f");
-    g.addColorStop(1, "#a995dc");
+    g.addColorStop(0, theme.bannerColors[0]);
+    g.addColorStop(0.5, theme.bannerColors[1]);
+    g.addColorStop(1, theme.bannerColors[2]);
     ctx.fillStyle = g;
     ctx.beginPath();
     ctx.roundRect(a.x, a.y, bw, bh, Math.min(10, bh / 2));
@@ -279,7 +338,7 @@ function drawStands(ctx: CanvasRenderingContext2D, cam: Camera) {
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = `800 ${Math.max(9, bh * 0.62)}px Fredoka, ui-rounded, system-ui, sans-serif`;
-    ctx.fillText("LOVE SMASH! 🏸💗 SMASH TOGETHER", a.x + bw / 2, a.y + bh / 2 + 1, bw * 0.94);
+    ctx.fillText(theme.banner, a.x + bw / 2, a.y + bh / 2 + 1, bw * 0.94);
   }
   const left = project(cam, { x: -6.6, y: 12.9, z: 3.6 });
   const right = project(cam, { x: 6.6, y: 12.9, z: 3.6 });
@@ -406,7 +465,8 @@ function makeSpectators(rng: Rng): Spectator[] {
   return list.sort((a, b) => b.y - a.y);
 }
 
-export function buildScene(cam: Camera, w: number, h: number, dpr: number): Scene {
+export function buildScene(cam: Camera, w: number, h: number, dpr: number, themeKey = "default"): Scene {
+  const theme = THEMES[themeKey] ?? THEMES.default;
   const make = () => {
     const c = document.createElement("canvas");
     c.width = Math.max(1, Math.round(w * dpr));
@@ -417,14 +477,32 @@ export function buildScene(cam: Camera, w: number, h: number, dpr: number): Scen
   };
   const rng = createRng(20261025);
   const ground = make();
-  drawEnvironment(ground.ctx, cam, w, h, rng);
-  drawStands(ground.ctx, cam);
-  const trees: [number, number, number][] = [[-9.5, 9.5, 1.15], [9.8, 10.2, 1.2], [-11.5, 3, 1.05], [11.2, 1.5, 1.1], [-10.5, -5, 1], [10.6, -6, 1], [-14, 13, 1.3], [14, 14, 1.25], [0, 15.5, 1.4]];
-  for (const [x, y, size] of trees.sort((a, b) => b[1] - a[1])) tree(ground.ctx, cam, x, y, size, rng);
-  drawCourt(ground.ctx, cam, rng);
+  drawEnvironment(ground.ctx, cam, w, h, rng, theme);
+  drawStands(ground.ctx, cam, theme);
+  if (theme.trees) {
+    const trees: [number, number, number][] = [[-9.5, 9.5, 1.15], [9.8, 10.2, 1.2], [-11.5, 3, 1.05], [11.2, 1.5, 1.1], [-10.5, -5, 1], [10.6, -6, 1], [-14, 13, 1.3], [14, 14, 1.25], [0, 15.5, 1.4]];
+    for (const [x, y, size] of trees.sort((a, b) => b[1] - a[1])) tree(ground.ctx, cam, x, y, size, rng);
+  }
+  drawCourt(ground.ctx, cam, rng, theme);
+  if (theme.lights) {
+    for (const x of [-0.25, 0.25]) {
+      const top = { x: w / 2 + x * w, y: 0 };
+      const beam = ground.ctx.createLinearGradient(top.x, 0, w / 2, h * 0.7);
+      beam.addColorStop(0, theme.lights);
+      beam.addColorStop(1, "rgba(255,255,255,0)");
+      ground.ctx.fillStyle = beam;
+      ground.ctx.beginPath();
+      ground.ctx.moveTo(top.x - w * 0.03, 0);
+      ground.ctx.lineTo(top.x + w * 0.03, 0);
+      ground.ctx.lineTo(w / 2 + x * w * 0.2 + w * 0.22, h * 0.85);
+      ground.ctx.lineTo(w / 2 + x * w * 0.2 - w * 0.22, h * 0.85);
+      ground.ctx.closePath();
+      ground.ctx.fill();
+    }
+  }
   const vignette = ground.ctx.createRadialGradient(w / 2, h * 0.55, Math.min(w, h) * 0.35, w / 2, h * 0.55, Math.max(w, h) * 0.8);
   vignette.addColorStop(0, "rgba(255,255,255,0)");
-  vignette.addColorStop(1, "rgba(120,90,140,.16)");
+  vignette.addColorStop(1, theme.indoor ? "rgba(20,10,40,.3)" : "rgba(120,90,140,.16)");
   ground.ctx.fillStyle = vignette;
   ground.ctx.fillRect(0, 0, w, h);
   const net = make();

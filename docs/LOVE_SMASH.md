@@ -152,3 +152,18 @@ Bots use the same speed limits, reach and physics as human players.
 - Online 1v1 and Ranked matchmaking.
 - A dedicated authoritative game server (see the limitation above).
 - Hand-drawn sprite art. Characters are drawn in code from avatar colours.
+
+## Road to Legend (career mode)
+
+Route: `/games/love-smash/career`. Three career kinds, each stored as one row in `love_smash_careers` (`state` jsonb, versioned):
+
+| Kind | Who plays | Match flow |
+| --- | --- | --- |
+| `solo` | one player vs AI singles | `POST /api/love-smash/career {action:"start"}` → local `SmashGame` → `/api/love-smash/career/finish` |
+| `solo_doubles` | player + Kiko 🤖 vs AI doubles | same as solo |
+| `couple` | both partners, one device each, vs AI doubles | `{action:"room"}` creates a room linked by `career_id`; host starts with `{action:"room_start"}`; `/api/love-smash/room/finish` applies the career result |
+
+- **Data** (`src/features/love-smash/career.ts`): 7 tiers (`TIERS`, 8 or 16 entrants), fictional characters (`CHARACTERS`), seeded brackets, rivals Mochi & Sakura, one boss per tier. Story entrants (boss/rival) always advance in simulated matches so the player meets them.
+- **Results** are never trusted from the client: the server replays the logs from the stored config, runs `applyResult`, and commits rewards, career state (optimistic `version` check) and a first-title trophy in one SQL function (`finish_love_smash_career` / `finish_love_smash_room_career`, service role only).
+- **Losing** keeps the bracket and increments `attempts` (retry). A title unlocks the next tier; trophies (`career_trophy_1..7`) go to the inventory once and can be placed at home.
+- **Bots** use `personaProfile("style:level")`; no paid AI is involved. Arenas come from `THEMES` in `scene.ts`.

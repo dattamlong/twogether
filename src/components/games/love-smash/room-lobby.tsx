@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { CoinIcon, StarIcon } from "@/components/ui/icons";
 import { Panel, Vi } from "@/components/ui/panel";
 import { RoomNet, type RoomPresence } from "@/features/love-smash/room-net";
-import { getRoom, leaveRoom, respondToRoom, ROOM_ERRORS, setReady, setRoomDifficulty, startRoom, switchTeam, type Room, type RoomDifficulty } from "@/features/love-smash/rooms";
+import { getRoom, leaveRoom, respondToRoom, ROOM_ERRORS, setReady, setRoomDifficulty, startCareerRoom, startRoom, switchTeam, type Room, type RoomDifficulty } from "@/features/love-smash/rooms";
 import { readAvatar } from "@/features/session/types";
 import { cn } from "@/lib/utils";
 import { BOT_TEAMMATES, roomCompetitors } from "./online-game";
@@ -132,7 +132,7 @@ export function RoomLobby({ roomId, userId, onStart, onExit }: { roomId: string;
     <Panel className="flex flex-col gap-4" data-testid="room-lobby" data-room={room.id}>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 className="text-2xl font-semibold text-plum-700">{room.mode === "couple_ai" ? "💗 Couple vs Bots" : "🏸 2v2 Room"}</h2>
+          <h2 className="text-2xl font-semibold text-plum-700">{room.careerId ? "🏆 Couple Career match" : room.mode === "couple_ai" ? "💗 Couple vs Bots" : "🏸 2v2 Room"}</h2>
           <Vi>{room.mode === "couple_ai" ? "Hai bạn cùng đội đấu với 2 bot" : "Hai đội 2 người — cặp đôi hoặc bạn bè"}</Vi>
         </div>
         <button
@@ -157,7 +157,7 @@ export function RoomLobby({ roomId, userId, onStart, onExit }: { roomId: string;
           </section>
         ))}
       </div>
-      {room.mode === "couple_ai" ? (
+      {room.mode === "couple_ai" && !room.careerId ? (
         <div role="radiogroup" aria-label="Bot difficulty" className="flex flex-wrap items-center gap-2">
           <span className="text-sm font-semibold text-plum-500">Bots:</span>
           {(["easy", "normal", "hard"] as RoomDifficulty[]).map((d) => (
@@ -182,7 +182,7 @@ export function RoomLobby({ roomId, userId, onStart, onExit }: { roomId: string;
       ) : null}
       <div className="flex flex-wrap gap-2">
         {isHost ? (
-          <Button onClick={() => void act(() => startRoom(room.id))} disabled={!everyoneReady} loading={busy} data-testid="room-start">
+          <Button onClick={() => void act(() => (room.careerId ? startCareerRoom(room.id) : startRoom(room.id)))} disabled={!everyoneReady} loading={busy} data-testid="room-start">
             🏸 Start match
           </Button>
         ) : me?.status === "joined" ? (
@@ -381,6 +381,11 @@ export function OnlineResults({ room, userId, onLobby }: { room: Room; userId: s
             <p className="text-sm text-cocoa-400">No reward recorded for this match.</p>
           )}
         </div>
+        {room.careerId ? (
+          <Link href="/games/love-smash/career" className="text-sm font-semibold text-sakura-500 underline" data-testid="career-progress-link">
+            🏆 See your Road to Legend progress
+          </Link>
+        ) : null}
         <div className="flex flex-wrap justify-center gap-3">
           <Button onClick={onLobby}>Back to Love Smash</Button>
           <Button variant="soft" asChild>

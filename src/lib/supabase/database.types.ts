@@ -1528,10 +1528,51 @@ export type Database = {
           },
         ];
       };
+      love_smash_careers: {
+        Row: {
+          couple_id: string | null;
+          created_at: string;
+          id: string;
+          kind: string;
+          owner_id: string;
+          state: NonNullable<Json>;
+          updated_at: string;
+        };
+        ComputedFields: never;
+        Insert: {
+          couple_id?: string | null;
+          created_at?: string;
+          id?: string;
+          kind: string;
+          owner_id: string;
+          state: NonNullable<Json>;
+          updated_at?: string;
+        };
+        Update: {
+          couple_id?: string | null;
+          created_at?: string;
+          id?: string;
+          kind?: string;
+          owner_id?: string;
+          state?: NonNullable<Json>;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "love_smash_careers_couple_id_fkey";
+            columns: ["couple_id"];
+            isOneToOne: false;
+            referencedRelation: "couples";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       love_smash_matches: {
         Row: {
           bot_score: number | null;
+          career_id: string | null;
           coins_awarded: number;
+          config: Json | null;
           difficulty: string | null;
           finished_at: string | null;
           id: string;
@@ -1552,7 +1593,9 @@ export type Database = {
         ComputedFields: never;
         Insert: {
           bot_score?: number | null;
+          career_id?: string | null;
           coins_awarded?: number;
+          config?: Json | null;
           difficulty?: string | null;
           finished_at?: string | null;
           id?: string;
@@ -1572,7 +1615,9 @@ export type Database = {
         };
         Update: {
           bot_score?: number | null;
+          career_id?: string | null;
           coins_awarded?: number;
+          config?: Json | null;
           difficulty?: string | null;
           finished_at?: string | null;
           id?: string;
@@ -1591,6 +1636,13 @@ export type Database = {
           xp_awarded?: number;
         };
         Relationships: [
+          {
+            foreignKeyName: "love_smash_matches_career_id_fkey";
+            columns: ["career_id"];
+            isOneToOne: false;
+            referencedRelation: "love_smash_careers";
+            referencedColumns: ["id"];
+          },
           {
             foreignKeyName: "love_smash_matches_room_id_fkey";
             columns: ["room_id"];
@@ -1641,6 +1693,7 @@ export type Database = {
       };
       love_smash_rooms: {
         Row: {
+          career_id: string | null;
           code: string;
           config: Json | null;
           created_at: string;
@@ -1657,6 +1710,7 @@ export type Database = {
         };
         ComputedFields: never;
         Insert: {
+          career_id?: string | null;
           code: string;
           config?: Json | null;
           created_at?: string;
@@ -1672,6 +1726,7 @@ export type Database = {
           updated_at?: string;
         };
         Update: {
+          career_id?: string | null;
           code?: string;
           config?: Json | null;
           created_at?: string;
@@ -1686,7 +1741,15 @@ export type Database = {
           status?: string;
           updated_at?: string;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: "love_smash_rooms_career_id_fkey";
+            columns: ["career_id"];
+            isOneToOne: false;
+            referencedRelation: "love_smash_careers";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       love_smash_stats: {
         Row: {
@@ -2992,6 +3055,25 @@ export type Database = {
         };
         Returns: Json;
       };
+      finish_love_smash_career: {
+        Args: {
+          drop_count: number;
+          expected_version: number;
+          final_bot_score: number;
+          final_player_score: number;
+          match_id: string;
+          match_ticks: number;
+          new_state: Json;
+          perfect_count: number;
+          player: string;
+          player_won: boolean;
+          rally_record: number;
+          smash_count: number;
+          target_career: string;
+          trophy: string;
+        };
+        Returns: Json;
+      };
       finish_love_smash_room: {
         Args: {
           final_scores: number[];
@@ -2999,6 +3081,20 @@ export type Database = {
           player_stats: Json;
           rally_record: number;
           target_room: string;
+          winner_team: number;
+        };
+        Returns: Json;
+      };
+      finish_love_smash_room_career: {
+        Args: {
+          expected_version: number;
+          final_scores: number[];
+          match_ticks: number;
+          new_state: Json;
+          player_stats: Json;
+          rally_record: number;
+          target_room: string;
+          trophy: string;
           winner_team: number;
         };
         Returns: Json;
@@ -3158,6 +3254,10 @@ export type Database = {
       get_world_messages: {
         Args: { before_id?: string; channel: string; max_rows?: number };
         Returns: Json;
+      };
+      grant_career_trophy: {
+        Args: { cid: string; player: string; trophy: string };
+        Returns: undefined;
       };
       grant_reward: {
         Args: {
@@ -3490,6 +3590,10 @@ export type Database = {
       start_lesson: { Args: { target_lesson: string }; Returns: string };
       start_love_smash: { Args: { difficulty: string }; Returns: Json };
       start_love_smash_room: { Args: { target_room: string }; Returns: Json };
+      start_love_smash_room_with_config: {
+        Args: { base_config: Json; host: string; target_room: string };
+        Returns: Json;
+      };
       start_placement: { Args: { subject: string }; Returns: Json };
       start_unit_challenge: {
         Args: { mode: string; target_unit: string };

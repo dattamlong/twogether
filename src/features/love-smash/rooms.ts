@@ -29,6 +29,7 @@ export type Room = {
   config: MatchConfig | null;
   result: RoomResult | null;
   startedAt: string | null;
+  careerId?: string | null;
   members: RoomMember[];
 };
 
@@ -50,6 +51,13 @@ export const setReady = (roomId: string, ready: boolean) => call<Room>("set_love
 export const switchTeam = (roomId: string) => call<Room>("switch_love_smash_team", { target_room: roomId });
 export const setRoomDifficulty = (roomId: string, difficulty: RoomDifficulty) => call<Room>("set_love_smash_room_difficulty", { target_room: roomId, room_difficulty: difficulty });
 export const startRoom = (roomId: string) => call<Room>("start_love_smash_room", { target_room: roomId });
+
+export async function startCareerRoom(roomId: string) {
+  const response = await fetch("/api/love-smash/career", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "room_start", roomId }) });
+  const body = (await response.json().catch(() => ({}))) as { room?: Room; error?: string };
+  if (!response.ok || !body.room) throw new RoomError(body.error ?? "start_failed");
+  return body.room;
+}
 export const activeRoom = () => call<Room | null>("my_active_love_smash_room", {});
 export const abandonRoom = (roomId: string) => call<null>("abandon_love_smash_room", { target_room: roomId });
 

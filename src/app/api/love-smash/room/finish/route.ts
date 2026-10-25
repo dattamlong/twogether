@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { applyResult, type CareerState } from "@/features/love-smash/career";
 import { replayWithLogs, type MatchConfig } from "@/features/love-smash/net";
 import { getAdminSupabase } from "@/lib/supabase/admin";
 import { getServerSupabase } from "@/lib/supabase/server";
@@ -26,7 +27,7 @@ export async function POST(request: Request) {
   }
   if (typeof body?.roomId !== "string") return NextResponse.json({ error: "invalid_request" }, { status: 400 });
 
-  const { data: room } = await supabase.from("love_smash_rooms").select("id, host_id, status, config").eq("id", body.roomId).maybeSingle();
+  const { data: room } = await supabase.from("love_smash_rooms").select("id, host_id, status, config, career_id, seed").eq("id", body.roomId).maybeSingle();
   if (!room) return NextResponse.json({ error: "room_not_found" }, { status: 404 });
   if (room.host_id !== auth.user.id) return NextResponse.json({ error: "not_host" }, { status: 403 });
   if (room.status !== "playing" || !room.config) return NextResponse.json({ error: "room_closed" }, { status: 409 });
@@ -35,6 +36,30 @@ export async function POST(request: Request) {
   if (!replay.ok) return NextResponse.json({ error: replay.reason }, { status: 422 });
   const m = replay.match;
   const playerStats = Object.fromEntries(m.stats.players.map((p, slot) => [String(slot), p]));
+  if (room.career_id) {
+    const admin = getAdminSupabase();
+    const { data: career } = await admin.from("love_smash_careers").select("state").eq("id", room.career_id).single();
+    const state = career!.state as unknown as CareerState;
+    let applied;
+    try {
+      applied = applyResult(state, m.winner === 0, [m.score[0], m.score[1]], room.seed ?? 1);
+    } catch (e) {
+      return NextResponse.json({ error: e instanceof Error ? e.message : "career_conflict" }, { status: 409 });
+    }
+    const { data, error } = await admin.rpc("finish_love_smash_room_career", {
+      target_room: room.id,
+      winner_team: m.winner!,
+      final_scores: [m.score[0], m.score[1]],
+      match_ticks: replay.ticks,
+      rally_record: m.stats.longestRally,
+      player_stats: playerStats,
+      expected_version: state.version,
+      new_state: applied.state as never,
+      trophy: (applied.outcome.trophy ?? null) as unknown as string,
+    });
+    if (error) return NextResponse.json({ error: error.message }, { status: error.message === "too_fast" ? 422 : 400 });
+    return NextResponse.json({ room: data, outcome: applied.outcome });
+  }
   const { data, error } = await getAdminSupabase().rpc("finish_love_smash_room", {
     target_room: room.id,
     winner_team: m.winner!,

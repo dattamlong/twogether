@@ -1,4 +1,4 @@
-import { botThink, createBotMind, PROFILES, type BotMind, type Difficulty } from "./bot";
+import { botThink, createBotMind, profileFor, type BotMind, type Difficulty } from "./bot";
 import { COURT, DT, inDoubles, inDoublesServiceCourt, inServiceCourt, inSingles, serviceCourt, sideOf, sideSign, type Side } from "./court";
 import { solveShot, stepShuttle, type ShotKind, type Shuttle, type Vec3 } from "./physics";
 import { ACCEL, DECEL, IDLE, LUNGE_REACH, LUNGE_SPEED, MAX_SPEED, PRESS_BUFFER, REACH, SCORE_CAP, TARGET_SCORE } from "./rules";
@@ -38,7 +38,7 @@ export type Input = {
 
 export type PuppetFrame = { x: number; y: number; lunge?: boolean; dash?: boolean; sync?: boolean; press?: { kind: PressKind; rewind: number } };
 
-export type Controller = { kind: "human" } | { kind: "puppet" } | { kind: "bot"; difficulty: Difficulty };
+export type Controller = { kind: "human" } | { kind: "puppet" } | { kind: "bot"; difficulty: Difficulty; persona?: string };
 
 export type Swing = { kind: "forehand" | "backhand" | "overhead" | "smash" | "drop" | "lift" | "whiff" | "serve"; t: number; quality: Quality | null };
 
@@ -144,7 +144,7 @@ function newPlayer(slot: number, control: Controller, loadout: Loadout | null | 
     slot,
     index: (slot < 2 ? 0 : 1) as 0 | 1,
     control: control.kind,
-    speedScale: control.kind === "bot" ? PROFILES[control.difficulty].speedScale : 1,
+    speedScale: control.kind === "bot" ? profileFor(control.difficulty, control.persona).speedScale : 1,
     x: 0,
     y: sideSign(side) * 3.2,
     vx: 0,
@@ -166,12 +166,8 @@ function newPlayer(slot: number, control: Controller, loadout: Loadout | null | 
     dash: 0,
     dashDir: { x: 0, y: 0 },
     dashedAt: -9999,
-    loadout: loadout ?? (control.kind === "bot" ? botLoadout(control.difficulty) : EMPTY_LOADOUT),
+    loadout: loadout ?? (control.kind === "bot" ? { ...FULL_LOADOUT, special: profileFor(control.difficulty, control.persona).special } : EMPTY_LOADOUT),
   };
-}
-
-function botLoadout(difficulty: Difficulty): Loadout {
-  return difficulty === "hard" ? { ...FULL_LOADOUT, special: "phoenix_drive" } : FULL_LOADOUT;
 }
 
 const emptySide = (): SideStats => ({ perfectHits: 0, smashes: 0, smashWinners: 0, hits: 0, combos: 0 });
@@ -186,7 +182,7 @@ export function createMatch(options: MatchOptions): Match {
   const format = options.format ?? "singles";
   const controllers = options.controllers ?? defaultControllers(format, options.difficulty);
   const players = controllers.map((c, slot) => newPlayer(slot, c, options.loadouts?.[slot]));
-  const minds = controllers.map((c, slot) => (c.kind === "bot" ? createBotMind(c.difficulty, slot === 1 ? options.seed : options.seed + slot * 7919) : null));
+  const minds = controllers.map((c, slot) => (c.kind === "bot" ? createBotMind(c.difficulty, slot === 1 ? options.seed : options.seed + slot * 7919, c.persona) : null));
   const match: Match = {
     tick: 0,
     phase: "serve",

@@ -289,6 +289,13 @@ const TROPHY_COLORS: Record<string, string> = {
   tier_trophy_diamond: "#b8ddf5",
   tier_trophy_sakura: "#f39bbb",
   tier_trophy_eternal: "#c7b8ea",
+  career_trophy_1: "#f39bbb",
+  career_trophy_2: "#6fb5e3",
+  career_trophy_3: "#f6a88a",
+  career_trophy_4: "#f5cb78",
+  career_trophy_5: "#a995dc",
+  career_trophy_6: "#6cc3a2",
+  career_trophy_7: "#d45a86",
 };
 
 export function ItemArt({ itemId, size = 64, className }: { itemId: string; size?: number; className?: string }) {
